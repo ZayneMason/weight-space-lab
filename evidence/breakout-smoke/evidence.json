@@ -1,0 +1,202 @@
+{
+  "schema": "weight-space-evidence-v1",
+  "adapter": "minatar-breakout",
+  "scope": "smoke",
+  "source_ledger_sha256": "bcaf9c0a7f2b4291386e2248f68f70f848633cfe6c1aa8eda36200b2a6fc58d8",
+  "summary": {
+    "episodes": 8,
+    "mean_score": 77.875,
+    "standard_error": 3.0905241118157103,
+    "truncated_episodes": 8,
+    "checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a"
+  },
+  "code_sha256": {
+    "lab.py": "5d12138d3659554bc60438090f048df29b487e76ae3442e3f0c0ea0b9f77bddf",
+    "weight_space_lab/__init__.py": "2477db0c31103a9069bdc5608eca60590e312e8deffd3de075a155962ac7b639",
+    "weight_space_lab/controller.py": "2945ddb38997e0bb6ce1260690f6f3c12ebb67eca00d2ffabc8d12ecacd5616c",
+    "weight_space_lab/evidence.py": "869a61f5b6d980939f87f3051d0232878e9ea49e107c138eff1bb1a7bcb9609a",
+    "weight_space_lab/legacy.py": "a619b20b8d721052ee4cbb9df09edb75ff543c073b8e635a8f206fee26f0f1b9",
+    "weight_space_lab/reports.py": "844a933c53f11623c9071591339c6a2b7ce28a7b967556bd1578fe56d09914a7",
+    "weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82",
+    "skills/weight-space-lab/scripts/reproduce_breakout.py": "75b7f6f80a2284fdd13603e9f322c38dfb90f36b66f22aa3a480526c8bfe5977"
+  },
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "minatar": "1.0.15"
+  },
+  "artifact_sha256": {
+    "code/lab.py": "5d12138d3659554bc60438090f048df29b487e76ae3442e3f0c0ea0b9f77bddf",
+    "code/LICENSE": "20d1d1590a2da75c223c5bf4ad2c64467be38b4200abe08b32743560fead65eb",
+    "code/NOTICE.md": "5b75109565cf1622b5cfa28d1a20c5a85cddad2d621bf8ada5e6f70945e3f7e6",
+    "code/skills/weight-space-lab/scripts/reproduce_breakout.py": "75b7f6f80a2284fdd13603e9f322c38dfb90f36b66f22aa3a480526c8bfe5977",
+    "code/weight_space_lab/__init__.py": "2477db0c31103a9069bdc5608eca60590e312e8deffd3de075a155962ac7b639",
+    "code/weight_space_lab/controller.py": "2945ddb38997e0bb6ce1260690f6f3c12ebb67eca00d2ffabc8d12ecacd5616c",
+    "code/weight_space_lab/evidence.py": "869a61f5b6d980939f87f3051d0232878e9ea49e107c138eff1bb1a7bcb9609a",
+    "code/weight_space_lab/legacy.py": "a619b20b8d721052ee4cbb9df09edb75ff543c073b8e635a8f206fee26f0f1b9",
+    "code/weight_space_lab/reports.py": "844a933c53f11623c9071591339c6a2b7ce28a7b967556bd1578fe56d09914a7",
+    "code/weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82",
+    "comparison.json": "41b2ce0f6f895f3f4236fa1246a6438fa2a24a94c538ed60541abdda7a19194f",
+    "evaluation.json": "8edc4a0d67de993e8293345a50acae0523214480b699a61518054e418114a853",
+    "reference/LICENSE": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+    "reference/LICENSE-MinAtar": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "reference/prompt.txt": "766ee251d59a7893ed86d5eaea99ddb847529ab2092afc69f90f55fb0a22e876",
+    "reference/published-answer.md": "a30bdda1acef79b507498edcef7e48d4fff16aa85783741925da9d5d4f42faf0",
+    "reference/published-scores.json": "bc10c6f957af95cdd52ee4be085acd249046f6117dbdb8c735fd5ddb2195c47c",
+    "reference/published.npz": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+    "reference/sources.json": "b6909d144b99c4aac1fee2032846043532acfedd27a490c9d0b834bde8a4674d",
+    "replay.json": "fa48296bc65564d332477f2f6215ae97504a445f0d7d742dd136b49e106c610a",
+    "report.html": "412308ab008f6bbd5f3e52fdfc1a958e91163a0ca114871490d14882d0764468",
+    "verification.json": "e7fd4c2548d043d20fe71842309733361e2ecfe792924fa2df2738781a212634"
+  },
+  "records": {
+    "verification.json": {
+      "all_assets_verified": true,
+      "exact_tensor_match": true,
+      "statements": 92,
+      "parameters": 20486,
+      "revision": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f"
+    },
+    "evaluation.json": {
+      "schema": "weight-space-breakout-v1",
+      "checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+      "scope": "smoke_or_custom",
+      "evaluator_sha256": "75b7f6f80a2284fdd13603e9f322c38dfb90f36b66f22aa3a480526c8bfe5977",
+      "game": "breakout",
+      "episodes": 8,
+      "mean": 77.875,
+      "se": 3.0905241118157103,
+      "ci95_normal": [
+        71.81757274084121,
+        83.93242725915879
+      ],
+      "mean_length": 1000.0,
+      "settings": {
+        "seed": 0,
+        "max_steps": 1000,
+        "sticky_action_probability": 0.1,
+        "action_selection": "softmax sampled; float64 softmax, float32 dense network",
+        "seeds": "env=seed+episode; action=seed+episode+1000000; fresh env per episode"
+      },
+      "versions": {
+        "numpy": "2.5.4",
+        "minatar": "1.0.15",
+        "python": "3.12.10"
+      },
+      "seconds": 12.344000000040978,
+      "results": [
+        {
+          "episode": 0,
+          "score": 83,
+          "steps": 1000,
+          "truncated": true
+        },
+        {
+          "episode": 1,
+          "score": 81,
+          "steps": 1000,
+          "truncated": true
+        },
+        {
+          "episode": 2,
+          "score": 84,
+          "steps": 1000,
+          "truncated": true
+        },
+        {
+          "episode": 3,
+          "score": 84,
+          "steps": 1000,
+          "truncated": true
+        },
+        {
+          "episode": 4,
+          "score": 74,
+          "steps": 1000,
+          "truncated": true
+        },
+        {
+          "episode": 5,
+          "score": 59,
+          "steps": 1000,
+          "truncated": true
+        },
+        {
+          "episode": 6,
+          "score": 74,
+          "steps": 1000,
+          "truncated": true
+        },
+        {
+          "episode": 7,
+          "score": 84,
+          "steps": 1000,
+          "truncated": true
+        }
+      ],
+      "fidelity": "Matches published architecture, mapping, sampling policy, stickiness and default episode/step counts. Original evaluation seeds/backend were not released; not bit-exact score replication."
+    },
+    "comparison.json": {
+      "published_mean": 517.411,
+      "published_se": 7.416952829044303,
+      "replayed_mean": 77.875,
+      "replayed_se": 3.0905241118157103,
+      "episodes": 8,
+      "difference": null,
+      "difference_in_combined_standard_errors": null,
+      "published_ppo100_best": 15.779,
+      "published_ppo500_best": 25.344,
+      "ppo_status": "Published reference scores only; PPO checkpoints were not released or rerun.",
+      "scope": "smoke_or_custom",
+      "interpretation": "Smoke/custom run: the published full-evaluation scores are context only; episode/step counts differ."
+    },
+    "reference/sources.json": {
+      "revision": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+      "files": [
+        {
+          "file": "prompt.txt",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/runs/breakout/message.txt",
+          "sha256": "766ee251d59a7893ed86d5eaea99ddb847529ab2092afc69f90f55fb0a22e876",
+          "bytes": 9973
+        },
+        {
+          "file": "published-answer.md",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/runs/breakout/reply/answer.md",
+          "sha256": "a30bdda1acef79b507498edcef7e48d4fff16aa85783741925da9d5d4f42faf0",
+          "bytes": 5668
+        },
+        {
+          "file": "published.npz",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/networks/breakout/hand.npz",
+          "sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+          "bytes": 83574
+        },
+        {
+          "file": "published-scores.json",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/eval/minatar_eval.json",
+          "sha256": "bc10c6f957af95cdd52ee4be085acd249046f6117dbdb8c735fd5ddb2195c47c",
+          "bytes": 4693
+        },
+        {
+          "file": "LICENSE",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/LICENSE",
+          "sha256": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+          "bytes": 1819
+        },
+        {
+          "file": "LICENSE-MinAtar",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/LICENSE-MinAtar",
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+          "bytes": 35147
+        }
+      ]
+    }
+  },
+  "omitted": [
+    "checkpoint files",
+    "benchmark prompts",
+    "raw hosted-model transcripts",
+    "workstation paths"
+  ],
+  "integrity": "Unsigned metadata export; raw checkpoints are needed to independently repeat inference."
+}

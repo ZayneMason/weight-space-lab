@@ -1,113 +1,138 @@
 # Weight Space Lab
 
-An experimental toolkit for inspecting, editing, and evaluating neural-network
-weights directly, with source preservation and recorded experiment evidence.
+A local toolkit for inspecting, patching, and evaluating neural-network weights.
 
-It includes a shared skill for **Codex and DeepSeek Harness**, a CPU Breakout
-reproduction, and a GPU runner for the published Qwen3.5-0.8B p50c edit.
+The toolkit connects **inspect → edit → evaluate → compare → review evidence**,
+with bounded feedback, candidate freezing, and matched final evaluation for small
+independent experiments. It is a separate project from the upstream research it
+reproduces; reproduction results are attributed to their original authors.
 
-[Implementation and results report](docs/REPORT.md) · [Breakout results](RESULTS.md) ·
-[Qwen reproduction](qwen/README.md) · [Evidence](evidence/README.md)
+![Actual predictions from the offline sign-classifier demonstration](docs/assets/demo-behavior.svg)
 
-## Status
+*Generated from the working offline demo. The patch is prewritten: six fixed
+examples improve from 0/6 to 6/6, with two stored entries changed. This is a tools
+demonstration, not agent discovery or benchmark evidence.*
 
-This is a research prototype. An agent supplies hypotheses; the tools apply and
-measure explicit edits. Automatic discovery of fresh language-model edits is not
-implemented, and no capability gain is guaranteed.
+## First run
 
-| Capability | Status |
-|---|---|
-| Inspect and edit individual NPZ/SafeTensors checkpoints | Working; F16/F32/F64 edits |
-| Reproduce MinAtar Breakout and evaluate a fresh agent-written network | Implemented; recorded 1,000-episode results |
-| Reconstruct the published Qwen p50c BF16 edit | Both tensor hashes verified; 318 other tensors unchanged |
-| Paired Qwen inference and grading | Two-question pilot completed; full MATH-500 result pending |
-| Discover fresh Qwen edits with bounded practice feedback | Future work |
-
-The Qwen pilot produced 1/8 correct samples for the original model and 6/8 for the
-published edit, on only two questions. It validates the pipeline and is too small
-to establish benchmark improvement. Details and limits are in the report.
-
-## Quick start: checkpoint toolkit
-
-Requires [uv](https://docs.astral.sh/uv/getting-started/installation/). The first
-invocation installs the script's pinned dependencies.
+Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/getting-started/installation/).
+The first invocation may download NumPy/SafeTensors packages. The demonstration
+itself uses only the CPU: no credentials, model downloads, GPU, or external services.
 
 ```bash
-uv run --script skills/weight-space-lab/scripts/weight_lab.py demo ./demo-run
-uv run --script skills/weight-space-lab/scripts/weight_lab.py inspect ./demo-run/original.npz
+uv run --script lab.py demo runs/sign-demo
 ```
 
-The demo applies a prewritten repair to a small sign classifier. It checks the
-plumbing; it is not an autonomous discovery experiment. See the
-[CLI reference](skills/weight-space-lab/references/cli.md) for tensor reads,
-set/add/scale operations, direction removal, edit budgets, and paired MLP evaluation.
+Open `runs/sign-demo/report.html` directly in a browser. It contains the exact patch
+and rationale, before/after visualization, per-example outcomes, fixed and regressed
+IDs, changed-entry counts, checkpoint hashes, and links to the JSON records.
+The HTML is self-contained and needs no server. Every run requires a new output
+directory; repeating the command fails without modifying the old result.
 
-The generic editor handles one `.npz` or `.safetensors` file at a time. It does not
-handle quantized formats or arbitrary checkpoint directories. BF16 Qwen
-reconstruction uses the separate model-specific runner below.
-
-## Breakout experiment
-
-No GPU is required. Use a new working directory and an absolute path to
-`skills/weight-space-lab/scripts/reproduce_breakout.py` as `SCRIPT`:
+For a strictly offline invocation after installing `requirements.txt`:
 
 ```bash
-uv run --script SCRIPT fetch ./reference
-uv run --script SCRIPT verify-reference ./reference
-uv run --script SCRIPT evaluate ./reference/published.npz ./replayed.json
-uv run --script SCRIPT fresh ./reference ./fresh-run
-uv run --script SCRIPT evaluate ./fresh-run/fresh.npz ./fresh-eval.json
-uv run --script SCRIPT compare ./reference ./replayed.json --candidate ./fresh-eval.json
+python lab.py demo runs/offline-demo
+python lab.py verify runs/offline-demo
 ```
 
-The fresh step uses the existing Codex sign-in for one tool-free editor response.
-It consumes the signed-in account's model allowance. Model and effort defaults,
-tool-event auditing, parser restrictions, licensing, and protocol differences are
-documented in the [reproduction guide](skills/weight-space-lab/references/reproduction.md).
-Keep the final evaluation out of candidate selection.
+[First experiment guide](docs/FIRST_EXPERIMENT.md) explains setup, artifacts,
+supported edits, rollback, and metadata export.
 
-Recorded results over 1,000 episodes: released weights scored **502.9 ± 7.7 SE**;
-a fresh agent-written network scored **511.5 ± 5.5 SE**. This does not establish an
-improvement between the two networks. Raw Breakout run records are not bundled.
+## Independent research controller
 
-## Qwen experiment
-
-The [Qwen guide](qwen/README.md) covers an isolated Linux/WSL environment,
-checkpoint reconstruction, independent export auditing, smoke checks, and full
-paired evaluation. It pins the research, model, and dataset revisions and preserves
-every generation. GPU memory and runtime requirements are described there.
-
-This route reconstructs an existing published edit. It does not implement the
-original editor sandbox or forward-pass server. Its small pilot is complete;
-the full 4,000-generation comparison is pending.
-
-## Plugin installation
-
-### Codex
-
-The repository includes `.codex-plugin/plugin.json` and shared `skills/` resources.
-Add the package to a local plugin marketplace following the
-[official packaging instructions](https://developers.openai.com/plugins/build/plugins),
-then install it through the Plugins UI. An unpacked copy of the skill directory
-can also be used with skill discovery.
-
-### DeepSeek Harness
-
-Use the supported `plugin_manager` tool's `install_bundle` action with this
-repository directory, or the DSH CLI:
+The controller meters proposals and practice feedback, records rejected/failed
+attempts, freezes one candidate, and permits one matched held-out comparison.
+It measures regressions as well as repairs. Budgets, input hashes, code versions,
+candidate identities, and an event hash chain remain in the run record.
 
 ```bash
-dsh plugin --profile desktop add /absolute/path/to/weight-space-lab
+python lab.py experiment create runs/threshold-study --proposal-budget 5 --feedback-budget 3
+python lab.py experiment status runs/threshold-study
 ```
 
-Read installation warnings and restart if requested. The plugin registers a skill
-through the `skills` service and does not override a preset. Use a host preset
-with shell execution to run the Python helpers.
+The first original protocol asks whether an editor can repair a shifted classifier
+under a one-entry bias-edit budget while preserving protected predictions. Its
+success criterion is declared before feedback. The held-out draw uses a fresh
+private seed and a dataset-hash commitment.
 
-## Development
+To validate the controller with **prewritten positive and regressing controls**:
 
-With Python 3.12 and NumPy, SafeTensors, MinAtar, PyTorch, and the pinned grader
-dependencies installed:
+```bash
+python scripts/check_controller.py runs/controller-check
+```
+
+This produces `runs/controller-check/final/report.html`. It is manual infrastructure
+validation, not a new agent research result. An external-agent study has not been
+executed. Read the [protocol](experiments/threshold-repair/PROTOCOL.md) before running
+one. The controller is a logical gate, **not an OS sandbox**; an operator must
+supply editor isolation and retain the editor's model identity and transcript.
+
+## Existing checkpoint workflows
+
+All paths below are repository-relative. Install `requirements.txt` first, or use
+the pinned `uv run --script lab.py` entry point.
+
+```bash
+python lab.py --help
+python lab.py inspect runs/sign-demo/original.npz
+python lab.py tensor runs/sign-demo/original.npz weight --start 0 --count 2
+python lab.py edit runs/sign-demo/original.npz runs/sign-demo/edit.json runs/another-candidate --max-fraction 0.5
+python lab.py evaluate runs/another-candidate/model.npz runs/sign-demo/architecture.json runs/sign-demo/heldout.json --output runs/another-evaluation.json
+python lab.py compare runs/sign-demo/baseline.json runs/another-evaluation.json
+python lab.py export-evidence runs/sign-demo runs/sign-evidence
+```
+
+The generic evaluator supports explicitly described dense MLP classifiers. It does
+not evaluate arbitrary transformers. Generic editing supports one NPZ/SafeTensors
+file and F16/F32/F64 edits; the model-specific BF16 Qwen route is separate.
+
+## Upstream reproductions
+
+### MinAtar Breakout — CPU
+
+This reproduces Takehi et al.'s published Experiment 5 network. It downloads pinned
+public research assets and retains their licenses. It does not generate a fresh
+network or consume hosted-model allowance.
+
+```bash
+uv run --with minatar==1.0.15 --script lab.py breakout runs/breakout-smoke --mode smoke
+```
+
+The default smoke run uses 8 episodes, seed 0, and at most 1,000 steps per episode.
+Its local report includes a replay of episode zero, selected in advance. Smoke
+scores are explicitly separate from full benchmark results.
+
+The full CPU protocol is longer: 1,000 episodes, at most 10,000 steps each.
+
+```bash
+uv run --with minatar==1.0.15 --script lab.py breakout runs/breakout-full --mode full
+```
+
+Fresh agent generation is a separate, explicit opt-in operation using the existing
+Codex sign-in and model allowance. It is never called by the demo, smoke workflow,
+or controller. See the [Breakout guide](docs/BREAKOUT.md) for that command and its
+costs, attribution, evidence limits, and protocol differences.
+
+### Published Qwen p50c edit — separate GPU environment
+
+```bash
+python lab.py qwen --help
+```
+
+The [Qwen guide](qwen/README.md) describes large model/data downloads, the isolated
+Linux/WSL environment, BF16 reconstruction, and GPU evaluation. Both edited tensor
+hashes and a two-question pilot were verified; full MATH-500 results remain pending.
+No fresh Qwen edit-discovery system is implemented.
+
+## Evidence, installation, and development
+
+- [Research protocol](experiments/threshold-repair/PROTOCOL.md): budgets, freezing, held-out evaluation, interpretation.
+- [Evidence guide](evidence/README.md): upstream versus local results, sanitized records, and limitations.
+- [Implementation/results report](docs/REPORT.md): the dated reconstruction and pilot snapshot.
+- [Verification record](docs/VERIFICATION.md): commands actually executed for this change.
+- [Plugin installation](docs/INSTALLATION.md): Codex and DeepSeek Harness; existing CLIs remain available.
+- [CLI reference](skills/weight-space-lab/references/cli.md): generic formats and limits.
 
 ```bash
 python -m unittest discover -s tests -p 'test_*.py' -v
@@ -116,15 +141,10 @@ node --test tests/plugin.test.mjs
 python scripts/package.py
 ```
 
-The CPU tests do not require a GPU. One optional Breakout integration test skips
-when its downloaded reference assets are absent. The package builder writes a
-Codex ZIP, DSH tarball, and checksum manifest under `dist/`.
+The Qwen unit tests additionally need PyTorch and the pinned grader packages;
+they do not launch inference. One optional legacy Breakout integration test skips
+when its specific reference directory is absent.
 
-## Attribution
-
-Independent implementation inspired by Takehi et al.'s
-[article](https://rikiyat.github.io/blog/weight-space-programming/) and
-[released experiments](https://github.com/RikiyaT/lm_understand-logs).
-Project code is [MIT licensed](LICENSE); third-party material retains its original
-terms. See [NOTICE.md](NOTICE.md). No model weights, benchmark questions, credentials,
-or generated-answer transcripts are committed to this repository.
+Project code is [MIT licensed](LICENSE). Upstream research, assets and third-party
+dependencies retain their own terms; see [NOTICE.md](NOTICE.md). This repository
+does not claim authorship of the upstream study, its discoveries, or its popularity.

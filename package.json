@@ -1,7 +1,7 @@
 {
   "name": "dsh-weight-space-lab",
-  "version": "0.3.0",
-  "description": "Reproduce published weight-space programming and test fresh networks with auditable local evaluation.",
+  "version": "0.4.0",
+  "description": "Local infrastructure for bounded neural-weight experiments, candidate freezing, regression measurement, and auditable evaluation.",
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -24,7 +24,14 @@
     "evidence",
     "LICENSE",
     "NOTICE.md",
-    "licenses"
+    "licenses",
+    "lab.py",
+    "requirements.txt",
+    "requirements-breakout.txt",
+    "weight_space_lab",
+    "experiments",
+    "scripts/check_controller.py",
+    "scripts/sanitize_qwen_pilot.py"
   ],
   "dsh": {
     "bundle": {

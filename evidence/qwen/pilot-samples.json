@@ -1,0 +1,232 @@
+{
+  "schema": "weight-space-sanitized-qwen-pilot-v1",
+  "date": "2026-11-04",
+  "origin": "Existing local pilot; no new inference performed during export.",
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "presence_penalty": 1.5,
+    "max_tokens": 32768,
+    "seed": 0,
+    "n": 4
+  },
+  "revisions": {
+    "research_revision": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+    "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "dataset_revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be"
+  },
+  "arms": {
+    "baseline": {
+      "source_job_sha256": "292eccdced6fdbdf2738de2e0e6ab1b3a457090641606ff3bbc0dd005e7c8dbe",
+      "summary": {
+        "pilot": true,
+        "arm": "baseline",
+        "problems": 2,
+        "generations": 8,
+        "accuracy": 0.125,
+        "token_limit_share": 1.0,
+        "tokens": 262144
+      },
+      "problems": [
+        {
+          "problem_index": 0,
+          "seed": 0,
+          "problem_id_sha256": "2c9808c3bcd0970601f9a97ec2bbd83440bd1e16ee03a00e1128cb661490f148",
+          "prompt_sha256": "4c5de1d49ae265f7a435105524d30abc0bcfa09408302f90366103e4e821a124",
+          "samples": [
+            {
+              "sample": 0,
+              "correct": true,
+              "tokens": 32768,
+              "finish_reason": "length",
+              "truncated": true,
+              "text_sha256": "ba4cd03a22bce94bf84b791338aa406b0c6b8261939c401677f7b6626b3f0d11",
+              "token_ids_sha256": "f39c9192a1773a42d9ae044e2a3acbbf703fb92a0d90974746061e1755d44a87"
+            },
+            {
+              "sample": 1,
+              "correct": false,
+              "tokens": 32768,
+              "finish_reason": "length",
+              "truncated": true,
+              "text_sha256": "07db1965e269d81088e6f393228363432cfe3a27111520167f2cfd6ab48f0bc8",
+              "token_ids_sha256": "b4a94865c2e5513e719512d142d82a7a6c2efce1c6666d725fcb88368e701e52"
+            },
+            {
+              "sample": 2,
+              "correct": false,
+              "tokens": 32768,
+              "finish_reason": "length",
+              "truncated": true,
+              "text_sha256": "0acf7f388b46809cf59c3ea7a62b732e641342641796f08b63c96819ea3b94a8",
+              "token_ids_sha256": "ba633fa92def08b878c08dbd4cf171a35fce18e83cda085893facf744ad059f2"
+            },
+            {
+              "sample": 3,
+              "correct": false,
+              "tokens": 32768,
+              "finish_reason": "length",
+              "truncated": true,
+              "text_sha256": "42cc0ca4daefe7ef3dd0f8362c35f8381584c516f358665ff77711e89f790f69",
+              "token_ids_sha256": "3eb4d7201a5b632e69702d8212eb1b8a62ffcf4fdd437b1e5213b67b9689d0d0"
+            }
+          ]
+        },
+        {
+          "problem_index": 1,
+          "seed": 1,
+          "problem_id_sha256": "9d77eb0a690f53bd86384725bee03de3f614eb10b2cf4736b32aac518e7cfb07",
+          "prompt_sha256": "432e28f75151d9ff34d2ef6d7537250360bd62c112a53465740949d33df532d7",
+          "samples": [
+            {
+              "sample": 0,
+              "correct": false,
+              "tokens": 32768,
+              "finish_reason": "length",
+              "truncated": true,
+              "text_sha256": "33e2929aa218574bd95cac64b82739e2e459e21629d3a59ac5f886d92cd16aae",
+              "token_ids_sha256": "94e40e88343b5d02b78addc467904cf216896b4dd6e26c3fa5aff58d3a5f1316"
+            },
+            {
+              "sample": 1,
+              "correct": false,
+              "tokens": 32768,
+              "finish_reason": "length",
+              "truncated": true,
+              "text_sha256": "8c9b10b2958b80e5ced9e8af0e53d1b2db61ba981f13253cc411e53b242d06c6",
+              "token_ids_sha256": "3858635638083c2971d74d4d96b9f9fea54e6841dcc28bf1e8a8155081f7b80e"
+            },
+            {
+              "sample": 2,
+              "correct": false,
+              "tokens": 32768,
+              "finish_reason": "length",
+              "truncated": true,
+              "text_sha256": "bdd7b728d42e16d3fa8074edc0311d72a2570933ed22ba09a93bbdee999493a0",
+              "token_ids_sha256": "d61e61d3b99a061745456825f060a7448b2df88cadbcf83951c295a5c599f496"
+            },
+            {
+              "sample": 3,
+              "correct": false,
+              "tokens": 32768,
+              "finish_reason": "length",
+              "truncated": true,
+              "text_sha256": "8e3266058d419b324d4406a16298dd0770e57d5600cd81dfef8c223156e0ad21",
+              "token_ids_sha256": "62f708a4dfffe029099619e4ef466cf094de83ced857da2020c4a9dc28274102"
+            }
+          ]
+        }
+      ]
+    },
+    "p50c": {
+      "source_job_sha256": "a524ef94d6e0df8e1ff2024fa693ed13c40e31c34355a4414cde854931d91b60",
+      "summary": {
+        "pilot": true,
+        "arm": "p50c",
+        "problems": 2,
+        "generations": 8,
+        "accuracy": 0.75,
+        "token_limit_share": 0.125,
+        "tokens": 134717
+      },
+      "problems": [
+        {
+          "problem_index": 0,
+          "seed": 0,
+          "problem_id_sha256": "2c9808c3bcd0970601f9a97ec2bbd83440bd1e16ee03a00e1128cb661490f148",
+          "prompt_sha256": "4c5de1d49ae265f7a435105524d30abc0bcfa09408302f90366103e4e821a124",
+          "samples": [
+            {
+              "sample": 0,
+              "correct": true,
+              "tokens": 2316,
+              "finish_reason": "stop",
+              "truncated": false,
+              "text_sha256": "baaca607f1d070e4ab72bfdd907b393f47e8d911c560fb0f088ff87ead56c90d",
+              "token_ids_sha256": "afedc200c867eac22eff14f9c22488d44d867cf4a3cc4433df19958aaaa8410d"
+            },
+            {
+              "sample": 1,
+              "correct": true,
+              "tokens": 9240,
+              "finish_reason": "stop",
+              "truncated": false,
+              "text_sha256": "c980567f022fa9b541a32291f918e658435874bde5af458299a3e29b89158080",
+              "token_ids_sha256": "002555bbf9bfb6f4fc9d6609359e5c019c2b8c529f7cb259c72328ff460d9526"
+            },
+            {
+              "sample": 2,
+              "correct": true,
+              "tokens": 5655,
+              "finish_reason": "stop",
+              "truncated": false,
+              "text_sha256": "4a13bd1cc9316978fa86600dff510074a421fd2d565ddf36f4b5f0a63286d3de",
+              "token_ids_sha256": "168a0edc807cfc2dd0977cdd215f037aeddda7695e089a30ed42de4ddefc1e58"
+            },
+            {
+              "sample": 3,
+              "correct": true,
+              "tokens": 8365,
+              "finish_reason": "stop",
+              "truncated": false,
+              "text_sha256": "c965860e7491ad382253bc4716dd9f222d40d277b69249f710c27ee547453707",
+              "token_ids_sha256": "9dfa809d779250413fa0032c9772c42fdeaac24633a955e7123737beb5731a8d"
+            }
+          ]
+        },
+        {
+          "problem_index": 1,
+          "seed": 1,
+          "problem_id_sha256": "9d77eb0a690f53bd86384725bee03de3f614eb10b2cf4736b32aac518e7cfb07",
+          "prompt_sha256": "432e28f75151d9ff34d2ef6d7537250360bd62c112a53465740949d33df532d7",
+          "samples": [
+            {
+              "sample": 0,
+              "correct": false,
+              "tokens": 32768,
+              "finish_reason": "length",
+              "truncated": true,
+              "text_sha256": "5b5d942494babcc009719f86a0f98e591190eb1a821f60bbf8a0c1655f9759f0",
+              "token_ids_sha256": "a792f8c6af1882263bfb5aeb0571dba5eae39e7f71fda43db8ad5f7eb6011422"
+            },
+            {
+              "sample": 1,
+              "correct": true,
+              "tokens": 23049,
+              "finish_reason": "stop",
+              "truncated": false,
+              "text_sha256": "674424a12c37ca38067f7ad695f15f4e5798f91ecbeba63451ad51fcb587b637",
+              "token_ids_sha256": "c4d0a78f9734f3cc4dc33120d4a684020e58cef9fae2585348fb42d6ff9e9919"
+            },
+            {
+              "sample": 2,
+              "correct": false,
+              "tokens": 26400,
+              "finish_reason": "stop",
+              "truncated": false,
+              "text_sha256": "e087c05863ee7ccb1d6611c87a9382931ecde7d19d38d8915d55a7896dbf6c01",
+              "token_ids_sha256": "af310b0832f1703e38c62916085711e99a1922f12ce6b2cd652608ce7ea41944"
+            },
+            {
+              "sample": 3,
+              "correct": true,
+              "tokens": 26924,
+              "finish_reason": "stop",
+              "truncated": false,
+              "text_sha256": "0e81362812abefa564c154d1cac492033dca9c2c471f3f30e9ae2cb9ef2ca27c",
+              "token_ids_sha256": "187e95fa4b5b9c2dfbc0701026f612d65bc902a1b5c01045d08ef12913dcb1aa"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "omitted": [
+    "benchmark questions and answers",
+    "generated text and token IDs",
+    "filesystem paths",
+    "environment variables"
+  ],
+  "limits": "Unsigned derived records, two problems only. Hashes bind content without redistributing it; grades are not independently rechecked by this export."
+}

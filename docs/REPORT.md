@@ -1,5 +1,11 @@
 # Weight Space Lab: Implementation and Results
 
+This is a dated reconstruction/pilot snapshot. The subsequent independent research
+controller and local workflow validation are documented in the
+[research protocol](../experiments/threshold-repair/PROTOCOL.md) and
+[verification record](VERIFICATION.md). Manual controls remain distinct from
+external-agent research findings.
+
 **Date:** November 4, 2026
 
 **Status:** Results snapshot; full MATH-500 comparison pending

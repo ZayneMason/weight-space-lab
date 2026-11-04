@@ -164,6 +164,18 @@ def verify_reference(reference):
     for name, (_, expected) in ASSETS.items():
         if sha(reference / name) != expected:
             raise ValueError(f"Asset modified: {name}")
+    provenance = json.loads((reference / "sources.json").read_text(encoding="utf-8"))
+    if set(provenance) != {"revision", "files"} or provenance["revision"] != REVISION or len(provenance["files"]) != len(ASSETS):
+        raise ValueError("Reference provenance differs from the pinned asset inventory; fetch a new reference")
+    seen = set()
+    for row in provenance["files"]:
+        if set(row) != {"file", "source", "sha256", "bytes"} or row["file"] not in ASSETS or row["file"] in seen:
+            raise ValueError("Reference provenance has unexpected or duplicate fields/files")
+        seen.add(row["file"])
+        source, expected = ASSETS[row["file"]]
+        url = f"https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/{REVISION}/{source}"
+        if row["source"] != url or row["sha256"] != expected or row["bytes"] != (reference / row["file"]).stat().st_size:
+            raise ValueError("Reference provenance URL/hash/size differs from the pinned research assets")
     parsed, count = parse_edits((reference / "published-answer.md").read_text())
     published = load_weights(reference / "published.npz")
     for (name, _), weights in zip(TENSORS.values(), published):
@@ -193,6 +205,11 @@ def init_worker(checkpoint):
 
 
 def episode(task):
+    return run_episode(task, WEIGHTS)[0]
+
+
+def run_episode(task, arrays, capture_frames=0):
+    """Use the same seeded policy/environment loop for evaluation and preview."""
     from minatar import Environment
     index, seed, max_steps = task
     env = Environment("breakout", sticky_action_prob=0.1)
@@ -201,16 +218,59 @@ def episode(task):
     rng = np.random.default_rng(seed + index + 1_000_000)
     reward = 0
     terminal = False
+    frames = []
     for step in range(1, max_steps + 1):
-        logits = policy_logits(observation(env.state()), WEIGHTS)
+        logits = policy_logits(observation(env.state()), arrays)
         probabilities = np.exp(logits.astype(np.float64) - logits.max())
         probabilities /= probabilities.sum()
         action = int(rng.choice(6, p=probabilities))
         r, terminal = env.act(action)
         reward += r
+        if len(frames) < capture_frames:
+            state = env.state().astype(np.uint8)
+            bits = (state * np.array([1, 2, 4, 8], dtype=np.uint8)).sum(axis=2)
+            frames.append({"step": step, "cells": ''.join(format(int(x), 'x') for x in bits.flat),
+                           "action": action, "reward": int(r), "score": int(reward)})
         if terminal:
             break
-    return {"episode": index, "score": reward, "steps": step, "truncated": not terminal}
+    return {"episode": index, "score": reward, "steps": step, "truncated": not terminal}, frames
+
+
+def validate_report(report):
+    """Check stored statistics against complete, ordered episode evidence."""
+    if report.get("schema") != "weight-space-breakout-v1" or report.get("game") != "breakout":
+        raise ValueError("Expected a MinAtar Breakout evaluation report")
+    required = ("settings", "versions", "checkpoint_sha256", "evaluator_sha256")
+    for name in required:
+        if name not in report:
+            raise ValueError(f"Missing Breakout evidence field: {name}")
+    settings = report["settings"]
+    if not isinstance(settings, dict) or type(settings.get("max_steps")) is not int or settings["max_steps"] < 1:
+        raise ValueError("Breakout settings require a positive integer max_steps")
+    n = report.get("episodes")
+    rows = report.get("results", [])
+    if type(n) is not int or n < 2 or len(rows) != n:
+        raise ValueError("Incomplete episode records; rerun the evaluation in a new output directory")
+    if [r.get("episode") for r in rows] != list(range(n)):
+        raise ValueError("Episode IDs must be unique, complete, and ordered from zero")
+    limit = settings["max_steps"]
+    for row in rows:
+        if (type(row.get("score")) not in (int, float) or not math.isfinite(row["score"]) or row["score"] < 0
+                or type(row.get("steps")) is not int or not 1 <= row["steps"] <= limit
+                or type(row.get("truncated")) is not bool or (row["truncated"] and row["steps"] != limit)):
+            raise ValueError("Invalid score, step count, or truncation flag in episode evidence")
+    scores = np.array([r["score"] for r in rows], dtype=np.float64)
+    expected = {"mean": float(scores.mean()), "se": float(scores.std(ddof=1) / math.sqrt(n)),
+                "mean_length": float(np.mean([r["steps"] for r in rows]))}
+    expected["ci95_normal"] = [expected["mean"] - 1.96 * expected["se"], expected["mean"] + 1.96 * expected["se"]]
+    for name, value in expected.items():
+        try:
+            agrees = np.allclose(report.get(name), value, rtol=1e-12, atol=1e-12)
+        except (TypeError, ValueError):
+            agrees = False
+        if not agrees:
+            raise ValueError(f"Reported {name} disagrees with episode evidence")
+    return expected
 
 
 def evaluate(checkpoint, output, episodes=1000, seed=0, workers=4, max_steps=10000):
@@ -235,6 +295,7 @@ def evaluate(checkpoint, output, episodes=1000, seed=0, workers=4, max_steps=100
     scores = np.asarray([r["score"] for r in rows], dtype=np.float64)
     mean, se = float(scores.mean()), float(scores.std(ddof=1) / math.sqrt(episodes))
     result = {"schema": "weight-space-breakout-v1", "checkpoint_sha256": checkpoint_hash,
+              "scope": "full_protocol" if episodes == 1000 and max_steps == 10000 else "smoke_or_custom",
               "evaluator_sha256": evaluator_hash, "game": "breakout", "episodes": episodes,
               "mean": mean, "se": se, "ci95_normal": [mean - 1.96 * se, mean + 1.96 * se],
               "mean_length": float(np.mean([r["steps"] for r in rows])),
@@ -244,6 +305,7 @@ def evaluate(checkpoint, output, episodes=1000, seed=0, workers=4, max_steps=100
               "versions": {"numpy": np.__version__, "minatar": importlib.metadata.version("minatar"), "python": sys.version.split()[0]},
               "seconds": time.monotonic() - started, "results": rows,
               "fidelity": "Matches published architecture, mapping, sampling policy, stickiness and default episode/step counts. Original evaluation seeds/backend were not released; not bit-exact score replication."}
+    validate_report(result)
     save_json(output, result)
     return {k: v for k, v in result.items() if k != "results"}
 
@@ -338,6 +400,7 @@ def compare(reference, replay, candidate=None):
     verify_reference(reference)
     published = json.loads((reference / "published-scores.json").read_text())["breakout"]
     r = json.loads(replay.read_text())
+    validate_report(r)
     if r["schema"] != "weight-space-breakout-v1" or r["checkpoint_sha256"] != ASSETS["published.npz"][1]:
         raise ValueError("Replay is not an evaluation of the pinned published checkpoint")
     expected = published["hand"]
@@ -348,11 +411,17 @@ def compare(reference, replay, candidate=None):
               "published_ppo100_best": published["ppo100_s2"]["mean"],
               "published_ppo500_best": published["ppo500_s0"]["mean"],
               "ppo_status": "Published reference scores only; PPO checkpoints were not released or rerun."}
+    full = r["episodes"] == 1000 and r["settings"]["max_steps"] == 10000
+    result["scope"] = "full_protocol" if full else "smoke_or_custom"
+    if not full:
+        result.update(difference=None, difference_in_combined_standard_errors=None,
+                      interpretation="Smoke/custom run: the published full-evaluation scores are context only; episode/step counts differ.")
     if candidate:
         c = json.loads(Path(candidate).read_text())
+        validate_report(c)
         for field in ("schema", "game", "episodes", "settings", "versions", "evaluator_sha256"):
             if c[field] != r[field]:
-                raise ValueError(f"Candidate evaluation differs in {field}")
+                raise ValueError(f"Candidate evaluation differs in {field}. Re-evaluate both checkpoints with identical settings, versions, and evaluator code; previous files were preserved.")
         if len(c["results"]) != c["episodes"] or len(r["results"]) != r["episodes"]:
             raise ValueError("Incomplete episode records")
         if [x["episode"] for x in c["results"]] != [x["episode"] for x in r["results"]]:
