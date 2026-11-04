@@ -1,0 +1,52 @@
+{
+  "pilot": true,
+  "problems": 2,
+  "bootstrap_unit": "problem (all four samples together)",
+  "bootstrap_replicates": 10000,
+  "seed": 0,
+  "protocol_difference": "Local calls group four problems with per-problem seed=ordinal; released evaluator calls a whole shard with seed=0. Local inference versions and hardware are recorded separately.",
+  "metrics": {
+    "baseline_accuracy": {
+      "mean": 0.125,
+      "ci95": [
+        0.0,
+        0.25
+      ]
+    },
+    "baseline_truncation": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "p50c_accuracy": {
+      "mean": 0.75,
+      "ci95": [
+        0.5,
+        1.0
+      ]
+    },
+    "p50c_truncation": {
+      "mean": 0.125,
+      "ci95": [
+        0.0,
+        0.25
+      ]
+    },
+    "accuracy_delta": {
+      "mean": 0.625,
+      "ci95": [
+        0.5,
+        0.75
+      ]
+    },
+    "truncation_delta": {
+      "mean": -0.875,
+      "ci95": [
+        -1.0,
+        -0.75
+      ]
+    }
+  }
+}

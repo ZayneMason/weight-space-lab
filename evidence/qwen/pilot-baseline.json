@@ -1,0 +1,9 @@
+{
+  "pilot": true,
+  "arm": "baseline",
+  "problems": 2,
+  "generations": 8,
+  "accuracy": 0.125,
+  "token_limit_share": 1.0,
+  "tokens": 262144
+}

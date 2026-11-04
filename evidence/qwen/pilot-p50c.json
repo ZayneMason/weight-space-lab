@@ -1,0 +1,9 @@
+{
+  "pilot": true,
+  "arm": "p50c",
+  "problems": 2,
+  "generations": 8,
+  "accuracy": 0.75,
+  "token_limit_share": 0.125,
+  "tokens": 134717
+}

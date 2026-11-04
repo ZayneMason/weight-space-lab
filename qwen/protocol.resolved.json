@@ -1,0 +1,42 @@
+{
+  "status": "published_edit_reconstruction_and_pilot_verified_full_evaluation_pending",
+  "experiment": "Qwen published p50c edit, paired MATH-500 reproduction",
+  "research_repository": "https://github.com/RikiyaT/lm_understand-logs",
+  "research_revision": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "architecture": "Qwen3_5ForCausalLM",
+  "dtype": "bfloat16",
+  "edit_manifest": "exp8_math/runs/p50c/edit/manifest.json",
+  "edit_data": "exp8_math/runs/p50c/edit/edit.npz",
+  "expected_changed_entries": 130188,
+  "dataset": "HuggingFaceH4/MATH-500",
+  "dataset_revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+  "dataset_split": "test",
+  "problems_per_model": 500,
+  "samples_per_problem": 4,
+  "thinking": true,
+  "prompt_suffix": "Please reason step by step, and put your final answer within \\boxed{}.",
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "presence_penalty": 1.5,
+    "max_tokens": 32768,
+    "seed": 0
+  },
+  "grading": {
+    "answer": "last boxed answer",
+    "aggregation": "mean accuracy across all samples, not best-of-n",
+    "math-verify": "0.9.0",
+    "latex2sympy2_extended": "1.11.0",
+    "antlr4-python3-runtime": "4.13.2"
+  },
+  "published_reference_only": {
+    "baseline_accuracy_percent": 7.9,
+    "p50c_accuracy_percent": 48.1,
+    "baseline_token_limit_percent": 93.0,
+    "p50c_token_limit_percent": 33.1
+  },
+  "next_stage": "Fresh edits require a separate bounded practice-only editor harness; the original harness was not released."
+}

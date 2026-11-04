@@ -1,0 +1,46 @@
+{
+  "name": "dsh-weight-space-lab",
+  "version": "0.3.0",
+  "description": "Reproduce published weight-space programming and test fresh networks with auditable local evaluation.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./icon": "./assets/icon.svg",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale",
+    "assets",
+    "skills",
+    ".codex-plugin",
+    "README.md",
+    "README.zh.md",
+    "RESULTS.md",
+    "qwen",
+    "docs",
+    "evidence",
+    "LICENSE",
+    "NOTICE.md",
+    "licenses"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "packageManager": "pnpm@11.28.5",
+  "scripts": {
+    "test": "node --test tests/plugin.test.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZayneMason/weight-space-lab.git"
+  }
+}
