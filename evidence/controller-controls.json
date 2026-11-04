@@ -1,0 +1,51 @@
+{
+  "schema": "weight-space-manual-controller-controls-v1",
+  "origin": "Prewritten manual infrastructure validation; not an external-agent trial or an upstream reproduction.",
+  "actor": {
+    "actor_type": "manual-validation",
+    "editor_id": "prewritten-positive-and-negative-controls"
+  },
+  "budgets_used": {
+    "proposals": 2,
+    "feedback_calls": 2,
+    "example_exposures": 64
+  },
+  "practice_outcomes": [
+    {
+      "candidate_id": "c001",
+      "baseline_accuracy": 0.75,
+      "candidate_accuracy": 0.75,
+      "fixed": 8,
+      "regressed": 8
+    },
+    {
+      "candidate_id": "c002",
+      "baseline_accuracy": 0.75,
+      "candidate_accuracy": 1.0,
+      "fixed": 8,
+      "regressed": 0
+    }
+  ],
+  "final": {
+    "success_rule_met": true,
+    "baseline_accuracy": 0.75,
+    "candidate_accuracy": 1.0,
+    "fixed": 64,
+    "regressed": 0,
+    "repair_group_accuracy": 1.0
+  },
+  "source_ledger_sha256": "623f08b66ed7c2087b9f3214b2b2b15ee685299706269e4d9508ee4a5fdd6cf5",
+  "code_sha256": {
+    "lab.py": "5d12138d3659554bc60438090f048df29b487e76ae3442e3f0c0ea0b9f77bddf",
+    "weight_space_lab/controller.py": "2945ddb38997e0bb6ce1260690f6f3c12ebb67eca00d2ffabc8d12ecacd5616c",
+    "weight_space_lab/evidence.py": "869a61f5b6d980939f87f3051d0232878e9ea49e107c138eff1bb1a7bcb9609a",
+    "weight_space_lab/legacy.py": "a619b20b8d721052ee4cbb9df09edb75ff543c073b8e635a8f206fee26f0f1b9",
+    "weight_space_lab/reports.py": "9422dde2242a90b448327f427e0ff0e9c972ee230b1e6c9bab9525534a425b06",
+    "skills/weight-space-lab/scripts/weight_lab.py": "8f8498adab1934f2e9201cfc35e75ac610202bcbcfde1548533bd3fc4a931571"
+  },
+  "omitted": [
+    "private seeds and final examples",
+    "workstation paths",
+    "raw agent transcripts (no agent was invoked)"
+  ]
+}

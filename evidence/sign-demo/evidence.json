@@ -1,0 +1,261 @@
+{
+  "schema": "weight-space-evidence-v1",
+  "adapter": "sign-demo",
+  "scope": "prewritten demonstration; six predefined examples; no discovery claim",
+  "source_ledger_sha256": "6eee42e4f2e97f9f2b7b932f1033c77345d409bc298a3ef27b51ac7f984e3125",
+  "summary": {
+    "baseline_sha256": "e42ba390e9d8fe811ccbe4c63a25729c192ccf8cf9dc28f20032a910639fc27a",
+    "candidate_sha256": "866aa171a62b6df92215439c6a557368fbcf9721e05cadbb01ffacf2ed977771",
+    "split": "heldout",
+    "samples": 6,
+    "baseline_accuracy": 0.0,
+    "candidate_accuracy": 1.0,
+    "accuracy_delta": 1.0,
+    "fixed_ids": [
+      "sign-0",
+      "sign-1",
+      "sign-2",
+      "sign-3",
+      "sign-4",
+      "sign-5"
+    ],
+    "regressed_ids": [],
+    "interpretation": "Observed on this dataset only; not evidence of general capability gain.",
+    "changed_entries": 2,
+    "total_entries": 4,
+    "changed_fraction": 0.5
+  },
+  "code_sha256": {
+    "lab.py": "5d12138d3659554bc60438090f048df29b487e76ae3442e3f0c0ea0b9f77bddf",
+    "weight_space_lab/__init__.py": "2477db0c31103a9069bdc5608eca60590e312e8deffd3de075a155962ac7b639",
+    "weight_space_lab/controller.py": "2945ddb38997e0bb6ce1260690f6f3c12ebb67eca00d2ffabc8d12ecacd5616c",
+    "weight_space_lab/evidence.py": "869a61f5b6d980939f87f3051d0232878e9ea49e107c138eff1bb1a7bcb9609a",
+    "weight_space_lab/legacy.py": "a619b20b8d721052ee4cbb9df09edb75ff543c073b8e635a8f206fee26f0f1b9",
+    "weight_space_lab/reports.py": "9422dde2242a90b448327f427e0ff0e9c972ee230b1e6c9bab9525534a425b06",
+    "weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82",
+    "skills/weight-space-lab/scripts/weight_lab.py": "8f8498adab1934f2e9201cfc35e75ac610202bcbcfde1548533bd3fc4a931571"
+  },
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "safetensors": "0.8.0"
+  },
+  "artifact_sha256": {
+    "architecture.json": "cc855f7c4d73ff720f9a82c709a2e0f7a7292acf4574b7e4322c23fda4edd95b",
+    "baseline.json": "b31db07d00c079ac16fbcae822e6d9d4705f0db3031230800551ec9f3774ea6c",
+    "behavior.svg": "2f1ef8c50eaff874f3ce9810e23880443a325cecc3bbb0f78bd66e875a4c5daf",
+    "candidate/model.npz": "866aa171a62b6df92215439c6a557368fbcf9721e05cadbb01ffacf2ed977771",
+    "candidate/patch.json": "e9b3a5642e482cab56fdc8f576b48e9ef1fe600969bcd8ae402daa87b2505a66",
+    "candidate/receipt.json": "2d7f4a216ac4122385fed0744061782debf99c15088ff3fdeba60f638dc71bd6",
+    "candidate.json": "db13aef3ec65e68018d3bf36c2b46ad93216680a84a4410d658dbf42415d9942",
+    "code/lab.py": "5d12138d3659554bc60438090f048df29b487e76ae3442e3f0c0ea0b9f77bddf",
+    "code/LICENSE": "20d1d1590a2da75c223c5bf4ad2c64467be38b4200abe08b32743560fead65eb",
+    "code/NOTICE.md": "5b75109565cf1622b5cfa28d1a20c5a85cddad2d621bf8ada5e6f70945e3f7e6",
+    "code/skills/weight-space-lab/scripts/weight_lab.py": "8f8498adab1934f2e9201cfc35e75ac610202bcbcfde1548533bd3fc4a931571",
+    "code/weight_space_lab/__init__.py": "2477db0c31103a9069bdc5608eca60590e312e8deffd3de075a155962ac7b639",
+    "code/weight_space_lab/controller.py": "2945ddb38997e0bb6ce1260690f6f3c12ebb67eca00d2ffabc8d12ecacd5616c",
+    "code/weight_space_lab/evidence.py": "869a61f5b6d980939f87f3051d0232878e9ea49e107c138eff1bb1a7bcb9609a",
+    "code/weight_space_lab/legacy.py": "a619b20b8d721052ee4cbb9df09edb75ff543c073b8e635a8f206fee26f0f1b9",
+    "code/weight_space_lab/reports.py": "9422dde2242a90b448327f427e0ff0e9c972ee230b1e6c9bab9525534a425b06",
+    "code/weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82",
+    "comparison.json": "079f2362abffcd4522e8c0adb89ca0d7216147c8be3fe09a419b6a75f0cb47b2",
+    "edit.json": "e9b3a5642e482cab56fdc8f576b48e9ef1fe600969bcd8ae402daa87b2505a66",
+    "heldout.json": "bbe0de50d8a9f64857deda2c27651f669a522c7c952f2a7ce77b8aa242cf7d2f",
+    "inspection.json": "b9940250d2899eaece110440eee95ab04ae323406028b97a4c9de52adcc94112",
+    "original.npz": "e42ba390e9d8fe811ccbe4c63a25729c192ccf8cf9dc28f20032a910639fc27a",
+    "report.html": "18863bd4f9326ee2087f90b945c43f03d139c83c9b67214ab34b5ad4a38e93f0"
+  },
+  "records": {
+    "inspection.json": {
+      "sha256": "e42ba390e9d8fe811ccbe4c63a25729c192ccf8cf9dc28f20032a910639fc27a",
+      "parameters": 4,
+      "metadata": null,
+      "tensors": [
+        {
+          "name": "bias",
+          "shape": [
+            2
+          ],
+          "dtype": "float32",
+          "elements": 2,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "zero_fraction": 1.0
+        },
+        {
+          "name": "weight",
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "float32",
+          "elements": 2,
+          "min": -1.0,
+          "max": 1.0,
+          "mean": 0.0,
+          "zero_fraction": 0.0
+        }
+      ]
+    },
+    "edit.json": {
+      "base_sha256": "e42ba390e9d8fe811ccbe4c63a25729c192ccf8cf9dc28f20032a910639fc27a",
+      "reason": "Hand-authored demo: reverse inverted sign classifier logits.",
+      "operations": [
+        {
+          "op": "scale",
+          "tensor": "weight",
+          "indices": [
+            0,
+            1
+          ],
+          "values": [
+            -1,
+            -1
+          ]
+        }
+      ]
+    },
+    "candidate/receipt.json": {
+      "base_sha256": "e42ba390e9d8fe811ccbe4c63a25729c192ccf8cf9dc28f20032a910639fc27a",
+      "candidate_sha256": "866aa171a62b6df92215439c6a557368fbcf9721e05cadbb01ffacf2ed977771",
+      "changed": 2,
+      "total": 4,
+      "fraction": 0.5,
+      "changed_tensors": {
+        "weight": 2
+      },
+      "reason": "Hand-authored demo: reverse inverted sign classifier logits.",
+      "checkpoint": "model.npz",
+      "rollback": "Use the untouched source checkpoint."
+    },
+    "baseline.json": {
+      "schema": "weight-space-mlp-eval-v1",
+      "checkpoint_sha256": "e42ba390e9d8fe811ccbe4c63a25729c192ccf8cf9dc28f20032a910639fc27a",
+      "architecture_sha256": "cc855f7c4d73ff720f9a82c709a2e0f7a7292acf4574b7e4322c23fda4edd95b",
+      "dataset_sha256": "bbe0de50d8a9f64857deda2c27651f669a522c7c952f2a7ce77b8aa242cf7d2f",
+      "split": "heldout",
+      "settings": {
+        "dtype": "float64",
+        "decision": "argmax"
+      },
+      "samples": 6,
+      "accuracy": 0.0,
+      "examples": [
+        {
+          "id": "sign-0",
+          "label": 0,
+          "prediction": 1,
+          "correct": false
+        },
+        {
+          "id": "sign-1",
+          "label": 0,
+          "prediction": 1,
+          "correct": false
+        },
+        {
+          "id": "sign-2",
+          "label": 0,
+          "prediction": 1,
+          "correct": false
+        },
+        {
+          "id": "sign-3",
+          "label": 1,
+          "prediction": 0,
+          "correct": false
+        },
+        {
+          "id": "sign-4",
+          "label": 1,
+          "prediction": 0,
+          "correct": false
+        },
+        {
+          "id": "sign-5",
+          "label": 1,
+          "prediction": 0,
+          "correct": false
+        }
+      ]
+    },
+    "candidate.json": {
+      "schema": "weight-space-mlp-eval-v1",
+      "checkpoint_sha256": "866aa171a62b6df92215439c6a557368fbcf9721e05cadbb01ffacf2ed977771",
+      "architecture_sha256": "cc855f7c4d73ff720f9a82c709a2e0f7a7292acf4574b7e4322c23fda4edd95b",
+      "dataset_sha256": "bbe0de50d8a9f64857deda2c27651f669a522c7c952f2a7ce77b8aa242cf7d2f",
+      "split": "heldout",
+      "settings": {
+        "dtype": "float64",
+        "decision": "argmax"
+      },
+      "samples": 6,
+      "accuracy": 1.0,
+      "examples": [
+        {
+          "id": "sign-0",
+          "label": 0,
+          "prediction": 0,
+          "correct": true
+        },
+        {
+          "id": "sign-1",
+          "label": 0,
+          "prediction": 0,
+          "correct": true
+        },
+        {
+          "id": "sign-2",
+          "label": 0,
+          "prediction": 0,
+          "correct": true
+        },
+        {
+          "id": "sign-3",
+          "label": 1,
+          "prediction": 1,
+          "correct": true
+        },
+        {
+          "id": "sign-4",
+          "label": 1,
+          "prediction": 1,
+          "correct": true
+        },
+        {
+          "id": "sign-5",
+          "label": 1,
+          "prediction": 1,
+          "correct": true
+        }
+      ]
+    },
+    "comparison.json": {
+      "baseline_sha256": "e42ba390e9d8fe811ccbe4c63a25729c192ccf8cf9dc28f20032a910639fc27a",
+      "candidate_sha256": "866aa171a62b6df92215439c6a557368fbcf9721e05cadbb01ffacf2ed977771",
+      "split": "heldout",
+      "samples": 6,
+      "baseline_accuracy": 0.0,
+      "candidate_accuracy": 1.0,
+      "accuracy_delta": 1.0,
+      "fixed_ids": [
+        "sign-0",
+        "sign-1",
+        "sign-2",
+        "sign-3",
+        "sign-4",
+        "sign-5"
+      ],
+      "regressed_ids": [],
+      "interpretation": "Observed on this dataset only; not evidence of general capability gain."
+    }
+  },
+  "omitted": [
+    "checkpoint files",
+    "benchmark prompts",
+    "raw hosted-model transcripts",
+    "workstation paths"
+  ],
+  "integrity": "Unsigned metadata export; raw checkpoints are needed to independently repeat inference."
+}

@@ -23,5 +23,11 @@ jobs:
           python -m unittest discover -s qwen -p 'test_*.py' -v
       - name: Plugin tests
         run: node --test tests/plugin.test.mjs
+      - name: Offline workflows and controller controls
+        run: |
+          python lab.py demo runs/ci-demo
+          python lab.py verify runs/ci-demo
+          python scripts/check_controller.py runs/ci-controller
+          python lab.py experiment audit runs/ci-controller
       - name: Build distribution packages
         run: python scripts/package.py

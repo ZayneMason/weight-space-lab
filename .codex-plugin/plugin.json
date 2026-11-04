@@ -1,7 +1,7 @@
 {
   "name": "weight-space-lab",
-  "version": "0.3.0",
-  "description": "Reproduce a published weight-space programming experiment, test fresh networks, and inspect or edit local checkpoints.",
+  "version": "0.4.0",
+  "description": "Inspect, patch, and evaluate neural weights; run bounded independent experiments and explicitly attributed reproductions.",
   "skills": "./skills/",
   "requires_local_executor": true
 }

@@ -1,0 +1,43 @@
+{
+  "schema": "weight-space-experiment-v1",
+  "status": "complete",
+  "adapter": "evidence-export",
+  "scope": "prewritten demonstration; six predefined examples; no discovery claim",
+  "summary": {
+    "baseline_sha256": "e42ba390e9d8fe811ccbe4c63a25729c192ccf8cf9dc28f20032a910639fc27a",
+    "candidate_sha256": "866aa171a62b6df92215439c6a557368fbcf9721e05cadbb01ffacf2ed977771",
+    "split": "heldout",
+    "samples": 6,
+    "baseline_accuracy": 0.0,
+    "candidate_accuracy": 1.0,
+    "accuracy_delta": 1.0,
+    "fixed_ids": [
+      "sign-0",
+      "sign-1",
+      "sign-2",
+      "sign-3",
+      "sign-4",
+      "sign-5"
+    ],
+    "regressed_ids": [],
+    "interpretation": "Observed on this dataset only; not evidence of general capability gain.",
+    "changed_entries": 2,
+    "total_entries": 4,
+    "changed_fraction": 0.5
+  },
+  "versions": {
+    "python": "3.12.10"
+  },
+  "code_sha256": {
+    "weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82"
+  },
+  "artifacts": {
+    "code/LICENSE": "20d1d1590a2da75c223c5bf4ad2c64467be38b4200abe08b32743560fead65eb",
+    "code/licenses/upstream-research.txt": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+    "code/NOTICE.md": "5b75109565cf1622b5cfa28d1a20c5a85cddad2d621bf8ada5e6f70945e3f7e6",
+    "code/weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82",
+    "evidence.json": "e556a62fac18b2b5d42fc54d73788783580a67d3521c2703a8f123021f2274cc",
+    "README.md": "f3fb2e5299df7fbf1cc6fabae46250ff42a4fab7f1dffe6988eef4ecc6f5bc98"
+  },
+  "integrity": "Unsigned local hash ledger; not an independent attestation."
+}

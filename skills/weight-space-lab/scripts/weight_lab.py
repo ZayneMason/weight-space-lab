@@ -26,11 +26,11 @@ def digest(path):
 def read_json(path):
     def invalid(value):
         raise ValueError(f"Non-finite JSON constant: {value}")
-    return json.loads(Path(path).read_text(), parse_constant=invalid)
+    return json.loads(Path(path).read_text(encoding="utf-8"), parse_constant=invalid)
 
 
 def write_json(path, value):
-    with Path(path).open("x") as stream:
+    with Path(path).open("x", encoding="utf-8") as stream:
         json.dump(value, stream, indent=2, allow_nan=False)
         stream.write("\n")
 
@@ -264,7 +264,7 @@ def compare_reports(baseline_file, candidate_file):
     a, b = read_json(baseline_file), read_json(candidate_file)
     for field in ("schema", "architecture_sha256", "dataset_sha256", "split", "settings", "samples"):
         if a[field] != b[field]:
-            raise ValueError(f"Incompatible evaluation field: {field}")
+            raise ValueError(f"Incompatible evaluation field: {field}. Evaluate both checkpoints with the same architecture, dataset, split, and settings; no artifacts were changed.")
     if a["schema"] != "weight-space-mlp-eval-v1":
         raise ValueError("Unsupported evaluation schema")
     fixed, regressions, correct = [], [], [0, 0]
@@ -295,6 +295,12 @@ def compare_reports(baseline_file, candidate_file):
 def demo(output):
     output = Path(output)
     output.mkdir(parents=False, exist_ok=False)
+    return demo_files(output)
+
+
+def demo_files(output):
+    """Populate a newly owned empty directory; used by the shared workflow."""
+    output = Path(output)
     source = output / "original.npz"
     np.savez(source, weight=np.array([[1.], [-1.]], dtype=np.float32), bias=np.zeros(2, dtype=np.float32))
     architecture, dataset, patch = (output / f for f in ("architecture.json", "heldout.json", "edit.json"))

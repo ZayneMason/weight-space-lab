@@ -1,0 +1,30 @@
+{
+  "schema": "weight-space-experiment-v1",
+  "status": "complete",
+  "adapter": "evidence-export",
+  "scope": "smoke",
+  "summary": {
+    "episodes": 8,
+    "mean_score": 77.875,
+    "standard_error": 3.0905241118157103,
+    "truncated_episodes": 8,
+    "checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a"
+  },
+  "versions": {
+    "python": "3.12.10"
+  },
+  "code_sha256": {
+    "weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82"
+  },
+  "artifacts": {
+    "code/LICENSE": "20d1d1590a2da75c223c5bf4ad2c64467be38b4200abe08b32743560fead65eb",
+    "code/licenses/upstream-research.txt": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+    "code/NOTICE.md": "5b75109565cf1622b5cfa28d1a20c5a85cddad2d621bf8ada5e6f70945e3f7e6",
+    "code/weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82",
+    "evidence.json": "ff7fc7078d9cb382425e29e3a5164a2ae3a15c4b4d87174590ad30523894ea87",
+    "LICENSE": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+    "LICENSE-MinAtar": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "README.md": "f3fb2e5299df7fbf1cc6fabae46250ff42a4fab7f1dffe6988eef4ecc6f5bc98"
+  },
+  "integrity": "Unsigned local hash ledger; not an independent attestation."
+}

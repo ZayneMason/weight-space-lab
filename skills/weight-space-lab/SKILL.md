@@ -1,11 +1,17 @@
 ---
 name: weight-space-lab
-description: Reproduce the published MinAtar Breakout weight-space experiment, test a fresh tool-free network-writing attempt, or inspect and edit local neural-network weights without gradient training.
+description: Inspect, patch, and evaluate local neural weights; run bounded independent weight-editing experiments or clearly attributed Breakout and Qwen reproductions without gradient training.
 ---
 
 # Weight Space Lab
 
 Use the bundled Python CLI for deterministic checkpoint operations. The host agent supplies the hypothesis and interprets results; the CLI does not autonomously diagnose or improve models. It cannot access the host LLM's weights.
+
+## First experience and independent research
+
+The shared entry point is `../../lab.py` relative to this skill directory. `demo NEW_OUTPUT` runs an offline prewritten repair and creates an inspectable HTML report. `verify OUTPUT` checks artifact hashes and adapter evidence; `export-evidence OUTPUT NEW_DIRECTORY` exports metadata. The existing helper CLIs below remain compatible.
+
+For controlled independent studies, read `../../experiments/threshold-repair/PROTOCOL.md`. `experiment` commands meter proposal/feedback budgets, freeze a candidate, and gate one matched final evaluation. Manual control scripts are not agent discovery. The controller does not provide OS-level sandboxing; external editor isolation and transcript provenance remain operator responsibilities. Fresh hosted calls and GPU evaluations require explicit user scope and are never implicit in a demo or controller action.
 
 ## Reproduce research or try a fresh network
 
