@@ -23,6 +23,23 @@ ACTION = {"propose": "submit", "feedback": "feedback", "freeze": "freeze", "abst
 
 
 def _strict_json(text):
+    depth, quoted, escaped = 0, False, False
+    for char in text:
+        if quoted:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                quoted = False
+        elif char == '"':
+            quoted = True
+        elif char in "[{":
+            depth += 1
+            if depth > 64:
+                raise ValueError("JSON nesting exceeds 64 levels")
+        elif char in "]}":
+            depth -= 1
     def pairs(items):
         result = {}
         for key, value in items:
@@ -99,8 +116,8 @@ class Session:
             raise ValueError("max_requests must be 1..256")
         protocol = read_json(self.run / "protocol.json")
         metadata = _metadata(metadata, protocol)
-        if protocol["experiment"] != "bounded-threshold-repair-v1":
-            raise ValueError("This bridge supports bounded-threshold-repair-v1 only")
+        if protocol["experiment"] not in ("bounded-threshold-repair-v1", "bounded-mlp-edit-v1"):
+            raise ValueError("Unsupported bounded experiment protocol")
         self.lock = self.run / ".editor-session.lock"
         try:
             fd = os.open(self.lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
@@ -172,8 +189,9 @@ class Session:
                     "propose": {"patch"}, "feedback": {"candidate_id"}, "freeze": {"candidate_id"},
                     "abstain": {"reason"}}
         if method == "tensor":
-            if set(params) - {"name", "start", "count"} or params.get("name") not in ("weight", "bias"):
-                raise ValueError("Tensor requests allow weight or bias and bounded start/count only")
+            names = [r["name"] for r in helper("weight_lab").describe(self.run / "editor/original.npz")["tensors"]]
+            if set(params) - {"name", "start", "count"} or params.get("name") not in names:
+                raise ValueError("Tensor requests allow existing tensor names and bounded start/count only")
             if type(params.get("start", 0)) is not int or type(params.get("count", 64)) is not int:
                 raise ValueError("Tensor bounds must be integers")
         elif set(params) != expected[method]:

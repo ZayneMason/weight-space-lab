@@ -85,6 +85,33 @@ evaluates the frozen candidate. It invokes no model and establishes no external
 agent result. See [editor sessions](docs/EDITOR_SESSIONS.md) for the wire contract,
 private records, isolation requirements and external harness setup.
 
+## Model weight-editing benchmark
+
+Compare API editors on four small target-model tasks: threshold, slope, feature
+routing and hidden-layer repair. Every editor receives byte-matched checkpoints,
+practice sets and held-out draws, with identical tool and feedback upper limits.
+The scorecard records success, repair accuracy, regressions, tool errors, usage,
+failures and all predeclared trial slots. Scripted controls stay separate.
+
+```bash
+python lab.py benchmark create runs/editing-suite --config experiments/editing-benchmark/pilot.example.json
+python lab.py benchmark run runs/editing-suite
+python lab.py benchmark audit runs/editing-suite
+```
+
+The default run executes **offline controls only** and writes
+`runs/editing-suite/scorecard.html`. The example prepares Claude plus Fireworks-hosted
+DeepSeek, Kimi and MiniMax; those trials remain pending. Live API calls require
+separate authorization, provider keys and `--allow-paid-api`. Native API trials
+remain pending; small CLI integration pilots are recorded in the verification guide.
+See the [benchmark guide](docs/BENCHMARK.md) for task definitions,
+native provider adapters, accounting, estimated-spend limits and interpretation.
+
+For existing Claude/Codex CLI sign-ins, use
+[CLI editors and Fireworks key entry](docs/CLI_EDITORS.md). The CLI configuration
+and `--allow-cli` option keep account-allowance runs separate from paid API calls.
+The Windows key dialog provides a masked, session-only place to paste a Fireworks key.
+
 ## Existing checkpoint workflows
 
 All paths below are repository-relative. Install `requirements.txt` first, or use

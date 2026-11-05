@@ -162,7 +162,7 @@ def edit_tensor(tensor, operation):
         raise ValueError("Edit produced non-finite weights")
 
 
-def patch_checkpoint(source, patch_file, output, max_fraction=0.01, max_mib=512):
+def patch_checkpoint(source, patch_file, output, max_fraction=0.01, max_mib=512, *, allow_noop=False):
     if not math.isfinite(max_fraction) or not 0 < max_fraction <= 1:
         raise ValueError("max-fraction must be in (0, 1]")
     spec = read_json(patch_file)
@@ -181,7 +181,7 @@ def patch_checkpoint(source, patch_file, output, max_fraction=0.01, max_mib=512)
                for name, tensor in original.items()}
     changed = sum(changes.values())
     total = sum(t.size for t in original.values())
-    if not total or not changed:
+    if not total or (not changed and not allow_noop):
         raise ValueError("Patch changes no stored weights")
     fraction = changed / total
     if fraction > max_fraction:

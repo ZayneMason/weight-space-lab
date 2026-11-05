@@ -69,6 +69,30 @@ python lab.py editor audit runs/editor-transport-check scripted
 记录包含私密提示词，不能自动发布。通信格式、外部工具适配、隔离和审计说明见
 [编辑器交互指南](docs/EDITOR_SESSIONS.md)。
 
+## 模型权重编辑测试套件
+
+套件包含阈值、斜率、特征路由和 ReLU 隐层权重修复。各编辑器使用相同的原始
+检查点、练习样本和最终留出样本，并遵守相同的工具与反馈预算。结果记录成功率、
+修复、回归、工具错误、API 使用量，以及全部预先声明的试验（包括失败和待运行项）。
+
+```bash
+python lab.py benchmark create runs/editing-suite --config experiments/editing-benchmark/pilot.example.json
+python lab.py benchmark run runs/editing-suite
+python lab.py benchmark audit runs/editing-suite
+```
+
+默认仅运行**离线预编写控制组**，生成 `runs/editing-suite/scorecard.html`。
+示例配置包括 Claude 以及 Fireworks 上的 DeepSeek、Kimi 和 MiniMax；API 试验保持
+待运行；CLI 小规模验证及失败另见验证记录。原生 API 调用需另行授权、环境变量凭据以及
+`--allow-paid-api`。金额限制是预估用量保护，不是提供商账单的硬性上限；详见
+[测试套件指南](docs/BENCHMARK.md)。本套件测试小型 MLP 的单项编辑，不代表通用
+Transformer 权重编程能力。
+
+也可使用现有 Claude/Codex CLI 登录，见
+[CLI 编辑器及 Fireworks 密钥输入](docs/CLI_EDITORS.md)。`--allow-cli` 仅授权 CLI
+编辑器；付费 API 仍需单独启用。Windows 密钥窗口提供隐藏输入，仅传给新终端会话，
+不写入文件。CLI 与原生 API 工具调用分别标记，不直接混合排名。
+
 ## 已有模型适配器
 
 ```bash

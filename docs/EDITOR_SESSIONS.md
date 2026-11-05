@@ -6,8 +6,9 @@ requests, responses, failures and controller transitions. It invokes no model,
 opens no network listener and uses only installed CPU dependencies.
 
 **Status:** A prewritten control verifies the transport. No external-agent study
-has been executed. This interface currently supports only
-`bounded-threshold-repair-v1`, not arbitrary transformer editing.
+has been executed. This interface supports `bounded-threshold-repair-v1` and the
+four synthetic `bounded-mlp-edit-v1` tasks in the [benchmark](BENCHMARK.md).
+It does not evaluate arbitrary transformer edits.
 
 ## Try the complete transport locally
 
@@ -83,7 +84,7 @@ arbitrary commands are accepted in any method.
 | --- | --- | --- |
 | `describe` | `{}` | Question, editable entries, budgets, success rule and feedback policy; no control answer or final data. |
 | `inspect` | `{}` | Original checkpoint hash/tensor metadata and architecture. |
-| `tensor` | `name`, optional `start`, `count` | Bounded original `weight` or `bias` values. |
+| `tensor` | `name`, optional `start`, `count` | Bounded values from an existing original tensor, including benchmark hidden-layer tensors. |
 | `practice_inputs` | `{}` | Unlabeled practice inputs. |
 | `propose` | `patch` | Inline patch with `base_sha256`, `reason`, `operations`; consumes the global proposal allowance, including rejected patches. |
 | `feedback` | `candidate_id` | Metered practice evaluation, labels, predictions, fixes and regressions. |
@@ -92,7 +93,8 @@ arbitrary commands are accepted in any method.
 | `status` | `{}` | Phase, global quotas and cumulative usage. |
 
 The [CLI reference](../skills/weight-space-lab/references/cli.md) describes patch
-syntax; this experiment additionally restricts edits to `bias` index 1. An invalid
+syntax; the original experiment restricts edits to `bias` index 1, while each
+benchmark task declares its own permitted tensor/index in `describe`. An invalid
 tool envelope consumes a transport request; it does not count as a submitted
 patch. Invalid candidates reaching the controller consume proposal budget. Global
 feedback accounting remains exactly the [protocol](../experiments/threshold-repair/PROTOCOL.md)

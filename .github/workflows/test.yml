@@ -31,5 +31,8 @@ jobs:
           python lab.py experiment audit runs/ci-controller
           python scripts/check_editor_session.py runs/ci-editor
           python lab.py editor audit runs/ci-editor scripted
+          python lab.py benchmark create runs/ci-benchmark --config experiments/editing-benchmark/pilot.example.json
+          python lab.py benchmark run runs/ci-benchmark
+          python lab.py benchmark audit runs/ci-benchmark
       - name: Build distribution packages
         run: python scripts/package.py
