@@ -53,6 +53,22 @@ python scripts/check_controller.py runs/controller-check
 提供文件系统和计算隔离，保留模型身份及交互记录。详见
 [研究协议](experiments/threshold-repair/PROTOCOL.md)。
 
+### 编辑器交互记录
+
+JSONL 接口向外部管理的编辑器提供权重检查、内联补丁提交、练习反馈、候选冻结
+和放弃操作，并记录声明的模型配置、提示词及工具交互。重新连接不会重置全局
+预算；最终留出集评估始终由操作者单独执行。
+
+```bash
+python scripts/check_editor_session.py runs/editor-transport-check
+python lab.py editor audit runs/editor-transport-check scripted
+```
+
+以上命令使用**预先编写的控制补丁**验证真实标准输入/输出接口，并在编辑器退出
+后评估冻结候选。不调用模型，不代表外部代理研究结果。接口不提供操作系统隔离，
+记录包含私密提示词，不能自动发布。通信格式、外部工具适配、隔离和审计说明见
+[编辑器交互指南](docs/EDITOR_SESSIONS.md)。
+
 ## 已有模型适配器
 
 ```bash

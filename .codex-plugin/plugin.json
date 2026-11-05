@@ -1,6 +1,6 @@
 {
   "name": "weight-space-lab",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Inspect, patch, and evaluate neural weights; run bounded independent experiments and explicitly attributed reproductions.",
   "skills": "./skills/",
   "requires_local_executor": true

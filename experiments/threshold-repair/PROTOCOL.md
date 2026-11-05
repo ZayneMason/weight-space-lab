@@ -61,6 +61,12 @@ The operator must separately retain exact editor model/revision, prompt, setting
 tool restrictions, transcript and any allowance usage. Do not expose manual positive
 controls or this researcher protocol to a purported blind editor session.
 
+The [recorded JSONL editor bridge](../../docs/EDITOR_SESSIONS.md) supplies an
+allowlisted tool interface and retained prompt/configuration/tool records. It
+preserves global budgets across sessions and excludes final evaluation. External
+isolation, authenticated provider provenance and usage records remain operator
+responsibilities. The bundled stdio check is prewritten validation only.
+
 After an editor writes a patch file using the source hash and a reason:
 
 ```bash

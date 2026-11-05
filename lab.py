@@ -55,6 +55,16 @@ See docs/FIRST_EXPERIMENT.md and qwen/README.md for prerequisites and boundaries
     breakout.add_argument("--workers", type=int, default=2)
     breakout.add_argument("--reference", type=Path, help="Reuse an existing verified reference directory instead of downloading")
     breakout.add_argument("--preview-frames", type=int, default=200)
+    editor = sub.add_parser("editor", help="Recorded JSONL tool bridge; no model invocation or OS sandbox")
+    editor_actions = editor.add_subparsers(dest="action", required=True)
+    serve = editor_actions.add_parser("serve", help="Operator-side stdio bridge; final evaluation is unavailable to the editor")
+    serve.add_argument("run", type=Path)
+    serve.add_argument("session_id")
+    serve.add_argument("--metadata", type=Path, required=True)
+    serve.add_argument("--max-requests", type=int, default=32)
+    audit = editor_actions.add_parser("audit", help="Verify a session transcript and its controller anchors")
+    audit.add_argument("run", type=Path)
+    audit.add_argument("session_id")
     experiment = sub.add_parser("experiment", help="Bounded independent experiment: budgeted feedback, freezing, one-time final evaluation")
     actions = experiment.add_subparsers(dest="action", required=True)
     create = actions.add_parser("create", help="Prepare a narrow threshold-repair study; no agent or model allowance is invoked")
@@ -75,7 +85,15 @@ See docs/FIRST_EXPERIMENT.md and qwen/README.md for prerequisites and boundaries
     args = vars(parser.parse_args(argv))
     command = args.pop("command")
     try:
-        if command == "experiment":
+        if command == "editor":
+            from weight_space_lab import editor_session
+            action = args.pop("action")
+            if action == "serve":
+                from weight_space_lab.evidence import read_json
+                args["metadata"] = read_json(args["metadata"])
+                return editor_session.serve(**args, input_stream=sys.stdin.buffer, output_stream=sys.stdout)
+            result = editor_session.audit(**args)
+        elif command == "experiment":
             from weight_space_lab import controller
             action = args.pop("action")
             result = getattr(controller, action)(**args)
