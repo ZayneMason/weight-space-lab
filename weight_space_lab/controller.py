@@ -16,6 +16,17 @@ from .evidence import digest, new_directory, read_json, versions, write_json
 from .legacy import ROOT, helper
 
 
+class ControllerChangedError(RuntimeError):
+    """An editor's expected event prefix changed before its action acquired the lock."""
+
+
+def _require_anchor(state, expected):
+    if expected is not None:
+        actual = {"events": len(state["events"]), "head": state["events"][-1]["sha256"] if state["events"] else "0" * 64}
+        if expected != actual:
+            raise ControllerChangedError("Controller changed outside the recorded editor request")
+
+
 def _save(run, state):
     temp = run / "state.json.tmp"
     with temp.open("w", encoding="utf-8") as stream:
@@ -205,7 +216,7 @@ def create(output, feedback_budget=3, proposal_budget=5, actor_type="manual-vali
     inputs = [run / "protocol.json", source, run / "editor/architecture.json", run / "editor/practice-inputs.json",
               run / "private/practice.json", run / "private/heldout.json", run / "private/split-seeds.json", run / "private/baseline-practice.json"]
     code = [ROOT / "lab.py", *[ROOT / "weight_space_lab" / name for name in
-            ("controller.py", "evidence.py", "legacy.py", "reports.py")], ROOT / "skills/weight-space-lab/scripts/weight_lab.py"]
+            ("controller.py", "editor_session.py", "evidence.py", "legacy.py", "reports.py")], ROOT / "skills/weight-space-lab/scripts/weight_lab.py"]
     state = {"schema": "weight-space-controller-v1", "phase": "editing", "budgets": protocol["budgets"],
              "proposals_used": 0, "feedback_used": 0, "feedback_example_exposures": 0,
              "input_sha256": {p.relative_to(run).as_posix(): digest(p) for p in inputs},
@@ -226,10 +237,11 @@ def status(output):
     return {k: state[k] for k in ("phase", "budgets", "proposals_used", "feedback_used", "feedback_example_exposures", "pending_action")}
 
 
-def submit(output, patch_file):
+def submit(output, patch_file, *, _expected_anchor=None):
     run = Path(output)
     with _lock(run):
         state = _load(run)
+        _require_anchor(state, _expected_anchor)
         if state["phase"] != "editing":
             _deny(run, state, "submit", "Proposals are allowed only during editing; the frozen candidate cannot change")
         if state["proposals_used"] >= state["budgets"]["proposals"]:
@@ -263,10 +275,11 @@ def submit(output, patch_file):
             raise
 
 
-def feedback(output, candidate_id):
+def feedback(output, candidate_id, *, _expected_anchor=None):
     run = Path(output)
     with _lock(run):
         state = _load(run)
+        _require_anchor(state, _expected_anchor)
         if state["phase"] != "editing":
             _deny(run, state, "feedback", "Feedback is allowed only during editing; no selection feedback is available after freezing")
         if state["feedback_used"] >= state["budgets"]["feedback_calls"]:
@@ -303,10 +316,11 @@ def feedback(output, candidate_id):
             raise
 
 
-def freeze(output, candidate_id):
+def freeze(output, candidate_id, *, _expected_anchor=None):
     run = Path(output)
     with _lock(run):
         state = _load(run)
+        _require_anchor(state, _expected_anchor)
         if state["phase"] != "editing":
             raise ValueError("Candidate freezing is allowed only during editing")
         candidate = state["candidates"].get(candidate_id)
@@ -347,11 +361,11 @@ def finalize(output):
         if state["phase"] != "frozen":
             _deny(run, state, "final", "Final evaluation is one-time; previous results and failures are preserved")
         final = run / "final"
-        final.mkdir()
         state["phase"] = "final_running"
         state["pending_action"] = {"action": "final"}
         _event(run, state, "final", "started", candidate_id=state["frozen"]["candidate_id"])
         try:
+            final.mkdir()
             lab = helper("weight_lab")
             for arm, checkpoint in (("baseline", run / "editor/original.npz"), ("candidate", run / "frozen/model.npz")):
                 write_json(final / f"{arm}.json", lab.evaluate_mlp(checkpoint, run / "editor/architecture.json", run / "private/heldout.json"))
@@ -375,8 +389,10 @@ def finalize(output):
             _event(run, state, "final", "complete", result_sha256=digest(final / "result.json"))
             return result
         except BaseException as exc:
-            write_json(final / "failure.json", {"error": str(exc), "final_attempt_consumed": True})
+            failure = final / "failure.json" if final.is_dir() else run / "final-failure.json"
+            write_json(failure, {"error": str(exc), "final_attempt_consumed": True})
             state.setdefault("result_artifacts", {}).update(_hashes(run, final))
+            state["result_artifacts"][failure.relative_to(run).as_posix()] = digest(failure)
             state["phase"] = "final_failed"
             state["pending_action"] = None
             _event(run, state, "final", "failed", error=str(exc))
@@ -391,13 +407,14 @@ def audit(output):
             "integrity": "Unsigned local hash chain and file checks. Not an OS sandbox or independent attestation."}
 
 
-def close(output, reason):
+def close(output, reason, *, _expected_anchor=None):
     """Record no-selection/early-stop outcomes without exposing final data."""
     run = Path(output)
     if not reason.strip():
         raise ValueError("A nonempty reason is required to close an experiment without selection")
     with _lock(run):
         state = _load(run)
+        _require_anchor(state, _expected_anchor)
         if state["phase"] != "editing":
             _deny(run, state, "close", "Only an editing run can close without final evaluation")
         exhausted = (state["proposals_used"] >= state["budgets"]["proposals"] or

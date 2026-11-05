@@ -142,6 +142,26 @@ class ControllerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             controller.finalize(self.run)
 
+    def test_final_directory_failure_consumes_one_time_attempt(self):
+        candidate = controller.submit(self.run, self.proposal())["candidate_id"]
+        controller.feedback(self.run, candidate)
+        controller.freeze(self.run, candidate)
+        original = Path.mkdir
+        def fail_final(path, *args, **kwargs):
+            if path == self.run / "final":
+                raise OSError("directory unavailable")
+            return original(path, *args, **kwargs)
+        with patch.object(Path, "mkdir", fail_final):
+            with self.assertRaisesRegex(OSError, "directory unavailable"):
+                controller.finalize(self.run)
+        state = json.loads((self.run / "state.json").read_text())
+        self.assertEqual(state["phase"], "final_failed")
+        self.assertEqual([e["outcome"] for e in state["events"] if e["action"] == "final"], ["started", "failed"])
+        self.assertTrue((self.run / "final-failure.json").exists())
+        self.assertTrue(controller.audit(self.run)["verified"])
+        with self.assertRaisesRegex(ValueError, "one-time"):
+            controller.finalize(self.run)
+
     def test_proposal_directory_failure_still_consumes_reserved_budget(self):
         original = Path.mkdir
         def fail_candidate(path, *args, **kwargs):

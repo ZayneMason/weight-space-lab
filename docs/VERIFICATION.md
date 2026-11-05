@@ -4,7 +4,7 @@ Date: November 4, 2026. This records executed checks, not an external-agent stud
 
 ## Automated checks
 
-- Main Python suite: **45 tests run, 44 passed, 1 skipped**. The skipped legacy
+- Main Python suite: **61 tests run, 60 passed, 1 skipped**. The skipped legacy
   integration test expects a specific absent reference directory. The new bounded
   Breakout workflow separately fetched/verified the actual pinned reference.
 - Qwen unit suite: **8 passed**; no GPU inference was launched by those tests.
@@ -12,6 +12,11 @@ Date: November 4, 2026. This records executed checks, not an external-agent stud
 - Controller checks cover consumed rejection/failure budgets, counter-reset
   detection, locks, freeze ordering/failure records, forbidden post-freeze edits,
   one-time final evaluation, frozen-file tampering, no-selection closure, and regression-based failure.
+- Editor-session checks cover global budgets across reconnects, pinned editor
+  configuration, malformed/oversized input, duplicate IDs, concurrent writers,
+  transcript tampering, forbidden paths/finalization and out-of-session mutation.
+  Fault injection covers an operator feedback/freeze between request reads, plus
+  a change after dispatch begins but before its mutation lock is acquired.
 - Workflow checks cover offline behavior, collisions, source preservation,
   recomputed counts/predictions, incompatible comparisons, integrity failures,
   metadata export, and failure retention.
@@ -54,6 +59,30 @@ This is a known feasible manual control, **not agent discovery or an external-ag
 trial**. `evidence/controller-controls.json` contains the sanitized measurements;
 private final examples and seeds are excluded. An external-agent study remains
 unexecuted and needs operator-supplied isolation and editor provenance.
+
+## Recorded stdio editor control
+
+```bash
+python scripts/check_editor_session.py runs/editor-transport-reviewed
+python lab.py editor audit runs/editor-transport-reviewed scripted
+python lab.py experiment audit runs/editor-transport-reviewed
+```
+
+The actual CLI subprocess completed five requests: describe, inspect, propose,
+feedback and freeze. The declared editor was a prewritten manual control, with
+provider `none`. One proposal and one feedback call (32 example exposures) were
+consumed. The editor exited at `frozen` before the operator's separate final
+evaluation. Both audits passed after finalization. The baseline scored 75% and
+the known feasible control scored 100%, with zero regressions on the final set.
+These measurements validate transport and accounting, not external-agent capability.
+
+A fault-injection test also confirms that failure to create `final/` is journaled
+as a terminal `final_failed` attempt, with a retained fallback failure file and no
+retry opportunity. Version 0.5.0 ZIP/tar packages built with the bridge, guide and
+check script; runtime session directories are excluded.
+The ZIP was extracted into a fresh directory, its required editor files and lack
+of runtime/model artifacts were checked, and its stdio control passed independently
+of the repository source paths.
 
 ## Bounded MinAtar Breakout run
 

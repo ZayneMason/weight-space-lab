@@ -68,6 +68,23 @@ executed. Read the [protocol](experiments/threshold-repair/PROTOCOL.md) before r
 one. The controller is a logical gate, **not an OS sandbox**; an operator must
 supply editor isolation and retain the editor's model identity and transcript.
 
+### Recorded editor interface
+
+A bounded JSONL interface now exposes inspection, inline patch proposals, practice
+feedback, freezing and abstention to an externally managed editor. It records the
+declared editor configuration, prompts and tool transcript; budgets survive
+reconnects. Final evaluation remains a separate operator action.
+
+```bash
+python scripts/check_editor_session.py runs/editor-transport-check
+python lab.py editor audit runs/editor-transport-check scripted
+```
+
+This exercises the real stdio CLI with a **prewritten control**, then separately
+evaluates the frozen candidate. It invokes no model and establishes no external
+agent result. See [editor sessions](docs/EDITOR_SESSIONS.md) for the wire contract,
+private records, isolation requirements and external harness setup.
+
 ## Existing checkpoint workflows
 
 All paths below are repository-relative. Install `requirements.txt` first, or use
