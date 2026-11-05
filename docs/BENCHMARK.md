@@ -6,7 +6,9 @@ neural classifiers. The **editor** is Claude or a model served by Fireworks. The
 
 **Status:** Task generators, matched campaigns, provider adapters and scorecards
 are implemented. Local controls and provider-shaped fixtures validate the runner.
-No paid calls or actual cross-model results are included. The example model IDs
+Native API model trials remain unrun. Limited CLI integration pilots, including
+failures, are recorded in [verification](VERIFICATION.md) and use a separate
+[CLI transport](CLI_EDITORS.md); they do not establish a model ranking. The example model IDs
 and prices were checked on November 4, 2026; availability and pricing can change.
 
 ## Run the suite without spending

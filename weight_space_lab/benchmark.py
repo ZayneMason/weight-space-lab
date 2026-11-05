@@ -9,7 +9,7 @@ import secrets
 import shutil
 import time
 
-from . import benchmark_providers as providers, benchmark_tasks as tasks, controller, editor_session
+from . import benchmark_cli, benchmark_providers as providers, benchmark_tasks as tasks, controller, editor_session
 from .evidence import digest, new_directory, read_json, write_json
 from .legacy import ROOT, helper
 
@@ -39,19 +39,22 @@ def _validate(config):
         if set(model) != {"id", "provider", "model", "model_revision", "settings", "input_usd_per_million", "output_usd_per_million"}:
             raise ValueError("Model configuration fields differ from the documented schema")
         if (not re.fullmatch(r"[a-z][a-z0-9-]{0,47}", model["id"]) or model["id"].startswith("control-") or model["id"] in ids
-                or model["provider"] not in providers.KEYS):
-            raise ValueError("Editor IDs must be unique safe names; provider must be anthropic or fireworks")
+                or model["provider"] not in {*providers.KEYS, *benchmark_cli.PROVIDERS}):
+            raise ValueError("Editor IDs must be unique safe names; choose a supported API or CLI provider")
         ids.add(model["id"])
         for key in ("model", "model_revision"):
             if not isinstance(model[key], str) or not 1 <= len(model[key]) <= 256:
                 raise ValueError("Retain bounded model and revision identifiers")
-        if not isinstance(model["settings"], dict) or set(model["settings"]) - {"temperature"}:
-            raise ValueError("Only an optional temperature is currently forwarded; omit it for models that reject sampling settings")
+        cli = model["provider"] in benchmark_cli.PROVIDERS
+        if not isinstance(model["settings"], dict) or set(model["settings"]) - ({"reasoning_effort"} if cli else {"temperature"}):
+            raise ValueError("API settings allow temperature; CLI settings allow reasoning_effort")
+        if "reasoning_effort" in model["settings"] and model["settings"]["reasoning_effort"] not in ("low", "medium", "high"):
+            raise ValueError("CLI effort must be low, medium or high")
         if "temperature" in model["settings"] and (type(model["settings"]["temperature"]) not in (int, float) or not 0 <= model["settings"]["temperature"] <= 2):
             raise ValueError("Temperature must be finite in [0,2]")
         for key in ("input_usd_per_million", "output_usd_per_million"):
-            if type(model[key]) not in (int, float) or not math.isfinite(model[key]) or model[key] <= 0:
-                raise ValueError("Declare finite positive token prices for cost estimates")
+            if type(model[key]) not in (int, float) or not math.isfinite(model[key]) or (model[key] != 0 if cli else model[key] <= 0):
+                raise ValueError("API token prices must be finite and positive; CLI price placeholders must be zero")
     if (not isinstance(families, list) or not families or len(families) != len(set(families)) or set(families) - set(tasks.FAMILIES)
             or not isinstance(seeds, list) or not 1 <= len(seeds) <= 25 or any(type(s) is not int or not 0 <= s <= 2**32-1 for s in seeds)
             or len(seeds) != len(set(seeds))):
@@ -60,12 +63,17 @@ def _validate(config):
               "api_calls": (1, 32), "max_output_tokens": (1, 16384), "max_request_bytes": (4096, 1048576)}
     if set(budgets) != set(bounds) or any(type(budgets[k]) is not int or not lo <= budgets[k] <= hi for k, (lo, hi) in bounds.items()):
         raise ValueError("Invalid per-trial budgets")
-    calls = len(models) * len(families) * len(seeds) * budgets["api_calls"]
-    if (set(limits) != {"max_total_api_calls", "max_total_output_tokens", "max_estimated_usd"}
+    cases = len(families) * len(seeds)
+    calls = sum(m["provider"] in providers.KEYS for m in models) * cases * budgets["api_calls"]
+    cli_calls = sum(m["provider"] in benchmark_cli.PROVIDERS for m in models) * cases * budgets["api_calls"]
+    if (set(limits) - {"max_total_api_calls", "max_total_output_tokens", "max_estimated_usd", "max_total_cli_calls"}
+            or not {"max_total_api_calls", "max_total_output_tokens", "max_estimated_usd"} <= set(limits)
             or type(limits["max_total_api_calls"]) is not int or limits["max_total_api_calls"] < calls
             or type(limits["max_total_output_tokens"]) is not int or limits["max_total_output_tokens"] < calls * budgets["max_output_tokens"]
             or type(limits["max_estimated_usd"]) not in (int, float) or not math.isfinite(limits["max_estimated_usd"]) or limits["max_estimated_usd"] <= 0):
         raise ValueError("Global call/output limits must cover every predeclared trial; declare a positive estimated-dollar guard")
+    if cli_calls and (type(limits.get("max_total_cli_calls")) is not int or limits["max_total_cli_calls"] < cli_calls):
+        raise ValueError("Declare max_total_cli_calls covering all CLI decision rounds")
     json.dumps(config, allow_nan=False)
 
 
@@ -107,7 +115,8 @@ def create(output, config):
                     raise ValueError("Task instances are not byte-matched across editors")
                 expected = matched
                 trials.append({"id": name, "editor_id": editor["id"], "provider": editor["provider"], "case_id": case["id"],
-                    "family": family, "path": "trials/" + name, "matched": matched})
+                    "family": family, "path": "trials/" + name, "matched": matched,
+                    "transport": benchmark_cli.TRANSPORT if editor["provider"] in benchmark_cli.PROVIDERS else "scripted" if editor["provider"] == "control" else "native-api-tools"})
     write_json(root / "private/cases.json", cases)
     initial = {p.relative_to(root).as_posix(): digest(p) for p in root.rglob("*") if p.is_file() and p.name != "state.json"}
     plan = {"schema": "weight-space-benchmark-v1", "config": config, "trials": trials, "cases": [c["id"] for c in cases],
@@ -115,7 +124,8 @@ def create(output, config):
             "interpretation": "Original synthetic one-entry MLP editing; no claim about general transformer editing. Controls are scripted and privileged where labeled."}
     write_json(root / "plan.json", plan)
     controller._save(root, {"schema": "weight-space-benchmark-state-v1", "phase": "prepared", "plan_sha256": digest(root / "plan.json"),
-        "api_calls_reserved": 0, "output_tokens_reserved": 0, "estimated_usd_reserved": 0., "usage": {"input_tokens": 0, "output_tokens": 0, "estimated_usd": 0.}, "outcomes": {}})
+        "api_calls_reserved": 0, "cli_calls_reserved": 0, "cli_usage": {"input_tokens": 0, "output_tokens": 0},
+        "output_tokens_reserved": 0, "estimated_usd_reserved": 0., "usage": {"input_tokens": 0, "output_tokens": 0, "estimated_usd": 0.}, "outcomes": {}})
     return summarize(root)
 
 
@@ -130,21 +140,27 @@ def _load(root, runtime=False):
         for name, expected in plan["code_sha256"].items():
             if digest(ROOT / name) != expected:
                 raise ValueError("Benchmark implementation changed; use retained code or create a new campaign")
-    reservations, usage = [], {"input_tokens": 0, "output_tokens": 0, "estimated_usd": 0.}
+    reservations, cli_reservations, usage = [], [], {"input_tokens": 0, "output_tokens": 0, "estimated_usd": 0.}
+    cli_usage = {"input_tokens": 0, "output_tokens": 0}
     for trial in plan["trials"]:
         if (root / trial["path"] / "sessions/benchmark/header.json").exists() and trial["id"] not in state["outcomes"]:
             raise ValueError("Missing outcome for a started benchmark session")
         for reservation_file in sorted((root / trial["path"] / "provider-calls").glob("*/reservation.json")):
-            reservations.append(read_json(reservation_file))
+            reservation = read_json(reservation_file)
+            cli = reservation.get("transport") == "cli"
+            (cli_reservations if cli else reservations).append(reservation)
             usage_file = reservation_file.parent / "usage.json"
             if usage_file.exists():
                 logged = read_json(usage_file)
-                for key in usage:
-                    usage[key] += logged[key]
+                totals = cli_usage if cli else usage
+                for key in totals:
+                    totals[key] += logged[key]
     if (state["api_calls_reserved"] != len(reservations)
             or state["output_tokens_reserved"] != sum(r["max_output_tokens"] for r in reservations)
             or not math.isclose(state["estimated_usd_reserved"], sum(r["estimated_usd_reserved"] for r in reservations), abs_tol=1e-10)
-            or any(not math.isclose(state["usage"][key], usage[key], abs_tol=1e-10) for key in usage)):
+            or any(not math.isclose(state["usage"][key], usage[key], abs_tol=1e-10) for key in usage)
+            or state.get("cli_calls_reserved", 0) != len(cli_reservations)
+            or state.get("cli_usage", {"input_tokens": 0, "output_tokens": 0}) != cli_usage):
         raise ValueError("API budget counters disagree with retained request/usage records; preserve interrupted reservations")
     return plan, state
 
@@ -153,7 +169,7 @@ def _metadata(model):
     control = model["provider"] == "control"
     return {"editor_id": model["id"], "provider": model["provider"], "model": model["model"],
         "model_revision": "prewritten-control-v1" if control else model["model_revision"],
-        "settings": {"tool_policy": "bounded-native-tools-v1", **model.get("settings", {})},
+        "settings": {"tool_policy": benchmark_cli.TRANSPORT if model["provider"] in benchmark_cli.PROVIDERS else "bounded-native-tools-v1", **model.get("settings", {})},
         "prompt": "Prewritten infrastructure control, not external-agent discovery. " + PROMPT if control else PROMPT}
 
 
@@ -192,11 +208,19 @@ def _control(session, name, case):
 
 
 def _reserve(root, state, config, model, body):
-    if state.get("billing_anomaly"):
+    cli = model["provider"] in benchmark_cli.PROVIDERS
+    if state.get("billing_anomaly") and not cli:
         raise ValueError("Provider usage anomaly stopped further paid calls; preserve the campaign")
     encoded = json.dumps(body, allow_nan=False).encode()
     if len(encoded) > config["budgets"]["max_request_bytes"]:
         raise ValueError("API request exceeds its declared byte limit")
+    if cli:
+        if state.get("cli_calls_reserved", 0) >= config["limits"]["max_total_cli_calls"]:
+            raise ValueError("Global CLI decision-round budget exhausted")
+        state["cli_calls_reserved"] = state.get("cli_calls_reserved", 0) + 1
+        controller._save(root, state)
+        return {"transport": "cli", "cli_call": state["cli_calls_reserved"], "max_output_tokens": None,
+                "estimated_usd_reserved": None, "billing": "Existing CLI sign-in; account allowance/cost not metered by the API-dollar guard"}
     tokens = config["budgets"]["max_output_tokens"]
     # Deliberately conservative estimate, not an invoice guarantee or tokenizer.
     estimated = ((2*len(encoded) + 4096) * model["input_usd_per_million"] + tokens * model["output_usd_per_million"]) / 1e6
@@ -223,7 +247,8 @@ def _api(root, state, config, model, session):
         write_json(folder / "request.json", body)  # No headers or credentials.
         started = time.monotonic()
         try:
-            raw = providers.send(model["provider"], body)
+            cli = model["provider"] in benchmark_cli.PROVIDERS
+            raw = benchmark_cli.send(model, body, folder) if cli else providers.send(model["provider"], body)
             write_json(folder / "response.json", raw)
             usage = providers.usage(model["provider"], raw)
             cost = (usage["input_tokens"] * model["input_usd_per_million"] + usage["output_tokens"] * model["output_usd_per_million"]) / 1e6
@@ -231,14 +256,18 @@ def _api(root, state, config, model, session):
             truncated = raw.get("stop_reason") == "max_tokens" or (isinstance(choices, list) and
                 any(isinstance(c, dict) and c.get("finish_reason") == "length" for c in choices))
             write_json(folder / "usage.json", {**usage, "estimated_usd": cost, "seconds": time.monotonic()-started, "provider_model": raw.get("model"), "output_truncated": truncated})
+            totals = state["cli_usage"] if cli else state["usage"]
             for key in ("input_tokens", "output_tokens"):
-                state["usage"][key] += usage[key]
-            state["usage"]["estimated_usd"] += cost
+                totals[key] += usage[key]
+            if not cli:
+                state["usage"]["estimated_usd"] += cost
             controller._save(root, state)
-            if usage["output_tokens"] > reservation["max_output_tokens"] or cost > reservation["estimated_usd_reserved"]:
+            if not cli and (usage["output_tokens"] > reservation["max_output_tokens"] or cost > reservation["estimated_usd_reserved"]):
                 state["billing_anomaly"] = True
                 controller._save(root, state)
                 raise ValueError("Provider usage exceeded the reservation estimate; stop and investigate")
+            if raw.get("cli_decode_error"):
+                raise ValueError("CLI output violated the structured-action or native-tool policy; usage retained")
             calls, _ = conversation.receive(raw)
         except Exception as exc:
             write_json(folder / "failure.json", {"exception": type(exc).__name__, "note": "No retry. Reservation remains consumed; provider billing may be unknown."})
@@ -283,16 +312,23 @@ def _trial(root, state, config, model, trial, case):
             "exception": failure, "end_reason": session.reason}
 
 
-def run(output, allow_paid_api=False):
+def run(output, allow_paid_api=False, allow_cli=False):
     root = Path(output)
     with controller._lock(root):
         plan, state = _load(root, runtime=True)
-        if state["phase"] not in ("prepared", "controls_complete"):
+        if state["phase"] not in ("prepared", "controls_complete", "editors_pending"):
             raise ValueError("Campaign already ran or was interrupted; preserve it and create a separately declared campaign")
         if allow_paid_api:
             for model in plan["config"]["models"]:
+                if model["provider"] in benchmark_cli.PROVIDERS:
+                    continue
                 if not os.environ.get(providers.KEYS[model["provider"]]):
                     raise ValueError("Missing " + providers.KEYS[model["provider"]])
+        if allow_cli:
+            versions = {m["provider"]: benchmark_cli.preflight(m["provider"]) for m in plan["config"]["models"] if m["provider"] in benchmark_cli.PROVIDERS}
+            if state.get("cli_versions", versions) != versions:
+                raise ValueError("CLI versions changed; preserve the campaign and create a new one")
+            state["cli_versions"] = versions
         models = {m["id"]: m for m in plan["config"]["models"]}
         models.update({"control-" + name: {"id": "control-" + name, "provider": "control", "model": name} for name in CONTROLS})
         cases = {c["id"]: c for c in read_json(root / "private/cases.json")}
@@ -300,7 +336,8 @@ def run(output, allow_paid_api=False):
         controller._save(root, state)
         try:
             for trial in plan["trials"]:
-                if trial["id"] in state["outcomes"] or (trial["provider"] != "control" and not allow_paid_api):
+                enabled = trial["provider"] == "control" or (allow_cli if trial["provider"] in benchmark_cli.PROVIDERS else allow_paid_api)
+                if trial["id"] in state["outcomes"] or not enabled:
                     continue
                 state["outcomes"][trial["id"]] = {"status": "started"}
                 controller._save(root, state)
@@ -311,7 +348,7 @@ def run(output, allow_paid_api=False):
                 outcome["artifacts"] = _artifacts(root / trial["path"])
                 state["outcomes"][trial["id"]] = outcome
                 controller._save(root, state)
-            state["phase"] = "complete" if allow_paid_api else "controls_complete"
+            state["phase"] = ("complete" if all(t["id"] in state["outcomes"] for t in plan["trials"]) else "editors_pending") if (allow_paid_api or allow_cli) else "controls_complete"
             controller._save(root, state)
         except BaseException:
             state["phase"] = "interrupted"
@@ -333,6 +370,7 @@ def summarize(output):
         result = read_json(path / "final/result.json") if outcome["status"] == "completed" else None
         status = controller.status(path)
         row = {k: trial[k] for k in ("id", "editor_id", "provider", "case_id", "family")}
+        row["transport"] = trial.get("transport", "cli-json-actions-v1" if trial["provider"] in benchmark_cli.PROVIDERS else "scripted" if trial["provider"] == "control" else "native-api-tools")
         row.update(status=outcome["status"], success=bool(result and result["success_rule_met"]),
             end_reason=outcome.get("end_reason"), exception=outcome.get("exception"),
             candidate_accuracy=result["comparison"]["candidate_accuracy"] if result else None,
@@ -340,8 +378,12 @@ def summarize(output):
             fixed=len(result["comparison"]["fixed_ids"]) if result else None, regressed=len(result["comparison"]["regressed_ids"]) if result else None,
             proposals=status["proposals_used"], feedback_calls=status["feedback_used"])
         logged_usage = [read_json(p) for p in (path / "provider-calls").glob("*/usage.json")]
-        row["api_calls"] = len(list((path / "provider-calls").glob("*/reservation.json")))
+        reserved = [read_json(p) for p in (path / "provider-calls").glob("*/reservation.json")]
+        row["api_calls"] = sum(r.get("transport") != "cli" for r in reserved)
+        row["cli_calls"] = sum(r.get("transport") == "cli" for r in reserved)
         row["known_usage"] = {key: sum(u[key] for u in logged_usage) for key in ("input_tokens", "output_tokens", "estimated_usd", "seconds")}
+        if trial["provider"] in benchmark_cli.PROVIDERS:
+            row["known_usage"]["estimated_usd"] = None
         row["output_truncations"] = sum(u["output_truncated"] for u in logged_usage)
         if (path / "sessions/benchmark/summary.json").exists():
             row["tool_requests"] = read_json(path / "sessions/benchmark/summary.json")["requests"]
@@ -352,7 +394,8 @@ def summarize(output):
         group = [r for r in rows if r["editor_id"] == editor_id]
         measured = [r for r in group if r["candidate_accuracy"] is not None]
         finished = sum(r["status"] not in ("pending", "started") for r in group)
-        return {"editor_id": editor_id, "planned": len(group), "finished": finished,
+        cli = group[0]["provider"] in benchmark_cli.PROVIDERS
+        return {"editor_id": editor_id, "transport": group[0]["transport"], "planned": len(group), "finished": finished,
                 "ranking_eligible": all(r["status"] in ("completed", "no_selection") for r in group),
                 "successes": sum(r["success"] for r in group), "success_rate_over_planned": sum(r["success"] for r in group)/len(group) if finished == len(group) else None,
                 "mean_accuracy_completed_only": sum(r["candidate_accuracy"] for r in measured)/len(measured) if measured else None,
@@ -364,14 +407,15 @@ def summarize(output):
                 "feedback_calls": sum(r["feedback_calls"] for r in group), "tool_requests": sum(r.get("tool_requests", 0) for r in group),
                 "tool_errors": sum(r.get("tool_errors", 0) for r in group),
                 "api_calls": sum(r["api_calls"] for r in group),
+                "cli_calls": sum(r["cli_calls"] for r in group),
                 "output_truncations": sum(r["output_truncations"] for r in group),
-                "known_usage": {key: sum(r["known_usage"][key] for r in group) for key in ("input_tokens", "output_tokens", "estimated_usd", "seconds")},
+                "known_usage": {key: (None if key == "estimated_usd" and cli else sum(r["known_usage"][key] for r in group)) for key in ("input_tokens", "output_tokens", "estimated_usd", "seconds")},
                 "statuses": {s: sum(r["status"] == s for r in group) for s in sorted({r["status"] for r in group})}}
     external = [aggregate(m["id"]) for m in plan["config"]["models"]]
     paired = []
     for i, a in enumerate(external):
         for b in external[i+1:]:
-            comparable = a["ranking_eligible"] and b["ranking_eligible"]
+            comparable = a["ranking_eligible"] and b["ranking_eligible"] and a["transport"] == b["transport"]
             pairs = [(next(r for r in rows if r["editor_id"] == a["editor_id"] and r["case_id"] == case),
                       next(r for r in rows if r["editor_id"] == b["editor_id"] and r["case_id"] == case)) for case in plan["cases"]]
             paired.append({"a": a["editor_id"], "b": b["editor_id"], "comparable": comparable,
@@ -384,6 +428,7 @@ def summarize(output):
             "controls": [aggregate("control-" + name) for name in CONTROLS], "trials": rows,
             "external_comparison_complete": all(g["finished"] == g["planned"] for g in external),
             **{k: state[k] for k in ("api_calls_reserved", "output_tokens_reserved", "estimated_usd_reserved", "usage")},
+            "cli_calls_reserved": state.get("cli_calls_reserved", 0), "cli_usage": state.get("cli_usage", {"input_tokens": 0, "output_tokens": 0}),
             "limits": "Synthetic tasks only. Pending/error/abstention trials remain in the planned denominator. Completed-only accuracy is secondary. Controls are not API model results. Dollar estimates are not invoices or provider billing guarantees."}
 
 
@@ -413,17 +458,17 @@ def report(output):
     from .reports import page
     body = '<p class="eyebrow">WEIGHT SPACE LAB · SYNTHETIC EDITING SUITE</p><h1>Weight-editing scorecard</h1>'
     body += '<p>Matched task instances and held-out draws; one frozen candidate per trial. Scripted controls are separate from API editors.</p>'
-    for label, groups in (("API editors", summary["models"]), ("Scripted controls", summary["controls"])):
+    for label, groups in (("Model editors", summary["models"]), ("Scripted controls", summary["controls"])):
         body += '<h2>' + label + '</h2><table><tr><th>Editor</th><th>Finished / planned</th><th>Success / planned</th><th>Accuracy (completed only)</th><th>Tool errors / requests</th><th>Feedback calls</th></tr>'
         for group in groups:
             accuracy = '—' if group["mean_accuracy_completed_only"] is None else f'{group["mean_accuracy_completed_only"]:.1%}'
             success = f'{group["successes"]}/{group["planned"]}' if group["finished"] else 'Pending'
-            body += f'<tr><td>{escape(group["editor_id"])}</td><td>{group["finished"]}/{group["planned"]}</td><td>{success}</td><td>{accuracy}</td><td>{group["tool_errors"]}/{group["tool_requests"]}</td><td>{group["feedback_calls"]}</td></tr>'
+            body += f'<tr><td>{escape(group["editor_id"])}<br><small>{escape(group["transport"])}</small></td><td>{group["finished"]}/{group["planned"]}</td><td>{success}</td><td>{accuracy}</td><td>{group["tool_errors"]}/{group["tool_requests"]}</td><td>{group["feedback_calls"]}</td></tr>'
         body += '</table>'
     body += '<p>Pending or transport-error groups are not eligible for ranking. Rates over planned trials are withheld until all trial slots finish. No significance claim is made from this small synthetic suite.</p>'
     body += '<h2>Paired success counts</h2><pre>' + escape(json.dumps(summary["paired_comparisons"], indent=2)) + '</pre>'
     body += '<h2>Every planned trial</h2><pre>' + escape(json.dumps(summary["trials"], indent=2)) + '</pre>'
-    body += '<h2>Usage and interpretation</h2><pre>' + escape(json.dumps({k: summary[k] for k in ("usage", "api_calls_reserved", "output_tokens_reserved", "estimated_usd_reserved", "limits")}, indent=2)) + '</pre>'
+    body += '<h2>Usage and interpretation</h2><pre>' + escape(json.dumps({k: summary[k] for k in ("usage", "api_calls_reserved", "cli_calls_reserved", "cli_usage", "output_tokens_reserved", "estimated_usd_reserved", "limits")}, indent=2)) + '</pre>'
     (root / "scorecard.html").write_text(page("Weight Space Lab — editing benchmark", body), encoding="utf-8")
     # Regenerable derived output, unlike immutable experiment records.
     (root / "scorecard.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + '\n', encoding="utf-8")

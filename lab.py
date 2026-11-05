@@ -63,6 +63,7 @@ See docs/FIRST_EXPERIMENT.md and qwen/README.md for prerequisites and boundaries
     run_benchmark = benchmark_actions.add_parser("run", help="Run scripted controls; paid API editors run only with --allow-paid-api")
     run_benchmark.add_argument("output", type=Path)
     run_benchmark.add_argument("--allow-paid-api", action="store_true", help="Explicitly permit paid Claude/Fireworks requests under the recorded budgets")
+    run_benchmark.add_argument("--allow-cli", action="store_true", help="Explicitly permit Claude/Codex CLI rounds using existing sign-ins and account allowance")
     for name in ("summary", "audit", "report"):
         benchmark_action = benchmark_actions.add_parser(name)
         benchmark_action.add_argument("output", type=Path)

@@ -11,6 +11,7 @@ files = [root / name for name in ("package.json", "README.md", "README.zh.md", "
 for name in (".codex-plugin", "skills", "locale", "assets", "qwen", "docs", "evidence", "licenses", "weight_space_lab", "experiments"):
     files += [p for p in (root / name).rglob("*") if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"]
 files += [root / "index.js", root / "cordis.patch.yml", root / "scripts/check_controller.py", root / "scripts/check_editor_session.py", root / "scripts/check_benchmark.py", root / "scripts/sanitize_qwen_pilot.py"]
+files += [root / "scripts/fireworks_key.py"]
 files = sorted(set(files))
 output = root / "dist"
 output.mkdir(exist_ok=True)

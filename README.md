@@ -102,9 +102,15 @@ python lab.py benchmark audit runs/editing-suite
 The default run executes **offline controls only** and writes
 `runs/editing-suite/scorecard.html`. The example prepares Claude plus Fireworks-hosted
 DeepSeek, Kimi and MiniMax; those trials remain pending. Live API calls require
-separate authorization, provider keys and `--allow-paid-api`. No paid model results
-are included. See the [benchmark guide](docs/BENCHMARK.md) for task definitions,
+separate authorization, provider keys and `--allow-paid-api`. Native API trials
+remain pending; small CLI integration pilots are recorded in the verification guide.
+See the [benchmark guide](docs/BENCHMARK.md) for task definitions,
 native provider adapters, accounting, estimated-spend limits and interpretation.
+
+For existing Claude/Codex CLI sign-ins, use
+[CLI editors and Fireworks key entry](docs/CLI_EDITORS.md). The CLI configuration
+and `--allow-cli` option keep account-allowance runs separate from paid API calls.
+The Windows key dialog provides a masked, session-only place to paste a Fireworks key.
 
 ## Existing checkpoint workflows
 

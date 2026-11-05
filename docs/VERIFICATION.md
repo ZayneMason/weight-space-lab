@@ -1,10 +1,11 @@
 # Local verification record
 
-Date: November 4, 2026. This records executed checks, not an external-agent study.
+Date: November 4, 2026. This records implementation checks and explicitly labeled
+small CLI pilots; it is not a completed multi-model benchmark study.
 
 ## Automated checks
 
-- Main Python suite: **75 tests run, 74 passed, 1 skipped**. The skipped legacy
+- Main Python suite: **87 tests run, 86 passed, 1 skipped**. The skipped legacy
   integration test expects a specific absent reference directory. The new bounded
   Breakout workflow separately fetched/verified the actual pinned reference.
 - Qwen unit suite: **8 passed**; no GPU inference was launched by those tests.
@@ -24,6 +25,9 @@ Date: November 4, 2026. This records executed checks, not an external-agent stud
   independent practice/final draws, complete trial denominators, no-op controls,
   missing-key refusal, counters/artifact tampering, native provider-shaped loops,
   retained usage on malformed calls, bounded nesting, and billing-anomaly blocking.
+- CLI fixtures cover secret-environment allowlisting, structured actions, usage
+  retention on malformed/truncated output, real fake-child capture, timeout and
+  cancellation cleanup, separate opt-ins/counters, and session-only key transfer.
 
 Main CPU checks used Python 3.12.10, NumPy 2.5.4, SafeTensors 0.8.0 and MinAtar
 1.0.15 on Windows. Qwen unit checks used the existing isolated Linux environment.
@@ -115,10 +119,52 @@ malformed; reservations remain consumed without retries, and a usage anomaly
 blocks subsequent paid calls. Both protocol and standards review findings were
 resolved before publication.
 
-Version 0.6.0 ZIP and tar packages contained the same 79 files, including the
+Version 0.6.0 ZIP and tar packages contained the same 83 files, including the
 benchmark modules/configuration/guide/calibration script and excluding runtime
 records and model files. A fresh ZIP extraction ran a hidden-layer control campaign
 and audit successfully with zero API calls.
+
+## CLI integration and limited live pilots
+
+Installed clients were Claude Code **2.1.285** and Codex CLI **0.164.0**. Both
+returned valid inspection actions in live format checks using existing CLI
+sign-ins. Claude's initial expired OAuth failure is retained separately; the live
+checks continued after the user completed normal sign-in. No Fireworks or direct
+paid API adapter calls occurred. CLI activity consumed account allowance.
+
+The current structured interface is `cli-structured-actions-v2`. A fresh matched
+threshold case (task seed 47; shared private final draw) was evaluated for both
+CLIs under the same outer budgets, with low effort requested:
+
+| Editor | Outcome | Final accuracy | Repair accuracy | Regressions | CLI rounds |
+| --- | --- | --- | --- | --- | --- |
+| Claude CLI (`sonnet` alias) | Structured-output execution failure before selection | Unmeasured | Unmeasured | Unmeasured | 2 |
+| Codex CLI (`gpt-6.1-sol`) | Frozen and evaluated; success rule failed | 255/256 (99.61%) | 100% | 1 | 6 |
+
+Claude returned four valid inspection/status actions before its next CLI response
+failed with `error_max_structured_output_retries`. This is a recorded harness/client
+execution failure, not evidence that Claude cannot edit weights. Its known usage
+was 3,728 input and 109 output tokens. Codex used 10 tool requests, including one
+tool error, and one feedback call; known usage was 95,532 input and 420 output
+tokens. Codex's repair gain did not satisfy the zero-regression criterion.
+The campaign audit passed; paired ranking was withheld because one trial failed
+before evaluation. The report is local under `runs/cli-structured-pilot/`.
+
+Earlier integration attempts used a different JSON-in-string interface and remain
+under `runs/codex-cli-pilot/` and `runs/cli-paired-pilot/`. Codex's earlier final
+accuracies were 253/256 with 3 regressions (seed 11) and 250/256 with 6 regressions
+(seed 23), both failing the same strict success rule. Claude's seed-23 attempt
+stopped with a structured-output failure before feedback or final evaluation.
+These attempts are retained, labeled v1, and are not pooled with the v2 pilot or
+used to claim a general model ranking. No failed slot was overwritten or rerun
+in place.
+
+The Python/Tk key dialog was confirmed open and responsive by window title only.
+Its masked field was not read by the assistant. An offline fake-child test confirmed
+that the key goes through a new terminal's environment, not arguments or a file,
+without changing the parent environment. The initial PowerShell helper was blocked
+by the machine's unsigned-script policy and was replaced; no execution policy was
+changed.
 
 ## Bounded MinAtar Breakout run
 
@@ -150,5 +196,6 @@ Published research attribution and asset licenses are retained.
   `file:` URL navigation under its security policy. No workaround was used. Static
   structure, links, script syntax, and the separately rendered SVG were checked.
 
-No fresh hosted-editor call, new GPU benchmark, or active-profile plugin installation
-was performed for this change. The prior GPU experiment is separate.
+The CLI pilots above used hosted clients through existing sign-ins. No Fireworks
+API call, new GPU benchmark, or active-profile plugin installation was performed
+for this change. The prior GPU experiment is separate.

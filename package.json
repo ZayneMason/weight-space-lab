@@ -33,6 +33,7 @@
     "scripts/check_controller.py",
     "scripts/check_editor_session.py",
     "scripts/check_benchmark.py",
+    "scripts/fireworks_key.py",
     "scripts/sanitize_qwen_pilot.py"
   ],
   "dsh": {
