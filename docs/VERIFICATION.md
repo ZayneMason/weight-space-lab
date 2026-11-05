@@ -4,7 +4,7 @@ Date: November 4, 2026. This records executed checks, not an external-agent stud
 
 ## Automated checks
 
-- Main Python suite: **61 tests run, 60 passed, 1 skipped**. The skipped legacy
+- Main Python suite: **75 tests run, 74 passed, 1 skipped**. The skipped legacy
   integration test expects a specific absent reference directory. The new bounded
   Breakout workflow separately fetched/verified the actual pinned reference.
 - Qwen unit suite: **8 passed**; no GPU inference was launched by those tests.
@@ -20,6 +20,10 @@ Date: November 4, 2026. This records executed checks, not an external-agent stud
 - Workflow checks cover offline behavior, collisions, source preservation,
   recomputed counts/predictions, incompatible comparisons, integrity failures,
   metadata export, and failure retention.
+- Benchmark checks cover four feasible task families, byte-matched editor cases,
+  independent practice/final draws, complete trial denominators, no-op controls,
+  missing-key refusal, counters/artifact tampering, native provider-shaped loops,
+  retained usage on malformed calls, bounded nesting, and billing-anomaly blocking.
 
 Main CPU checks used Python 3.12.10, NumPy 2.5.4, SafeTensors 0.8.0 and MinAtar
 1.0.15 on Windows. Qwen unit checks used the existing isolated Linux environment.
@@ -83,6 +87,38 @@ check script; runtime session directories are excluded.
 The ZIP was extracted into a fresh directory, its required editor files and lack
 of runtime/model artifacts were checked, and its stdio control passed independently
 of the repository source paths.
+
+## Synthetic editing benchmark calibration
+
+```bash
+python scripts/check_benchmark.py runs/benchmark-validation
+python lab.py benchmark audit runs/benchmark-validation
+```
+
+Four task families × three task seeds produced 12 cases. Every case supplied
+identical input/model/data bytes to each editor/control. The 36 scripted trials
+completed: privileged feasible control **12/12** successes, unchanged control
+**0/12** with 50% candidate accuracy, and independently seeded random search
+**1/12** successes in this retained draw. The random result is one calibration,
+not an estimate of model capability or a universal random-search bound.
+
+The campaign audit checked all **84 predeclared slots**: 36 controls plus 48 API
+editor slots. All API slots remain pending, global reserved API calls/output tokens
+are zero, and no paid/provider requests were sent. The offline HTML/JSON scorecards
+keep those pending slots distinct from measured failures.
+
+Provider-shaped fixtures separately exercised both Claude and Fireworks tool
+envelopes and the complete freeze-before-final loop using patched local transports.
+They do not establish real endpoint compatibility, account/model availability or
+editor capability. Usage fields stay counted even when native tool envelopes are
+malformed; reservations remain consumed without retries, and a usage anomaly
+blocks subsequent paid calls. Both protocol and standards review findings were
+resolved before publication.
+
+Version 0.6.0 ZIP and tar packages contained the same 79 files, including the
+benchmark modules/configuration/guide/calibration script and excluding runtime
+records and model files. A fresh ZIP extraction ran a hidden-layer control campaign
+and audit successfully with zero API calls.
 
 ## Bounded MinAtar Breakout run
 

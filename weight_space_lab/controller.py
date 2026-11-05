@@ -170,7 +170,7 @@ def _dataset(seed, per_group, prefix):
         for name, low, high, label in groups for i, x in enumerate(rng.uniform(low, high, per_group))]}
 
 
-def create(output, feedback_budget=3, proposal_budget=5, actor_type="manual-validation", editor_id="unassigned"):
+def create(output, feedback_budget=3, proposal_budget=5, actor_type="manual-validation", editor_id="unassigned", *, _task=None):
     import numpy as np
     if not 1 <= feedback_budget <= 20 or not 1 <= proposal_budget <= 50:
         raise ValueError("Feedback calls must be 1..20 and proposals 1..50")
@@ -182,14 +182,15 @@ def create(output, feedback_budget=3, proposal_budget=5, actor_type="manual-vali
     for name in ("editor", "private", "proposals", "feedback"):
         (run / name).mkdir()
     source = run / "editor/original.npz"
-    np.savez(source, weight=np.array([[-1.], [1.]], dtype=np.float32), bias=np.array([0., -.6], dtype=np.float32))
-    architecture = {"layers": [{"weight": "weight", "bias": "bias", "activation": "linear"}]}
+    arrays = _task["arrays"] if _task else {"weight": np.array([[-1.], [1.]], dtype=np.float32), "bias": np.array([0., -.6], dtype=np.float32)}
+    np.savez(source, **arrays)
+    architecture = _task["architecture"] if _task else {"layers": [{"weight": "weight", "bias": "bias", "activation": "linear"}]}
     write_json(run / "editor/architecture.json", architecture)
-    practice = _dataset(20261104, 8, "practice")
-    heldout_seed = secrets.randbits(64)
+    practice = _task["practice"] if _task else _dataset(20261104, 8, "practice")
+    heldout_seed = _task["heldout_seed"] if _task else secrets.randbits(64)
     write_json(run / "private/practice.json", practice)
-    write_json(run / "private/heldout.json", _dataset(heldout_seed, 64, "final"))
-    write_json(run / "private/split-seeds.json", {"practice": 20261104, "heldout": heldout_seed})
+    write_json(run / "private/heldout.json", _task["heldout"] if _task else _dataset(heldout_seed, 64, "final"))
+    write_json(run / "private/split-seeds.json", {"practice": _task["seed"] if _task else 20261104, "heldout": heldout_seed})
     write_json(run / "editor/practice-inputs.json", {"examples": [{"id": r["id"], "x": r["x"]} for r in practice["examples"]]})
     protocol = {"experiment": "bounded-threshold-repair-v1", "origin": "Independent toolkit experiment; not an upstream reproduction",
         "question": "Can an external editor repair a shifted threshold under a one-entry bias-edit budget while preserving protected-region predictions?",
@@ -205,18 +206,23 @@ def create(output, feedback_budget=3, proposal_budget=5, actor_type="manual-vali
         "final_evaluation": "One evaluation of the frozen candidate and untouched baseline on identical held-out examples/settings.",
         "isolation": "Logical controller gate only. Private data are not exposed by the API, but filesystem/compute isolation must be supplied externally for an agent study.",
         "actor_type": actor_type, "editor_id": editor_id, "editor_identity_verification": "caller-declared"}
+    if _task:
+        protocol.update(experiment="bounded-mlp-edit-v1", task_family=_task["family"], practice_seed=_task["seed"],
+            question="Repair the supplied classifier using bounded practice feedback while preserving its initially correct predictions.",
+            editable={**_task["editable"], "max_fraction": 1 / sum(a.size for a in arrays.values()), "allow_noop": True},
+            positive_control="An operator-only feasible one-entry repair exists. Scripted controls are not model results.")
     write_json(run / "protocol.json", protocol)
     lab = helper("weight_lab")
     write_json(run / "private/baseline-practice.json", lab.evaluate_mlp(source, run / "editor/architecture.json", run / "private/practice.json"))
     (run / "editor/README.md").write_text(
         "# Editor workspace\n\nInspect original.npz and architecture.json. Submit a reasoned patch through the controller. "
-        "Only bias flat index 1 may change, at most one stored entry. Feedback calls consume the declared budget, including repeats. "
+        f"Only {protocol['editable']['tensor']} flat indices {protocol['editable']['flat_indices']} may change, at most one stored entry. Feedback calls consume the declared budget, including repeats. "
         "The practice inputs have no labels until metered feedback. Do not access private/, run out-of-band inference, train, or read the positive control during an agent trial. "
         "Operator-supplied isolation is required; these written rules are not a security sandbox.\n", encoding="utf-8")
     inputs = [run / "protocol.json", source, run / "editor/architecture.json", run / "editor/practice-inputs.json",
               run / "private/practice.json", run / "private/heldout.json", run / "private/split-seeds.json", run / "private/baseline-practice.json"]
     code = [ROOT / "lab.py", *[ROOT / "weight_space_lab" / name for name in
-            ("controller.py", "editor_session.py", "evidence.py", "legacy.py", "reports.py")], ROOT / "skills/weight-space-lab/scripts/weight_lab.py"]
+            ("controller.py", "editor_session.py", "benchmark_tasks.py", "evidence.py", "legacy.py", "reports.py")], ROOT / "skills/weight-space-lab/scripts/weight_lab.py"]
     state = {"schema": "weight-space-controller-v1", "phase": "editing", "budgets": protocol["budgets"],
              "proposals_used": 0, "feedback_used": 0, "feedback_example_exposures": 0,
              "input_sha256": {p.relative_to(run).as_posix(): digest(p) for p in inputs},
@@ -255,10 +261,12 @@ def submit(output, patch_file, *, _expected_anchor=None):
             folder.mkdir()
             shutil.copyfile(patch_file, folder / "proposed.json")
             patch = read_json(folder / "proposed.json")
+            editable = read_json(run / "protocol.json")["editable"]
             for op in patch["operations"]:
-                if op.get("tensor") != "bias" or op.get("indices") != [1] or op.get("op") not in ("set", "add", "scale"):
-                    raise ValueError("This protocol permits set/add/scale on bias flat index 1 only")
-            helper("weight_lab").patch_checkpoint(run / "editor/original.npz", folder / "proposed.json", folder / "candidate", max_fraction=.25)
+                if op.get("tensor") != editable["tensor"] or op.get("indices") != editable["flat_indices"] or op.get("op") not in ("set", "add", "scale"):
+                    raise ValueError("This protocol permits set/add/scale on its declared editable indices only")
+            helper("weight_lab").patch_checkpoint(run / "editor/original.npz", folder / "proposed.json", folder / "candidate",
+                max_fraction=editable.get("max_fraction", .25), allow_noop=editable.get("allow_noop", False))
             candidate = {"status": "accepted", "checkpoint": f"proposals/{candidate_id}/candidate/model.npz", "feedback_calls": 0}
             state["candidates"][candidate_id] = candidate
             candidate["artifacts"] = _hashes(run, folder)
@@ -374,7 +382,7 @@ def finalize(output):
             repair = [r for r in after["examples"] if r["id"].startswith("final-repair-")]
             protected_regressions = [x for x in comparison["regressed_ids"] if x.startswith("final-protected-")]
             repair_accuracy = sum(r["correct"] for r in repair) / len(repair)
-            result = {"experiment": "bounded-threshold-repair-v1", "comparison": comparison,
+            result = {"experiment": read_json(run / "protocol.json")["experiment"], "comparison": comparison,
                 "repair_group_accuracy": repair_accuracy, "protected_group_regressed_ids": protected_regressions,
                 "success_rule_met": repair_accuracy >= .9 and not comparison["regressed_ids"],
                 "candidate_id": state["frozen"]["candidate_id"], "budgets_used": {"proposals": state["proposals_used"], "feedback_calls": state["feedback_used"], "example_exposures": state["feedback_example_exposures"]},
@@ -419,7 +427,7 @@ def close(output, reason, *, _expected_anchor=None):
             _deny(run, state, "close", "Only an editing run can close without final evaluation")
         exhausted = (state["proposals_used"] >= state["budgets"]["proposals"] or
                      state["feedback_used"] >= state["budgets"]["feedback_calls"])
-        outcome = {"experiment": "bounded-threshold-repair-v1", "status": "no_candidate_selected",
+        outcome = {"experiment": read_json(run / "protocol.json")["experiment"], "status": "no_candidate_selected",
                    "reason": reason, "budget_exhausted": exhausted, "heldout_evaluated": False,
                    "budgets_used": {"proposals": state["proposals_used"], "feedback_calls": state["feedback_used"]},
                    "interpretation": "No final capability measurement exists. This records failure to select or an early stop, not impossibility of a feasible edit."}

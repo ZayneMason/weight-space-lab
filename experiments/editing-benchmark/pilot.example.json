@@ -1,0 +1,55 @@
+{
+  "models": [
+    {
+      "id": "claude-sonnet",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5-5",
+      "model_revision": "provider model ID; exact server revision unavailable",
+      "settings": {},
+      "input_usd_per_million": 2,
+      "output_usd_per_million": 10
+    },
+    {
+      "id": "deepseek-fireworks",
+      "provider": "fireworks",
+      "model": "accounts/fireworks/models/deepseek-v4p1-flash",
+      "model_revision": "serverless alias; exact server revision unavailable",
+      "settings": {},
+      "input_usd_per_million": 0.3,
+      "output_usd_per_million": 1.2
+    },
+    {
+      "id": "kimi-fireworks",
+      "provider": "fireworks",
+      "model": "accounts/fireworks/models/kimi-k3p1-pro",
+      "model_revision": "serverless alias; exact server revision unavailable",
+      "settings": {},
+      "input_usd_per_million": 2,
+      "output_usd_per_million": 10
+    },
+    {
+      "id": "minimax-fireworks",
+      "provider": "fireworks",
+      "model": "accounts/fireworks/models/minimax-m3p1-flash",
+      "model_revision": "serverless alias; exact server revision unavailable",
+      "settings": {},
+      "input_usd_per_million": 0.15,
+      "output_usd_per_million": 0.6
+    }
+  ],
+  "families": ["threshold", "slope", "routing", "hidden"],
+  "task_seeds": [11],
+  "budgets": {
+    "proposals": 5,
+    "feedback_calls": 3,
+    "tool_requests": 32,
+    "api_calls": 8,
+    "max_output_tokens": 1024,
+    "max_request_bytes": 65536
+  },
+  "limits": {
+    "max_total_api_calls": 128,
+    "max_total_output_tokens": 131072,
+    "max_estimated_usd": 10
+  }
+}

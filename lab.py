@@ -55,6 +55,17 @@ See docs/FIRST_EXPERIMENT.md and qwen/README.md for prerequisites and boundaries
     breakout.add_argument("--workers", type=int, default=2)
     breakout.add_argument("--reference", type=Path, help="Reuse an existing verified reference directory instead of downloading")
     breakout.add_argument("--preview-frames", type=int, default=200)
+    benchmark = sub.add_parser("benchmark", help="Paired synthetic editing suite; controls are offline, API runs require explicit opt-in")
+    benchmark_actions = benchmark.add_subparsers(dest="action", required=True)
+    prepare = benchmark_actions.add_parser("create", help="Declare editors, matched tasks and budgets without calling APIs")
+    prepare.add_argument("output", type=Path)
+    prepare.add_argument("--config", type=Path, required=True)
+    run_benchmark = benchmark_actions.add_parser("run", help="Run scripted controls; paid API editors run only with --allow-paid-api")
+    run_benchmark.add_argument("output", type=Path)
+    run_benchmark.add_argument("--allow-paid-api", action="store_true", help="Explicitly permit paid Claude/Fireworks requests under the recorded budgets")
+    for name in ("summary", "audit", "report"):
+        benchmark_action = benchmark_actions.add_parser(name)
+        benchmark_action.add_argument("output", type=Path)
     editor = sub.add_parser("editor", help="Recorded JSONL tool bridge; no model invocation or OS sandbox")
     editor_actions = editor.add_subparsers(dest="action", required=True)
     serve = editor_actions.add_parser("serve", help="Operator-side stdio bridge; final evaluation is unavailable to the editor")
@@ -85,7 +96,18 @@ See docs/FIRST_EXPERIMENT.md and qwen/README.md for prerequisites and boundaries
     args = vars(parser.parse_args(argv))
     command = args.pop("command")
     try:
-        if command == "editor":
+        if command == "benchmark":
+            from weight_space_lab import benchmark
+            action = args.pop("action")
+            if action == "create":
+                from weight_space_lab.evidence import read_json
+                args["config"] = read_json(args["config"])
+            result = getattr(benchmark, "summarize" if action == "summary" else action)(**args)
+            if action == "run":
+                benchmark.report(args["output"])
+            if isinstance(result, dict):
+                result = {k: v for k, v in result.items() if k != "trials"}
+        elif command == "editor":
             from weight_space_lab import editor_session
             action = args.pop("action")
             if action == "serve":

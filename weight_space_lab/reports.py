@@ -117,7 +117,7 @@ slider.addEventListener('input',()=>{stop();draw();});play.addEventListener('cli
 def controller_report(out, result, state):
     comparison = result["comparison"]
     actor = result["actor"]
-    body = '<p class="eyebrow">WEIGHT SPACE LAB · INDEPENDENT CONTROLLED EXPERIMENT</p><h1>Bounded threshold repair</h1>'
+    body = '<p class="eyebrow">WEIGHT SPACE LAB · INDEPENDENT CONTROLLED EXPERIMENT</p><h1>Bounded classifier repair</h1>'
     body += f'<p>Editor type: <strong>{escape(actor["actor_type"])}</strong>. Identifier: {escape(actor["editor_id"])} (caller-declared). Manual verification is not agent discovery. This study is separate from upstream reproductions.</p>'
     body += stats([("Baseline accuracy", f'{comparison["baseline_accuracy"]:.1%}'),
                    ("Frozen candidate accuracy", f'{comparison["candidate_accuracy"]:.1%}'),
@@ -140,4 +140,4 @@ def controller_report(out, result, state):
     body += ''.join(f'<tr><td>{e["index"]}</td><td>{escape(e["action"])}</td><td>{escape(e["outcome"])}</td><td>{escape(e.get("candidate_id", ""))}</td></tr>' for e in state["events"])
     body += '</tbody></table></div><p>The authoritative state.json adds final completion and its result hashes after this report is written. Hash ledgers are unsigned; OS isolation and editor provenance require independent verification.</p>'
     body += '<h2>Records</h2><ul>' + ''.join(f'<li><a href="{path}">{path}</a></li>' for path in ("baseline.json", "candidate.json", "result.json", "../protocol.json", "../state.json", "../frozen/selection.json")) + '</ul>'
-    Path(out / "report.html").write_text(page("Weight Space Lab — bounded threshold repair", body), encoding="utf-8")
+    Path(out / "report.html").write_text(page("Weight Space Lab — bounded classifier repair", body), encoding="utf-8")
