@@ -91,11 +91,15 @@ because the installed CLI documents that mode as API-key-only authentication.
 
 Codex runs with ignored user config/rules, ephemeral execution, read-only sandbox,
 zero project-instruction discovery, web search disabled, and command execution,
-plugins/apps, hooks, memories, skills, browser/computer tools and subagents disabled.
+plugins/apps, hooks, memories, skill search, browser/computer tools and subagents disabled.
 Observed native tool events invalidate a trial. These are invocation overrides;
 the user's saved CLI configuration is not rewritten.
 [Codex noninteractive mode](https://learn.chatgpt.com/docs/non-interactive-mode),
 [Codex configuration reference](https://developers.openai.com/codex/config-reference/).
+
+The supplied stdin prompt is retained, but vendor-generated system context is not
+fully observable. These overrides do not independently prove that every form of
+client-side context discovery is absent; CLI results remain harness-specific.
 
 The adapters allowlist standard OS/locale/proxy/certificate paths plus the CLI home
 directories. API keys, alternate authorization/custom-header overrides, arbitrary
