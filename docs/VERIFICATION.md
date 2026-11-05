@@ -3,6 +3,30 @@
 Date: November 4, 2026. This records implementation checks and explicitly labeled
 small CLI pilots; it is not a completed multi-model benchmark study.
 
+## GPU configuration update — November 5, 2026
+
+Version 0.7.0 adds single-host NVIDIA/CUDA placement and a bounded Qwen paired
+runner. Inventory and planning were checked on Windows and Ubuntu/WSL against two
+RTX 3090 cards. Auto planning excluded the card without the configured memory
+headroom; explicit two-worker planning retained its readiness error. The prepared
+Qwen directory produced a read-only smoke plan under WSL. No GPU model execution
+or hosted editor calls were made for this update.
+
+GPU fixtures cover busy-card exclusion, physical indices/UUIDs, visibility masks,
+TP/PP group sizing, overlapping groups, memory rechecks, cooperative locks,
+concurrent/sequential subprocesses, timeout/interruption cleanup, storage failures
+during cleanup, shutdown log overflow, declared placement, hardware mismatch
+opt-in, protocol rejection, source tampering, and artifact-ledger changes.
+These use synthetic inventories and CPU processes. Actual TP/PP inference remains
+unvalidated on the intended model/hardware.
+
+The main Python suite ran **105 tests: 104 passed, 1 skipped** (the same optional
+legacy reference-directory test). The Qwen unit suite passed **9 tests** and Node passed **2 tests**. Both distribution
+archives contain the same **91 files**, including runtime modules, example GPU
+layouts, and the guide; the extracted ZIP's GPU planner worked. Tracked-file
+privacy and local Markdown-link checks passed. The earlier results below retain
+their original scope and date.
+
 ## Automated checks
 
 - Main Python suite: **87 tests run, 86 passed, 1 skipped**. The skipped legacy

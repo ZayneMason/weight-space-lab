@@ -1,0 +1,6 @@
+{
+  "device_groups": [["0"], ["1"]],
+  "execution": "parallel",
+  "memory_fraction": 0.65,
+  "headroom_mib": 1024
+}

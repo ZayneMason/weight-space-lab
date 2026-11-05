@@ -25,6 +25,7 @@ jobs:
         run: node --test tests/plugin.test.mjs
       - name: Offline workflows and controller controls
         run: |
+          python lab.py gpu plan --config experiments/gpu-layouts/auto.json
           python lab.py demo runs/ci-demo
           python lab.py verify runs/ci-demo
           python scripts/check_controller.py runs/ci-controller

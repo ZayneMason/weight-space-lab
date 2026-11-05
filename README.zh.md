@@ -1,5 +1,10 @@
 # Weight Space Lab
 
+GPU 配置支持单机 NVIDIA/CUDA：单卡、多卡独立 worker，以及 tensor/pipeline
+并行分组。`python lab.py gpu inspect` 查看设备，`python lab.py gpu plan --config experiments/gpu-layouts/auto.json`
+只生成规划，不占用 GPU 显存。执行 Qwen 评估需要 Linux/WSL 和显式 `--execute`。
+详见 [GPU 配置指南](docs/GPU_CONFIG.md)；实际能否运行取决于模型、引擎支持和可用显存。
+
 用于检查、修改和评估神经网络权重的本地工具集。
 
 统一流程：**检查 → 编辑 → 评估 → 比较 → 审查证据**。项目独立于上游研究，

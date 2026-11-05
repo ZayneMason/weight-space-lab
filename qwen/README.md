@@ -1,5 +1,10 @@
 # Qwen published-edit reproduction
 
+For configurable single/multiple GPU workers or TP/PP groups, use the
+[GPU configuration guide](../docs/GPU_CONFIG.md). `lab.py gpu pair` plans first;
+execution requires `--execute`. Setting `WEIGHT_SPACE_GPU_CONFIG` opts the wrapper
+into the new controller. Without it, the original single-card route remains.
+
 Reconstruct the published p50c BF16 edit to Qwen3.5-0.8B, verify both tensor hashes,
 and evaluate the frozen baseline and edited checkpoints on MATH-500.
 

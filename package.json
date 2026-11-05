@@ -1,6 +1,6 @@
 {
   "name": "dsh-weight-space-lab",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Local infrastructure for bounded neural-weight experiments, candidate freezing, regression measurement, and auditable evaluation.",
   "type": "module",
   "main": "index.js",

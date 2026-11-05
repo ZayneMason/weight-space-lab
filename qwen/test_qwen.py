@@ -16,6 +16,18 @@ spec.loader.exec_module(q)
 
 
 class QwenTests(unittest.TestCase):
+    def test_configurable_engine_settings_validate_parallelism_and_capture_sizes(self):
+        default = q.engine_settings()
+        self.assertEqual(default['tensor_parallel_size'], 1)
+        self.assertNotIn('distributed_executor_backend', default)
+        engine = q.engine_settings(.5, False, 2, 2, 6)
+        self.assertEqual(engine['distributed_executor_backend'], 'mp')
+        self.assertEqual(engine['compilation_config']['cudagraph_capture_sizes'], [1,2,4,6])
+        self.assertEqual(q.engine_settings(eager=True)['compilation_config']['cudagraph_capture_sizes'], [])
+        for kwargs in ({'tensor_parallel_size':0}, {'pipeline_parallel_size':True}, {'gpu_memory':float('nan')}, {'max_num_seqs':257}):
+            with self.assertRaises(ValueError):
+                q.engine_settings(**kwargs)
+
     def fixture(self):
         original = torch.tensor([[1., 2.], [3., 4.]], dtype=torch.bfloat16)
         edited = original.clone()

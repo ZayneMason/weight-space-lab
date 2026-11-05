@@ -188,11 +188,28 @@ def runtime_versions():
     return {d.metadata["Name"]: d.version for d in importlib.metadata.distributions()}
 
 
+def engine_settings(gpu_memory=.65, eager=False, tensor_parallel_size=1, pipeline_parallel_size=1, max_num_seqs=16):
+    # Import the stdlib-only placement validator without initializing CUDA.
+    sys.path.insert(0, str(HERE.parent))
+    from weight_space_lab.gpu_runtime import configuration
+    configuration({"memory_fraction": gpu_memory, "tensor_parallel_size": tensor_parallel_size,
+                   "pipeline_parallel_size": pipeline_parallel_size, "max_num_seqs": max_num_seqs})
+    captures = [n for n in (1,2,4,8,16,32,64,128,256) if n <= max_num_seqs]
+    if captures[-1] != max_num_seqs:
+        captures.append(max_num_seqs)
+    engine = {"dtype": "bfloat16", "max_model_len": 34816, "gpu_memory_utilization": gpu_memory,
+              "enforce_eager": eager, "max_num_seqs": max_num_seqs, "seed": 0,
+              "tensor_parallel_size": tensor_parallel_size, "pipeline_parallel_size": pipeline_parallel_size,
+              "compilation_config": {"mode": 0, "cudagraph_mode": "NONE" if eager else "FULL_DECODE_ONLY",
+                                     "cudagraph_capture_sizes": [] if eager else captures}}
+    if tensor_parallel_size * pipeline_parallel_size > 1:
+        engine["distributed_executor_backend"] = "mp"
+    return engine
+
+
 def run(args):
     # Include the isolated environment's build helpers for Triton/FlashInfer.
     os.environ["PATH"] = str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", "")
-    from transformers import AutoTokenizer
-    from vllm import LLM, SamplingParams
     root, out = Path(args.root), Path(args.out)
     prepared = json.loads((root / "prepared.json").read_text())
     if prepared["protocol"] != PROTOCOL:
@@ -212,15 +229,18 @@ def run(args):
     job = {"arm": args.arm, "pilot": args.pilot, "problem_ids": [r["id"] for r in rows],
            "sampling": sampling, "protocol": PROTOCOL, "prepared_sha256": sha(root / "prepared.json"),
            "script_sha256": sha(__file__), "versions": runtime_versions(),
-           "engine": {"dtype": "bfloat16", "max_model_len": 34816,
-                      "gpu_memory_utilization": args.gpu_memory, "enforce_eager": args.eager,
-                      "max_num_seqs": 16, "seed": 0,
-                      "compilation_config": {"mode": 0, "cudagraph_mode": "NONE" if args.eager else "FULL_DECODE_ONLY",
-                                             "cudagraph_capture_sizes": [] if args.eager else [1, 2, 4, 8, 16]}}}
+           "engine": engine_settings(args.gpu_memory, args.eager, args.tensor_parallel_size, args.pipeline_parallel_size, args.max_num_seqs)}
     job["environment"] = {key: value for key, value in os.environ.items()
-                          if key in ("CUDA_VISIBLE_DEVICES", "CUDA_HOME", "CC", "OMP_NUM_THREADS", "LIBRARY_PATH", "LD_LIBRARY_PATH")
+                          if key in ("CUDA_VISIBLE_DEVICES", "CUDA_DEVICE_ORDER", "CUDA_HOME", "CC", "OMP_NUM_THREADS", "LIBRARY_PATH", "LD_LIBRARY_PATH")
                           or key.startswith("VLLM_")}
-    job["batch_problems"] = 4
+    if not 1 <= args.batch_problems <= 64:
+        raise ValueError("batch-problems must be 1..64")
+    job["batch_problems"] = args.batch_problems
+    if bool(args.placement_manifest) != bool(args.worker_id):
+        raise ValueError("Placement manifest and worker ID must be supplied together")
+    if args.placement_manifest:
+        from weight_space_lab.gpu_runner import job_placement
+        job["placement"] = job_placement(args.placement_manifest, job, args.worker_id, root, out)
     job_path = out / "job.json"
     if job_path.exists() and json.loads(job_path.read_text()) != job:
         raise ValueError("Refusing to mix different jobs in the same output directory")
@@ -236,6 +256,8 @@ def run(args):
             completed.append(row["id"])
     pending = [r for r in rows if r["id"] not in completed]
     if pending:
+        from transformers import AutoTokenizer
+        from vllm import LLM, SamplingParams
         tok = AutoTokenizer.from_pretrained(root / args.arm, trust_remote_code=False)
         llm = LLM(model=str(root / args.arm), **job["engine"])
         # Separate deterministic per-problem seeds make interruption/resume reproducible.
@@ -273,15 +295,22 @@ def run(args):
     print(json.dumps(summary), flush=True)
 
 
-def compare(baseline, edited, out):
+def compare(baseline, edited, out, placement_manifest=None):
     import numpy as np
     dirs = [Path(baseline), Path(edited)]
     jobs = [json.loads((d / "job.json").read_text()) for d in dirs]
     if jobs[0]["arm"] != "baseline" or jobs[1]["arm"] != "p50c":
         raise ValueError("Expected baseline then p50c arms")
-    for key in ("pilot", "problem_ids", "sampling", "protocol", "prepared_sha256", "script_sha256", "versions", "engine", "environment", "batch_problems"):
+    for key in ("pilot", "problem_ids", "sampling", "protocol", "prepared_sha256", "script_sha256", "versions", "engine", "batch_problems"):
         if jobs[0][key] != jobs[1][key]:
             raise ValueError(f"Unmatched paired jobs: {key}")
+    placement = None
+    if placement_manifest:
+        sys.path.insert(0, str(HERE.parent))
+        from weight_space_lab.gpu_runner import validate_pair_placement
+        placement = validate_pair_placement(jobs, placement_manifest)
+    elif jobs[0]["environment"] != jobs[1]["environment"] or any("placement" in job for job in jobs):
+        raise ValueError("Unmatched paired environment, or a GPU placement manifest is required")
     arms = []
     for d, job in zip(dirs, jobs):
         values = []
@@ -297,9 +326,11 @@ def compare(baseline, edited, out):
     labels = ["baseline_accuracy", "baseline_truncation", "p50c_accuracy", "p50c_truncation", "accuracy_delta", "truncation_delta"]
     report = {"pilot": jobs[0]["pilot"], "problems": len(matrix), "bootstrap_unit": "problem (all four samples together)",
               "bootstrap_replicates": 10000, "seed": 0,
-              "protocol_difference": "Local calls group four problems with per-problem seed=ordinal; released evaluator calls a whole shard with seed=0. Local inference versions and hardware are recorded separately.",
+              "protocol_difference": "Local calls use the recorded batch_problems and per-problem seed=ordinal; released evaluator calls a whole shard with seed=0. Local inference versions and hardware are recorded separately.",
               "metrics": {k: {"mean": float(matrix[:, i].mean()), "ci95": np.quantile(boot[:, i], [.025, .975]).tolist()}
                           for i, k in enumerate(labels)}}
+    if placement:
+        report["execution_placement"] = placement
     write_json(out, report)
     print(json.dumps(report), flush=True)
 
@@ -318,17 +349,24 @@ def main():
     evaluation.add_argument("--max-tokens", type=int, default=32768)
     evaluation.add_argument("--gpu-memory", type=float, default=.65)
     evaluation.add_argument("--eager", action="store_true", help="Disable CUDA graph capture for diagnosis")
+    evaluation.add_argument("--tensor-parallel-size", type=int, default=1)
+    evaluation.add_argument("--pipeline-parallel-size", type=int, default=1)
+    evaluation.add_argument("--max-num-seqs", type=int, default=16)
+    evaluation.add_argument("--batch-problems", type=int, default=4)
+    evaluation.add_argument("--placement-manifest")
+    evaluation.add_argument("--worker-id")
     comparison = sub.add_parser("compare")
     comparison.add_argument("baseline")
     comparison.add_argument("edited")
     comparison.add_argument("out")
+    comparison.add_argument("--placement-manifest")
     args = parser.parse_args()
     if args.command == "prepare":
         prepare(args.root)
     elif args.command == "run":
         run(args)
     else:
-        compare(args.baseline, args.edited, args.out)
+        compare(args.baseline, args.edited, args.out, args.placement_manifest)
 
 
 if __name__ == "__main__":
