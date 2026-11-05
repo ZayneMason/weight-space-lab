@@ -15,7 +15,6 @@ if [[ ! -x "$PYTHON" ]]; then
   printf 'Python environment missing; follow qwen/README.md.\n' >&2
   exit 2
 fi
-export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
 export HF_HUB_OFFLINE=1
 export VLLM_USE_FLASHINFER_SAMPLER=${VLLM_USE_FLASHINFER_SAMPLER:-1}
 export PATH="$(dirname -- "$PYTHON"):$PATH"
@@ -35,6 +34,13 @@ if [[ -d /usr/lib/wsl/lib ]]; then
   export LIBRARY_PATH="/usr/lib/wsl/lib:${LIBRARY_PATH:-}"
   export LD_LIBRARY_PATH="/usr/lib/wsl/lib:${LD_LIBRARY_PATH:-}"
 fi
+if [[ -n ${WEIGHT_SPACE_GPU_CONFIG:-} ]]; then
+  exec "$PYTHON" "$TOOLS/../lab.py" gpu pair "$LAB/experiment" \
+    "${WEIGHT_SPACE_GPU_OUTPUT:-$LAB/$MODE-gpu-paired}" --mode "$MODE" \
+    --config "$WEIGHT_SPACE_GPU_CONFIG" --python "$PYTHON" \
+    --timeout-seconds "${WEIGHT_SPACE_GPU_TIMEOUT:-3600}" --execute
+fi
+export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
 OUT="$LAB/$MODE-paired"
 mkdir -p "$OUT"
 for ARM in baseline p50c; do

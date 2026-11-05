@@ -39,6 +39,21 @@ python lab.py verify runs/offline-demo
 [First experiment guide](docs/FIRST_EXPERIMENT.md) explains setup, artifacts,
 supported edits, rollback, and metadata export.
 
+## GPU placement
+
+Configure one card, independent workers on several cards, or tensor/pipeline
+parallel groups for local Qwen evaluation. Inventory and planning allocate no GPU
+memory; execution requires explicit opt-in under Linux/WSL.
+
+```bash
+python lab.py gpu inspect
+python lab.py gpu plan --config experiments/gpu-layouts/auto.json
+```
+
+The [GPU configuration guide](docs/GPU_CONFIG.md) covers arbitrary single-host
+NVIDIA/CUDA layouts, memory headroom, execution, and matched comparison records.
+Engine/model support and available memory determine whether a planned model fits.
+
 ## Independent research controller
 
 The controller meters proposals and practice feedback, records rejected/failed

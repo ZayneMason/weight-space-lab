@@ -39,6 +39,23 @@ Costs: demo uses installed CPU dependencies only. Breakout fetches pinned resear
 assets unless --reference is supplied. No command implicitly starts fresh generation.
 See docs/FIRST_EXPERIMENT.md and qwen/README.md for prerequisites and boundaries.""")
     sub = parser.add_subparsers(dest="command", required=True)
+    gpu = sub.add_parser("gpu", help="Plan single-host NVIDIA GPU placement; local Qwen execution requires --execute")
+    gpu_actions = gpu.add_subparsers(dest="action", required=True)
+    gpu_actions.add_parser("inspect", help="Read NVIDIA inventory without allocating GPU memory")
+    gpu_plan = gpu_actions.add_parser("plan", help="Resolve a GPU layout without starting workers")
+    gpu_plan.add_argument("--config", type=Path)
+    gpu_pair = gpu_actions.add_parser("pair", help="Plan a frozen Qwen comparison; execute only under Linux/WSL with --execute")
+    gpu_pair.add_argument("root", type=Path)
+    gpu_pair.add_argument("output", type=Path)
+    gpu_pair.add_argument("--config", type=Path)
+    gpu_pair.add_argument("--mode", choices=["smoke", "pilot", "full"], default="smoke")
+    gpu_pair.add_argument("--python", help="Python executable in the prepared Qwen environment")
+    gpu_pair.add_argument("--timeout-seconds", type=int, default=3600, help="Wall-clock limit per worker (default: 3600)")
+    gpu_pair.add_argument("--eager", action="store_true")
+    gpu_pair.add_argument("--allow-hardware-difference", action="store_true")
+    gpu_pair.add_argument("--execute", action="store_true")
+    gpu_audit = gpu_actions.add_parser("audit", help="Check the completed GPU artifact ledger and declared placement")
+    gpu_audit.add_argument("output", type=Path)
     demo = sub.add_parser("demo", help="Offline CPU example with a prewritten patch and local HTML report")
     demo.add_argument("output", type=Path)
     verify = sub.add_parser("verify", help="Check recorded hashes and recompute supported experiment evidence")
@@ -97,7 +114,24 @@ See docs/FIRST_EXPERIMENT.md and qwen/README.md for prerequisites and boundaries
     args = vars(parser.parse_args(argv))
     command = args.pop("command")
     try:
-        if command == "benchmark":
+        if command == "gpu":
+            from weight_space_lab import gpu_runtime, gpu_runner
+            from weight_space_lab.evidence import read_json
+            action = args.pop("action")
+            if action in ("plan", "pair"):
+                args["config"] = read_json(args["config"]) if args["config"] else {}
+            if action == "inspect":
+                result = gpu_runtime.inspect()
+            elif action == "plan":
+                result = gpu_runtime.resolve(args["config"])
+            elif action == "audit":
+                result = gpu_runner.audit(**args)
+            else:
+                execute = args.pop("execute")
+                result = gpu_runner.plan_pair(**args)
+                if execute:
+                    result = gpu_runner.launch_pair(result)
+        elif command == "benchmark":
             from weight_space_lab import benchmark
             action = args.pop("action")
             if action == "create":

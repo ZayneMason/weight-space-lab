@@ -1,0 +1,6 @@
+{
+  "device_groups": [["0"]],
+  "execution": "sequential",
+  "memory_fraction": 0.65,
+  "headroom_mib": 1024
+}

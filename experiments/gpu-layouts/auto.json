@@ -1,0 +1,7 @@
+{
+  "device_groups": "auto",
+  "respect_visible_devices": true,
+  "execution": "parallel",
+  "memory_fraction": 0.65,
+  "headroom_mib": 1024
+}
