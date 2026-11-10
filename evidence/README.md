@@ -34,6 +34,9 @@ Added November 10, 2026 (see the [lab notebook](../docs/LAB_NOTEBOOK.md)):
   released network, not the earlier raw records or the fresh agent-written network.
 - `breakout-ceiling/summary.json`: the step-ceiling analysis of those records
   ([experiment](../experiments/breakout-ceiling/README.md)).
+- `breakout-circuit/summary.json`: the released network's sparsity structure and a
+  200-episode pilot of single-unit ablations
+  ([experiment](../experiments/breakout-circuit/README.md)). No checkpoints are included.
 - `task-geometry/`: per-case success and practice windows for 400 synthetic
   benchmark cases, plus the strategy summary
   ([experiment](../experiments/task-geometry/README.md)). It uses declared held-out
