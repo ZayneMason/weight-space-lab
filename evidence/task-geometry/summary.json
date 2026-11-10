@@ -1,0 +1,118 @@
+{
+  "schema": "weight-space-task-geometry-v1",
+  "grid": {
+    "low": -3.0,
+    "high": 3.0,
+    "step": 0.0001
+  },
+  "random_control": {
+    "draws": 3,
+    "replicates_per_case": 4000,
+    "rng_seed": 20261110
+  },
+  "heldout_seed_rule": "task seed + 10_000_000 (declared; real campaigns use a private random seed)",
+  "task_seeds_per_family": 100,
+  "families": {
+    "threshold": {
+      "cases": 100,
+      "teacher_always_succeeds": true,
+      "single_interval_cases": 100,
+      "success_width_median": 0.12235,
+      "success_width_p10_p90": [
+        0.0772,
+        0.23157000000000005
+      ],
+      "success_width_relative_median": 0.19768618673599342,
+      "practice_perfect_width_median": 0.46755,
+      "p_success_given_practice_perfect_mean": 0.27003823102830593,
+      "practice_midpoint_success_rate": 0.2,
+      "minimal_practice_perfect_success_rate": 0.82,
+      "overshoot_tolerance_median": 0.043065996789932254,
+      "undershoot_tolerance_median": 0.07854614717960359,
+      "share_cases_overshoot_tolerance_smaller": 0.75,
+      "random_control_success_mean": 0.05725250000000001,
+      "random_control_success_by_case_p10_p90": [
+        0.026125,
+        0.09682500000000001
+      ],
+      "uniform_single_draw_success_mean": 0.023348777520374658
+    },
+    "slope": {
+      "cases": 100,
+      "teacher_always_succeeds": true,
+      "single_interval_cases": 100,
+      "success_width_median": 0.6289,
+      "success_width_p10_p90": [
+        0.44633000000000006,
+        1.1541300000000003
+      ],
+      "success_width_relative_median": 0.55471269052837,
+      "practice_perfect_width_median": 1.7375500000000001,
+      "p_success_given_practice_perfect_mean": 0.3861582947028135,
+      "practice_midpoint_success_rate": 0.35,
+      "minimal_practice_perfect_success_rate": 0.73,
+      "overshoot_tolerance_median": 0.14159308300018314,
+      "undershoot_tolerance_median": 0.49561642379760745,
+      "share_cases_overshoot_tolerance_smaller": 0.9,
+      "random_control_success_mean": 0.24178999999999998,
+      "random_control_success_by_case_p10_p90": [
+        0.13822500000000001,
+        0.374325
+      ],
+      "uniform_single_draw_success_mean": 0.12267045549240846
+    },
+    "routing": {
+      "cases": 100,
+      "teacher_always_succeeds": true,
+      "single_interval_cases": 100,
+      "success_width_median": 0.20695000000000002,
+      "success_width_p10_p90": [
+        0.13796000000000003,
+        0.31209000000000003
+      ],
+      "success_width_relative_median": 0.7874075058290109,
+      "practice_perfect_width_median": 0.4485,
+      "p_success_given_practice_perfect_mean": 0.36425488347923207,
+      "practice_midpoint_success_rate": 0.27,
+      "minimal_practice_perfect_success_rate": 0.83,
+      "overshoot_tolerance_median": 0.03762092594504355,
+      "undershoot_tolerance_median": 0.1494254465281963,
+      "share_cases_overshoot_tolerance_smaller": 0.89,
+      "random_control_success_mean": 0.09321000000000002,
+      "random_control_success_by_case_p10_p90": [
+        0.058625,
+        0.137275
+      ],
+      "uniform_single_draw_success_mean": 0.036910884818586356
+    },
+    "hidden": {
+      "cases": 100,
+      "teacher_always_succeeds": true,
+      "single_interval_cases": 100,
+      "success_width_median": 0.12969999999999998,
+      "success_width_p10_p90": [
+        0.08904000000000001,
+        0.18002
+      ],
+      "success_width_relative_median": 0.42203258104861185,
+      "practice_perfect_width_median": 0.20475,
+      "p_success_given_practice_perfect_mean": 0.4221103168854806,
+      "practice_midpoint_success_rate": 0.38,
+      "minimal_practice_perfect_success_rate": 0.81,
+      "overshoot_tolerance_median": 0.015383596506714819,
+      "undershoot_tolerance_median": 0.10885105898380279,
+      "share_cases_overshoot_tolerance_smaller": 0.96,
+      "random_control_success_mean": 0.061767499999999996,
+      "random_control_success_by_case_p10_p90": [
+        0.0392,
+        0.08305000000000001
+      ],
+      "uniform_single_draw_success_mean": 0.022526624556257396
+    },
+    "all_families": {
+      "cases": 400,
+      "random_control_success_mean": 0.11350500000000001,
+      "expected_random_successes_in_12_cases": 1.36206
+    }
+  }
+}

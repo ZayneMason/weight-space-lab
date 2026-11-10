@@ -23,7 +23,24 @@ reconstruction record refer to the measured original exports, not a promise that
 future environment versions reproduce identical random trajectories.
 
 Earlier Breakout results are documented in [RESULTS.md](../RESULTS.md). The raw
-Breakout transcript and episode records are not included in this repository.
+Breakout transcript and episode records from that run are not included in this repository.
+
+Added November 10, 2026 (see the [lab notebook](../docs/LAB_NOTEBOOK.md)):
+
+- `breakout-full-replay/`: a fresh full-protocol replay (1,000 episodes, 10,000-step
+  ceiling) of the released Experiment 5 network, exported with `lab.py export-evidence`.
+  It reproduces the recorded local mean exactly (502.880, SE 7.747) and keeps every
+  episode's score, length and truncation flag. It is a new local measurement of the
+  released network, not the earlier raw records or the fresh agent-written network.
+- `breakout-ceiling/summary.json`: the step-ceiling analysis of those records
+  ([experiment](../experiments/breakout-ceiling/README.md)).
+- `breakout-circuit/summary.json`: the released network's sparsity structure and a
+  200-episode pilot of single-unit ablations
+  ([experiment](../experiments/breakout-circuit/README.md)). No checkpoints are included.
+- `task-geometry/`: per-case success and practice windows for 400 synthetic
+  benchmark cases, plus the strategy summary
+  ([experiment](../experiments/task-geometry/README.md)). It uses declared held-out
+  seeds, contains no private campaign data, and involved no model calls.
 
 `qwen/pilot-samples.json` is a sanitized derivation of the existing raw local pilot:
 per-sample correctness, token counts, finish reasons, and content digests. Its
