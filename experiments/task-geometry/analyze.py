@@ -15,7 +15,8 @@ No model, network, API key or GPU is used. Held-out seeds here are fixed and
 declared (seed + 10_000_000) so the analysis can be repeated exactly; real
 campaigns draw a fresh private held-out seed per case.
 
-    python experiments/task-geometry/analyze.py --seeds 200 --output runs/task-geometry
+    python experiments/task-geometry/analyze.py --seeds 100 --output runs/task-geometry
+    python experiments/task-geometry/analyze.py --from-cases runs/task-geometry/cases.json --output runs/task-geometry-summary
 """
 import argparse
 import json
@@ -112,12 +113,26 @@ def analyse_case(family, seed, rng):
     }
 
 
+def derived(row):
+    """Window-derived quantities; recomputable from a saved cases.json without a new sweep."""
+    (lo, hi), (plo, phi) = row["success_windows"][0], row["practice_perfect_windows"][0]
+    teacher, corrupted = row["teacher_value"], row["corrupted_value"]
+    forward = teacher > corrupted                 # direction of the repair
+    far, near = (hi, lo) if forward else (lo, hi)
+    minimal = plo if forward else phi             # practice-perfect value closest to the corrupted value
+    return {"overshoot_tolerance": abs(far - teacher), "undershoot_tolerance": abs(teacher - near),
+            "minimal_practice_perfect_success": bool(lo <= minimal <= hi)}
+
+
 def summarise(rows):
     out = {}
     for family in tasks.FAMILIES:
         group = [r for r in rows if r["family"] == family]
         if not group:
             continue
+        extra = [derived(r) for r in group if len(r["success_windows"]) == 1 and len(r["practice_perfect_windows"]) == 1]
+        over = np.array([e["overshoot_tolerance"] for e in extra])
+        under = np.array([e["undershoot_tolerance"] for e in extra])
         widths = np.array([r["success_width"] for r in group])
         rel = np.array([r["success_width_relative"] for r in group])
         pp = np.array([r["p_success_given_practice_perfect"] for r in group if r["p_success_given_practice_perfect"] is not None])
@@ -133,6 +148,10 @@ def summarise(rows):
             "practice_perfect_width_median": float(np.median([r["practice_perfect_width"] for r in group])),
             "p_success_given_practice_perfect_mean": float(pp.mean()) if len(pp) else None,
             "practice_midpoint_success_rate": float(np.mean(mids)) if mids else None,
+            "minimal_practice_perfect_success_rate": float(np.mean([e["minimal_practice_perfect_success"] for e in extra])) if extra else None,
+            "overshoot_tolerance_median": float(np.median(over)) if extra else None,
+            "undershoot_tolerance_median": float(np.median(under)) if extra else None,
+            "share_cases_overshoot_tolerance_smaller": float(np.mean(over < under)) if extra else None,
             "random_control_success_mean": float(rnd.mean()),
             "random_control_success_by_case_p10_p90": [float(np.percentile(rnd, 10)), float(np.percentile(rnd, 90))],
             "uniform_single_draw_success_mean": float(np.mean([r["uniform_single_draw_success"] for r in group])),
@@ -143,7 +162,7 @@ def summarise(rows):
     return out
 
 
-def plot(rows, path):
+def plot(rows, summary, path):
     try:
         import matplotlib
         matplotlib.use("Agg")
@@ -151,44 +170,62 @@ def plot(rows, path):
         plt.rcParams.update({"svg.fonttype": "none", "svg.hashsalt": "weight-space-lab"})
     except ImportError:
         return None
-    fig, axes = plt.subplots(1, 2, figsize=(10, 3.6), constrained_layout=True)
+    fig, axes = plt.subplots(1, 2, figsize=(11, 3.8), constrained_layout=True)
     colors = {"threshold": "#2a6f97", "slope": "#c0392b", "routing": "#6a994e", "hidden": "#8e6c8a"}
+    strategies = [("random control\n(3 draws)", "random_control_success_mean"),
+                  ("midpoint of\npractice-perfect", "practice_midpoint_success_rate"),
+                  ("any practice-\nperfect value", "p_success_given_practice_perfect_mean"),
+                  ("smallest practice-\nperfect edit", "minimal_practice_perfect_success_rate")]
+    width = .2
+    for i, family in enumerate(tasks.FAMILIES):
+        values = [summary[family][key] for _, key in strategies]
+        axes[0].bar(np.arange(len(strategies)) + (i - 1.5) * width, values, width, label=family, color=colors[family])
+    axes[0].set_xticks(np.arange(len(strategies)), [label for label, _ in strategies], fontsize=8)
+    axes[0].set_ylim(0, 1)
+    axes[0].set_ylabel("held-out success rate")
+    axes[0].set_title("Same practice score, very different outcomes")
+    axes[0].legend(frameon=False, fontsize=8, ncol=2, loc="upper left")
     for family in tasks.FAMILIES:
-        group = [r for r in rows if r["family"] == family]
-        rel = np.sort([r["success_width_relative"] for r in group])
-        axes[0].plot(rel, np.linspace(0, 1, len(rel)), label=family, color=colors[family], lw=2)
-        pp = np.sort([r["p_success_given_practice_perfect"] for r in group if r["p_success_given_practice_perfect"] is not None])
-        axes[1].plot(pp, np.linspace(0, 1, len(pp)), label=family, color=colors[family], lw=2)
-    axes[0].set_xscale("log")
-    axes[0].set_xlabel("success-window width / |correct value|")
-    axes[0].set_ylabel("fraction of task seeds")
-    axes[0].set_title("How precise must the edit be?")
-    axes[1].set_xlabel("P(held-out success | perfect on practice)")
-    axes[1].set_title("Does practice feedback pin the value down?")
+        extra = [derived(r) for r in rows if r["family"] == family and len(r["success_windows"]) == 1 and len(r["practice_perfect_windows"]) == 1]
+        axes[1].scatter([e["undershoot_tolerance"] for e in extra], [max(e["overshoot_tolerance"], STEP) for e in extra],
+                        s=10, alpha=.6, color=colors[family], label=family)
+    axes[1].set_xscale("log")
+    axes[1].set_yscale("log")
+    lims = [STEP, 3]
+    axes[1].plot(lims, lims, color="#888", lw=1, ls="--")
+    axes[1].set_xlim(1e-3, 3)
+    axes[1].set_ylim(STEP / 2, 3)
+    axes[1].set_xlabel("undershoot tolerance (|correct value - near edge|)")
+    axes[1].set_ylabel("overshoot tolerance")
+    axes[1].set_title("Overshooting the fix is punished harder")
     for ax in axes:
         ax.grid(alpha=.3)
         ax.spines[["top", "right"]].set_visible(False)
-    axes[1].legend(frameon=False, loc="upper left")
     fig.savefig(path, metadata={"Date": None})
     return str(path)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--seeds", type=int, default=200, help="task seeds per family (0..N-1)")
+    parser.add_argument("--seeds", type=int, default=100, help="task seeds per family (0..N-1)")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--rng-seed", type=int, default=20261110)
+    parser.add_argument("--from-cases", type=Path, help="re-summarise a saved cases.json instead of sweeping again")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
-    rng = np.random.default_rng(args.rng_seed)
-    rows = [analyse_case(family, seed, rng) for family in tasks.FAMILIES for seed in range(args.seeds)]
+    if args.from_cases:
+        rows = json.loads(args.from_cases.read_text(encoding="utf-8"))
+        args.seeds = max(r["seed"] for r in rows) + 1
+    else:
+        rng = np.random.default_rng(args.rng_seed)
+        rows = [analyse_case(family, seed, rng) for family in tasks.FAMILIES for seed in range(args.seeds)]
     summary = {"schema": "weight-space-task-geometry-v1", "grid": {"low": LOW, "high": HIGH, "step": STEP},
                "random_control": {"draws": RANDOM_DRAWS, "replicates_per_case": RANDOM_REPLICATES, "rng_seed": args.rng_seed},
                "heldout_seed_rule": "task seed + 10_000_000 (declared; real campaigns use a private random seed)",
-               "families": summarise(rows)}
+               "task_seeds_per_family": args.seeds, "families": summarise(rows)}
     (args.output / "cases.json").write_text(json.dumps(rows, indent=1) + "\n", encoding="utf-8")
     (args.output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
-    figure = plot(rows, args.output / "geometry.svg")
+    figure = plot(rows, summary["families"], args.output / "geometry.svg")
     print(json.dumps({**summary, "figure": figure}, indent=2))
 
 
