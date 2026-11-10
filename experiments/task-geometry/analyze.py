@@ -148,6 +148,7 @@ def plot(rows, path):
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
+        plt.rcParams.update({"svg.fonttype": "none", "svg.hashsalt": "weight-space-lab"})
     except ImportError:
         return None
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.6), constrained_layout=True)
@@ -168,7 +169,7 @@ def plot(rows, path):
         ax.grid(alpha=.3)
         ax.spines[["top", "right"]].set_visible(False)
     axes[1].legend(frameon=False, loc="upper left")
-    fig.savefig(path)
+    fig.savefig(path, metadata={"Date": None})
     return str(path)
 
 

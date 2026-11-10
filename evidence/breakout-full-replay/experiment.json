@@ -1,0 +1,30 @@
+{
+  "schema": "weight-space-experiment-v1",
+  "status": "complete",
+  "adapter": "evidence-export",
+  "scope": "full",
+  "summary": {
+    "episodes": 1000,
+    "mean_score": 502.88,
+    "standard_error": 7.747379136423071,
+    "truncated_episodes": 517,
+    "checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a"
+  },
+  "versions": {
+    "python": "3.13.18"
+  },
+  "code_sha256": {
+    "weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82"
+  },
+  "artifacts": {
+    "LICENSE": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+    "LICENSE-MinAtar": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "README.md": "22ba7c073c06d06af12d37a1a89b5945edc1f63d0c032b9fd0589b75a93e241e",
+    "code/LICENSE": "20d1d1590a2da75c223c5bf4ad2c64467be38b4200abe08b32743560fead65eb",
+    "code/NOTICE.md": "5b75109565cf1622b5cfa28d1a20c5a85cddad2d621bf8ada5e6f70945e3f7e6",
+    "code/licenses/upstream-research.txt": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+    "code/weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82",
+    "evidence.json": "a22421c01c5353c83db093b5392503a6a36d806e806026c94a782784864d5b5d"
+  },
+  "integrity": "Unsigned local hash ledger; not an independent attestation."
+}

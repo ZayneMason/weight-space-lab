@@ -1,0 +1,6164 @@
+{
+  "schema": "weight-space-evidence-v1",
+  "adapter": "minatar-breakout",
+  "scope": "full",
+  "source_ledger_sha256": "21408e5d6c73781bf82c46a5bce67e185ece451291f9f25a3d4a144f4981c26d",
+  "summary": {
+    "episodes": 1000,
+    "mean_score": 502.88,
+    "standard_error": 7.747379136423071,
+    "truncated_episodes": 517,
+    "checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a"
+  },
+  "code_sha256": {
+    "lab.py": "363746f889bba3311519ce40a6dbb8e21bf8736c7a7988cfc07f399074c7500e",
+    "weight_space_lab/__init__.py": "2477db0c31103a9069bdc5608eca60590e312e8deffd3de075a155962ac7b639",
+    "weight_space_lab/benchmark.py": "80681dc147769d05bc0d6e63766e75e5142a0671536b2b932a112d589a951e3b",
+    "weight_space_lab/benchmark_cli.py": "34f570e8103922a9a46d08459257fc6418c0014c19a9b5f261d767313b22e091",
+    "weight_space_lab/benchmark_providers.py": "104a0a737c17daaf865b1e466cf9caa4f7246fe9e57e839bd5e3d73ad53b17b2",
+    "weight_space_lab/benchmark_tasks.py": "124dab5d3e055d2c1733485f4c7a03345a4672b2c6617da037ff499c71982733",
+    "weight_space_lab/controller.py": "37f895c1efea84f24c04398c584fe6e9147931abf0b5eb36d42088b0e931e5a4",
+    "weight_space_lab/editor_session.py": "ed49075f39ac4fb031b5d418845f6aba1fe44423b7941eef007736027ed133a7",
+    "weight_space_lab/evidence.py": "c7f3cbf128a4fc59676cf6d71a3f6ffc5a7d627e82ba662498ef3b8265e1b468",
+    "weight_space_lab/legacy.py": "a619b20b8d721052ee4cbb9df09edb75ff543c073b8e635a8f206fee26f0f1b9",
+    "weight_space_lab/reports.py": "ae387c4a71f4281f368a5e0c242aca3fb54b2ab6d67cf4bba51061860e18016e",
+    "weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82",
+    "skills/weight-space-lab/scripts/reproduce_breakout.py": "75b7f6f80a2284fdd13603e9f322c38dfb90f36b66f22aa3a480526c8bfe5977"
+  },
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.4",
+    "minatar": "1.0.15"
+  },
+  "artifact_sha256": {
+    "code/LICENSE": "20d1d1590a2da75c223c5bf4ad2c64467be38b4200abe08b32743560fead65eb",
+    "code/NOTICE.md": "5b75109565cf1622b5cfa28d1a20c5a85cddad2d621bf8ada5e6f70945e3f7e6",
+    "code/lab.py": "363746f889bba3311519ce40a6dbb8e21bf8736c7a7988cfc07f399074c7500e",
+    "code/licenses/upstream-research.txt": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+    "code/skills/weight-space-lab/scripts/reproduce_breakout.py": "75b7f6f80a2284fdd13603e9f322c38dfb90f36b66f22aa3a480526c8bfe5977",
+    "code/weight_space_lab/__init__.py": "2477db0c31103a9069bdc5608eca60590e312e8deffd3de075a155962ac7b639",
+    "code/weight_space_lab/benchmark.py": "80681dc147769d05bc0d6e63766e75e5142a0671536b2b932a112d589a951e3b",
+    "code/weight_space_lab/benchmark_cli.py": "34f570e8103922a9a46d08459257fc6418c0014c19a9b5f261d767313b22e091",
+    "code/weight_space_lab/benchmark_providers.py": "104a0a737c17daaf865b1e466cf9caa4f7246fe9e57e839bd5e3d73ad53b17b2",
+    "code/weight_space_lab/benchmark_tasks.py": "124dab5d3e055d2c1733485f4c7a03345a4672b2c6617da037ff499c71982733",
+    "code/weight_space_lab/controller.py": "37f895c1efea84f24c04398c584fe6e9147931abf0b5eb36d42088b0e931e5a4",
+    "code/weight_space_lab/editor_session.py": "ed49075f39ac4fb031b5d418845f6aba1fe44423b7941eef007736027ed133a7",
+    "code/weight_space_lab/evidence.py": "c7f3cbf128a4fc59676cf6d71a3f6ffc5a7d627e82ba662498ef3b8265e1b468",
+    "code/weight_space_lab/legacy.py": "a619b20b8d721052ee4cbb9df09edb75ff543c073b8e635a8f206fee26f0f1b9",
+    "code/weight_space_lab/reports.py": "ae387c4a71f4281f368a5e0c242aca3fb54b2ab6d67cf4bba51061860e18016e",
+    "code/weight_space_lab/workflows.py": "dde73f1177f6c65fac51c9d3346f778e02344e8688f18efaba26aacd10db4e82",
+    "comparison.json": "432e8049b94baf330ce81662629ca6df74d546cf43d0c80be12cbbb51c3db9ee",
+    "evaluation.json": "a7cda7fa6ccdaaa083891f7044d27ddeda3d4593c06730a2a521777b0555a247",
+    "reference/LICENSE": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+    "reference/LICENSE-MinAtar": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "reference/prompt.txt": "766ee251d59a7893ed86d5eaea99ddb847529ab2092afc69f90f55fb0a22e876",
+    "reference/published-answer.md": "a30bdda1acef79b507498edcef7e48d4fff16aa85783741925da9d5d4f42faf0",
+    "reference/published-scores.json": "bc10c6f957af95cdd52ee4be085acd249046f6117dbdb8c735fd5ddb2195c47c",
+    "reference/published.npz": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+    "reference/sources.json": "d9373b79c0ce42b05d69b9c79100d3904354bfc28b1b1b95654cd49c47424a36",
+    "replay.json": "e7c18e3d2c958165f6b88976e1c3a16a255407da1d7201bd167009294911f569",
+    "report.html": "322e8aa2b9e09a4b78cad0d74259aa15459adeede26d68610b1dfa69de0494ac",
+    "verification.json": "e7fd4c2548d043d20fe71842309733361e2ecfe792924fa2df2738781a212634"
+  },
+  "records": {
+    "verification.json": {
+      "all_assets_verified": true,
+      "exact_tensor_match": true,
+      "statements": 92,
+      "parameters": 20486,
+      "revision": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f"
+    },
+    "evaluation.json": {
+      "schema": "weight-space-breakout-v1",
+      "checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+      "scope": "full_protocol",
+      "evaluator_sha256": "75b7f6f80a2284fdd13603e9f322c38dfb90f36b66f22aa3a480526c8bfe5977",
+      "game": "breakout",
+      "episodes": 1000,
+      "mean": 502.88,
+      "se": 7.747379136423071,
+      "ci95_normal": [
+        487.6951368926108,
+        518.0648631073892
+      ],
+      "mean_length": 7188.392,
+      "settings": {
+        "seed": 0,
+        "max_steps": 10000,
+        "sticky_action_probability": 0.1,
+        "action_selection": "softmax sampled; float64 softmax, float32 dense network",
+        "seeds": "env=seed+episode; action=seed+episode+1000000; fresh env per episode"
+      },
+      "versions": {
+        "numpy": "2.5.4",
+        "minatar": "1.0.15",
+        "python": "3.13.18"
+      },
+      "seconds": 61.91225498899996,
+      "results": [
+        {
+          "episode": 0,
+          "score": 491,
+          "steps": 7284,
+          "truncated": false
+        },
+        {
+          "episode": 1,
+          "score": 727,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 2,
+          "score": 753,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 3,
+          "score": 665,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 4,
+          "score": 638,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 5,
+          "score": 663,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 6,
+          "score": 657,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 7,
+          "score": 748,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 8,
+          "score": 273,
+          "steps": 3678,
+          "truncated": false
+        },
+        {
+          "episode": 9,
+          "score": 697,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 10,
+          "score": 67,
+          "steps": 800,
+          "truncated": false
+        },
+        {
+          "episode": 11,
+          "score": 651,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 12,
+          "score": 128,
+          "steps": 1998,
+          "truncated": false
+        },
+        {
+          "episode": 13,
+          "score": 686,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 14,
+          "score": 668,
+          "steps": 9928,
+          "truncated": false
+        },
+        {
+          "episode": 15,
+          "score": 745,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 16,
+          "score": 556,
+          "steps": 7486,
+          "truncated": false
+        },
+        {
+          "episode": 17,
+          "score": 518,
+          "steps": 7012,
+          "truncated": false
+        },
+        {
+          "episode": 18,
+          "score": 682,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 19,
+          "score": 25,
+          "steps": 296,
+          "truncated": false
+        },
+        {
+          "episode": 20,
+          "score": 608,
+          "steps": 9398,
+          "truncated": false
+        },
+        {
+          "episode": 21,
+          "score": 642,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 22,
+          "score": 734,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 23,
+          "score": 738,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 24,
+          "score": 157,
+          "steps": 1896,
+          "truncated": false
+        },
+        {
+          "episode": 25,
+          "score": 746,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 26,
+          "score": 639,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 27,
+          "score": 7,
+          "steps": 80,
+          "truncated": false
+        },
+        {
+          "episode": 28,
+          "score": 398,
+          "steps": 5058,
+          "truncated": false
+        },
+        {
+          "episode": 29,
+          "score": 483,
+          "steps": 7198,
+          "truncated": false
+        },
+        {
+          "episode": 30,
+          "score": 682,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 31,
+          "score": 318,
+          "steps": 4806,
+          "truncated": false
+        },
+        {
+          "episode": 32,
+          "score": 684,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 33,
+          "score": 635,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 34,
+          "score": 803,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 35,
+          "score": 651,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 36,
+          "score": 671,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 37,
+          "score": 745,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 38,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 39,
+          "score": 720,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 40,
+          "score": 537,
+          "steps": 7178,
+          "truncated": false
+        },
+        {
+          "episode": 41,
+          "score": 705,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 42,
+          "score": 63,
+          "steps": 1058,
+          "truncated": false
+        },
+        {
+          "episode": 43,
+          "score": 68,
+          "steps": 810,
+          "truncated": false
+        },
+        {
+          "episode": 44,
+          "score": 471,
+          "steps": 6506,
+          "truncated": false
+        },
+        {
+          "episode": 45,
+          "score": 148,
+          "steps": 2016,
+          "truncated": false
+        },
+        {
+          "episode": 46,
+          "score": 428,
+          "steps": 5730,
+          "truncated": false
+        },
+        {
+          "episode": 47,
+          "score": 40,
+          "steps": 472,
+          "truncated": false
+        },
+        {
+          "episode": 48,
+          "score": 735,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 49,
+          "score": 655,
+          "steps": 9470,
+          "truncated": false
+        },
+        {
+          "episode": 50,
+          "score": 312,
+          "steps": 4350,
+          "truncated": false
+        },
+        {
+          "episode": 51,
+          "score": 343,
+          "steps": 5112,
+          "truncated": false
+        },
+        {
+          "episode": 52,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 53,
+          "score": 277,
+          "steps": 3328,
+          "truncated": false
+        },
+        {
+          "episode": 54,
+          "score": 637,
+          "steps": 8296,
+          "truncated": false
+        },
+        {
+          "episode": 55,
+          "score": 443,
+          "steps": 6280,
+          "truncated": false
+        },
+        {
+          "episode": 56,
+          "score": 646,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 57,
+          "score": 741,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 58,
+          "score": 685,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 59,
+          "score": 753,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 60,
+          "score": 713,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 61,
+          "score": 44,
+          "steps": 488,
+          "truncated": false
+        },
+        {
+          "episode": 62,
+          "score": 686,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 63,
+          "score": 641,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 64,
+          "score": 655,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 65,
+          "score": 125,
+          "steps": 1498,
+          "truncated": false
+        },
+        {
+          "episode": 66,
+          "score": 311,
+          "steps": 4546,
+          "truncated": false
+        },
+        {
+          "episode": 67,
+          "score": 686,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 68,
+          "score": 349,
+          "steps": 4524,
+          "truncated": false
+        },
+        {
+          "episode": 69,
+          "score": 29,
+          "steps": 490,
+          "truncated": false
+        },
+        {
+          "episode": 70,
+          "score": 7,
+          "steps": 80,
+          "truncated": false
+        },
+        {
+          "episode": 71,
+          "score": 699,
+          "steps": 9470,
+          "truncated": false
+        },
+        {
+          "episode": 72,
+          "score": 130,
+          "steps": 1552,
+          "truncated": false
+        },
+        {
+          "episode": 73,
+          "score": 159,
+          "steps": 1982,
+          "truncated": false
+        },
+        {
+          "episode": 74,
+          "score": 681,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 75,
+          "score": 379,
+          "steps": 4676,
+          "truncated": false
+        },
+        {
+          "episode": 76,
+          "score": 68,
+          "steps": 810,
+          "truncated": false
+        },
+        {
+          "episode": 77,
+          "score": 397,
+          "steps": 5444,
+          "truncated": false
+        },
+        {
+          "episode": 78,
+          "score": 701,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 79,
+          "score": 191,
+          "steps": 2952,
+          "truncated": false
+        },
+        {
+          "episode": 80,
+          "score": 720,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 81,
+          "score": 669,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 82,
+          "score": 337,
+          "steps": 4484,
+          "truncated": false
+        },
+        {
+          "episode": 83,
+          "score": 338,
+          "steps": 4846,
+          "truncated": false
+        },
+        {
+          "episode": 84,
+          "score": 276,
+          "steps": 3908,
+          "truncated": false
+        },
+        {
+          "episode": 85,
+          "score": 670,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 86,
+          "score": 214,
+          "steps": 3402,
+          "truncated": false
+        },
+        {
+          "episode": 87,
+          "score": 704,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 88,
+          "score": 666,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 89,
+          "score": 740,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 90,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 91,
+          "score": 673,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 92,
+          "score": 313,
+          "steps": 4492,
+          "truncated": false
+        },
+        {
+          "episode": 93,
+          "score": 489,
+          "steps": 7632,
+          "truncated": false
+        },
+        {
+          "episode": 94,
+          "score": 715,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 95,
+          "score": 733,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 96,
+          "score": 732,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 97,
+          "score": 684,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 98,
+          "score": 688,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 99,
+          "score": 629,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 100,
+          "score": 343,
+          "steps": 5034,
+          "truncated": false
+        },
+        {
+          "episode": 101,
+          "score": 258,
+          "steps": 3474,
+          "truncated": false
+        },
+        {
+          "episode": 102,
+          "score": 738,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 103,
+          "score": 157,
+          "steps": 2348,
+          "truncated": false
+        },
+        {
+          "episode": 104,
+          "score": 367,
+          "steps": 5700,
+          "truncated": false
+        },
+        {
+          "episode": 105,
+          "score": 639,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 106,
+          "score": 718,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 107,
+          "score": 714,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 108,
+          "score": 490,
+          "steps": 7886,
+          "truncated": false
+        },
+        {
+          "episode": 109,
+          "score": 739,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 110,
+          "score": 614,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 111,
+          "score": 293,
+          "steps": 3816,
+          "truncated": false
+        },
+        {
+          "episode": 112,
+          "score": 74,
+          "steps": 838,
+          "truncated": false
+        },
+        {
+          "episode": 113,
+          "score": 685,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 114,
+          "score": 548,
+          "steps": 7958,
+          "truncated": false
+        },
+        {
+          "episode": 115,
+          "score": 741,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 116,
+          "score": 671,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 117,
+          "score": 730,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 118,
+          "score": 722,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 119,
+          "score": 124,
+          "steps": 1486,
+          "truncated": false
+        },
+        {
+          "episode": 120,
+          "score": 655,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 121,
+          "score": 688,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 122,
+          "score": 60,
+          "steps": 1074,
+          "truncated": false
+        },
+        {
+          "episode": 123,
+          "score": 317,
+          "steps": 4460,
+          "truncated": false
+        },
+        {
+          "episode": 124,
+          "score": 293,
+          "steps": 4518,
+          "truncated": false
+        },
+        {
+          "episode": 125,
+          "score": 821,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 126,
+          "score": 308,
+          "steps": 4268,
+          "truncated": false
+        },
+        {
+          "episode": 127,
+          "score": 517,
+          "steps": 8172,
+          "truncated": false
+        },
+        {
+          "episode": 128,
+          "score": 487,
+          "steps": 6526,
+          "truncated": false
+        },
+        {
+          "episode": 129,
+          "score": 363,
+          "steps": 5526,
+          "truncated": false
+        },
+        {
+          "episode": 130,
+          "score": 705,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 131,
+          "score": 158,
+          "steps": 2414,
+          "truncated": false
+        },
+        {
+          "episode": 132,
+          "score": 344,
+          "steps": 4462,
+          "truncated": false
+        },
+        {
+          "episode": 133,
+          "score": 37,
+          "steps": 440,
+          "truncated": false
+        },
+        {
+          "episode": 134,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 135,
+          "score": 277,
+          "steps": 3668,
+          "truncated": false
+        },
+        {
+          "episode": 136,
+          "score": 638,
+          "steps": 8932,
+          "truncated": false
+        },
+        {
+          "episode": 137,
+          "score": 370,
+          "steps": 5008,
+          "truncated": false
+        },
+        {
+          "episode": 138,
+          "score": 499,
+          "steps": 6332,
+          "truncated": false
+        },
+        {
+          "episode": 139,
+          "score": 718,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 140,
+          "score": 674,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 141,
+          "score": 247,
+          "steps": 4570,
+          "truncated": false
+        },
+        {
+          "episode": 142,
+          "score": 697,
+          "steps": 9382,
+          "truncated": false
+        },
+        {
+          "episode": 143,
+          "score": 313,
+          "steps": 4558,
+          "truncated": false
+        },
+        {
+          "episode": 144,
+          "score": 624,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 145,
+          "score": 739,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 146,
+          "score": 37,
+          "steps": 440,
+          "truncated": false
+        },
+        {
+          "episode": 147,
+          "score": 250,
+          "steps": 3830,
+          "truncated": false
+        },
+        {
+          "episode": 148,
+          "score": 719,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 149,
+          "score": 341,
+          "steps": 5026,
+          "truncated": false
+        },
+        {
+          "episode": 150,
+          "score": 709,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 151,
+          "score": 523,
+          "steps": 7868,
+          "truncated": false
+        },
+        {
+          "episode": 152,
+          "score": 698,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 153,
+          "score": 675,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 154,
+          "score": 695,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 155,
+          "score": 670,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 156,
+          "score": 217,
+          "steps": 3052,
+          "truncated": false
+        },
+        {
+          "episode": 157,
+          "score": 601,
+          "steps": 8958,
+          "truncated": false
+        },
+        {
+          "episode": 158,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 159,
+          "score": 128,
+          "steps": 1650,
+          "truncated": false
+        },
+        {
+          "episode": 160,
+          "score": 247,
+          "steps": 3980,
+          "truncated": false
+        },
+        {
+          "episode": 161,
+          "score": 454,
+          "steps": 6460,
+          "truncated": false
+        },
+        {
+          "episode": 162,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 163,
+          "score": 337,
+          "steps": 5224,
+          "truncated": false
+        },
+        {
+          "episode": 164,
+          "score": 655,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 165,
+          "score": 524,
+          "steps": 7450,
+          "truncated": false
+        },
+        {
+          "episode": 166,
+          "score": 213,
+          "steps": 3026,
+          "truncated": false
+        },
+        {
+          "episode": 167,
+          "score": 712,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 168,
+          "score": 548,
+          "steps": 7808,
+          "truncated": false
+        },
+        {
+          "episode": 169,
+          "score": 547,
+          "steps": 8176,
+          "truncated": false
+        },
+        {
+          "episode": 170,
+          "score": 97,
+          "steps": 1160,
+          "truncated": false
+        },
+        {
+          "episode": 171,
+          "score": 307,
+          "steps": 4616,
+          "truncated": false
+        },
+        {
+          "episode": 172,
+          "score": 38,
+          "steps": 450,
+          "truncated": false
+        },
+        {
+          "episode": 173,
+          "score": 278,
+          "steps": 3310,
+          "truncated": false
+        },
+        {
+          "episode": 174,
+          "score": 256,
+          "steps": 3730,
+          "truncated": false
+        },
+        {
+          "episode": 175,
+          "score": 654,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 176,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 177,
+          "score": 731,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 178,
+          "score": 67,
+          "steps": 780,
+          "truncated": false
+        },
+        {
+          "episode": 179,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 180,
+          "score": 676,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 181,
+          "score": 730,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 182,
+          "score": 569,
+          "steps": 8694,
+          "truncated": false
+        },
+        {
+          "episode": 183,
+          "score": 160,
+          "steps": 2396,
+          "truncated": false
+        },
+        {
+          "episode": 184,
+          "score": 35,
+          "steps": 646,
+          "truncated": false
+        },
+        {
+          "episode": 185,
+          "score": 435,
+          "steps": 5906,
+          "truncated": false
+        },
+        {
+          "episode": 186,
+          "score": 616,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 187,
+          "score": 401,
+          "steps": 5714,
+          "truncated": false
+        },
+        {
+          "episode": 188,
+          "score": 20,
+          "steps": 228,
+          "truncated": false
+        },
+        {
+          "episode": 189,
+          "score": 463,
+          "steps": 5974,
+          "truncated": false
+        },
+        {
+          "episode": 190,
+          "score": 489,
+          "steps": 7082,
+          "truncated": false
+        },
+        {
+          "episode": 191,
+          "score": 458,
+          "steps": 7040,
+          "truncated": false
+        },
+        {
+          "episode": 192,
+          "score": 518,
+          "steps": 7532,
+          "truncated": false
+        },
+        {
+          "episode": 193,
+          "score": 731,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 194,
+          "score": 128,
+          "steps": 1530,
+          "truncated": false
+        },
+        {
+          "episode": 195,
+          "score": 718,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 196,
+          "score": 739,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 197,
+          "score": 189,
+          "steps": 2610,
+          "truncated": false
+        },
+        {
+          "episode": 198,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 199,
+          "score": 452,
+          "steps": 5996,
+          "truncated": false
+        },
+        {
+          "episode": 200,
+          "score": 68,
+          "steps": 810,
+          "truncated": false
+        },
+        {
+          "episode": 201,
+          "score": 710,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 202,
+          "score": 720,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 203,
+          "score": 654,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 204,
+          "score": 37,
+          "steps": 440,
+          "truncated": false
+        },
+        {
+          "episode": 205,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 206,
+          "score": 55,
+          "steps": 656,
+          "truncated": false
+        },
+        {
+          "episode": 207,
+          "score": 428,
+          "steps": 7168,
+          "truncated": false
+        },
+        {
+          "episode": 208,
+          "score": 760,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 209,
+          "score": 397,
+          "steps": 5950,
+          "truncated": false
+        },
+        {
+          "episode": 210,
+          "score": 683,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 211,
+          "score": 677,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 212,
+          "score": 129,
+          "steps": 1890,
+          "truncated": false
+        },
+        {
+          "episode": 213,
+          "score": 663,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 214,
+          "score": 662,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 215,
+          "score": 626,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 216,
+          "score": 547,
+          "steps": 8840,
+          "truncated": false
+        },
+        {
+          "episode": 217,
+          "score": 770,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 218,
+          "score": 766,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 219,
+          "score": 99,
+          "steps": 1662,
+          "truncated": false
+        },
+        {
+          "episode": 220,
+          "score": 685,
+          "steps": 9546,
+          "truncated": false
+        },
+        {
+          "episode": 221,
+          "score": 645,
+          "steps": 8656,
+          "truncated": false
+        },
+        {
+          "episode": 222,
+          "score": 278,
+          "steps": 3634,
+          "truncated": false
+        },
+        {
+          "episode": 223,
+          "score": 581,
+          "steps": 7632,
+          "truncated": false
+        },
+        {
+          "episode": 224,
+          "score": 22,
+          "steps": 256,
+          "truncated": false
+        },
+        {
+          "episode": 225,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 226,
+          "score": 667,
+          "steps": 9784,
+          "truncated": false
+        },
+        {
+          "episode": 227,
+          "score": 550,
+          "steps": 7616,
+          "truncated": false
+        },
+        {
+          "episode": 228,
+          "score": 230,
+          "steps": 3108,
+          "truncated": false
+        },
+        {
+          "episode": 229,
+          "score": 690,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 230,
+          "score": 67,
+          "steps": 800,
+          "truncated": false
+        },
+        {
+          "episode": 231,
+          "score": 674,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 232,
+          "score": 653,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 233,
+          "score": 695,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 234,
+          "score": 686,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 235,
+          "score": 710,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 236,
+          "score": 773,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 237,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 238,
+          "score": 711,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 239,
+          "score": 722,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 240,
+          "score": 754,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 241,
+          "score": 684,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 242,
+          "score": 704,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 243,
+          "score": 754,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 244,
+          "score": 725,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 245,
+          "score": 220,
+          "steps": 2944,
+          "truncated": false
+        },
+        {
+          "episode": 246,
+          "score": 696,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 247,
+          "score": 513,
+          "steps": 6804,
+          "truncated": false
+        },
+        {
+          "episode": 248,
+          "score": 767,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 249,
+          "score": 349,
+          "steps": 5200,
+          "truncated": false
+        },
+        {
+          "episode": 250,
+          "score": 256,
+          "steps": 4324,
+          "truncated": false
+        },
+        {
+          "episode": 251,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 252,
+          "score": 685,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 253,
+          "score": 771,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 254,
+          "score": 7,
+          "steps": 80,
+          "truncated": false
+        },
+        {
+          "episode": 255,
+          "score": 188,
+          "steps": 2922,
+          "truncated": false
+        },
+        {
+          "episode": 256,
+          "score": 670,
+          "steps": 9888,
+          "truncated": false
+        },
+        {
+          "episode": 257,
+          "score": 281,
+          "steps": 3556,
+          "truncated": false
+        },
+        {
+          "episode": 258,
+          "score": 367,
+          "steps": 4898,
+          "truncated": false
+        },
+        {
+          "episode": 259,
+          "score": 730,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 260,
+          "score": 676,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 261,
+          "score": 660,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 262,
+          "score": 670,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 263,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 264,
+          "score": 776,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 265,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 266,
+          "score": 679,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 267,
+          "score": 553,
+          "steps": 7438,
+          "truncated": false
+        },
+        {
+          "episode": 268,
+          "score": 41,
+          "steps": 790,
+          "truncated": false
+        },
+        {
+          "episode": 269,
+          "score": 697,
+          "steps": 9462,
+          "truncated": false
+        },
+        {
+          "episode": 270,
+          "score": 630,
+          "steps": 8548,
+          "truncated": false
+        },
+        {
+          "episode": 271,
+          "score": 419,
+          "steps": 6702,
+          "truncated": false
+        },
+        {
+          "episode": 272,
+          "score": 97,
+          "steps": 1160,
+          "truncated": false
+        },
+        {
+          "episode": 273,
+          "score": 68,
+          "steps": 810,
+          "truncated": false
+        },
+        {
+          "episode": 274,
+          "score": 629,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 275,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 276,
+          "score": 679,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 277,
+          "score": 693,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 278,
+          "score": 190,
+          "steps": 2820,
+          "truncated": false
+        },
+        {
+          "episode": 279,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 280,
+          "score": 127,
+          "steps": 1988,
+          "truncated": false
+        },
+        {
+          "episode": 281,
+          "score": 736,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 282,
+          "score": 441,
+          "steps": 7040,
+          "truncated": false
+        },
+        {
+          "episode": 283,
+          "score": 139,
+          "steps": 2366,
+          "truncated": false
+        },
+        {
+          "episode": 284,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 285,
+          "score": 679,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 286,
+          "score": 573,
+          "steps": 7892,
+          "truncated": false
+        },
+        {
+          "episode": 287,
+          "score": 684,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 288,
+          "score": 370,
+          "steps": 5024,
+          "truncated": false
+        },
+        {
+          "episode": 289,
+          "score": 307,
+          "steps": 4266,
+          "truncated": false
+        },
+        {
+          "episode": 290,
+          "score": 77,
+          "steps": 1356,
+          "truncated": false
+        },
+        {
+          "episode": 291,
+          "score": 696,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 292,
+          "score": 581,
+          "steps": 7846,
+          "truncated": false
+        },
+        {
+          "episode": 293,
+          "score": 367,
+          "steps": 5124,
+          "truncated": false
+        },
+        {
+          "episode": 294,
+          "score": 685,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 295,
+          "score": 736,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 296,
+          "score": 337,
+          "steps": 6272,
+          "truncated": false
+        },
+        {
+          "episode": 297,
+          "score": 583,
+          "steps": 9172,
+          "truncated": false
+        },
+        {
+          "episode": 298,
+          "score": 654,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 299,
+          "score": 743,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 300,
+          "score": 95,
+          "steps": 1304,
+          "truncated": false
+        },
+        {
+          "episode": 301,
+          "score": 721,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 302,
+          "score": 416,
+          "steps": 5704,
+          "truncated": false
+        },
+        {
+          "episode": 303,
+          "score": 699,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 304,
+          "score": 125,
+          "steps": 1478,
+          "truncated": false
+        },
+        {
+          "episode": 305,
+          "score": 70,
+          "steps": 1026,
+          "truncated": false
+        },
+        {
+          "episode": 306,
+          "score": 731,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 307,
+          "score": 335,
+          "steps": 4600,
+          "truncated": false
+        },
+        {
+          "episode": 308,
+          "score": 733,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 309,
+          "score": 677,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 310,
+          "score": 655,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 311,
+          "score": 772,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 312,
+          "score": 7,
+          "steps": 80,
+          "truncated": false
+        },
+        {
+          "episode": 313,
+          "score": 687,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 314,
+          "score": 751,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 315,
+          "score": 687,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 316,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 317,
+          "score": 391,
+          "steps": 5330,
+          "truncated": false
+        },
+        {
+          "episode": 318,
+          "score": 729,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 319,
+          "score": 738,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 320,
+          "score": 742,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 321,
+          "score": 57,
+          "steps": 714,
+          "truncated": false
+        },
+        {
+          "episode": 322,
+          "score": 676,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 323,
+          "score": 364,
+          "steps": 5490,
+          "truncated": false
+        },
+        {
+          "episode": 324,
+          "score": 663,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 325,
+          "score": 737,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 326,
+          "score": 232,
+          "steps": 3280,
+          "truncated": false
+        },
+        {
+          "episode": 327,
+          "score": 655,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 328,
+          "score": 643,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 329,
+          "score": 275,
+          "steps": 3316,
+          "truncated": false
+        },
+        {
+          "episode": 330,
+          "score": 748,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 331,
+          "score": 705,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 332,
+          "score": 682,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 333,
+          "score": 718,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 334,
+          "score": 414,
+          "steps": 6132,
+          "truncated": false
+        },
+        {
+          "episode": 335,
+          "score": 457,
+          "steps": 6556,
+          "truncated": false
+        },
+        {
+          "episode": 336,
+          "score": 721,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 337,
+          "score": 35,
+          "steps": 418,
+          "truncated": false
+        },
+        {
+          "episode": 338,
+          "score": 690,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 339,
+          "score": 660,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 340,
+          "score": 39,
+          "steps": 462,
+          "truncated": false
+        },
+        {
+          "episode": 341,
+          "score": 310,
+          "steps": 4630,
+          "truncated": false
+        },
+        {
+          "episode": 342,
+          "score": 691,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 343,
+          "score": 17,
+          "steps": 192,
+          "truncated": false
+        },
+        {
+          "episode": 344,
+          "score": 250,
+          "steps": 3300,
+          "truncated": false
+        },
+        {
+          "episode": 345,
+          "score": 629,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 346,
+          "score": 208,
+          "steps": 3084,
+          "truncated": false
+        },
+        {
+          "episode": 347,
+          "score": 67,
+          "steps": 800,
+          "truncated": false
+        },
+        {
+          "episode": 348,
+          "score": 1,
+          "steps": 16,
+          "truncated": false
+        },
+        {
+          "episode": 349,
+          "score": 741,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 350,
+          "score": 682,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 351,
+          "score": 341,
+          "steps": 4660,
+          "truncated": false
+        },
+        {
+          "episode": 352,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 353,
+          "score": 706,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 354,
+          "score": 727,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 355,
+          "score": 726,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 356,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 357,
+          "score": 662,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 358,
+          "score": 469,
+          "steps": 6850,
+          "truncated": false
+        },
+        {
+          "episode": 359,
+          "score": 368,
+          "steps": 5492,
+          "truncated": false
+        },
+        {
+          "episode": 360,
+          "score": 573,
+          "steps": 8828,
+          "truncated": false
+        },
+        {
+          "episode": 361,
+          "score": 14,
+          "steps": 160,
+          "truncated": false
+        },
+        {
+          "episode": 362,
+          "score": 638,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 363,
+          "score": 698,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 364,
+          "score": 277,
+          "steps": 4708,
+          "truncated": false
+        },
+        {
+          "episode": 365,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 366,
+          "score": 685,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 367,
+          "score": 631,
+          "steps": 9416,
+          "truncated": false
+        },
+        {
+          "episode": 368,
+          "score": 712,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 369,
+          "score": 542,
+          "steps": 7124,
+          "truncated": false
+        },
+        {
+          "episode": 370,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 371,
+          "score": 719,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 372,
+          "score": 437,
+          "steps": 5692,
+          "truncated": false
+        },
+        {
+          "episode": 373,
+          "score": 14,
+          "steps": 154,
+          "truncated": false
+        },
+        {
+          "episode": 374,
+          "score": 97,
+          "steps": 1508,
+          "truncated": false
+        },
+        {
+          "episode": 375,
+          "score": 719,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 376,
+          "score": 658,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 377,
+          "score": 756,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 378,
+          "score": 158,
+          "steps": 2358,
+          "truncated": false
+        },
+        {
+          "episode": 379,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 380,
+          "score": 655,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 381,
+          "score": 719,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 382,
+          "score": 205,
+          "steps": 2792,
+          "truncated": false
+        },
+        {
+          "episode": 383,
+          "score": 704,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 384,
+          "score": 657,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 385,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 386,
+          "score": 719,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 387,
+          "score": 68,
+          "steps": 810,
+          "truncated": false
+        },
+        {
+          "episode": 388,
+          "score": 365,
+          "steps": 4876,
+          "truncated": false
+        },
+        {
+          "episode": 389,
+          "score": 458,
+          "steps": 6006,
+          "truncated": false
+        },
+        {
+          "episode": 390,
+          "score": 638,
+          "steps": 9184,
+          "truncated": false
+        },
+        {
+          "episode": 391,
+          "score": 679,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 392,
+          "score": 743,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 393,
+          "score": 158,
+          "steps": 1890,
+          "truncated": false
+        },
+        {
+          "episode": 394,
+          "score": 580,
+          "steps": 8478,
+          "truncated": false
+        },
+        {
+          "episode": 395,
+          "score": 7,
+          "steps": 80,
+          "truncated": false
+        },
+        {
+          "episode": 396,
+          "score": 5,
+          "steps": 58,
+          "truncated": false
+        },
+        {
+          "episode": 397,
+          "score": 98,
+          "steps": 1638,
+          "truncated": false
+        },
+        {
+          "episode": 398,
+          "score": 127,
+          "steps": 1520,
+          "truncated": false
+        },
+        {
+          "episode": 399,
+          "score": 460,
+          "steps": 6862,
+          "truncated": false
+        },
+        {
+          "episode": 400,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 401,
+          "score": 356,
+          "steps": 5194,
+          "truncated": false
+        },
+        {
+          "episode": 402,
+          "score": 640,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 403,
+          "score": 722,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 404,
+          "score": 710,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 405,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 406,
+          "score": 670,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 407,
+          "score": 457,
+          "steps": 5956,
+          "truncated": false
+        },
+        {
+          "episode": 408,
+          "score": 744,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 409,
+          "score": 338,
+          "steps": 4030,
+          "truncated": false
+        },
+        {
+          "episode": 410,
+          "score": 513,
+          "steps": 7194,
+          "truncated": false
+        },
+        {
+          "episode": 411,
+          "score": 692,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 412,
+          "score": 656,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 413,
+          "score": 365,
+          "steps": 5638,
+          "truncated": false
+        },
+        {
+          "episode": 414,
+          "score": 367,
+          "steps": 5048,
+          "truncated": false
+        },
+        {
+          "episode": 415,
+          "score": 404,
+          "steps": 5630,
+          "truncated": false
+        },
+        {
+          "episode": 416,
+          "score": 247,
+          "steps": 3656,
+          "truncated": false
+        },
+        {
+          "episode": 417,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 418,
+          "score": 778,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 419,
+          "score": 53,
+          "steps": 628,
+          "truncated": false
+        },
+        {
+          "episode": 420,
+          "score": 690,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 421,
+          "score": 212,
+          "steps": 3294,
+          "truncated": false
+        },
+        {
+          "episode": 422,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 423,
+          "score": 497,
+          "steps": 7180,
+          "truncated": false
+        },
+        {
+          "episode": 424,
+          "score": 649,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 425,
+          "score": 278,
+          "steps": 4262,
+          "truncated": false
+        },
+        {
+          "episode": 426,
+          "score": 669,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 427,
+          "score": 118,
+          "steps": 1612,
+          "truncated": false
+        },
+        {
+          "episode": 428,
+          "score": 120,
+          "steps": 1612,
+          "truncated": false
+        },
+        {
+          "episode": 429,
+          "score": 656,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 430,
+          "score": 430,
+          "steps": 5950,
+          "truncated": false
+        },
+        {
+          "episode": 431,
+          "score": 722,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 432,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 433,
+          "score": 492,
+          "steps": 5972,
+          "truncated": false
+        },
+        {
+          "episode": 434,
+          "score": 671,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 435,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 436,
+          "score": 193,
+          "steps": 2556,
+          "truncated": false
+        },
+        {
+          "episode": 437,
+          "score": 247,
+          "steps": 3698,
+          "truncated": false
+        },
+        {
+          "episode": 438,
+          "score": 98,
+          "steps": 1170,
+          "truncated": false
+        },
+        {
+          "episode": 439,
+          "score": 712,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 440,
+          "score": 129,
+          "steps": 2418,
+          "truncated": false
+        },
+        {
+          "episode": 441,
+          "score": 278,
+          "steps": 3630,
+          "truncated": false
+        },
+        {
+          "episode": 442,
+          "score": 747,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 443,
+          "score": 462,
+          "steps": 6530,
+          "truncated": false
+        },
+        {
+          "episode": 444,
+          "score": 677,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 445,
+          "score": 680,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 446,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 447,
+          "score": 69,
+          "steps": 1290,
+          "truncated": false
+        },
+        {
+          "episode": 448,
+          "score": 397,
+          "steps": 6146,
+          "truncated": false
+        },
+        {
+          "episode": 449,
+          "score": 81,
+          "steps": 1086,
+          "truncated": false
+        },
+        {
+          "episode": 450,
+          "score": 694,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 451,
+          "score": 774,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 452,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 453,
+          "score": 797,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 454,
+          "score": 498,
+          "steps": 6562,
+          "truncated": false
+        },
+        {
+          "episode": 455,
+          "score": 746,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 456,
+          "score": 715,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 457,
+          "score": 718,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 458,
+          "score": 644,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 459,
+          "score": 296,
+          "steps": 3932,
+          "truncated": false
+        },
+        {
+          "episode": 460,
+          "score": 685,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 461,
+          "score": 661,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 462,
+          "score": 708,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 463,
+          "score": 646,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 464,
+          "score": 717,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 465,
+          "score": 717,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 466,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 467,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 468,
+          "score": 398,
+          "steps": 6052,
+          "truncated": false
+        },
+        {
+          "episode": 469,
+          "score": 662,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 470,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 471,
+          "score": 651,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 472,
+          "score": 403,
+          "steps": 5686,
+          "truncated": false
+        },
+        {
+          "episode": 473,
+          "score": 411,
+          "steps": 6132,
+          "truncated": false
+        },
+        {
+          "episode": 474,
+          "score": 657,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 475,
+          "score": 663,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 476,
+          "score": 218,
+          "steps": 3234,
+          "truncated": false
+        },
+        {
+          "episode": 477,
+          "score": 678,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 478,
+          "score": 697,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 479,
+          "score": 705,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 480,
+          "score": 38,
+          "steps": 450,
+          "truncated": false
+        },
+        {
+          "episode": 481,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 482,
+          "score": 704,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 483,
+          "score": 238,
+          "steps": 3272,
+          "truncated": false
+        },
+        {
+          "episode": 484,
+          "score": 753,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 485,
+          "score": 764,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 486,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 487,
+          "score": 741,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 488,
+          "score": 670,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 489,
+          "score": 672,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 490,
+          "score": 651,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 491,
+          "score": 658,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 492,
+          "score": 686,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 493,
+          "score": 678,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 494,
+          "score": 722,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 495,
+          "score": 721,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 496,
+          "score": 681,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 497,
+          "score": 624,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 498,
+          "score": 141,
+          "steps": 2246,
+          "truncated": false
+        },
+        {
+          "episode": 499,
+          "score": 191,
+          "steps": 2584,
+          "truncated": false
+        },
+        {
+          "episode": 500,
+          "score": 493,
+          "steps": 7808,
+          "truncated": false
+        },
+        {
+          "episode": 501,
+          "score": 691,
+          "steps": 9970,
+          "truncated": false
+        },
+        {
+          "episode": 502,
+          "score": 715,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 503,
+          "score": 685,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 504,
+          "score": 608,
+          "steps": 8262,
+          "truncated": false
+        },
+        {
+          "episode": 505,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 506,
+          "score": 131,
+          "steps": 1938,
+          "truncated": false
+        },
+        {
+          "episode": 507,
+          "score": 621,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 508,
+          "score": 627,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 509,
+          "score": 517,
+          "steps": 6578,
+          "truncated": false
+        },
+        {
+          "episode": 510,
+          "score": 718,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 511,
+          "score": 320,
+          "steps": 5108,
+          "truncated": false
+        },
+        {
+          "episode": 512,
+          "score": 717,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 513,
+          "score": 719,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 514,
+          "score": 253,
+          "steps": 3522,
+          "truncated": false
+        },
+        {
+          "episode": 515,
+          "score": 247,
+          "steps": 3928,
+          "truncated": false
+        },
+        {
+          "episode": 516,
+          "score": 707,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 517,
+          "score": 728,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 518,
+          "score": 737,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 519,
+          "score": 719,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 520,
+          "score": 675,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 521,
+          "score": 307,
+          "steps": 3814,
+          "truncated": false
+        },
+        {
+          "episode": 522,
+          "score": 691,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 523,
+          "score": 325,
+          "steps": 4698,
+          "truncated": false
+        },
+        {
+          "episode": 524,
+          "score": 626,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 525,
+          "score": 37,
+          "steps": 440,
+          "truncated": false
+        },
+        {
+          "episode": 526,
+          "score": 706,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 527,
+          "score": 248,
+          "steps": 3438,
+          "truncated": false
+        },
+        {
+          "episode": 528,
+          "score": 652,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 529,
+          "score": 40,
+          "steps": 472,
+          "truncated": false
+        },
+        {
+          "episode": 530,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 531,
+          "score": 248,
+          "steps": 4282,
+          "truncated": false
+        },
+        {
+          "episode": 532,
+          "score": 518,
+          "steps": 7888,
+          "truncated": false
+        },
+        {
+          "episode": 533,
+          "score": 694,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 534,
+          "score": 420,
+          "steps": 5840,
+          "truncated": false
+        },
+        {
+          "episode": 535,
+          "score": 99,
+          "steps": 1182,
+          "truncated": false
+        },
+        {
+          "episode": 536,
+          "score": 698,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 537,
+          "score": 283,
+          "steps": 3676,
+          "truncated": false
+        },
+        {
+          "episode": 538,
+          "score": 670,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 539,
+          "score": 519,
+          "steps": 6834,
+          "truncated": false
+        },
+        {
+          "episode": 540,
+          "score": 188,
+          "steps": 2726,
+          "truncated": false
+        },
+        {
+          "episode": 541,
+          "score": 343,
+          "steps": 4338,
+          "truncated": false
+        },
+        {
+          "episode": 542,
+          "score": 215,
+          "steps": 3286,
+          "truncated": false
+        },
+        {
+          "episode": 543,
+          "score": 253,
+          "steps": 3278,
+          "truncated": false
+        },
+        {
+          "episode": 544,
+          "score": 686,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 545,
+          "score": 707,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 546,
+          "score": 670,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 547,
+          "score": 714,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 548,
+          "score": 724,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 549,
+          "score": 683,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 550,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 551,
+          "score": 683,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 552,
+          "score": 719,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 553,
+          "score": 521,
+          "steps": 7660,
+          "truncated": false
+        },
+        {
+          "episode": 554,
+          "score": 37,
+          "steps": 440,
+          "truncated": false
+        },
+        {
+          "episode": 555,
+          "score": 745,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 556,
+          "score": 731,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 557,
+          "score": 653,
+          "steps": 9382,
+          "truncated": false
+        },
+        {
+          "episode": 558,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 559,
+          "score": 679,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 560,
+          "score": 695,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 561,
+          "score": 746,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 562,
+          "score": 681,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 563,
+          "score": 495,
+          "steps": 8374,
+          "truncated": false
+        },
+        {
+          "episode": 564,
+          "score": 37,
+          "steps": 440,
+          "truncated": false
+        },
+        {
+          "episode": 565,
+          "score": 643,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 566,
+          "score": 371,
+          "steps": 5530,
+          "truncated": false
+        },
+        {
+          "episode": 567,
+          "score": 163,
+          "steps": 2130,
+          "truncated": false
+        },
+        {
+          "episode": 568,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 569,
+          "score": 308,
+          "steps": 4138,
+          "truncated": false
+        },
+        {
+          "episode": 570,
+          "score": 696,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 571,
+          "score": 215,
+          "steps": 2912,
+          "truncated": false
+        },
+        {
+          "episode": 572,
+          "score": 682,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 573,
+          "score": 563,
+          "steps": 7794,
+          "truncated": false
+        },
+        {
+          "episode": 574,
+          "score": 420,
+          "steps": 6108,
+          "truncated": false
+        },
+        {
+          "episode": 575,
+          "score": 692,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 576,
+          "score": 671,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 577,
+          "score": 629,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 578,
+          "score": 647,
+          "steps": 8892,
+          "truncated": false
+        },
+        {
+          "episode": 579,
+          "score": 748,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 580,
+          "score": 652,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 581,
+          "score": 67,
+          "steps": 800,
+          "truncated": false
+        },
+        {
+          "episode": 582,
+          "score": 687,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 583,
+          "score": 607,
+          "steps": 9022,
+          "truncated": false
+        },
+        {
+          "episode": 584,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 585,
+          "score": 679,
+          "steps": 9624,
+          "truncated": false
+        },
+        {
+          "episode": 586,
+          "score": 641,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 587,
+          "score": 673,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 588,
+          "score": 427,
+          "steps": 5878,
+          "truncated": false
+        },
+        {
+          "episode": 589,
+          "score": 776,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 590,
+          "score": 674,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 591,
+          "score": 158,
+          "steps": 2482,
+          "truncated": false
+        },
+        {
+          "episode": 592,
+          "score": 699,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 593,
+          "score": 680,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 594,
+          "score": 649,
+          "steps": 9484,
+          "truncated": false
+        },
+        {
+          "episode": 595,
+          "score": 706,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 596,
+          "score": 301,
+          "steps": 5030,
+          "truncated": false
+        },
+        {
+          "episode": 597,
+          "score": 692,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 598,
+          "score": 702,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 599,
+          "score": 661,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 600,
+          "score": 676,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 601,
+          "score": 687,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 602,
+          "score": 673,
+          "steps": 9510,
+          "truncated": false
+        },
+        {
+          "episode": 603,
+          "score": 595,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 604,
+          "score": 305,
+          "steps": 4372,
+          "truncated": false
+        },
+        {
+          "episode": 605,
+          "score": 687,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 606,
+          "score": 488,
+          "steps": 6482,
+          "truncated": false
+        },
+        {
+          "episode": 607,
+          "score": 329,
+          "steps": 4314,
+          "truncated": false
+        },
+        {
+          "episode": 608,
+          "score": 705,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 609,
+          "score": 245,
+          "steps": 3676,
+          "truncated": false
+        },
+        {
+          "episode": 610,
+          "score": 15,
+          "steps": 166,
+          "truncated": false
+        },
+        {
+          "episode": 611,
+          "score": 157,
+          "steps": 1880,
+          "truncated": false
+        },
+        {
+          "episode": 612,
+          "score": 578,
+          "steps": 8094,
+          "truncated": false
+        },
+        {
+          "episode": 613,
+          "score": 28,
+          "steps": 338,
+          "truncated": false
+        },
+        {
+          "episode": 614,
+          "score": 577,
+          "steps": 7620,
+          "truncated": false
+        },
+        {
+          "episode": 615,
+          "score": 101,
+          "steps": 1686,
+          "truncated": false
+        },
+        {
+          "episode": 616,
+          "score": 213,
+          "steps": 3290,
+          "truncated": false
+        },
+        {
+          "episode": 617,
+          "score": 777,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 618,
+          "score": 699,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 619,
+          "score": 217,
+          "steps": 2600,
+          "truncated": false
+        },
+        {
+          "episode": 620,
+          "score": 550,
+          "steps": 7950,
+          "truncated": false
+        },
+        {
+          "episode": 621,
+          "score": 68,
+          "steps": 810,
+          "truncated": false
+        },
+        {
+          "episode": 622,
+          "score": 304,
+          "steps": 4664,
+          "truncated": false
+        },
+        {
+          "episode": 623,
+          "score": 218,
+          "steps": 2876,
+          "truncated": false
+        },
+        {
+          "episode": 624,
+          "score": 383,
+          "steps": 5430,
+          "truncated": false
+        },
+        {
+          "episode": 625,
+          "score": 394,
+          "steps": 5648,
+          "truncated": false
+        },
+        {
+          "episode": 626,
+          "score": 151,
+          "steps": 2096,
+          "truncated": false
+        },
+        {
+          "episode": 627,
+          "score": 696,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 628,
+          "score": 688,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 629,
+          "score": 249,
+          "steps": 3310,
+          "truncated": false
+        },
+        {
+          "episode": 630,
+          "score": 739,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 631,
+          "score": 773,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 632,
+          "score": 397,
+          "steps": 5584,
+          "truncated": false
+        },
+        {
+          "episode": 633,
+          "score": 97,
+          "steps": 1160,
+          "truncated": false
+        },
+        {
+          "episode": 634,
+          "score": 723,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 635,
+          "score": 679,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 636,
+          "score": 737,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 637,
+          "score": 98,
+          "steps": 1170,
+          "truncated": false
+        },
+        {
+          "episode": 638,
+          "score": 216,
+          "steps": 2824,
+          "truncated": false
+        },
+        {
+          "episode": 639,
+          "score": 713,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 640,
+          "score": 739,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 641,
+          "score": 45,
+          "steps": 526,
+          "truncated": false
+        },
+        {
+          "episode": 642,
+          "score": 127,
+          "steps": 1520,
+          "truncated": false
+        },
+        {
+          "episode": 643,
+          "score": 648,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 644,
+          "score": 811,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 645,
+          "score": 679,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 646,
+          "score": 490,
+          "steps": 7606,
+          "truncated": false
+        },
+        {
+          "episode": 647,
+          "score": 731,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 648,
+          "score": 671,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 649,
+          "score": 740,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 650,
+          "score": 705,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 651,
+          "score": 686,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 652,
+          "score": 686,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 653,
+          "score": 648,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 654,
+          "score": 679,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 655,
+          "score": 733,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 656,
+          "score": 63,
+          "steps": 952,
+          "truncated": false
+        },
+        {
+          "episode": 657,
+          "score": 480,
+          "steps": 6360,
+          "truncated": false
+        },
+        {
+          "episode": 658,
+          "score": 681,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 659,
+          "score": 735,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 660,
+          "score": 427,
+          "steps": 6236,
+          "truncated": false
+        },
+        {
+          "episode": 661,
+          "score": 41,
+          "steps": 482,
+          "truncated": false
+        },
+        {
+          "episode": 662,
+          "score": 493,
+          "steps": 6484,
+          "truncated": false
+        },
+        {
+          "episode": 663,
+          "score": 695,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 664,
+          "score": 731,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 665,
+          "score": 707,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 666,
+          "score": 455,
+          "steps": 5724,
+          "truncated": false
+        },
+        {
+          "episode": 667,
+          "score": 699,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 668,
+          "score": 336,
+          "steps": 4710,
+          "truncated": false
+        },
+        {
+          "episode": 669,
+          "score": 637,
+          "steps": 8804,
+          "truncated": false
+        },
+        {
+          "episode": 670,
+          "score": 277,
+          "steps": 4566,
+          "truncated": false
+        },
+        {
+          "episode": 671,
+          "score": 730,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 672,
+          "score": 68,
+          "steps": 810,
+          "truncated": false
+        },
+        {
+          "episode": 673,
+          "score": 366,
+          "steps": 5384,
+          "truncated": false
+        },
+        {
+          "episode": 674,
+          "score": 671,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 675,
+          "score": 743,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 676,
+          "score": 305,
+          "steps": 3804,
+          "truncated": false
+        },
+        {
+          "episode": 677,
+          "score": 672,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 678,
+          "score": 191,
+          "steps": 2476,
+          "truncated": false
+        },
+        {
+          "episode": 679,
+          "score": 157,
+          "steps": 1922,
+          "truncated": false
+        },
+        {
+          "episode": 680,
+          "score": 657,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 681,
+          "score": 748,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 682,
+          "score": 688,
+          "steps": 9750,
+          "truncated": false
+        },
+        {
+          "episode": 683,
+          "score": 706,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 684,
+          "score": 710,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 685,
+          "score": 275,
+          "steps": 3410,
+          "truncated": false
+        },
+        {
+          "episode": 686,
+          "score": 670,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 687,
+          "score": 657,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 688,
+          "score": 774,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 689,
+          "score": 38,
+          "steps": 450,
+          "truncated": false
+        },
+        {
+          "episode": 690,
+          "score": 688,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 691,
+          "score": 593,
+          "steps": 7904,
+          "truncated": false
+        },
+        {
+          "episode": 692,
+          "score": 517,
+          "steps": 7178,
+          "truncated": false
+        },
+        {
+          "episode": 693,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 694,
+          "score": 664,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 695,
+          "score": 421,
+          "steps": 6638,
+          "truncated": false
+        },
+        {
+          "episode": 696,
+          "score": 651,
+          "steps": 9808,
+          "truncated": false
+        },
+        {
+          "episode": 697,
+          "score": 397,
+          "steps": 5814,
+          "truncated": false
+        },
+        {
+          "episode": 698,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 699,
+          "score": 85,
+          "steps": 1026,
+          "truncated": false
+        },
+        {
+          "episode": 700,
+          "score": 224,
+          "steps": 3238,
+          "truncated": false
+        },
+        {
+          "episode": 701,
+          "score": 736,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 702,
+          "score": 656,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 703,
+          "score": 368,
+          "steps": 4688,
+          "truncated": false
+        },
+        {
+          "episode": 704,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 705,
+          "score": 335,
+          "steps": 4738,
+          "truncated": false
+        },
+        {
+          "episode": 706,
+          "score": 158,
+          "steps": 2214,
+          "truncated": false
+        },
+        {
+          "episode": 707,
+          "score": 719,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 708,
+          "score": 402,
+          "steps": 6000,
+          "truncated": false
+        },
+        {
+          "episode": 709,
+          "score": 665,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 710,
+          "score": 445,
+          "steps": 6724,
+          "truncated": false
+        },
+        {
+          "episode": 711,
+          "score": 673,
+          "steps": 8742,
+          "truncated": false
+        },
+        {
+          "episode": 712,
+          "score": 735,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 713,
+          "score": 713,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 714,
+          "score": 3,
+          "steps": 38,
+          "truncated": false
+        },
+        {
+          "episode": 715,
+          "score": 676,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 716,
+          "score": 746,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 717,
+          "score": 681,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 718,
+          "score": 685,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 719,
+          "score": 229,
+          "steps": 3268,
+          "truncated": false
+        },
+        {
+          "episode": 720,
+          "score": 690,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 721,
+          "score": 606,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 722,
+          "score": 667,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 723,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 724,
+          "score": 692,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 725,
+          "score": 67,
+          "steps": 800,
+          "truncated": false
+        },
+        {
+          "episode": 726,
+          "score": 218,
+          "steps": 2966,
+          "truncated": false
+        },
+        {
+          "episode": 727,
+          "score": 184,
+          "steps": 2556,
+          "truncated": false
+        },
+        {
+          "episode": 728,
+          "score": 745,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 729,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 730,
+          "score": 721,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 731,
+          "score": 428,
+          "steps": 6188,
+          "truncated": false
+        },
+        {
+          "episode": 732,
+          "score": 461,
+          "steps": 6598,
+          "truncated": false
+        },
+        {
+          "episode": 733,
+          "score": 718,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 734,
+          "score": 458,
+          "steps": 7294,
+          "truncated": false
+        },
+        {
+          "episode": 735,
+          "score": 725,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 736,
+          "score": 476,
+          "steps": 6428,
+          "truncated": false
+        },
+        {
+          "episode": 737,
+          "score": 554,
+          "steps": 7604,
+          "truncated": false
+        },
+        {
+          "episode": 738,
+          "score": 137,
+          "steps": 1632,
+          "truncated": false
+        },
+        {
+          "episode": 739,
+          "score": 715,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 740,
+          "score": 126,
+          "steps": 1456,
+          "truncated": false
+        },
+        {
+          "episode": 741,
+          "score": 684,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 742,
+          "score": 624,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 743,
+          "score": 311,
+          "steps": 4660,
+          "truncated": false
+        },
+        {
+          "episode": 744,
+          "score": 428,
+          "steps": 6066,
+          "truncated": false
+        },
+        {
+          "episode": 745,
+          "score": 639,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 746,
+          "score": 672,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 747,
+          "score": 693,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 748,
+          "score": 701,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 749,
+          "score": 747,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 750,
+          "score": 191,
+          "steps": 2512,
+          "truncated": false
+        },
+        {
+          "episode": 751,
+          "score": 688,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 752,
+          "score": 604,
+          "steps": 8174,
+          "truncated": false
+        },
+        {
+          "episode": 753,
+          "score": 683,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 754,
+          "score": 218,
+          "steps": 2938,
+          "truncated": false
+        },
+        {
+          "episode": 755,
+          "score": 705,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 756,
+          "score": 629,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 757,
+          "score": 683,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 758,
+          "score": 364,
+          "steps": 5704,
+          "truncated": false
+        },
+        {
+          "episode": 759,
+          "score": 40,
+          "steps": 472,
+          "truncated": false
+        },
+        {
+          "episode": 760,
+          "score": 710,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 761,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 762,
+          "score": 97,
+          "steps": 1628,
+          "truncated": false
+        },
+        {
+          "episode": 763,
+          "score": 770,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 764,
+          "score": 667,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 765,
+          "score": 637,
+          "steps": 8624,
+          "truncated": false
+        },
+        {
+          "episode": 766,
+          "score": 698,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 767,
+          "score": 197,
+          "steps": 2692,
+          "truncated": false
+        },
+        {
+          "episode": 768,
+          "score": 684,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 769,
+          "score": 747,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 770,
+          "score": 225,
+          "steps": 2690,
+          "truncated": false
+        },
+        {
+          "episode": 771,
+          "score": 38,
+          "steps": 450,
+          "truncated": false
+        },
+        {
+          "episode": 772,
+          "score": 185,
+          "steps": 2300,
+          "truncated": false
+        },
+        {
+          "episode": 773,
+          "score": 688,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 774,
+          "score": 662,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 775,
+          "score": 651,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 776,
+          "score": 266,
+          "steps": 4176,
+          "truncated": false
+        },
+        {
+          "episode": 777,
+          "score": 245,
+          "steps": 3292,
+          "truncated": false
+        },
+        {
+          "episode": 778,
+          "score": 694,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 779,
+          "score": 140,
+          "steps": 2142,
+          "truncated": false
+        },
+        {
+          "episode": 780,
+          "score": 308,
+          "steps": 4738,
+          "truncated": false
+        },
+        {
+          "episode": 781,
+          "score": 67,
+          "steps": 800,
+          "truncated": false
+        },
+        {
+          "episode": 782,
+          "score": 534,
+          "steps": 7898,
+          "truncated": false
+        },
+        {
+          "episode": 783,
+          "score": 7,
+          "steps": 80,
+          "truncated": false
+        },
+        {
+          "episode": 784,
+          "score": 506,
+          "steps": 6930,
+          "truncated": false
+        },
+        {
+          "episode": 785,
+          "score": 226,
+          "steps": 3062,
+          "truncated": false
+        },
+        {
+          "episode": 786,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 787,
+          "score": 37,
+          "steps": 440,
+          "truncated": false
+        },
+        {
+          "episode": 788,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 789,
+          "score": 729,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 790,
+          "score": 110,
+          "steps": 1686,
+          "truncated": false
+        },
+        {
+          "episode": 791,
+          "score": 684,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 792,
+          "score": 424,
+          "steps": 6012,
+          "truncated": false
+        },
+        {
+          "episode": 793,
+          "score": 64,
+          "steps": 768,
+          "truncated": false
+        },
+        {
+          "episode": 794,
+          "score": 656,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 795,
+          "score": 629,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 796,
+          "score": 278,
+          "steps": 4092,
+          "truncated": false
+        },
+        {
+          "episode": 797,
+          "score": 608,
+          "steps": 8586,
+          "truncated": false
+        },
+        {
+          "episode": 798,
+          "score": 691,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 799,
+          "score": 217,
+          "steps": 3110,
+          "truncated": false
+        },
+        {
+          "episode": 800,
+          "score": 607,
+          "steps": 8676,
+          "truncated": false
+        },
+        {
+          "episode": 801,
+          "score": 684,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 802,
+          "score": 727,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 803,
+          "score": 247,
+          "steps": 3870,
+          "truncated": false
+        },
+        {
+          "episode": 804,
+          "score": 19,
+          "steps": 216,
+          "truncated": false
+        },
+        {
+          "episode": 805,
+          "score": 35,
+          "steps": 418,
+          "truncated": false
+        },
+        {
+          "episode": 806,
+          "score": 775,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 807,
+          "score": 11,
+          "steps": 122,
+          "truncated": false
+        },
+        {
+          "episode": 808,
+          "score": 469,
+          "steps": 6824,
+          "truncated": false
+        },
+        {
+          "episode": 809,
+          "score": 714,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 810,
+          "score": 333,
+          "steps": 4548,
+          "truncated": false
+        },
+        {
+          "episode": 811,
+          "score": 7,
+          "steps": 80,
+          "truncated": false
+        },
+        {
+          "episode": 812,
+          "score": 691,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 813,
+          "score": 726,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 814,
+          "score": 537,
+          "steps": 7536,
+          "truncated": false
+        },
+        {
+          "episode": 815,
+          "score": 656,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 816,
+          "score": 29,
+          "steps": 380,
+          "truncated": false
+        },
+        {
+          "episode": 817,
+          "score": 750,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 818,
+          "score": 750,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 819,
+          "score": 397,
+          "steps": 6318,
+          "truncated": false
+        },
+        {
+          "episode": 820,
+          "score": 127,
+          "steps": 1954,
+          "truncated": false
+        },
+        {
+          "episode": 821,
+          "score": 703,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 822,
+          "score": 641,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 823,
+          "score": 313,
+          "steps": 4488,
+          "truncated": false
+        },
+        {
+          "episode": 824,
+          "score": 146,
+          "steps": 2362,
+          "truncated": false
+        },
+        {
+          "episode": 825,
+          "score": 707,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 826,
+          "score": 726,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 827,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 828,
+          "score": 341,
+          "steps": 5478,
+          "truncated": false
+        },
+        {
+          "episode": 829,
+          "score": 702,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 830,
+          "score": 725,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 831,
+          "score": 344,
+          "steps": 5166,
+          "truncated": false
+        },
+        {
+          "episode": 832,
+          "score": 221,
+          "steps": 2726,
+          "truncated": false
+        },
+        {
+          "episode": 833,
+          "score": 688,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 834,
+          "score": 691,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 835,
+          "score": 49,
+          "steps": 576,
+          "truncated": false
+        },
+        {
+          "episode": 836,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 837,
+          "score": 737,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 838,
+          "score": 406,
+          "steps": 5570,
+          "truncated": false
+        },
+        {
+          "episode": 839,
+          "score": 130,
+          "steps": 1860,
+          "truncated": false
+        },
+        {
+          "episode": 840,
+          "score": 70,
+          "steps": 832,
+          "truncated": false
+        },
+        {
+          "episode": 841,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 842,
+          "score": 287,
+          "steps": 3900,
+          "truncated": false
+        },
+        {
+          "episode": 843,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 844,
+          "score": 471,
+          "steps": 7164,
+          "truncated": false
+        },
+        {
+          "episode": 845,
+          "score": 606,
+          "steps": 9458,
+          "truncated": false
+        },
+        {
+          "episode": 846,
+          "score": 463,
+          "steps": 6704,
+          "truncated": false
+        },
+        {
+          "episode": 847,
+          "score": 720,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 848,
+          "score": 750,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 849,
+          "score": 194,
+          "steps": 3140,
+          "truncated": false
+        },
+        {
+          "episode": 850,
+          "score": 136,
+          "steps": 2074,
+          "truncated": false
+        },
+        {
+          "episode": 851,
+          "score": 464,
+          "steps": 6794,
+          "truncated": false
+        },
+        {
+          "episode": 852,
+          "score": 713,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 853,
+          "score": 687,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 854,
+          "score": 684,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 855,
+          "score": 670,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 856,
+          "score": 636,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 857,
+          "score": 225,
+          "steps": 2872,
+          "truncated": false
+        },
+        {
+          "episode": 858,
+          "score": 666,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 859,
+          "score": 157,
+          "steps": 1880,
+          "truncated": false
+        },
+        {
+          "episode": 860,
+          "score": 514,
+          "steps": 7216,
+          "truncated": false
+        },
+        {
+          "episode": 861,
+          "score": 593,
+          "steps": 8274,
+          "truncated": false
+        },
+        {
+          "episode": 862,
+          "score": 41,
+          "steps": 482,
+          "truncated": false
+        },
+        {
+          "episode": 863,
+          "score": 717,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 864,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 865,
+          "score": 713,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 866,
+          "score": 702,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 867,
+          "score": 675,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 868,
+          "score": 640,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 869,
+          "score": 178,
+          "steps": 2138,
+          "truncated": false
+        },
+        {
+          "episode": 870,
+          "score": 581,
+          "steps": 7780,
+          "truncated": false
+        },
+        {
+          "episode": 871,
+          "score": 714,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 872,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 873,
+          "score": 334,
+          "steps": 5092,
+          "truncated": false
+        },
+        {
+          "episode": 874,
+          "score": 687,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 875,
+          "score": 645,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 876,
+          "score": 38,
+          "steps": 450,
+          "truncated": false
+        },
+        {
+          "episode": 877,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 878,
+          "score": 48,
+          "steps": 564,
+          "truncated": false
+        },
+        {
+          "episode": 879,
+          "score": 740,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 880,
+          "score": 492,
+          "steps": 6594,
+          "truncated": false
+        },
+        {
+          "episode": 881,
+          "score": 699,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 882,
+          "score": 128,
+          "steps": 2082,
+          "truncated": false
+        },
+        {
+          "episode": 883,
+          "score": 395,
+          "steps": 5552,
+          "truncated": false
+        },
+        {
+          "episode": 884,
+          "score": 219,
+          "steps": 3070,
+          "truncated": false
+        },
+        {
+          "episode": 885,
+          "score": 670,
+          "steps": 9614,
+          "truncated": false
+        },
+        {
+          "episode": 886,
+          "score": 705,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 887,
+          "score": 424,
+          "steps": 5788,
+          "truncated": false
+        },
+        {
+          "episode": 888,
+          "score": 610,
+          "steps": 8134,
+          "truncated": false
+        },
+        {
+          "episode": 889,
+          "score": 515,
+          "steps": 7040,
+          "truncated": false
+        },
+        {
+          "episode": 890,
+          "score": 634,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 891,
+          "score": 259,
+          "steps": 4030,
+          "truncated": false
+        },
+        {
+          "episode": 892,
+          "score": 661,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 893,
+          "score": 749,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 894,
+          "score": 600,
+          "steps": 8896,
+          "truncated": false
+        },
+        {
+          "episode": 895,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 896,
+          "score": 698,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 897,
+          "score": 41,
+          "steps": 484,
+          "truncated": false
+        },
+        {
+          "episode": 898,
+          "score": 657,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 899,
+          "score": 607,
+          "steps": 9292,
+          "truncated": false
+        },
+        {
+          "episode": 900,
+          "score": 649,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 901,
+          "score": 155,
+          "steps": 2324,
+          "truncated": false
+        },
+        {
+          "episode": 902,
+          "score": 658,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 903,
+          "score": 378,
+          "steps": 4524,
+          "truncated": false
+        },
+        {
+          "episode": 904,
+          "score": 720,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 905,
+          "score": 7,
+          "steps": 80,
+          "truncated": false
+        },
+        {
+          "episode": 906,
+          "score": 721,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 907,
+          "score": 26,
+          "steps": 360,
+          "truncated": false
+        },
+        {
+          "episode": 908,
+          "score": 748,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 909,
+          "score": 686,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 910,
+          "score": 457,
+          "steps": 5948,
+          "truncated": false
+        },
+        {
+          "episode": 911,
+          "score": 549,
+          "steps": 7864,
+          "truncated": false
+        },
+        {
+          "episode": 912,
+          "score": 397,
+          "steps": 5954,
+          "truncated": false
+        },
+        {
+          "episode": 913,
+          "score": 669,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 914,
+          "score": 796,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 915,
+          "score": 666,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 916,
+          "score": 697,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 917,
+          "score": 701,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 918,
+          "score": 699,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 919,
+          "score": 40,
+          "steps": 472,
+          "truncated": false
+        },
+        {
+          "episode": 920,
+          "score": 367,
+          "steps": 5696,
+          "truncated": false
+        },
+        {
+          "episode": 921,
+          "score": 215,
+          "steps": 3126,
+          "truncated": false
+        },
+        {
+          "episode": 922,
+          "score": 491,
+          "steps": 7126,
+          "truncated": false
+        },
+        {
+          "episode": 923,
+          "score": 731,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 924,
+          "score": 709,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 925,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 926,
+          "score": 399,
+          "steps": 5738,
+          "truncated": false
+        },
+        {
+          "episode": 927,
+          "score": 276,
+          "steps": 4666,
+          "truncated": false
+        },
+        {
+          "episode": 928,
+          "score": 147,
+          "steps": 2268,
+          "truncated": false
+        },
+        {
+          "episode": 929,
+          "score": 658,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 930,
+          "score": 694,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 931,
+          "score": 39,
+          "steps": 462,
+          "truncated": false
+        },
+        {
+          "episode": 932,
+          "score": 8,
+          "steps": 90,
+          "truncated": false
+        },
+        {
+          "episode": 933,
+          "score": 488,
+          "steps": 6474,
+          "truncated": false
+        },
+        {
+          "episode": 934,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 935,
+          "score": 707,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 936,
+          "score": 580,
+          "steps": 7252,
+          "truncated": false
+        },
+        {
+          "episode": 937,
+          "score": 255,
+          "steps": 3424,
+          "truncated": false
+        },
+        {
+          "episode": 938,
+          "score": 300,
+          "steps": 4296,
+          "truncated": false
+        },
+        {
+          "episode": 939,
+          "score": 688,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 940,
+          "score": 698,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 941,
+          "score": 566,
+          "steps": 8548,
+          "truncated": false
+        },
+        {
+          "episode": 942,
+          "score": 158,
+          "steps": 1870,
+          "truncated": false
+        },
+        {
+          "episode": 943,
+          "score": 37,
+          "steps": 440,
+          "truncated": false
+        },
+        {
+          "episode": 944,
+          "score": 277,
+          "steps": 4256,
+          "truncated": false
+        },
+        {
+          "episode": 945,
+          "score": 729,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 946,
+          "score": 112,
+          "steps": 1858,
+          "truncated": false
+        },
+        {
+          "episode": 947,
+          "score": 65,
+          "steps": 778,
+          "truncated": false
+        },
+        {
+          "episode": 948,
+          "score": 520,
+          "steps": 7676,
+          "truncated": false
+        },
+        {
+          "episode": 949,
+          "score": 35,
+          "steps": 418,
+          "truncated": false
+        },
+        {
+          "episode": 950,
+          "score": 713,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 951,
+          "score": 672,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 952,
+          "score": 756,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 953,
+          "score": 267,
+          "steps": 4130,
+          "truncated": false
+        },
+        {
+          "episode": 954,
+          "score": 722,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 955,
+          "score": 644,
+          "steps": 9602,
+          "truncated": false
+        },
+        {
+          "episode": 956,
+          "score": 184,
+          "steps": 2284,
+          "truncated": false
+        },
+        {
+          "episode": 957,
+          "score": 127,
+          "steps": 1820,
+          "truncated": false
+        },
+        {
+          "episode": 958,
+          "score": 659,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 959,
+          "score": 652,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 960,
+          "score": 718,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 961,
+          "score": 375,
+          "steps": 5134,
+          "truncated": false
+        },
+        {
+          "episode": 962,
+          "score": 5,
+          "steps": 58,
+          "truncated": false
+        },
+        {
+          "episode": 963,
+          "score": 730,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 964,
+          "score": 709,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 965,
+          "score": 547,
+          "steps": 8180,
+          "truncated": false
+        },
+        {
+          "episode": 966,
+          "score": 578,
+          "steps": 8030,
+          "truncated": false
+        },
+        {
+          "episode": 967,
+          "score": 718,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 968,
+          "score": 700,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 969,
+          "score": 154,
+          "steps": 2496,
+          "truncated": false
+        },
+        {
+          "episode": 970,
+          "score": 642,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 971,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 972,
+          "score": 717,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 973,
+          "score": 668,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 974,
+          "score": 717,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 975,
+          "score": 693,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 976,
+          "score": 94,
+          "steps": 1174,
+          "truncated": false
+        },
+        {
+          "episode": 977,
+          "score": 127,
+          "steps": 2342,
+          "truncated": false
+        },
+        {
+          "episode": 978,
+          "score": 93,
+          "steps": 1118,
+          "truncated": false
+        },
+        {
+          "episode": 979,
+          "score": 697,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 980,
+          "score": 679,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 981,
+          "score": 277,
+          "steps": 4436,
+          "truncated": false
+        },
+        {
+          "episode": 982,
+          "score": 287,
+          "steps": 4024,
+          "truncated": false
+        },
+        {
+          "episode": 983,
+          "score": 78,
+          "steps": 924,
+          "truncated": false
+        },
+        {
+          "episode": 984,
+          "score": 367,
+          "steps": 5056,
+          "truncated": false
+        },
+        {
+          "episode": 985,
+          "score": 722,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 986,
+          "score": 739,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 987,
+          "score": 157,
+          "steps": 2602,
+          "truncated": false
+        },
+        {
+          "episode": 988,
+          "score": 223,
+          "steps": 3018,
+          "truncated": false
+        },
+        {
+          "episode": 989,
+          "score": 364,
+          "steps": 4732,
+          "truncated": false
+        },
+        {
+          "episode": 990,
+          "score": 560,
+          "steps": 8050,
+          "truncated": false
+        },
+        {
+          "episode": 991,
+          "score": 745,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 992,
+          "score": 668,
+          "steps": 9278,
+          "truncated": false
+        },
+        {
+          "episode": 993,
+          "score": 599,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 994,
+          "score": 689,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 995,
+          "score": 716,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 996,
+          "score": 528,
+          "steps": 7978,
+          "truncated": false
+        },
+        {
+          "episode": 997,
+          "score": 103,
+          "steps": 1458,
+          "truncated": false
+        },
+        {
+          "episode": 998,
+          "score": 656,
+          "steps": 10000,
+          "truncated": true
+        },
+        {
+          "episode": 999,
+          "score": 685,
+          "steps": 10000,
+          "truncated": true
+        }
+      ],
+      "fidelity": "Matches published architecture, mapping, sampling policy, stickiness and default episode/step counts. Original evaluation seeds/backend were not released; not bit-exact score replication."
+    },
+    "comparison.json": {
+      "published_mean": 517.411,
+      "published_se": 7.416952829044303,
+      "replayed_mean": 502.88,
+      "replayed_se": 7.747379136423071,
+      "episodes": 1000,
+      "difference": -14.530999999999949,
+      "difference_in_combined_standard_errors": -1.3548279339547618,
+      "published_ppo100_best": 15.779,
+      "published_ppo500_best": 25.344,
+      "ppo_status": "Published reference scores only; PPO checkpoints were not released or rerun.",
+      "scope": "full_protocol"
+    },
+    "reference/sources.json": {
+      "revision": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+      "files": [
+        {
+          "file": "prompt.txt",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/runs/breakout/message.txt",
+          "sha256": "766ee251d59a7893ed86d5eaea99ddb847529ab2092afc69f90f55fb0a22e876",
+          "bytes": 9973
+        },
+        {
+          "file": "published-answer.md",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/runs/breakout/reply/answer.md",
+          "sha256": "a30bdda1acef79b507498edcef7e48d4fff16aa85783741925da9d5d4f42faf0",
+          "bytes": 5668
+        },
+        {
+          "file": "published.npz",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/networks/breakout/hand.npz",
+          "sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+          "bytes": 83574
+        },
+        {
+          "file": "published-scores.json",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/eval/minatar_eval.json",
+          "sha256": "bc10c6f957af95cdd52ee4be085acd249046f6117dbdb8c735fd5ddb2195c47c",
+          "bytes": 4693
+        },
+        {
+          "file": "LICENSE",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/LICENSE",
+          "sha256": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+          "bytes": 1819
+        },
+        {
+          "file": "LICENSE-MinAtar",
+          "source": "https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp5_write_from_scratch/LICENSE-MinAtar",
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+          "bytes": 35147
+        }
+      ]
+    }
+  },
+  "omitted": [
+    "checkpoint files",
+    "benchmark prompts",
+    "raw hosted-model transcripts",
+    "workstation paths"
+  ],
+  "integrity": "Unsigned metadata export; raw checkpoints are needed to independently repeat inference."
+}

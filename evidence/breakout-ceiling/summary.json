@@ -1,0 +1,46 @@
+{
+  "schema": "weight-space-breakout-ceiling-v1",
+  "series": {
+    "released weights": {
+      "source": "evidence/breakout-full-replay/evidence.json",
+      "checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+      "episodes": 1000,
+      "max_steps": 10000,
+      "mean_score": 502.88,
+      "se": 7.747379136423071,
+      "capped_episodes": 517,
+      "capped_share": 0.517,
+      "mean_score_capped": 697.4835589941973,
+      "mean_score_terminated": 294.5776397515528,
+      "mean_steps": 7188.392,
+      "median_steps": 10000.0,
+      "score_steps_correlation": 0.9916412829726767,
+      "score_steps_r2": 0.9833524340956963,
+      "linear_fit": {
+        "points_per_step": 0.06911929064725059,
+        "intercept": 6.023444065628951
+      },
+      "points_per_step_mean": 0.07145406020787104,
+      "points_per_step_p10_p90": [
+        0.06450895865237366,
+        0.08351063829787234
+      ],
+      "score_percentiles": {
+        "10": 94.9,
+        "25": 295.25,
+        "50": 645.0,
+        "75": 697.0,
+        "90": 731.0
+      },
+      "survival": {
+        "1000": 0.909,
+        "2500": 0.835,
+        "5000": 0.711,
+        "7500": 0.595,
+        "10000": 0.517
+      },
+      "interpretation": "Survival beyond the ceiling is censored; scores under a higher ceiling are not estimated here."
+    }
+  },
+  "figure": "docs/assets/breakout-ceiling.svg"
+}
