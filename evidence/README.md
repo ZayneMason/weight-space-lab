@@ -34,6 +34,13 @@ Added November 10, 2026 (see the [lab notebook](../docs/LAB_NOTEBOOK.md)):
   released network, not the earlier raw records or the fresh agent-written network.
 - `breakout-ceiling/summary.json`: the step-ceiling analysis of those records
   ([experiment](../experiments/breakout-ceiling/README.md)).
+- `qwen-termination/` (added November 14): the paired closure analysis of Takehi et al.'s
+  **released** MATH-500 records (exp8_math/eval at revision `4d09ba6`, CC BY 4.0) for
+  the unedited model and the p10c, p25c and p50c edits
+  ([experiment](../experiments/p50c-termination/README.md)). `summary.json` holds
+  aggregates, intervals and the closure table. `samples.json` holds per-sample measures
+  with hashed problem IDs and text hashes; no generated text, questions or answers are
+  included. These are upstream's generations, analysed locally, not this lab's run.
 - `breakout-circuit/summary.json`: the released network's sparsity structure and a
   200-episode pilot of single-unit ablations
   ([experiment](../experiments/breakout-circuit/README.md)). No checkpoints are included.

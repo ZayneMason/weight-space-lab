@@ -62,8 +62,16 @@ As of November 10, 2026. Every number links to committed evidence or a recorded 
   samples, p50c on 1/8. The original's only correct sample was itself cut off at the
   ceiling, which suggests the gain may be mostly about *finishing*
   ([roadmap #1](docs/ROADMAP.md)).
-- The full 500-problem comparison has not been committed. **No MATH-500 accuracy claim
-  is made.**
+- **The upstream full run says the gain is an escape from loops**
+  ([analysis](experiments/p50c-termination/README.md)). This uses Takehi et al.'s
+  released records, not a run of this lab's.
+  - Over 2,000 samples, accuracy rises from 7.90% to 48.10% (+40.2 points
+    [36.9, 43.6]).
+  - On 200 paired transcripts, the entire gain comes from problems where the original
+    model fell into a repetition loop and never finished reasoning.
+  - Where both models finished, the edit adds nothing (original 12 correct, edit 11).
+- This lab's own full 500-problem comparison has not been committed, so the lab makes
+  **no MATH-500 accuracy claim of its own**.
 
 ### Weight-editing benchmark ([guide](docs/BENCHMARK.md), [verification](docs/VERIFICATION.md))
 

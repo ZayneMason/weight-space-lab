@@ -1,0 +1,488 @@
+{
+  "schema": "weight-space-qwen-termination-v1",
+  "source": {
+    "kind": "upstream released records",
+    "revision": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+    "baseline": "unedited",
+    "text_samples": "sample 0 of the first 20 problems of each shard (problems 0-199 of MATH-500)"
+  },
+  "inputs_sha256": {
+    "unedited/parts/math500_s0of10/scores.json": "ce5dd263ef7436727341ff92cf60aa5567b55742fc3b4ecb820303d82af1cc41",
+    "unedited/parts/math500_s0of10/math500_per_problem.json": "53ddd18fda1e48f80d42616d1a6c02d7484e834661eea3c188bc3886aa03b01b",
+    "unedited/parts/math500_s0of10/math500_first_samples.jsonl.gz": "7d153ba1036f3c4e5487effeedbee57bd595bfb5ed93019d843186a24f710d44",
+    "unedited/parts/math500_s1of10/scores.json": "4e21ee307576ccbc669e534d740ab15dd3fa3ccf6da7441827b85bff87914bed",
+    "unedited/parts/math500_s1of10/math500_per_problem.json": "10aabaae73cee417c767b194864b9737c2c7ee3bcd65d2075948c84a6a9cb8f5",
+    "unedited/parts/math500_s1of10/math500_first_samples.jsonl.gz": "7452777e70dc791cc95247e8aa1bca409871c467bbb4f14b4402eae32e4fe751",
+    "unedited/parts/math500_s2of10/scores.json": "dcd29ca4d7fe4d10f960a91b10e2f7a2676c40f5dcbd3f7f364f0e9a7edb0e0b",
+    "unedited/parts/math500_s2of10/math500_per_problem.json": "6fdfe6d5240cd82a66461beba64ebf6b23d6c771b7df022577ac24325e832780",
+    "unedited/parts/math500_s2of10/math500_first_samples.jsonl.gz": "5e73113409c5092a266390fbe6f4bf1ac60a136d064880928594d7767fb5b38f",
+    "unedited/parts/math500_s3of10/scores.json": "c8fdc797411d68bdc56b9b9f98cacca4ab0ecd861d0040e87e96a6413733a5f2",
+    "unedited/parts/math500_s3of10/math500_per_problem.json": "12442ca82647b23c8928ff4b0216b8df0df81924c2e979405628932a1d7e2495",
+    "unedited/parts/math500_s3of10/math500_first_samples.jsonl.gz": "1233548bdf0198ed2b04a4e6f129c5819413f8a52ba9272520a2f2bbe2a1b938",
+    "unedited/parts/math500_s4of10/scores.json": "596c759bc030f85a35b7d06ae58ac7ca5705170b52415deb308cadb8cc9a9b74",
+    "unedited/parts/math500_s4of10/math500_per_problem.json": "3969f7462b6c8ddef9957c11ceb92c8e94872cd9a54571b71b2cf35ed2a49aae",
+    "unedited/parts/math500_s4of10/math500_first_samples.jsonl.gz": "8fbcb6e9facbba93cc5af749f187f02ba9d9d1e89d0adba0078ac757fa5ed50e",
+    "unedited/parts/math500_s5of10/scores.json": "1e3b4f117a2b46e7e9f83601d362e9c17ce6a8f5b5f1bc5cb0f9831ab4fa9944",
+    "unedited/parts/math500_s5of10/math500_per_problem.json": "6ceff65c9ee6b2be89cc6081bba3cd00202236116078c4ce8436f2dd96b7a310",
+    "unedited/parts/math500_s5of10/math500_first_samples.jsonl.gz": "cac46d5b0c1d7269e73a76b2c5ca668fdefde2a5defb623bb7a2df1b8afb20a4",
+    "unedited/parts/math500_s6of10/scores.json": "ee54cc13bc5bf62a1579d82a51a7c5eb914502dd9f5c6935beeeb328ef360561",
+    "unedited/parts/math500_s6of10/math500_per_problem.json": "c85ec81f42a5d1fdf87d85304eaa91967b707526f65a79796d96f05aeb362fc3",
+    "unedited/parts/math500_s6of10/math500_first_samples.jsonl.gz": "c65c554b11aba8e4a19097d77a6b558556971f896a9c0897b497da45a60ee4fc",
+    "unedited/parts/math500_s7of10/scores.json": "89a6423f112680288a037d58c9b1042064cb4a2af4ace03261e4397b7d528e26",
+    "unedited/parts/math500_s7of10/math500_per_problem.json": "e3d678c982b57c1734cb56fbcd571fc54bb55d83ac6e36717997749cf27bd937",
+    "unedited/parts/math500_s7of10/math500_first_samples.jsonl.gz": "67f7bde178a9e274bab4389499c8c77c439c2ed832e1369a5bea8cd0f37346bb",
+    "unedited/parts/math500_s8of10/scores.json": "1998e370714b5fd8bca130071ece6563a0c06ed08daef3c9bfe9556f9a27334c",
+    "unedited/parts/math500_s8of10/math500_per_problem.json": "3da289ba7e16a74b305aa5887f90a2ef0778f6d169984ca81e0e49efa5fe27e8",
+    "unedited/parts/math500_s8of10/math500_first_samples.jsonl.gz": "7691ba5f0f07b2c9b83a68586a167b7621a680c7a565aa27098fd4a5fa00cd16",
+    "unedited/parts/math500_s9of10/scores.json": "2fda84abecbb441d444342c110688f0feb05b53da62e6cec634b9b0272d47c3d",
+    "unedited/parts/math500_s9of10/math500_per_problem.json": "ac7fd6c5fd9f7743368ad6086632b4ff3e01c0da371464450c7f760e28b5589a",
+    "unedited/parts/math500_s9of10/math500_first_samples.jsonl.gz": "a9d7aa126016439f6e4e7629f2275b15d277e5dc1fb594d9462c170eb6de9ca1",
+    "p10c/parts/math500_s0of10/scores.json": "2bb8addb96c2462a8a0753d9162b7f072b6c1c338d98c67da26e4a1d990ba0c3",
+    "p10c/parts/math500_s0of10/math500_per_problem.json": "8b3e02d21d34413a98eecd0f54fc6ed48131db5c56532977fb63c2d38d39e0b8",
+    "p10c/parts/math500_s0of10/math500_first_samples.jsonl.gz": "a786e303a16b1ce8233f2149d49fc7b120ee6d89d92e484efc34cdf305e6f30d",
+    "p10c/parts/math500_s1of10/scores.json": "9a88a9c0c3340e24252e6420454e0163d7e3c10beb3d97d7bc852045b1b531d7",
+    "p10c/parts/math500_s1of10/math500_per_problem.json": "78781907685720509355a825a8867de2a2e4f933023d994688fdee3e5ce85e7b",
+    "p10c/parts/math500_s1of10/math500_first_samples.jsonl.gz": "bebba56b24d7465c18d70d158ff89d520c69efdfaa2b42e7c29cc8f4d2955a85",
+    "p10c/parts/math500_s2of10/scores.json": "c0e4cbe60adc624c8e2a8b854aa5bec9ec0866cd8ad57232ccb915e7f501243c",
+    "p10c/parts/math500_s2of10/math500_per_problem.json": "5a4f32e33a8b9700c0c1f57547d87270817cfafe12543fe7ef8f5eb13e6e3b51",
+    "p10c/parts/math500_s2of10/math500_first_samples.jsonl.gz": "64ac64777b34fe59e1565ac8354b3fb387f389e6836a995839d3899941843723",
+    "p10c/parts/math500_s3of10/scores.json": "006a10ba00139d5a3c5f4a4fdaf7cda747b6be43d2ebca2682a35afbb572cb82",
+    "p10c/parts/math500_s3of10/math500_per_problem.json": "735de7a4933c64fa6e1cf149f13db41c5084086c775827a71625787300402cfd",
+    "p10c/parts/math500_s3of10/math500_first_samples.jsonl.gz": "c83e81120549729ed6dd871cfd683830ca6411b97868ff3e06c0351de6106c2c",
+    "p10c/parts/math500_s4of10/scores.json": "274ae9ce3333d698192f69ac5a2a76872452c52a0aac107c3f52e3adf4f151c7",
+    "p10c/parts/math500_s4of10/math500_per_problem.json": "3d758fb02bfb12cdbb0db48319693114785f05568a19fc5ba53c1740497db428",
+    "p10c/parts/math500_s4of10/math500_first_samples.jsonl.gz": "e022b85b16a94561c610bfd1a80266a45ccc022be22c63f90a0e292de050ae22",
+    "p10c/parts/math500_s5of10/scores.json": "3a678b22d2eb90466ac29ffe2370839e2e04e920997be4bb39cd58ca0ba3d30b",
+    "p10c/parts/math500_s5of10/math500_per_problem.json": "c0bc5df0f98c5274fb30fd8cb43b1d2fae129ba3f240fbb63b07639d1b8210e8",
+    "p10c/parts/math500_s5of10/math500_first_samples.jsonl.gz": "dbb6627a8a583d9987a3d4e3903922ef0ee4f461f5cc9e9912655d80f0e0fc6d",
+    "p10c/parts/math500_s6of10/scores.json": "e1485503591d9b4741812fa2be461e04f3750f56dada3c1f1dafc5ebe6a3bec0",
+    "p10c/parts/math500_s6of10/math500_per_problem.json": "f4365d6c40e1cbfe17d1529b12e8d4e7489fb1c701d4d73678e263babb4c40cc",
+    "p10c/parts/math500_s6of10/math500_first_samples.jsonl.gz": "77e4b718a296e2653c108684cdaa1e6a38aa1ed80db5855a279a8ab2327a71de",
+    "p10c/parts/math500_s7of10/scores.json": "3cfb657e6897a2d0afe730e3e567b5d6243a2abb606b99defb3f518001dab749",
+    "p10c/parts/math500_s7of10/math500_per_problem.json": "437b65846b8ebc08435cf069251f6f0ac76b25374e8fcd830cb610104ce06760",
+    "p10c/parts/math500_s7of10/math500_first_samples.jsonl.gz": "245b6322772a316f8a6ab3a5394ff03c58f9757a4980fd92d0a3aabbf2554502",
+    "p10c/parts/math500_s8of10/scores.json": "7bb538721bfdac35015fb641e16d5afd5781fc855eb1b7a8907d34c0e643dabb",
+    "p10c/parts/math500_s8of10/math500_per_problem.json": "cc4b8aa88caf94328a628dd9fbaeb2d94085b8f082dc38e1132a5705c61f87c8",
+    "p10c/parts/math500_s8of10/math500_first_samples.jsonl.gz": "523a46e7e473e2c8eca26560ed13cab5e03d0e9e4eb67d888fc1118d15716488",
+    "p10c/parts/math500_s9of10/scores.json": "364888b9291a6c88146e81e6f6101e4fbdcb55f989d20c2716d3e575d724cceb",
+    "p10c/parts/math500_s9of10/math500_per_problem.json": "d770ff115e0c8d6b156f2d08eab44dc86662bef82ef81da2e3c9cc3692be11b2",
+    "p10c/parts/math500_s9of10/math500_first_samples.jsonl.gz": "31d7499c40d3812130725167b36f8faa3877c302397236612b70349c3f231904",
+    "p25c/parts/math500_s0of10/scores.json": "6b8a951509c435937fd25d8b79c221587481435213cd5b50f4db743bb28b67ba",
+    "p25c/parts/math500_s0of10/math500_per_problem.json": "2ecb723cb9db4b2ee060f9d3521c3e006be6ca927bde1b4b6d2efef3f6e00a23",
+    "p25c/parts/math500_s0of10/math500_first_samples.jsonl.gz": "72fde7149f588cbc474017f4576f89b7497e072f9bd001e86220f910f1f7f27e",
+    "p25c/parts/math500_s1of10/scores.json": "33dd598b1a6c39a165625e4546abc08a3df6cc95506e53668a7a4ee410788d94",
+    "p25c/parts/math500_s1of10/math500_per_problem.json": "43a3a688d9d349ab4ca0caad855871eb78b9ee1a1e3865c4decec13f7dc861e9",
+    "p25c/parts/math500_s1of10/math500_first_samples.jsonl.gz": "a0e5d34ec5e4e3b84770fe6fc4532c344b1e2050675d8379f349dd46c5408255",
+    "p25c/parts/math500_s2of10/scores.json": "265b5609eca546338c0c841ae3743ea129fbaf51975009a1de9924ae629a7e1a",
+    "p25c/parts/math500_s2of10/math500_per_problem.json": "a345e20538843820a386b7dd7ad443069f74190322ecf7feb0a3bbddb7448801",
+    "p25c/parts/math500_s2of10/math500_first_samples.jsonl.gz": "6e6c12c3c4a0e22169a19a05d3c86cf7b074157acbfbde3c59898ec3b96f7ee9",
+    "p25c/parts/math500_s3of10/scores.json": "637ef4fa31576e4fcbb0a727676d6a7a68c8e66b5a6250a2317bd0847d845303",
+    "p25c/parts/math500_s3of10/math500_per_problem.json": "c33a09cd49bc9852369290ee4a5a7f8a1d6c08b29fbe8be01a1b615c1198aa7e",
+    "p25c/parts/math500_s3of10/math500_first_samples.jsonl.gz": "5f18e45705b8301f7a174ae811b1cc08a6064f37d47dae20cd313f96c676f596",
+    "p25c/parts/math500_s4of10/scores.json": "09cfdd69a509abe8da2b0d730e246bd564dbbfaed98c07321184660d01c400f0",
+    "p25c/parts/math500_s4of10/math500_per_problem.json": "f0af4bd785c826491473baf516d5db6b1a6809bd78dc9d37a52c59b7f2b28537",
+    "p25c/parts/math500_s4of10/math500_first_samples.jsonl.gz": "f29073c7dfbd19a50dcf722677765cadf05c16fb82792e948413e8379beb451e",
+    "p25c/parts/math500_s5of10/scores.json": "70543e2df680d1c26ec5398de2f8bfa345b96a4444b77ee257b6c2b5577cfe95",
+    "p25c/parts/math500_s5of10/math500_per_problem.json": "db0ed9ef7bcd8e6bb2a4afdd17279f74ac799297ae8777e78785b1995cc22133",
+    "p25c/parts/math500_s5of10/math500_first_samples.jsonl.gz": "cea13ece0543f7dcfc5bd358006f2426edbe8a1dbd5072d89ae13378f5fad855",
+    "p25c/parts/math500_s6of10/scores.json": "36e2a304f1281b75cdf17151c260ac2d47a0f31b4515b0741d066a25df8d1859",
+    "p25c/parts/math500_s6of10/math500_per_problem.json": "02ad2272279aaf2f2088229078a3618eb0935454e5031322f5685a60839b9dc1",
+    "p25c/parts/math500_s6of10/math500_first_samples.jsonl.gz": "6cbf5960f77be53627288adc0f6c2b5fb8bb834d5611ee36ea066780bc43c6b3",
+    "p25c/parts/math500_s7of10/scores.json": "54881ad58a0725058b3622f05ef5da6d5e8de5f86177d5c834aa0caeed4fcded",
+    "p25c/parts/math500_s7of10/math500_per_problem.json": "e714a9cccf9bb915435e32578278c3429ffea03d82dd676e98ad2cd70fe95294",
+    "p25c/parts/math500_s7of10/math500_first_samples.jsonl.gz": "e97298504d3bb5bb788d82e7e41fed6679b76f8c7cb44de04e3bb8e32fb3ca29",
+    "p25c/parts/math500_s8of10/scores.json": "ab871203ad4b6c66aded279c32baad1f9730607c43010896b1eedeb01e4c9e42",
+    "p25c/parts/math500_s8of10/math500_per_problem.json": "25d446ada12e65dbeb03d24c9dbf888c2ac3deea54ef65d70756b1b70e3c977e",
+    "p25c/parts/math500_s8of10/math500_first_samples.jsonl.gz": "73afaa4df55ca5db941b4a06216244233da62a7bb0fcc13f511fd428b13448dc",
+    "p25c/parts/math500_s9of10/scores.json": "230670bd2f0c245222392b51d79524ef323cc604edccacad4dda515b051e12a7",
+    "p25c/parts/math500_s9of10/math500_per_problem.json": "bfb4e4a5614e79dcb9c6d48ae816567703b39aa3c3e1f8a3f480f204ca1dc508",
+    "p25c/parts/math500_s9of10/math500_first_samples.jsonl.gz": "2902a6cb31b0ec066148effbd44fba7ca5033fe27d8671fd9a503a6f4f415c93",
+    "p50c/parts/math500_s0of10/scores.json": "1673553760ae3285b8c3636e5b6ae2f21e3519bdb9dc1480d49ed63620948379",
+    "p50c/parts/math500_s0of10/math500_per_problem.json": "2ecff86bb5063961b71cf81ac8a60114037730c4591d48dab039101f9b7e3448",
+    "p50c/parts/math500_s0of10/math500_first_samples.jsonl.gz": "afe799b2858fb2df8b970f0058ce51df30a2f7e6384a97ef5f8561cf96f08a2d",
+    "p50c/parts/math500_s1of10/scores.json": "b20b03dac5ca86fa35fb6717edfa194ebf15b9d71520116caa7d49438df01939",
+    "p50c/parts/math500_s1of10/math500_per_problem.json": "44c94ca607ba2ff0abadc9087fd91d93c51aeb5bb3f3eb09262cad2f86c8f809",
+    "p50c/parts/math500_s1of10/math500_first_samples.jsonl.gz": "bf95d5b0ec5ab4b52d1b2a72121e0dd5c90827bf732bbc5f8b0be264ae159d23",
+    "p50c/parts/math500_s2of10/scores.json": "033f2e70a3b78429e7367a56b372d78ff2d1dc0cb536d2c37d1954e8374b9b58",
+    "p50c/parts/math500_s2of10/math500_per_problem.json": "903204fcd00635575127fc8bedfec168e6260ece87440e1e0b24531f3d5d7516",
+    "p50c/parts/math500_s2of10/math500_first_samples.jsonl.gz": "9de9a30cf494f2aa3c4055469a7cd90d2d3acfbc1eddadfa58f12fe1d42aa622",
+    "p50c/parts/math500_s3of10/scores.json": "badcdb7d367f673c4c6769b9faf820a37dad48fe048f71b019f3da3db4be5d2d",
+    "p50c/parts/math500_s3of10/math500_per_problem.json": "5fb978d056da4a53225c850d05febc985e5f66d323aa27e8df0c9c38847ed9cc",
+    "p50c/parts/math500_s3of10/math500_first_samples.jsonl.gz": "153e045b1221675b16d132225464ae1531f9461e18c82e8642b36d665a4ae25a",
+    "p50c/parts/math500_s4of10/scores.json": "d97fbfac3f549dc73badfe8887fc7dabed48a57e76193ea84ad19b6a47ba6042",
+    "p50c/parts/math500_s4of10/math500_per_problem.json": "6f49dd85f2bf303d1c4fb295c7cd6123db45b2b9df30ab1ab50473318d9e98de",
+    "p50c/parts/math500_s4of10/math500_first_samples.jsonl.gz": "91d199f4bc645e003d4531e8e76a79617291c04e42f3b6a6aece324d2aae1799",
+    "p50c/parts/math500_s5of10/scores.json": "d599218159aa5175f72e8398b5f1b202062319efd3dbb7f0bb42ba721a1bf9ee",
+    "p50c/parts/math500_s5of10/math500_per_problem.json": "ca9b1c574324345f92589e5b27bfd600a85167945958dad98927402788338c4f",
+    "p50c/parts/math500_s5of10/math500_first_samples.jsonl.gz": "ac274e6a7a59dd63030338428ba754a41a754984f1354a839add62ede0503137",
+    "p50c/parts/math500_s6of10/scores.json": "65cae860cdee7d745cc90bc27b05b1cfd654d12101470d21e7f72187dab79a61",
+    "p50c/parts/math500_s6of10/math500_per_problem.json": "c8dc94d86524b6f1881f992215594c2787a8620a6e2f38f50d3cc4421c382fba",
+    "p50c/parts/math500_s6of10/math500_first_samples.jsonl.gz": "b05b3074bed0b45ad9957d315181c0fa44f0f975a3ba5ca09c265a3482ef5cf1",
+    "p50c/parts/math500_s7of10/scores.json": "226d120caf2bd978995f0be687cf8b7ddf075a2d8796ed4490f2751c659839d2",
+    "p50c/parts/math500_s7of10/math500_per_problem.json": "a9cf93bbc03075682f76e6fa088f572b3884089f302f78fc009a3e4bb6561e94",
+    "p50c/parts/math500_s7of10/math500_first_samples.jsonl.gz": "3f1a4930770999ab31bc5ddde1146fc648be3e290875d1ee191c610bdcf88d96",
+    "p50c/parts/math500_s8of10/scores.json": "9f099925496142d85e39baf7d463d52dcca37d024031b0ff6da0f052f62a9161",
+    "p50c/parts/math500_s8of10/math500_per_problem.json": "77144d5d95883711c427a7130a7f833aa2ec032ce687cfaabc831da9db22e12b",
+    "p50c/parts/math500_s8of10/math500_first_samples.jsonl.gz": "6ab7cdcf29bacad86c02d24ee3f4002e965859bd8d9d932c48f9513bf054d012",
+    "p50c/parts/math500_s9of10/scores.json": "4255187c1e8f944218890e3b8b4cf60f153944dd786641b9ecc37dac10162750",
+    "p50c/parts/math500_s9of10/math500_per_problem.json": "7ac9526620ea5dfa967baa6d2a9d75ad34b3855b0b8ea627299c947634f8acb3",
+    "p50c/parts/math500_s9of10/math500_first_samples.jsonl.gz": "82e78f7b5e4d76440cd94e5ac82c4c25556129e9c968779a38dded444ec5c6a2"
+  },
+  "loop_threshold_tail_ratio": 0.1,
+  "arms": {
+    "unedited": {
+      "aggregate": {
+        "ok": 158,
+        "total": 2000,
+        "cut": 1860,
+        "tokens_sum": 61736869
+      },
+      "aggregate_implies": {
+        "accuracy": 0.079,
+        "cut_share": 0.93,
+        "finish_rate": 0.06999999999999995,
+        "mean_tokens": 30868.4345,
+        "correct_and_capped_at_least": 0.00900000000000005,
+        "accuracy_given_finished_at_most": 1.0
+      },
+      "all_samples_accuracy": {
+        "accuracy": 0.079,
+        "ci95": [
+          0.061,
+          0.099
+        ],
+        "problems": 500,
+        "samples": 2000
+      },
+      "text_samples": {
+        "samples": 200,
+        "closed": 0.065,
+        "accuracy": 0.075,
+        "accuracy_given_closed": 1.0,
+        "correct_and_open": 0.01,
+        "closed_without_boxed_answer": 0.0,
+        "closed_without_box_but_lenient_correct": 0.0,
+        "open_looping": 0.925,
+        "open_looping_share_of_open": 0.9893048128342246,
+        "median_loop_onset_of_looping_open": 0.2186412557057352,
+        "found_answer_anywhere": 0.08,
+        "regrade_agreement": 1.0
+      }
+    },
+    "p10c": {
+      "aggregate": {
+        "ok": 247,
+        "total": 2000,
+        "cut": 1745,
+        "tokens_sum": 60168043
+      },
+      "aggregate_implies": {
+        "accuracy": 0.1235,
+        "cut_share": 0.8725,
+        "finish_rate": 0.12749999999999995,
+        "mean_tokens": 30084.0215,
+        "correct_and_capped_at_least": 0.0,
+        "accuracy_given_finished_at_most": 0.9686274509803926
+      },
+      "all_samples_accuracy": {
+        "accuracy": 0.1235,
+        "ci95": [
+          0.102,
+          0.1465
+        ],
+        "problems": 500,
+        "samples": 2000
+      },
+      "text_samples": {
+        "samples": 200,
+        "closed": 0.205,
+        "accuracy": 0.165,
+        "accuracy_given_closed": 0.8048780487804879,
+        "correct_and_open": 0.0,
+        "closed_without_boxed_answer": 0.04,
+        "closed_without_box_but_lenient_correct": 0.01,
+        "open_looping": 0.78,
+        "open_looping_share_of_open": 0.9811320754716981,
+        "median_loop_onset_of_looping_open": 0.30492537601606395,
+        "found_answer_anywhere": 0.17,
+        "regrade_agreement": 1.0
+      }
+    },
+    "p25c": {
+      "aggregate": {
+        "ok": 282,
+        "total": 2000,
+        "cut": 1727,
+        "tokens_sum": 59317073
+      },
+      "aggregate_implies": {
+        "accuracy": 0.141,
+        "cut_share": 0.8635,
+        "finish_rate": 0.13649999999999995,
+        "mean_tokens": 29658.5365,
+        "correct_and_capped_at_least": 0.004500000000000032,
+        "accuracy_given_finished_at_most": 1.0
+      },
+      "all_samples_accuracy": {
+        "accuracy": 0.141,
+        "ci95": [
+          0.118,
+          0.165
+        ],
+        "problems": 500,
+        "samples": 2000
+      },
+      "text_samples": {
+        "samples": 200,
+        "closed": 0.145,
+        "accuracy": 0.13,
+        "accuracy_given_closed": 0.8620689655172413,
+        "correct_and_open": 0.005,
+        "closed_without_boxed_answer": 0.02,
+        "closed_without_box_but_lenient_correct": 0.01,
+        "open_looping": 0.83,
+        "open_looping_share_of_open": 0.9707602339181286,
+        "median_loop_onset_of_looping_open": 0.3269644225915609,
+        "found_answer_anywhere": 0.135,
+        "regrade_agreement": 1.0
+      }
+    },
+    "p50c": {
+      "aggregate": {
+        "ok": 962,
+        "total": 2000,
+        "cut": 661,
+        "tokens_sum": 44074295
+      },
+      "aggregate_implies": {
+        "accuracy": 0.481,
+        "cut_share": 0.3305,
+        "finish_rate": 0.6695,
+        "mean_tokens": 22037.1475,
+        "correct_and_capped_at_least": 0.0,
+        "accuracy_given_finished_at_most": 0.7184466019417476
+      },
+      "all_samples_accuracy": {
+        "accuracy": 0.481,
+        "ci95": [
+          0.4435,
+          0.5175
+        ],
+        "problems": 500,
+        "samples": 2000
+      },
+      "text_samples": {
+        "samples": 200,
+        "closed": 0.76,
+        "accuracy": 0.46,
+        "accuracy_given_closed": 0.6052631578947368,
+        "correct_and_open": 0.0,
+        "closed_without_boxed_answer": 0.21,
+        "closed_without_box_but_lenient_correct": 0.02,
+        "open_looping": 0.115,
+        "open_looping_share_of_open": 0.4791666666666667,
+        "median_loop_onset_of_looping_open": 0.059637248882159245,
+        "found_answer_anywhere": 0.46,
+        "regrade_agreement": 1.0
+      }
+    }
+  },
+  "paired": {
+    "p10c": {
+      "all_samples": {
+        "problems": 500,
+        "baseline": 0.079,
+        "edited": 0.1235,
+        "delta": 0.0445,
+        "delta_ci95": [
+          0.027999999999999997,
+          0.06150000000000001
+        ]
+      },
+      "text_samples_by_closure": {
+        "pairs": 200,
+        "problems": 200,
+        "cells": {
+          "baseline_closed/edited_closed": {
+            "n": 10,
+            "baseline_correct": 10,
+            "edited_correct": 10,
+            "baseline_found_answer": 10,
+            "edited_correct_where_baseline_never_wrote_it": 0,
+            "contribution": 0.0
+          },
+          "baseline_closed/edited_open": {
+            "n": 3,
+            "baseline_correct": 3,
+            "edited_correct": 0,
+            "baseline_found_answer": 3,
+            "edited_correct_where_baseline_never_wrote_it": 0,
+            "contribution": -0.015
+          },
+          "baseline_open/edited_closed": {
+            "n": 31,
+            "baseline_correct": 1,
+            "edited_correct": 23,
+            "baseline_found_answer": 1,
+            "edited_correct_where_baseline_never_wrote_it": 22,
+            "contribution": 0.11
+          },
+          "baseline_open/edited_open": {
+            "n": 156,
+            "baseline_correct": 1,
+            "edited_correct": 0,
+            "baseline_found_answer": 2,
+            "edited_correct_where_baseline_never_wrote_it": 0,
+            "contribution": -0.005
+          }
+        },
+        "delta": 0.09,
+        "delta_ci95": [
+          0.045,
+          0.14
+        ],
+        "rescued_cell_contribution_ci95": [
+          0.07,
+          0.155
+        ],
+        "both_closed_accuracy_difference": 0.0,
+        "both_closed_accuracy_difference_ci95": [
+          0.0,
+          0.0
+        ],
+        "share_of_delta_from_baseline_open_edited_closed": 1.2222222222222223
+      }
+    },
+    "p25c": {
+      "all_samples": {
+        "problems": 500,
+        "baseline": 0.079,
+        "edited": 0.141,
+        "delta": 0.061999999999999986,
+        "delta_ci95": [
+          0.0455,
+          0.07899999999999999
+        ]
+      },
+      "text_samples_by_closure": {
+        "pairs": 200,
+        "problems": 200,
+        "cells": {
+          "baseline_closed/edited_closed": {
+            "n": 9,
+            "baseline_correct": 9,
+            "edited_correct": 9,
+            "baseline_found_answer": 9,
+            "edited_correct_where_baseline_never_wrote_it": 0,
+            "contribution": 0.0
+          },
+          "baseline_closed/edited_open": {
+            "n": 4,
+            "baseline_correct": 4,
+            "edited_correct": 1,
+            "baseline_found_answer": 4,
+            "edited_correct_where_baseline_never_wrote_it": 0,
+            "contribution": -0.015
+          },
+          "baseline_open/edited_closed": {
+            "n": 20,
+            "baseline_correct": 1,
+            "edited_correct": 16,
+            "baseline_found_answer": 1,
+            "edited_correct_where_baseline_never_wrote_it": 15,
+            "contribution": 0.075
+          },
+          "baseline_open/edited_open": {
+            "n": 167,
+            "baseline_correct": 1,
+            "edited_correct": 0,
+            "baseline_found_answer": 2,
+            "edited_correct_where_baseline_never_wrote_it": 0,
+            "contribution": -0.005
+          }
+        },
+        "delta": 0.055,
+        "delta_ci95": [
+          0.015,
+          0.1
+        ],
+        "rescued_cell_contribution_ci95": [
+          0.04,
+          0.115
+        ],
+        "both_closed_accuracy_difference": 0.0,
+        "both_closed_accuracy_difference_ci95": [
+          0.0,
+          0.0
+        ],
+        "share_of_delta_from_baseline_open_edited_closed": 1.3636363636363635
+      }
+    },
+    "p50c": {
+      "all_samples": {
+        "problems": 500,
+        "baseline": 0.079,
+        "edited": 0.481,
+        "delta": 0.40199999999999997,
+        "delta_ci95": [
+          0.36848749999999997,
+          0.4355
+        ]
+      },
+      "text_samples_by_closure": {
+        "pairs": 200,
+        "problems": 200,
+        "cells": {
+          "baseline_closed/edited_closed": {
+            "n": 12,
+            "baseline_correct": 12,
+            "edited_correct": 11,
+            "baseline_found_answer": 12,
+            "edited_correct_where_baseline_never_wrote_it": 0,
+            "contribution": -0.005
+          },
+          "baseline_closed/edited_open": {
+            "n": 1,
+            "baseline_correct": 1,
+            "edited_correct": 0,
+            "baseline_found_answer": 1,
+            "edited_correct_where_baseline_never_wrote_it": 0,
+            "contribution": -0.005
+          },
+          "baseline_open/edited_closed": {
+            "n": 140,
+            "baseline_correct": 2,
+            "edited_correct": 81,
+            "baseline_found_answer": 3,
+            "edited_correct_where_baseline_never_wrote_it": 78,
+            "contribution": 0.395
+          },
+          "baseline_open/edited_open": {
+            "n": 47,
+            "baseline_correct": 0,
+            "edited_correct": 0,
+            "baseline_found_answer": 0,
+            "edited_correct_where_baseline_never_wrote_it": 0,
+            "contribution": 0.0
+          }
+        },
+        "delta": 0.385,
+        "delta_ci95": [
+          0.315,
+          0.455
+        ],
+        "rescued_cell_contribution_ci95": [
+          0.325,
+          0.465
+        ],
+        "both_closed_accuracy_difference": -0.08333333333333333,
+        "both_closed_accuracy_difference_ci95": [
+          -0.2857142857142857,
+          0.0
+        ],
+        "share_of_delta_from_baseline_open_edited_closed": 1.025974025974026
+      }
+    }
+  },
+  "limits": "Closure is read from text ('</think>' present), not from the engine's finish reason. Paired cells use the samples whose text is available. 'found' only counts \\boxed{} answers. Bootstrap intervals resample problems."
+}

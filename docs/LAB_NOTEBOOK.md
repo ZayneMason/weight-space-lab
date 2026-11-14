@@ -8,6 +8,98 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-14 — Roadmap #1: is p50c a math edit or a stop-thinking edit?
+
+Full write-up: [experiments/p50c-termination](../experiments/p50c-termination/README.md).
+Branch `claude/p50c-budget-curve`, built on the November 10 audit branch.
+
+### Setup
+
+- **Plan versus what ran.** The roadmap planned token-budget curves from this lab's full
+  GPU run. Neither the GPU nor that run's transcripts are available here: no GPU in this
+  container, and the full run has not been committed (finding 3 below).
+- **Data used instead.** The upstream repository (revision `4d09ba6`) turned out to
+  release its own **full** MATH-500 evaluation records for the unedited model and all
+  three agent-written edits (p10c, p25c, p50c). That is per-sample correctness for 500
+  problems × 4 samples, shard aggregates, and the full text of sample 0 for problems
+  0–199.
+- **Design.** A paired closure analysis on those records (CPU, about 10 s): split the
+  problems by whether each model closed its `</think>` block, and attribute the accuracy
+  difference cell by cell.
+- **Code.** `qwen/termination.py` with 11 new tests in `qwen/test_termination.py`; the Qwen
+  suite now has 19/19 passing. It is a separate module on purpose: `reproduce_qwen.py`,
+  `lab.py` and `weight_space_lab/` are unchanged, because their hashes pin in-progress
+  jobs and benchmark campaigns.
+- **Environment.**
+  - Codex is still unreachable: no CLI or sign-in, and `api.openai.com` is blocked.
+    No second model was used.
+  - To fetch the pinned Qwen tokenizer, I created a `weight-space-lab` cloud environment
+    that allows Hugging Face hosts (with approval). The `tokenizer.json` download was
+    still refused by this session's permission policy, so token-budget curves are
+    implemented and tested but not run.
+- **Checks.**
+  - The per-problem records reproduce every published aggregate exactly.
+  - This lab's grader matches the recorded grade on 800/800 transcripts.
+  - The analysis output is byte-identical across two runs.
+
+### Results (measured)
+
+| Arm | Accuracy, 2,000 samples | Capped | Gain over unedited |
+|---|---:|---:|---:|
+| unedited | 7.90% [6.10, 9.90] | 93.0% | — |
+| p10c | 12.35% [10.20, 14.65] | 87.3% | +4.45 [2.80, 6.15] |
+| p25c | 14.10% [11.80, 16.50] | 86.4% | +6.20 [4.55, 7.90] |
+| p50c | 48.10% [44.35, 51.75] | 33.1% | +40.20 [36.85, 43.55] |
+
+Paired by problem (sample 0, problems 0–199), p50c gains +38.5 points [31.5, 45.5]:
+
+- **103% of the gain** comes from the 140 problems where the original never closed its
+  reasoning and p50c did. There p50c is correct on 81 and the original on 2.
+- **On the 12 problems where both closed, the edit adds nothing:** the original gets 12
+  right and p50c 11.
+- **185 of the original's 187 unfinished samples end in a repetition loop** (98.4–98.9%
+  for thresholds 0.05–0.2). The loop begins at a median of 22% of the way through the
+  text.
+- **In 78 of the 81 rescued problems, the original never wrote the right answer in any
+  `\boxed{}`** within its 32,768 tokens.
+- **p10c and p25c show the same pattern.** Their gains also come entirely from rescued
+  problems, with no change where both finished; each stops finishing 3–4 problems the
+  original had solved.
+
+*Interpretation:* p50c is an **anti-loop edit**, consistent with upstream's description
+of it as removing a "loop direction". The roadmap hypothesis ("gain mostly from
+finishing; little difference among finished samples") holds. But the original was not
+"done thinking and unable to stop": it got stuck before reaching an answer. Better
+reasoning on the rescued problems cannot be fully excluded, because the original's
+behaviour past its loop is unobservable, and the both-finished comparison rests on 12
+easy problems.
+
+### Surprises
+
+1. **The data already existed.** Upstream released full-run records for all three edits,
+   so roadmap #1 did not need a GPU to get a first answer.
+2. **My first "answer found anywhere" scan was wrong, and the tests caught it.** It
+   handed text slices to `last_boxed`, which returns the *last* box in a slice and drops
+   everything before `</think>`. Boxed answers inside the reasoning were missed or
+   mis-ordered. A dedicated `boxed_at` parser fixed it before any numbers were recorded.
+3. **p50c's loops sometimes move to the answer section.** 42 of its 200 samples close
+   their reasoning without a boxed answer, and 26 of those 42 end in a repetition loop
+   *after* `</think>` (for example, "Wait, I will provide the answer…"). A lenient reading
+   recovers only 4, so missing boxes cost about 2 points rather than hiding a large gain.
+4. **Answers graded while unfinished show up at full scale too.** The original's
+   accuracy (7.9%) exceeds its finish rate (7.0%), so at least 0.9 points come from capped
+   samples. In the transcripts, 2 of its 15 correct answers come from unfinished reasoning.
+
+### Still open
+
+- Token-budget curves. They need the pinned `tokenizer.json`, which a person can allow
+  in this session's permissions, or the lab's own run with stored token IDs.
+- The lab's own full GPU run, and the prefix-equivalence check on 10 problems.
+- Whether the edit changes reasoning on hard problems. Roadmap #6's dose–response on
+  problems the original does not loop on would address it.
+
+---
+
 ## 2026-11-10 — Full audit, two new analyses, roadmap
 
 **Environment for today's runs:** Linux cloud container, 4 CPUs, no GPU, Python 3.13.18,

@@ -26,6 +26,15 @@ scripted controls separately from model results.
 
 ## 1. Is p50c a math edit or a stop-thinking edit?
 
+> **Status, November 14: first result in.** This uses upstream's released full-run
+> records, not a new GPU run ([write-up](../experiments/p50c-termination/README.md)).
+> All of p50c's +40-point gain comes from problems where the original model was stuck in
+> a repetition loop. On the 12 problems both models finished, the edit adds nothing. In
+> 78 of 81 rescued problems, the original never wrote the right answer before looping.
+> The hypothesis holds, with one correction: the original was not failing to stop
+> after finding the answer; the loop started before it got there. Still to do: token-budget
+> curves (tokenizer download blocked in that session) and the lab's own paired run.
+
 **Hypothesis.** Most of the published p50c edit's MATH-500 gain comes from the edited
 model *finishing* within the 32,768-token budget, not from better reasoning. Among
 samples that finish, the accuracy difference between arms is small (at most ⅓ of the
