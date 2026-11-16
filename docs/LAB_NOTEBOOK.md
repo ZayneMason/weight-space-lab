@@ -8,6 +8,35 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #30a: ranking triples, and a grid that matches the bug
+
+Full write-up: [experiments/locate-repair/TRIPLE_RECALL.md](../experiments/locate-repair/TRIPLE_RECALL.md).
+Branch `claude/triple-recall`, stacked on `claude/warm-triples`.
+
+### Setup
+
+- **Question.** How should #27's extended triples be ranked so the true triple reaches the
+  suspect list more often than #28's 17 of 25?
+- **Design.** #27's 25 cases at H = 16. The true triple's position under a 7³ grid (#28's), a 9³
+  grid, 7³ grids over ±2.0 and ±3.0 spreads, and the coarse-7 top 1,000 refined with #29's
+  margin fit.
+- **Code.** `experiments/locate-repair/triple_recall.py` with 3 tests.
+
+### Results (measured)
+
+1. Top-40 recall: coarse 7 17, coarse 9 8, span ±2.0 4, span ±3.0 3, refined 19 (with coarse-7
+   order breaking ties; 14 with smallest change).
+2. The 7-point grid over ±2.5 has a point at ±1.67 spreads; the corruption is exactly ±1.6. Grids
+   whose nearest point is 0.27–0.4 spreads away lose most of the recall.
+
+### Interpretation
+
+- *Inference:* the coarse screen in #27–#29 is partly tuned to the corruption size by accident,
+  and #26's 13-point pair screen shares the same grid point. Roadmap #31 tests the arc with
+  other corruption sizes before building more on it.
+
+---
+
 ## 2026-11-16 — Roadmap #29: a fitter that keeps the true triple perfect
 
 Full write-up: [experiments/locate-repair/WARM_TRIPLES.md](../experiments/locate-repair/WARM_TRIPLES.md).

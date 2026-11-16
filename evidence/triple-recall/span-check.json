@@ -1,0 +1,200 @@
+{
+ "schema": "weight-space-triple-span-check-v1",
+ "spans": [
+  2.0,
+  3.0
+ ],
+ "summary": {
+  "cases": 25,
+  "true_in_triples": 25,
+  "span2.0": {
+   "top40": 4,
+   "top100": 5,
+   "top200": 8,
+   "median_position": 651.5
+  },
+  "span3.0": {
+   "top40": 3,
+   "top100": 6,
+   "top200": 8,
+   "median_position": 624.0
+  }
+ },
+ "cases": [
+  {
+   "seed": 0,
+   "positions": {
+    "span2.0": 1768,
+    "span3.0": 1994
+   }
+  },
+  {
+   "seed": 1,
+   "positions": {
+    "span2.0": 8,
+    "span3.0": 37
+   }
+  },
+  {
+   "seed": 2,
+   "positions": {
+    "span2.0": 11899,
+    "span3.0": 9503
+   }
+  },
+  {
+   "seed": 3,
+   "positions": {
+    "span2.0": 407,
+    "span3.0": 1084
+   }
+  },
+  {
+   "seed": 4,
+   "positions": {
+    "span2.0": 1803,
+    "span3.0": 3013
+   }
+  },
+  {
+   "seed": 5,
+   "positions": {
+    "span2.0": 596,
+    "span3.0": 294
+   }
+  },
+  {
+   "seed": 6,
+   "positions": {
+    "span2.0": 2690,
+    "span3.0": 2848
+   }
+  },
+  {
+   "seed": 7,
+   "positions": {
+    "span2.0": 36,
+    "span3.0": 47
+   }
+  },
+  {
+   "seed": 8,
+   "positions": {
+    "span2.0": 927,
+    "span3.0": 1507
+   }
+  },
+  {
+   "seed": 9,
+   "positions": {
+    "span2.0": 132,
+    "span3.0": 76
+   }
+  },
+  {
+   "seed": 10,
+   "positions": {
+    "span2.0": 3347,
+    "span3.0": 1482
+   }
+  },
+  {
+   "seed": 11,
+   "positions": {
+    "span2.0": 111,
+    "span3.0": 296
+   }
+  },
+  {
+   "seed": 12,
+   "positions": {
+    "span2.0": 0,
+    "span3.0": 142
+   }
+  },
+  {
+   "seed": 13,
+   "positions": {
+    "span2.0": 903,
+    "span3.0": 950
+   }
+  },
+  {
+   "seed": 14,
+   "positions": {
+    "span2.0": null,
+    "span3.0": null
+   }
+  },
+  {
+   "seed": 15,
+   "positions": {
+    "span2.0": 317,
+    "span3.0": 2527
+   }
+  },
+  {
+   "seed": 16,
+   "positions": {
+    "span2.0": 66,
+    "span3.0": 12
+   }
+  },
+  {
+   "seed": 17,
+   "positions": {
+    "span2.0": 575,
+    "span3.0": 220
+   }
+  },
+  {
+   "seed": 18,
+   "positions": {
+    "span2.0": 10,
+    "span3.0": 5
+   }
+  },
+  {
+   "seed": 19,
+   "positions": {
+    "span2.0": 7842,
+    "span3.0": 11937
+   }
+  },
+  {
+   "seed": 20,
+   "positions": {
+    "span2.0": 112,
+    "span3.0": 184
+   }
+  },
+  {
+   "seed": 21,
+   "positions": {
+    "span2.0": 705,
+    "span3.0": 3984
+   }
+  },
+  {
+   "seed": 22,
+   "positions": {
+    "span2.0": 3246,
+    "span3.0": 1517
+   }
+  },
+  {
+   "seed": 23,
+   "positions": {
+    "span2.0": 1577,
+    "span3.0": 296
+   }
+  },
+  {
+   "seed": 24,
+   "positions": {
+    "span2.0": 754,
+    "span3.0": 81
+   }
+  }
+ ]
+}
