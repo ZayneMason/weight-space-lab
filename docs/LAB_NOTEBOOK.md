@@ -8,6 +8,35 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #24: targeted examples on a wider network
+
+Full write-up: [experiments/locate-repair/ACTIVE_SCREEN.md](../experiments/locate-repair/ACTIVE_SCREEN.md).
+Branch `claude/active-screen`, stacked on `claude/pair-screen`.
+
+### Setup
+
+- **Question.** Do #22's targeted queries still single out the broken pair at H = 32, where
+  candidates come from #23's coverage screen instead of an all-pairs search?
+- **Design.** H = 32, 25 cases; coverage screen, coarse fits on the top 1,000, best 40 as
+  candidates; eight rounds of 8 targeted or 8 random queries from a 20,000-input pool.
+- **Code.** `experiments/locate-repair/active_screen.py` with 2 tests.
+
+### Results (measured)
+
+1. After 64 targeted queries the broken pair wins in 12 of 25 cases, up from 5; 64 random
+   queries reach 6. Targeted passes 22 of 25, random 19.
+2. The broken pair was among the 40 candidates in 13 cases, and won in 12 of them.
+   Of the 12 cases without it, 6 lost it at the screen and 6 at the coarse fit.
+3. In all 12 found cases the remaining ties are exactly 2 to the power of the number of
+   output-layer faults.
+
+### Interpretation
+
+- *Inference:* #22's result holds at H = 32. Locating two faults is now limited by candidate
+  recall, not by choosing among candidates.
+
+---
+
 ## 2026-11-16 — Roadmap #23: a cheap screen for pairs of broken weights
 
 Full write-up: [experiments/locate-repair/PAIR_SCREEN.md](../experiments/locate-repair/PAIR_SCREEN.md).

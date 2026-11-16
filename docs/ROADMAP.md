@@ -588,6 +588,33 @@ than 20 coarse pairs finely.
 
 ---
 
+## 24. Do targeted examples still work on a wider network?
+
+*Added November 16 after #23.*
+
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/ACTIVE_SCREEN.md)).
+> Yes. At H = 32, 64 targeted queries on the coverage screen's 40 best candidates raise
+> found-the-pair from 5 to 12 of 25 cases, against 6 with random queries. When the broken
+> pair is among the candidates, it wins in 12 of 13 cases. Candidate recall (13 of 25) is
+> now the limit.
+
+**Method.** #23's coverage screen and coarse fits pick 40 candidates per case; #22's eight
+rounds of 8 targeted or random queries; H = 32, 25 cases.
+
+**Cost.** CPU, about 45 minutes. `experiments/locate-repair/active_screen.py`.
+
+## 25. Can candidate recall be raised cheaply?
+
+*Added November 16 after #24.*
+
+Half of #24's misses were pairs that passed the screen but lost at the coarse 61 × 61 fit;
+the other half ranked past 1,000. Re-fit more screened pairs finely (or use a finer coarse
+grid), measure how many of the 12 missing pairs that recovers and at what cost, then re-run
+#24's targeted queries. A screen that scores pairs jointly, not from single edits, is the
+second option.
+
+**Cost.** CPU, about an hour.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
