@@ -410,6 +410,25 @@ corruption that no single other entry can absorb (for example, two corrupted ent
 
 ---
 
+## 15. Does paddle motion explain the row-3 deaths?
+
+*Added November 16 after #13.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/MOTION.md)).
+> Yes. Under the accurate table 17% of row-3 flights start with the paddle moving away from the
+> catch, and they carry 36 of 64 deaths. The author's paddle is often parked on the catch before
+> the bounce; its deaths are mostly out of reach, the accurate table's mostly last-step overrides.
+
+**Method.** Follow #13's flights step by step: motion at the turn, settled before arrival, late
+overrides, out of reach; 300 episodes per table.
+
+**Cost.** CPU, about 15 minutes. `experiments/breakout-anatomy/motion.py`.
+
+**Next.** Hand-write a table that keeps the author's bet in rows 3–5 but corrects the rows where
+it is out of reach, and check whether it beats 503.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
