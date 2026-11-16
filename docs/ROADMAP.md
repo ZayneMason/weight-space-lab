@@ -692,12 +692,30 @@ fit stays at 100%, and all-three and visible-found counts against #28.
 
 *Added November 16 after #29.*
 
+> **Status, November 16: (a) done, (b) paused** ([write-up](../experiments/locate-repair/TRIPLE_RECALL.md)).
+> The 9-point grid ranks the true triple worse (top 40 in 8 of 25, against 17), because #27's 7-point
+> grid has a point at ±1.67 spreads, next to the ±1.6 corruption. Refining the coarse top 1,000 raises
+> top-40 recall to 19. Part (b) waits on #31, since its ranking is partly an artefact.
+
 #29 leaves 8 of 25 cases without the true triple among the 40 candidates and 3 cases still tied
 after 64 examples. Re-run #29 with (a) a 9-point coarse grid and the best 100 triples as
 candidates, and (b) 16 rounds (128 examples). Measure candidate recall, all-three and
 visible-found counts against #29, and whether the ties settle.
 
 **Cost.** CPU, about two to three hours.
+
+## 31. Do the screens only work because the grid matches the bug?
+
+*Added November 16 after #30a.*
+
+Every grid from #20 on (61, 13, 7 and 200 points over ±2.5 spreads) has a point at or within 0.01 of
+±1.6 spreads, the exact corruption size. #30a shows this inflates triple recall. Re-run #26's joint
+pair screen with targeted queries at H = 32, and #27's coarse triple ranking at H = 16, with corruptions
+drawn at random between 1.0 and 2.2 spreads per fault. Report recall and visible-found counts against
+the fixed-size results. If they drop, fix the screens (offset grids, several grids, or refinement)
+before going further.
+
+**Cost.** CPU, about two hours.
 
 ## Posts the current results already support
 
