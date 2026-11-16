@@ -8,8 +8,9 @@ protocol. It also explained how it works. Part of that explanation looked wrong 
 checked it: its guesses for where a rising ball will land are off by almost two columns on
 average.
 
-Over eight experiments I tried to fix those guesses, and every fix made the network worse.
-The guesses turned out to be a deliberate bet on the one bounce that kills.
+Over ten experiments I tried to fix those guesses, and every fix made the network worse.
+Part of the damage turned out to come from my own yardstick for "accurate". The rest came
+from something the guesses do on purpose: they bet on the one bounce that kills.
 
 ## The network and what its author said
 
@@ -65,10 +66,11 @@ protocol.
 
 Perfect prediction did not help: 22.3 ± 9.2 points *below* the author's guesses on the
 same seeds. A brick-blind lookup table that cuts the error by a third lost 209 points and
-more than doubled the death rate.
+more than doubled the death rate. Part of that loss, it turned out, came from how I
+measured error; I come back to this near the end.
 
-Almost every death was a last-moment arrival: in 97 of 100 deaths traced across these variants, the policy
-chose a move on the very step the ball reached the paddle row. A sticky action on that
+Almost every death was a last-moment arrival: in 97 of 100 deaths traced across these
+variants, the policy chose a move on the very step the ball reached the paddle row. A sticky action on that
 step is fatal.
 
 ## The guesses are physics
@@ -99,8 +101,8 @@ tables.
 The shift is real. The accurate table is 1.11 columns off on the author's play but 1.42
 off on its own. It isn't the explanation, though. No refit scored above 340 on 300
 episodes, and refitting the author's own table once on its own play dropped it from 497
-to 297. Fitting the rising guesses for landing accuracy is what costs the score, whatever
-the play distribution.
+to 297. Fitting the rising guesses for landing accuracy, as I measured it, is what costs the
+score, whatever the play distribution.
 
 ## Three rows
 
@@ -172,6 +174,25 @@ shorter lives. Perfect landing prediction tracks the author's table on both coun
 guesses do two jobs: they keep the paddle safe from the noise, and they send the ball back
 into bricks.
 
+## Accurate about the wrong column
+
+The second job turned out not to need the bet at all. MinAtar's paddle saves a falling ball
+in two places: under the column the ball is in, which sends it back up the way it came, or
+under the column it is about to enter, a corner catch, which reverses it. My accurate table
+was fitted to whichever of the two was nearer, so it counted a corner catch as a hit.
+
+That was the brick problem. Without sticky actions the two tables move the ball identically
+until the accurate table's first corner catch. The author's table never makes one, and its
+returns break a brick every time. Almost every corner catch (95% to 97%) comes from a paddle
+standing still one column ahead of the ball.
+
+Refitting the table to the under column alone gives 834 without sticky actions, the
+author's score, and 357 ± 16 at the published setting, against 296 ± 15 for my old fit and
+482 ± 17 for the author's (200 episodes each). So about a third of the gap I blamed on
+accuracy was my yardstick. The rest is the bet: the refitted table still dies 5.1 times per
+1,000 returns that turn under the wall's bottom row, against 2.4 for the author's. And the
+author's guesses are still the least accurate of all by the new measure.
+
 Measured on average error, the guesses look like the network's weakness. Measured on
 what kills it, they are its best design decision, and the author said so in one line that
 I first read as a bug report.
@@ -183,6 +204,8 @@ I first read as a bug report.
   experiments use 300 episodes, and effects under about 30 points there are within noise.
 - Paddle motion is measured over the single step before the ball turns down, and the
   per-motion death counts outside rows 3 and 4 are small.
+- The under-column table is one fit on 50 episodes, scored on 200; its 60-point gain is
+  about 2.7 standard errors.
 - The "bet on the worst case" reading is my interpretation of the measurements, not
   something the network or its author states in those words. What the author did write,
   "anticipate the earliest possible brick bounce", matches the weights exactly.
@@ -192,5 +215,6 @@ I first read as a bug report.
 Every number here comes from scripts and evidence committed in
 [weight-space-lab](https://github.com/ZayneMason/weight-space-lab), under
 `experiments/breakout-anatomy/`: `README.md` (the anatomy), `TARGETS.md`, `HEDGE.md`,
-`CLOSEDLOOP.md`, `ROWSWAP.md`, `DEATHS.md`, `MOTION.md` and `STICKY.md`, each with its
-evidence file under `evidence/`. The network and its description belong to Takehi et al.
+`CLOSEDLOOP.md`, `ROWSWAP.md`, `DEATHS.md`, `MOTION.md`, `STICKY.md`, `RETURNS.md` and
+`UNDERFIT.md`, each with its evidence file under `evidence/`. The network and its
+description belong to Takehi et al.
