@@ -335,6 +335,25 @@ examples, only the corrupted entry admits a practice-perfect edit.
 
 ---
 
+## 11. Is the accuracy gap a distribution-shift effect?
+
+*Added November 16 after #9.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/CLOSEDLOOP.md)).
+> No. Refitting tables on their own play never scores above 340, and one refit of the
+> author's table drops it from 497 to 297. Accuracy-fitting itself costs the score.
+
+**Hypothesis.** Tables fitted on the published network's play lose because installing them
+changes the states that occur; refitting on their own play closes the gap.
+
+**Method.** Iterated refits (mean distance) on each table's own play from three starts.
+
+**Cost.** CPU, about an hour. `experiments/breakout-anatomy/closedloop.py`.
+
+**Next.** Swap accurate targets into some rows only, to find where the author's table wins.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

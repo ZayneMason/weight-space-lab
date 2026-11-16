@@ -136,4 +136,5 @@ lengths behind the survival curves). The network and its description belong to
 Takehi et al. (`RikiyaT/lm_understand-logs`, revision `4d09ba6`).
 
 Follow-ups: [TARGETS.md](TARGETS.md) (roadmap #8, swapping the ascending guesses) and
-[HEDGE.md](HEDGE.md) (roadmap #9, why the author's rough guesses win).
+[HEDGE.md](HEDGE.md) (roadmap #9, why the author's rough guesses win) and
+[CLOSEDLOOP.md](CLOSEDLOOP.md) (roadmap #11, refitting the guesses on their own play).

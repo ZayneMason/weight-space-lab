@@ -8,6 +8,37 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #11: refitting the Breakout guesses on their own play
+
+Full write-up: [experiments/breakout-anatomy/CLOSEDLOOP.md](../experiments/breakout-anatomy/CLOSEDLOOP.md).
+Branch `claude/breakout-closedloop`, stacked on `claude/practice-size`.
+
+### Setup
+
+- **Question.** Is #9's gap between the author's table and accurate tables a distribution-shift
+  effect (fitted on the published network's play, then installed)?
+- **Design.** Three starting tables (published, physics-only full wall, #8's best mean
+  distance); each round plays episodes 5000–5049 with the current table, refits visited cells
+  for mean distance, scores 300 episodes. Three refits; final tables at the full protocol.
+- **Code.** `experiments/breakout-anatomy/closedloop.py` with 1 test.
+
+### Results (measured)
+
+1. The accurate table is 1.11 columns off on published play and 1.42 on its own: shift is real.
+2. No refit scores above 340 (300 episodes); finals 238.6, 278.4 and 319.3 against 502.9.
+3. One refit of the published table on its own play drops it from 497 to 297.
+
+### Interpretation
+
+- Fitting the guesses for landing accuracy is what costs the score, on any play distribution
+  tried. *Inference:* the author's table works through the paddle's path, not the landing.
+
+### Post angle
+
+Part three of the Breakout series: "Optimising the part you understand broke the part you didn't."
+
+---
+
 ## 2026-11-16 — Roadmap #10: how many examples it takes to find the broken weight
 
 Full write-up: [experiments/locate-repair/PRACTICE.md](../experiments/locate-repair/PRACTICE.md).
