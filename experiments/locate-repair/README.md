@@ -98,3 +98,5 @@ H = 32 mostly touch neither, and only a told joint search reliably fixes both.
 [PAIR_SEARCH.md](PAIR_SEARCH.md) (roadmap #21) searches pairs of entries: practice data
 often fits several pairs perfectly, so even an exhaustive search finds the broken pair only
 about half the time.
+[ACTIVE_QUERIES.md](ACTIVE_QUERIES.md) (roadmap #22) asks the teacher about inputs where the
+candidate pairs disagree: 64 such examples settle most cases that 1,024 random ones could not.
