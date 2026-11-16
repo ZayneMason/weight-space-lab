@@ -390,6 +390,45 @@ under the published and accurate tables; 300 episodes each.
 
 ---
 
+## 14. Which weights stand in for the broken one?
+
+*Added November 16 after #10.*
+
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/SUBSTITUTES.md)).
+> Every output-weight fault has an exact twin, the same unit's weight into the other logit,
+> which no behavioural data can tell apart. Counting it as found raises H = 32 localization
+> from 46% to 61%. Other stand-ins sit in units pointing the same way (cosine > 0.9 for about
+> half, against 15–16% of units).
+
+**Method.** For every entry, the smallest practice-perfect edit on 1,024 examples; class the
+near-complete passing ones against the corrupted entry; H = 32 and 128, 50 seeds each.
+
+**Cost.** CPU, about 25 minutes. `experiments/locate-repair/substitutes.py`.
+
+**Next.** Score localization up to the mirror symmetry in the benchmark itself, and test a
+corruption that no single other entry can absorb (for example, two corrupted entries).
+
+---
+
+## 15. Does paddle motion explain the row-3 deaths?
+
+*Added November 16 after #13.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/MOTION.md)).
+> Yes. Under the accurate table 17% of row-3 flights start with the paddle moving away from the
+> catch, and they carry 36 of 64 deaths. The author's paddle is often parked on the catch before
+> the bounce; its deaths are mostly out of reach, the accurate table's mostly last-step overrides.
+
+**Method.** Follow #13's flights step by step: motion at the turn, settled before arrival, late
+overrides, out of reach; 300 episodes per table.
+
+**Cost.** CPU, about 15 minutes. `experiments/breakout-anatomy/motion.py`.
+
+**Next.** Hand-write a table that keeps the author's bet in rows 3–5 but corrects the rows where
+it is out of reach, and check whether it beats 503.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

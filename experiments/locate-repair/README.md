@@ -91,3 +91,5 @@ Evidence: [`evidence/locate-repair/locate-repair.json`](../../evidence/locate-re
 
 Follow-up: [PRACTICE.md](PRACTICE.md) (roadmap #10) grows the practice set from 32 to
 1,024 examples.
+[SUBSTITUTES.md](SUBSTITUTES.md) (roadmap #14) asks which entries stand in for the
+broken one: an exact output-logit mirror, or units that point the same way.

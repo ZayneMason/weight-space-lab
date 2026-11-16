@@ -61,3 +61,6 @@ python experiments/breakout-anatomy/deaths.py CHECKPOINT --output runs/breakout-
 
 Evidence: [`evidence/breakout-deaths/deaths.json`](../../evidence/breakout-deaths/deaths.json).
 Code: `deaths.py`; 1 test in `tests/test_breakout_deaths.py`.
+
+Follow-up: [MOTION.md](MOTION.md) (roadmap #15) explains the row-3 result: paddle direction at
+the turn.

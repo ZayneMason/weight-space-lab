@@ -1,0 +1,323 @@
+{
+ "schema": "weight-space-breakout-motion-v1",
+ "source_checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+ "episodes": 300,
+ "tables": {
+  "published": {
+   "flights": 173658,
+   "deaths": 155,
+   "by_turn_row": {
+    "0": {
+     "flights": 24586,
+     "deaths": 2,
+     "deaths_per_1000": 0.08134710811030668,
+     "turn_motion_share": {
+      "toward": 0.8135117546571219,
+      "still": 0.1511429268689498,
+      "away": 0.03534531847392825
+     },
+     "by_turn_motion": {
+      "toward": {
+       "flights": 20001,
+       "deaths": 2,
+       "deaths_per_1000": 0.0999950002499875
+      },
+      "still": {
+       "flights": 3716,
+       "deaths": 0,
+       "deaths_per_1000": 0.0
+      },
+      "away": {
+       "flights": 869,
+       "deaths": 0,
+       "deaths_per_1000": 0.0
+      }
+     },
+     "settled_share": 0.9996746115675588,
+     "unsettled_final_share": 0.00032538843244122673,
+     "settled_but_unsettled_share": 0.0,
+     "mean_distance_by_turn_motion": {
+      "toward": 1.9017049147542622,
+      "still": 0.2020990312163617,
+      "away": 1.1254315304948217
+     },
+     "deaths_settled_share": 0.0,
+     "deaths_out_of_reach_share": 0.0,
+     "deaths_late_override_share": 0.5
+    },
+    "2": {
+     "flights": 40972,
+     "deaths": 13,
+     "deaths_per_1000": 0.31728985648735725,
+     "turn_motion_share": {
+      "toward": 0.6014351264278044,
+      "still": 0.35787855120570145,
+      "away": 0.04068632236649419
+     },
+     "by_turn_motion": {
+      "toward": {
+       "flights": 24642,
+       "deaths": 12,
+       "deaths_per_1000": 0.48697345994643293
+      },
+      "still": {
+       "flights": 14663,
+       "deaths": 0,
+       "deaths_per_1000": 0.0
+      },
+      "away": {
+       "flights": 1667,
+       "deaths": 1,
+       "deaths_per_1000": 0.5998800239952009
+      }
+     },
+     "settled_share": 0.9993410133749878,
+     "unsettled_final_share": 0.0006589866250122034,
+     "settled_but_unsettled_share": 0.0,
+     "mean_distance_by_turn_motion": {
+      "toward": 1.6236100965830695,
+      "still": 0.11130055241082998,
+      "away": 1.2963407318536293
+     },
+     "deaths_settled_share": 0.23076923076923078,
+     "deaths_out_of_reach_share": 0.0,
+     "deaths_late_override_share": 0.9230769230769231
+    },
+    "3": {
+     "flights": 49096,
+     "deaths": 32,
+     "deaths_per_1000": 0.6517842594101353,
+     "turn_motion_share": {
+      "toward": 0.7966025745478247,
+      "still": 0.18469936451034707,
+      "away": 0.018698060941828253
+     },
+     "by_turn_motion": {
+      "toward": {
+       "flights": 39110,
+       "deaths": 30,
+       "deaths_per_1000": 0.767067246228586
+      },
+      "still": {
+       "flights": 9068,
+       "deaths": 1,
+       "deaths_per_1000": 0.11027790030877813
+      },
+      "away": {
+       "flights": 918,
+       "deaths": 1,
+       "deaths_per_1000": 1.0893246187363834
+      }
+     },
+     "settled_share": 0.9991037966433111,
+     "unsettled_final_share": 0.0008962033566889359,
+     "settled_but_unsettled_share": 0.0,
+     "mean_distance_by_turn_motion": {
+      "toward": 1.0479417028892866,
+      "still": 0.4289810322011469,
+      "away": 1.406318082788671
+     },
+     "deaths_settled_share": 0.40625,
+     "deaths_out_of_reach_share": 0.0,
+     "deaths_late_override_share": 1.0
+    },
+    "4": {
+     "flights": 50486,
+     "deaths": 108,
+     "deaths_per_1000": 2.139206908846017,
+     "turn_motion_share": {
+      "toward": 0.5655627302618548,
+      "still": 0.4309511547755813,
+      "away": 0.003486114962563879
+     },
+     "by_turn_motion": {
+      "toward": {
+       "flights": 28553,
+       "deaths": 107,
+       "deaths_per_1000": 3.7474170840191925
+      },
+      "still": {
+       "flights": 21757,
+       "deaths": 1,
+       "deaths_per_1000": 0.04596221905593602
+      },
+      "away": {
+       "flights": 176,
+       "deaths": 0,
+       "deaths_per_1000": 0.0
+      }
+     },
+     "settled_share": 0.9823515430020203,
+     "unsettled_final_share": 0.017648456997979636,
+     "settled_but_unsettled_share": 0.0,
+     "mean_distance_by_turn_motion": {
+      "toward": 1.7481175358105978,
+      "still": 0.0,
+      "away": 1.4545454545454546
+     },
+     "deaths_settled_share": 0.0,
+     "deaths_out_of_reach_share": 0.8518518518518519,
+     "deaths_late_override_share": 0.1388888888888889
+    }
+   }
+  },
+  "accurate": {
+   "flights": 121249,
+   "deaths": 240,
+   "by_turn_row": {
+    "0": {
+     "flights": 32188,
+     "deaths": 1,
+     "deaths_per_1000": 0.03106747856343979,
+     "turn_motion_share": {
+      "toward": 0.7173170125512613,
+      "still": 0.2684230147881198,
+      "away": 0.014259972660618864
+     },
+     "by_turn_motion": {
+      "toward": {
+       "flights": 23089,
+       "deaths": 0,
+       "deaths_per_1000": 0.0
+      },
+      "still": {
+       "flights": 8640,
+       "deaths": 1,
+       "deaths_per_1000": 0.11574074074074074
+      },
+      "away": {
+       "flights": 459,
+       "deaths": 0,
+       "deaths_per_1000": 0.0
+      }
+     },
+     "settled_share": 0.9999067975643097,
+     "unsettled_final_share": 9.320243569031937e-05,
+     "settled_but_unsettled_share": 0.0,
+     "mean_distance_by_turn_motion": {
+      "toward": 0.9620598553423708,
+      "still": 0.14224537037037038,
+      "away": 1.1546840958605664
+     },
+     "deaths_settled_share": 1.0,
+     "deaths_out_of_reach_share": 0.0,
+     "deaths_late_override_share": 1.0
+    },
+    "2": {
+     "flights": 20224,
+     "deaths": 12,
+     "deaths_per_1000": 0.5933544303797469,
+     "turn_motion_share": {
+      "toward": 0.2196400316455696,
+      "still": 0.4692939082278481,
+      "away": 0.3110660601265823
+     },
+     "by_turn_motion": {
+      "toward": {
+       "flights": 4442,
+       "deaths": 0,
+       "deaths_per_1000": 0.0
+      },
+      "still": {
+       "flights": 9491,
+       "deaths": 5,
+       "deaths_per_1000": 0.5268148772521336
+      },
+      "away": {
+       "flights": 6291,
+       "deaths": 7,
+       "deaths_per_1000": 1.1127006835161342
+      }
+     },
+     "settled_share": 0.9986155063291139,
+     "unsettled_final_share": 0.001384493670886076,
+     "settled_but_unsettled_share": 0.0,
+     "mean_distance_by_turn_motion": {
+      "toward": 0.12359297613687528,
+      "still": 0.17564008007586135,
+      "away": 1.043872198378636
+     },
+     "deaths_settled_share": 0.08333333333333333,
+     "deaths_out_of_reach_share": 0.0,
+     "deaths_late_override_share": 0.5833333333333334
+    },
+    "3": {
+     "flights": 28630,
+     "deaths": 64,
+     "deaths_per_1000": 2.2354173943416,
+     "turn_motion_share": {
+      "toward": 0.3831994411456514,
+      "still": 0.44621026894865523,
+      "away": 0.17059028990569333
+     },
+     "by_turn_motion": {
+      "toward": {
+       "flights": 10971,
+       "deaths": 6,
+       "deaths_per_1000": 0.5468963631391851
+      },
+      "still": {
+       "flights": 12775,
+       "deaths": 22,
+       "deaths_per_1000": 1.7221135029354206
+      },
+      "away": {
+       "flights": 4884,
+       "deaths": 36,
+       "deaths_per_1000": 7.371007371007371
+      }
+     },
+     "settled_share": 0.9959483059727559,
+     "unsettled_final_share": 0.004051694027244149,
+     "settled_but_unsettled_share": 0.0,
+     "mean_distance_by_turn_motion": {
+      "toward": 0.9612615076109744,
+      "still": 0.2980821917808219,
+      "away": 1.5243652743652745
+     },
+     "deaths_settled_share": 0.1875,
+     "deaths_out_of_reach_share": 0.0,
+     "deaths_late_override_share": 0.859375
+    },
+    "4": {
+     "flights": 29980,
+     "deaths": 163,
+     "deaths_per_1000": 5.436957971981321,
+     "turn_motion_share": {
+      "toward": 0.4399599733155437,
+      "still": 0.5436290860573716,
+      "away": 0.016410940627084723
+     },
+     "by_turn_motion": {
+      "toward": {
+       "flights": 13190,
+       "deaths": 49,
+       "deaths_per_1000": 3.7149355572403335
+      },
+      "still": {
+       "flights": 16298,
+       "deaths": 106,
+       "deaths_per_1000": 6.5038655049699345
+      },
+      "away": {
+       "flights": 492,
+       "deaths": 8,
+       "deaths_per_1000": 16.260162601626018
+      }
+     },
+     "settled_share": 0.9823882588392262,
+     "unsettled_final_share": 0.01761174116077385,
+     "settled_but_unsettled_share": 0.0,
+     "mean_distance_by_turn_motion": {
+      "toward": 2.0587566338134953,
+      "still": 1.099950914222604,
+      "away": 1.25
+     },
+     "deaths_settled_share": 0.09202453987730061,
+     "deaths_out_of_reach_share": 0.2147239263803681,
+     "deaths_late_override_share": 0.7730061349693251
+    }
+   }
+  }
+ }
+}

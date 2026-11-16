@@ -8,6 +8,71 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #15: paddle motion at the turn
+
+Full write-up: [experiments/breakout-anatomy/MOTION.md](../experiments/breakout-anatomy/MOTION.md).
+Branch `claude/paddle-motion`, stacked on `claude/substitutes`.
+
+### Setup
+
+- **Question.** Why does the accurate table die 3.4 times as often on row-3 flights while
+  starting closer to the catch (#13)?
+- **Design.** #13's 300 episodes per table, followed step by step: paddle motion at the turn
+  (toward, still, away), settled on the catch before arrival, late sticky overrides, out of
+  reach.
+- **Code.** `experiments/breakout-anatomy/motion.py` with 3 tests.
+
+### Results (measured)
+
+1. Row 3: 17% of the accurate table's flights start with the paddle moving away (2% for the
+   author's); they die 7.4 per 1,000 and are 36 of 64 row-3 deaths. Reweighting to the
+   author's motion mix gives 0.89 per 1,000 instead of 2.24.
+2. Row 4: 43% of the author's flights start with the paddle parked on the catch (1 death in
+   21,757); the accurate table's still paddles are 1.10 columns off and die 6.5 per 1,000.
+3. 92 of the author's 155 deaths are out of reach; 189 of the accurate table's 240 deaths had
+   a sticky override in the last two steps, and only 35 were out of reach.
+
+### Interpretation
+
+- *Inference:* the author's guesses trade a few unwinnable flights for many with time to spare;
+  the accurate table turns them into close calls that one sticky action can lose.
+
+---
+
+## 2026-11-16 — Roadmap #14: which weights stand in for the broken one
+
+Full write-up: [experiments/locate-repair/SUBSTITUTES.md](../experiments/locate-repair/SUBSTITUTES.md).
+Branch `claude/substitutes`, stacked on `claude/breakout-deaths`.
+
+### Setup
+
+- **Question.** #10's passing edits mostly change an entry other than the corrupted one.
+  Which entries, and why do they work?
+- **Design.** H = 32 and 128, 50 seeds each, 1,024 practice examples. A substitute is any
+  other entry whose smallest practice-perfect edit passes and undoes ≥95% of the damage.
+  Classed as the output-logit mirror, same unit, same output or elsewhere; units compared by
+  input-direction cosine. The min-change editor's pick is recorded.
+- **Code.** `experiments/locate-repair/substitutes.py` with 5 tests.
+
+### Results (measured)
+
+1. In all 37 output-weight cases, the same unit's weight into the other logit repairs exactly
+   when the corrupted entry does (an exact symmetry of a 2-logit classifier).
+2. The editor picks that mirror in 6 of 41 cases at H = 32; counting it as found raises
+   localization from 46% to 61%. At H = 128 it is 2 of 46 (35% to 39%).
+3. Substitutes in other units point the same way: median input-direction cosine 0.94 and 0.89,
+   with 55% and 48% above 0.9 against 15–16% for all other units.
+4. The corrupted entry itself is a valid near-complete repair in 83% and 96% of cases.
+
+### Interpretation
+
+- Part of the H = 32 mislocalization is a scoring artifact: the mirror is the same repair.
+  *Inference:* at H = 128 near-parallel units, not the mirror, account for most stand-ins,
+  and the editor often settles for a partial repair (only 8 of its 26 elsewhere picks are
+  near-complete).
+
+---
+
 ## 2026-11-16 — Roadmap #13: what kills the accurate Breakout table
 
 Full write-up: [experiments/breakout-anatomy/DEATHS.md](../experiments/breakout-anatomy/DEATHS.md).
