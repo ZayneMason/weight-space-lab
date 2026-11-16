@@ -141,4 +141,5 @@ Follow-ups: [TARGETS.md](TARGETS.md) (roadmap #8, swapping the ascending guesses
 [ROWSWAP.md](ROWSWAP.md) (roadmap #12, the three rows where the author's guesses win) and
 [DEATHS.md](DEATHS.md) (roadmap #13, which flights kill the accurate table) and
 [MOTION.md](MOTION.md) (roadmap #15, paddle motion at the turn) and
-[STICKY.md](STICKY.md) (roadmap #16, the bet with and without sticky actions).
+[STICKY.md](STICKY.md) (roadmap #16, the bet with and without sticky actions) and
+[RETURNS.md](RETURNS.md) (roadmap #17, corner catches and the missing bricks).

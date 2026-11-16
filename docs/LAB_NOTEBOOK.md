@@ -8,6 +8,41 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #17: why the accurate table's returns miss bricks
+
+Full write-up: [experiments/breakout-anatomy/RETURNS.md](../experiments/breakout-anatomy/RETURNS.md).
+Branch `claude/returns`, stacked on `claude/sticky-sweep`.
+
+### Setup
+
+- **Question.** Without sticky actions the accurate table scores 569 against 834 because
+  fewer of its returns break a brick (#16). What decides whether a return breaks one?
+- **Design.** Record every catch's type (under or corner), column, bricks before the next
+  catch and turn row, for both tables at sticky 0 and 0.1 (200 episodes). Counterfactual:
+  the accurate table with every corner catch returned as an under catch.
+- **Code.** `experiments/breakout-anatomy/returns.py` with 4 tests.
+
+### Results (measured)
+
+1. Without sticky actions the ball's path is identical for both tables until the accurate
+   table's first corner catch (step 112). It makes 19 in 10,000 steps; the author's makes none.
+2. The author's cycle repeats every 30 returns, covers all ten columns evenly and breaks a
+   brick on all 833 returns. The accurate table's cycle is 78 returns long and 182 of 733
+   returns break nothing.
+3. Returning corner catches as under catches gives exactly 834 bricks in 10,000 steps without
+   sticky actions, and 1.00 bricks per return at sticky 0.1 (author 0.90, accurate 0.80).
+4. But no-brick returns reach the top wall, the safest flights, so the counterfactual dies
+   more (2.18 per 10,000 steps against 1.59) and scores 338, against 296 and the author's 482.
+
+### Interpretation
+
+- *Inference:* the author's table does two separate things. It makes few corner catches (2.0%
+  against 6.7%), keeping the ball in a cycle that breaks a brick every return, and it parks
+  the paddle safely on short flights. Corner catches explain all of the brick-rate gap and
+  none of the safety gap.
+
+---
+
 ## 2026-11-16 — Roadmap #16: is the author's bet only a sticky-action hedge?
 
 Full write-up: [experiments/breakout-anatomy/STICKY.md](../experiments/breakout-anatomy/STICKY.md).
