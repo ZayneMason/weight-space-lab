@@ -659,10 +659,27 @@ pair screen still ranks the right two entries near the top when a third fault is
 
 *Added November 16 after #27.*
 
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/TRIPLE_QUERIES.md)).
+> 64 targeted examples raise all-three-found from 5 to 10 of 25. The true triple is among the 40
+> candidates in 17 cases, and in 15 of those no candidate, the true triple included, fits all the
+> examples: the grid fit, not the data, is the limit. The 9-point coarse grid was not tried.
+
 #27's triple search found all three faults in 5 of 25 cases because several triples fit practice
 perfectly. Run #22's targeted queries with the coarse top 40 triples as the committee, re-fitting
 each finely every round, and score all three and visible faults. Also try a 9-point coarse grid,
 which should keep more true triples in the top 40.
+
+**Cost.** CPU, about an hour.
+
+## 29. A fitter that keeps the true triple perfect
+
+*Added November 16 after #28.*
+
+#28's examples land where candidate repairs disagree, and there the fine grid fit of three values
+falls short, so the true triple loses to look-alikes. Re-run #28 with each round's fit started from
+the previous round's best values (local grids and coordinate passes around them, plus the full fit
+as a fallback), so a triple that fit perfectly keeps fitting. Measure how often the true triple's
+fit stays at 100%, and all-three and visible-found counts against #28.
 
 **Cost.** CPU, about an hour.
 

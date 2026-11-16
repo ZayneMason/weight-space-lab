@@ -110,3 +110,5 @@ screened candidates: they find the broken pair in 12 of the 13 cases whose candi
 queries it finds every visible fault in 25 of 25 width-32 cases.
 [THREE_FAULTS.md](THREE_FAULTS.md) (roadmap #27) breaks three entries at H = 16: the pair screen still finds
 two of them, but practice data alone picks all three in only 5 of 25 cases.
+[TRIPLE_QUERIES.md](TRIPLE_QUERIES.md) (roadmap #28) adds targeted examples for three faults: all three
+found rises from 5 to 10 of 25, and the grid fit, not the data, limits the rest.
