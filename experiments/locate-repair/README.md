@@ -102,3 +102,5 @@ about half the time.
 candidate pairs disagree: 64 such examples settle most cases that 1,024 random ones could not.
 [PAIR_SCREEN.md](PAIR_SCREEN.md) (roadmap #23) screens all pairs cheaply so the search reaches
 H = 32: a coverage screen ranks the broken pair about nine times better than a Newton screen.
+[ACTIVE_SCREEN.md](ACTIVE_SCREEN.md) (roadmap #24) runs the targeted queries at H = 32 on
+screened candidates: they find the broken pair in 12 of the 13 cases whose candidates include it.
