@@ -8,6 +8,45 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #9: why the author's rough guesses win
+
+Full write-up: [experiments/breakout-anatomy/HEDGE.md](../experiments/breakout-anatomy/HEDGE.md).
+Branch `claude/breakout-hedge`, stacked on `claude/locate-repair`.
+
+### Setup
+
+- **Question.** #8 found the released ascending guesses (1.76 columns off) score 502.9 and a
+  more accurate brick-blind table (1.12 off) scores 294.1. What does the author's table get right?
+- **Design.** Rebuild a table from physics alone (landing if rows 1–3 were a full wall, the
+  earliest possible bounce); fit a deadline-aware table and a most-likely-landing table on
+  184,502 ascending states from held-out episodes 5000–5049; install each in units 2 and 3
+  and score at the published protocol (1,000 episodes, sticky 0.1).
+- **Code.** `experiments/breakout-anatomy/hedge.py` with 5 tests.
+
+### Results (measured)
+
+1. All 180 published ascending targets lie on a full-wall catch column. The guesses are the
+   earliest-bounce landings.
+2. The physics-only full-wall table scores 493.0 ± 7.9 (published 502.9 ± 7.7).
+3. The deadline-aware fit is identical to #8's best-mean-distance table on all 180 cells
+   (294.1): lateness, as modelled, never binds for the accurate table. The published table
+   is the most often late by that model.
+4. Fitting for exact hits (73% vs 43%) scores 398.2 ± 7.7: better than mean distance, still
+   about 100 points below the published and full-wall tables (42% exact hits).
+
+### Interpretation
+
+- No accuracy measure computed on the published network's play ranks the tables correctly.
+- *Inference, untested:* fitted tables are fitted to states the published network visits and
+  then change which states occur; the physics table needs no fit. A closed-loop refit would test it.
+
+### Post angle
+
+"The hand-written network's 'wrong' guesses are physics: it assumes the earliest bounce."
+Pairs with #8's "a better guess made it worse".
+
+---
+
 ## 2026-11-16 — Roadmap #7 (offline half): passing the test by fixing the wrong weight
 
 Full write-up: [experiments/locate-repair](../experiments/locate-repair/README.md).
