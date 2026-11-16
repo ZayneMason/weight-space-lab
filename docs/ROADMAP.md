@@ -21,6 +21,7 @@ scripted controls separately from model results.
 | 5 | Why editors overshoot | Shares #3's runs + one prompt arm | Small | Medium–high |
 | 6 | Dose–response of a published LLM edit | GPU, ~10 GPU-hours | Moderate (scaled BF16 deltas) | Medium–high |
 | 7 | Locate-and-repair: a difficulty scaling curve | CPU + API | Moderate (new task generator) | Medium |
+| 8 | Would a better guess keep the Breakout network alive longer? | CPU, about 15 minutes | Small | Medium–high |
 
 ---
 
@@ -70,6 +71,15 @@ correct-finished / wrong-finished / correct-capped / wrong-capped.
 ---
 
 ## 2. Anatomy of a hand-written Breakout network
+
+> **Status, November 16: done for the released network**
+> ([write-up](../experiments/breakout-anatomy/README.md)). The author's description is
+> accurate: correct direction context on 99.4% of states, exact descending landing
+> targets. The network cannot see bricks, so ascending targets are right only 42% of the
+> time. With sticky actions off it never dies (1,000/1,000 episodes at the ceiling,
+> 834 each), so every death is injected noise. Half of the second layer is nearly
+> redundant; 1–3% weight noise breaks it. Still blocked: the fresh-network comparison
+> (needs `fresh.npz`). Follow-up: #8.
 
 **Hypothesis.** The published Experiment 5 answer is a small, readable program and not
 a distributed representation. It has no redundancy: removing any of its active units
@@ -245,6 +255,32 @@ in grey.
 **Cost / prerequisites.** A new generator and controller support for a larger editable
 set (about a day of work). API cost scales with editors × widths × seeds; start with
 2 editors × 4 widths × 5 seeds.
+
+---
+
+## 8. Would a better guess keep the Breakout network alive longer?
+
+*Added November 16 after #2.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/TARGETS.md)).
+> The hypothesis fails. Perfect ascending prediction scores 480.6 versus 502.9 for the
+> published guesses; a more accurate brick-blind table scores 294.1. 97 of 100 deaths
+> are last-moment arrivals. A pure oracle policy survives far longer but scores 231.7,
+> because the network's catch choices aim the ball at bricks.
+
+**Hypothesis.** The released network's ascending predictions are wrong by about two
+columns half the time because it cannot see bricks. A better brick-blind guess
+increases survival under sticky actions, and perfect ascending prediction increases it
+substantially.
+
+**Method.** Replace only the ascending target code (units 2 and 3) with: follow the
+ball's column; always center; landing with no bricks; the best brick-blind lookup table
+fitted on held-out episodes 5000–5049; and an oracle that feeds the true landing column.
+Add a pure oracle policy with no network. Evaluate each at the full protocol.
+
+**Plot.** Mean score against mean ascending-target error, one point per variant.
+
+**Cost.** CPU, about 15 minutes. `experiments/breakout-anatomy/targets.py`.
 
 ---
 

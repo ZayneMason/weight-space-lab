@@ -8,6 +8,111 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #8: would a better guess keep the Breakout network alive longer?
+
+Full write-up: [experiments/breakout-anatomy/TARGETS.md](../experiments/breakout-anatomy/TARGETS.md).
+Branch `claude/breakout-targets`, stacked on `claude/breakout-anatomy`.
+
+### Setup
+
+- **Question.** #2 found the network's ascending guesses are often wrong because it cannot
+  see bricks. Do better guesses help?
+- **Design.** Replace only the ascending target code with five alternatives (follow the
+  ball, center, no-brick physics, a best-fit brick-blind table, and the true landing
+  column), plus a pure oracle policy. Full protocol for each, plus a catch profile on 20
+  further episodes: how long the paddle had been still when each catch happened.
+- **Code.** `experiments/breakout-anatomy/targets.py`, 4 tests in
+  `tests/test_breakout_targets.py`.
+
+### Results (measured)
+
+1. **Perfect ascending prediction does not help:** 480.6 versus 502.9 for the published
+   guesses (−22.3 ± 9.2 on the same seeds).
+2. **A more accurate brick-blind guess is much worse:** mean error 1.12 versus 1.78
+   columns, but 294.1 points and more than twice the death hazard.
+3. **97 of 100 deaths in the catch profiles are last-moment arrivals:** the policy chose
+   a move on the same step the ball reached the paddle row. All 12 of the published
+   network's deaths there are of this kind; such catches are 0.7% of its catches.
+4. **The network trades survival for score.** A pure oracle policy dies six times less
+   often per step (89.5% of episodes reach the ceiling) but breaks bricks at a third of
+   the rate, scoring 231.7.
+
+### Interpretation
+
+- What limits the network is how often it arrives just in time, not how accurate its
+  average guess is.
+- Why the author's guesses beat a more accurate table is open. Untested hypothesis: they
+  assume the earliest possible brick bounce, which hedges the worst case.
+
+### Post angle
+
+"Better predictions made the hand-written network worse." Pairs with #2 as a two-part
+post: the network does what its author said; and the author's imprecise guesses are
+better than accurate ones.
+
+---
+
+## 2026-11-16 — Roadmap #2: does the hand-written Breakout network do what its author said?
+
+Full write-up: [experiments/breakout-anatomy](../experiments/breakout-anatomy/README.md).
+Branch `claude/breakout-anatomy`, stacked on `claude/p50c-budget-curve`.
+
+### Setup
+
+- **Question.** The released Experiment 5 network came with a plain-language description
+  from the model that wrote it. Is that description true, and which parts carry the score?
+- **Ground truth.** An exact replica of MinAtar's ball rules gives, for every state, the
+  two columns where the paddle survives. A test checks it against the environment.
+- **Runs.** Semantics on episodes 0–19 (158,482 states). Thirty variants at the full
+  protocol (1,000 episodes each): eight second-layer silencings, twelve weight-noise
+  draws, three coarser target codes, greedy actions, and five sticky-action settings.
+- **Code.** `experiments/breakout-anatomy/anatomy.py`, 7 tests in
+  `tests/test_breakout_anatomy.py`. Nothing under `skills/` or `weight_space_lab/` changed.
+- **Check.** The intact run reproduces the committed full replay exactly (502.880 ± 7.747).
+- **Environment.** CPU only. Codex and Hugging Face are still unreachable from this
+  container (proxy refuses both), so no second model was used.
+
+### Results (measured)
+
+1. **The description is accurate where it matters.** The second layer selects the right
+   direction context on 99.4% of states. Descending landing targets are within half a
+   column of a true catch column on 99.2% of states (100% from row 3 down).
+2. **The network is blind to bricks.** The brick channel has no weights. Its ascending
+   targets are within half a column only 42% of the time (mean error 1.76 columns),
+   improving as the ball climbs.
+3. **Every death is caused by sticky actions.** With sticky actions off, 1,000 of 1,000
+   episodes reach the 10,000-step ceiling, each scoring exactly 834. Scores fall smoothly
+   as stickiness rises: 772.8 at 0.025, 696.3 at 0.05, 502.9 at 0.1, 149.3 at 0.2.
+   Greedy and sampled actions give identical results.
+4. **Half of the second layer is nearly redundant.** Silencing any of the four "move with
+   the ball" comparisons drops the score below 9. Silencing a "move against the ball"
+   comparison costs 3–4% (ascending) or 45% (descending).
+5. **It is a precision program.** 1% multiplicative weight noise drops the mean to 18.9
+   in one of three draws; 3% noise drops all three below 10. Rounding the target code
+   to 2-column steps drops the mean to 4.5.
+
+### Interpretation
+
+- The model wrote a correct program for a noise-free game. Its only failure mode is the
+  environment overriding its chosen move, which its design does not anticipate.
+- The ascending predictions are about two columns off half the time, yet the comparisons
+  that use them are essential. Approximate pre-positioning is load-bearing.
+- The noise fragility is probably the second layer's 15-unit gate margin (inference;
+  not isolated by tensor).
+
+### Post angle
+
+"An LLM wrote a neural network by hand. We checked whether it does what the LLM said it
+does." It mostly does; it is blind to bricks; it never dies without injected noise.
+
+### Still open
+
+- The fresh network (1,076 nonzero weights) is still missing, so released versus fresh is
+  not done.
+- Would a better ascending guess buy survival? Added as roadmap #8 and run next.
+
+---
+
 ## 2026-11-14 — Roadmap #1: is p50c a math edit or a stop-thinking edit?
 
 Full write-up: [experiments/p50c-termination](../experiments/p50c-termination/README.md).
