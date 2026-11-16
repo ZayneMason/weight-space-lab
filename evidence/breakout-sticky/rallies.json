@@ -1,0 +1,66 @@
+{
+ "published": [
+  {
+   "episode": 0,
+   "steps": 10000,
+   "catches": 834,
+   "bricks": 834
+  },
+  {
+   "episode": 1,
+   "steps": 10000,
+   "catches": 834,
+   "bricks": 834
+  },
+  {
+   "episode": 2,
+   "steps": 10000,
+   "catches": 834,
+   "bricks": 834
+  },
+  {
+   "episode": 3,
+   "steps": 10000,
+   "catches": 834,
+   "bricks": 834
+  },
+  {
+   "episode": 4,
+   "steps": 10000,
+   "catches": 834,
+   "bricks": 834
+  }
+ ],
+ "accurate": [
+  {
+   "episode": 0,
+   "steps": 10000,
+   "catches": 734,
+   "bricks": 569
+  },
+  {
+   "episode": 1,
+   "steps": 10000,
+   "catches": 734,
+   "bricks": 569
+  },
+  {
+   "episode": 2,
+   "steps": 10000,
+   "catches": 734,
+   "bricks": 569
+  },
+  {
+   "episode": 3,
+   "steps": 10000,
+   "catches": 734,
+   "bricks": 569
+  },
+  {
+   "episode": 4,
+   "steps": 10000,
+   "catches": 734,
+   "bricks": 569
+  }
+ ]
+}

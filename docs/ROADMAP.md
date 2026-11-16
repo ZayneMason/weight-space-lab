@@ -429,6 +429,26 @@ it is out of reach, and check whether it beats 503.
 
 ---
 
+## 16. Is the author's bet only a hedge against sticky actions?
+
+*Added November 16 after #15.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/STICKY.md)).
+> No. Without sticky actions nothing dies, yet the accurate table scores 569 against 834:
+> fewer of its returns hit a brick. Its death rate is a steady two times the author's, and at
+> the published setting slower scoring is over a third of the score gap.
+
+**Method.** Three variants at six sticky probabilities, 200 episodes each; deaths and bricks per
+10,000 steps.
+
+**Cost.** CPU, about 25 minutes. `experiments/breakout-anatomy/sticky_sweep.py`.
+
+**Next.** Measure the return angle at each catch to test whether the catch column explains the
+scoring rate, then try a hand-written table that keeps the author's bet in rows 3–5 and fixes
+its out-of-reach cells.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
