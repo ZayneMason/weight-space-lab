@@ -529,6 +529,26 @@ pair is possible from practice data at all.
 
 ---
 
+## 21. Can a search over pairs find two broken weights?
+
+*Added November 16 after #20.*
+
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/PAIR_SEARCH.md)).
+> Only by searching every pair, and then only half the time. At H = 8 the all-pairs search
+> passes 92% of cases but picks the broken pair in 56%; in most misses another pair fits
+> the practice set equally well with a smaller change. Shortlists built from single-edit
+> scores never contain both faults at H = 32.
+
+**Method.** Joint fits of every pair in a shortlist (top 8 or 16 by single-edit score), or
+of all pairs at H = 8; the 20 best re-fitted finely; #20's cases.
+
+**Cost.** CPU, about 50 minutes. `experiments/locate-repair/pair_search.py`.
+
+**Next.** Add examples where the tied candidate pairs disagree (active queries to the
+teacher) and test whether a few dozen of them single out the broken pair.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
