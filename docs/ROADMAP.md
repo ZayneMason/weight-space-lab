@@ -449,6 +449,27 @@ its out-of-reach cells.
 
 ---
 
+## 17. Why do the accurate table's returns miss bricks?
+
+*Added November 16 after #16.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/RETURNS.md)).
+> Corner catches. The paddle only decides whether the ball comes back up straight (under) or
+> reversed (corner). The author's table rarely makes corner catches and its returns always
+> break a brick; turning the accurate table's corner catches into under catches recovers the
+> whole brick rate, but costs it the safe top-wall flights.
+
+**Method.** Catch type, column, bricks and turn row for every catch, both tables, sticky 0 and
+0.1 (200 episodes), plus a corners-as-under counterfactual.
+
+**Cost.** CPU, about 30 minutes. `experiments/breakout-anatomy/returns.py`.
+
+**Next.** Check whether the accurate table's paddle waits one column ahead of the ball before
+its corner catches, then write a table that keeps the author's bet in rows 3–5 and fixes its
+out-of-reach cells.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
