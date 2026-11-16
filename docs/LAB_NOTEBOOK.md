@@ -8,6 +8,34 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #27: three broken weights
+
+Full write-up: [experiments/locate-repair/THREE_FAULTS.md](../experiments/locate-repair/THREE_FAULTS.md).
+Branch `claude/three-faults`, stacked on `claude/joint-screen`.
+
+### Setup
+
+- **Question.** With three faults, does #26's joint pair screen still rank a two-fault pair
+  near the top, and does extending its best pairs by a third entry find all three?
+- **Design.** H = 16, 25 cases, three faults in three different units. Joint pair screen; the
+  best 200 pairs extended by every other entry; coarse 7³ fits, the best 20 re-fitted finely;
+  practice data only, no queries.
+- **Code.** `experiments/locate-repair/three_faults.py` with 3 tests.
+
+### Results (measured)
+
+1. The first two-fault pair is a median 21st of 3,321; the true triple is among the extended
+   triples in 24 of 25 cases, and in the coarse top 20 in 11.
+2. The winner holds all three faults in 5 of 25 cases, yet the repair passes 17 (told: 20)
+   and undoes a median 98.5% of the damage.
+
+### Interpretation
+
+- *Inference:* three faults bring back #21's look-alikes at the triple level. Targeted queries
+  on the top triples are the next step.
+
+---
+
 ## 2026-11-16 — Roadmap #26: a joint screen finds every visible fault
 
 Full write-up: [experiments/locate-repair/JOINT_SCREEN.md](../experiments/locate-repair/JOINT_SCREEN.md).

@@ -1,0 +1,1281 @@
+{
+ "schema": "weight-space-three-faults-v1",
+ "pairs": 200,
+ "coarse": 7,
+ "fine": 21,
+ "refine": 20,
+ "summary": {
+  "cases": 25,
+  "silent_cases": 4,
+  "best_pair_rank_median": 20.0,
+  "true_triple_among_candidates": 24,
+  "true_triple_in_top_20": 11,
+  "found_all_three": 5,
+  "found_visible": 7,
+  "search_success": 17,
+  "told_success": 20,
+  "search_damage_undone_median": 0.9848710317460317,
+  "told_damage_undone_median": 0.9893700787401575,
+  "seconds_median": 112.3
+ },
+ "cases": [
+  {
+   "width": 16,
+   "seed": 0,
+   "faults": [
+    [
+     "hidden_weight",
+     1
+    ],
+    [
+     "weight",
+     19
+    ],
+    [
+     "weight",
+     26
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 57,
+   "triples": 10650,
+   "true_triple_rank": 68,
+   "winner": [
+    [
+     "hidden_bias",
+     3
+    ],
+    [
+     "hidden_weight",
+     7
+    ],
+    [
+     "weight",
+     16
+    ]
+   ],
+   "faults_found": 0,
+   "found_visible": false,
+   "perfect_fine_triples": 0,
+   "search": {
+    "success": false,
+    "damage_undone": 0.6312056737588652,
+    "practice_accuracy": 0.998046875
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.8912529550827423,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 118.2
+  },
+  {
+   "width": 16,
+   "seed": 1,
+   "faults": [
+    [
+     "hidden_weight",
+     30
+    ],
+    [
+     "hidden_weight",
+     10
+    ],
+    [
+     "weight",
+     16
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 80,
+   "triples": 10069,
+   "true_triple_rank": 8,
+   "winner": [
+    [
+     "hidden_weight",
+     14
+    ],
+    [
+     "hidden_weight",
+     30
+    ],
+    [
+     "weight",
+     0
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": false,
+   "perfect_fine_triples": 16,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9965608465608465,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9968253968253968,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 107.2
+  },
+  {
+   "width": 16,
+   "seed": 2,
+   "faults": [
+    [
+     "hidden_weight",
+     10
+    ],
+    [
+     "hidden_weight",
+     25
+    ],
+    [
+     "hidden_weight",
+     26
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 14,
+   "triples": 13682,
+   "true_triple_rank": 2,
+   "winner": [
+    [
+     "hidden_weight",
+     6
+    ],
+    [
+     "hidden_weight",
+     10
+    ],
+    [
+     "hidden_weight",
+     25
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": false,
+   "perfect_fine_triples": 3,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9881516587677726,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.985781990521327,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 122.9
+  },
+  {
+   "width": 16,
+   "seed": 3,
+   "faults": [
+    [
+     "hidden_weight",
+     16
+    ],
+    [
+     "bias",
+     0
+    ],
+    [
+     "hidden_bias",
+     5
+    ]
+   ],
+   "silent_faults": [
+    0
+   ],
+   "best_pair_rank": 11,
+   "triples": 9269,
+   "true_triple_rank": 431,
+   "winner": [
+    [
+     "bias",
+     0
+    ],
+    [
+     "hidden_bias",
+     0
+    ],
+    [
+     "hidden_weight",
+     0
+    ]
+   ],
+   "faults_found": 1,
+   "found_visible": false,
+   "perfect_fine_triples": 20,
+   "search": {
+    "success": true,
+    "damage_undone": 0.994042891183479,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9964257347100873,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 95.2
+  },
+  {
+   "width": 16,
+   "seed": 4,
+   "faults": [
+    [
+     "weight",
+     19
+    ],
+    [
+     "hidden_bias",
+     12
+    ],
+    [
+     "hidden_weight",
+     26
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 155,
+   "triples": 12253,
+   "true_triple_rank": 1,
+   "winner": [
+    [
+     "hidden_bias",
+     12
+    ],
+    [
+     "hidden_weight",
+     2
+    ],
+    [
+     "hidden_weight",
+     26
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": false,
+   "perfect_fine_triples": 12,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9905437352245863,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": false,
+    "damage_undone": 0.9397163120567376,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 123.6
+  },
+  {
+   "width": 16,
+   "seed": 5,
+   "faults": [
+    [
+     "hidden_bias",
+     7
+    ],
+    [
+     "hidden_weight",
+     3
+    ],
+    [
+     "hidden_weight",
+     20
+    ]
+   ],
+   "silent_faults": [
+    1
+   ],
+   "best_pair_rank": 0,
+   "triples": 11214,
+   "true_triple_rank": 5,
+   "winner": [
+    [
+     "hidden_bias",
+     7
+    ],
+    [
+     "hidden_weight",
+     14
+    ],
+    [
+     "hidden_weight",
+     28
+    ]
+   ],
+   "faults_found": 1,
+   "found_visible": false,
+   "perfect_fine_triples": 20,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9785932721712538,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9969418960244648,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 114.6
+  },
+  {
+   "width": 16,
+   "seed": 6,
+   "faults": [
+    [
+     "hidden_weight",
+     25
+    ],
+    [
+     "hidden_weight",
+     26
+    ],
+    [
+     "weight",
+     24
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 1,
+   "triples": 10943,
+   "true_triple_rank": 21,
+   "winner": [
+    [
+     "hidden_weight",
+     21
+    ],
+    [
+     "hidden_weight",
+     26
+    ],
+    [
+     "weight",
+     8
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": false,
+   "perfect_fine_triples": 9,
+   "search": {
+    "success": false,
+    "damage_undone": 0.9662673392181589,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9795081967213115,
+    "practice_accuracy": 0.9990234375
+   },
+   "seconds": 110.6
+  },
+  {
+   "width": 16,
+   "seed": 7,
+   "faults": [
+    [
+     "weight",
+     26
+    ],
+    [
+     "weight",
+     0
+    ],
+    [
+     "bias",
+     0
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 20,
+   "triples": 13693,
+   "true_triple_rank": 0,
+   "winner": [
+    [
+     "bias",
+     0
+    ],
+    [
+     "weight",
+     16
+    ],
+    [
+     "weight",
+     26
+    ]
+   ],
+   "faults_found": 3,
+   "found_visible": true,
+   "perfect_fine_triples": 8,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9935636856368564,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9894986449864499,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 133.1
+  },
+  {
+   "width": 16,
+   "seed": 8,
+   "faults": [
+    [
+     "weight",
+     12
+    ],
+    [
+     "hidden_weight",
+     6
+    ],
+    [
+     "weight",
+     16
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 137,
+   "triples": 13269,
+   "true_triple_rank": 17,
+   "winner": [
+    [
+     "hidden_weight",
+     6
+    ],
+    [
+     "weight",
+     0
+    ],
+    [
+     "weight",
+     28
+    ]
+   ],
+   "faults_found": 3,
+   "found_visible": true,
+   "perfect_fine_triples": 0,
+   "search": {
+    "success": false,
+    "damage_undone": 0.9901465386558869,
+    "practice_accuracy": 0.9990234375
+   },
+   "told": {
+    "success": false,
+    "damage_undone": 0.9901465386558869,
+    "practice_accuracy": 0.9990234375
+   },
+   "seconds": 118.1
+  },
+  {
+   "width": 16,
+   "seed": 9,
+   "faults": [
+    [
+     "hidden_weight",
+     9
+    ],
+    [
+     "hidden_bias",
+     9
+    ],
+    [
+     "weight",
+     28
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 1,
+   "triples": 12187,
+   "true_triple_rank": 4,
+   "winner": [
+    [
+     "hidden_weight",
+     9
+    ],
+    [
+     "hidden_weight",
+     15
+    ],
+    [
+     "weight",
+     28
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": false,
+   "perfect_fine_triples": 0,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9859232680099366,
+    "practice_accuracy": 0.9990234375
+   },
+   "told": {
+    "success": false,
+    "damage_undone": 0.9436930720397461,
+    "practice_accuracy": 0.9970703125
+   },
+   "seconds": 114.0
+  },
+  {
+   "width": 16,
+   "seed": 10,
+   "faults": [
+    [
+     "hidden_weight",
+     12
+    ],
+    [
+     "hidden_weight",
+     31
+    ],
+    [
+     "hidden_bias",
+     3
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 1,
+   "triples": 10172,
+   "true_triple_rank": 95,
+   "winner": [
+    [
+     "hidden_bias",
+     13
+    ],
+    [
+     "hidden_weight",
+     7
+    ],
+    [
+     "hidden_weight",
+     31
+    ]
+   ],
+   "faults_found": 1,
+   "found_visible": false,
+   "perfect_fine_triples": 1,
+   "search": {
+    "success": false,
+    "damage_undone": 0.9625871908687381,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": false,
+    "damage_undone": 0.932149651236525,
+    "practice_accuracy": 0.9970703125
+   },
+   "seconds": 101.1
+  },
+  {
+   "width": 16,
+   "seed": 11,
+   "faults": [
+    [
+     "weight",
+     28
+    ],
+    [
+     "hidden_weight",
+     23
+    ],
+    [
+     "hidden_bias",
+     6
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 0,
+   "triples": 9291,
+   "true_triple_rank": 28,
+   "winner": [
+    [
+     "hidden_bias",
+     6
+    ],
+    [
+     "hidden_weight",
+     8
+    ],
+    [
+     "weight",
+     28
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": false,
+   "perfect_fine_triples": 18,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9940944881889764,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9893700787401575,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 84.9
+  },
+  {
+   "width": 16,
+   "seed": 12,
+   "faults": [
+    [
+     "hidden_weight",
+     9
+    ],
+    [
+     "weight",
+     15
+    ],
+    [
+     "bias",
+     1
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 75,
+   "triples": 11902,
+   "true_triple_rank": 0,
+   "winner": [
+    [
+     "bias",
+     0
+    ],
+    [
+     "hidden_weight",
+     9
+    ],
+    [
+     "weight",
+     31
+    ]
+   ],
+   "faults_found": 3,
+   "found_visible": true,
+   "perfect_fine_triples": 4,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9889565340506867,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9889565340506867,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 102.4
+  },
+  {
+   "width": 16,
+   "seed": 13,
+   "faults": [
+    [
+     "hidden_weight",
+     27
+    ],
+    [
+     "weight",
+     11
+    ],
+    [
+     "weight",
+     6
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 124,
+   "triples": 11260,
+   "true_triple_rank": 258,
+   "winner": [
+    [
+     "hidden_weight",
+     17
+    ],
+    [
+     "weight",
+     22
+    ],
+    [
+     "weight",
+     27
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": false,
+   "perfect_fine_triples": 0,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9742990654205608,
+    "practice_accuracy": 0.9990234375
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9700155763239875,
+    "practice_accuracy": 0.9970703125
+   },
+   "seconds": 104.3
+  },
+  {
+   "width": 16,
+   "seed": 14,
+   "faults": [
+    [
+     "hidden_bias",
+     5
+    ],
+    [
+     "hidden_weight",
+     14
+    ],
+    [
+     "weight",
+     26
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 314,
+   "triples": 10825,
+   "true_triple_rank": null,
+   "winner": [
+    [
+     "hidden_bias",
+     5
+    ],
+    [
+     "hidden_weight",
+     4
+    ],
+    [
+     "weight",
+     10
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": false,
+   "perfect_fine_triples": 0,
+   "search": {
+    "success": false,
+    "damage_undone": 0.572198275862069,
+    "practice_accuracy": 0.9921875
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9956896551724138,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 106.3
+  },
+  {
+   "width": 16,
+   "seed": 15,
+   "faults": [
+    [
+     "hidden_weight",
+     24
+    ],
+    [
+     "hidden_weight",
+     29
+    ],
+    [
+     "hidden_weight",
+     9
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 17,
+   "triples": 12925,
+   "true_triple_rank": 15,
+   "winner": [
+    [
+     "hidden_weight",
+     9
+    ],
+    [
+     "hidden_weight",
+     24
+    ],
+    [
+     "hidden_weight",
+     29
+    ]
+   ],
+   "faults_found": 3,
+   "found_visible": true,
+   "perfect_fine_triples": 1,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9894490035169988,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9894490035169988,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 117.7
+  },
+  {
+   "width": 16,
+   "seed": 16,
+   "faults": [
+    [
+     "weight",
+     20
+    ],
+    [
+     "hidden_weight",
+     1
+    ],
+    [
+     "hidden_weight",
+     7
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 25,
+   "triples": 12779,
+   "true_triple_rank": 0,
+   "winner": [
+    [
+     "hidden_weight",
+     1
+    ],
+    [
+     "hidden_weight",
+     7
+    ],
+    [
+     "weight",
+     4
+    ]
+   ],
+   "faults_found": 3,
+   "found_visible": true,
+   "perfect_fine_triples": 2,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9848710317460317,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9848710317460317,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 111.2
+  },
+  {
+   "width": 16,
+   "seed": 17,
+   "faults": [
+    [
+     "hidden_bias",
+     2
+    ],
+    [
+     "weight",
+     17
+    ],
+    [
+     "hidden_weight",
+     13
+    ]
+   ],
+   "silent_faults": [
+    1
+   ],
+   "best_pair_rank": 0,
+   "triples": 10958,
+   "true_triple_rank": 47,
+   "winner": [
+    [
+     "hidden_bias",
+     2
+    ],
+    [
+     "hidden_weight",
+     12
+    ],
+    [
+     "hidden_weight",
+     13
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": true,
+   "perfect_fine_triples": 19,
+   "search": {
+    "success": false,
+    "damage_undone": 0.9495733126454616,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9705197827773467,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 112.3
+  },
+  {
+   "width": 16,
+   "seed": 18,
+   "faults": [
+    [
+     "hidden_bias",
+     5
+    ],
+    [
+     "hidden_weight",
+     19
+    ],
+    [
+     "weight",
+     30
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 10,
+   "triples": 12658,
+   "true_triple_rank": 1,
+   "winner": [
+    [
+     "hidden_bias",
+     4
+    ],
+    [
+     "hidden_bias",
+     5
+    ],
+    [
+     "hidden_bias",
+     12
+    ]
+   ],
+   "faults_found": 1,
+   "found_visible": false,
+   "perfect_fine_triples": 5,
+   "search": {
+    "success": false,
+    "damage_undone": 0.7657342657342657,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9825174825174825,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 122.5
+  },
+  {
+   "width": 16,
+   "seed": 19,
+   "faults": [
+    [
+     "hidden_bias",
+     1
+    ],
+    [
+     "weight",
+     9
+    ],
+    [
+     "weight",
+     7
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 101,
+   "triples": 13173,
+   "true_triple_rank": 864,
+   "winner": [
+    [
+     "hidden_bias",
+     7
+    ],
+    [
+     "hidden_weight",
+     24
+    ],
+    [
+     "weight",
+     3
+    ]
+   ],
+   "faults_found": 0,
+   "found_visible": false,
+   "perfect_fine_triples": 16,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9909936955869109,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9924947463224257,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 119.3
+  },
+  {
+   "width": 16,
+   "seed": 20,
+   "faults": [
+    [
+     "weight",
+     2
+    ],
+    [
+     "hidden_bias",
+     11
+    ],
+    [
+     "hidden_weight",
+     16
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 10,
+   "triples": 13280,
+   "true_triple_rank": 23,
+   "winner": [
+    [
+     "hidden_weight",
+     12
+    ],
+    [
+     "hidden_weight",
+     22
+    ],
+    [
+     "weight",
+     22
+    ]
+   ],
+   "faults_found": 0,
+   "found_visible": false,
+   "perfect_fine_triples": 0,
+   "search": {
+    "success": false,
+    "damage_undone": 0.9689521345407504,
+    "practice_accuracy": 0.998046875
+   },
+   "told": {
+    "success": false,
+    "damage_undone": 0.9457956015523933,
+    "practice_accuracy": 0.9833984375
+   },
+   "seconds": 125.3
+  },
+  {
+   "width": 16,
+   "seed": 21,
+   "faults": [
+    [
+     "hidden_weight",
+     18
+    ],
+    [
+     "weight",
+     4
+    ],
+    [
+     "hidden_weight",
+     31
+    ]
+   ],
+   "silent_faults": [
+    2
+   ],
+   "best_pair_rank": 0,
+   "triples": 11509,
+   "true_triple_rank": 36,
+   "winner": [
+    [
+     "hidden_weight",
+     4
+    ],
+    [
+     "hidden_weight",
+     18
+    ],
+    [
+     "weight",
+     4
+    ]
+   ],
+   "faults_found": 2,
+   "found_visible": true,
+   "perfect_fine_triples": 14,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9784517158818835,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9992019154030327,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 112.1
+  },
+  {
+   "width": 16,
+   "seed": 22,
+   "faults": [
+    [
+     "hidden_weight",
+     31
+    ],
+    [
+     "hidden_bias",
+     12
+    ],
+    [
+     "weight",
+     9
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 158,
+   "triples": 10752,
+   "true_triple_rank": 29,
+   "winner": [
+    [
+     "hidden_weight",
+     0
+    ],
+    [
+     "hidden_weight",
+     7
+    ],
+    [
+     "weight",
+     9
+    ]
+   ],
+   "faults_found": 1,
+   "found_visible": false,
+   "perfect_fine_triples": 4,
+   "search": {
+    "success": true,
+    "damage_undone": 0.8883248730964467,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9916935856022151,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 103.5
+  },
+  {
+   "width": 16,
+   "seed": 23,
+   "faults": [
+    [
+     "weight",
+     2
+    ],
+    [
+     "weight",
+     28
+    ],
+    [
+     "weight",
+     3
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 22,
+   "triples": 12644,
+   "true_triple_rank": 24,
+   "winner": [
+    [
+     "hidden_weight",
+     13
+    ],
+    [
+     "weight",
+     2
+    ],
+    [
+     "weight",
+     23
+    ]
+   ],
+   "faults_found": 1,
+   "found_visible": false,
+   "perfect_fine_triples": 4,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9934640522875817,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9937752878929349,
+    "practice_accuracy": 1.0
+   },
+   "seconds": 106.3
+  },
+  {
+   "width": 16,
+   "seed": 24,
+   "faults": [
+    [
+     "hidden_weight",
+     30
+    ],
+    [
+     "hidden_weight",
+     24
+    ],
+    [
+     "weight",
+     10
+    ]
+   ],
+   "silent_faults": [],
+   "best_pair_rank": 31,
+   "triples": 13074,
+   "true_triple_rank": 181,
+   "winner": [
+    [
+     "hidden_weight",
+     30
+    ],
+    [
+     "weight",
+     4
+    ],
+    [
+     "weight",
+     6
+    ]
+   ],
+   "faults_found": 1,
+   "found_visible": false,
+   "perfect_fine_triples": 16,
+   "search": {
+    "success": true,
+    "damage_undone": 0.9801889667784213,
+    "practice_accuracy": 1.0
+   },
+   "told": {
+    "success": true,
+    "damage_undone": 0.9926851569643401,
+    "practice_accuracy": 0.9990234375
+   },
+   "seconds": 117.3
+  }
+ ]
+}

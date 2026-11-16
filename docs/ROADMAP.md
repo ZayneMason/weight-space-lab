@@ -642,12 +642,29 @@ on the same 25 cases, then re-run #25's queries on any new hits.
 
 *Added November 16 after #26.*
 
+> **Status, November 16: (b) done** ([write-up](../experiments/locate-repair/THREE_FAULTS.md)).
+> At H = 16 with three faults, the joint pair screen still ranks a two-fault pair a median 21st
+> of 3,321, and the true triple is among the extended triples in 24 of 25 cases. From practice
+> data alone the winner holds all three faults in only 5, while the repair passes 17. (a), H = 128
+> with two faults, is not run.
+
 #26 locates two faults at H = 32. Two ways to push it: (a) H = 128 with two faults, about 200,000
 pairs, to measure how the joint screen's time and rank scale; (b) three faults at H = 8 or 16,
 screening pairs jointly and then extending the best pairs by a third entry, to see whether the
 pair screen still ranks the right two entries near the top when a third fault is present.
 
 **Cost.** CPU, one to two hours.
+
+## 28. Targeted queries on triples
+
+*Added November 16 after #27.*
+
+#27's triple search found all three faults in 5 of 25 cases because several triples fit practice
+perfectly. Run #22's targeted queries with the coarse top 40 triples as the committee, re-fitting
+each finely every round, and score all three and visible faults. Also try a 9-point coarse grid,
+which should keep more true triples in the top 40.
+
+**Cost.** CPU, about an hour.
 
 ## Posts the current results already support
 
