@@ -71,3 +71,6 @@ python experiments/locate-repair/practice_size.py --widths 8 32 128 --seeds 50 -
 Evidence: [`evidence/practice-size/practice-size.json`](../../evidence/practice-size/practice-size.json)
 (per-case rows, summary, dropped cases). Code: `practice_size.py`; 2 tests in
 `tests/test_practice_size.py`.
+
+Follow-up: [SUBSTITUTES.md](SUBSTITUTES.md) (roadmap #14) identifies the entries that the
+editor edits instead of the corrupted one.
