@@ -108,3 +108,5 @@ screened candidates: they find the broken pair in 12 of the 13 cases whose candi
 18 of 25 width-32 cases, and every visible fault in 21.
 [JOINT_SCREEN.md](JOINT_SCREEN.md) (roadmap #26) screens every pair with a 13 × 13 joint fit: with 48 targeted
 queries it finds every visible fault in 25 of 25 width-32 cases.
+[THREE_FAULTS.md](THREE_FAULTS.md) (roadmap #27) breaks three entries at H = 16: the pair screen still finds
+two of them, but practice data alone picks all three in only 5 of 25 cases.
