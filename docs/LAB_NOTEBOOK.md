@@ -8,6 +8,48 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #7 (offline half): passing the test by fixing the wrong weight
+
+Full write-up: [experiments/locate-repair](../experiments/locate-repair/README.md).
+Branch `claude/locate-repair`, stacked on `claude/breakout-targets`.
+
+### Setup
+
+- **Question.** If the editor is not told which entry is broken, does one-entry repair
+  still work, and does it find the fault?
+- **Design.** 2-input ReLU networks with 2–128 hidden units (12–642 parameters), one
+  corrupted entry anywhere, the benchmark's own datasets and success rule. Model-free
+  strategies with the practice labels: told the entry; not told and pick the smallest
+  relative practice-perfect edit; whether any entry works; the scripted random control.
+  100 cases per width. "Damage undone" is measured on 20,000 uniform inputs.
+- **Code.** `experiments/locate-repair/analyze.py` with 4 tests. It imports the benchmark's
+  dataset builder but changes nothing in `weight_space_lab/`.
+- **Not run.** Model editors: they need paid API or CLI allowance and approval.
+
+### Results (measured)
+
+1. Told the entry: 76–86% success at every size. Not told: 70% at 12 parameters, 47–52%
+   from 42 to 642.
+2. The not-told editor edits the corrupted entry 48% of the time at 12 parameters and 3%
+   at 642. At 642 parameters, 44 of its 47 successes edit a different entry.
+3. Some single edit passes the rule in 86–95% of cases, more as networks grow.
+4. Successes are partial repairs: the not-told editor undoes a median 75–79% of the
+   input-space damage at H ≥ 32, against 95–96% when told.
+5. Random control: about 2% not told, 14–26% told.
+
+### Interpretation
+
+- With many parameters, plenty of single edits pass the benchmark rule without touching
+  the fault. A locate-and-repair benchmark has to score localization or dense behaviour,
+  not only the pass rule.
+
+### Post angle
+
+"Your model-editing benchmark can be passed by fixing the wrong weight." Pairs with the
+task-geometry post on the benchmark's rule.
+
+---
+
 ## 2026-11-16 — Roadmap #8: would a better guess keep the Breakout network alive longer?
 
 Full write-up: [experiments/breakout-anatomy/TARGETS.md](../experiments/breakout-anatomy/TARGETS.md).
