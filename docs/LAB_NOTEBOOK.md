@@ -8,6 +8,37 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #16: is the author's bet only a sticky-action hedge?
+
+Full write-up: [experiments/breakout-anatomy/STICKY.md](../experiments/breakout-anatomy/STICKY.md).
+Branch `claude/sticky-sweep`, stacked on `claude/paddle-motion`.
+
+### Setup
+
+- **Question.** If the author's guesses are a hedge against sticky actions, the accurate table
+  should match them without sticky actions, and fall further behind as they become common.
+- **Design.** Published, accurate and perfect-prediction variants at sticky 0 to 0.3, 200
+  episodes each; scores split into deaths per 10,000 steps and bricks per 10,000 steps.
+- **Code.** `experiments/breakout-anatomy/sticky_sweep.py` with 1 test.
+
+### Results (measured)
+
+1. Without sticky actions nothing dies, but the accurate table scores 569 against 834: its
+   paddle returns the ball 734 times in 10,000 steps and 569 returns break a brick, against
+   834 and 834 for the author's.
+2. The accurate table's death rate is about twice the author's at sticky 0.02 to 0.1 (2.0,
+   1.95, 2.0) and 1.5 times at 0.3: a constant factor, not a growing one.
+3. At sticky 0.1 slower scoring is about 37% of the score gap on a log scale.
+4. Perfect prediction tracks the author's table within about 20% in hazard at every setting.
+
+### Interpretation
+
+- The sticky hedge is only part of the advantage; the author's guesses also aim returns at
+  bricks. *Inference:* the catch column sets the return angle, so a table a column off changes
+  the rally's path.
+
+---
+
 ## 2026-11-16 — Roadmap #15: paddle motion at the turn
 
 Full write-up: [experiments/breakout-anatomy/MOTION.md](../experiments/breakout-anatomy/MOTION.md).
