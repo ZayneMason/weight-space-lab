@@ -8,6 +8,35 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #31: the screens were tuned to the bug size
+
+Full write-up: [experiments/locate-repair/RANDOM_SIZES.md](../experiments/locate-repair/RANDOM_SIZES.md).
+Branch `claude/random-sizes`, stacked on `claude/triple-recall`.
+
+### Setup
+
+- **Question.** Do #26's pair results and #28–#30a's triple rankings hold when the faults are not
+  exactly 1.6 spreads, the size that the coarse grids happen to contain?
+- **Design.** The same cases with each fault's size drawn between 1.0 and 2.2 spreads: #26's pair
+  pipeline at H = 32 and #30a's triple rankings at H = 16. Control for pairs: size 1.6 with a
+  14-point joint screen, whose points miss 1.6.
+- **Code.** `experiments/locate-repair/random_sizes.py` with 3 tests.
+
+### Results (measured)
+
+1. Pairs after 64 targeted examples, every visible fault found: 25 (#26), 21 (control, grid moved
+   only), 20 (random sizes). Pass: 25, 25, 23.
+2. Triples, true triple in the top 40: coarse 7 falls from 17 to 5; coarse 9, which never matched,
+   goes from 8 to 7; refined from 19 to 11.
+
+### Interpretation
+
+- *Inference:* #26's 25 of 25 and the triple suspect lists behind #28 and #29 were flattered by a
+  grid point next to the corruption. Targeted examples and the pass-without-finding results
+  still hold. Roadmap #32 makes the screen independent of grid placement.
+
+---
+
 ## 2026-11-16 — Roadmap #30a: ranking triples, and a grid that matches the bug
 
 Full write-up: [experiments/locate-repair/TRIPLE_RECALL.md](../experiments/locate-repair/TRIPLE_RECALL.md).

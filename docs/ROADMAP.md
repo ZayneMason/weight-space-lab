@@ -695,7 +695,7 @@ fit stays at 100%, and all-three and visible-found counts against #28.
 > **Status, November 16: (a) done, (b) paused** ([write-up](../experiments/locate-repair/TRIPLE_RECALL.md)).
 > The 9-point grid ranks the true triple worse (top 40 in 8 of 25, against 17), because #27's 7-point
 > grid has a point at ±1.67 spreads, next to the ±1.6 corruption. Refining the coarse top 1,000 raises
-> top-40 recall to 19. Part (b) waits on #31, since its ranking is partly an artefact.
+> top-40 recall to 19. Part (b) waits on #32, since #31 showed the ranking is partly an artefact.
 
 #29 leaves 8 of 25 cases without the true triple among the 40 candidates and 3 cases still tied
 after 64 examples. Re-run #29 with (a) a 9-point coarse grid and the best 100 triples as
@@ -708,6 +708,11 @@ visible-found counts against #29, and whether the ties settle.
 
 *Added November 16 after #30a.*
 
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/RANDOM_SIZES.md)). Yes, in part.
+> With grid points moved off 1.6, #26's pair pipeline finds every visible fault in 21 of 25 cases
+> (20 with random sizes), not 25. The coarse-7 triple ranking puts the true triple in the top 40 in
+> 5 of 25 cases with random sizes, against 17. Pass rates hardly change.
+
 Every grid from #20 on (61, 13, 7 and 200 points over ±2.5 spreads) has a point at or within 0.01 of
 ±1.6 spreads, the exact corruption size. #30a shows this inflates triple recall. Re-run #26's joint
 pair screen with targeted queries at H = 32, and #27's coarse triple ranking at H = 16, with corruptions
@@ -716,6 +721,18 @@ the fixed-size results. If they drop, fix the screens (offset grids, several gri
 before going further.
 
 **Cost.** CPU, about two hours.
+
+## 32. A screen that does not depend on where its grid points fall
+
+*Added November 16 after #31.*
+
+#31 showed that the coarse pair and triple screens rank the true candidates well mainly when the
+bug size sits next to a grid point. Replace each coarse score by the best of two or three grids
+offset by a fraction of a step, or by #29's continuous margin fit started from the coarse optimum,
+and re-run #31's random-size cases. Measure top-40 recall for pairs and triples and visible-found
+counts after 64 targeted examples, against #31's 20 (pairs) and 5 (triples), and the extra cost.
+
+**Cost.** CPU, about two to three hours.
 
 ## Posts the current results already support
 

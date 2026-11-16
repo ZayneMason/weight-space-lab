@@ -116,3 +116,5 @@ found rises from 5 to 10 of 25, and the grid fit, not the data, limits the rest.
 triple keeps a perfect fit, and all three faults are found in 12 of 25 cases.
 [TRIPLE_RECALL.md](TRIPLE_RECALL.md) (roadmap #30a) ranks three-fault suspects: refinement helps, and the
 coarse grid works partly because one of its points sits next to the corruption size.
+[RANDOM_SIZES.md](RANDOM_SIZES.md) (roadmap #31) re-tests the pair and triple screens with bug sizes their
+grids cannot match: recall drops, so the earlier headline numbers were partly a grid coincidence.
