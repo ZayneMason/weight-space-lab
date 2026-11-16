@@ -27,9 +27,9 @@ class BallPhysicsTests(unittest.TestCase):
     def test_wall_and_ceiling_reflections(self):
         empty = np.zeros((10, 10), dtype=bool)
         # Down-right from (8, 5): the next move reaches row 9 at column 9.
-        self.assertEqual(anatomy.ball_future(8, 8, 2, empty, False), {"steps": 1, "catch": [8, 9]})
+        self.assertEqual(anatomy.ball_future(8, 8, 2, empty, False), {"steps": 1, "catch": [8, 9], "under": 8, "corner": 9})
         # Down-right from the right wall reflects to column 9 again (clamped).
-        self.assertEqual(anatomy.ball_future(9, 8, 2, empty, False), {"steps": 1, "catch": [9]})
+        self.assertEqual(anatomy.ball_future(9, 8, 2, empty, False), {"steps": 1, "catch": [9], "under": 9, "corner": 9})
         # Straight up-left from the corner bounces off the ceiling and comes back.
         result = anatomy.ball_future(0, 1, 0, empty, False)
         self.assertGreater(result["steps"], 8)

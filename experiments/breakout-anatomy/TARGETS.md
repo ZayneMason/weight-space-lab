@@ -8,6 +8,14 @@ off by more than a column about half the time (it cannot see bricks), yet the co
 that use them are essential. This experiment replaces only that ascending target code
 (the ball weights of first-layer units 2 and 3) and asks whether better guesses help.
 
+> **Update, November 16 ([roadmap #18](UNDERFIT.md)).** The "accurate" table here was fitted
+> to the nearest *catch column*, which counts a corner catch (paddle under the column the ball
+> is about to enter) as a hit. Refitted to the under column, the same kind of brick-blind
+> table scores 834 without sticky actions and 357 at the published setting, against 296 for
+> this fit and 482 for the author's (200 episodes each). So part of the gap measured here
+> comes from the error measure, not from accuracy as such; the author's table is still the
+> least accurate by the new measure and still scores highest.
+
 ```bash
 python experiments/breakout-anatomy/targets.py runs/breakout-full/reference/published.npz \
     --output runs/breakout-targets --episodes 1000 --workers 4

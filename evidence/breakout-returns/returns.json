@@ -1,0 +1,367 @@
+{
+ "schema": "weight-space-breakout-returns-v1",
+ "source_checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+ "episodes": 200,
+ "results": {
+  "published": {
+   "sticky_0": {
+    "episodes": 1,
+    "mean_score": 834.0,
+    "steps": 10000,
+    "deaths": 0,
+    "deaths_per_10k_steps": 0.0,
+    "steps_per_return": 12.004801920768307,
+    "returns": 833,
+    "bricks_per_return": 1.0,
+    "no_brick_share": 0.0,
+    "under": {
+     "share": 1.0,
+     "bricks_per_return": 1.0,
+     "no_brick_share": 0.0
+    },
+    "corner": {
+     "share": 0.0,
+     "bricks_per_return": null,
+     "no_brick_share": null
+    },
+    "by_turn_row": {
+     "2": {
+      "share": 0.3277310924369748,
+      "deaths_per_1000": 0.0
+     },
+     "3": {
+      "share": 0.33613445378151263,
+      "deaths_per_1000": 0.0
+     },
+     "4": {
+      "share": 0.33613445378151263,
+      "deaths_per_1000": 0.0
+     }
+    },
+    "by_returns_since_corner": {
+     "before first": {
+      "returns": 833,
+      "bricks_per_return": 1.0
+     },
+     "0-0": {
+      "returns": 0,
+      "bricks_per_return": null
+     },
+     "1-5": {
+      "returns": 0,
+      "bricks_per_return": null
+     },
+     "6-20": {
+      "returns": 0,
+      "bricks_per_return": null
+     },
+     "21+": {
+      "returns": 0,
+      "bricks_per_return": null
+     }
+    }
+   },
+   "sticky_0.1": {
+    "episodes": 200,
+    "mean_score": 481.65,
+    "steps": 1376352,
+    "deaths": 109,
+    "deaths_per_10k_steps": 0.791948571295715,
+    "steps_per_return": 12.904348478313864,
+    "returns": 106658,
+    "bricks_per_return": 0.9027358472875922,
+    "no_brick_share": 0.12369442517204522,
+    "under": {
+     "share": 0.9804234094020139,
+     "bricks_per_return": 0.9014440087979344,
+     "no_brick_share": 0.12437601606579325
+    },
+    "corner": {
+     "share": 0.019576590597986086,
+     "bricks_per_return": 0.9674329501915708,
+     "no_brick_share": 0.08955938697318008
+    },
+    "by_turn_row": {
+     "0": {
+      "share": 0.1487652121734891,
+      "deaths_per_1000": 0.06302388605281402
+     },
+     "2": {
+      "share": 0.24786701419490334,
+      "deaths_per_1000": 0.34043197034459277
+     },
+     "3": {
+      "share": 0.2973804121584879,
+      "deaths_per_1000": 0.6936124598020053
+     },
+     "4": {
+      "share": 0.30598736147311967,
+      "deaths_per_1000": 2.3593577644319157
+     }
+    },
+    "by_returns_since_corner": {
+     "before first": {
+      "returns": 10587,
+      "bricks_per_return": 1.0
+     },
+     "0-0": {
+      "returns": 2088,
+      "bricks_per_return": 0.9674329501915708
+     },
+     "1-5": {
+      "returns": 9737,
+      "bricks_per_return": 0.9698058950395398
+     },
+     "6-20": {
+      "returns": 23954,
+      "bricks_per_return": 0.8422810386574268
+     },
+     "21+": {
+      "returns": 60292,
+      "bricks_per_return": 0.8966031977708485
+     }
+    }
+   }
+  },
+  "accurate": {
+   "sticky_0": {
+    "episodes": 1,
+    "mean_score": 569.0,
+    "steps": 10000,
+    "deaths": 0,
+    "deaths_per_10k_steps": 0.0,
+    "steps_per_return": 13.642564802182811,
+    "returns": 733,
+    "bricks_per_return": 0.7762619372442019,
+    "no_brick_share": 0.24829467939972716,
+    "under": {
+     "share": 0.9740791268758526,
+     "bricks_per_return": 0.7703081232492998,
+     "no_brick_share": 0.2549019607843137
+    },
+    "corner": {
+     "share": 0.02592087312414734,
+     "bricks_per_return": 1.0,
+     "no_brick_share": 0.0
+    },
+    "by_turn_row": {
+     "0": {
+      "share": 0.2728512960436562,
+      "deaths_per_1000": 0.0
+     },
+     "2": {
+      "share": 0.208731241473397,
+      "deaths_per_1000": 0.0
+     },
+     "3": {
+      "share": 0.2592087312414734,
+      "deaths_per_1000": 0.0
+     },
+     "4": {
+      "share": 0.2592087312414734,
+      "deaths_per_1000": 0.0
+     }
+    },
+    "by_returns_since_corner": {
+     "before first": {
+      "returns": 10,
+      "bricks_per_return": 1.0
+     },
+     "0-0": {
+      "returns": 19,
+      "bricks_per_return": 1.0
+     },
+     "1-5": {
+      "returns": 95,
+      "bricks_per_return": 1.0
+     },
+     "6-20": {
+      "returns": 285,
+      "bricks_per_return": 0.8666666666666667
+     },
+     "21+": {
+      "returns": 324,
+      "bricks_per_return": 0.6111111111111112
+     }
+    }
+   },
+   "sticky_0.1": {
+    "episodes": 200,
+    "mean_score": 296.42,
+    "steps": 1015580,
+    "deaths": 161,
+    "deaths_per_10k_steps": 1.5853010102601468,
+    "steps_per_return": 13.781040518902488,
+    "returns": 73694,
+    "bricks_per_return": 0.8043259966890113,
+    "no_brick_share": 0.24019594539582598,
+    "under": {
+     "share": 0.9325860992753819,
+     "bricks_per_return": 0.7911561854320054,
+     "no_brick_share": 0.2524517649797748
+    },
+    "corner": {
+     "share": 0.06741390072461802,
+     "bricks_per_return": 0.9865136876006442,
+     "no_brick_share": 0.07065217391304347
+    },
+    "by_turn_row": {
+     "0": {
+      "share": 0.2871604201156132,
+      "deaths_per_1000": 0.04725451280597297
+     },
+     "2": {
+      "share": 0.18310852986674628,
+      "deaths_per_1000": 0.37053505261597747
+     },
+     "3": {
+      "share": 0.25856921866094934,
+      "deaths_per_1000": 2.204145893466282
+     },
+     "4": {
+      "share": 0.2711618313566912,
+      "deaths_per_1000": 5.654806585597758
+     }
+    },
+    "by_returns_since_corner": {
+     "before first": {
+      "returns": 1666,
+      "bricks_per_return": 1.0
+     },
+     "0-0": {
+      "returns": 4968,
+      "bricks_per_return": 0.9865136876006442
+     },
+     "1-5": {
+      "returns": 20289,
+      "bricks_per_return": 0.9797920055202326
+     },
+     "6-20": {
+      "returns": 31046,
+      "bricks_per_return": 0.7364877923081878
+     },
+     "21+": {
+      "returns": 15725,
+      "bricks_per_return": 0.633577106518283
+     }
+    }
+   }
+  },
+  "accurate, corners returned as under": {
+   "sticky_0": {
+    "episodes": 1,
+    "mean_score": 834.0,
+    "steps": 10000,
+    "deaths": 0,
+    "deaths_per_10k_steps": 0.0,
+    "steps_per_return": 12.004801920768307,
+    "returns": 833,
+    "bricks_per_return": 1.0,
+    "no_brick_share": 0.0,
+    "under": {
+     "share": 0.9327731092436975,
+     "bricks_per_return": 1.0,
+     "no_brick_share": 0.0
+    },
+    "corner": {
+     "share": 0.06722689075630252,
+     "bricks_per_return": 1.0,
+     "no_brick_share": 0.0
+    },
+    "by_turn_row": {
+     "2": {
+      "share": 0.3277310924369748,
+      "deaths_per_1000": 0.0
+     },
+     "3": {
+      "share": 0.33613445378151263,
+      "deaths_per_1000": 0.0
+     },
+     "4": {
+      "share": 0.33613445378151263,
+      "deaths_per_1000": 0.0
+     }
+    },
+    "by_returns_since_corner": {
+     "before first": {
+      "returns": 10,
+      "bricks_per_return": 1.0
+     },
+     "0-0": {
+      "returns": 56,
+      "bricks_per_return": 1.0
+     },
+     "1-5": {
+      "returns": 140,
+      "bricks_per_return": 1.0
+     },
+     "6-20": {
+      "returns": 411,
+      "bricks_per_return": 1.0
+     },
+     "21+": {
+      "returns": 216,
+      "bricks_per_return": 1.0
+     }
+    }
+   },
+   "sticky_0.1": {
+    "episodes": 200,
+    "mean_score": 338.515,
+    "steps": 811340,
+    "deaths": 177,
+    "deaths_per_10k_steps": 2.181576157960904,
+    "steps_per_return": 11.9878841607565,
+    "returns": 67680,
+    "bricks_per_return": 1.0,
+    "no_brick_share": 0.0,
+    "under": {
+     "share": 0.916016548463357,
+     "bricks_per_return": 1.0,
+     "no_brick_share": 0.0
+    },
+    "corner": {
+     "share": 0.08398345153664302,
+     "bricks_per_return": 1.0,
+     "no_brick_share": 0.0
+    },
+    "by_turn_row": {
+     "2": {
+      "share": 0.32483747044917255,
+      "deaths_per_1000": 0.1364566750056857
+     },
+     "3": {
+      "share": 0.3333628841607565,
+      "deaths_per_1000": 1.418313979257158
+     },
+     "4": {
+      "share": 0.3417996453900709,
+      "deaths_per_1000": 6.138416980071759
+     }
+    },
+    "by_returns_since_corner": {
+     "before first": {
+      "returns": 1666,
+      "bricks_per_return": 1.0
+     },
+     "0-0": {
+      "returns": 5684,
+      "bricks_per_return": 1.0
+     },
+     "1-5": {
+      "returns": 16709,
+      "bricks_per_return": 1.0
+     },
+     "6-20": {
+      "returns": 32845,
+      "bricks_per_return": 1.0
+     },
+     "21+": {
+      "returns": 10776,
+      "bricks_per_return": 1.0
+     }
+    }
+   }
+  }
+ }
+}
