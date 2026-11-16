@@ -115,14 +115,20 @@ def summarize(episodes):
     records = [r for e in episodes for r in e["records"]]
     steps = sum(e["steps"] for e in episodes)
     deaths = sum(e["died"] for e in episodes)
-    out = {"episodes": len(episodes), "mean_score": float(np.mean([e["score"] for e in episodes])),
+    scores = np.array([e["score"] for e in episodes], dtype=np.float64)
+    out = {"episodes": len(episodes), "mean_score": float(scores.mean()),
+           "score_se": float(scores.std(ddof=1) / np.sqrt(len(scores))) if len(scores) > 1 else None,
            "steps": steps, "deaths": deaths, "deaths_per_10k_steps": 1e4 * deaths / steps,
            "steps_per_return": steps / max(len(records), 1),
            "returns": len(records), "bricks_per_return": float(np.mean([r["bricks"] for r in records])),
            "no_brick_share": float(np.mean([r["bricks"] == 0 for r in records]))}
     for kind in ("under", "corner"):
         group = [r for r in records if r["type"] == kind]
+        parked = [r for r in group if "offset_before" in r]
         out[kind] = {"share": len(group) / len(records),
+                     # paddle still, one column ahead of the ball (corner) or on its column (under)
+                     "parked_share": float(np.mean([r["offset_before"] == (kind == "corner") and not r["moved_last"]
+                                                    for r in parked])) if parked else None,
                      "bricks_per_return": float(np.mean([r["bricks"] for r in group])) if group else None,
                      "no_brick_share": float(np.mean([r["bricks"] == 0 for r in group])) if group else None}
     # the row where each return turned back down: 0 is the top wall, 2-4 under a brick

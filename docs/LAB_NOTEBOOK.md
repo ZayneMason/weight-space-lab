@@ -8,6 +8,37 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #18: fitting the guesses to the under column
+
+Full write-up: [experiments/breakout-anatomy/UNDERFIT.md](../experiments/breakout-anatomy/UNDERFIT.md).
+Branch `claude/under-fit`, stacked on `claude/returns`.
+
+### Setup
+
+- **Question.** #8 fitted the accurate table to the nearest catch column, so a corner catch
+  counted as a hit. Does fitting to the under column fix the brick rate?
+- **Design.** Refit every rising-ball cell on #8's 50 fitting episodes to the nearest catch
+  column, the under column, or the corner column; score each at sticky 0 and 0.1 (200 episodes).
+- **Code.** `experiments/breakout-anatomy/underfit.py` with 2 tests; `ball_future` now
+  returns the under and corner columns.
+
+### Results (measured)
+
+1. The nearest-column refit matches #8's table on all 180 cells (296.4 ± 14.7 at sticky 0.1).
+2. The under-column table scores 834 without sticky actions and 356.7 ± 16.3 at sticky 0.1,
+   against 481.6 ± 17.3 for the author's table.
+3. The corner-column table scores 602 and 305.8 ± 14.7, with 12.4% corner catches.
+4. For every table, 95% to 97% of corner catches had the paddle still, one column ahead of
+   the ball, on the step before.
+5. The under table still dies 5.13 times per 1,000 returns turning at row 4, against 2.36.
+
+### Interpretation
+
+- *Inference:* #8's table was accurate about the wrong target. The right target closes a third
+  of the gap; the rest is the author's early-positioning bet on short flights.
+
+---
+
 ## 2026-11-16 — Roadmap #17: why the accurate table's returns miss bricks
 
 Full write-up: [experiments/breakout-anatomy/RETURNS.md](../experiments/breakout-anatomy/RETURNS.md).
