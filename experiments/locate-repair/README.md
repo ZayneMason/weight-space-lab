@@ -88,3 +88,6 @@ everywhere again, 0 means no better than before the edit.
 
 Evidence: [`evidence/locate-repair/locate-repair.json`](../../evidence/locate-repair/locate-repair.json)
 (per-case rows and the summary). Code: `analyze.py`; 4 tests in `tests/test_locate_repair.py`.
+
+Follow-up: [PRACTICE.md](PRACTICE.md) (roadmap #10) grows the practice set from 32 to
+1,024 examples.
