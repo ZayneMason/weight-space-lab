@@ -291,6 +291,29 @@ Add a pure oracle policy with no network. Evaluate each at the full protocol.
 
 ---
 
+## 9. Why do the author's rough guesses beat accurate ones?
+
+*Added November 16 after #8.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/HEDGE.md)).
+> The published guesses are the earliest-bounce landings (all 180 cells), and a table
+> rebuilt from physics alone scores 493.0 of 502.9. The deadline hypothesis fails as
+> modelled. Fitting for exact hits beats fitting for distance (398 vs 294) but leaves a
+> 100-point gap that no on-play accuracy measure explains.
+
+**Hypothesis.** The author's guesses assume the earliest possible brick bounce, so they
+hedge the deadline rather than the average error.
+
+**Method.** Rebuild the full-wall landing table from physics; fit deadline-aware and
+most-likely-landing tables on held-out play; score each at the published protocol.
+
+**Cost.** CPU, about 15 minutes. `experiments/breakout-anatomy/hedge.py`.
+
+**Next.** Closed-loop fit: refit a table on its own play and repeat, to test whether the
+gap is a distribution-shift effect.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
