@@ -1,0 +1,521 @@
+{
+ "schema": "weight-space-joint-screen-v1",
+ "points": 13,
+ "summary": {
+  "cases": 25,
+  "coverage_rank": {
+   "median": 326.0,
+   "in_top_1000": 19,
+   "in_top_3000": 21
+  },
+  "joint_rank": {
+   "median": 4.0,
+   "in_top_1000": 25,
+   "in_top_3000": 25
+  },
+  "either_in_top_1500": 25,
+  "seconds_median": 53.5
+ },
+ "cases": [
+  {
+   "width": 32,
+   "seed": 0,
+   "faults": [
+    [
+     "weight",
+     35
+    ],
+    [
+     "hidden_bias",
+     25
+    ]
+   ],
+   "coverage_rank": 18,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 2,
+   "seconds": 54.5
+  },
+  {
+   "width": 32,
+   "seed": 1,
+   "faults": [
+    [
+     "weight",
+     23
+    ],
+    [
+     "hidden_weight",
+     9
+    ]
+   ],
+   "coverage_rank": 704,
+   "joint_rank": 10,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 12,
+   "seconds": 52.5
+  },
+  {
+   "width": 32,
+   "seed": 2,
+   "faults": [
+    [
+     "weight",
+     46
+    ],
+    [
+     "weight",
+     47
+    ]
+   ],
+   "coverage_rank": 0,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 4,
+   "seconds": 52.3
+  },
+  {
+   "width": 32,
+   "seed": 3,
+   "faults": [
+    [
+     "hidden_weight",
+     36
+    ],
+    [
+     "hidden_bias",
+     4
+    ]
+   ],
+   "coverage_rank": 319,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 3,
+   "seconds": 53.7
+  },
+  {
+   "width": 32,
+   "seed": 4,
+   "faults": [
+    [
+     "weight",
+     20
+    ],
+    [
+     "bias",
+     1
+    ]
+   ],
+   "coverage_rank": 8331,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 0.9990234375,
+   "best_joint_accuracy": 0.9990234375,
+   "pairs_at_best": 4,
+   "seconds": 56.3
+  },
+  {
+   "width": 32,
+   "seed": 5,
+   "faults": [
+    [
+     "hidden_weight",
+     1
+    ],
+    [
+     "weight",
+     29
+    ]
+   ],
+   "coverage_rank": 349,
+   "joint_rank": 20,
+   "true_pair_joint_accuracy": 0.9873046875,
+   "best_joint_accuracy": 0.9912109375,
+   "pairs_at_best": 6,
+   "seconds": 55.2
+  },
+  {
+   "width": 32,
+   "seed": 6,
+   "faults": [
+    [
+     "hidden_weight",
+     58
+    ],
+    [
+     "hidden_weight",
+     7
+    ]
+   ],
+   "coverage_rank": 3500,
+   "joint_rank": 28,
+   "true_pair_joint_accuracy": 0.9912109375,
+   "best_joint_accuracy": 0.9951171875,
+   "pairs_at_best": 5,
+   "seconds": 54.4
+  },
+  {
+   "width": 32,
+   "seed": 7,
+   "faults": [
+    [
+     "hidden_weight",
+     21
+    ],
+    [
+     "weight",
+     1
+    ]
+   ],
+   "coverage_rank": 0,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 0.998046875,
+   "best_joint_accuracy": 0.998046875,
+   "pairs_at_best": 2,
+   "seconds": 56.2
+  },
+  {
+   "width": 32,
+   "seed": 8,
+   "faults": [
+    [
+     "weight",
+     26
+    ],
+    [
+     "weight",
+     16
+    ]
+   ],
+   "coverage_rank": 10175,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 4,
+   "seconds": 51.7
+  },
+  {
+   "width": 32,
+   "seed": 9,
+   "faults": [
+    [
+     "hidden_bias",
+     5
+    ],
+    [
+     "hidden_weight",
+     37
+    ]
+   ],
+   "coverage_rank": 6,
+   "joint_rank": 2,
+   "true_pair_joint_accuracy": 0.99609375,
+   "best_joint_accuracy": 0.99609375,
+   "pairs_at_best": 3,
+   "seconds": 51.4
+  },
+  {
+   "width": 32,
+   "seed": 10,
+   "faults": [
+    [
+     "weight",
+     1
+    ],
+    [
+     "hidden_weight",
+     37
+    ]
+   ],
+   "coverage_rank": 273,
+   "joint_rank": 277,
+   "true_pair_joint_accuracy": 0.998046875,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 38,
+   "seconds": 53.0
+  },
+  {
+   "width": 32,
+   "seed": 11,
+   "faults": [
+    [
+     "weight",
+     39
+    ],
+    [
+     "weight",
+     33
+    ]
+   ],
+   "coverage_rank": 106,
+   "joint_rank": 34,
+   "true_pair_joint_accuracy": 0.9951171875,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 4,
+   "seconds": 53.2
+  },
+  {
+   "width": 32,
+   "seed": 12,
+   "faults": [
+    [
+     "hidden_weight",
+     47
+    ],
+    [
+     "hidden_weight",
+     48
+    ]
+   ],
+   "coverage_rank": 7987,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 0.99609375,
+   "best_joint_accuracy": 0.99609375,
+   "pairs_at_best": 1,
+   "seconds": 56.8
+  },
+  {
+   "width": 32,
+   "seed": 13,
+   "faults": [
+    [
+     "hidden_bias",
+     0
+    ],
+    [
+     "weight",
+     60
+    ]
+   ],
+   "coverage_rank": 12,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 2,
+   "seconds": 53.5
+  },
+  {
+   "width": 32,
+   "seed": 14,
+   "faults": [
+    [
+     "weight",
+     27
+    ],
+    [
+     "hidden_weight",
+     62
+    ]
+   ],
+   "coverage_rank": 385,
+   "joint_rank": 314,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 411,
+   "seconds": 51.4
+  },
+  {
+   "width": 32,
+   "seed": 15,
+   "faults": [
+    [
+     "hidden_bias",
+     16
+    ],
+    [
+     "hidden_bias",
+     26
+    ]
+   ],
+   "coverage_rank": 1,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 3,
+   "seconds": 50.8
+  },
+  {
+   "width": 32,
+   "seed": 16,
+   "faults": [
+    [
+     "weight",
+     9
+    ],
+    [
+     "weight",
+     62
+    ]
+   ],
+   "coverage_rank": 1994,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 4,
+   "seconds": 53.8
+  },
+  {
+   "width": 32,
+   "seed": 17,
+   "faults": [
+    [
+     "weight",
+     34
+    ],
+    [
+     "weight",
+     10
+    ]
+   ],
+   "coverage_rank": 199,
+   "joint_rank": 4,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 10,
+   "seconds": 52.6
+  },
+  {
+   "width": 32,
+   "seed": 18,
+   "faults": [
+    [
+     "weight",
+     40
+    ],
+    [
+     "weight",
+     7
+    ]
+   ],
+   "coverage_rank": 799,
+   "joint_rank": 265,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 475,
+   "seconds": 56.8
+  },
+  {
+   "width": 32,
+   "seed": 19,
+   "faults": [
+    [
+     "hidden_bias",
+     11
+    ],
+    [
+     "weight",
+     19
+    ]
+   ],
+   "coverage_rank": 42,
+   "joint_rank": 0,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 6,
+   "seconds": 55.2
+  },
+  {
+   "width": 32,
+   "seed": 20,
+   "faults": [
+    [
+     "hidden_bias",
+     8
+    ],
+    [
+     "hidden_weight",
+     4
+    ]
+   ],
+   "coverage_rank": 431,
+   "joint_rank": 7,
+   "true_pair_joint_accuracy": 0.9951171875,
+   "best_joint_accuracy": 0.9970703125,
+   "pairs_at_best": 3,
+   "seconds": 50.3
+  },
+  {
+   "width": 32,
+   "seed": 21,
+   "faults": [
+    [
+     "hidden_bias",
+     25
+    ],
+    [
+     "hidden_weight",
+     31
+    ]
+   ],
+   "coverage_rank": 1030,
+   "joint_rank": 14,
+   "true_pair_joint_accuracy": 0.998046875,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 2,
+   "seconds": 52.4
+  },
+  {
+   "width": 32,
+   "seed": 22,
+   "faults": [
+    [
+     "weight",
+     10
+    ],
+    [
+     "hidden_bias",
+     27
+    ]
+   ],
+   "coverage_rank": 46,
+   "joint_rank": 14,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 30,
+   "seconds": 53.5
+  },
+  {
+   "width": 32,
+   "seed": 23,
+   "faults": [
+    [
+     "hidden_weight",
+     49
+    ],
+    [
+     "hidden_bias",
+     30
+    ]
+   ],
+   "coverage_rank": 776,
+   "joint_rank": 9,
+   "true_pair_joint_accuracy": 0.998046875,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 2,
+   "seconds": 52.4
+  },
+  {
+   "width": 32,
+   "seed": 24,
+   "faults": [
+    [
+     "hidden_weight",
+     31
+    ],
+    [
+     "hidden_weight",
+     14
+    ]
+   ],
+   "coverage_rank": 326,
+   "joint_rank": 134,
+   "true_pair_joint_accuracy": 1.0,
+   "best_joint_accuracy": 1.0,
+   "pairs_at_best": 323,
+   "seconds": 58.6
+  }
+ ]
+}
