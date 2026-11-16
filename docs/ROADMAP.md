@@ -470,6 +470,25 @@ out-of-reach cells.
 
 ---
 
+## 18. Does fitting the guesses to the under column fix the brick rate?
+
+*Added November 16 after #17.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/UNDERFIT.md)).
+> Yes, and it closes a third of the gap. #8's fit counted a corner catch as a hit. Refitted
+> to the under column, the table scores 834 without sticky actions (like the author's) and
+> 357 at the published setting, against 296 for #8's table and 482 for the author's.
+
+**Method.** Refit every rising-ball cell to the nearest catch column, the under column or the
+corner column; 200 episodes at sticky 0.1 plus the no-sticky cycle.
+
+**Cost.** CPU, about 10 minutes. `experiments/breakout-anatomy/underfit.py`.
+
+**Next.** Combine the two parts: the under-column table in rows the author's bet does not
+cover, the author's guesses in rows 3–5, and the out-of-reach cells fixed.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

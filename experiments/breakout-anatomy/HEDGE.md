@@ -7,6 +7,14 @@ reconstructed from physics, the mechanism still open · **Cost:** CPU, about 15 
 1.76 columns on average) score 502.9, while a brick-blind table fitted to be more accurate
 (1.12 columns) scores 294.1. This follow-up asks what the author's table gets right.
 
+> **Update, November 16 ([roadmap #18](UNDERFIT.md)).** The "accurate" table here was fitted
+> to the nearest *catch column*, which counts a corner catch (paddle under the column the ball
+> is about to enter) as a hit. Refitted to the under column, the same kind of brick-blind
+> table scores 834 without sticky actions and 357 at the published setting, against 296 for
+> this fit and 482 for the author's (200 episodes each). So part of the gap measured here
+> comes from the error measure, not from accuracy as such; the author's table is still the
+> least accurate by the new measure and still scores highest.
+
 ```bash
 python experiments/breakout-anatomy/hedge.py CHECKPOINT --output runs/breakout-hedge
 ```

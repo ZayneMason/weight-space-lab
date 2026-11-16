@@ -1,0 +1,22 @@
+{
+ "author": {
+  "states": 32125,
+  "under_column_error": 1.8961245582917785,
+  "nearest_catch_error": 1.7849650296304476
+ },
+ "nearest": {
+  "states": 32125,
+  "under_column_error": 1.5581322957198445,
+  "nearest_catch_error": 1.1208715953307393
+ },
+ "under": {
+  "states": 32125,
+  "under_column_error": 1.457182879377432,
+  "nearest_catch_error": 1.17515953307393
+ },
+ "corner": {
+  "states": 32125,
+  "under_column_error": 1.7360311284046692,
+  "nearest_catch_error": 1.1696498054474709
+ }
+}

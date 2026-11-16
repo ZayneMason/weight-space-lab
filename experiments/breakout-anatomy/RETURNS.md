@@ -76,9 +76,9 @@ python experiments/breakout-anatomy/returns.py CHECKPOINT --output runs/breakout
 - *Inference:* a corner catch reverses the ball onto a path that soon runs through
   already-cleared columns, so returns start reaching the top wall. Why an all-under cycle
   always finds a brick is untested; it held on every return measured here.
-- *Inference, untested:* the accurate table makes more corner catches because its paddle is
-  more often waiting one column ahead of the ball. A check would compare paddle and ball
-  columns on the step before each catch.
+- The accurate table's corner catches come from a paddle waiting one column ahead of the
+  ball; [roadmap #18](UNDERFIT.md) measures this (95% to 97% of corner catches) and refits the
+  table to the under column.
 - Corner catches are not simply bad: the no-brick returns they cause are the safest flights
   in the game. The author's table gets a high brick rate without needing them for safety.
 

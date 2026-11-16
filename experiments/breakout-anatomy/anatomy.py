@@ -98,7 +98,7 @@ def ball_future(x, y, direction, bricks, strike, limit=1000):
                 new_y = last_y
                 direction = [3, 2, 1, 0][direction]
         elif new_y == 9:
-            return {"steps": step, "catch": sorted({last_x, new_x})}
+            return {"steps": step, "catch": sorted({last_x, new_x}), "under": int(last_x), "corner": int(new_x)}
         if not toggle:
             strike = False
         x, y = new_x, new_y
@@ -167,7 +167,8 @@ def trace_row(inner, x, arrays, probabilities, action):
     right, down = h1[4] > 0, h1[5] > 0
     chosen = {(True, True): 0, (False, True): 1, (True, False): 2, (False, False): 3}[(bool(right), bool(down))]
     return {"ball": [int(inner.ball_x), int(inner.ball_y)], "dir": direction, "paddle": int(inner.pos),
-            "catch": future["catch"], "steps_to_row9": future["steps"], "implied_target": weight / TARGET_SCALE,
+            "catch": future["catch"], "catch_under": future["under"], "catch_corner": future["corner"],
+            "steps_to_row9": future["steps"], "implied_target": weight / TARGET_SCALE,
             "context_true": unit, "context_chosen": chosen, "h1": h1[:6].round(4).tolist(),
             "max_probability": float(probabilities.max()), "action": action,
             "trail": [int(inner.last_x), int(inner.last_y)], "wall_frame": bool(inner.ball_x == inner.last_x)}
