@@ -503,9 +503,9 @@ seed; the best swap checked on 1,000 held-out episodes.
 
 **Cost.** CPU, about 25 minutes. `experiments/breakout-anatomy/combine.py`.
 
-**Next.** The Breakout series has an account of every gap it found. Candidates: write the
-combined story up as a second post, or test whether the same "accurate about the wrong
-target" problem appears in the other games' hand-written networks.
+**Next.** The Breakout series now accounts for every gap it found. Candidates: write the
+corner-catch and under-column results up as a follow-up post, or return to the editing and
+repair experiments.
 
 ---
 
