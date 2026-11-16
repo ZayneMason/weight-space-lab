@@ -390,6 +390,26 @@ under the published and accurate tables; 300 episodes each.
 
 ---
 
+## 14. Which weights stand in for the broken one?
+
+*Added November 16 after #10.*
+
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/SUBSTITUTES.md)).
+> Every output-weight fault has an exact twin, the same unit's weight into the other logit,
+> which no behavioural data can tell apart. Counting it as found raises H = 32 localization
+> from 46% to 61%. Other stand-ins sit in units pointing the same way (cosine > 0.9 for about
+> half, against 15–16% of units).
+
+**Method.** For every entry, the smallest practice-perfect edit on 1,024 examples; class the
+near-complete passing ones against the corrupted entry; H = 32 and 128, 50 seeds each.
+
+**Cost.** CPU, about 25 minutes. `experiments/locate-repair/substitutes.py`.
+
+**Next.** Score localization up to the mirror symmetry in the benchmark itself, and test a
+corruption that no single other entry can absorb (for example, two corrupted entries).
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
