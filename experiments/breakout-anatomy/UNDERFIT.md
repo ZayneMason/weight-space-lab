@@ -10,6 +10,7 @@ experiment refits the table with three definitions of the right column and score
 
 ```bash
 python experiments/breakout-anatomy/underfit.py CHECKPOINT --output runs/breakout-underfit
+python experiments/breakout-anatomy/underfit.py CHECKPOINT --output runs/breakout-underfit --errors
 ```
 
 ## Method
@@ -51,6 +52,11 @@ deaths are at sticky 0.1.
    (306 against 296). Corner share alone does not predict the score; which cycle the ball
    falls into matters too.
 
+6. **The author's table is still the least accurate by the new measure.** On #8's held-out
+   episodes (32,125 rising-ball states), its guesses are 1.90 columns from the under column on
+   average, against 1.56 for #8's table and 1.46 for the under fit. The under fit is only 0.1
+   column closer than #8's table by its own measure, yet scores 60 points more.
+
 ## Interpretation
 
 - *Inference:* #8's "accurate" table was accurate about the wrong thing. Its error measure let
@@ -69,6 +75,7 @@ deaths are at sticky 0.1.
   better refitted on its own play (#11 found that refitting did not help #8's table).
 
 Evidence: [`evidence/breakout-underfit/underfit.json`](../../evidence/breakout-underfit/underfit.json)
-(the three tables and every result). Code: `underfit.py`; 2 tests in
+(the three tables and every result) and
+[`evidence/breakout-underfit/errors.json`](../../evidence/breakout-underfit/errors.json). Code: `underfit.py`; 2 tests in
 `tests/test_breakout_underfit.py`. `anatomy.ball_future` now also returns the under and
 corner columns.

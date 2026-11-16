@@ -69,6 +69,17 @@ def fit(observations, kind):
     return table
 
 
+def errors(observations, tables):
+    """Mean distance from each table's guess to the under column and to the nearest catch column."""
+    out = {}
+    for name, table in tables.items():
+        rows = [(table[cell], catch, under) for cell, catch, under, _ in observations if cell in table]
+        out[name] = {"states": len(rows),
+                     "under_column_error": float(np.mean([abs(t - u) for t, _, u in rows])),
+                     "nearest_catch_error": float(np.mean([min(abs(t - c) for c in catch) for t, catch, _ in rows]))}
+    return out
+
+
 def score(weights, episodes, workers, sticky=0.1):
     """Score, deaths, corner share and bricks per return, from #17's catch recorder."""
     if sticky == 0:
@@ -82,9 +93,19 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--episodes", type=int, default=200)
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--errors", action="store_true",
+                        help="only measure each table's error on #8's held-out episodes (6000-6009), from underfit.json")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     arrays = anatomy.load(args.checkpoint)
+    if args.errors:
+        fitted = json.loads((args.output / "underfit.json").read_text())["tables"]
+        tables = {"author": hedge.published_table(arrays)}
+        tables.update({kind: {tuple(int(v) for v in key.split(",")): t for key, t in fitted[kind].items()} for kind in TARGETS})
+        out = errors(observe(args.checkpoint, range(6000, 6010), args.workers), tables)
+        (args.output / "errors.json").write_text(json.dumps(out, indent=1) + "\n")
+        print(json.dumps(out))
+        return
     observations = observe(args.checkpoint, targets.FIT_EPISODES, args.workers)
     published = hedge.published_table(arrays)
     tables = {kind: fit(observations, kind) for kind in TARGETS}
