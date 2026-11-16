@@ -607,11 +607,29 @@ rounds of 8 targeted or random queries; H = 32, 25 cases.
 
 *Added November 16 after #24.*
 
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/CANDIDATE_RECALL.md)).
+> Yes. Coarse-fitting the screen's top 3,000 pairs and keeping 100 raises recall from 13 to 18
+> of 25, and targeted queries then find the broken pair in all 18. Every visible fault is found
+> in 21 of 25 cases; four cases have a silent fault that changes no practice label. The 4
+> misses all ranked past 3,000 in the screen.
+
 Half of #24's misses were pairs that passed the screen but lost at the coarse 61 × 61 fit;
 the other half ranked past 1,000. Re-fit more screened pairs finely (or use a finer coarse
 grid), measure how many of the 12 missing pairs that recovers and at what cost, then re-run
 #24's targeted queries. A screen that scores pairs jointly, not from single edits, is the
 second option.
+
+**Cost.** CPU, about an hour.
+
+## 26. A screen that ranks every visible pair in its top 3,000
+
+*Added November 16 after #25.*
+
+All of #25's misses were cases where the coverage screen ranked the broken pair 3,500th to
+10,175th of 13,041. Score pairs jointly instead of from single edits: for example a cheap
+joint fit on a 9 × 9 grid over a subsample of the wrong examples, or a coverage score that
+credits examples only the two edits together correct. Measure screen recall at 1,000 and 3,000
+on the same 25 cases, then re-run #25's queries on any new hits.
 
 **Cost.** CPU, about an hour.
 
