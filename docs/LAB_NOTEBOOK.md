@@ -8,6 +8,39 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #12: where the author's Breakout guesses win
+
+Full write-up: [experiments/breakout-anatomy/ROWSWAP.md](../experiments/breakout-anatomy/ROWSWAP.md).
+Branch `claude/breakout-rowswap`, stacked on `claude/breakout-closedloop`.
+
+### Setup
+
+- **Question.** Which ascending cells carry the ~200-point gap between the author's table and
+  #8's accurate one?
+- **Design.** Swap one ball row (then groups of rows) between the two tables in both
+  directions; 300 episodes each.
+- **Code.** `experiments/breakout-anatomy/rowswap.py` with 2 tests.
+
+### Results (measured)
+
+1. Accurate guesses in rows 3–5 only (54 of 180 cells): 284.3, no better than all-accurate (297.0).
+2. Author's guesses in rows 3–5 only: 448.3 against published 497.2.
+3. Rows 0–2 and 6–8 move the score by at most 22 points.
+
+### Interpretation
+
+- *Inference:* rows 3–5 are where an ascending ball may bounce off the wall at once, the
+  case with the least time left. The author's table assumes that bounce; the accurate one
+  averages it away. This is #9's deadline idea, localized; #9's model missed it because it
+  assumed the paddle had already reached the guess.
+
+### Post angle
+
+The payoff for the Breakout series: "The 'wrong' guesses only matter in three rows, and
+there they are a bet on the worst case."
+
+---
+
 ## 2026-11-16 — Roadmap #11: refitting the Breakout guesses on their own play
 
 Full write-up: [experiments/breakout-anatomy/CLOSEDLOOP.md](../experiments/breakout-anatomy/CLOSEDLOOP.md).

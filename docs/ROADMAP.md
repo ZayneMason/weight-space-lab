@@ -354,6 +354,25 @@ changes the states that occur; refitting on their own play closes the gap.
 
 ---
 
+## 12. Where on the board does the author's table win?
+
+*Added November 16 after #11.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/ROWSWAP.md)).
+> Rows 3–5 (the bottom of the brick wall and the two rows below) carry almost the whole gap:
+> accurate guesses there alone score 284, the author's guesses there alone lift the accurate
+> table from 297 to 448.
+
+**Method.** Swap ascending guesses one ball row at a time, and in groups, between the
+author's table and #8's accurate table; 300 episodes each.
+
+**Cost.** CPU, about 45 minutes. `experiments/breakout-anatomy/rowswap.py`.
+
+**Next.** Test the mechanism directly: for deaths under the accurate table, record the row
+where the ball last ascended and how many steps it had left.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
