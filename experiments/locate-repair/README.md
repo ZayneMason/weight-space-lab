@@ -118,3 +118,5 @@ triple keeps a perfect fit, and all three faults are found in 12 of 25 cases.
 coarse grid works partly because one of its points sits next to the corruption size.
 [RANDOM_SIZES.md](RANDOM_SIZES.md) (roadmap #31) re-tests the pair and triple screens with bug sizes their
 grids cannot match: recall drops, so the earlier headline numbers were partly a grid coincidence.
+[DENSE_SCREEN.md](DENSE_SCREEN.md) (roadmap #32) makes the screens denser: the pair pipeline finds every visible
+fault in 23 of 25 random-size cases, and the triple ranking improves only to 14.
