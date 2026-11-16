@@ -625,6 +625,11 @@ second option.
 
 *Added November 16 after #25.*
 
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/JOINT_SCREEN.md)).
+> A 13 × 13 joint fit of every pair, ordered by accuracy, ranks the broken pair a median 5th of
+> 13,041 (coverage: 327th). With its best 40 as candidates and 48 targeted queries, every visible
+> fault is found in 25 of 25 cases, in about 54 seconds of screening per case.
+
 All of #25's misses were cases where the coverage screen ranked the broken pair 3,500th to
 10,175th of 13,041. Score pairs jointly instead of from single edits: for example a cheap
 joint fit on a 9 × 9 grid over a subsample of the wrong examples, or a coverage score that
@@ -632,6 +637,17 @@ credits examples only the two edits together correct. Measure screen recall at 1
 on the same 25 cases, then re-run #25's queries on any new hits.
 
 **Cost.** CPU, about an hour.
+
+## 27. Three faults, and a wider network
+
+*Added November 16 after #26.*
+
+#26 locates two faults at H = 32. Two ways to push it: (a) H = 128 with two faults, about 200,000
+pairs, to measure how the joint screen's time and rank scale; (b) three faults at H = 8 or 16,
+screening pairs jointly and then extending the best pairs by a third entry, to see whether the
+pair screen still ranks the right two entries near the top when a third fault is present.
+
+**Cost.** CPU, one to two hours.
 
 ## Posts the current results already support
 

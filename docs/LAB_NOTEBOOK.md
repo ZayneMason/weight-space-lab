@@ -8,6 +8,36 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #26: a joint screen finds every visible fault
+
+Full write-up: [experiments/locate-repair/JOINT_SCREEN.md](../experiments/locate-repair/JOINT_SCREEN.md).
+Branch `claude/joint-screen`, stacked on `claude/candidate-recall`.
+
+### Setup
+
+- **Question.** #25's four misses were pairs the coverage screen ranked past 3,000. Does a
+  small joint fit of every pair rank them higher?
+- **Design.** H = 32, 25 cases. Each of the 13,041 pairs gets a 13 × 13 joint grid on the
+  practice set, ranked by accuracy with coverage breaking ties. The best 40 then get #22's
+  targeted queries.
+- **Code.** `experiments/locate-repair/joint_screen.py` with 3 tests.
+
+### Results (measured)
+
+1. The broken pair's median position falls from 327th (coverage) to 5th; it is in the joint
+   top 40 in all 21 cases without a silent fault, including all four of #25's misses.
+2. After 48 targeted queries every visible fault is found in 25 of 25 cases, the broken pair
+   wins in all 21 non-silent cases, and the benchmark passes 25 of 25.
+3. The screen takes about 54 seconds per case for all pairs, cheaper than #25's pipeline.
+
+### Interpretation
+
+- *Inference:* coverage misses interacting faults. A crude joint fit, ordered by accuracy and
+  not by smallest change, sees them. The two-fault localization problem is solved on these
+  cases at H = 32.
+
+---
+
 ## 2026-11-16 — Roadmap #25: getting the broken pair onto the suspect list
 
 Full write-up: [experiments/locate-repair/CANDIDATE_RECALL.md](../experiments/locate-repair/CANDIDATE_RECALL.md).

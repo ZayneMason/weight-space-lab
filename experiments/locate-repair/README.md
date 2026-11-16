@@ -106,3 +106,5 @@ H = 32: a coverage screen ranks the broken pair about nine times better than a N
 screened candidates: they find the broken pair in 12 of the 13 cases whose candidates include it.
 [CANDIDATE_RECALL.md](CANDIDATE_RECALL.md) (roadmap #25) keeps more candidates: the broken pair is found in
 18 of 25 width-32 cases, and every visible fault in 21.
+[JOINT_SCREEN.md](JOINT_SCREEN.md) (roadmap #26) screens every pair with a 13 × 13 joint fit: with 48 targeted
+queries it finds every visible fault in 25 of 25 width-32 cases.
