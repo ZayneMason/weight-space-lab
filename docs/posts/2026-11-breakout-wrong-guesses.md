@@ -8,7 +8,7 @@ protocol. It also explained how it works. Part of that explanation looked wrong 
 checked it: its guesses for where a rising ball will land are off by almost two columns on
 average.
 
-Over seven experiments I tried to fix those guesses, and every fix made the network worse.
+Over eight experiments I tried to fix those guesses, and every fix made the network worse.
 The guesses turned out to be a deliberate bet on the one bounce that kills.
 
 ## The network and what its author said
@@ -157,15 +157,30 @@ the accurate table's 240 deaths had a sticky action change the paddle's move in 
 two steps. The author's guesses lose a few flights outright and keep the rest safe; the
 accurate ones turn many flights into close calls.
 
+## Not only a hedge
+
+If the guesses were only a hedge against sticky actions, the accurate table should match
+the author's when sticky actions are switched off. It does not. Without sticky actions
+nothing dies, yet in 10,000 steps the author's paddle returns the ball 834 times and every
+return breaks a brick, while the accurate table's paddle returns it 734 times and only 569
+returns break one. Every episode follows the same cycle, for both tables.
+
+With sticky actions on, the accurate table dies about twice as often as the author's at
+every low setting (0.02, 0.05 and 0.1), a steady factor rather than a widening gap. At the
+published setting about 37% of the score gap, on a log scale, is slower scoring rather than
+shorter lives. Perfect landing prediction tracks the author's table on both counts. So the
+guesses do two jobs: they keep the paddle safe from the noise, and they send the ball back
+into bricks.
+
 Measured on average error, the guesses look like the network's weakness. Measured on
 what kills it, they are its best design decision, and the author said so in one line that
 I first read as a bug report.
 
 ## Caveats
 
-- All of this is one network, one environment and one sticky-action probability (0.1).
-  The row-swap and death-tracing experiments use 300 episodes. Effects under about 30
-  points there are within noise.
+- All of this is one network and one environment, mostly at one sticky-action probability
+  (0.1); the sticky sweep uses 200 episodes per setting. The row-swap and death-tracing
+  experiments use 300 episodes, and effects under about 30 points there are within noise.
 - Paddle motion is measured over the single step before the ball turns down, and the
   per-motion death counts outside rows 3 and 4 are small.
 - The "bet on the worst case" reading is my interpretation of the measurements, not
@@ -177,5 +192,5 @@ I first read as a bug report.
 Every number here comes from scripts and evidence committed in
 [weight-space-lab](https://github.com/ZayneMason/weight-space-lab), under
 `experiments/breakout-anatomy/`: `README.md` (the anatomy), `TARGETS.md`, `HEDGE.md`,
-`CLOSEDLOOP.md`, `ROWSWAP.md`, `DEATHS.md` and `MOTION.md`, each with its evidence file under
-`evidence/`. The network and its description belong to Takehi et al.
+`CLOSEDLOOP.md`, `ROWSWAP.md`, `DEATHS.md`, `MOTION.md` and `STICKY.md`, each with its
+evidence file under `evidence/`. The network and its description belong to Takehi et al.
