@@ -568,6 +568,26 @@ every candidate re-fitted each round; H = 8, 25 cases.
 
 ---
 
+## 23. Can a cheap screen make pair search scale?
+
+*Added November 16 after #22.*
+
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/PAIR_SCREEN.md)).
+> The coverage screen does: at H = 32 it ranks the broken pair a median 338th of 13,041,
+> about nine times better than a Newton-step screen, in about 6 seconds per case. Fits on
+> its top 1,000 pairs still pick the broken pair in only 10% of cases, because many pairs
+> fit the practice set perfectly.
+
+**Method.** Newton and coverage screens over every pair; #21's joint fits on the coverage top
+200 or 1,000; H = 8 and 32, 50 cases each.
+
+**Cost.** CPU, about 50 minutes. `experiments/locate-repair/pair_screen.py`.
+
+**Next.** Run #22's targeted queries on the screened candidates at H = 32, and re-fit more
+than 20 coarse pairs finely.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

@@ -8,6 +8,36 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #23: a cheap screen for pairs of broken weights
+
+Full write-up: [experiments/locate-repair/PAIR_SCREEN.md](../experiments/locate-repair/PAIR_SCREEN.md).
+Branch `claude/pair-screen`, stacked on `claude/active-queries`.
+
+### Setup
+
+- **Question.** Can a cheap screen replace #21's all-pairs search, so that pair search
+  reaches H = 32 (13,041 pairs)?
+- **Design.** Two screens score every pair: a Newton step on a logistic margin loss, and
+  coverage (the share of wrong practice examples the two entries' single edits correct
+  together). The coverage top 200 or 1,000 pairs then go through #21's joint fits.
+  H = 8 and 32, 50 cases each.
+- **Code.** `experiments/locate-repair/pair_screen.py` with 3 tests.
+
+### Results (measured)
+
+1. Broken pair's median rank at H = 32: 338 under coverage against 2,952 under Newton.
+   The coverage top 1,000 contains it in 72% of cases.
+2. At H = 8, screen-then-fit finds the pair in 28 of 50 cases, matching #21's exhaustive rate.
+3. At H = 32, screen-then-fit passes 72% and finds the pair in 10% (#20's greedy repair: 56%
+   and 4%). Of 36 screened-in pairs, 16 were lost at the coarse fit; of the 20 left, 5 won.
+
+### Interpretation
+
+- *Inference:* at H = 32 the screen is no longer the bottleneck. Many pairs fit practice
+  perfectly, as in #21, so #22's targeted queries are the next step.
+
+---
+
 ## 2026-11-16 — Roadmap #22: asking where the suspects disagree
 
 Full write-up: [experiments/locate-repair/ACTIVE_QUERIES.md](../experiments/locate-repair/ACTIVE_QUERIES.md).

@@ -1,0 +1,5391 @@
+{
+ "schema": "weight-space-pair-screen-v1",
+ "tops": [
+  200,
+  1000
+ ],
+ "summary": {
+  "8": {
+   "cases": 50,
+   "pairs": 861,
+   "newton": {
+    "true_pair_rank_median": 215.5,
+    "true_pair_in_top": {
+     "1": 0.02,
+     "10": 0.04,
+     "50": 0.12,
+     "200": 0.46,
+     "1000": 1.0
+    }
+   },
+   "coverage": {
+    "true_pair_rank_median": 39.5,
+    "true_pair_in_top": {
+     "1": 0.12,
+     "10": 0.36,
+     "50": 0.56,
+     "200": 0.74,
+     "1000": 1.0
+    }
+   },
+   "top200": {
+    "success": 0.78,
+    "found_both": 0.4,
+    "found_one": 0.38,
+    "screened_has_both": 0.74,
+    "refined_has_both": 0.62,
+    "damage_undone_median": 0.9814160686512057
+   },
+   "top1000": {
+    "success": 0.92,
+    "found_both": 0.56,
+    "found_one": 0.28,
+    "screened_has_both": 1.0,
+    "refined_has_both": 0.86,
+    "damage_undone_median": 0.9914042099211383
+   }
+  },
+  "32": {
+   "cases": 50,
+   "pairs": 13041,
+   "newton": {
+    "true_pair_rank_median": 2952.0,
+    "true_pair_in_top": {
+     "1": 0.0,
+     "10": 0.0,
+     "50": 0.02,
+     "200": 0.08,
+     "1000": 0.26
+    }
+   },
+   "coverage": {
+    "true_pair_rank_median": 337.5,
+    "true_pair_in_top": {
+     "1": 0.04,
+     "10": 0.08,
+     "50": 0.26,
+     "200": 0.4,
+     "1000": 0.72
+    }
+   },
+   "top200": {
+    "success": 0.7,
+    "found_both": 0.08,
+    "found_one": 0.44,
+    "screened_has_both": 0.4,
+    "refined_has_both": 0.34,
+    "damage_undone_median": 0.964757149060232
+   },
+   "top1000": {
+    "success": 0.72,
+    "found_both": 0.1,
+    "found_one": 0.46,
+    "screened_has_both": 0.72,
+    "refined_has_both": 0.4,
+    "damage_undone_median": 0.9654137266495477
+   }
+  }
+ },
+ "cases": [
+  {
+   "width": 8,
+   "seed": 0,
+   "faults": [
+    [
+     "hidden_weight",
+     6
+    ],
+    [
+     "bias",
+     1
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 10,
+   "true_pair_rank": 609,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.7356704196519959,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.865234375,
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9911293074036165,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      6
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 1,
+   "faults": [
+    [
+     "bias",
+     1
+    ],
+    [
+     "weight",
+     11
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 0,
+   "true_pair_rank": 416,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.8329624296373871,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9287109375,
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      10
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9994763712527818,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      11
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 2,
+   "faults": [
+    [
+     "weight",
+     0
+    ],
+    [
+     "weight",
+     15
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 48,
+   "true_pair_rank": 233,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.962962962962963,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9873046875,
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "hidden_weight",
+      15
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9965277777777778,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      15
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 3,
+   "faults": [
+    [
+     "weight",
+     4
+    ],
+    [
+     "hidden_weight",
+     10
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 116,
+   "true_pair_rank": 116,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9755434782608695,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      4
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9755434782608695,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      4
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 4,
+   "faults": [
+    [
+     "weight",
+     15
+    ],
+    [
+     "bias",
+     1
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 75,
+   "true_pair_rank": 2,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.996410790783837,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "weight",
+      15
+     ],
+     [
+      "bias",
+      1
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.996410790783837,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "weight",
+      15
+     ],
+     [
+      "bias",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 5,
+   "faults": [
+    [
+     "hidden_bias",
+     0
+    ],
+    [
+     "hidden_bias",
+     2
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 709,
+   "true_pair_rank": 120,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.709090909090909,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      0
+     ],
+     [
+      "hidden_bias",
+      2
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.709090909090909,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      0
+     ],
+     [
+      "hidden_bias",
+      2
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 6,
+   "faults": [
+    [
+     "hidden_weight",
+     12
+    ],
+    [
+     "hidden_bias",
+     4
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 538,
+   "true_pair_rank": 515,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.833974358974359,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9951171875,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9839743589743589,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 0.9970703125,
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "hidden_bias",
+      4
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 7,
+   "faults": [
+    [
+     "weight",
+     10
+    ],
+    [
+     "weight",
+     6
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 129,
+   "true_pair_rank": 72,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9682835820895522,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      5
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9682835820895522,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      5
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 8,
+   "faults": [
+    [
+     "weight",
+     0
+    ],
+    [
+     "weight",
+     7
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 526,
+   "true_pair_rank": 49,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9986422267481331,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      1
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9986422267481331,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 9,
+   "faults": [
+    [
+     "hidden_weight",
+     10
+    ],
+    [
+     "hidden_bias",
+     6
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 152,
+   "true_pair_rank": 379,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.8408792650918635,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.9873046875,
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_bias",
+      6
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9862204724409449,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "hidden_bias",
+      6
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 10,
+   "faults": [
+    [
+     "weight",
+     13
+    ],
+    [
+     "hidden_weight",
+     14
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 398,
+   "true_pair_rank": 61,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.9944203347799132,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      7
+     ],
+     [
+      "weight",
+      13
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.9944203347799132,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      7
+     ],
+     [
+      "weight",
+      13
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 11,
+   "faults": [
+    [
+     "weight",
+     15
+    ],
+    [
+     "weight",
+     8
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 251,
+   "true_pair_rank": 2,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9874944171505137,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9970703125,
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9874944171505137,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9970703125,
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 12,
+   "faults": [
+    [
+     "weight",
+     10
+    ],
+    [
+     "weight",
+     7
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 360,
+   "true_pair_rank": 15,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9934196997738022,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9934196997738022,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 13,
+   "faults": [
+    [
+     "hidden_bias",
+     0
+    ],
+    [
+     "hidden_weight",
+     2
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 239,
+   "true_pair_rank": 29,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.983370288248337,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_bias",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.983370288248337,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_bias",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 14,
+   "faults": [
+    [
+     "hidden_bias",
+     7
+    ],
+    [
+     "hidden_bias",
+     1
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 367,
+   "true_pair_rank": 5,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9891634156913741,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "bias",
+      1
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9891634156913741,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "bias",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 15,
+   "faults": [
+    [
+     "weight",
+     2
+    ],
+    [
+     "weight",
+     3
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 23,
+   "true_pair_rank": 0,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9968831168831169,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      10
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9968831168831169,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      10
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 16,
+   "faults": [
+    [
+     "hidden_weight",
+     0
+    ],
+    [
+     "hidden_weight",
+     15
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 157,
+   "true_pair_rank": 10,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9988118811881188,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "hidden_weight",
+      6
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9988118811881188,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "hidden_weight",
+      6
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 17,
+   "faults": [
+    [
+     "hidden_weight",
+     12
+    ],
+    [
+     "hidden_weight",
+     5
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 195,
+   "true_pair_rank": 35,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9655172413793104,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      6
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9655172413793104,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      6
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 18,
+   "faults": [
+    [
+     "hidden_weight",
+     10
+    ],
+    [
+     "hidden_weight",
+     2
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 140,
+   "true_pair_rank": 0,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9933890048712596,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_weight",
+      10
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9933890048712596,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_weight",
+      10
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 19,
+   "faults": [
+    [
+     "hidden_weight",
+     12
+    ],
+    [
+     "weight",
+     13
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 212,
+   "true_pair_rank": 545,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9268585131894485,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      5
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.8800959232613909,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      5
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 20,
+   "faults": [
+    [
+     "weight",
+     10
+    ],
+    [
+     "hidden_bias",
+     1
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 116,
+   "true_pair_rank": 34,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9972379706352668,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "weight",
+      2
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9972379706352668,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "weight",
+      2
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 21,
+   "faults": [
+    [
+     "weight",
+     13
+    ],
+    [
+     "weight",
+     9
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 444,
+   "true_pair_rank": 321,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.8111753371868979,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "hidden_bias",
+      1
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.8111753371868979,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "hidden_bias",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 22,
+   "faults": [
+    [
+     "weight",
+     5
+    ],
+    [
+     "hidden_bias",
+     4
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 330,
+   "true_pair_rank": 89,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9385665529010239,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      5
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9283276450511946,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "weight",
+      4
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 23,
+   "faults": [
+    [
+     "hidden_weight",
+     3
+    ],
+    [
+     "hidden_bias",
+     5
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 504,
+   "true_pair_rank": 547,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9727011494252874,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      6
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9727011494252874,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      6
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 24,
+   "faults": [
+    [
+     "weight",
+     15
+    ],
+    [
+     "weight",
+     0
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 324,
+   "true_pair_rank": 33,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9962616822429906,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9962616822429906,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 25,
+   "faults": [
+    [
+     "hidden_weight",
+     14
+    ],
+    [
+     "hidden_bias",
+     6
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 611,
+   "true_pair_rank": 2,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.7901234567901234,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_bias",
+      6
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.7901234567901234,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_bias",
+      6
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 26,
+   "faults": [
+    [
+     "weight",
+     3
+    ],
+    [
+     "hidden_weight",
+     12
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 292,
+   "true_pair_rank": 191,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.994882486732373,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      0
+     ],
+     [
+      "weight",
+      8
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.994882486732373,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      0
+     ],
+     [
+      "weight",
+      8
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 27,
+   "faults": [
+    [
+     "hidden_weight",
+     3
+    ],
+    [
+     "weight",
+     5
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 316,
+   "true_pair_rank": 2,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9335748792270532,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      11
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9335748792270532,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      11
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 28,
+   "faults": [
+    [
+     "hidden_bias",
+     3
+    ],
+    [
+     "hidden_bias",
+     2
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 59,
+   "true_pair_rank": 8,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9787878787878788,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "hidden_bias",
+      3
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9787878787878788,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "hidden_bias",
+      3
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 29,
+   "faults": [
+    [
+     "weight",
+     8
+    ],
+    [
+     "weight",
+     13
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 195,
+   "true_pair_rank": 8,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9976973684210526,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      13
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9976973684210526,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      13
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 30,
+   "faults": [
+    [
+     "weight",
+     1
+    ],
+    [
+     "weight",
+     14
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 209,
+   "true_pair_rank": 6,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9945105215004575,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      9
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9945105215004575,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      9
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 31,
+   "faults": [
+    [
+     "weight",
+     8
+    ],
+    [
+     "hidden_weight",
+     6
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 154,
+   "true_pair_rank": 0,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.894356005788712,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.894356005788712,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 32,
+   "faults": [
+    [
+     "hidden_weight",
+     2
+    ],
+    [
+     "weight",
+     8
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 136,
+   "true_pair_rank": 4,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9986668282632408,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "weight",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9986668282632408,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "weight",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 33,
+   "faults": [
+    [
+     "hidden_bias",
+     5
+    ],
+    [
+     "hidden_weight",
+     9
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 847,
+   "true_pair_rank": 0,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9964014394242303,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "hidden_bias",
+      5
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9964014394242303,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "hidden_bias",
+      5
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 34,
+   "faults": [
+    [
+     "weight",
+     10
+    ],
+    [
+     "hidden_weight",
+     8
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 219,
+   "true_pair_rank": 58,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9975734045134677,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      2
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9975734045134677,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      2
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 35,
+   "faults": [
+    [
+     "hidden_bias",
+     3
+    ],
+    [
+     "hidden_weight",
+     14
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 638,
+   "true_pair_rank": 231,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.4860853432282004,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.9931640625,
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      3
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9721706864564007,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "hidden_bias",
+      3
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 36,
+   "faults": [
+    [
+     "hidden_bias",
+     1
+    ],
+    [
+     "hidden_bias",
+     7
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 50,
+   "true_pair_rank": 42,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9918450560652395,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      7
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9918450560652395,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      7
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 37,
+   "faults": [
+    [
+     "hidden_weight",
+     8
+    ],
+    [
+     "hidden_weight",
+     2
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 479,
+   "true_pair_rank": 58,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9826509368494102,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      4
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9826509368494102,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      4
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 38,
+   "faults": [
+    [
+     "hidden_weight",
+     8
+    ],
+    [
+     "weight",
+     5
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 366,
+   "true_pair_rank": 3,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9924861878453038,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9970703125,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      13
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9924861878453038,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9970703125,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      13
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 39,
+   "faults": [
+    [
+     "hidden_weight",
+     10
+    ],
+    [
+     "bias",
+     1
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 316,
+   "true_pair_rank": 775,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.7508000853424366,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.8916015625,
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "bias",
+      1
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9916791124386601,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "hidden_bias",
+      5
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 40,
+   "faults": [
+    [
+     "hidden_bias",
+     6
+    ],
+    [
+     "weight",
+     1
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 29,
+   "true_pair_rank": 39,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.8651685393258427,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.8651685393258427,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 41,
+   "faults": [
+    [
+     "hidden_weight",
+     7
+    ],
+    [
+     "hidden_bias",
+     2
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 132,
+   "true_pair_rank": 481,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.4498175182481752,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9833984375,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      12
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9981751824817519,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "hidden_bias",
+      2
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 42,
+   "faults": [
+    [
+     "hidden_weight",
+     14
+    ],
+    [
+     "bias",
+     1
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 233,
+   "true_pair_rank": 424,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.8022456140350878,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.912109375,
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "weight",
+      4
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9953684210526316,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 43,
+   "faults": [
+    [
+     "hidden_weight",
+     0
+    ],
+    [
+     "hidden_bias",
+     7
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 2,
+   "true_pair_rank": 40,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9680200222469411,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "hidden_weight",
+      14
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9680200222469411,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "hidden_weight",
+      14
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 44,
+   "faults": [
+    [
+     "hidden_weight",
+     11
+    ],
+    [
+     "weight",
+     12
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 175,
+   "true_pair_rank": 6,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9862475442043221,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      12
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9862475442043221,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      12
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 45,
+   "faults": [
+    [
+     "weight",
+     8
+    ],
+    [
+     "hidden_weight",
+     8
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 282,
+   "true_pair_rank": 0,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9973821989528796,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9973821989528796,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 46,
+   "faults": [
+    [
+     "hidden_weight",
+     12
+    ],
+    [
+     "weight",
+     3
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 406,
+   "true_pair_rank": 496,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9152542372881356,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      12
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9459745762711864,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      3
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 47,
+   "faults": [
+    [
+     "bias",
+     1
+    ],
+    [
+     "weight",
+     8
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 126,
+   "true_pair_rank": 4,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9995881383855024,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "weight",
+      8
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9995881383855024,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "weight",
+      8
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 48,
+   "faults": [
+    [
+     "weight",
+     5
+    ],
+    [
+     "hidden_bias",
+     1
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 93,
+   "true_pair_rank": 0,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9924372636644895,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "weight",
+      5
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9924372636644895,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "weight",
+      5
+     ]
+    ]
+   }
+  },
+  {
+   "width": 8,
+   "seed": 49,
+   "faults": [
+    [
+     "weight",
+     7
+    ],
+    [
+     "weight",
+     13
+    ]
+   ],
+   "pairs": 861,
+   "newton_rank": 602,
+   "true_pair_rank": 110,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.9801812004530012,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_bias",
+      5
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.9801812004530012,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_bias",
+      5
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 0,
+   "faults": [
+    [
+     "weight",
+     35
+    ],
+    [
+     "hidden_bias",
+     25
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 1144,
+   "true_pair_rank": 18,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9635568513119533,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      25
+     ],
+     [
+      "weight",
+      58
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9635568513119533,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      25
+     ],
+     [
+      "weight",
+      58
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 1,
+   "faults": [
+    [
+     "weight",
+     23
+    ],
+    [
+     "hidden_weight",
+     9
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 3907,
+   "true_pair_rank": 704,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9707192870782941,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      16
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9707192870782941,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      16
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 2,
+   "faults": [
+    [
+     "weight",
+     46
+    ],
+    [
+     "weight",
+     47
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 365,
+   "true_pair_rank": 0,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9995029821073559,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      46
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9995029821073559,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      46
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 3,
+   "faults": [
+    [
+     "hidden_weight",
+     36
+    ],
+    [
+     "hidden_bias",
+     4
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 2241,
+   "true_pair_rank": 319,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9508196721311476,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      54
+     ],
+     [
+      "weight",
+      10
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9571535022354695,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "hidden_weight",
+      62
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 4,
+   "faults": [
+    [
+     "weight",
+     20
+    ],
+    [
+     "bias",
+     1
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 523,
+   "true_pair_rank": 8331,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.7819025522041763,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.7923433874709978,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 5,
+   "faults": [
+    [
+     "hidden_weight",
+     1
+    ],
+    [
+     "weight",
+     29
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 2309,
+   "true_pair_rank": 349,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.9090909090909091,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.9873046875,
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "weight",
+      8
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.996690675491532,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "weight",
+      61
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 6,
+   "faults": [
+    [
+     "hidden_weight",
+     58
+    ],
+    [
+     "hidden_weight",
+     7
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 1054,
+   "true_pair_rank": 3500,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.687984496124031,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.99609375,
+    "winner": [
+     [
+      "hidden_weight",
+      33
+     ],
+     [
+      "weight",
+      61
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9748062015503876,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      29
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 7,
+   "faults": [
+    [
+     "hidden_weight",
+     21
+    ],
+    [
+     "weight",
+     1
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 7394,
+   "true_pair_rank": 0,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.994232987312572,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      33
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.994232987312572,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      33
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 8,
+   "faults": [
+    [
+     "weight",
+     26
+    ],
+    [
+     "weight",
+     16
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 195,
+   "true_pair_rank": 10175,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.9198358413132695,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9951171875,
+    "winner": [
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "weight",
+      36
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.9198358413132695,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9951171875,
+    "winner": [
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "weight",
+      36
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 9,
+   "faults": [
+    [
+     "hidden_bias",
+     5
+    ],
+    [
+     "hidden_weight",
+     37
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 3863,
+   "true_pair_rank": 6,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9886201991465149,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      37
+     ],
+     [
+      "hidden_bias",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9886201991465149,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      37
+     ],
+     [
+      "hidden_bias",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 10,
+   "faults": [
+    [
+     "weight",
+     1
+    ],
+    [
+     "hidden_weight",
+     37
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 5886,
+   "true_pair_rank": 273,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9834319526627219,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      35
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9834319526627219,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      35
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 11,
+   "faults": [
+    [
+     "weight",
+     39
+    ],
+    [
+     "weight",
+     33
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 1057,
+   "true_pair_rank": 106,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.99213217938631,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      7
+     ],
+     [
+      "bias",
+      1
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.8835562549173879,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      56
+     ],
+     [
+      "bias",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 12,
+   "faults": [
+    [
+     "hidden_weight",
+     47
+    ],
+    [
+     "hidden_weight",
+     48
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 6276,
+   "true_pair_rank": 7987,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.8848584776037373,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.98828125,
+    "winner": [
+     [
+      "weight",
+      26
+     ],
+     [
+      "weight",
+      55
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.9450398461115691,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9931640625,
+    "winner": [
+     [
+      "weight",
+      24
+     ],
+     [
+      "weight",
+      26
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 13,
+   "faults": [
+    [
+     "hidden_bias",
+     0
+    ],
+    [
+     "weight",
+     60
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 3081,
+   "true_pair_rank": 12,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9367588932806324,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      43
+     ],
+     [
+      "weight",
+      60
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.7905138339920948,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      43
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 14,
+   "faults": [
+    [
+     "weight",
+     27
+    ],
+    [
+     "hidden_weight",
+     62
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 1564,
+   "true_pair_rank": 385,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9742120343839542,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      55
+     ],
+     [
+      "weight",
+      12
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.8853868194842407,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      45
+     ],
+     [
+      "hidden_weight",
+      55
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 15,
+   "faults": [
+    [
+     "hidden_bias",
+     16
+    ],
+    [
+     "hidden_bias",
+     26
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 56,
+   "true_pair_rank": 1,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9893617021276596,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      16
+     ],
+     [
+      "hidden_bias",
+      26
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9893617021276596,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      16
+     ],
+     [
+      "hidden_bias",
+      26
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 16,
+   "faults": [
+    [
+     "weight",
+     9
+    ],
+    [
+     "weight",
+     62
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 489,
+   "true_pair_rank": 1994,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.8632862644415917,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9873046875,
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "hidden_weight",
+      44
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.8838254172015404,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9921875,
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "hidden_weight",
+      20
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 17,
+   "faults": [
+    [
+     "weight",
+     34
+    ],
+    [
+     "weight",
+     10
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 4248,
+   "true_pair_rank": 199,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9268547544409613,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      42
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9268547544409613,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      42
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 18,
+   "faults": [
+    [
+     "weight",
+     40
+    ],
+    [
+     "weight",
+     7
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 811,
+   "true_pair_rank": 799,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.8728813559322034,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      58
+     ],
+     [
+      "weight",
+      1
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.8728813559322034,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      58
+     ],
+     [
+      "weight",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 19,
+   "faults": [
+    [
+     "hidden_bias",
+     11
+    ],
+    [
+     "weight",
+     19
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 7521,
+   "true_pair_rank": 42,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9278937381404174,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      4
+     ],
+     [
+      "bias",
+      1
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9278937381404174,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      4
+     ],
+     [
+      "bias",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 20,
+   "faults": [
+    [
+     "hidden_bias",
+     8
+    ],
+    [
+     "hidden_weight",
+     4
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 6216,
+   "true_pair_rank": 431,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.939748201438849,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.99609375,
+    "winner": [
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      36
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.9523381294964028,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "hidden_weight",
+      16
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 21,
+   "faults": [
+    [
+     "hidden_bias",
+     25
+    ],
+    [
+     "hidden_weight",
+     31
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 3088,
+   "true_pair_rank": 1030,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.7407407407407407,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      16
+     ],
+     [
+      "weight",
+      15
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.654320987654321,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      15
+     ],
+     [
+      "hidden_bias",
+      16
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 22,
+   "faults": [
+    [
+     "weight",
+     10
+    ],
+    [
+     "hidden_bias",
+     27
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 7319,
+   "true_pair_rank": 46,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.6929824561403508,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_bias",
+      10
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.6929824561403508,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_bias",
+      10
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 23,
+   "faults": [
+    [
+     "hidden_weight",
+     49
+    ],
+    [
+     "hidden_bias",
+     30
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 3011,
+   "true_pair_rank": 776,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9757555629359017,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.998046875,
+    "winner": [
+     [
+      "hidden_weight",
+      49
+     ],
+     [
+      "weight",
+      54
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9814015277316506,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      49
+     ],
+     [
+      "weight",
+      23
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 24,
+   "faults": [
+    [
+     "hidden_weight",
+     31
+    ],
+    [
+     "hidden_weight",
+     14
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 4363,
+   "true_pair_rank": 326,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9674868189806678,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 1.0,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "hidden_weight",
+      31
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 25,
+   "faults": [
+    [
+     "weight",
+     8
+    ],
+    [
+     "hidden_bias",
+     30
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 1197,
+   "true_pair_rank": 3438,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.6493987049028678,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.99609375,
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      22
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.7567067530064755,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9970703125,
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "hidden_bias",
+      8
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 26,
+   "faults": [
+    [
+     "hidden_bias",
+     6
+    ],
+    [
+     "weight",
+     14
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 2358,
+   "true_pair_rank": 188,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9781818181818182,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      57
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9781818181818182,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      57
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 27,
+   "faults": [
+    [
+     "weight",
+     4
+    ],
+    [
+     "weight",
+     21
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 4975,
+   "true_pair_rank": 3611,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9549274255156608,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9970703125,
+    "winner": [
+     [
+      "hidden_weight",
+      42
+     ],
+     [
+      "weight",
+      26
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.86707410236822,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      25
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 28,
+   "faults": [
+    [
+     "hidden_weight",
+     59
+    ],
+    [
+     "weight",
+     24
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 6800,
+   "true_pair_rank": 11,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9851851851851852,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      58
+     ],
+     [
+      "weight",
+      56
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9851851851851852,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      58
+     ],
+     [
+      "weight",
+      56
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 29,
+   "faults": [
+    [
+     "hidden_bias",
+     23
+    ],
+    [
+     "hidden_weight",
+     58
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 4214,
+   "true_pair_rank": 2718,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.7942386831275721,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "hidden_bias",
+      23
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.7942386831275721,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "hidden_bias",
+      23
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 30,
+   "faults": [
+    [
+     "hidden_weight",
+     30
+    ],
+    [
+     "hidden_weight",
+     11
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 12115,
+   "true_pair_rank": 1203,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.6850828729281768,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.97265625,
+    "winner": [
+     [
+      "hidden_weight",
+      40
+     ],
+     [
+      "weight",
+      37
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.6850828729281768,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.97265625,
+    "winner": [
+     [
+      "hidden_weight",
+      40
+     ],
+     [
+      "weight",
+      37
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 31,
+   "faults": [
+    [
+     "weight",
+     54
+    ],
+    [
+     "hidden_weight",
+     31
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 8850,
+   "true_pair_rank": 150,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9971401334604385,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "weight",
+      54
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9847473784556721,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      18
+     ],
+     [
+      "weight",
+      63
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 32,
+   "faults": [
+    [
+     "weight",
+     23
+    ],
+    [
+     "hidden_weight",
+     36
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 3809,
+   "true_pair_rank": 3773,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.782258064516129,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9267578125,
+    "winner": [
+     [
+      "weight",
+      16
+     ],
+     [
+      "weight",
+      48
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.8064516129032258,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "hidden_weight",
+      32
+     ],
+     [
+      "hidden_bias",
+      23
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 33,
+   "faults": [
+    [
+     "hidden_weight",
+     30
+    ],
+    [
+     "bias",
+     1
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 217,
+   "true_pair_rank": 571,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.907744874715262,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.9970703125,
+    "winner": [
+     [
+      "hidden_bias",
+      0
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9453302961275627,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      47
+     ],
+     [
+      "bias",
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 34,
+   "faults": [
+    [
+     "weight",
+     52
+    ],
+    [
+     "hidden_weight",
+     8
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 5327,
+   "true_pair_rank": 1124,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.967270601987142,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "weight",
+      21
+     ],
+     [
+      "weight",
+      46
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.967270601987142,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "weight",
+      21
+     ],
+     [
+      "weight",
+      46
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 35,
+   "faults": [
+    [
+     "hidden_weight",
+     33
+    ],
+    [
+     "hidden_weight",
+     52
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 3623,
+   "true_pair_rank": 155,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9987748100955648,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      33
+     ],
+     [
+      "hidden_weight",
+      52
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9987748100955648,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 2,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      33
+     ],
+     [
+      "hidden_weight",
+      52
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 36,
+   "faults": [
+    [
+     "hidden_bias",
+     15
+    ],
+    [
+     "weight",
+     49
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 540,
+   "true_pair_rank": 811,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.895411938825851,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9970703125,
+    "winner": [
+     [
+      "hidden_weight",
+      45
+     ],
+     [
+      "weight",
+      8
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.978786383818451,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      17
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 37,
+   "faults": [
+    [
+     "hidden_weight",
+     24
+    ],
+    [
+     "hidden_weight",
+     22
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 2893,
+   "true_pair_rank": 710,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.9070175438596492,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      60
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9368421052631579,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "hidden_weight",
+      58
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 38,
+   "faults": [
+    [
+     "weight",
+     55
+    ],
+    [
+     "hidden_weight",
+     8
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 1880,
+   "true_pair_rank": 41,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9938242280285036,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      23
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9938242280285036,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      23
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 39,
+   "faults": [
+    [
+     "hidden_weight",
+     57
+    ],
+    [
+     "hidden_bias",
+     19
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 754,
+   "true_pair_rank": 292,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.856687898089172,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      39
+     ],
+     [
+      "hidden_bias",
+      30
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.8503184713375795,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "hidden_bias",
+      30
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 40,
+   "faults": [
+    [
+     "hidden_bias",
+     14
+    ],
+    [
+     "weight",
+     26
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 46,
+   "true_pair_rank": 287,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9950175849941383,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      26
+     ],
+     [
+      "weight",
+      39
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9950175849941383,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "weight",
+      26
+     ],
+     [
+      "weight",
+      39
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 41,
+   "faults": [
+    [
+     "hidden_bias",
+     11
+    ],
+    [
+     "hidden_weight",
+     62
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 5137,
+   "true_pair_rank": 136,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9485430874147551,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      62
+     ],
+     [
+      "weight",
+      48
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9485430874147551,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      62
+     ],
+     [
+      "weight",
+      48
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 42,
+   "faults": [
+    [
+     "hidden_weight",
+     12
+    ],
+    [
+     "hidden_weight",
+     46
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 4743,
+   "true_pair_rank": 4060,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.9659574468085106,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      54
+     ],
+     [
+      "weight",
+      6
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.8893617021276596,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "hidden_weight",
+      40
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 43,
+   "faults": [
+    [
+     "weight",
+     19
+    ],
+    [
+     "hidden_weight",
+     6
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 8298,
+   "true_pair_rank": 3309,
+   "top200": {
+    "success": false,
+    "damage_undone": 0.981063122923588,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      61
+     ]
+    ]
+   },
+   "top1000": {
+    "success": false,
+    "damage_undone": 0.981063122923588,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 0.9990234375,
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      61
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 44,
+   "faults": [
+    [
+     "hidden_weight",
+     6
+    ],
+    [
+     "hidden_bias",
+     2
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 57,
+   "true_pair_rank": 143,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9688581314878892,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "weight",
+      35
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9688581314878892,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "weight",
+      35
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 45,
+   "faults": [
+    [
+     "hidden_weight",
+     37
+    ],
+    [
+     "hidden_weight",
+     48
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 528,
+   "true_pair_rank": 460,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9839080459770115,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      23
+     ],
+     [
+      "hidden_weight",
+      31
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9839080459770115,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      23
+     ],
+     [
+      "hidden_weight",
+      31
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 46,
+   "faults": [
+    [
+     "weight",
+     28
+    ],
+    [
+     "weight",
+     7
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 463,
+   "true_pair_rank": 31,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9892,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9892,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      7
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 47,
+   "faults": [
+    [
+     "hidden_weight",
+     29
+    ],
+    [
+     "hidden_weight",
+     0
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 8418,
+   "true_pair_rank": 22,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9818181818181818,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      62
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9818181818181818,
+    "screened_has_both": true,
+    "refined_has_both": false,
+    "faults_found": 1,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      62
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 48,
+   "faults": [
+    [
+     "hidden_bias",
+     2
+    ],
+    [
+     "hidden_weight",
+     14
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 2039,
+   "true_pair_rank": 999,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9769230769230769,
+    "screened_has_both": false,
+    "refined_has_both": false,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      18
+     ],
+     [
+      "weight",
+      31
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9769230769230769,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      18
+     ],
+     [
+      "weight",
+      31
+     ]
+    ]
+   }
+  },
+  {
+   "width": 32,
+   "seed": 49,
+   "faults": [
+    [
+     "weight",
+     3
+    ],
+    [
+     "hidden_weight",
+     60
+    ]
+   ],
+   "pairs": 13041,
+   "newton_rank": 1690,
+   "true_pair_rank": 21,
+   "top200": {
+    "success": true,
+    "damage_undone": 0.9713740458015268,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "weight",
+      62
+     ]
+    ]
+   },
+   "top1000": {
+    "success": true,
+    "damage_undone": 0.9713740458015268,
+    "screened_has_both": true,
+    "refined_has_both": true,
+    "faults_found": 0,
+    "practice_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "weight",
+      62
+     ]
+    ]
+   }
+  }
+ ]
+}
