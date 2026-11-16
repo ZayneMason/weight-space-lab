@@ -139,4 +139,5 @@ Follow-ups: [TARGETS.md](TARGETS.md) (roadmap #8, swapping the ascending guesses
 [HEDGE.md](HEDGE.md) (roadmap #9, why the author's rough guesses win) and
 [CLOSEDLOOP.md](CLOSEDLOOP.md) (roadmap #11, refitting the guesses on their own play) and
 [ROWSWAP.md](ROWSWAP.md) (roadmap #12, the three rows where the author's guesses win) and
-[DEATHS.md](DEATHS.md) (roadmap #13, which flights kill the accurate table).
+[DEATHS.md](DEATHS.md) (roadmap #13, which flights kill the accurate table) and
+[MOTION.md](MOTION.md) (roadmap #15, paddle motion at the turn).
