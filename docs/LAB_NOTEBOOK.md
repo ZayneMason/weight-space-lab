@@ -8,6 +8,33 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #34: targeted examples on a 200-triple committee
+
+Full write-up: [experiments/locate-repair/TRIPLE_COMMITTEE.md](../experiments/locate-repair/TRIPLE_COMMITTEE.md).
+Branch `claude/triple-committee`, stacked on `claude/continuous-triples`.
+
+### Setup
+
+- **Question.** Can targeted examples pick the true triple out of the ~160 that fit practice
+  perfectly after #33's continuous fit?
+- **Design.** #31's random-size cases at H = 16. Committee: #33's top 200. Eight rounds of 8
+  targeted examples; each member re-fitted every round from its last and current values.
+- **Code.** `experiments/locate-repair/triple_committee.py` with 2 tests.
+
+### Results (measured)
+
+1. After 64 examples: all three found 16 of 25, every visible fault 19, pass 24 (practice only: 3,
+   3, 15). The median number of members tied at the best accuracy falls from 159 to 3.
+2. The committee held the true triple in 21 cases; 16 of those ended with it, 3 ended on a tied
+   lookalike, 1 on a fit that missed one label.
+
+### Interpretation
+
+- *Inference:* with a working fit, three faults behave like two. 19 of 25 (three faults) and 23 of
+  25 (two faults, #32) are the honest numbers on bugs of any size.
+
+---
+
 ## 2026-11-16 — Roadmap #33: a continuous fit for every three-fault suspect
 
 Full write-up: [experiments/locate-repair/CONTINUOUS_TRIPLES.md](../experiments/locate-repair/CONTINUOUS_TRIPLES.md).

@@ -122,3 +122,5 @@ grids cannot match: recall drops, so the earlier headline numbers were partly a 
 fault in 23 of 25 random-size cases, and the triple ranking improves only to 14.
 [CONTINUOUS_TRIPLES.md](CONTINUOUS_TRIPLES.md) (roadmap #33) fits every three-fault suspect continuously: the true
 triple fits practice perfectly, but so do a median 160 others.
+[TRIPLE_COMMITTEE.md](TRIPLE_COMMITTEE.md) (roadmap #34) asks the teacher where 200 suspects disagree: all three
+faults found in 16 of 25 random-size cases, every visible fault in 19.

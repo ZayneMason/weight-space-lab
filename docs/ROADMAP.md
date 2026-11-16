@@ -758,12 +758,28 @@ targeted examples on the new list for all-three and visible-found counts.
 
 *Added November 16 after #33.*
 
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/TRIPLE_COMMITTEE.md)). After 64
+> targeted examples, all three faults are found in 16 of 25 random-size cases and every visible fault in 19
+> (practice data alone: 3 and 3). Four cases lack the true triple in the committee; three end on a tie.
+
 #33's continuous fit puts the true triple in the top 200 in 21 of 25 random-size cases, but a median
 of 160 triples fit practice perfectly, so the top 40 holds it in only 13. Run #29's warm-started
 targeted examples with the top 200 (coarse-7 ties) as the committee, 8 per round up to 64. Measure
 all-three and visible-found counts against #29 and the cost of the larger committee.
 
 **Cost.** CPU, about three to four hours.
+
+## 35. Query where the lookalikes disagree, not uniformly
+
+*Added November 16 after #34.*
+
+#34 ended 3 of 25 three-fault cases on a lookalike that tied the true triple on every label after 64
+examples, and #22 found the same late-round problem for pairs: no uniform input among 20,000 split
+the committee. Draw the query pool near the members' decision boundaries (for instance, by bisecting
+between inputs that two tied members label differently) and re-run #34's last rounds on the tied
+cases, then all 25. Measure ties left and all-three counts against #34's 16.
+
+**Cost.** CPU, about one to two hours.
 
 ## Posts the current results already support
 
