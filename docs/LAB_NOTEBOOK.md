@@ -8,6 +8,39 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #28: targeted examples for three broken weights
+
+Full write-up: [experiments/locate-repair/TRIPLE_QUERIES.md](../experiments/locate-repair/TRIPLE_QUERIES.md).
+Branch `claude/triple-queries`, stacked on `claude/three-faults`.
+
+### Setup
+
+- **Question.** Do #22's targeted examples settle #27's three-fault ties the way they settled
+  two-fault ties?
+- **Design.** #27's 25 cases at H = 16; #27's coarse top 40 triples as candidates; eight rounds
+  of 8 targeted examples, every triple re-fitted finely each round. Seeds 11, 15 and 20 rerun
+  with the true triple's fit recorded.
+- **Code.** `experiments/locate-repair/triple_queries.py` with 2 tests.
+
+### Results (measured)
+
+1. All three faults found: 5 of 25 with no examples, 10 after 64. Visible faults: 8 to 13.
+   Pass: 18 to 22.
+2. The true triple is among the 40 candidates in 17 cases.
+3. After 64 examples the winner fits every example in 2 of 25 cases (19 before). In 15 of the
+   17 cases with the true triple available, no candidate fits all the teacher's labels, though
+   the teacher's values would.
+4. In the reruns the true triple's own fit ends at 97.2–99.4%; in seeds 11 and 15 it won a
+   round and later lost.
+
+### Interpretation
+
+- *Inference:* the grid fit, not the data, now limits three-fault localization. The examples
+  sit where candidates disagree, where a coarse fit of three values is least precise. Next:
+  warm-started local fits (roadmap #29).
+
+---
+
 ## 2026-11-16 — Roadmap #27: three broken weights
 
 Full write-up: [experiments/locate-repair/THREE_FAULTS.md](../experiments/locate-repair/THREE_FAULTS.md).
