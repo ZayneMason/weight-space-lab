@@ -8,6 +8,34 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #19: mixing the author's guesses with the under-column table
+
+Full write-up: [experiments/breakout-anatomy/COMBINED.md](../experiments/breakout-anatomy/COMBINED.md).
+Branch `claude/combined`, stacked on `claude/under-fit`.
+
+### Setup
+
+- **Question.** Does a mix of the author's guesses and #18's under-column table beat both?
+- **Design.** 24 variants (every single-row swap both ways, groups of rows), 200 episodes each
+  at sticky 0.1 with paired differences; the best swap rerun on 1,000 fresh episodes.
+- **Code.** `experiments/breakout-anatomy/combine.py` with 2 tests; `returns.py` now keeps
+  per-episode scores and takes a seed offset.
+
+### Results (measured)
+
+1. No mix beats the author's table. Row 8 from the under table gave +8.5 ± 3.7 on 200
+   episodes and +0.9 ± 1.8 on 1,000 fresh ones.
+2. The author's rows 3–5 lift the under table by 88.2 ± 22.3 (to 445), against +33 for the
+   three single swaps added up. Row 5 alone lowers it by 12.9.
+3. Losing row 5 costs the author's table 58.3 ± 20.6; no other single row costs more than 14.
+
+### Interpretation
+
+- *Inference:* rows 3–5 are one unit, consistent with all three assuming the same full wall.
+  The under fit's gain does not stack with them.
+
+---
+
 ## 2026-11-16 — Roadmap #18: fitting the guesses to the under column
 
 Full write-up: [experiments/breakout-anatomy/UNDERFIT.md](../experiments/breakout-anatomy/UNDERFIT.md).
