@@ -234,6 +234,13 @@ placement tooling would let two cards run arms in parallel.
 
 ## 7. Locate-and-repair: a difficulty scaling curve
 
+> **Status, November 16: offline half done** ([write-up](../experiments/locate-repair/README.md)).
+> Model-free strategies only. The collapse hypothesis fails for *passing*: an editor not
+> told the location still passes about half the time up to 642 parameters. It holds for
+> *finding*: that editor edits the corrupted entry in 3% of cases at 642 parameters, and
+> its passes undo a median 75–79% of the damage. Still to do: model editors (needs paid
+> API or CLI allowance and approval).
+
 **Hypothesis.** Benchmark success collapses once the editor must *find* the corrupted
 entry instead of being told it. The drop grows with the log of the parameter count,
 and random search collapses faster than model editors.
