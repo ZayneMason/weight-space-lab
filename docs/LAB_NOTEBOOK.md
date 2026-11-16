@@ -8,6 +8,36 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #21: searching pairs of weights for two faults
+
+Full write-up: [experiments/locate-repair/PAIR_SEARCH.md](../experiments/locate-repair/PAIR_SEARCH.md).
+Branch `claude/pair-search`, stacked on `claude/two-faults`.
+
+### Setup
+
+- **Question.** Can ranking pairs of entries, instead of one at a time, find #20's two
+  broken entries from practice data?
+- **Design.** #20's cases. Joint pair fits over a shortlist (top 8 or 16 entries by
+  single-edit score) at H = 8 and 32, 50 cases each, and over all 861 pairs at H = 8 on
+  25 cases; the 20 best pairs re-fitted finely.
+- **Code.** `experiments/locate-repair/pair_search.py` with 2 tests.
+
+### Results (measured)
+
+1. Single-edit scores barely rank the faults: median rank 39th of 162 at H = 32, both in
+   the top 16 in 1 of 50 cases. Shortlist pair search found both faults in 0 of 50 there.
+2. All pairs at H = 8 pass 23 of 25 cases (told: 96% in #20) but pick the broken pair in 14.
+3. In 9 of the 11 misses, the broken pair fit practice no better than the winner, which
+   needed a smaller change; in 2, a wrong pair fit strictly better.
+
+### Interpretation
+
+- *Inference:* 1,024 examples leave a two-fault repair underdetermined, and the
+  smallest-change rule prefers look-alike pairs. Finding the pair needs targeted data or a
+  different prior; passing the rule needs neither.
+
+---
+
 ## 2026-11-16 — Roadmap #20: two broken weights
 
 Full write-up: [experiments/locate-repair/TWO_FAULTS.md](../experiments/locate-repair/TWO_FAULTS.md).

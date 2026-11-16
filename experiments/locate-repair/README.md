@@ -95,3 +95,6 @@ Follow-up: [PRACTICE.md](PRACTICE.md) (roadmap #10) grows the practice set from 
 broken one: an exact output-logit mirror, or units that point the same way.
 [TWO_FAULTS.md](TWO_FAULTS.md) (roadmap #20) breaks two entries at once: passing repairs at
 H = 32 mostly touch neither, and only a told joint search reliably fixes both.
+[PAIR_SEARCH.md](PAIR_SEARCH.md) (roadmap #21) searches pairs of entries: practice data
+often fits several pairs perfectly, so even an exhaustive search finds the broken pair only
+about half the time.
