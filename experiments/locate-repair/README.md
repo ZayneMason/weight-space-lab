@@ -120,3 +120,5 @@ coarse grid works partly because one of its points sits next to the corruption s
 grids cannot match: recall drops, so the earlier headline numbers were partly a grid coincidence.
 [DENSE_SCREEN.md](DENSE_SCREEN.md) (roadmap #32) makes the screens denser: the pair pipeline finds every visible
 fault in 23 of 25 random-size cases, and the triple ranking improves only to 14.
+[CONTINUOUS_TRIPLES.md](CONTINUOUS_TRIPLES.md) (roadmap #33) fits every three-fault suspect continuously: the true
+triple fits practice perfectly, but so do a median 160 others.

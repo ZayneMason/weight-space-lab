@@ -8,6 +8,31 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #33: a continuous fit for every three-fault suspect
+
+Full write-up: [experiments/locate-repair/CONTINUOUS_TRIPLES.md](../experiments/locate-repair/CONTINUOUS_TRIPLES.md).
+Branch `claude/continuous-triples`, stacked on `claude/offset-screen`.
+
+### Setup
+
+- **Question.** With the coarse grid gone as a filter, does the true triple reach the suspect list?
+- **Design.** #31's random-size cases at H = 16. Every extended triple gets #29's margin fit from its
+  current values and from its coarse-7 optimum; triples are ranked by practice accuracy.
+- **Code.** `experiments/locate-repair/continuous_triples.py` with 2 tests.
+
+### Results (measured)
+
+1. The true triple fits practice perfectly in 23 of the 24 cases that contain it.
+2. A median of 160 triples per case fit perfectly. Top-40 recall is 9 (ties by smallest change)
+   or 13 (ties by coarse-7 order); top-200 recall is 16 or 21.
+
+### Interpretation
+
+- *Inference:* the fit is solved; the practice set now underdetermines the triple, as #21 found for
+  pairs. Roadmap #34 puts targeted examples on a 200-triple committee.
+
+---
+
 ## 2026-11-16 — Roadmap #32: denser screens for bugs of any size
 
 Full write-up: [experiments/locate-repair/DENSE_SCREEN.md](../experiments/locate-repair/DENSE_SCREEN.md).

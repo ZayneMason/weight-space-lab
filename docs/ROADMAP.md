@@ -742,6 +742,10 @@ counts after 64 targeted examples, against #31's 20 (pairs) and 5 (triples), and
 
 *Added November 16 after #32.*
 
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/CONTINUOUS_TRIPLES.md)). The true
+> triple now fits practice perfectly in 23 of 24 cases, but so do a median 160 others. Top-200 recall is 21
+> of 25 with coarse-7 ties; top-40 only 13. The bottleneck is now underdetermination, not the fit.
+
 #32 left the triple suspect list limited by the coarse grid: in 8 of 25 random-size cases the true
 triple ranked below 1,000 on an 11³ grid, so refinement never saw it. Skip the grid and give every
 extended triple (about 10,000 per case) #29's margin fit, started from the current values and from a
@@ -749,6 +753,17 @@ few coarse points. Measure top-40 recall on #31's random-size cases against #32'
 targeted examples on the new list for all-three and visible-found counts.
 
 **Cost.** CPU, about three hours.
+
+## 34. Targeted examples on a 200-triple committee
+
+*Added November 16 after #33.*
+
+#33's continuous fit puts the true triple in the top 200 in 21 of 25 random-size cases, but a median
+of 160 triples fit practice perfectly, so the top 40 holds it in only 13. Run #29's warm-started
+targeted examples with the top 200 (coarse-7 ties) as the committee, 8 per round up to 64. Measure
+all-three and visible-found counts against #29 and the cost of the larger committee.
+
+**Cost.** CPU, about three to four hours.
 
 ## Posts the current results already support
 
