@@ -8,7 +8,7 @@ protocol. It also explained how it works. Part of that explanation looked wrong 
 checked it: its guesses for where a rising ball will land are off by almost two columns on
 average.
 
-Over six experiments I tried to fix those guesses, and every fix made the network worse.
+Over seven experiments I tried to fix those guesses, and every fix made the network worse.
 The guesses turned out to be a deliberate bet on the one bounce that kills.
 
 ## The network and what its author said
@@ -140,6 +140,23 @@ wrong, it is because the brick is gone, the ball flies on to the ceiling, and th
 has plenty of time. The accurate table splits the difference and is out of position for
 exactly the flight that kills.
 
+## Which way the paddle is moving
+
+One result above did not fit. On flights that turn down under row-2 bricks (row 3), the
+accurate table starts the paddle closer to the catch (0.76 against 0.94 columns) yet dies
+3.4 times as often, with five or more steps to spare. Following each flight step by step
+explained it: direction, not distance. Under the accurate table, 17% of those flights begin
+with the paddle moving away from the catch, against 2% for the author's. Those flights die
+7.4 times per 1,000 and account for 36 of the 64 row-3 deaths.
+
+The same trace shows the bet from the other side. At row 4, 43% of the author's flights
+start with the paddle already parked on the catch, and only one of those 21,757 flights
+ended in a death. The two tables also die differently. 92 of the author's 155 deaths are
+out of reach: the ball turned down with fewer steps left than the paddle's distance. 189 of
+the accurate table's 240 deaths had a sticky action change the paddle's move in the last
+two steps. The author's guesses lose a few flights outright and keep the rest safe; the
+accurate ones turn many flights into close calls.
+
 Measured on average error, the guesses look like the network's weakness. Measured on
 what kills it, they are its best design decision, and the author said so in one line that
 I first read as a bug report.
@@ -149,10 +166,8 @@ I first read as a bug report.
 - All of this is one network, one environment and one sticky-action probability (0.1).
   The row-swap and death-tracing experiments use 300 episodes. Effects under about 30
   points there are within noise.
-- One result does not fit the position story. On flights that turn under row-2 bricks
-  (row 3), the accurate table starts the paddle closer (0.76 against 0.94 columns) yet
-  dies 3.4 times as often. I suspect the paddle's motion at the turn matters as well as its
-  position. That is untested.
+- Paddle motion is measured over the single step before the ball turns down, and the
+  per-motion death counts outside rows 3 and 4 are small.
 - The "bet on the worst case" reading is my interpretation of the measurements, not
   something the network or its author states in those words. What the author did write,
   "anticipate the earliest possible brick bounce", matches the weights exactly.
@@ -162,5 +177,5 @@ I first read as a bug report.
 Every number here comes from scripts and evidence committed in
 [weight-space-lab](https://github.com/ZayneMason/weight-space-lab), under
 `experiments/breakout-anatomy/`: `README.md` (the anatomy), `TARGETS.md`, `HEDGE.md`,
-`CLOSEDLOOP.md`, `ROWSWAP.md` and `DEATHS.md`, each with its evidence file under
+`CLOSEDLOOP.md`, `ROWSWAP.md`, `DEATHS.md` and `MOTION.md`, each with its evidence file under
 `evidence/`. The network and its description belong to Takehi et al.
