@@ -57,7 +57,7 @@ def episode(index, arrays, sticky=0.1, max_steps=10000, under_only=False):
     for step in range(1, max_steps + 1):
         inner = env.env
         arriving = inner.ball_dir in DESCENDING and inner.ball_y == 8
-        ball_x = inner.ball_x
+        ball_x, pos_before, dir_before = inner.ball_x, inner.pos, inner.ball_dir
         x = anatomy.breakout.observation(env.state())
         logits = anatomy.breakout.policy_logits(x, weights)
         p = np.exp(logits.astype(np.float64) - logits.max())
@@ -78,7 +78,11 @@ def episode(index, arrays, sticky=0.1, max_steps=10000, under_only=False):
             kind = catch_type(ball_x, env.env.pos)
             if kind == "corner" and under_only:
                 env.env.ball_dir = UNDER_FROM_CORNER[env.env.ball_dir]
-            current = {"type": kind, "column": int(ball_x), "step": step, "bricks": 0, "top": 9, "died": False}
+            current = {"type": kind, "column": int(ball_x), "step": step, "bricks": 0, "top": 9, "died": False,
+                       # paddle offset from the ball's column on the step before the catch, in the
+                       # ball's direction of travel (+1 = one column ahead), and whether it moved last
+                       "offset_before": int((pos_before - ball_x) * (1 if dir_before == 2 else -1)),
+                       "moved_last": bool(env.env.pos != pos_before)}
     return {"episode": index, "score": score, "steps": step, "died": bool(terminal), "records": out}
 
 
