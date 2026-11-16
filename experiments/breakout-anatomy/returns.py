@@ -94,9 +94,10 @@ def _work(task):
     return episode(*task)
 
 
-def collect(arrays, episodes, sticky, workers, under_only=False):
+def collect(arrays, episodes, sticky, workers, under_only=False, start=0):
     with ProcessPoolExecutor(max_workers=workers) as pool:
-        return list(pool.map(_work, [(i, arrays, sticky, 10000, under_only) for i in range(episodes)], chunksize=2))
+        return list(pool.map(_work, [(i, arrays, sticky, 10000, under_only) for i in range(start, start + episodes)],
+                             chunksize=2))
 
 
 def since_corner(records):
@@ -118,6 +119,7 @@ def summarize(episodes):
     scores = np.array([e["score"] for e in episodes], dtype=np.float64)
     out = {"episodes": len(episodes), "mean_score": float(scores.mean()),
            "score_se": float(scores.std(ddof=1) / np.sqrt(len(scores))) if len(scores) > 1 else None,
+           "scores": scores.astype(int).tolist(),
            "steps": steps, "deaths": deaths, "deaths_per_10k_steps": 1e4 * deaths / steps,
            "steps_per_return": steps / max(len(records), 1),
            "returns": len(records), "bricks_per_return": float(np.mean([r["bricks"] for r in records])),

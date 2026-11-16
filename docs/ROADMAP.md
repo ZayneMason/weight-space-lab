@@ -489,6 +489,26 @@ cover, the author's guesses in rows 3–5, and the out-of-reach cells fixed.
 
 ---
 
+## 19. Does a mix of the author's and the under-column guesses beat both?
+
+*Added November 16 after #18.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/COMBINED.md)).
+> No. None of 24 row mixes beats the author's table; the one that seemed to (+8.5 ± 3.7)
+> came out at +0.9 ± 1.8 on 1,000 fresh episodes. The author's rows 3–5 only work together:
+> as a group they add 88 points to the under table, far more than their single effects.
+
+**Method.** Every single-row swap in both directions plus groups; 200 episodes each, paired by
+seed; the best swap checked on 1,000 held-out episodes.
+
+**Cost.** CPU, about 25 minutes. `experiments/breakout-anatomy/combine.py`.
+
+**Next.** The Breakout series has an account of every gap it found. Candidates: write the
+combined story up as a second post, or test whether the same "accurate about the wrong
+target" problem appears in the other games' hand-written networks.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

@@ -80,11 +80,11 @@ def errors(observations, tables):
     return out
 
 
-def score(weights, episodes, workers, sticky=0.1):
+def score(weights, episodes, workers, sticky=0.1, start=0):
     """Score, deaths, corner share and bricks per return, from #17's catch recorder."""
     if sticky == 0:
         return returns.summarize([returns.episode(0, weights, 0.0)])
-    return returns.summarize(returns.collect(weights, episodes, sticky, workers))
+    return returns.summarize(returns.collect(weights, episodes, sticky, workers, start=start))
 
 
 def main():
