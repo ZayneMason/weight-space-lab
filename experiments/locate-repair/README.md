@@ -112,3 +112,5 @@ queries it finds every visible fault in 25 of 25 width-32 cases.
 two of them, but practice data alone picks all three in only 5 of 25 cases.
 [TRIPLE_QUERIES.md](TRIPLE_QUERIES.md) (roadmap #28) adds targeted examples for three faults: all three
 found rises from 5 to 10 of 25, and the grid fit, not the data, limits the rest.
+[WARM_TRIPLES.md](WARM_TRIPLES.md) (roadmap #29) fits each triple from its last round's values: the true
+triple keeps a perfect fit, and all three faults are found in 12 of 25 cases.
