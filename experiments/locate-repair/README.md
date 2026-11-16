@@ -100,3 +100,5 @@ often fits several pairs perfectly, so even an exhaustive search finds the broke
 about half the time.
 [ACTIVE_QUERIES.md](ACTIVE_QUERIES.md) (roadmap #22) asks the teacher about inputs where the
 candidate pairs disagree: 64 such examples settle most cases that 1,024 random ones could not.
+[PAIR_SCREEN.md](PAIR_SCREEN.md) (roadmap #23) screens all pairs cheaply so the search reaches
+H = 32: a coverage screen ranks the broken pair about nine times better than a Newton screen.
