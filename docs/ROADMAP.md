@@ -726,6 +726,10 @@ before going further.
 
 *Added November 16 after #31.*
 
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/DENSE_SCREEN.md)). A 25-point pair
+> screen finds every visible fault in 23 of 25 random-size cases (13 points: 20). For triples an 11-point
+> grid plus refinement reaches 14 of 25 in the top 40 (#31: 11); the coarse grid remains the limit.
+
 #31 showed that the coarse pair and triple screens rank the true candidates well mainly when the
 bug size sits next to a grid point. Replace each coarse score by the best of two or three grids
 offset by a fraction of a step, or by #29's continuous margin fit started from the coarse optimum,
@@ -733,6 +737,18 @@ and re-run #31's random-size cases. Measure top-40 recall for pairs and triples 
 counts after 64 targeted examples, against #31's 20 (pairs) and 5 (triples), and the extra cost.
 
 **Cost.** CPU, about two to three hours.
+
+## 33. Rank every extended triple by a continuous fit
+
+*Added November 16 after #32.*
+
+#32 left the triple suspect list limited by the coarse grid: in 8 of 25 random-size cases the true
+triple ranked below 1,000 on an 11³ grid, so refinement never saw it. Skip the grid and give every
+extended triple (about 10,000 per case) #29's margin fit, started from the current values and from a
+few coarse points. Measure top-40 recall on #31's random-size cases against #32's 14, then run #29's
+targeted examples on the new list for all-three and visible-found counts.
+
+**Cost.** CPU, about three hours.
 
 ## Posts the current results already support
 

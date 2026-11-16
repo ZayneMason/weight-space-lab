@@ -8,6 +8,33 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #32: denser screens for bugs of any size
+
+Full write-up: [experiments/locate-repair/DENSE_SCREEN.md](../experiments/locate-repair/DENSE_SCREEN.md).
+Branch `claude/offset-screen`, stacked on `claude/random-sizes`.
+
+### Setup
+
+- **Question.** Does a denser grid make #26's pair screen and #27's triple ranking independent of
+  the bug size?
+- **Design.** #31's random-size cases. Pairs: a 25 × 25 joint screen. Triples: 25-point pairs, then
+  coarse 7³, coarse 11³, and the coarse-11 top 1,000 refined.
+- **Code.** `experiments/locate-repair/dense_screen.py` (and `random_sizes.py --points`), 2 tests.
+
+### Results (measured)
+
+1. Pairs after 64 targeted examples, every visible fault found: 23 of 25 (13 points: 20), at about
+   45% more time per case.
+2. Triples in the top 40: coarse 11 8 (coarse 7: 5), refined 14 (#31: 11). In 8 cases the true
+   triple ranks below 1,000 on the 11-point grid.
+
+### Interpretation
+
+- *Inference:* 23 of 25 is the honest two-fault number. For three faults the coarse grid is the
+  bottleneck; roadmap #33 replaces it with a continuous fit of every extended triple.
+
+---
+
 ## 2026-11-16 — Roadmap #31: the screens were tuned to the bug size
 
 Full write-up: [experiments/locate-repair/RANDOM_SIZES.md](../experiments/locate-repair/RANDOM_SIZES.md).
