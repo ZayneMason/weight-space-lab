@@ -177,8 +177,9 @@ into bricks.
 ## Accurate about the wrong column
 
 The second job turned out not to need the bet at all. MinAtar's paddle saves a falling ball
-in two places: under the column the ball is in, which sends it back up the way it came, or
-under the column it is about to enter, a corner catch, which reverses it. My accurate table
+in two places: under the column the ball is in, which bounces it back up still moving the
+same way sideways, or under the column it is about to enter, a corner catch, which also
+reverses its sideways direction. My accurate table
 was fitted to whichever of the two was nearer, so it counted a corner catch as a hit.
 
 That was the brick problem. Without sticky actions the two tables move the ball identically
