@@ -675,6 +675,11 @@ which should keep more true triples in the top 40.
 
 *Added November 16 after #28.*
 
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/WARM_TRIPLES.md)).
+> With a warm-started continuous fit, the true triple fits every label in 16 of the 17 cases
+> where it is a candidate, and all three faults are found in 12 of 25 (#28: 10). Candidate recall
+> (8 cases) and 3 real ties are what is left.
+
 #28's examples land where candidate repairs disagree, and there the fine grid fit of three values
 falls short, so the true triple loses to look-alikes. Re-run #28 with each round's fit started from
 the previous round's best values (local grids and coordinate passes around them, plus the full fit
@@ -682,6 +687,17 @@ as a fallback), so a triple that fit perfectly keeps fitting. Measure how often 
 fit stays at 100%, and all-three and visible-found counts against #28.
 
 **Cost.** CPU, about an hour.
+
+## 30. More candidates and more examples for three faults
+
+*Added November 16 after #29.*
+
+#29 leaves 8 of 25 cases without the true triple among the 40 candidates and 3 cases still tied
+after 64 examples. Re-run #29 with (a) a 9-point coarse grid and the best 100 triples as
+candidates, and (b) 16 rounds (128 examples). Measure candidate recall, all-three and
+visible-found counts against #29, and whether the ties settle.
+
+**Cost.** CPU, about two to three hours.
 
 ## Posts the current results already support
 

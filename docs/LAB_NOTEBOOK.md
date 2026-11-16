@@ -8,6 +8,34 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #29: a fitter that keeps the true triple perfect
+
+Full write-up: [experiments/locate-repair/WARM_TRIPLES.md](../experiments/locate-repair/WARM_TRIPLES.md).
+Branch `claude/warm-triples`, stacked on `claude/triple-queries`.
+
+### Setup
+
+- **Question.** If each triple's fit starts from its previous round's values and is refined
+  continuously, does #28's true triple keep a perfect fit, and do more cases get found?
+- **Design.** #28 unchanged except the fit: best of #27's fine grid fit, a warm-started local fit,
+  and Nelder–Mead on a hinge loss of the output margin. The told triple is fitted every round too.
+- **Code.** `experiments/locate-repair/warm_triples.py` with 3 tests.
+
+### Results (measured)
+
+1. After 64 examples the true triple fits every label in 16 of the 17 cases where it is a
+   candidate (#28: in 15 of 17 no candidate did). The told fit fits every label in 22 of 25.
+2. All three found: 12 of 25 (#28: 10). Visible faults found: 15 (#28: 13). Pass: 23 (#28: 22).
+3. Remaining misses: 8 cases without the true triple among the candidates, and 3 real ties
+   (seeds 4, 11, 20) where both triples fit all 1,088 labels.
+
+### Interpretation
+
+- *Inference:* the fit is no longer the main limit. Candidate recall is, as it was for pairs
+  before #26's joint screen. Next: roadmap #30.
+
+---
+
 ## 2026-11-16 — Roadmap #28: targeted examples for three broken weights
 
 Full write-up: [experiments/locate-repair/TRIPLE_QUERIES.md](../experiments/locate-repair/TRIPLE_QUERIES.md).
