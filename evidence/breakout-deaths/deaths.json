@@ -1,0 +1,83 @@
+{
+ "schema": "weight-space-breakout-deaths-v1",
+ "source_checkpoint_sha256": "6e8d42658aed3704c7bf6fb67015e9468cc03f1d67cb8a4fd192e6534fcccb4a",
+ "episodes": 300,
+ "tables": {
+  "published": {
+   "flights": 173658,
+   "deaths": 155,
+   "by_turn_row": {
+    "0": {
+     "flights": 33104,
+     "deaths": 2,
+     "deaths_per_1000": 0.06041565973900435,
+     "mean_distance": 1.8389318511358144,
+     "mean_slack": 8.377899951667473,
+     "no_slack_share": 0.0
+    },
+    "2": {
+     "flights": 40972,
+     "deaths": 13,
+     "deaths_per_1000": 0.31728985648735725,
+     "mean_distance": 1.069071561066094,
+     "mean_slack": 5.930928438933906,
+     "no_slack_share": 2.4406912037489015e-05
+    },
+    "3": {
+     "flights": 49096,
+     "deaths": 32,
+     "deaths_per_1000": 0.6517842594101353,
+     "mean_distance": 0.9403210037477595,
+     "mean_slack": 5.059678996252241,
+     "no_slack_share": 2.0368258106566727e-05
+    },
+    "4": {
+     "flights": 50486,
+     "deaths": 108,
+     "deaths_per_1000": 2.139206908846017,
+     "mean_distance": 0.9937408390444876,
+     "mean_slack": 4.006259160955512,
+     "no_slack_share": 0.01586578457394129
+    }
+   }
+  },
+  "accurate": {
+   "flights": 121249,
+   "deaths": 240,
+   "by_turn_row": {
+    "0": {
+     "flights": 42415,
+     "deaths": 1,
+     "deaths_per_1000": 0.023576564894494872,
+     "mean_distance": 1.144972297536249,
+     "mean_slack": 8.960579983496405,
+     "no_slack_share": 0.0
+    },
+    "2": {
+     "flights": 20224,
+     "deaths": 12,
+     "deaths_per_1000": 0.5933544303797469,
+     "mean_distance": 0.43428599683544306,
+     "mean_slack": 6.565714003164557,
+     "no_slack_share": 0.0
+    },
+    "3": {
+     "flights": 28630,
+     "deaths": 64,
+     "deaths_per_1000": 2.2354173943416,
+     "mean_distance": 0.7614041215508208,
+     "mean_slack": 5.238595878449179,
+     "no_slack_share": 3.4928396786587495e-05
+    },
+    "4": {
+     "flights": 29980,
+     "deaths": 163,
+     "deaths_per_1000": 5.436957971981321,
+     "mean_distance": 1.5242494996664442,
+     "mean_slack": 3.4757505003335556,
+     "no_slack_share": 0.011774516344229486
+    }
+   }
+  }
+ }
+}

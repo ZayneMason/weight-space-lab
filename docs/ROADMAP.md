@@ -373,6 +373,23 @@ where the ball last ascended and how many steps it had left.
 
 ---
 
+## 13. What kills the accurate table?
+
+*Added November 16 after #12.*
+
+> **Status, November 16: done** ([write-up](../experiments/breakout-anatomy/DEATHS.md)).
+> About 70% of deaths follow a bounce off the bottom row of the wall. On those flights the
+> accurate table starts half a column further from the catch and dies 2.5 times as often.
+
+**Method.** Trace every falling flight (turn-down row, steps left, paddle distance, death)
+under the published and accurate tables; 300 episodes each.
+
+**Cost.** CPU, about 15 minutes. `experiments/breakout-anatomy/deaths.py`.
+
+**Next.** Record paddle velocity at the turn to explain the row-3 result.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

@@ -8,6 +8,33 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #13: what kills the accurate Breakout table
+
+Full write-up: [experiments/breakout-anatomy/DEATHS.md](../experiments/breakout-anatomy/DEATHS.md).
+Branch `claude/breakout-deaths`, stacked on `claude/breakout-rowswap`.
+
+### Setup
+
+- **Question.** Do the deaths #12 attributes to rows 3–5 really come from the shortest flights?
+- **Design.** Trace every falling flight in 300 episodes under the published and the accurate
+  table: turn-down row, steps left, paddle distance to the catch, death.
+- **Code.** `experiments/breakout-anatomy/deaths.py` with 1 test.
+
+### Results (measured)
+
+1. About 70% of deaths under both tables follow a bounce off the bottom row of the wall (row 4
+   turn, about 5 steps left); ceiling bounces almost never kill (3 in 75,519 flights).
+2. On those flights the accurate table starts 1.52 columns away against 0.99, and dies 5.44
+   against 2.14 times per 1,000.
+3. At row 3 the accurate table starts closer (0.76 against 0.94) yet dies 3.4 times as often.
+
+### Interpretation
+
+- #12's mechanism is confirmed for the shortest flight. *Inference:* paddle motion at the turn
+  matters too, which position alone does not capture.
+
+---
+
 ## 2026-11-16 — Roadmap #12: where the author's Breakout guesses win
 
 Full write-up: [experiments/breakout-anatomy/ROWSWAP.md](../experiments/breakout-anatomy/ROWSWAP.md).
