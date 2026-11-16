@@ -314,6 +314,27 @@ gap is a distribution-shift effect.
 
 ---
 
+## 10. How many examples does it take to find the broken weight?
+
+*Added November 16 after #7.*
+
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/PRACTICE.md)).
+> From 32 to 1,024 practice examples, the not-told editor's pass rate rises to 85–92% and
+> its repairs become near-complete, but at 642 parameters it edits the corrupted entry
+> only 34% of the time, and most passes still change another entry.
+
+**Hypothesis.** #7's localization collapse is a data shortage: with enough practice
+examples, only the corrupted entry admits a practice-perfect edit.
+
+**Method.** Keep each #7 case's corruption and held-out test fixed; grow practice from
+16 to 512 examples per stratum; rerun the min-change editor.
+
+**Cost.** CPU, about 40 minutes. `experiments/locate-repair/practice_size.py`.
+
+**Next.** Corruptions no other single entry can absorb, to make localization well posed.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

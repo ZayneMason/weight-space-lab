@@ -8,6 +8,39 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #10: how many examples it takes to find the broken weight
+
+Full write-up: [experiments/locate-repair/PRACTICE.md](../experiments/locate-repair/PRACTICE.md).
+Branch `claude/practice-size`, stacked on `claude/breakout-hedge`.
+
+### Setup
+
+- **Question.** #7's not-told editor rarely finds the corrupted entry. Is that a shortage of
+  practice data?
+- **Design.** #7's cases at H = 8, 32, 128 (50 seeds each, 141 kept), practice sets of 32 to
+  1,024 examples with the held-out test fixed, min-change editor on a 1e-2 value grid.
+- **Code.** `experiments/locate-repair/practice_size.py` with 2 tests.
+
+### Results (measured)
+
+1. Passing rises from 47–50% to 85–92% as practice grows from 32 to 1,024 examples.
+2. Editing the corrupted entry at 642 parameters rises only from 2% to 34%; 25 of 40 passes
+   there still edit a different entry.
+3. Median damage undone rises from 73–88% to 97–100%; entries with a practice-perfect edit
+   fall from 130 to 5 at H = 128.
+
+### Interpretation
+
+- With enough data, wrong-entry passes are near-complete repairs. *Inference:* several
+  entries can stand in for the broken one almost everywhere, so localization has no
+  behavioural answer in many cases.
+
+### Post angle
+
+"More data fixes the repair, not the diagnosis." Follow-up to #7's post.
+
+---
+
 ## 2026-11-16 — Roadmap #9: why the author's rough guesses win
 
 Full write-up: [experiments/breakout-anatomy/HEDGE.md](../experiments/breakout-anatomy/HEDGE.md).
