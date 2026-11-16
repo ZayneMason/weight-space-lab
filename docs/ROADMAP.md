@@ -509,6 +509,26 @@ repair experiments.
 
 ---
 
+## 20. Can repairs find two broken weights at once?
+
+*Added November 16 after #14.*
+
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/TWO_FAULTS.md)).
+> One edit passes 10% of cases. Two greedy edits pass 30% at H = 8 and 56% at H = 32, but at
+> H = 32 three in four passing repairs touch neither broken entry. Told the entries, a joint
+> search over both values passes 96%; fitting them one at a time stalls at 64–80%.
+
+**Method.** #7's cases with a second corrupted entry in another hidden unit; 1,024 practice
+examples; H = 8 and 32, 50 seeds each; untold and told repairs, one-at-a-time and joint.
+
+**Cost.** CPU, about 10 minutes. `experiments/locate-repair/two_faults.py`.
+
+**Next.** Score localization in the benchmark itself (up to the mirror), and try a search
+that ranks pairs of entries rather than one entry at a time, to see whether finding the
+pair is possible from practice data at all.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

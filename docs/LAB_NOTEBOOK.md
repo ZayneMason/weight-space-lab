@@ -8,6 +8,37 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #20: two broken weights
+
+Full write-up: [experiments/locate-repair/TWO_FAULTS.md](../experiments/locate-repair/TWO_FAULTS.md).
+Branch `claude/two-faults`, stacked on `claude/combined`.
+
+### Setup
+
+- **Question.** With two corrupted entries in different hidden units, does the benchmark
+  still pass repairs that miss the faults, and is the gap finding the entries or fitting them?
+- **Design.** #7's cases plus a second corrupted entry; H = 8 and 32, 50 seeds each; 1,024
+  practice examples. Repairs: one min-change edit, two greedy edits, a joint 200 × 200 re-fit
+  of the chosen pair, and the same with the true entries given.
+- **Code.** `experiments/locate-repair/two_faults.py` with 2 tests.
+
+### Results (measured)
+
+1. One edit passes 10% of cases at both widths (one fault: 85–92% in #10).
+2. Two greedy edits pass 30% (H = 8) and 56% (H = 32). At H = 32, 21 of the 28 passing
+   repairs touch neither broken entry, and still undo a median 90% of the damage.
+3. Told the two entries and searching both values together: 96% at both widths. A joint
+   re-fit of the untold repair's own pair: 30% and 46%.
+4. Re-fitting the true entries one at a time: 80% (H = 8) and 64% (H = 32).
+
+### Interpretation
+
+- *Inference:* finding the entries is the gap. Passing the benchmark at H = 32 is weak
+  evidence that a repair found the bug, because many other pairs reshape the small damaged
+  region (median 4.6% of the input space).
+
+---
+
 ## 2026-11-16 — Roadmap #19: mixing the author's guesses with the under-column table
 
 Full write-up: [experiments/breakout-anatomy/COMBINED.md](../experiments/breakout-anatomy/COMBINED.md).

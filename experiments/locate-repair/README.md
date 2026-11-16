@@ -93,3 +93,5 @@ Follow-up: [PRACTICE.md](PRACTICE.md) (roadmap #10) grows the practice set from 
 1,024 examples.
 [SUBSTITUTES.md](SUBSTITUTES.md) (roadmap #14) asks which entries stand in for the
 broken one: an exact output-logit mirror, or units that point the same way.
+[TWO_FAULTS.md](TWO_FAULTS.md) (roadmap #20) breaks two entries at once: passing repairs at
+H = 32 mostly touch neither, and only a told joint search reliably fixes both.
