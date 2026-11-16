@@ -104,3 +104,5 @@ candidate pairs disagree: 64 such examples settle most cases that 1,024 random o
 H = 32: a coverage screen ranks the broken pair about nine times better than a Newton screen.
 [ACTIVE_SCREEN.md](ACTIVE_SCREEN.md) (roadmap #24) runs the targeted queries at H = 32 on
 screened candidates: they find the broken pair in 12 of the 13 cases whose candidates include it.
+[CANDIDATE_RECALL.md](CANDIDATE_RECALL.md) (roadmap #25) keeps more candidates: the broken pair is found in
+18 of 25 width-32 cases, and every visible fault in 21.

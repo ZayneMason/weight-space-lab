@@ -8,6 +8,37 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #25: getting the broken pair onto the suspect list
+
+Full write-up: [experiments/locate-repair/CANDIDATE_RECALL.md](../experiments/locate-repair/CANDIDATE_RECALL.md).
+Branch `claude/candidate-recall`, stacked on `claude/active-screen`.
+
+### Setup
+
+- **Question.** #24's targeted queries find the broken pair whenever it is a candidate. Which
+  candidate rule keeps it most often, and how far does that take localization at H = 32?
+- **Design.** Coarse fits on the coverage screen's top 3,000 pairs; candidate rules compared
+  offline; then #22's targeted queries on 100 candidates per case (fit 3,000, smallest change).
+  25 cases. Faults that change no practice label alone are marked silent.
+- **Code.** `experiments/locate-repair/candidate_recall.py` with 5 tests.
+
+### Results (measured)
+
+1. Keeping 100 candidates from the top 3,000 raises recall from 13 to 18 of 25; keeping 200
+   adds nothing.
+2. After 64 targeted queries the broken pair wins in all 18 of those cases (#24: 12 of 25
+   overall), and the benchmark passes 24 of 25.
+3. Four cases have a silent fault (no practice label changes); the winner finds the visible
+   fault in all four. Every visible fault is found in 21 of 25 cases. The 4 misses ranked past
+   3,000 in the screen.
+
+### Interpretation
+
+- *Inference:* with targeted labels, locating two visible faults at H = 32 now fails only where
+  the screen ranks them too low. A localization score should ignore silent faults.
+
+---
+
 ## 2026-11-16 — Roadmap #24: targeted examples on a wider network
 
 Full write-up: [experiments/locate-repair/ACTIVE_SCREEN.md](../experiments/locate-repair/ACTIVE_SCREEN.md).
