@@ -549,6 +549,25 @@ teacher) and test whether a few dozen of them single out the broken pair.
 
 ---
 
+## 22. Can a few targeted examples single out two broken weights?
+
+*Added November 16 after #21.*
+
+> **Status, November 16: done** ([write-up](../experiments/locate-repair/ACTIVE_QUERIES.md)).
+> Mostly. 64 teacher-labelled examples, chosen where the candidate pairs disagree, raise the
+> broken pair's win rate at H = 8 from 14 to 20 of 25 cases; 64 random ones change nothing.
+> What stays tied is the exact output-layer mirror symmetry.
+
+**Method.** #21's 20 candidate pairs per case; eight rounds of 8 targeted or random queries;
+every candidate re-fitted each round; H = 8, 25 cases.
+
+**Cost.** CPU, about 30 minutes. `experiments/locate-repair/active_queries.py`.
+
+**Next.** Make candidate finding scale (pairs at H = 32 need a cheaper search than all
+13,041 pairs), or turn queries into a localization score for the benchmark itself.
+
+---
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

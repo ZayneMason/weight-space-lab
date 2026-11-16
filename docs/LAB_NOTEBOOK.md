@@ -8,6 +8,35 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-16 — Roadmap #22: asking where the suspects disagree
+
+Full write-up: [experiments/locate-repair/ACTIVE_QUERIES.md](../experiments/locate-repair/ACTIVE_QUERIES.md).
+Branch `claude/active-queries`, stacked on `claude/pair-search`.
+
+### Setup
+
+- **Question.** Can a few teacher-labelled examples, chosen where #21's candidate pairs
+  disagree, single out the two broken entries?
+- **Design.** H = 8, 25 cases; #21's 20 candidate pairs per case; eight rounds of 8 targeted
+  (most-disagreed) or 8 random queries, re-fitting every candidate each round.
+- **Code.** `experiments/locate-repair/active_queries.py` with 2 tests.
+
+### Results (measured)
+
+1. After 64 targeted queries the broken pair wins in 20 of 25 cases, up from 14; 64 random
+   queries leave it at 14. Every case passes the benchmark.
+2. In 4 of the 5 misses the broken pair was not among the 20 candidates.
+3. The ties left after 64 queries are exactly the mirror symmetry: 2 to the power of the
+   number of output-layer faults.
+
+### Interpretation
+
+- *Inference:* #21's ambiguity comes from sampling, not from the network, apart from the
+  mirror symmetry. A benchmark that can query the original model could score localization
+  as well as repair.
+
+---
+
 ## 2026-11-16 — Roadmap #21: searching pairs of weights for two faults
 
 Full write-up: [experiments/locate-repair/PAIR_SEARCH.md](../experiments/locate-repair/PAIR_SEARCH.md).
