@@ -45,7 +45,8 @@ def told_start(case, x, y, triple):
     return ct.best_of(*ct.continuous_fits(case, x, y, triple, t3.fit_triple(case, x, y, triple, 7)))
 
 
-def run(case, members, fits, silent, probe):
+def run(case, members, fits, silent, probe, chooser=None):
+    """``chooser(case, fits, edits, pool, rng)`` returns (picked, info); the default is #39's switch rule."""
     width, faults = case["width"], case["faults"]
     told_triple = tuple(tuple(f[:2]) for f in faults)
     px, py, _ = lr.split(case["practice"])
@@ -72,7 +73,11 @@ def run(case, members, fits, silent, probe):
         if round_ == aq.ROUNDS:
             break
         pool = rng.uniform(-2, 2, size=(aq.POOL, 2))
-        picked, history[-1]["value_queries"] = ss.choose(case, fits, edits, pool, rng, "switch")
+        if chooser is None:
+            picked, history[-1]["value_queries"] = ss.choose(case, fits, edits, pool, rng, "switch")
+        else:
+            picked, info = chooser(case, fits, edits, pool, rng)
+            history[-1].update(info)
         x = np.concatenate([x, pool[picked]])
         y = np.concatenate([y, tf.predict(case["teacher"], pool[picked])])
     return history
