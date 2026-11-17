@@ -773,6 +773,10 @@ all-three and visible-found counts against #29 and the cost of the larger commit
 
 *Added November 16 after #34.*
 
+> **Status, November 17: done** ([write-up](../experiments/locate-repair/BOUNDARY_QUERIES.md)). A pool near the
+> tied members' boundaries ends at 17 of 25 all three and 19 every visible fault, against 16 and 19. It trails
+> until the last rounds, fixes two cases and loses two; seeds 10 and 15 keep the same ties.
+
 #34 ended 3 of 25 three-fault cases on a lookalike that tied the true triple on every label after 64
 examples, and #22 found the same late-round problem for pairs: no uniform input among 20,000 split
 the committee. Draw the query pool near the members' decision boundaries (for instance, by bisecting
@@ -780,6 +784,19 @@ between inputs that two tied members label differently) and re-run #34's last ro
 cases, then all 25. Measure ties left and all-three counts against #34's 16.
 
 **Cost.** CPU, about one to two hours.
+
+## 36. Are the last lookalikes wrong at all?
+
+*Added November 17 after #35.*
+
+Seeds 10 and 15 end on the same two- and three-way ties under both query pools. For each case, save
+the final fits of every tied member and measure how often each disagrees with the teacher on a
+million uniform inputs, against the true triple's fit. If the lookalikes disagree with the teacher
+no more than the true triple's fit does, they are equivalent repairs, and the benchmark should score
+repairs by disagreement rate as well as by entries. Also try a mixed pool (half uniform, half
+boundary), since the uniform pool led early and the boundary pool late.
+
+**Cost.** CPU, about two hours.
 
 ## Posts the current results already support
 

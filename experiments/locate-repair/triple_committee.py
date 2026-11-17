@@ -35,6 +35,20 @@ rs, tr, t3, js, sc, lr, wt, ds = ct.rs, ct.tr, ct.t3, ct.js, ct.sc, ct.lr, ct.wt
 tf, cr, aq = rs.tf, rs.cr, rs.aq
 
 COMMITTEE = 200
+DRAW, CAP = 10, 20
+
+
+def boundary_pool(case, fits, rng, size=None, draw=DRAW, cap=CAP):
+    """Roadmap #35: of ``draw`` x ``size`` uniform inputs, the ``size`` nearest any decision boundary
+    of the (at most ``cap``) members within the query margin of the best accuracy."""
+    size = size or aq.POOL
+    candidates = rng.uniform(-2, 2, size=(draw * size, 2))
+    best = max(score[0] for score, _ in fits.values())
+    tied = [(t, edits) for t, (score, edits) in fits.items() if score[0] >= best - aq.MARGIN][:cap]
+    ones = np.ones(len(candidates))
+    closeness = np.min([np.abs(wt.signed_margins(case, t, [v for _, _, v in edits], candidates, ones))
+                        for t, edits in tied], axis=0)
+    return candidates[np.argsort(closeness)[:size]]
 
 
 def committee(case, px, py, size=COMMITTEE):
@@ -60,7 +74,7 @@ def refit(case, x, y, triple, previous):
     return ct.best_of(last, here)
 
 
-def run(case, members, fits, silent):
+def run(case, members, fits, silent, pool_mode="uniform"):
     width, faults = case["width"], case["faults"]
     told_triple = tuple(tuple(f[:2]) for f in faults)
     px, py, _ = lr.split(case["practice"])
@@ -86,20 +100,20 @@ def run(case, members, fits, silent):
                             told_accuracy=told[0][0], winner=[list(e) for e in winner]))
         if round_ == aq.ROUNDS:
             break
-        pool = rng.uniform(-2, 2, size=(aq.POOL, 2))
+        pool = rng.uniform(-2, 2, size=(aq.POOL, 2)) if pool_mode == "uniform" else boundary_pool(case, fits, rng)
         picked, history[-1]["split_of_queries"] = aq.choose_queries(case, fits, pool, rng, "targeted")
         x = np.concatenate([x, picked])
         y = np.concatenate([y, tf.predict(case["teacher"], picked)])
     return history
 
 
-def analyse(case, size=COMMITTEE):
+def analyse(case, size=COMMITTEE, pool_mode="uniform"):
     px, py, _ = lr.split(case["practice"])
     start = time.time()
     members, fits, count = committee(case, px, py, size)
     built = time.time() - start
     silent = cr.silent_faults(case)
-    history = run(case, members, fits, silent)
+    history = run(case, members, fits, silent, pool_mode)
     return {"width": case["width"], "seed": case["seed"], "faults": case["faults"], "sizes": case["sizes"],
             "silent_faults": silent, "triples": count,
             "committee_has_true_triple": any(len(t3.hits(t, case["faults"], case["width"])) == 3 for t in members),
@@ -128,6 +142,8 @@ def main():
     parser.add_argument("--seeds", type=int, default=25)
     parser.add_argument("--seed-start", type=int, default=0)
     parser.add_argument("--committee", type=int, default=COMMITTEE)
+    parser.add_argument("--pool", choices=("uniform", "boundary"), default="uniform",
+                        help="where each round's candidate inputs come from (boundary: roadmap #35)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -141,11 +157,11 @@ def main():
             case = rs.resize(base) if base is not None else None
             if case is None:
                 continue
-            rows.append(analyse(case, args.committee))
+            rows.append(analyse(case, args.committee, args.pool))
             last = rows[-1]["targeted"][-1]
             print(seed, rows[-1]["committee_has_true_triple"], last["faults_found"], last["found_visible"],
                   last["success"], last["practice_accuracy"], last["tied_best"], rows[-1]["seconds"], flush=True)
-    report = {"schema": "weight-space-triple-committee-v1", "committee": args.committee, "sizes": [rs.LOW, rs.HIGH],
+    report = {"schema": "weight-space-triple-committee-v1", "committee": args.committee, "pool_mode": args.pool, "sizes": [rs.LOW, rs.HIGH],
               "pool": aq.POOL, "rounds": aq.ROUNDS, "per_round": aq.PER_ROUND, "summary": summarize(rows), "cases": rows}
     (args.output / "triple-committee.json").write_text(json.dumps(report, indent=1) + "\n")
     print(json.dumps(report["summary"]["targeted"][-1]))

@@ -35,6 +35,19 @@ class TripleCommitteeTests(unittest.TestCase):
         start = tc.wt.score(case, px, py, triple, tc.ct.current_values(case, triple))
         self.assertGreaterEqual(tc.refit(case, px, py, triple, start)[0][0], start[0][0])
 
+    def test_boundary_pool_keeps_the_candidates_nearest_a_boundary(self):
+        case = tc.rs.resize(tc.t3.corrupt(8, 0))
+        px, py, _ = tc.lr.split(case["practice"])
+        triple = tuple(tuple(f[:2]) for f in case["faults"])
+        fits = {triple: tc.wt.score(case, px, py, triple, tc.ct.current_values(case, triple))}
+        picked = tc.boundary_pool(case, fits, tc.np.random.default_rng(5), size=40, draw=5)
+        candidates = tc.np.random.default_rng(5).uniform(-2, 2, size=(200, 2))
+        values = [v for _, _, v in fits[triple][1]]
+        near = lambda x: tc.np.abs(tc.wt.signed_margins(case, triple, values, x, tc.np.ones(len(x))))
+        self.assertEqual(picked.shape, (40, 2))
+        self.assertTrue(all(any((c == p).all() for c in candidates) for p in picked))
+        self.assertLessEqual(near(picked).max(), tc.np.sort(near(candidates))[40] + 1e-12)
+
 
 if __name__ == "__main__":
     unittest.main()
