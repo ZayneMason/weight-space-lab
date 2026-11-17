@@ -74,7 +74,17 @@ def refit(case, x, y, triple, previous):
     return ct.best_of(last, here)
 
 
-def run(case, members, fits, silent, pool_mode="uniform"):
+def query_pool(case, fits, rng, pool_mode):
+    """Uniform (#34), boundary (#35), or mixed: half of each (#36)."""
+    if pool_mode == "uniform":
+        return rng.uniform(-2, 2, size=(aq.POOL, 2))
+    if pool_mode == "boundary":
+        return boundary_pool(case, fits, rng)
+    half = aq.POOL // 2
+    return np.concatenate([rng.uniform(-2, 2, size=(half, 2)), boundary_pool(case, fits, rng, size=aq.POOL - half)])
+
+
+def run(case, members, fits, silent, pool_mode="uniform", return_fits=False):
     width, faults = case["width"], case["faults"]
     told_triple = tuple(tuple(f[:2]) for f in faults)
     px, py, _ = lr.split(case["practice"])
@@ -100,11 +110,11 @@ def run(case, members, fits, silent, pool_mode="uniform"):
                             told_accuracy=told[0][0], winner=[list(e) for e in winner]))
         if round_ == aq.ROUNDS:
             break
-        pool = rng.uniform(-2, 2, size=(aq.POOL, 2)) if pool_mode == "uniform" else boundary_pool(case, fits, rng)
+        pool = query_pool(case, fits, rng, pool_mode)
         picked, history[-1]["split_of_queries"] = aq.choose_queries(case, fits, pool, rng, "targeted")
         x = np.concatenate([x, picked])
         y = np.concatenate([y, tf.predict(case["teacher"], picked)])
-    return history
+    return (history, fits, told) if return_fits else history
 
 
 def analyse(case, size=COMMITTEE, pool_mode="uniform"):
@@ -142,7 +152,7 @@ def main():
     parser.add_argument("--seeds", type=int, default=25)
     parser.add_argument("--seed-start", type=int, default=0)
     parser.add_argument("--committee", type=int, default=COMMITTEE)
-    parser.add_argument("--pool", choices=("uniform", "boundary"), default="uniform",
+    parser.add_argument("--pool", choices=("uniform", "boundary", "mixed"), default="uniform",
                         help="where each round's candidate inputs come from (boundary: roadmap #35)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
