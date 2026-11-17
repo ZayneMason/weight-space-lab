@@ -8,6 +8,33 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #41: the switch rule for three broken weights
+
+Full write-up: [experiments/locate-repair/SWITCH_TRIPLES.md](../experiments/locate-repair/SWITCH_TRIPLES.md).
+Branch `claude/triple-switch`, stacked on `claude/triple-values`.
+
+### Setup
+
+- **Question.** Does #39's switch rule (committee splits while any exist, value queries after) keep #40's
+  behaviour gain for three faults without its visible-fault loss?
+- **Design.** #40's 25 three-fault cases, all 8 labels per round chosen by the switch rule, plus the true
+  triple fitted two ways as a reference.
+- **Code.** `experiments/locate-repair/switch_triples.py` with 2 tests.
+
+### Results (measured)
+
+1. Negative: the committee keeps splitting. 16 of 25 cases never switch; only 101 of 1,600 labels are value queries.
+2. Final counts are #37's exactly: 22 under 0.1%, 16 under 0.01%, 19 every visible fault, 16 exact.
+3. Against #37, 4 cases end closer, 1 further, 20 unchanged. Seeds 17 and 20 never switch and stay above 0.1%.
+4. Both told fits end at 23 and 18; seed 2's told fit did not stick this time.
+
+### Interpretation
+
+- *Inference:* three-fault committees keep lookalikes that still differ on a few pool inputs, so "no split
+  left" is too strict a trigger. A trigger at the 0.1% behaviour line is roadmap #42.
+
+---
+
 ## 2026-11-17 — Roadmap #40: value queries for three broken weights
 
 Full write-up: [experiments/locate-repair/TRIPLE_VALUES.md](../experiments/locate-repair/TRIPLE_VALUES.md).

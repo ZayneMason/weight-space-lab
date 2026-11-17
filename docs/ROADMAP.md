@@ -884,6 +884,23 @@ as it did in seed 2.
 
 **Cost.** CPU, about three hours.
 
+**Status (November 17, done, negative):** [SWITCH_TRIPLES.md](../experiments/locate-repair/SWITCH_TRIPLES.md).
+The three-fault committee almost never runs out of splits: 16 of 25 cases never switch and only 101 of 1,600
+labels are value queries, so the result is #37's to the case (22 and 16 under 0.1% and 0.01%, 19 every visible
+fault). Seeds 17 and 20, the two #40 fixed, never switch. The true triple fitted afresh gives the same reference
+(23 and 18) as the chained fit.
+
+## 42. Switch at the behaviour line for three broken weights
+
+*Added November 17 after #41.*
+
+#41's trigger waits until no pool input splits the committee, which three-fault committees almost never
+reach. Switch instead once fewer than 0.1% of the pool (20 of 20,000 inputs) split it, the same line the
+repairs are scored on, and compare with #37 (22, 16, 19 every visible fault) and #40 (24, 19, 17). Record
+the number of splitting inputs every round, so the trigger can be re-read at other lines without rerunning.
+
+**Cost.** CPU, about two hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
