@@ -65,7 +65,7 @@ def resize(case, low=LOW, high=HIGH, max_tries=50):
     return None
 
 
-def pair_case(case, points=js.POINTS):
+def pair_case(case, points=js.POINTS, probe=None):
     px, py, _ = lr.split(case["practice"])
     start = time.time()
     pairs = sc.ranked_pairs(case["arrays"], px, py)
@@ -73,7 +73,7 @@ def pair_case(case, points=js.POINTS):
     true = [k for k, p in enumerate(pairs) if ps.found(p, case["faults"], case["width"]) == 2]
     pool = [pairs[k] for k in order[:js.KEEP]]
     silent = cr.silent_faults(case)
-    history = aq.run(case, pool, "targeted")
+    history = aq.run(case, pool, "targeted", probe)
     for step in history:
         step["found_visible"] = cr.found_visible(step["winner"], case["faults"], case["width"], silent)
     return {"width": case["width"], "seed": case["seed"], "faults": case["faults"], "sizes": case["sizes"],

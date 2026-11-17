@@ -49,7 +49,13 @@ def choose_queries(case, fits, pool, rng, mode):
     return pool[order[:PER_ROUND]], float(split[order[:PER_ROUND]].mean())
 
 
-def run(case, candidates, mode):
+def disagreement(case, edits, probe):
+    """Share of ``probe`` = (inputs, teacher labels) where the edited network disagrees (roadmap #37)."""
+    x, labels = probe
+    return float((tf.predict(tf.apply(case["arrays"], edits), x) != labels).mean())
+
+
+def run(case, candidates, mode, probe=None):
     width, faults = case["width"], case["faults"]
     px, py, _ = lr.split(case["practice"])
     fx, fy, frepair = lr.split(case["heldout"])
@@ -65,6 +71,8 @@ def run(case, candidates, mode):
                             queries=len(x) - len(px), faults_found=ps.found(winner, faults, width),
                             practice_accuracy=score[0], tied_best=sum(s[0] == score[0] for s, _ in fits.values()),
                             winner=[list(e) for e in winner]))
+        if probe is not None:
+            history[-1]["disagreement"] = disagreement(case, edits, probe)
         if round_ == ROUNDS:
             break
         pool = rng.uniform(-2, 2, size=(POOL, 2))

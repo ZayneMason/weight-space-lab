@@ -84,7 +84,7 @@ def query_pool(case, fits, rng, pool_mode):
     return np.concatenate([rng.uniform(-2, 2, size=(half, 2)), boundary_pool(case, fits, rng, size=aq.POOL - half)])
 
 
-def run(case, members, fits, silent, pool_mode="uniform", return_fits=False):
+def run(case, members, fits, silent, pool_mode="uniform", return_fits=False, probe=None):
     width, faults = case["width"], case["faults"]
     told_triple = tuple(tuple(f[:2]) for f in faults)
     px, py, _ = lr.split(case["practice"])
@@ -108,6 +108,9 @@ def run(case, members, fits, silent, pool_mode="uniform", return_fits=False):
                             tied_best=sum(fits[t][0][0] == accuracy for t in members),
                             true_triple_accuracy=max(true_scores) if true_scores else None,
                             told_accuracy=told[0][0], winner=[list(e) for e in winner]))
+        if probe is not None:
+            history[-1]["disagreement"] = aq.disagreement(case, edits, probe)
+            history[-1]["told_disagreement"] = aq.disagreement(case, told[1], probe)
         if round_ == aq.ROUNDS:
             break
         pool = query_pool(case, fits, rng, pool_mode)
