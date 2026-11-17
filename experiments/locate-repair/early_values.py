@@ -9,6 +9,7 @@ So reverse the order: for the first EARLY rounds use #40's mix (4 value queries 
 most even splits), then all 8 labels on the most even splits.
 
     python experiments/locate-repair/early_values.py --output runs/early-values
+    python experiments/locate-repair/early_values.py --early 2 --output runs/switch-point-2   # roadmap #45
 """
 import argparse
 import importlib.util
@@ -42,12 +43,12 @@ def make_chooser(early=EARLY, value_share=VALUE_SHARE):
     return choose
 
 
-def analyse(case):
+def analyse(case, early=EARLY):
     px, py, _ = lr.split(case["practice"])
     start = time.time()
     members, fits, count = tc.committee(case, px, py)
     silent = cr.silent_faults(case)
-    history = st.run(case, members, fits, silent, bs.make_probe(case, bs.PROBE), chooser=make_chooser())
+    history = st.run(case, members, fits, silent, bs.make_probe(case, bs.PROBE), chooser=make_chooser(early))
     return {"width": case["width"], "seed": case["seed"], "faults": case["faults"], "sizes": case["sizes"],
             "silent_faults": silent, "triples": count,
             "committee_has_true_triple": any(len(t3.hits(t, case["faults"], case["width"])) == 3 for t in members),
@@ -59,6 +60,7 @@ def main():
     parser.add_argument("--width", type=int, default=st.WIDTH)
     parser.add_argument("--seeds", type=int, default=25)
     parser.add_argument("--seed-start", type=int, default=0)
+    parser.add_argument("--early", type=int, default=EARLY, help="rounds of the half mix before splits only (#45)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -76,12 +78,12 @@ def main():
             case = rs.resize(base) if base is not None else None
             if case is None:
                 continue
-            rows.append(analyse(case))
+            rows.append(analyse(case, args.early))
             saved.write_text(json.dumps(rows[-1]) + "\n")
             last = rows[-1]["switch"]
             print(seed, last[-1]["faults_found"], round(last[-1]["disagreement"], 6),
                   [h.get("value_queries") for h in last[:-1]], flush=True)
-    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": EARLY,
+    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early,
               "value_share": VALUE_SHARE, "delta": vq.DELTA, "probe": bs.PROBE, "pool": aq.POOL,
               "summary": st.summarize(rows), "cases": rows}
     (args.output / "early-values.json").write_text(json.dumps(report, indent=1) + "\n")

@@ -8,6 +8,36 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #45: how many early rounds of value labels, for three broken weights
+
+Full write-up: [experiments/locate-repair/SWITCH_POINT.md](../experiments/locate-repair/SWITCH_POINT.md).
+Branch `claude/triple-switch-point`, stacked on `claude/triple-early`.
+
+### Setup
+
+- **Question.** #44 used 4 early rounds of #40's half mix, then committee splits only. Is 4 the right
+  switch point?
+- **Design.** #44's 25 cases and rule, with 2 early rounds (200 value queries) and 6 (600).
+- **Code.** `early_values.py --early`, with 1 new test.
+
+### Results (measured)
+
+1. Two early rounds: 24 of 25 under 0.1%, 20 under 0.01% (best so far; #44: 18, #40: 19, #37: 16), median
+   0.0041%, with 200 value queries.
+2. Its weights are #37's exactly: 19 every visible fault, 16 exact, reached after 48 labels (#44: 64).
+3. Six early rounds: 23 under 0.1% (loses seed 17), 16 under 0.01%, 18 every visible fault, 15 exact.
+4. Every visible fault after 40 labels: 18, 16, 14 for 2, 4, 6 early rounds.
+5. The true triple refitted on the 2-round labels: 25 under 0.1%, 22 under 0.01%.
+6. Seed 14 still fails in every arm; its committee never holds the true triple.
+
+### Interpretation
+
+- *Inference:* a little value labelling early is enough; more delays the committee splits that find the last
+  broken weight. The 2-against-4 lead is two or three cases, within one run's noise, so roadmap #46 checks it
+  on fresh cases and tries 1 early round.
+
+---
+
 ## 2026-11-17 — Roadmap #44: value labels early, committee splits late, for three broken weights
 
 Full write-up: [experiments/locate-repair/EARLY_VALUES.md](../experiments/locate-repair/EARLY_VALUES.md).
