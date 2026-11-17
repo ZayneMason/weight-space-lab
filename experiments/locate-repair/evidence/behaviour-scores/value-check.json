@@ -1,0 +1,107 @@
+{
+ "schema": "weight-space-value-check-v1",
+ "cases": [
+  {
+   "seed": 5,
+   "practice_accuracy": 1.0,
+   "disagreement": 0.001202,
+   "entries": [
+    {
+     "entry": "hidden_weight[1]",
+     "fault_spreads": -1.01,
+     "fit_minus_teacher_spreads": 0.007
+    },
+    {
+     "entry": "weight[29]",
+     "fault_spreads": -1.623,
+     "fit_minus_teacher_spreads": -0.028
+    }
+   ]
+  },
+  {
+   "seed": 8,
+   "practice_accuracy": 1.0,
+   "disagreement": 0.001256,
+   "entries": [
+    {
+     "entry": "weight[26]",
+     "fault_spreads": 1.503,
+     "fit_minus_teacher_spreads": -0.017
+    },
+    {
+     "entry": "weight[16]",
+     "fault_spreads": -1.786,
+     "fit_minus_teacher_spreads": 0.01
+    }
+   ]
+  },
+  {
+   "seed": 12,
+   "practice_accuracy": 0.999,
+   "disagreement": 0.00174,
+   "entries": [
+    {
+     "entry": "hidden_weight[47]",
+     "fault_spreads": -1.396,
+     "fit_minus_teacher_spreads": -0.001
+    },
+    {
+     "entry": "hidden_weight[48]",
+     "fault_spreads": 2.159,
+     "fit_minus_teacher_spreads": -0.014
+    }
+   ]
+  },
+  {
+   "seed": 20,
+   "practice_accuracy": 0.999,
+   "disagreement": 0.002875,
+   "entries": [
+    {
+     "entry": "hidden_bias[8]",
+     "fault_spreads": 1.114,
+     "fit_minus_teacher_spreads": 0.172
+    },
+    {
+     "entry": "hidden_weight[4]",
+     "fault_spreads": -1.227,
+     "fit_minus_teacher_spreads": 0.017
+    }
+   ]
+  },
+  {
+   "seed": 13,
+   "practice_accuracy": 1.0,
+   "disagreement": 1.6e-05,
+   "entries": [
+    {
+     "entry": "hidden_bias[0]",
+     "fault_spreads": -1.428,
+     "fit_minus_teacher_spreads": -0.008
+    },
+    {
+     "entry": "weight[60]",
+     "fault_spreads": 2.044,
+     "fit_minus_teacher_spreads": -0.003
+    }
+   ]
+  },
+  {
+   "seed": 15,
+   "practice_accuracy": 1.0,
+   "disagreement": 8e-06,
+   "entries": [
+    {
+     "entry": "hidden_bias[16]",
+     "fault_spreads": 1.847,
+     "fit_minus_teacher_spreads": -0.0
+    },
+    {
+     "entry": "hidden_bias[26]",
+     "fault_spreads": -1.295,
+     "fit_minus_teacher_spreads": -0.001
+    }
+   ]
+  }
+ ]
+}

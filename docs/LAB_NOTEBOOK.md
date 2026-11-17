@@ -8,6 +8,41 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #37: rescoring two- and three-fault repairs by behaviour
+
+Full write-up: [experiments/locate-repair/BEHAVIOUR_SCORES.md](../experiments/locate-repair/BEHAVIOUR_SCORES.md).
+Branch `claude/behaviour-scores`, stacked on `claude/lookalikes`.
+
+### Setup
+
+- **Question.** Does the behaviour score (#36) change the two-fault results too, and how many targeted
+  labels does a behavioural repair need?
+- **Design.** #35's two-fault runs (random sizes, plus a 1.6-spread control) and #34's three-fault
+  runs, with the winner probed on a million inputs after every round. A side check fits only the
+  true pair to see where the leftover disagreement comes from.
+- **Code.** `experiments/locate-repair/behaviour_scores.py` with 2 tests, `value_check.py`, and a
+  `probe` argument on the pair and triple query loops.
+
+### Results (measured)
+
+1. Three faults: 16 of 25 repairs behave like the original (under 0.1%) after 16 labels, against 9
+   with every visible fault; 22 against 19 after 64.
+2. Two faults: the behaviour score is stricter. 20 of 25 behave like the original after 64 labels,
+   against 23 with every visible fault. Four winners (seeds 5, 8, 12, 20) edit both exact weights and
+   disagree on 0.13% to 0.17%; one wrong-weight winner (seed 11) is at 0.057%.
+3. A fit on only the true pair lands within 0.03 spreads of the original values in seeds 5, 8 and 12
+   and still disagrees on 0.12% to 0.17%; in seeds 13 and 15 it lands within 0.008 and disagrees on
+   0.002% or less.
+4. The 1.6 control: 23 and 23, with two misses of each kind.
+
+### Interpretation
+
+- *Inference:* the entry score misses lookalikes, and the behaviour score catches right weights set
+  slightly wrong. 1,024 practice labels resolve about 0.1%, which is where the two-fault misses sit,
+  and targeted labels split the committee over weights, not values. Report both scores.
+
+---
+
 ## 2026-11-17 — Roadmap #36: are the last lookalikes wrong at all?
 
 Full write-up: [experiments/locate-repair/LOOKALIKES.md](../experiments/locate-repair/LOOKALIKES.md).

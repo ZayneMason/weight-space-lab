@@ -806,6 +806,11 @@ boundary), since the uniform pool led early and the boundary pool late.
 
 *Added November 17 after #36.*
 
+> **Status, November 17: done for two and three faults** ([write-up](../experiments/locate-repair/BEHAVIOUR_SCORES.md)).
+> Three faults: behaviour arrives early, 16 of 25 after 16 labels against 9 by entries, and 22 against 19 at the
+> end. Two faults: the behaviour score is stricter, 20 of 25 against 23, because four repairs pick the exact
+> weights but set them about 0.02 spreads off, which costs 0.13% to 0.17%. The one-fault benchmark is not rescored.
+
 #36 found that entry-based scoring undercounts three-fault repairs: 22 of 25 restore behaviour against
 19 that find every visible fault. Rescore the two-fault results (#26, #31, #32) and the one-fault
 benchmark the same way, with disagreement on a million inputs, and report both columns side by side.
@@ -813,6 +818,20 @@ Then check whether behaviour matches sooner: probe after every round, not only t
 many labels a behavioural repair really needs.
 
 **Cost.** CPU, about two to three hours (re-runs with probing).
+
+## 38. Queries that pin down the winner's values
+
+*Added November 17 after #37.*
+
+#37 found four two-fault repairs that edit the exact broken weights and still disagree with the
+original network on 0.13% to 0.17% of inputs, with values about 0.01 to 0.03 spreads off. The
+targeted labels are chosen to split the committee over which weights to edit, so once the winner is
+right they stop helping. After the winner leads, spend the remaining labels on inputs that its
+nudged neighbours (each value moved by a small step either way) label differently, refit, and probe
+again. Also try breaking the pair fit's ties at the middle of the tied region instead of the edge
+nearest the corrupted value. Measure "under 0.1%" and "under 0.01%" against #37's 20 and 9.
+
+**Cost.** CPU, about one to two hours.
 
 ## Posts the current results already support
 

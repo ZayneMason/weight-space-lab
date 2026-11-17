@@ -128,3 +128,6 @@ faults found in 16 of 25 random-size cases, every visible fault in 19.
 17 of 25 all three, 19 every visible fault, about level with uniform queries.
 [LOOKALIKES.md](LOOKALIKES.md) (roadmap #36) checks the repaired networks' behaviour on a million inputs: 22 of 25
 match the original network on all but 0.1%, though only 16 to 17 edit the exact broken entries.
+[BEHAVIOUR_SCORES.md](BEHAVIOUR_SCORES.md) (roadmap #37) probes every round's winner: three-fault repairs behave
+like the original much sooner than their entries say (16 against 9 of 25 after 16 labels), while four two-fault
+repairs edit the exact weights and still miss by 0.13% to 0.17%, so two-fault behaviour ends at 20 of 25, not 23.
