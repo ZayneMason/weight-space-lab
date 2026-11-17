@@ -789,6 +789,10 @@ cases, then all 25. Measure ties left and all-three counts against #34's 16.
 
 *Added November 17 after #35.*
 
+> **Status, November 17: done** ([write-up](../experiments/locate-repair/LOOKALIKES.md)). Mostly not. The
+> winner matches the original network on all but 0.1% of a million inputs in 22 of 25 cases, against 16 to 17
+> that edit the exact broken entries. Only seed 14 is a clear miss beyond the fit's own limit. Mixed pool: no gain.
+
 Seeds 10 and 15 end on the same two- and three-way ties under both query pools. For each case, save
 the final fits of every tied member and measure how often each disagrees with the teacher on a
 million uniform inputs, against the true triple's fit. If the lookalikes disagree with the teacher
@@ -797,6 +801,18 @@ repairs by disagreement rate as well as by entries. Also try a mixed pool (half 
 boundary), since the uniform pool led early and the boundary pool late.
 
 **Cost.** CPU, about two hours.
+
+## 37. Rescore every repair result by behaviour
+
+*Added November 17 after #36.*
+
+#36 found that entry-based scoring undercounts three-fault repairs: 22 of 25 restore behaviour against
+19 that find every visible fault. Rescore the two-fault results (#26, #31, #32) and the one-fault
+benchmark the same way, with disagreement on a million inputs, and report both columns side by side.
+Then check whether behaviour matches sooner: probe after every round, not only the last, to see how
+many labels a behavioural repair really needs.
+
+**Cost.** CPU, about two to three hours (re-runs with probing).
 
 ## Posts the current results already support
 
