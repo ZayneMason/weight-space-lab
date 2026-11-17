@@ -8,6 +8,36 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #42: switching at the behaviour line for three broken weights
+
+Full write-up: [experiments/locate-repair/SWITCH_LINE.md](../experiments/locate-repair/SWITCH_LINE.md).
+Branch `claude/triple-line`, stacked on `claude/triple-switch`.
+
+### Setup
+
+- **Question.** #41's trigger (no pool input splits the committee) almost never fires for three faults. Does
+  a trigger at the 0.1% line (fewer than 20 of 20,000 pool inputs split it) keep #40's behaviour gain
+  without its visible-fault loss?
+- **Design.** #40's 25 three-fault cases; all 8 labels go to committee splits until the line, then all 8 to
+  value queries. The splitting count is recorded every round.
+- **Code.** `experiments/locate-repair/switch_line.py` with 2 tests.
+
+### Results (measured)
+
+1. Negative. The trigger fires in 23 of 25 cases and 472 of 1,600 labels are value queries, but under 0.1%
+   stays at 22 and under 0.01% falls from 16 to 13 (#37: 22 and 16; #40: 24 and 19). Median 0.0095%.
+2. Every visible fault 19 and exact 16, as in #37. Against #37, 9 cases closer, 11 further, 5 unchanged.
+3. The true triple refitted on this arm's labels has 13 under 0.01%, against 18 on #37's and 20 on #40's.
+4. Seed 20 never reaches the line; seed 17 switches only for the last round and ends at 0.142%.
+
+### Interpretation
+
+- *Inference:* the last few splitting inputs still carry value information, so dropping every committee
+  label at the line costs more than value queries give back. #40's fixed half-and-half mix is still the best
+  behaviour rule; roadmap #43 asks whether starting it at the line keeps the visible faults.
+
+---
+
 ## 2026-11-17 — Roadmap #41: the switch rule for three broken weights
 
 Full write-up: [experiments/locate-repair/SWITCH_TRIPLES.md](../experiments/locate-repair/SWITCH_TRIPLES.md).

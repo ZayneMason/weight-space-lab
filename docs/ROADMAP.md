@@ -901,6 +901,24 @@ the number of splitting inputs every round, so the trigger can be re-read at oth
 
 **Cost.** CPU, about two hours.
 
+**Status (November 17, done, negative):** [SWITCH_LINE.md](../experiments/locate-repair/SWITCH_LINE.md).
+The trigger fires in 23 of 25 cases (472 of 1,600 labels become value queries), but behaviour does not improve:
+22 under 0.1% as in #37, and 13 under 0.01% against #37's 16 and #40's 19. Every visible fault stays at 19. The
+true triple refitted on these labels also does worse at 0.01% (13 against 18), so dropping all committee labels
+at the line costs value information. Seed 20 never reaches the line.
+
+## 43. Half value labels from the line on, for three broken weights
+
+*Added November 17 after #42.*
+
+#42 switched all 8 labels to value queries at the 0.1% line and lost precision; #40's half-and-half mix from the
+first round has the best behaviour (24 and 19) but finds every visible fault in 17 cases against 19. Keep all 8
+labels on committee splits until fewer than 20 pool inputs split the committee, then use #40's mix (4 value
+queries, 4 splits). If the visible-fault loss in #40 comes from value queries asked before the committee has
+found the weights, this should keep 19 visible faults and most of #40's behaviour gain.
+
+**Cost.** CPU, about two hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
