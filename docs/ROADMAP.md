@@ -842,6 +842,11 @@ nearest the corrupted value. Measure "under 0.1%" and "under 0.01%" against #37'
 
 *Added November 17 after #38.*
 
+> **Status, November 17: done for two faults** ([write-up](../experiments/locate-repair/SWITCH_QUERIES.md)).
+> Switching keeps every visible fault at 23 of 25 and ends level on behaviour (24 under 0.1%, 19 under 0.01%,
+> against #38's 24 and 20), with a third fewer value queries, but reaches the 0.01% line about 24 labels later.
+> The three-fault half moved to #40.
+
 #38's best arm gives half of every round's labels to value queries, which costs one case of weight-finding
 (22 against 23 every visible fault). Spend targeted labels until the committee's leader is clear (for example,
 when the top pair's practice accuracy beats the runner-up's), then switch to value queries. Measure both columns
@@ -849,6 +854,18 @@ against #38's 24 and 22. Then try the same value queries on #34's three-fault tr
 fit already resolves finer than a grid, against #37's 22 of 25 under 0.1% and 16 under 0.01%.
 
 **Cost.** CPU, about two to three hours.
+
+## 40. Value queries for three broken weights
+
+*Added November 17 after #39.*
+
+#38 and #39 closed the two-fault value gap with a refined fit plus labels aimed at the winner's values.
+#34's three-fault repairs already use #29's continuous margin fit, so they may only need the queries. Give
+half of each round's labels to inputs where the winning triple and a copy with one value nudged by 0.01
+spreads disagree, and measure against #37's three-fault 22 of 25 under 0.1% and 16 under 0.01%, and its
+19 every visible fault.
+
+**Cost.** CPU, about three to four hours (the triple committee is slower).
 
 ## Posts the current results already support
 

@@ -8,6 +8,34 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #39: switching to value queries once the committee agrees
+
+Full write-up: [experiments/locate-repair/SWITCH_QUERIES.md](../experiments/locate-repair/SWITCH_QUERIES.md).
+Branch `claude/switch-queries`, stacked on `claude/value-queries`.
+
+### Setup
+
+- **Question.** Can a rule that spends targeted labels while the committee disagrees, and value queries
+  after, keep #38's behaviour gains without its one-case loss in weight-finding?
+- **Design.** #38's 25 cases and refined fit. `switch`: all 8 labels targeted while any pool input splits
+  the committee, else all 8 value queries. `fill`: targeted only on splitting inputs, value queries for the rest.
+- **Code.** `experiments/locate-repair/switch_queries.py` with 2 tests.
+
+### Results (measured)
+
+1. `switch`: 23 of 25 every visible fault (as with no value queries), 24 under 0.1% and 19 under 0.01%
+   (#38's best arm: 22, 24, 20), with 498 value queries against 745.
+2. It reaches the strict line later: 8 of 25 under 0.01% after 24 labels, against 17 for #38's arm.
+3. Case by case it is not closer than #38's arm (lower in 7, higher in 13). `fill` matches #38's arm.
+4. The committee often re-splits after a switch (7 of 25 cases); seed 23 still fails.
+
+### Interpretation
+
+- *Inference:* #38's one-case weight-finding loss is noise-sized; a switch recovers it at the cost of a
+  slower approach to 0.01%. A fixed half suits small label budgets.
+
+---
+
 ## 2026-11-17 — Roadmap #38: queries that pin down the winning repair's values
 
 Full write-up: [experiments/locate-repair/VALUE_QUERIES.md](../experiments/locate-repair/VALUE_QUERIES.md).
