@@ -937,6 +937,23 @@ labels carry the behaviour gain and the late splits win back the weights, this s
 
 **Cost.** CPU, about two hours.
 
+**Status (November 17, done):** [EARLY_VALUES.md](../experiments/locate-repair/EARLY_VALUES.md).
+It keeps both gains: 24 of 25 under 0.1% (as #40) and 19 every visible fault, 16 exact (as #37, the same
+cases), with 400 value queries against #40's 797. Under 0.01% it has 18, between #37's 16 and #40's 19.
+Seeds 17 and 20 end under 0.1%. Seed 14 still fails because its committee never held the true triple.
+
+## 45. Where to switch from value labels to committee splits
+
+*Added November 17 after #44.*
+
+#44 used #40's mix for four rounds and then splits only, and got #40's behaviour with #37's weight-finding.
+Four was a guess. Run the same rule with 2 and with 6 early rounds. With 2, fewer value labels may lose
+seeds 17 and 20 again; with 6, the late weight catch-up (every visible fault only reaches 19 in the last
+round) may not finish. If 4 is near the best, the rule is ready to write up; if 6 matches it at 0.1% and
+beats it at 0.01%, the switch should come later.
+
+**Cost.** CPU, about three and a half hours (two arms).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

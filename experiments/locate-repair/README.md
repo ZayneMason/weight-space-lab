@@ -143,4 +143,5 @@ never runs out of splits, so only 101 of 1,600 labels become value queries and t
 the committee): it fires in 23 cases, but under 0.01% falls from 16 to 13 and under 0.1% stays at 22, so dropping
 every committee label at the line hurts.
 [HALF_LINE.md](HALF_LINE.md) (roadmap #43) keeps half the labels on committee splits past the same line: #42's loss
+[EARLY_VALUES.md](EARLY_VALUES.md) (roadmap #44) reverses that: #40's mix in the first four rounds, then committee splits only. It keeps both gains: 24 of 25 under 0.1% as in #40, and 19 every visible fault as in #37, with half #40's value queries.
 is undone but nothing is gained (22 and 16, #37's cases exactly), because the cases #40 fixes reach the line late or never.

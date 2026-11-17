@@ -8,6 +8,38 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #44: value labels early, committee splits late, for three broken weights
+
+Full write-up: [experiments/locate-repair/EARLY_VALUES.md](../experiments/locate-repair/EARLY_VALUES.md).
+Branch `claude/triple-early`, stacked on `claude/triple-half-line`.
+
+### Setup
+
+- **Question.** #40's half-and-half mix every round has the best behaviour but finds fewer visible faults;
+  #43 showed late value queries change nothing. Does #40's mix in the first four rounds, then committee
+  splits only, keep both gains?
+- **Design.** #40's 25 three-fault cases; rounds 1 to 4 give 4 labels to value queries and 4 to the
+  committee's most even splits, rounds 5 to 8 give all 8 to splits.
+- **Code.** `experiments/locate-repair/early_values.py` with 2 tests.
+
+### Results (measured)
+
+1. It keeps both gains: 24 of 25 under 0.1% (#40: 24, #37: 22) and 19 every visible fault, 16 exact
+   (#37: 19 and 16, #40: 17 and 15). The visible-fault cases are #37's exactly.
+2. Under 0.01%: 18 (#37: 16, #40: 19). Median 0.0061%.
+3. 400 of 1,600 labels are value queries, half of #40's 797.
+4. Seeds 20 and 17, which #37 left over 0.1%, end at 0.0078% and 0.098%.
+5. The true triple refitted on these labels has 25 under 0.1% and 19 under 0.01%.
+6. Seed 14 still fails (0.56%): its committee never contained the true triple.
+
+### Interpretation
+
+- *Inference:* value labels pay off early, while the committee still disagrees widely, and committee
+  splits find the last broken weight. The remaining failure is in the screen, not the labels.
+  Roadmap #45 tries 2 and 6 early rounds to find the switch point.
+
+---
+
 ## 2026-11-17 — Roadmap #43: half value labels from the behaviour line on, for three broken weights
 
 Full write-up: [experiments/locate-repair/HALF_LINE.md](../experiments/locate-repair/HALF_LINE.md).
