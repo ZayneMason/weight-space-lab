@@ -919,6 +919,24 @@ found the weights, this should keep 19 visible faults and most of #40's behaviou
 
 **Cost.** CPU, about two hours.
 
+**Status (November 17, done, negative):** [HALF_LINE.md](../experiments/locate-repair/HALF_LINE.md).
+With the same trigger as #42 (23 of 25 cases cross it; 239 of 1,600 labels become value queries), the result is
+#37's at both lines: 22 under 0.1% and 16 under 0.01%, the same cases. #42's loss at 0.01% is undone and the
+true-triple refit is back at 23 and 18, but every visible fault drops to 18 (seed 11). Seeds 17 and 20, the
+two #40 fixes, reach the line late or never, so a trigger that waits for the committee to settle cannot help them.
+
+## 44. Value labels early, committee splits late, for three broken weights
+
+*Added November 17 after #43.*
+
+#43 shows value queries asked late change nothing, and #40's gains are in cases that never get near the line.
+#40 is also ahead on visible faults early (14 against 12 after 32 labels) and falls behind only between 32 and
+40 labels. Reverse the order: #40's mix (4 value queries, 4 splits) for the first four rounds, then all 8 on
+committee splits. Compare with #37 (22, 16, 19 every visible fault) and #40 (24, 19, 17). If the early value
+labels carry the behaviour gain and the late splits win back the weights, this should beat both.
+
+**Cost.** CPU, about two hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

@@ -142,3 +142,5 @@ never runs out of splits, so only 101 of 1,600 labels become value queries and t
 [SWITCH_LINE.md](SWITCH_LINE.md) (roadmap #42) moves the trigger to the 0.1% line (fewer than 20 pool inputs split
 the committee): it fires in 23 cases, but under 0.01% falls from 16 to 13 and under 0.1% stays at 22, so dropping
 every committee label at the line hurts.
+[HALF_LINE.md](HALF_LINE.md) (roadmap #43) keeps half the labels on committee splits past the same line: #42's loss
+is undone but nothing is gained (22 and 16, #37's cases exactly), because the cases #40 fixes reach the line late or never.
