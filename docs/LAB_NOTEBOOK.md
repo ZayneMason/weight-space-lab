@@ -8,6 +8,34 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #35: querying near the suspects' decision boundaries
+
+Full write-up: [experiments/locate-repair/BOUNDARY_QUERIES.md](../experiments/locate-repair/BOUNDARY_QUERIES.md).
+Branch `claude/boundary-queries`, stacked on `claude/triple-committee`.
+
+### Setup
+
+- **Question.** Does drawing #34's query pool near the tied members' decision boundaries break the
+  last ties?
+- **Design.** #34 unchanged except the pool: of 200,000 uniform inputs, the 20,000 closest to a
+  boundary of any tied member.
+- **Code.** `triple_committee.py --pool boundary`, with a third test.
+
+### Results (measured)
+
+1. After 64 examples: all three found 17 of 25 (uniform 16), every visible fault 19 (19), pass 24
+   (24). The boundary pool trails at every earlier round.
+2. Late-round query splits stay near even (median 0.31 against 0.10), but the true triple's fit gets
+   every label right in 16 of 21 cases against 18.
+3. Fixes seeds 4 and 20, loses 2 and 21; seeds 10 and 15 keep the same ties.
+
+### Interpretation
+
+- *Inference:* where to ask is not the limit. The surviving ties may be lookalikes that agree with
+  the teacher almost everywhere (roadmap #36).
+
+---
+
 ## 2026-11-16 — Roadmap #34: targeted examples on a 200-triple committee
 
 Full write-up: [experiments/locate-repair/TRIPLE_COMMITTEE.md](../experiments/locate-repair/TRIPLE_COMMITTEE.md).

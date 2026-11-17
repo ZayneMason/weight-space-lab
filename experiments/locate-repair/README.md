@@ -124,3 +124,5 @@ fault in 23 of 25 random-size cases, and the triple ranking improves only to 14.
 triple fits practice perfectly, but so do a median 160 others.
 [TRIPLE_COMMITTEE.md](TRIPLE_COMMITTEE.md) (roadmap #34) asks the teacher where 200 suspects disagree: all three
 faults found in 16 of 25 random-size cases, every visible fault in 19.
+[BOUNDARY_QUERIES.md](BOUNDARY_QUERIES.md) (roadmap #35) draws those queries near the suspects' decision boundaries:
+17 of 25 all three, 19 every visible fault, about level with uniform queries.
