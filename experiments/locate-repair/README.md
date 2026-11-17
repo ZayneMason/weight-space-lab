@@ -131,3 +131,5 @@ match the original network on all but 0.1%, though only 16 to 17 edit the exact 
 [BEHAVIOUR_SCORES.md](BEHAVIOUR_SCORES.md) (roadmap #37) probes every round's winner: three-fault repairs behave
 like the original much sooner than their entries say (16 against 9 of 25 after 16 labels), while four two-fault
 repairs edit the exact weights and still miss by 0.13% to 0.17%, so two-fault behaviour ends at 20 of 25, not 23.
+[VALUE_QUERIES.md](VALUE_QUERIES.md) (roadmap #38) fixes those misses: a finer local fit plus labels aimed at
+the winner's values brings 24 of 25 two-fault repairs under 0.1% and 20 under 0.01%, against 20 and 9.
