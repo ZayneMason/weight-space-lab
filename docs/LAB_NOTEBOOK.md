@@ -8,6 +8,35 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #36: are the last lookalikes wrong at all?
+
+Full write-up: [experiments/locate-repair/LOOKALIKES.md](../experiments/locate-repair/LOOKALIKES.md).
+Branch `claude/lookalikes`, stacked on `claude/boundary-queries`.
+
+### Setup
+
+- **Question.** Do the repairs that edit the wrong entries also behave differently from the
+  original network?
+- **Design.** #34's committee once per case; 64 targeted labels with uniform, boundary and mixed
+  pools; each tied winner probed on a million fresh inputs against the teacher.
+- **Code.** `experiments/locate-repair/lookalikes.py` with 2 tests.
+
+### Results (measured)
+
+1. With every pool, the winner disagrees with the teacher on under 0.1% of inputs in 22 of 25 cases,
+   while it edits all three broken entries in only 16 to 17.
+2. 6 of the 9 wrong-entry winners (uniform pool) disagree on 0.009% or less, as close as a fit on
+   the true entries. The other three: seed 14 at 0.87% (no true triple in the committee), seeds 17
+   and 20 at 0.12% and 0.37%, matched by the fit on the told entries.
+3. The mixed pool gives 16, 19 and 22, the same as uniform.
+
+### Interpretation
+
+- *Inference:* scoring a repair by its entries undercounts. Different settings of a small ReLU
+  network compute nearly the same function; three-fault repair restores behaviour in 22 of 25.
+
+---
+
 ## 2026-11-17 — Roadmap #35: querying near the suspects' decision boundaries
 
 Full write-up: [experiments/locate-repair/BOUNDARY_QUERIES.md](../experiments/locate-repair/BOUNDARY_QUERIES.md).

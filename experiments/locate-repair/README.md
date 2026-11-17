@@ -126,3 +126,5 @@ triple fits practice perfectly, but so do a median 160 others.
 faults found in 16 of 25 random-size cases, every visible fault in 19.
 [BOUNDARY_QUERIES.md](BOUNDARY_QUERIES.md) (roadmap #35) draws those queries near the suspects' decision boundaries:
 17 of 25 all three, 19 every visible fault, about level with uniform queries.
+[LOOKALIKES.md](LOOKALIKES.md) (roadmap #36) checks the repaired networks' behaviour on a million inputs: 22 of 25
+match the original network on all but 0.1%, though only 16 to 17 edit the exact broken entries.
