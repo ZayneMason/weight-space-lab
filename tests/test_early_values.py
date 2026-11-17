@@ -29,6 +29,13 @@ class EarlyValuesTests(unittest.TestCase):
                   for r in range(4)]
         self.assertEqual(counts, [ev.aq.PER_ROUND // 2] * 2 + [0, 0])
 
+    def test_switch_point_is_set_by_early(self):
+        for early in (0, 3):
+            choose = ev.make_chooser(early=early)
+            counts = [choose(self.case, self.fits, self.fit[1], self.pool, np.random.default_rng(r))[1]["value_queries"]
+                      for r in range(5)]
+            self.assertEqual(counts, [ev.aq.PER_ROUND // 2] * early + [0] * (5 - early))
+
     def test_each_case_gets_its_own_round_count(self):
         first, second = ev.make_chooser(early=1), ev.make_chooser(early=1)
         first(self.case, self.fits, self.fit[1], self.pool, np.random.default_rng(0))

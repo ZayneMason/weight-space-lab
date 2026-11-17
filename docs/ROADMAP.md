@@ -954,6 +954,24 @@ beats it at 0.01%, the switch should come later.
 
 **Cost.** CPU, about three and a half hours (two arms).
 
+**Status (November 17, done):** [SWITCH_POINT.md](../experiments/locate-repair/SWITCH_POINT.md).
+Two early rounds is the best three-fault arm so far: 24 of 25 under 0.1%, 20 under 0.01% (#44: 18, #40: 19),
+median 0.0041%, with only 200 value queries. Its weights are #37's exactly (19 every visible fault, 16 exact),
+and they arrive by 48 labels as in #37. Six early rounds is worse on every count (23, 16, 18 every visible fault).
+Seed 14 still fails in every arm.
+
+## 46. One early round, and two early rounds on fresh cases
+
+*Added November 17 after #45.*
+
+#45 found that 2 early rounds beat 4 and 6, but by two or three cases out of 25. Two checks. First, run 1 early
+round on the same 25 cases, to see whether 8 value queries per case are already enough. Second, run 0, 2 and 4
+early rounds on 25 fresh cases (seeds 25 to 49), where 0 is #37's rule, to see whether 2 rounds still lead when
+nothing was tuned on those cases. If 2 still beats 0 and 4 on fresh cases at the 0.01% line, it becomes the
+default for three faults; if not, #45's lead was noise.
+
+**Cost.** CPU, about seven hours (four runs in parallel).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
