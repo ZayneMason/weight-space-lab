@@ -8,6 +8,38 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #38: queries that pin down the winning repair's values
+
+Full write-up: [experiments/locate-repair/VALUE_QUERIES.md](../experiments/locate-repair/VALUE_QUERIES.md).
+Branch `claude/value-queries`, stacked on `claude/behaviour-scores`.
+
+### Setup
+
+- **Question.** Can labels aimed at the winner's values close #37's 0.13% to 0.17% right-weight misses?
+- **Design.** #37's 25 random-size two-fault cases, four arms: value queries (half of each round's labels
+  go to inputs where the winner and a copy with one value nudged 0.01 spreads disagree), middle-of-tie
+  grid fit, a refined fit (61 x 61 grid within 1.5 grid steps of the grid winner), and refined fit plus
+  value queries. Every round's winner is probed on a million inputs.
+- **Code.** `experiments/locate-repair/value_queries.py` with 4 tests.
+
+### Results (measured)
+
+1. Refined fit plus value queries: 24 of 25 under 0.1% and 20 under 0.01% after 64 labels, against #37's
+   20 and 9. Median disagreement 0.0016% against 0.015%. Lower than #37 in 24 cases, higher in none.
+2. Alone, neither change does much: value queries 21 and 10; refined fit 22 and 13.
+3. Middle-of-tie on the coarse grid is worse: 4 of 25 under 0.1% before any queries (11 at the edge), 20 at the end.
+4. #37's four right-weight misses (seeds 5, 8, 12, 20) end at 0.029% or less. Seed 23 still picks a wrong
+   weight in every arm (0.10% to 0.16%).
+
+### Interpretation
+
+- *Inference:* #37's leftover two-fault error was the fit's 0.025-spread resolution, not the labels. Value
+  queries only help once the fit can move by less than a grid step.
+- *Inference:* splitting labels costs a little weight-finding (22 against 23 every visible fault); switching
+  to value queries only once the committee agrees might keep both. Not tested.
+
+---
+
 ## 2026-11-17 — Roadmap #37: rescoring two- and three-fault repairs by behaviour
 
 Full write-up: [experiments/locate-repair/BEHAVIOUR_SCORES.md](../experiments/locate-repair/BEHAVIOUR_SCORES.md).

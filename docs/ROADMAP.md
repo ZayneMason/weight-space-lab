@@ -823,6 +823,11 @@ many labels a behavioural repair really needs.
 
 *Added November 17 after #37.*
 
+> **Status, November 17: done** ([write-up](../experiments/locate-repair/VALUE_QUERIES.md)). Value queries alone do
+> nothing on the 200-point grid, because its 0.025-spread step is the limit. With a refined local fit they work:
+> 24 of 25 repairs under 0.1% and 20 under 0.01%, against #37's 20 and 9, and lower disagreement than #37 in 24
+> of 25 cases. Middle-of-tie on the coarse grid is worse than the edge.
+
 #37 found four two-fault repairs that edit the exact broken weights and still disagree with the
 original network on 0.13% to 0.17% of inputs, with values about 0.01 to 0.03 spreads off. The
 targeted labels are chosen to split the committee over which weights to edit, so once the winner is
@@ -832,6 +837,18 @@ again. Also try breaking the pair fit's ties at the middle of the tied region in
 nearest the corrupted value. Measure "under 0.1%" and "under 0.01%" against #37's 20 and 9.
 
 **Cost.** CPU, about one to two hours.
+
+## 39. Switch to value queries once the committee agrees, and carry the refined fit to three faults
+
+*Added November 17 after #38.*
+
+#38's best arm gives half of every round's labels to value queries, which costs one case of weight-finding
+(22 against 23 every visible fault). Spend targeted labels until the committee's leader is clear (for example,
+when the top pair's practice accuracy beats the runner-up's), then switch to value queries. Measure both columns
+against #38's 24 and 22. Then try the same value queries on #34's three-fault triples, whose continuous margin
+fit already resolves finer than a grid, against #37's 22 of 25 under 0.1% and 16 under 0.01%.
+
+**Cost.** CPU, about two to three hours.
 
 ## Posts the current results already support
 
