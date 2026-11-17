@@ -867,6 +867,23 @@ spreads disagree, and measure against #37's three-fault 22 of 25 under 0.1% and 
 
 **Cost.** CPU, about three to four hours (the triple committee is slower).
 
+**Status (November 17, done):** [TRIPLE_VALUES.md](../experiments/locate-repair/TRIPLE_VALUES.md). Half the labels as
+value queries bring 24 of 25 three-fault repairs under 0.1% and 19 under 0.01% (#37: 22 and 16), but every
+visible fault drops from 19 to 17. Seeds 17 and 20 move under 0.1%, and so does their true-triple fit, so in #37
+those two were value-limited. Seed 14 still fails.
+
+## 41. Switch rule for three broken weights
+
+*Added November 17 after #40.*
+
+#40 repeats #38's trade for three faults: value queries help behaviour (24 and 19 against 22 and 16) and cost
+weight-finding (17 every visible fault against 19). For two faults, #39's rule (targeted labels while any pool
+input splits the committee, value queries after) got the weight-finding back. Run that rule on #40's cases and
+compare with both #37 and #40. Also refit the true triple from several starts, so the reference does not stick
+as it did in seed 2.
+
+**Cost.** CPU, about three hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
