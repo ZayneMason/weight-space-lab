@@ -135,3 +135,5 @@ repairs edit the exact weights and still miss by 0.13% to 0.17%, so two-fault be
 the winner's values brings 24 of 25 two-fault repairs under 0.1% and 20 under 0.01%, against 20 and 9.
 [SWITCH_QUERIES.md](SWITCH_QUERIES.md) (roadmap #39) switches to those value queries once the committee agrees:
 level on behaviour (24 and 19) with every visible fault back at 23, but it reaches the 0.01% line later.
+[TRIPLE_VALUES.md](TRIPLE_VALUES.md) (roadmap #40) gives three-fault repairs the same value queries: 24 of 25 under 0.1%
+and 19 under 0.01% (#37: 22 and 16), but every visible fault drops from 19 to 17, the same trade as for two faults.

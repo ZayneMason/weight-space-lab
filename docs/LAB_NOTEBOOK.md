@@ -8,6 +8,31 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #40: value queries for three broken weights
+
+Full write-up: [experiments/locate-repair/TRIPLE_VALUES.md](../experiments/locate-repair/TRIPLE_VALUES.md).
+Branch `claude/triple-values`, stacked on `claude/switch-queries`.
+
+### Setup
+
+- **Question.** Do #38's value queries help three-fault repairs, which already use a continuous refit?
+- **Design.** #37's 25 three-fault cases. Each round, 4 of 8 labels go to inputs where the winning triple and a
+  copy with one value nudged by 0.01 spreads disagree; the other 4 to the committee's most even splits.
+- **Code.** `experiments/locate-repair/triple_values.py` with 1 test.
+
+### Results (measured)
+
+1. 24 of 25 repairs under 0.1% and 19 under 0.01% (#37: 22 and 16); median 0.0044% (#37: 0.0056%).
+2. Every visible fault drops from 19 to 17, and exact entries from 16 to 15.
+3. Closer to the original in 16 cases, further in 9. Seeds 17 and 20 move under 0.1%, with their true-triple fit.
+4. Seed 14 still fails at 0.87%. In seed 2 the true-triple refit stays stuck at about 2% while the winner ends at 0.0015%.
+
+### Interpretation
+
+- *Inference:* the two-fault trade repeats: committee splits find the weights, value queries set them.
+
+---
+
 ## 2026-11-17 — Roadmap #39: switching to value queries once the committee agrees
 
 Full write-up: [experiments/locate-repair/SWITCH_QUERIES.md](../experiments/locate-repair/SWITCH_QUERIES.md).
