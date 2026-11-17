@@ -8,6 +8,36 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-17 — Roadmap #43: half value labels from the behaviour line on, for three broken weights
+
+Full write-up: [experiments/locate-repair/HALF_LINE.md](../experiments/locate-repair/HALF_LINE.md).
+Branch `claude/triple-half-line`, stacked on `claude/triple-line`.
+
+### Setup
+
+- **Question.** #42 dropped every committee label at the 0.1% line and lost precision. Does #40's
+  half-and-half mix, started at the same line, keep #37's weight-finding and add #40's behaviour gain?
+- **Design.** #40's 25 three-fault cases; all 8 labels go to committee splits until fewer than 20 of 20,000
+  pool inputs split it, then 4 value queries and 4 splits.
+- **Code.** `experiments/locate-repair/half_line.py` with 2 tests.
+
+### Results (measured)
+
+1. Negative. 239 of 1,600 labels are value queries, and the result is #37's at both lines: 22 under 0.1% and
+   16 under 0.01%, the same cases (#40: 24 and 19; #42: 22 and 13). Median 0.0074%.
+2. Every visible fault 18 and exact 15 (seed 11 loses its true triple). Against #37, 10 closer, 8 further,
+   7 unchanged.
+3. The true triple refitted on these labels has 23 and 18, the same as on #37's labels.
+4. Seed 20 never reaches the line and stays at 0.37%; seed 17 mixes only in the last round and ends at 0.116%.
+
+### Interpretation
+
+- *Inference:* #42's loss came from dropping all committee labels, but value queries asked that late do not
+  help. #40's gains are in cases that reach the line late or never, so they come from early value labels.
+  Roadmap #44 tries the reverse order: the mix early, committee splits late.
+
+---
+
 ## 2026-11-17 — Roadmap #42: switching at the behaviour line for three broken weights
 
 Full write-up: [experiments/locate-repair/SWITCH_LINE.md](../experiments/locate-repair/SWITCH_LINE.md).
