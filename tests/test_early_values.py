@@ -64,6 +64,18 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(len(members), 5)
         self.assertEqual(set(fits), set(members))
 
+    def test_wide_screen_evidence_covers_all_fifty_cases(self):
+        import json
+        evidence = ROOT / "experiments/locate-repair/evidence/wide-screen"
+        report = json.loads((evidence / "wide-screen.json").read_text())
+        self.assertEqual(report["pairs_kept"], 1000)
+        self.assertEqual(report["early_rounds"], 2)
+        self.assertEqual(sorted(c["seed"] for c in report["cases"]), list(range(50)))
+        comparison = json.loads((evidence / "comparison.json").read_text())
+        self.assertEqual(comparison["pairs_1000"]["under_0.1%"], sum(
+            c["switch"][-1]["disagreement"] < 1e-3 for c in report["cases"]))
+        self.assertEqual(comparison["committee_lost"], [])
+
 
 if __name__ == "__main__":
     unittest.main()

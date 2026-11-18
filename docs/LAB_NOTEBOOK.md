@@ -8,6 +8,41 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-18 — Roadmap #48: the wider screen on all 50 three-fault cases
+
+Full write-up: [experiments/locate-repair/WIDE_SCREEN.md](../experiments/locate-repair/WIDE_SCREEN.md).
+Branch `claude/triple-wide-screen`, stacked on `claude/triple-screen-misses`.
+
+### Setup
+
+- **Question.** #47's wider screen (extend the best 1,000 pairs, not 200) fixed both clear failures on 8
+  cases. Does it reach 50 of 50 under 0.1% on all 50 three-fault cases without new losses?
+- **Design.** `early_values.py --early 2 --pairs 1000` on seeds 0 to 49, against the 200-pair runs of #45
+  and #46. Also score an adaptive rule: widen only when no committee member fits every practice label before
+  targeted labels.
+- **Code.** `wide_compare.py`; 1 new test that checks the evidence.
+
+### Results (measured)
+
+1. 200 / 1,000 pairs: under 0.1% 48 / **50**, under 0.01% 35 / 37, exact 29 / 30, every visible fault
+   34 / 35, true triple in committee 38 / 41. Worst case 0.61% / 0.079%.
+2. Nothing lost at 0.1%. At 0.01%, 6 gained and 4 lost (6, 20, 22, 33; all still under 0.06%); 2 of the 4 end
+   on the same weights as with 200 pairs.
+3. Cases ending on the same weights with both screens still move by a factor of 0.09 to 3.7.
+4. The committee gains the true triple in 14, 47 and 49 and loses it nowhere; the 9 still lacking it are the
+   9 #47 found lost in the tie at the cut.
+5. Cost: median 3,497 against 894 seconds per case; 51.5 against 12.3 CPU hours.
+6. The adaptive flag fires on exactly seeds 14 and 49. Scored from the two runs, adaptive gets 50 of 50 under
+   0.1%, 37 under 0.01%, 31 exact, 36 every visible fault, in 14.0 CPU hours.
+
+### Interpretation
+
+- *Inference:* the real effect is the two clear failures fixed; the shuffle at 0.01% is mostly different
+  targeted labels, not the screen. The adaptive rule becomes the three-fault default, and roadmap #49 checks
+  the flag on fresh cases.
+
+---
+
 ## 2026-11-18 — Roadmap #47: where the committee screen loses the true triple
 
 Full write-up: [experiments/locate-repair/SCREEN_MISSES.md](../experiments/locate-repair/SCREEN_MISSES.md).

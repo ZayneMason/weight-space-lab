@@ -150,3 +150,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [FRESH_SWITCH.md](FRESH_SWITCH.md) (roadmap #46) checks #45 on 25 fresh cases: 2 early rounds no longer beat 4 (15 and 16 under 0.01%), but over all 50 cases early value labels put 48 under 0.1% against 45 without them, with the same weights; one early round loses seed 17, and the committee misses the true triple in 8 fresh cases, including seed 49, the one clear failure.
 
 [SCREEN_MISSES.md](SCREEN_MISSES.md) (roadmap #47) finds where the committee loses the true triple: 9 of 12 times in a tie at the cut to 200, 3 times because none of its pairs is among the best 200; extending the best 1,000 pairs fixes both clear failures (seeds 14 and 49 end under 0.01% on the exact weights).
+
+[WIDE_SCREEN.md](WIDE_SCREEN.md) (roadmap #48) runs the 1,000-pair screen on all 50 three-fault cases: 50 of 50 under 0.1% with nothing lost at that line, at about 4 times the cost; widening only when no committee member fits every practice label fires on exactly the two failures and gets the same 50 of 50 at 1.1 times the cost.
