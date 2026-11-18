@@ -148,3 +148,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [SWITCH_POINT.md](SWITCH_POINT.md) (roadmap #45) moves the switch: two early rounds (200 value queries) is the best three-fault arm so far, 24 of 25 under 0.1% and 20 under 0.01%, with #37's weights exactly; six early rounds is worse on every count.
 
 [FRESH_SWITCH.md](FRESH_SWITCH.md) (roadmap #46) checks #45 on 25 fresh cases: 2 early rounds no longer beat 4 (15 and 16 under 0.01%), but over all 50 cases early value labels put 48 under 0.1% against 45 without them, with the same weights; one early round loses seed 17, and the committee misses the true triple in 8 fresh cases, including seed 49, the one clear failure.
+
+[SCREEN_MISSES.md](SCREEN_MISSES.md) (roadmap #47) finds where the committee loses the true triple: 9 of 12 times in a tie at the cut to 200, 3 times because none of its pairs is among the best 200; extending the best 1,000 pairs fixes both clear failures (seeds 14 and 49 end under 0.01% on the exact weights).

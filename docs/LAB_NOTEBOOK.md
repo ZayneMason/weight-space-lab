@@ -8,6 +8,39 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-18 — Roadmap #47: where the committee screen loses the true triple
+
+Full write-up: [experiments/locate-repair/SCREEN_MISSES.md](../experiments/locate-repair/SCREEN_MISSES.md).
+Branch `claude/triple-screen-misses`, stacked on `claude/triple-fresh-switch`.
+
+### Setup
+
+- **Question.** The committee of 200 triples misses the true triple in 12 of 50 cases, including both clear
+  failures (seeds 14 and 49). At which step of the screen does it drop out?
+- **Design.** Rank diagnosis on the 12 cases; then extend the best 1,000 pairs instead of 200 on the 3 cases
+  never extended (14, 47, 49) and 5 controls (0, 25, 26, 27, 28), with #45's 2-early-round rule.
+- **Code.** `screen_ranks.py`; `--pairs` and `--only` on `early_values.py`; `pairs_kept` on the committee;
+  1 new test.
+
+### Results (measured)
+
+1. In 9 of 12 the true triple is extended and fits every practice label, but ties with the 200th member and
+   ranks 206th to 1,175th. In 3 (14, 47, 49) none of its pairs is in the best 200, so it is never extended.
+2. In seeds 14 and 49 the true triple gets every practice label right and no extended triple does (best
+   members 99.6% and 99.9%). Seed 14's best true pair ranks 204th; seed 49's 930th.
+3. With 1,000 pairs, seed 14 goes from 0.61% to 0.0092% and seed 49 from 0.34% to 0.0069%, both on the exact
+   broken weights. Seed 47 reaches 0.0037% on a lookalike (from 0.041%).
+4. Controls keep their weight scores; seed 28 (lost in the tie) still lacks the true triple.
+5. The wider screen costs about 3.5 times as long per case.
+
+### Interpretation
+
+- *Inference:* the joint pair ordering is the weak step for the clear failures (seed 49's best true pair is
+  7th on the plain pair score). Losing the true triple in a tie mostly does no harm, because lookalikes fill
+  the committee. Roadmap #48 runs the wider screen on all 50 cases.
+
+---
+
 ## 2026-11-18 — Roadmap #46: two early rounds on fresh cases, and one early round
 
 Full write-up: [experiments/locate-repair/FRESH_SWITCH.md](../experiments/locate-repair/FRESH_SWITCH.md).
