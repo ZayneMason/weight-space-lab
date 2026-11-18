@@ -1010,6 +1010,25 @@ three-fault default. Also record how often the true triple is in the committee.
 
 **Cost.** CPU, about 12 hours (four runs in parallel, about 3,300 seconds per case).
 
+**Status (November 18, done):** [WIDE_SCREEN.md](../experiments/locate-repair/WIDE_SCREEN.md).
+50 of 50 under 0.1% (from 48), with no case lost at that line; under 0.01% 37 (from 35), with 6 gained and 4
+lost, a shuffle that cases ending on the same weights show too. The true triple enters 3 more committees (14,
+47, 49) and leaves none. Cost is about 4 times as much (51.5 against 12.3 CPU hours). An adaptive rule, widen
+only when no committee member fits every practice label, fires on exactly seeds 14 and 49 and gets the same
+50 of 50 at 14.0 CPU hours.
+
+## 49. Does the adaptive widening flag hold on fresh cases?
+
+*Added November 18 after #48.*
+
+On seeds 0 to 49 the flag "the 200-pair committee's best member misses a practice label before any targeted
+label" fires on exactly the two cases the 200-pair screen fails. Build the rule into `early_values.py`
+(`--widen-to 1000`: run 200 pairs, and restart the case with 1,000 when the flag fires), then run it on 50
+fresh three-fault cases (seeds 50 to 99) and record how often the flag fires, whether every case it skips
+ends under 0.1%, and the cost against 200 pairs alone.
+
+**Cost.** CPU, about 13 to 16 core-hours (four runs in parallel).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

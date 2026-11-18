@@ -1,0 +1,515 @@
+{
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49
+ ],
+ "pairs_200": {
+  "under_0.1%": 48,
+  "under_0.01%": 35,
+  "exact": 29,
+  "every_visible": 34,
+  "true_triple_in_committee": 38,
+  "median": 4.8e-05,
+  "worst": 0.006097,
+  "median_seconds": 893.75,
+  "cpu_hours": 12.25986111111111
+ },
+ "pairs_1000": {
+  "under_0.1%": 50,
+  "under_0.01%": 37,
+  "exact": 30,
+  "every_visible": 35,
+  "true_triple_in_committee": 41,
+  "median": 4.7000000000000004e-05,
+  "worst": 0.000788,
+  "median_seconds": 3496.95,
+  "cpu_hours": 51.46347222222222
+ },
+ "line_0.001": {
+  "gained": [
+   14,
+   49
+  ],
+  "lost": []
+ },
+ "line_0.0001": {
+  "gained": [
+   10,
+   12,
+   14,
+   35,
+   47,
+   49
+  ],
+  "lost": [
+   6,
+   20,
+   22,
+   33
+  ]
+ },
+ "closer": 18,
+ "further": 21,
+ "median_ratio": 1.0,
+ "same_winner": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  10,
+  15,
+  16,
+  17,
+  19,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  40,
+  41,
+  43,
+  45,
+  48
+ ],
+ "same_winner_ratio_range": [
+  0.0873015873015873,
+  3.7333333333333334
+ ],
+ "committee_gained": [
+  14,
+  47,
+  49
+ ],
+ "committee_lost": [],
+ "committee_still_lacks": [
+  3,
+  5,
+  17,
+  28,
+  30,
+  32,
+  37,
+  41,
+  44
+ ],
+ "adaptive": {
+  "under_0.1%": 50,
+  "under_0.01%": 37,
+  "exact": 31,
+  "every_visible": 36,
+  "true_triple_in_committee": 40,
+  "median": 4.8e-05,
+  "worst": 0.000855,
+  "cpu_hours": 13.998611111111112,
+  "flagged": [
+   14,
+   49
+  ]
+ },
+ "per_case": {
+  "0": {
+   "pairs_200": 6.1e-05,
+   "pairs_1000": 7.1e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "1": {
+   "pairs_200": 4.1e-05,
+   "pairs_1000": 2.2e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "2": {
+   "pairs_200": 1.5e-05,
+   "pairs_1000": 1.9e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "3": {
+   "pairs_200": 3.1e-05,
+   "pairs_1000": 3.1e-05,
+   "same_winner": true,
+   "committee_200": false,
+   "committee_1000": false
+  },
+  "4": {
+   "pairs_200": 2.5e-05,
+   "pairs_1000": 4.1e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "5": {
+   "pairs_200": 8e-06,
+   "pairs_1000": 8e-06,
+   "same_winner": true,
+   "committee_200": false,
+   "committee_1000": false
+  },
+  "6": {
+   "pairs_200": 3e-05,
+   "pairs_1000": 0.000112,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "7": {
+   "pairs_200": 1.6e-05,
+   "pairs_1000": 4.1e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "8": {
+   "pairs_200": 3e-06,
+   "pairs_1000": 5.4e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "9": {
+   "pairs_200": 0.000141,
+   "pairs_1000": 0.000105,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "10": {
+   "pairs_200": 0.000103,
+   "pairs_1000": 6.5e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "11": {
+   "pairs_200": 4.4e-05,
+   "pairs_1000": 4.6e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "12": {
+   "pairs_200": 0.000169,
+   "pairs_1000": 7.8e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "13": {
+   "pairs_200": 7.2e-05,
+   "pairs_1000": 4.6e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "14": {
+   "pairs_200": 0.006097,
+   "pairs_1000": 9.2e-05,
+   "same_winner": false,
+   "committee_200": false,
+   "committee_1000": true
+  },
+  "15": {
+   "pairs_200": 5.9e-05,
+   "pairs_1000": 7e-06,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "16": {
+   "pairs_200": 5.8e-05,
+   "pairs_1000": 5.8e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "17": {
+   "pairs_200": 0.000855,
+   "pairs_1000": 0.000788,
+   "same_winner": true,
+   "committee_200": false,
+   "committee_1000": false
+  },
+  "18": {
+   "pairs_200": 3e-05,
+   "pairs_1000": 1.1e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "19": {
+   "pairs_200": 2.6e-05,
+   "pairs_1000": 2.6e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "20": {
+   "pairs_200": 9e-05,
+   "pairs_1000": 0.000518,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "21": {
+   "pairs_200": 2.6e-05,
+   "pairs_1000": 1.7e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "22": {
+   "pairs_200": 4e-05,
+   "pairs_1000": 0.000233,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "23": {
+   "pairs_200": 7.4e-05,
+   "pairs_1000": 1.3e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "24": {
+   "pairs_200": 9e-06,
+   "pairs_1000": 9.4e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "25": {
+   "pairs_200": 2.2e-05,
+   "pairs_1000": 3.3e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "26": {
+   "pairs_200": 1.6e-05,
+   "pairs_1000": 1.1e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "27": {
+   "pairs_200": 4e-05,
+   "pairs_1000": 4.8e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "28": {
+   "pairs_200": 0.000734,
+   "pairs_1000": 0.000517,
+   "same_winner": false,
+   "committee_200": false,
+   "committee_1000": false
+  },
+  "29": {
+   "pairs_200": 1.3e-05,
+   "pairs_1000": 2.7e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "30": {
+   "pairs_200": 0.000326,
+   "pairs_1000": 0.000326,
+   "same_winner": true,
+   "committee_200": false,
+   "committee_1000": false
+  },
+  "31": {
+   "pairs_200": 2e-05,
+   "pairs_1000": 2e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "32": {
+   "pairs_200": 0.000736,
+   "pairs_1000": 0.000737,
+   "same_winner": true,
+   "committee_200": false,
+   "committee_1000": false
+  },
+  "33": {
+   "pairs_200": 5.2e-05,
+   "pairs_1000": 0.000117,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "34": {
+   "pairs_200": 9.5e-05,
+   "pairs_1000": 5.1e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "35": {
+   "pairs_200": 0.000126,
+   "pairs_1000": 1.1e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "36": {
+   "pairs_200": 1.1e-05,
+   "pairs_1000": 1.2e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "37": {
+   "pairs_200": 0.00021,
+   "pairs_1000": 0.00021,
+   "same_winner": true,
+   "committee_200": false,
+   "committee_1000": false
+  },
+  "38": {
+   "pairs_200": 0.000301,
+   "pairs_1000": 0.000672,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "39": {
+   "pairs_200": 0.000201,
+   "pairs_1000": 0.000213,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "40": {
+   "pairs_200": 6e-05,
+   "pairs_1000": 6e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "41": {
+   "pairs_200": 0.000464,
+   "pairs_1000": 0.00054,
+   "same_winner": true,
+   "committee_200": false,
+   "committee_1000": false
+  },
+  "42": {
+   "pairs_200": 3.3e-05,
+   "pairs_1000": 4.4e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "43": {
+   "pairs_200": 9.9e-05,
+   "pairs_1000": 9.9e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "44": {
+   "pairs_200": 1.1e-05,
+   "pairs_1000": 9e-06,
+   "same_winner": false,
+   "committee_200": false,
+   "committee_1000": false
+  },
+  "45": {
+   "pairs_200": 4.3e-05,
+   "pairs_1000": 4.3e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "46": {
+   "pairs_200": 2.6e-05,
+   "pairs_1000": 4e-05,
+   "same_winner": false,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "47": {
+   "pairs_200": 0.000408,
+   "pairs_1000": 3.7e-05,
+   "same_winner": false,
+   "committee_200": false,
+   "committee_1000": true
+  },
+  "48": {
+   "pairs_200": 3.2e-05,
+   "pairs_1000": 3.2e-05,
+   "same_winner": true,
+   "committee_200": true,
+   "committee_1000": true
+  },
+  "49": {
+   "pairs_200": 0.003386,
+   "pairs_1000": 6.9e-05,
+   "same_winner": false,
+   "committee_200": false,
+   "committee_1000": true
+  }
+ }
+}
