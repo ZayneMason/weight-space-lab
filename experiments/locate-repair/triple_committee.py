@@ -51,12 +51,13 @@ def boundary_pool(case, fits, rng, size=None, draw=DRAW, cap=CAP):
     return candidates[np.argsort(closeness)[:size]]
 
 
-def committee(case, px, py, size=COMMITTEE):
+def committee(case, px, py, size=COMMITTEE, pairs_kept=None):
     """#33's ranking: every extended triple fitted continuously, best accuracy first, coarse-7 order
-    breaking ties. Returns the best ``size`` triples with their fits."""
+    breaking ties. Returns the best ``size`` triples with their fits. ``pairs_kept`` is how many of the
+    best pairs are extended to triples (default t3.PAIRS, 200; roadmap #47 tries more)."""
     pairs = sc.ranked_pairs(case["arrays"], px, py)
     ranked = [pairs[k] for k in js.joint_order(js.joint_scores(case, px, py, pairs, points=ds.PAIR_POINTS))]
-    triples = t3.triples_from(ranked, lr.entries(case["arrays"]))
+    triples = t3.triples_from(ranked, lr.entries(case["arrays"]), pairs_kept or t3.PAIRS)
     coarse = [t3.fit_triple(case, px, py, t, 7) for t in triples]
     acc7, cost7 = np.array([b[0][0] for b in coarse]), np.array([-b[0][1] for b in coarse])
     rank7 = np.empty(len(triples), int)

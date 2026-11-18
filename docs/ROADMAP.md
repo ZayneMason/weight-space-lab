@@ -992,6 +992,24 @@ seeds the triples, the coarse 7-point fit, or the cut to 200. Then try the cheap
 
 **Cost.** CPU, about an hour for the ranks; a few hours for the rerun.
 
+**Status (November 18, done):** [SCREEN_MISSES.md](../experiments/locate-repair/SCREEN_MISSES.md).
+Two ways to lose it. In 9 of the 12 the true triple is extended and fits every practice label but ties with
+the 200th member and ranks 206th to 1,175th. In 3 (14, 47, 49) none of its pairs is among the best 200, so it
+is never extended; in 14 and 49 it would have been the only triple to fit every label. Extending the best
+1,000 pairs fixes both clear failures (seed 14: 0.61% to 0.0092%; seed 49: 0.34% to 0.0069%, exact weights)
+and leaves 5 controls unchanged in kind, at about 3.5 times the cost per case.
+
+## 48. The wider screen on all 50 three-fault cases
+
+*Added November 18 after #47.*
+
+#47 extended the best 1,000 pairs instead of 200 on 8 cases and fixed seeds 14 and 49, the two clear
+failures. Run it with #45's 2-early-round rule on all 50 cases (seeds 0 to 49) and compare with the 200-pair
+runs from #45 and #46. If it reaches 50 of 50 under 0.1% without losing a case elsewhere, it becomes the
+three-fault default. Also record how often the true triple is in the committee.
+
+**Cost.** CPU, about 12 hours (four runs in parallel, about 3,300 seconds per case).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

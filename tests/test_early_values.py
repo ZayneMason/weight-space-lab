@@ -56,5 +56,14 @@ class EarlyValuesTests(unittest.TestCase):
                 self.assertEqual(sum(1 for a in asked if a), early)
 
 
+    def test_more_pairs_kept_means_more_triples(self):
+        px, py, _ = ev.lr.split(self.case["practice"])
+        _, _, few = ev.tc.committee(self.case, px, py, size=5, pairs_kept=2)
+        members, fits, more = ev.tc.committee(self.case, px, py, size=5, pairs_kept=6)
+        self.assertGreater(more, few)
+        self.assertEqual(len(members), 5)
+        self.assertEqual(set(fits), set(members))
+
+
 if __name__ == "__main__":
     unittest.main()

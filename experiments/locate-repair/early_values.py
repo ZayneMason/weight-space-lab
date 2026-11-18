@@ -43,10 +43,10 @@ def make_chooser(early=EARLY, value_share=VALUE_SHARE):
     return choose
 
 
-def analyse(case, early=EARLY):
+def analyse(case, early=EARLY, pairs_kept=None):
     px, py, _ = lr.split(case["practice"])
     start = time.time()
-    members, fits, count = tc.committee(case, px, py)
+    members, fits, count = tc.committee(case, px, py, pairs_kept=pairs_kept)
     silent = cr.silent_faults(case)
     history = st.run(case, members, fits, silent, bs.make_probe(case, bs.PROBE), chooser=make_chooser(early))
     return {"width": case["width"], "seed": case["seed"], "faults": case["faults"], "sizes": case["sizes"],
@@ -61,6 +61,8 @@ def main():
     parser.add_argument("--seeds", type=int, default=25)
     parser.add_argument("--seed-start", type=int, default=0)
     parser.add_argument("--early", type=int, default=EARLY, help="rounds of the half mix before splits only (#45)")
+    parser.add_argument("--pairs", type=int, default=None, help="pairs extended to triples (default 200; #47)")
+    parser.add_argument("--only", type=int, nargs="+", help="run only these seeds (#47)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -69,7 +71,7 @@ def main():
         rows = sorted((r for p in args.merge for r in json.loads(p.read_text())["cases"]), key=lambda r: r["seed"])
     else:
         rows = []
-        for seed in range(args.seed_start, args.seed_start + args.seeds):
+        for seed in args.only or range(args.seed_start, args.seed_start + args.seeds):
             saved = args.output / f"case-{seed}.json"
             if saved.exists():
                 rows.append(json.loads(saved.read_text()))
@@ -78,12 +80,12 @@ def main():
             case = rs.resize(base) if base is not None else None
             if case is None:
                 continue
-            rows.append(analyse(case, args.early))
+            rows.append(analyse(case, args.early, args.pairs))
             saved.write_text(json.dumps(rows[-1]) + "\n")
             last = rows[-1]["switch"]
             print(seed, last[-1]["faults_found"], round(last[-1]["disagreement"], 6),
                   [h.get("value_queries") for h in last[:-1]], flush=True)
-    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early,
+    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS,
               "value_share": VALUE_SHARE, "delta": vq.DELTA, "probe": bs.PROBE, "pool": aq.POOL,
               "summary": st.summarize(rows), "cases": rows}
     (args.output / "early-values.json").write_text(json.dumps(report, indent=1) + "\n")
