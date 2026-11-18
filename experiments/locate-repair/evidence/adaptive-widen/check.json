@@ -1,0 +1,184 @@
+{
+ "fresh": {
+  "under_0.1%": 45,
+  "under_0.01%": 28,
+  "exact": 26,
+  "every_visible": 30,
+  "true_triple_in_committee": 35,
+  "median": 7.999999999999999e-05,
+  "worst": 0.004447,
+  "median_seconds": 1000.0,
+  "cpu_hours": 13.915055555555554,
+  "widened": [],
+  "failures": [
+   {
+    "seed": 61,
+    "disagreement": 0.001344,
+    "true_triple_in_committee": false,
+    "first_best_practice_accuracy": 1.0,
+    "final_practice_accuracy": 0.9816176470588235
+   },
+   {
+    "seed": 63,
+    "disagreement": 0.002308,
+    "true_triple_in_committee": false,
+    "first_best_practice_accuracy": 1.0,
+    "final_practice_accuracy": 0.9908088235294118
+   },
+   {
+    "seed": 76,
+    "disagreement": 0.001578,
+    "true_triple_in_committee": false,
+    "first_best_practice_accuracy": 1.0,
+    "final_practice_accuracy": 0.9889705882352942
+   },
+   {
+    "seed": 83,
+    "disagreement": 0.001295,
+    "true_triple_in_committee": false,
+    "first_best_practice_accuracy": 1.0,
+    "final_practice_accuracy": 0.9917279411764706
+   },
+   {
+    "seed": 96,
+    "disagreement": 0.004447,
+    "true_triple_in_committee": false,
+    "first_best_practice_accuracy": 1.0,
+    "final_practice_accuracy": 0.9954044117647058
+   }
+  ]
+ },
+ "lacks_true_triple": [
+  52,
+  55,
+  56,
+  61,
+  62,
+  63,
+  65,
+  66,
+  68,
+  69,
+  76,
+  83,
+  86,
+  93,
+  96
+ ],
+ "start_flag": {
+  "seeds_0_49": {
+   "flagged": [
+    14,
+    49
+   ],
+   "failures": [
+    14,
+    49
+   ],
+   "failures_missed": [],
+   "flagged_but_fine": []
+  },
+  "seeds_50_99": {
+   "flagged": [],
+   "failures": [
+    61,
+    63,
+    76,
+    83,
+    96
+   ],
+   "failures_missed": [
+    61,
+    63,
+    76,
+    83,
+    96
+   ],
+   "flagged_but_fine": []
+  }
+ },
+ "end_flag": {
+  "seeds_0_49": {
+   "flagged": [
+    6,
+    14,
+    17,
+    21,
+    28,
+    30,
+    32,
+    37,
+    41,
+    47,
+    49
+   ],
+   "failures": [
+    14,
+    49
+   ],
+   "failures_missed": [],
+   "flagged_but_fine": [
+    6,
+    17,
+    21,
+    28,
+    30,
+    32,
+    37,
+    41,
+    47
+   ]
+  },
+  "seeds_50_99": {
+   "flagged": [
+    52,
+    55,
+    61,
+    62,
+    63,
+    64,
+    66,
+    68,
+    75,
+    76,
+    81,
+    83,
+    89,
+    92,
+    93,
+    96
+   ],
+   "failures": [
+    61,
+    63,
+    76,
+    83,
+    96
+   ],
+   "failures_missed": [],
+   "flagged_but_fine": [
+    52,
+    55,
+    62,
+    64,
+    66,
+    68,
+    75,
+    81,
+    89,
+    92,
+    93
+   ]
+  }
+ },
+ "end_flag_adaptive_seeds_0_49": {
+  "under_0.1%": 50,
+  "under_0.01%": 37,
+  "exact": 31,
+  "every_visible": 36,
+  "true_triple_in_committee": 41,
+  "median": 4.8e-05,
+  "worst": 0.000788,
+  "cpu_hours": 22.81833333333333
+ }
+}
