@@ -43,5 +43,18 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(info["value_queries"], ev.aq.PER_ROUND // 2)
 
 
+    def test_fresh_switch_evidence_matches_its_arms(self):
+        evidence = ROOT / "experiments/locate-repair/evidence/fresh-switch"
+        import json
+        for name, early, start in (("early-1", 1, 0), ("fresh-early-0", 0, 25), ("fresh-early-2", 2, 25),
+                                   ("fresh-early-4", 4, 25)):
+            report = json.loads((evidence / f"{name}.json").read_text())
+            self.assertEqual(report["early_rounds"], early)
+            self.assertEqual(sorted(c["seed"] for c in report["cases"]), list(range(start, start + 25)))
+            for case in report["cases"]:
+                asked = [h.get("value_queries", 0) for h in case["switch"][:-1]]
+                self.assertEqual(sum(1 for a in asked if a), early)
+
+
 if __name__ == "__main__":
     unittest.main()

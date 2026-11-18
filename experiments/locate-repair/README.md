@@ -146,3 +146,5 @@ every committee label at the line hurts.
 is undone but nothing is gained (22 and 16, #37's cases exactly), because the cases #40 fixes reach the line late or never.
 [EARLY_VALUES.md](EARLY_VALUES.md) (roadmap #44) reverses that: #40's mix in the first four rounds, then committee splits only. It keeps both gains: 24 of 25 under 0.1% as in #40, and 19 every visible fault as in #37, with half #40's value queries.
 [SWITCH_POINT.md](SWITCH_POINT.md) (roadmap #45) moves the switch: two early rounds (200 value queries) is the best three-fault arm so far, 24 of 25 under 0.1% and 20 under 0.01%, with #37's weights exactly; six early rounds is worse on every count.
+
+[FRESH_SWITCH.md](FRESH_SWITCH.md) (roadmap #46) checks #45 on 25 fresh cases: 2 early rounds no longer beat 4 (15 and 16 under 0.01%), but over all 50 cases early value labels put 48 under 0.1% against 45 without them, with the same weights; one early round loses seed 17, and the committee misses the true triple in 8 fresh cases, including seed 49, the one clear failure.
