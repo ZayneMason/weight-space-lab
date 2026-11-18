@@ -27,15 +27,16 @@ Branch `claude/triple-fresh-switch`, stacked on `claude/triple-switch-point`.
 2. All 50 cases: under 0.1% 45 / 48 / 48 and under 0.01% 31 / 35 / 34 for 0 / 2 / 4 early rounds.
 3. Two against four on fresh cases: 12 closer, 10 further, 3 level, median ratio 1.00.
 4. One early round on seeds 0 to 24: 23 under 0.1% (loses seed 17 at 0.108%), 18 under 0.01%, weights as #37.
-5. Seed 49 fails in every fresh arm (0.34% to 0.40%) on a wrong triple, though its committee holds the true
-   triple and the told fit of that triple reaches 0.011% or better.
+5. The true triple is missing from 8 of the 25 fresh committees (original cases: 4 of 25). Seven of those 8
+   still end under 0.1% with 2 or 4 early rounds. Seed 49, the eighth, fails in every fresh arm (0.34% to 0.40%); the true triple
+   would score better than every member on the practice labels before any targeted label.
 
 ### Interpretation
 
 - *Inference:* #45's 2-against-4 lead was noise. What replicates is that a few early rounds of value labels
   move about 3 of 50 cases under 0.1% at no cost to the weights. Two rounds stays the default because it
   needs half the value queries.
-- *Inference:* seed 49 is a fit or selection failure, not a screening one. Roadmap #47.
+- *Inference:* both clear failures left (seeds 14 and 49) are screening failures. Roadmap #47 widens the screen.
 
 ---
 

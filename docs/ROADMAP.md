@@ -976,22 +976,21 @@ default for three faults; if not, #45's lead was noise.
 #45's lead was noise. On fresh cases 0, 2 and 4 early rounds give 23, 24 and 24 under 0.1% and 15, 15 and 16
 under 0.01%, with the same weights. Over all 50 cases the mixes have 48 under 0.1% against 45 with no value
 labels, and 2 and 4 rounds are level at 0.01% (35 and 34). One early round loses seed 17 (23 under 0.1%).
-Two rounds stays the default because it needs half the value queries. Seed 49 fails in every fresh arm even
-though its committee holds the true triple.
+Two rounds stays the default because it needs half the value queries. The committee misses the true triple
+in 8 of the 25 fresh cases (4 of the original 25); seed 49 is the one of them that fails in every arm.
 
-## 47. Why seed 49's true triple loses to a wrong one
+## 47. Why the screen misses the true triple
 
 *Added November 18 after #46.*
 
-In seed 49 the committee holds the true triple, and the true triple refitted on the final labels disagrees
-with the original on 0.011% or less, yet every arm picks a wrong triple at 0.34% to 0.40%. The committee
-picks the member that scores best on the labels, so its own fit of the true triple must score no better
-there. Compare, round by round, the practice accuracy of the committee's fit of the true triple, the told
-fit and the winner, and where the committee's fit starts. If the committee's fit is stuck at a worse
-optimum, refitting the top few members from the told-fit start (or from several starts) should fix seed 49
-without changing the other 49 cases; check that on all 50.
+The committee of 200 triples misses the true triple in 12 of 50 cases (3, 5, 14, 17, 28, 30, 32, 37, 41, 44,
+47, 49). Both clear failures left are among them (seeds 14 and 49), and in seed 49 the true triple, fitted
+the committee's way, gets every practice label right while the winner gets 99.9%. For each of the 12, find
+where the true triple ranks among all extended triples and at which stage it drops out: the pair screen that
+seeds the triples, the coarse 7-point fit, or the cut to 200. Then try the cheapest fix that brings it back
+(a larger committee, or ranking by the continuous fit before the cut) and rerun the 12 cases.
 
-**Cost.** CPU, under an hour for the diagnosis; about six hours to rerun 50 cases.
+**Cost.** CPU, about an hour for the ranks; a few hours for the rerun.
 
 ## Posts the current results already support
 

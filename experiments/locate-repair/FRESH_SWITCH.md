@@ -74,11 +74,15 @@ python experiments/locate-repair/early_values.py --early 4 --seed-start 25 --out
 6. **The fresh cases are harder for the weights but not for behaviour.** 15 every visible fault against 19
    on the original cases, yet 23 to 24 under 0.1% in both. With 2 early rounds, ten fresh winners miss a
    visible fault; nine of them are under 0.1% and seven under 0.05%.
-7. **Seed 49 is a new kind of failure.** Every arm ends between 0.34% and 0.40%, on a wrong triple each
-   time, although its committee holds the true triple. The true triple refitted on the same labels reaches
-   0.0055% to 0.011%. Every fresh committee holds the true triple; seed 14's is still the only one that
-   doesn't.
-8. **Cost:** median about 870 seconds per case in every arm.
+7. **Fresh committees miss the true triple twice as often.** It is missing from 8 of the 25 fresh
+   committees (seeds 28, 30, 32, 37, 41, 44, 47 and 49), against 4 of the original 25 (3, 5, 14 and 17).
+   Those 8 are 8 of the 10 fresh winners that miss a visible fault, which accounts for the lower weight
+   score. With 2 or 4 early rounds, seven of the 8 still end under 0.1% (six with none; seed 32 is at 0.110%).
+8. **Seed 49 fails in every fresh arm, between 0.34% and 0.40%.** It is a screening failure like seed 14:
+   the true triple is not in its committee. Fitted the committee's way before any targeted label, the true
+   triple gets every practice label right (the winner gets 99.9%) and disagrees on 0.37%; refitted on the
+   final labels it reaches 0.0055% to 0.011%.
+9. **Cost:** median about 870 seconds per case in every arm.
 
 ## Interpretation
 
@@ -87,10 +91,10 @@ python experiments/locate-repair/early_values.py --early 4 --seed-start 25 --out
   rounds and four are equally good; one round is slightly worse; six (#45) is worse.
 - *Inference:* 2 early rounds is still a reasonable default because it uses half the value queries of 4 for
   the same result, not because it behaves better.
-- *Inference:* seed 49 says the remaining failures are not all screening failures. Its true triple is in the
-  committee, and the winner is by construction the member that scores best on the labels, so the
-  committee's own fit of the true triple scores no better than a wrong triple there, while the told fit of
-  the same triple is far closer. That points to the fit, not the labels or the screen. Roadmap #47 looks at it.
+- *Inference:* both clear failures left (seeds 14 and 49) are screening failures: the true triple never
+  enters the committee of 200, though in seed 49 it would beat every member on the starting labels. On fresh cases the screen
+  misses a third of true triples, and the labels hide most of those misses by finding lookalikes. The next
+  change should be to the screen, not the labels. Roadmap #47 looks at it.
 
 ## Evidence
 
