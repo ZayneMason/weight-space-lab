@@ -152,3 +152,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [SCREEN_MISSES.md](SCREEN_MISSES.md) (roadmap #47) finds where the committee loses the true triple: 9 of 12 times in a tie at the cut to 200, 3 times because none of its pairs is among the best 200; extending the best 1,000 pairs fixes both clear failures (seeds 14 and 49 end under 0.01% on the exact weights).
 
 [WIDE_SCREEN.md](WIDE_SCREEN.md) (roadmap #48) runs the 1,000-pair screen on all 50 three-fault cases: 50 of 50 under 0.1% with nothing lost at that line, at about 4 times the cost; widening only when no committee member fits every practice label fires on exactly the two failures and gets the same 50 of 50 at 1.1 times the cost.
+
+[ADAPTIVE_WIDEN.md](ADAPTIVE_WIDEN.md) (roadmap #49) runs #48's widening flag on 50 fresh three-fault cases: it never fires, and the five cases that miss 0.1% all lack the true triple; flagging a case when its finished repair still misses a label catches all seven failures across seeds 0 to 99.

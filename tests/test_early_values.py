@@ -13,6 +13,8 @@ spec.loader.exec_module(ev)
 
 
 class EarlyValuesTests(unittest.TestCase):
+    real_run = staticmethod(ev.st.run)
+
     def setUp(self):
         self.case = ev.rs.resize(ev.t3.corrupt(8, 0))
         px, py, _ = ev.lr.split(self.case["practice"])
@@ -75,6 +77,47 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(comparison["pairs_1000"]["under_0.1%"], sum(
             c["switch"][-1]["disagreement"] < 1e-3 for c in report["cases"]))
         self.assertEqual(comparison["committee_lost"], [])
+
+    def test_adaptive_widen_evidence_and_both_flags(self):
+        import json
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        import adaptive_check as ac
+        evidence = ROOT / "experiments/locate-repair/evidence/adaptive-widen"
+        report = json.loads((evidence / "adaptive-widen.json").read_text())
+        self.assertEqual(report["widen_to"], 1000)
+        self.assertEqual(sorted(c["seed"] for c in report["cases"]), list(range(50, 100)))
+        check = json.loads((evidence / "check.json").read_text())
+        fails = [c["seed"] for c in report["cases"] if c["switch"][-1]["disagreement"] >= 1e-3]
+        self.assertEqual([f["seed"] for f in check["fresh"]["failures"]], fails)
+        self.assertEqual(check["end_flag"]["seeds_50_99"]["failures_missed"], [])
+        self.assertEqual(check["end_flag"]["seeds_0_49"]["failures_missed"], [])
+        row = {"switch": [{"practice_accuracy": 1.0}, {"practice_accuracy": 0.99}], "first_best_practice_accuracy": 1.0}
+        self.assertFalse(ac.start_flag(row))
+        self.assertTrue(ac.end_flag(row))
+
+    def test_widens_only_when_no_member_fits_every_practice_label(self):
+        calls = []
+        real = ev.tc.committee
+
+        def committee(case, px, py, pairs_kept=None, **kw):
+            calls.append(pairs_kept)
+            members, fits, count = real(case, px, py, size=4, pairs_kept=3)
+            accuracy = 0.99 if pairs_kept is None else 1.0
+            fits = {t: ((accuracy, f[0][1]), f[1]) for t, f in fits.items()}
+            return members, fits, count
+
+        ev.tc.committee, ev.st.run = committee, lambda *a, **k: [{"disagreement": 0.0}]
+        try:
+            row = ev.analyse(self.case, widen_to=7)
+            self.assertEqual(calls, [None, 7])
+            self.assertTrue(row["widened"])
+            self.assertEqual(row["first_best_practice_accuracy"], 0.99)
+            calls.clear()
+            ev.analyse(self.case)
+            self.assertEqual(calls, [None])
+        finally:
+            ev.tc.committee = real
+            ev.st.run = type(self).real_run
 
 
 if __name__ == "__main__":

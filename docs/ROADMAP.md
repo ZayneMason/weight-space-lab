@@ -1029,6 +1029,24 @@ ends under 0.1%, and the cost against 200 pairs alone.
 
 **Cost.** CPU, about 13 to 16 core-hours (four runs in parallel).
 
+**Status (November 18, done):** [ADAPTIVE_WIDEN.md](../experiments/locate-repair/ADAPTIVE_WIDEN.md).
+The flag never fired on the 50 fresh cases, and 5 of them (61, 63, 76, 83, 96) miss 0.1%, every one with the
+true triple missing from a committee whose best member still fits every practice label. 45 of 50 under 0.1%,
+28 under 0.01%, 13.9 CPU hours. A different flag, "the finished 200-pair repair still misses a label after
+all 64 labels", catches all 7 failures across seeds 0 to 99 (16 fresh cases flagged, 11 old); on seeds 0 to 49
+it keeps 50 of 50 under 0.1% at 22.8 CPU hours.
+
+## 50. Widen when the finished repair still misses a label
+
+*Added November 18 after #49.*
+
+Rerun with 1,000 pairs the 16 fresh cases (seeds 50 to 99) whose finished 200-pair repair misses a label, and
+score the end-flag rule on all 100 three-fault cases: 200-pair run everywhere, 1,000-pair result where flagged.
+If it puts all five fresh failures under 0.1% without losing a flagged case that was already fine, it replaces
+#48's start flag as the three-fault default.
+
+**Cost.** CPU, about 16 core-hours (four runs in parallel, about 3,500 seconds per case).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

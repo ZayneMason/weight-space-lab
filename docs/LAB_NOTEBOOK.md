@@ -8,6 +8,37 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-18 — Roadmap #49: the adaptive widening flag on 50 fresh cases
+
+Full write-up: [experiments/locate-repair/ADAPTIVE_WIDEN.md](../experiments/locate-repair/ADAPTIVE_WIDEN.md).
+Branch `claude/triple-adaptive-widen`, stacked on `claude/triple-wide-screen`.
+
+### Setup
+
+- **Question.** #48's flag (no 200-pair committee member fits every practice label before targeted labels)
+  picked out exactly the two failures on seeds 0 to 49. Does it hold on fresh cases?
+- **Design.** `early_values.py --early 2 --widen-to 1000` on seeds 50 to 99.
+- **Code.** `--widen-to` in `early_values.py`, `adaptive_check.py`; 2 new tests.
+
+### Results (measured)
+
+1. The flag never fired: in all 50 fresh cases some committee member fits every practice label.
+2. 45 of 50 under 0.1%, 28 under 0.01%, 26 exact, 30 every visible fault, 13.9 CPU hours.
+3. The five failures (61, 63, 76, 83, 96; worst 0.44%) all lack the true triple in the committee; the flag
+   caught none of them.
+4. The true triple is missing from 15 of 50 fresh committees (12 of 50 on seeds 0 to 49).
+5. An end flag, "the finished 200-pair repair still misses a label", fires on 16 fresh cases and 11 of seeds 0
+   to 49 and catches all 7 failures. Scored on seeds 0 to 49 from #48's runs: 50 of 50 under 0.1% in 22.8 CPU
+   hours (200 pairs 12.3, 1,000 pairs 51.5).
+
+### Interpretation
+
+- *Inference:* fitting the practice labels says little about whether the true triple is in the committee;
+  missing labels after the targeted rounds does. Roadmap #50 reruns the 16 flagged fresh cases with 1,000
+  pairs.
+
+---
+
 ## 2026-11-18 — Roadmap #48: the wider screen on all 50 three-fault cases
 
 Full write-up: [experiments/locate-repair/WIDE_SCREEN.md](../experiments/locate-repair/WIDE_SCREEN.md).
