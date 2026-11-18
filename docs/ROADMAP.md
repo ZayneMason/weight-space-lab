@@ -972,6 +972,27 @@ default for three faults; if not, #45's lead was noise.
 
 **Cost.** CPU, about seven hours (four runs in parallel).
 
+**Status (November 18, done):** [FRESH_SWITCH.md](../experiments/locate-repair/FRESH_SWITCH.md).
+#45's lead was noise. On fresh cases 0, 2 and 4 early rounds give 23, 24 and 24 under 0.1% and 15, 15 and 16
+under 0.01%, with the same weights. Over all 50 cases the mixes have 48 under 0.1% against 45 with no value
+labels, and 2 and 4 rounds are level at 0.01% (35 and 34). One early round loses seed 17 (23 under 0.1%).
+Two rounds stays the default because it needs half the value queries. Seed 49 fails in every fresh arm even
+though its committee holds the true triple.
+
+## 47. Why seed 49's true triple loses to a wrong one
+
+*Added November 18 after #46.*
+
+In seed 49 the committee holds the true triple, and the true triple refitted on the final labels disagrees
+with the original on 0.011% or less, yet every arm picks a wrong triple at 0.34% to 0.40%. The committee
+picks the member that scores best on the labels, so its own fit of the true triple must score no better
+there. Compare, round by round, the practice accuracy of the committee's fit of the true triple, the told
+fit and the winner, and where the committee's fit starts. If the committee's fit is stuck at a worse
+optimum, refitting the top few members from the told-fit start (or from several starts) should fix seed 49
+without changing the other 49 cases; check that on all 50.
+
+**Cost.** CPU, under an hour for the diagnosis; about six hours to rerun 50 cases.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

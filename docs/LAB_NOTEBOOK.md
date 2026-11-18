@@ -8,6 +8,37 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-18 — Roadmap #46: two early rounds on fresh cases, and one early round
+
+Full write-up: [experiments/locate-repair/FRESH_SWITCH.md](../experiments/locate-repair/FRESH_SWITCH.md).
+Branch `claude/triple-fresh-switch`, stacked on `claude/triple-switch-point`.
+
+### Setup
+
+- **Question.** #45's 2-early-round lead over 4 was two or three cases on the 25 cases every three-fault rule
+  was tuned on. Does it hold on fresh cases, and is 1 early round enough?
+- **Design.** 0, 2 and 4 early rounds on seeds 25 to 49 (0 is #37's rule); 1 early round on seeds 0 to 24.
+- **Code.** No new code; 1 new test that checks the evidence files.
+
+### Results (measured)
+
+1. Fresh cases, 0 / 2 / 4 early rounds: under 0.1% 23 / 24 / 24, under 0.01% 15 / 15 / 16, every visible
+   fault 15 / 15 / 16, exact 13 in all three.
+2. All 50 cases: under 0.1% 45 / 48 / 48 and under 0.01% 31 / 35 / 34 for 0 / 2 / 4 early rounds.
+3. Two against four on fresh cases: 12 closer, 10 further, 3 level, median ratio 1.00.
+4. One early round on seeds 0 to 24: 23 under 0.1% (loses seed 17 at 0.108%), 18 under 0.01%, weights as #37.
+5. Seed 49 fails in every fresh arm (0.34% to 0.40%) on a wrong triple, though its committee holds the true
+   triple and the told fit of that triple reaches 0.011% or better.
+
+### Interpretation
+
+- *Inference:* #45's 2-against-4 lead was noise. What replicates is that a few early rounds of value labels
+  move about 3 of 50 cases under 0.1% at no cost to the weights. Two rounds stays the default because it
+  needs half the value queries.
+- *Inference:* seed 49 is a fit or selection failure, not a screening one. Roadmap #47.
+
+---
+
 ## 2026-11-17 — Roadmap #45: how many early rounds of value labels, for three broken weights
 
 Full write-up: [experiments/locate-repair/SWITCH_POINT.md](../experiments/locate-repair/SWITCH_POINT.md).
