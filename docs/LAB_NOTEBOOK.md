@@ -8,6 +8,28 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-19 — Roadmap #55: where the two-step rule still loses the true triple
+
+Full write-up: [experiments/locate-repair/UNSEEN_MISSES.md](../experiments/locate-repair/UNSEEN_MISSES.md).
+Branch `claude/triple-unseen-misses`, stacked on `claude/triple-two-step-unseen`.
+
+### Setup
+
+- **Question.** On seeds 124, 126 and 149, the three unseen cases whose repair still misses a label after both
+  reruns, where does the true triple drop out?
+- **Design.** Rebuild each committee from the practice labels with 200 and with 1,000 pairs (`screen_ranks.py`,
+  new pair-count argument).
+- **Code.** `unseen_misses.py`; 1 new test.
+
+### Results (measured)
+
+1. With 1,000 pairs all three true triples are extended (best true pair ranks 11, 281, 217).
+2. All three are cut among perfect practice fits: ranks 1,441, 9,277 and 298 at 1,000 pairs.
+3. Only 1,000 pairs with 1,000 triples together would keep one of them (149); the rule never combines the two.
+4. Seed 124's true triple ranks lower with 1,000 pairs (1,441) than with 200 (1,177).
+
+---
+
 ## 2026-11-19 — Roadmap #54: the two-step rule end to end on unseen cases
 
 Full write-up: [experiments/locate-repair/UNSEEN.md](../experiments/locate-repair/UNSEEN.md).

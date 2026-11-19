@@ -164,3 +164,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [TWO_STEP.md](TWO_STEP.md) (roadmap #53) scores the two-step rule (larger committee when the repair misses a label, then the wider screen if it still does) on all 100 three-fault cases: 100 of 100 under 0.1%, 75 under 0.01% and 69 exact at 1.6 times the cost of the plain run.
 
 [UNSEEN.md](UNSEEN.md) (roadmap #54) runs the two-step rule end to end with `early_values.py --two-step` on 50 unseen three-fault cases: all 50 under 0.1% (46 for the plain run), 35 under 0.01% and 27 exact at 1.8 times the cost; three cases still miss a label because their true triple never reaches the committee.
+
+[UNSEEN_MISSES.md](UNSEEN_MISSES.md) (roadmap #55) finds where the two-step rule still loses the true triple on the three unseen cases it cannot fully repair: never in the pair screen once 1,000 pairs are extended, always in the cut among hundreds to thousands of perfect practice fits.

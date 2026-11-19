@@ -1,0 +1,87 @@
+{
+ "cases": [
+  {
+   "seed": 124,
+   "best_true_pair_rank": 11,
+   "true_pair_ranks": [
+    11,
+    1128,
+    1355
+   ],
+   "true_triple_practice_accuracy": 1.0,
+   "final_disagreement": 0.00012,
+   "pairs_200": {
+    "triples": 11171,
+    "true_triple_rank": 1177,
+    "tied_or_better": 1101,
+    "committee_200": "cut",
+    "committee_1000": "cut"
+   },
+   "pairs_1000": {
+    "triples": 43698,
+    "true_triple_rank": 1441,
+    "tied_or_better": 1411,
+    "committee_200": "cut",
+    "committee_1000": "cut"
+   }
+  },
+  {
+   "seed": 126,
+   "best_true_pair_rank": 281,
+   "true_pair_ranks": [
+    281,
+    1019,
+    2738
+   ],
+   "true_triple_practice_accuracy": 1.0,
+   "final_disagreement": 0.000691,
+   "pairs_200": {
+    "triples": 9311,
+    "true_triple_rank": null,
+    "tied_or_better": 3690,
+    "committee_200": "never_extended",
+    "committee_1000": "never_extended"
+   },
+   "pairs_1000": {
+    "triples": 42903,
+    "true_triple_rank": 9277,
+    "tied_or_better": 7766,
+    "committee_200": "cut",
+    "committee_1000": "cut"
+   }
+  },
+  {
+   "seed": 149,
+   "best_true_pair_rank": 217,
+   "true_pair_ranks": [
+    217,
+    841,
+    1047
+   ],
+   "true_triple_practice_accuracy": 1.0,
+   "final_disagreement": 0.000448,
+   "pairs_200": {
+    "triples": 13214,
+    "true_triple_rank": null,
+    "tied_or_better": 199,
+    "committee_200": "never_extended",
+    "committee_1000": "never_extended"
+   },
+   "pairs_1000": {
+    "triples": 49145,
+    "true_triple_rank": 298,
+    "tied_or_better": 246,
+    "committee_200": "cut",
+    "committee_1000": "kept"
+   }
+  }
+ ],
+ "kept_by_setting": {
+  "200 pairs, 200 triples": [],
+  "200 pairs, 1,000 triples": [],
+  "1,000 pairs, 200 triples": [],
+  "1,000 pairs, 1,000 triples": [
+   149
+  ]
+ }
+}

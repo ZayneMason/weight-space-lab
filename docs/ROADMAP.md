@@ -1132,9 +1132,26 @@ a label after both reruns; their true triple never reaches the committee, but th
 On seeds 124, 126 and 149 the true triple is missing from the committee after the 200-pair run, the
 1,000-triple rerun and the 1,000-pair rerun. Rank the true triple at each cut, as #51 did (pair screen, cut to
 the kept pairs, extension to triples, cut to the committee), to find where it drops out, and check whether one
-of its three pairs is ranked below 1,000. Re-scoring saved runs, so no new search.
+of its three pairs is ranked below 1,000.
 
 **Cost.** CPU, under an hour.
+
+**Status (November 19, done):** [UNSEEN_MISSES.md](../experiments/locate-repair/UNSEEN_MISSES.md).
+With 1,000 pairs all three true triples are extended, so the pair screen is not the problem. All three are cut
+among perfect practice fits (ranks 1,441, 9,277 and 298 at 1,000 pairs, with 1,411, 7,766 and 246 triples tied
+or better). Only 1,000 pairs and 1,000 triples together would keep one of them (149). The cost was about
+3 core-hours, not under one, because the 1,000-pair committees fit 43,000 to 49,000 triples.
+
+## 56. A third rerun with 1,000 pairs and 1,000 triples
+
+*Added November 19 after #55.*
+
+#55 predicts that rerunning with both `--pairs 1000` and `--committee 1000` keeps seed 149's true triple and
+not 124's or 126's. Run it on the three cases the two-step rule leaves flagged, and record whether 149 ends on
+the exact broken weights, whether any repair stops missing a label, and the cost per case. If it fixes 149
+alone, add it as an optional third step only if its cost per flagged case is under about 1.5 CPU hours.
+
+**Cost.** CPU, about 5 core-hours (three cases, side by side).
 
 ## Posts the current results already support
 
