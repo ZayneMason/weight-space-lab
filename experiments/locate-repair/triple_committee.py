@@ -51,10 +51,18 @@ def boundary_pool(case, fits, rng, size=None, draw=DRAW, cap=CAP):
     return candidates[np.argsort(closeness)[:size]]
 
 
-def committee(case, px, py, size=COMMITTEE, pairs_kept=None):
+def largest_edit(case, fit):
+    """The biggest single scaled change a fitted repair makes (roadmap #57's best tie-break)."""
+    return max(abs(v - float(case["arrays"][n].flat[i])) / case["scale"][n] for n, i, v in fit[1])
+
+
+def committee(case, px, py, size=COMMITTEE, pairs_kept=None, tie_break="coarse"):
     """#33's ranking: every extended triple fitted continuously, best accuracy first, coarse-7 order
     breaking ties. Returns the best ``size`` triples with their fits. ``pairs_kept`` is how many of the
-    best pairs are extended to triples (default t3.PAIRS, 200; roadmap #47 tries more)."""
+    best pairs are extended to triples (default t3.PAIRS, 200; roadmap #47 tries more). With
+    ``tie_break="largest-edit"``, ties go to the smallest largest single edit instead (roadmap #58)."""
+    if tie_break not in ("coarse", "largest-edit"):
+        raise ValueError(f"unknown tie_break {tie_break!r}")
     pairs = sc.ranked_pairs(case["arrays"], px, py)
     ranked = [pairs[k] for k in js.joint_order(js.joint_scores(case, px, py, pairs, points=ds.PAIR_POINTS))]
     triples = t3.triples_from(ranked, lr.entries(case["arrays"]), pairs_kept or t3.PAIRS)
@@ -64,7 +72,10 @@ def committee(case, px, py, size=COMMITTEE, pairs_kept=None):
     rank7[tr.order(acc7, cost7, None)] = np.arange(len(triples))
     fits = [ct.best_of(*ct.continuous_fits(case, px, py, t, c)) for t, c in zip(triples, coarse)]
     accuracy, cost = np.array([b[0][0] for b in fits]), np.array([-b[0][1] for b in fits])
-    top = tr.order(accuracy, cost, rank7)[:size]
+    if tie_break == "largest-edit":
+        top = tr.order(accuracy, cost, np.array([largest_edit(case, b) for b in fits]))[:size]
+    else:
+        top = tr.order(accuracy, cost, rank7)[:size]
     return [triples[k] for k in top], {triples[k]: fits[k] for k in top}, len(triples)
 
 

@@ -1188,6 +1188,25 @@ exact weights, whether any case the current order gets right gets worse, and the
 
 **Cost.** CPU, about 25 core-hours.
 
+**Status (November 19): done, see [LARGEST_EDIT.md](../experiments/locate-repair/LARGEST_EDIT.md).** On seeds
+100 to 149 the new order ends 49 of 50 under 0.1% (coarse: 50), 34 under 0.01% (35) and 28 exact (27), and
+costs 24.3 CPU hours against 19.8. Seed 104 crosses the line, so the coarse order stays the default. #51's nine
+cases were not rerun.
+
+## 59. The largest-edit tie-break only in the widest rerun
+
+*Added November 19 after #58.*
+
+#58 shows the new order hurts when it picks the first committee: 41 cases under 0.1% after the first stage
+against 46. #57's five wins were all at 1,000 pairs, the last stage. Add a per-stage tie-break to
+`early_values.py` so the first two stages keep the coarse order and only the 1,000-pair rerun uses the
+largest-edit order. Run it on #51's nine lost cases and on the six unseen cases that reach that stage (102,
+109, 124, 126, 129, 149), reusing the saved first two stages. Record whether any of #57's five (55, 63, 76, 93,
+96) now ends on the exact weights, and whether any of the six gets worse. Every other case is unchanged by
+construction.
+
+**Cost.** CPU, about 12 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
