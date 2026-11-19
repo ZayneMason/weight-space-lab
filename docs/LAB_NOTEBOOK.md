@@ -8,6 +8,27 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-19 — Roadmap #56: a third rerun with 1,000 pairs and 1,000 triples
+
+Full write-up: [experiments/locate-repair/BOTH_WIDE.md](../experiments/locate-repair/BOTH_WIDE.md).
+Branch `claude/triple-both-wide`, stacked on `claude/triple-unseen-misses`.
+
+### Setup
+
+- **Question.** Does a rerun with both `--pairs 1000` and `--committee 1000` fix the three unseen cases the
+  two-step rule leaves flagged, as #55 predicted for seed 149 only?
+- **Code.** `--three-step` in `early_values.py`; `both_wide_check.py`; 2 new tests.
+
+### Results (measured)
+
+1. Seed 149 is fixed on the exact weights (0.045% to 0.0055%); 124 and 126 still lack the true triple.
+2. Over all 50 unseen cases: 36 under 0.01% and 28 exact (two-step: 35 and 27), worst 0.050%, 22.2 CPU hours
+   (19.8).
+3. Seed 124 now fits every label but is worse (0.012% to 0.029%), so the end flag stops seeing it.
+4. About 0.8 CPU hours per flagged case; fires on 3 of 50.
+
+---
+
 ## 2026-11-19 — Roadmap #55: where the two-step rule still loses the true triple
 
 Full write-up: [experiments/locate-repair/UNSEEN_MISSES.md](../experiments/locate-repair/UNSEEN_MISSES.md).

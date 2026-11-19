@@ -209,6 +209,39 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(wide["limit"], 1000)
             self.assertTrue(wide["in_triples"])
 
+    def test_three_step_adds_both_settings_last(self):
+        calls = []
+        accuracies = iter([0.9, 0.9, 0.9, 1.0])
+        real = ev.analyse
+
+        def analyse(case, early, **options):
+            calls.append(options)
+            return {"switch": [{"practice_accuracy": next(accuracies), "disagreement": 0.0, "faults_found": 3}],
+                    "committee_has_true_triple": True, "seconds": 1.0}
+
+        ev.analyse = analyse
+        try:
+            row = ev.two_step(self.case, stages=ev.THREE_STEP)
+            self.assertEqual(calls[-1], {"pairs_kept": 1000, "committee_size": 1000})
+            self.assertEqual(row["stages_run"], 4)
+        finally:
+            ev.analyse = real
+
+    def test_both_wide_evidence(self):
+        import json
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from both_wide_check import score
+        evidence = ROOT / "experiments/locate-repair/evidence"
+        both = json.loads((evidence / "both-wide/both-wide.json").read_text())
+        self.assertEqual((both["pairs_kept"], both["committee"], both["early_rounds"]), (1000, 1000, 2))
+        check = json.loads((evidence / "both-wide/check.json").read_text())
+        unseen = json.loads((evidence / "two-step-unseen/check.json").read_text())
+        self.assertEqual(check["flagged"], unseen["still_misses_a_label"])
+        self.assertEqual(sorted(c["seed"] for c in both["cases"]), check["flagged"])
+        self.assertEqual(check["three_step"]["under_0.1%"], 50)
+        with self.assertRaises(ValueError):
+            score({1: {"switch": [{"practice_accuracy": 0.9}]}}, {})
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

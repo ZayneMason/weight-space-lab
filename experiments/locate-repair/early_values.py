@@ -71,6 +71,7 @@ def analyse(case, early=EARLY, pairs_kept=None, widen_to=None, committee_size=No
 
 
 TWO_STEP = ({}, {"committee_size": 1000}, {"pairs_kept": 1000})  # roadmap #53's rule, in order
+THREE_STEP = TWO_STEP + ({"pairs_kept": 1000, "committee_size": 1000},)  # roadmap #56's optional last rerun
 
 
 def finished_misses_a_label(row):
@@ -117,6 +118,8 @@ def main():
     parser.add_argument("--committee", type=int, default=None, help="triples kept in the committee (default 200; #52)")
     parser.add_argument("--two-step", action="store_true",
                         help="rerun with 1,000 triples, then 1,000 pairs, while the finished repair misses a label (#54)")
+    parser.add_argument("--three-step", action="store_true",
+                        help="--two-step, then rerun with 1,000 pairs and 1,000 triples if the repair still misses a label (#56)")
     parser.add_argument("--only", type=int, nargs="+", help="run only these seeds (#47)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
@@ -135,15 +138,16 @@ def main():
             case = rs.resize(base) if base is not None else None
             if case is None:
                 continue
-            if args.two_step:
-                rows.append(two_step(case, args.early, saved=lambda k, s=seed: args.output / f"case-{s}.stage{k}.json"))
+            if args.two_step or args.three_step:
+                rows.append(two_step(case, args.early, saved=lambda k, s=seed: args.output / f"case-{s}.stage{k}.json",
+                                     stages=THREE_STEP if args.three_step else TWO_STEP))
             else:
                 rows.append(analyse(case, args.early, args.pairs, args.widen_to, args.committee))
             saved.write_text(json.dumps(rows[-1]) + "\n")
             last = rows[-1]["switch"]
             print(seed, last[-1]["faults_found"], round(last[-1]["disagreement"], 6),
                   [h.get("value_queries") for h in last[:-1]], flush=True)
-    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to, "committee": args.committee or tc.COMMITTEE, "two_step": args.two_step,
+    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to, "committee": args.committee or tc.COMMITTEE, "two_step": args.two_step or args.three_step, "three_step": args.three_step,
               "value_share": VALUE_SHARE, "delta": vq.DELTA, "probe": bs.PROBE, "pool": aq.POOL,
               "summary": st.summarize(rows), "cases": rows}
     (args.output / "early-values.json").write_text(json.dumps(report, indent=1) + "\n")
