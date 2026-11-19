@@ -8,6 +8,35 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-19 — Roadmap #58: the largest-edit tie-break in the full repair
+
+Full write-up: [experiments/locate-repair/LARGEST_EDIT.md](../experiments/locate-repair/LARGEST_EDIT.md).
+Branch `claude/triple-largest-edit`, stacked on `claude/triple-tie-breaks`.
+
+### Setup
+
+- **Question.** Does #57's best tie-break (smallest largest single edit) help when it runs inside the whole
+  two-step repair, not just on a finished committee?
+- **Design.** `early_values.py --tie-break largest-edit` on the 50 unseen cases, seeds 100 to 149, compared
+  case by case with #54's coarse-order run (`largest_edit_check.py`). 3 new tests.
+
+### Results (measured)
+
+1. 49 of 50 under 0.1% (coarse: 50), 34 under 0.01% (35), 28 exact (27). Seed 104 crosses the 0.1% line, at
+   0.32% on no true weights.
+2. The true triple is in the final committee in 35 cases against 40: lost in 6, gained in 1.
+3. The loss starts at the first stage: 41 cases under 0.1% after it, against 46.
+4. 24.3 CPU hours against 19.8; 9 cases need the widest rerun against 6.
+5. Seeds 124, 126 and 149 stay lost. #51's nine lost cases were not rerun.
+
+### Interpretation
+
+- The coarse order stays the default; the new order is kept as an option.
+- #57's offline ranking did not carry over, probably because the order also shapes the first committee and so
+  every label chosen after it (inferred).
+
+---
+
 ## 2026-11-19 — Roadmap #57: a better order among perfect practice fits
 
 Full write-up: [experiments/locate-repair/TIE_BREAKS.md](../experiments/locate-repair/TIE_BREAKS.md).

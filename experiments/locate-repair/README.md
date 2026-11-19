@@ -170,3 +170,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [BOTH_WIDE.md](BOTH_WIDE.md) (roadmap #56) reruns the three still-flagged unseen cases with 1,000 pairs and 1,000 triples together: it fixes seed 149 on the exact weights, as #55 predicted, and not the other two, for 12% more CPU; available as `early_values.py --three-step`.
 
 [TIE_BREAKS.md](TIE_BREAKS.md) (roadmap #57) tries seven tie-breaks among perfect practice fits in the 12 cases where the true triple is lost: preferring the smallest largest single edit keeps 5 of them in the committee, the current order none, and no tie-break keeps all 12.
+
+[LARGEST_EDIT.md](LARGEST_EDIT.md) (roadmap #58) runs #57's best tie-break inside the whole two-step repair on seeds 100 to 149: it ends 49 of 50 under 0.1% against 50 for the coarse order, loses the true triple more often than it saves it and costs 23% more CPU, so the coarse order stays the default.

@@ -242,6 +242,16 @@ class EarlyValuesTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             score({1: {"switch": [{"practice_accuracy": 0.9}]}}, {})
 
+    def test_largest_edit_is_the_biggest_scaled_change(self):
+        import numpy as np
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from early_values import tc
+        case = {"arrays": {"w": np.array([[1.0, 2.0]]), "b": np.array([0.5])}, "scale": {"w": 2.0, "b": 0.25}}
+        fit = ((1.0, -1.0), [("w", 0, 2.0), ("w", 1, 1.0), ("b", 0, 0.6)])
+        self.assertAlmostEqual(tc.largest_edit(case, fit), 0.5)  # |2-1|/2 = |1-2|/2 = 0.5 > 0.1/0.25 = 0.4
+        with self.assertRaises(ValueError):
+            tc.committee({"arrays": {}}, None, None, tie_break="nope")
+
     def test_tie_break_rank_orders_by_accuracy_then_key(self):
         import numpy as np
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
@@ -260,6 +270,33 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(len(out["cases"]), 20)  # the .npz feature files are git-ignored; summary.json is the record
         current = out["by_tie_break"]["coarse_rank (current)"]
         self.assertEqual((current["lost_kept"], current["controls_kept"]), (0, 8))
+
+    def test_largest_edit_check_compares_per_seed(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from largest_edit_check import compare
+        row = lambda seed, d, found, true=True, k=1, sec=10.0: {"seed": seed, "stages_run": k, "seconds": sec,
+            "committee_has_true_triple": true,
+            "switch": [{"disagreement": d, "faults_found": found, "found_visible": found == 3, "practice_accuracy": 1.0}]}
+        coarse = {1: row(1, 5e-5, 2), 2: row(2, 2e-4, 3, sec=20.0)}
+        largest = {1: row(1, 2e-3, 0, true=False, k=3, sec=40.0), 2: row(2, 5e-5, 3, sec=20.0)}
+        out = compare(coarse, largest)
+        self.assertEqual(out["line_0.001"], {"gained": [], "lost": [1]})
+        self.assertEqual(out["line_0.0001"], {"gained": [2], "lost": [1]})
+        self.assertEqual((out["fewer_true_weights"], out["true_triple_lost"]), ([1], [1]))
+        self.assertEqual((out["closer"], out["further"], out["failures_left"]), (1, 1, [1]))
+        self.assertAlmostEqual(out["cost_ratio"], 2.0)
+        with self.assertRaises(ValueError):
+            compare({}, largest)
+
+    def test_largest_edit_evidence(self):
+        import json
+        evidence = ROOT / "experiments/locate-repair/evidence/largest-edit"
+        report = json.loads((evidence / "largest-edit.json").read_text())
+        self.assertEqual(report["tie_break"], "largest-edit")
+        self.assertEqual(sorted(c["seed"] for c in report["cases"]), list(range(100, 150)))
+        check = json.loads((evidence / "check.json").read_text())
+        self.assertEqual((check["largest_edit"]["under_0.1%"], check["coarse"]["under_0.1%"]), (49, 50))
+        self.assertEqual(check["line_0.001"]["lost"], [104])
 
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
