@@ -18,7 +18,8 @@ practice accuracy and total edit size, the coarse-fit rank, its place in the pai
 edit, how many bias entries it edits, and (for perfect fits) the smallest and mean scaled margin over the
 practice labels. The 12 lost cases are rebuilt at 1,000 pairs, where #51 and #55 found the true triple is
 always extended. Eight seeds the default keeps (100, 101, 103, 105, 106, 108, 112, 113) are rebuilt at 200
-pairs as controls. `evidence/tie-breaks/` holds the 20 feature files and `summary.json`.
+pairs as controls. `evidence/tie-breaks/summary.json` holds every case's ranks. The 20 feature files
+(about 13 MB) are not committed, because the repo ignores `.npz`; `tie_breaks.py` rebuilds them.
 
 ## Results (measured)
 

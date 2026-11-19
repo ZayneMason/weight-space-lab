@@ -257,7 +257,7 @@ class EarlyValuesTests(unittest.TestCase):
         evidence = ROOT / "experiments/locate-repair/evidence/tie-breaks"
         out = json.loads((evidence / "summary.json").read_text())
         self.assertEqual((out["lost_cases"], out["controls"], out["committee"]), (12, 8, 200))
-        self.assertEqual(len(list(evidence.glob("ties-*.npz"))), 20)
+        self.assertEqual(len(out["cases"]), 20)  # the .npz feature files are git-ignored; summary.json is the record
         current = out["by_tie_break"]["coarse_rank (current)"]
         self.assertEqual((current["lost_kept"], current["controls_kept"]), (0, 8))
 
