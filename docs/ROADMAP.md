@@ -1084,6 +1084,25 @@ per case against #50's wider screen (about 2,800 seconds per case).
 **Cost.** CPU, unknown until one case is timed; the targeted rounds score every member, so up to about five
 times #45's per-case time.
 
+**Status (November 19, done):** [BIG_COMMITTEE.md](../experiments/locate-repair/BIG_COMMITTEE.md).
+Keeping 1,000 triples fixes 4 of the 5 fresh failures (63, 76 and 96 on the exact weights, 83 on others) and
+brings the true triple in for exactly the 8 cases #51 predicted, at a median 1,103 seconds per rerun against
+2,808 for the wider screen. It gives 49 of 50 under 0.1% and 33 exact in 18.8 CPU hours. The one it misses
+(61) is a never-extended case the wider screen fixes, and the end flag stays up on only 5 of the 16 after the
+larger committee, so "larger committee, then wider screen if still flagged" puts all 50 fresh cases under
+0.1%, 35 exact, in 22.5 CPU hours.
+
+## 53. The two-step rule on all 100 three-fault cases
+
+*Added November 19 after #52.*
+
+Run the larger committee (`--committee 1000`, 200 pairs) on the 11 end-flag cases of seeds 0 to 49 (6, 14,
+17, 21, 28, 30, 32, 37, 41, 47, 49). Score "200 triples; if the finished repair misses a label, 1,000
+triples; if it still does, 1,000 pairs" on all 100 cases, using #48's 1,000-pair runs for seeds 0 to 49 and
+#50's for seeds 50 to 99. If it keeps 100 of 100 under 0.1%, it becomes the three-fault default.
+
+**Cost.** CPU, about 3.5 core-hours (11 cases at about 1,100 seconds).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

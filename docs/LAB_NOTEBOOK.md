@@ -8,6 +8,30 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-19 — Roadmap #52: a larger committee instead of a wider screen
+
+Full write-up: [experiments/locate-repair/BIG_COMMITTEE.md](../experiments/locate-repair/BIG_COMMITTEE.md).
+Branch `claude/triple-big-committee`, stacked on `claude/triple-rank-misses`.
+
+### Setup
+
+- **Question.** #51 found the remaining true triples cut on a tie among perfect practice fits. Does keeping
+  1,000 triples instead of 200 (still 200 pairs) fix them?
+- **Design.** `early_values.py --early 2 --committee 1000 --only` the 16 fresh end-flag seeds.
+- **Code.** `--committee` in `early_values.py`, `big_committee_check.py`; 2 new tests.
+
+### Results (measured)
+
+1. Fixes 4 of 5 fresh failures (63, 76, 96 exact; 83 on other weights); 49 of 50 under 0.1%, 33 exact, in
+   18.8 CPU hours (wider screen: 47, 28, 26.5).
+2. The true triple reaches the committee in exactly the 8 cases #51 predicted.
+3. A rerun costs a median 1,103 s, against 2,808 s for the wider screen and 983 s for the plain run.
+4. Seed 61, never extended from 200 pairs, gets worse (0.21%); the wider screen fixes it.
+5. The end flag stays up in only 5 of 16 after the larger committee; rerunning those 5 with 1,000 pairs puts
+   all 50 fresh cases under 0.1% (worst 0.088%), 35 exact, in 22.5 CPU hours.
+
+---
+
 ## 2026-11-19 — Roadmap #51: where the three remaining failures lose the true triple
 
 Full write-up: [experiments/locate-repair/RANK_MISSES.md](../experiments/locate-repair/RANK_MISSES.md).
