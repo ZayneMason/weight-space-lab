@@ -49,22 +49,24 @@ def best_practice_accuracy(members, fits):
     return max(fits[t][0][0] for t in members)
 
 
-def analyse(case, early=EARLY, pairs_kept=None, widen_to=None):
+def analyse(case, early=EARLY, pairs_kept=None, widen_to=None, committee_size=None):
     """Run one case. With ``widen_to``, rebuild the committee from that many pairs when no member of the
-    first committee fits every practice label (roadmap #49)."""
+    first committee fits every practice label (roadmap #49). ``committee_size`` keeps that many triples
+    instead of 200 (roadmap #52)."""
+    size = {"size": committee_size} if committee_size else {}
     px, py, _ = lr.split(case["practice"])
     start = time.time()
-    members, fits, count = tc.committee(case, px, py, pairs_kept=pairs_kept)
+    members, fits, count = tc.committee(case, px, py, pairs_kept=pairs_kept, **size)
     first_best = best_practice_accuracy(members, fits)
     widened = bool(widen_to) and first_best < 1
     if widened:
-        members, fits, count = tc.committee(case, px, py, pairs_kept=widen_to)
+        members, fits, count = tc.committee(case, px, py, pairs_kept=widen_to, **size)
     silent = cr.silent_faults(case)
     history = st.run(case, members, fits, silent, bs.make_probe(case, bs.PROBE), chooser=make_chooser(early))
     return {"width": case["width"], "seed": case["seed"], "faults": case["faults"], "sizes": case["sizes"],
             "silent_faults": silent, "triples": count,
             "committee_has_true_triple": any(len(t3.hits(t, case["faults"], case["width"])) == 3 for t in members),
-            "first_best_practice_accuracy": first_best, "widened": widened,
+            "first_best_practice_accuracy": first_best, "widened": widened, "committee_size": len(members),
             "switch": history, "seconds": round(time.time() - start, 1)}
 
 
@@ -77,6 +79,7 @@ def main():
     parser.add_argument("--pairs", type=int, default=None, help="pairs extended to triples (default 200; #47)")
     parser.add_argument("--widen-to", type=int, default=None,
                         help="rebuild the committee from this many pairs when none fits every practice label (#49)")
+    parser.add_argument("--committee", type=int, default=None, help="triples kept in the committee (default 200; #52)")
     parser.add_argument("--only", type=int, nargs="+", help="run only these seeds (#47)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
@@ -95,12 +98,12 @@ def main():
             case = rs.resize(base) if base is not None else None
             if case is None:
                 continue
-            rows.append(analyse(case, args.early, args.pairs, args.widen_to))
+            rows.append(analyse(case, args.early, args.pairs, args.widen_to, args.committee))
             saved.write_text(json.dumps(rows[-1]) + "\n")
             last = rows[-1]["switch"]
             print(seed, last[-1]["faults_found"], round(last[-1]["disagreement"], 6),
                   [h.get("value_queries") for h in last[:-1]], flush=True)
-    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to,
+    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to, "committee": args.committee or tc.COMMITTEE,
               "value_share": VALUE_SHARE, "delta": vq.DELTA, "probe": bs.PROBE, "pool": aq.POOL,
               "summary": st.summarize(rows), "cases": rows}
     (args.output / "early-values.json").write_text(json.dumps(report, indent=1) + "\n")

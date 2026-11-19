@@ -130,6 +130,43 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(rm.stage({"in_triples": True, "rank_continuous": 199}), "kept")
         self.assertEqual(rm.stage({"in_triples": True, "rank_continuous": 200}), "cut")
 
+    def test_committee_size_is_passed_through(self):
+        sizes = []
+        real = ev.tc.committee
+
+        def committee(case, px, py, pairs_kept=None, **kw):
+            sizes.append(kw.get("size"))
+            return real(case, px, py, size=4, pairs_kept=3)
+
+        ev.tc.committee, ev.st.run = committee, lambda *a, **k: [{"disagreement": 0.0}]
+        try:
+            row = ev.analyse(self.case, committee_size=9)
+            self.assertEqual(sizes, [9])
+            self.assertEqual(row["committee_size"], 4)
+            sizes.clear()
+            ev.analyse(self.case)
+            self.assertEqual(sizes, [None])
+        finally:
+            ev.tc.committee = real
+            ev.st.run = type(self).real_run
+
+    def test_big_committee_evidence(self):
+        import json
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        import big_committee_check as bc
+        evidence = ROOT / "experiments/locate-repair/evidence"
+        report = json.loads((evidence / "big-committee/big-committee.json").read_text())
+        self.assertEqual((report["committee"], report["pairs_kept"], report["early_rounds"]), (1000, 200, 2))
+        check = json.loads((evidence / "big-committee/check.json").read_text())
+        self.assertEqual(sorted(c["seed"] for c in report["cases"]), check["larger_committee"]["flagged"])
+        self.assertEqual(check["larger_committee"]["broken"], [])
+        self.assertEqual(check["both_in_turn"]["under_0.1%"], 50 - len(check["both_in_turn"]["failures_left"]))
+        row = lambda acc, d: {"switch": [{"practice_accuracy": acc, "disagreement": d, "faults_found": 3,
+                                          "found_visible": True}], "seconds": 1, "committee_has_true_triple": True}
+        arm, _, steps = bc.two_step({1: row(0.9, 0.01), 2: row(0.9, 0.01)}, {1: row(1.0, 0.0), 2: row(0.9, 0.01)},
+                                    {2: row(1.0, 0.0)})
+        self.assertEqual((steps["flagged_again"], steps["failures_left"]), ([2], []))
+
     def test_widens_only_when_no_member_fits_every_practice_label(self):
         calls = []
         real = ev.tc.committee
