@@ -95,6 +95,27 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertFalse(ac.start_flag(row))
         self.assertTrue(ac.end_flag(row))
 
+    def test_end_flag_rerun_evidence(self):
+        import json
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        import end_flag_check as ef
+        evidence = ROOT / "experiments/locate-repair/evidence"
+        report = json.loads((evidence / "end-flag/end-flag.json").read_text())
+        self.assertEqual(report["pairs_kept"], 1000)
+        check = json.loads((evidence / "end-flag/check.json").read_text())
+        self.assertEqual(sorted(c["seed"] for c in report["cases"]), check["seeds_50_99"]["flagged"])
+        self.assertEqual(check["seeds_50_99"]["broken"] + check["seeds_0_49"]["broken"], [])
+        self.assertEqual(check["all_100"]["under_0.1%"], 100 - len(check["failures_left"]))
+        narrow = {1: {"switch": [{"practice_accuracy": 0.9, "disagreement": 0.01, "faults_found": 1, "found_visible": False}], "seconds": 10,
+                      "committee_has_true_triple": False}}
+        wide = {1: {"switch": [{"practice_accuracy": 1.0, "disagreement": 0.0, "faults_found": 3, "found_visible": True}], "seconds": 30,
+                    "committee_has_true_triple": True}}
+        arm, summary, changes, _ = ef.apply_rule({**narrow, 2: {**narrow[1], "switch": [{"practice_accuracy": 1.0, "disagreement": 0.0, "faults_found": 3, "found_visible": True}]}}, wide)
+        self.assertEqual(changes["fixed"], [1])
+        self.assertAlmostEqual(summary["cpu_hours"], 50 / 3600)
+        with self.assertRaises(ValueError):
+            ef.apply_rule(narrow, {})
+
     def test_widens_only_when_no_member_fits_every_practice_label(self):
         calls = []
         real = ev.tc.committee
