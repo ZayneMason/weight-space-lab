@@ -116,6 +116,20 @@ class EarlyValuesTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             ef.apply_rule(narrow, {})
 
+    def test_rank_misses_evidence(self):
+        import json
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        import rank_misses as rm
+        evidence = ROOT / "experiments/locate-repair/evidence"
+        summary = json.loads((evidence / "rank-misses/summary.json").read_text())
+        end = json.loads((evidence / "end-flag/end-flag.json").read_text())
+        lacking = sorted(c["seed"] for c in end["cases"] if not c["committee_has_true_triple"])
+        self.assertEqual(sorted(r["seed"] for r in summary["cases"]), lacking)
+        self.assertEqual(summary["stages"]["cut"], lacking)
+        self.assertEqual(rm.stage({"in_triples": False}), "never_extended")
+        self.assertEqual(rm.stage({"in_triples": True, "rank_continuous": 199}), "kept")
+        self.assertEqual(rm.stage({"in_triples": True, "rank_continuous": 200}), "cut")
+
     def test_widens_only_when_no_member_fits_every_practice_label(self):
         calls = []
         real = ev.tc.committee
