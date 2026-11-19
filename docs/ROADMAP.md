@@ -1153,6 +1153,24 @@ alone, add it as an optional third step only if its cost per flagged case is und
 
 **Cost.** CPU, about 5 core-hours (three cases, side by side).
 
+**Status (November 19, done):** [BOTH_WIDE.md](../experiments/locate-repair/BOTH_WIDE.md).
+As predicted, it fixes seed 149 on the exact weights (0.045% to 0.0055%) and not 124 or 126. Across the 50
+unseen cases it adds one case under 0.01% and one exact for 12% more CPU (about 0.8 hours per flagged case).
+Seed 124's repair gets worse (0.012% to 0.029%) while starting to fit every label. Kept as the option
+`--three-step`, not the default. Cost was 2.4 core-hours.
+
+## 57. A better order among perfect practice fits
+
+*Added November 19 after #56.*
+
+In every case where the rules lose the true triple (#51's nine, #55's three), it fits every practice label
+and is cut on the tie-break among hundreds to thousands of other perfect fits. For those 12 cases, record
+every perfect fit's features (total edit size, largest single edit, which kinds of entry it edits, coarse-fit
+accuracy) and test whether a different tie-break ranks the true triple inside the first 200. Analysis only;
+any tie-break that wins must then be checked on all 150 cases.
+
+**Cost.** CPU, about 6 core-hours (rebuilding 12 committees at 1,000 pairs).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

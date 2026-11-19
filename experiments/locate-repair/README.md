@@ -166,3 +166,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [UNSEEN.md](UNSEEN.md) (roadmap #54) runs the two-step rule end to end with `early_values.py --two-step` on 50 unseen three-fault cases: all 50 under 0.1% (46 for the plain run), 35 under 0.01% and 27 exact at 1.8 times the cost; three cases still miss a label because their true triple never reaches the committee.
 
 [UNSEEN_MISSES.md](UNSEEN_MISSES.md) (roadmap #55) finds where the two-step rule still loses the true triple on the three unseen cases it cannot fully repair: never in the pair screen once 1,000 pairs are extended, always in the cut among hundreds to thousands of perfect practice fits.
+
+[BOTH_WIDE.md](BOTH_WIDE.md) (roadmap #56) reruns the three still-flagged unseen cases with 1,000 pairs and 1,000 triples together: it fixes seed 149 on the exact weights, as #55 predicted, and not the other two, for 12% more CPU; available as `early_values.py --three-step`.
