@@ -1171,6 +1171,23 @@ any tie-break that wins must then be checked on all 150 cases.
 
 **Cost.** CPU, about 6 core-hours (rebuilding 12 committees at 1,000 pairs).
 
+**Status (November 19, done):** [TIE_BREAKS.md](../experiments/locate-repair/TIE_BREAKS.md).
+Preferring the perfect fit with the smallest largest single edit keeps 5 of the 12 lost triples inside 200;
+the current coarse-fit order keeps none. No tie-break keeps all 12, and seeds 52, 62, 68 and 124 are lost
+under all seven tried. All 8 controls stay kept under every tie-break. Cost was about 11 core-hours.
+
+## 58. The largest-edit tie-break in the full repair
+
+*Added November 19 after #57.*
+
+#57 shows that ordering perfect practice fits by their largest single edit keeps 5 of the 12 lost true triples
+in the committee. Add it as an option to `early_values.py` and rerun the two-step rule with it on the 50
+unseen cases (seeds 100 to 149) and on #51's nine lost cases. Record whether the five cases now end on the
+exact weights, whether any case the current order gets right gets worse, and the totals against #54 (50 under
+0.1%, 35 under 0.01%, 27 exact). Make it the default only if it loses no case under 0.1%.
+
+**Cost.** CPU, about 25 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
