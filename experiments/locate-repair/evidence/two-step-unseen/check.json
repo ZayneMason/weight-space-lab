@@ -1,0 +1,91 @@
+{
+ "seeds": 50,
+ "two_step": {
+  "under_0.1%": 50,
+  "under_0.01%": 35,
+  "exact": 27,
+  "every_visible": 35,
+  "true_triple_in_committee": 40,
+  "median": 4.4999999999999996e-05,
+  "worst": 0.000691,
+  "cpu_hours": 19.813472222222224
+ },
+ "plain": {
+  "under_0.1%": 46,
+  "under_0.01%": 31,
+  "exact": 20,
+  "every_visible": 29,
+  "true_triple_in_committee": 29,
+  "median": 5.4999999999999995e-05,
+  "worst": 0.004797,
+  "cpu_hours": 10.946388888888889
+ },
+ "stages_run": {
+  "1": 35,
+  "2": 9,
+  "3": 6
+ },
+ "reran_with_bigger_committee": [
+  102,
+  104,
+  109,
+  110,
+  111,
+  120,
+  122,
+  123,
+  124,
+  126,
+  129,
+  133,
+  143,
+  148,
+  149
+ ],
+ "reran_with_wider_screen": [
+  102,
+  109,
+  124,
+  126,
+  129,
+  149
+ ],
+ "still_misses_a_label": [
+  124,
+  126,
+  149
+ ],
+ "line_0.001": {
+  "gained": [
+   102,
+   104,
+   123,
+   129
+  ],
+  "lost": []
+ },
+ "line_0.0001": {
+  "gained": [
+   104,
+   109,
+   110,
+   120,
+   129
+  ],
+  "lost": [
+   133
+  ]
+ },
+ "failures_left": [],
+ "above_0.01%_never_flagged": [
+  114,
+  116,
+  121,
+  131,
+  139,
+  140,
+  146
+ ],
+ "worst_seed": 126,
+ "cost_ratio": 1.8100464384500217
+}

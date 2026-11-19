@@ -1120,6 +1120,22 @@ fires, and the cost against the plain run.
 
 **Cost.** CPU, about 23 core-hours by #53's rates (four runs in parallel, about six hours).
 
+**Status (November 19, done):** [UNSEEN.md](../experiments/locate-repair/UNSEEN.md).
+All 50 unseen cases under 0.1% (worst 0.069%), 35 under 0.01% and 27 exact in 19.8 CPU hours, against 46, 31
+and 20 in 10.9 for the plain run. The first flag fires on 15 cases and the second on 6. Three cases still miss
+a label after both reruns; their true triple never reaches the committee, but their repairs stay under 0.1%.
+
+## 55. Where the full rule still loses the true triple
+
+*Added November 19 after #54.*
+
+On seeds 124, 126 and 149 the true triple is missing from the committee after the 200-pair run, the
+1,000-triple rerun and the 1,000-pair rerun. Rank the true triple at each cut, as #51 did (pair screen, cut to
+the kept pairs, extension to triples, cut to the committee), to find where it drops out, and check whether one
+of its three pairs is ranked below 1,000. Re-scoring saved runs, so no new search.
+
+**Cost.** CPU, under an hour.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

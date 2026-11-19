@@ -8,6 +8,29 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-19 — Roadmap #54: the two-step rule end to end on unseen cases
+
+Full write-up: [experiments/locate-repair/UNSEEN.md](../experiments/locate-repair/UNSEEN.md).
+Branch `claude/triple-two-step-unseen`, stacked on `claude/triple-two-step`.
+
+### Setup
+
+- **Question.** Does the two-step rule from #53, built into `early_values.py --two-step`, keep every case under
+  0.1% on 50 three-fault cases it was not designed on (seeds 100 to 149)?
+- **Design.** Four runs side by side; each case saves every step, so the plain run is scored from step 1.
+- **Code.** `unseen_check.py`; 2 new tests.
+
+### Results (measured)
+
+1. All 50 under 0.1% (worst 0.069%), 35 under 0.01%, 27 exact, 40 true triple in the committee, 19.8 CPU
+   hours (plain run: 46, 31, 20, 29 in 10.9).
+2. The first flag fires on 15 cases and the second on 6; the 1,000-pair screen takes 7.4 CPU hours.
+3. All four plain failures end between 0.0049% and 0.015%. Seed 133 is the one case made worse past 0.01%.
+4. Three cases (124, 126, 149) still miss a label after both reruns; their true triple never reaches the
+   committee. Seven of the 15 cases above 0.01% were never flagged.
+
+---
+
 ## 2026-11-19 — Roadmap #53: the two-step rule on all 100 three-fault cases
 
 Full write-up: [experiments/locate-repair/TWO_STEP.md](../experiments/locate-repair/TWO_STEP.md).

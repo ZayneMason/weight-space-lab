@@ -178,6 +178,67 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["all_100"]["under_0.1%"], sum(check[k]["both_in_turn"]["under_0.1%"]
                                                             for k in ("seeds_0_49", "seeds_50_99")))
 
+    def test_two_step_unseen_evidence(self):
+        import json
+        evidence = ROOT / "experiments/locate-repair/evidence/two-step-unseen"
+        report = json.loads((evidence / "two-step-unseen.json").read_text())
+        self.assertEqual((report["committee"], report["early_rounds"], report["two_step"]), (200, 2, True))
+        seeds = sorted(c["seed"] for c in report["cases"])
+        self.assertEqual(seeds, list(range(100, 150)))
+        check = json.loads((evidence / "check.json").read_text())
+        self.assertEqual(check["seeds"], 50)
+        self.assertEqual(sum(check["stages_run"].values()), 50)
+        self.assertEqual(check["two_step"]["under_0.1%"], 50 - len(check["failures_left"]))
+        reran = sorted(c["seed"] for c in report["cases"] if c["stages_run"] > 1)
+        self.assertEqual(reran, check["reran_with_bigger_committee"])
+
+    def test_unseen_score_counts_stages_and_lines(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from unseen_check import score
+        row = lambda seed, d, acc=1.0, k=1, sec=10.0: {"seed": seed, "stages_run": k, "seconds": sec,
+            "committee_has_true_triple": d == 0,
+            "switch": [{"disagreement": d, "faults_found": 3 if d == 0 else 2, "found_visible": d == 0,
+                        "practice_accuracy": acc}]}
+        final = {1: row(1, 0.0), 2: row(2, 5e-4, k=2, sec=30.0), 3: row(3, 2e-3, acc=0.9, k=3, sec=60.0)}
+        plain = {1: row(1, 0.0), 2: row(2, 3e-3, acc=0.9), 3: row(3, 2e-3, acc=0.9)}
+        out = score(final, plain)
+        self.assertEqual(out["stages_run"], {"1": 1, "2": 1, "3": 1})
+        self.assertEqual(out["reran_with_bigger_committee"], [2, 3])
+        self.assertEqual(out["line_0.001"], {"gained": [2], "lost": []})
+        self.assertEqual(out["failures_left"], [3])
+        self.assertEqual(out["still_misses_a_label"], [3])
+        self.assertAlmostEqual(out["cost_ratio"], 100 / 30)
+        with self.assertRaises(ValueError):
+            score(final, {1: plain[1]})
+
+    def test_two_step_reruns_while_the_repair_misses_a_label(self):
+        import tempfile
+        from pathlib import Path
+        calls = []
+        accuracies = iter([0.9, 0.95, 1.0])
+        real = ev.analyse
+
+        def analyse(case, early, **options):
+            calls.append(options)
+            return {"switch": [{"practice_accuracy": next(accuracies), "disagreement": 0.0, "faults_found": 3}],
+                    "committee_has_true_triple": True, "seconds": 2.0}
+
+        ev.analyse = analyse
+        try:
+            with tempfile.TemporaryDirectory() as d:
+                saved = lambda k: Path(d) / f"stage{k}.json"
+                row = ev.two_step(self.case, saved=saved)
+                self.assertEqual(calls, [{}, {"committee_size": 1000}, {"pairs_kept": 1000}])
+                self.assertEqual((row["stages_run"], row["seconds"]), (3, 6.0))
+                calls.clear()
+                again = ev.two_step(self.case, saved=saved)
+                self.assertEqual(calls, [])
+                self.assertEqual(again["two_step"], row["two_step"])
+            accuracies = iter([1.0])
+            self.assertEqual(ev.two_step(self.case)["stages_run"], 1)
+        finally:
+            ev.analyse = real
+
     def test_widens_only_when_no_member_fits_every_practice_label(self):
         calls = []
         real = ev.tc.committee
