@@ -154,3 +154,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [WIDE_SCREEN.md](WIDE_SCREEN.md) (roadmap #48) runs the 1,000-pair screen on all 50 three-fault cases: 50 of 50 under 0.1% with nothing lost at that line, at about 4 times the cost; widening only when no committee member fits every practice label fires on exactly the two failures and gets the same 50 of 50 at 1.1 times the cost.
 
 [ADAPTIVE_WIDEN.md](ADAPTIVE_WIDEN.md) (roadmap #49) runs #48's widening flag on 50 fresh three-fault cases: it never fires, and the five cases that miss 0.1% all lack the true triple; flagging a case when its finished repair still misses a label catches all seven failures across seeds 0 to 99.
+
+[END_FLAG.md](END_FLAG.md) (roadmap #50) reruns the 16 fresh cases the end flag picks with 1,000 pairs: it fixes two of the five fresh failures (61 and 83, both exact) and breaks nothing at 0.1%, for 97 of 100 three-fault cases under 0.1% at 1.9 times the cost of 200 pairs; seeds 63, 76 and 96 still lack the true triple.

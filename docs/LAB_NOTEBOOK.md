@@ -8,6 +8,32 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-19 — Roadmap #50: widen when the finished repair still misses a label
+
+Full write-up: [experiments/locate-repair/END_FLAG.md](../experiments/locate-repair/END_FLAG.md).
+Branch `claude/triple-end-flag`, stacked on `claude/triple-adaptive-widen`.
+
+### Setup
+
+- **Question.** #49's end flag (the finished 200-pair repair misses a label) caught all 7 failures in seeds 0
+  to 99. Does rerunning the flagged cases with 1,000 pairs fix them?
+- **Design.** `early_values.py --early 2 --pairs 1000 --only` the 16 flagged fresh seeds; seeds 0 to 49 reuse
+  #48's 1,000-pair runs.
+- **Code.** `end_flag_check.py`; 1 new test.
+
+### Results (measured)
+
+1. Two of the five fresh failures are fixed (61, 83, both exact once the true triple enters the committee).
+   63 (0.23%), 76 (0.10%) and 96 (0.44%) stay above 0.1% with the true triple still missing at 1,000 pairs.
+2. No flagged case crosses 0.1% upward; seed 6 goes from 0.003% to 0.011%.
+3. All 100 cases: 97 under 0.1%, 66 under 0.01%, 59 exact, 68 every visible fault, 49.3 CPU hours (26.2 for
+   200 pairs everywhere).
+4. The flag stays up after the rerun in 13 of 16 fresh cases, including 4 that end under 0.011% with the true
+   triple in the committee.
+5. Nine of the 16 fresh 1,000-pair committees lack the true triple; six of those end under 0.1% anyway.
+
+---
+
 ## 2026-11-18 — Roadmap #49: the adaptive widening flag on 50 fresh cases
 
 Full write-up: [experiments/locate-repair/ADAPTIVE_WIDEN.md](../experiments/locate-repair/ADAPTIVE_WIDEN.md).

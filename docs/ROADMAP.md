@@ -1047,6 +1047,25 @@ If it puts all five fresh failures under 0.1% without losing a flagged case that
 
 **Cost.** CPU, about 16 core-hours (four runs in parallel, about 3,500 seconds per case).
 
+**Status (November 19, done):** [END_FLAG.md](../experiments/locate-repair/END_FLAG.md).
+The rerun fixes 2 of the 5 fresh failures (61 and 83, both exact); 63, 76 and 96 stay above 0.1% with the true
+triple still missing from the 1,000-pair committee. No flagged case crosses 0.1% upward. Across all 100 cases
+the rule gives 97 under 0.1%, 66 under 0.01% and 59 exact in 49.3 CPU hours, against 93, 63 and 55 in 26.2
+for 200 pairs everywhere. The bar was all five fixed, so #48's start flag is not replaced; the end flag is
+still the better alarm.
+
+## 51. Where the three remaining failures lose the true triple
+
+*Added November 19 after #50.*
+
+Seeds 63, 76 and 96 end above 0.1% even with 1,000 pairs, and their true triple never reaches the committee.
+Run #47's `screen_ranks.py` on the nine fresh cases whose 1,000-pair committee lacks the true triple (52, 55,
+62, 63, 66, 68, 76, 93, 96) and record where each true triple's pairs rank in the joint pair screen. If the
+best pair ranks beyond 1,000, the pair score is the weak step; if within, the triple is extended and lost at
+the cut to 200, as in 9 of #47's 12 cases.
+
+**Cost.** CPU, about an hour.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
