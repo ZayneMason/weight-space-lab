@@ -192,6 +192,23 @@ class EarlyValuesTests(unittest.TestCase):
         reran = sorted(c["seed"] for c in report["cases"] if c["stages_run"] > 1)
         self.assertEqual(reran, check["reran_with_bigger_committee"])
 
+    def test_unseen_misses_evidence(self):
+        import json
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from unseen_misses import where
+        self.assertEqual(where({"in_triples": False}, 200), "never_extended")
+        self.assertEqual(where({"in_triples": True, "rank_continuous": 297}, 200), "cut")
+        self.assertEqual(where({"in_triples": True, "rank_continuous": 297}, 1000), "kept")
+        evidence = ROOT / "experiments/locate-repair/evidence/unseen-misses"
+        summary = json.loads((evidence / "summary.json").read_text())
+        self.assertEqual([c["seed"] for c in summary["cases"]], [124, 126, 149])
+        check = json.loads((evidence.parent / "two-step-unseen/check.json").read_text())
+        self.assertEqual([c["seed"] for c in summary["cases"]], check["still_misses_a_label"])
+        for c in summary["cases"]:
+            wide = json.loads((evidence / f"rank-{c['seed']}-1000.json").read_text())
+            self.assertEqual(wide["limit"], 1000)
+            self.assertTrue(wide["in_triples"])
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
