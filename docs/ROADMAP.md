@@ -1103,6 +1103,23 @@ triples; if it still does, 1,000 pairs" on all 100 cases, using #48's 1,000-pair
 
 **Cost.** CPU, about 3.5 core-hours (11 cases at about 1,100 seconds).
 
+**Status (November 19, done):** [TWO_STEP.md](../experiments/locate-repair/TWO_STEP.md).
+All 100 under 0.1% (worst 0.088%), 75 under 0.01% and 69 exact in 42.9 CPU hours, against 93, 63 and 55 in
+26.2 for the plain run and 97, 66 and 59 in 49.3 for #50's rule. On seeds 0 to 49 the larger committee alone
+fixes neither failure and breaks seed 17, but the second flag catches all three. The 1,000-pair screen runs
+on 10 of 100 cases. The worst case is one the flag never sees (seed 70).
+
+## 54. The two-step rule end to end on unseen cases
+
+*Added November 19 after #53.*
+
+The rule was designed on seeds 0 to 99. Build it into `early_values.py` as one option (`--two-step`: run, and
+rerun with `--committee 1000` and then `--pairs 1000` while the finished repair misses a label), and run it on
+50 unseen three-fault cases (seeds 100 to 149). Record under 0.1%, under 0.01%, exact, how often each step
+fires, and the cost against the plain run.
+
+**Cost.** CPU, about 23 core-hours by #53's rates (four runs in parallel, about six hours).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

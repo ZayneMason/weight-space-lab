@@ -1,0 +1,144 @@
+{
+ "seeds_0_49": {
+  "pairs_200": {
+   "under_0.1%": 48,
+   "under_0.01%": 35,
+   "exact": 29,
+   "every_visible": 34,
+   "true_triple_in_committee": 38,
+   "median": 4.8e-05,
+   "worst": 0.006097,
+   "cpu_hours": 12.25986111111111
+  },
+  "larger_committee": {
+   "under_0.1%": 47,
+   "under_0.01%": 38,
+   "exact": 32,
+   "every_visible": 38,
+   "true_triple_in_committee": 43,
+   "median": 4.35e-05,
+   "worst": 0.005656,
+   "cpu_hours": 15.544722222222223,
+   "fixed": [],
+   "broken": [
+    17
+   ],
+   "failures_left": [
+    14,
+    17,
+    49
+   ]
+  },
+  "both_in_turn": {
+   "under_0.1%": 50,
+   "under_0.01%": 41,
+   "exact": 34,
+   "every_visible": 40,
+   "true_triple_in_committee": 45,
+   "median": 4.2000000000000004e-05,
+   "worst": 0.000788,
+   "cpu_hours": 20.390888888888888,
+   "flagged": [
+    6,
+    14,
+    17,
+    21,
+    28,
+    30,
+    32,
+    37,
+    41,
+    47,
+    49
+   ],
+   "flagged_again": [
+    14,
+    17,
+    32,
+    47,
+    49
+   ],
+   "failures_left": []
+  }
+ },
+ "seeds_50_99": {
+  "pairs_200": {
+   "under_0.1%": 45,
+   "under_0.01%": 28,
+   "exact": 26,
+   "every_visible": 30,
+   "true_triple_in_committee": 35,
+   "median": 7.999999999999999e-05,
+   "worst": 0.004447,
+   "cpu_hours": 13.915055555555554
+  },
+  "larger_committee": {
+   "under_0.1%": 49,
+   "under_0.01%": 33,
+   "exact": 33,
+   "every_visible": 37,
+   "true_triple_in_committee": 43,
+   "median": 5.35e-05,
+   "worst": 0.002096,
+   "cpu_hours": 18.766166666666667,
+   "fixed": [
+    63,
+    76,
+    83,
+    96
+   ],
+   "broken": [],
+   "failures_left": [
+    61
+   ]
+  },
+  "both_in_turn": {
+   "under_0.1%": 50,
+   "under_0.01%": 34,
+   "exact": 35,
+   "every_visible": 39,
+   "true_triple_in_committee": 45,
+   "median": 5.35e-05,
+   "worst": 0.000878,
+   "cpu_hours": 22.490972222222222,
+   "flagged": [
+    52,
+    55,
+    61,
+    62,
+    63,
+    64,
+    66,
+    68,
+    75,
+    76,
+    81,
+    83,
+    89,
+    92,
+    93,
+    96
+   ],
+   "flagged_again": [
+    61,
+    75,
+    81,
+    83,
+    89
+   ],
+   "failures_left": []
+  }
+ },
+ "all_100": {
+  "under_0.1%": 100,
+  "under_0.01%": 75,
+  "exact": 69,
+  "every_visible": 79,
+  "true_triple_in_committee": 90,
+  "median": 4.8e-05,
+  "worst": 0.000878,
+  "cpu_hours": 42.88186111111111,
+  "plain_cpu_hours": 26.174916666666665,
+  "failures_left": []
+ }
+}
