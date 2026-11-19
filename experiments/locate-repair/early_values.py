@@ -70,6 +70,41 @@ def analyse(case, early=EARLY, pairs_kept=None, widen_to=None, committee_size=No
             "switch": history, "seconds": round(time.time() - start, 1)}
 
 
+TWO_STEP = ({}, {"committee_size": 1000}, {"pairs_kept": 1000})  # roadmap #53's rule, in order
+
+
+def finished_misses_a_label(row):
+    """#49's end flag: the finished repair still gets at least one of its labels wrong."""
+    return row["switch"][-1]["practice_accuracy"] < 1
+
+
+def two_step(case, early=EARLY, saved=None, stages=TWO_STEP):
+    """Roadmap #54: run the plain rule; while the finished repair misses a label, rerun with the next stage
+    (1,000 triples, then 1,000 pairs). Each stage's row is saved to ``saved(k)`` if given, so an interrupted
+    case resumes. The returned row is the last stage's, with every stage's outcome and the total time."""
+    rows = []
+    for k, options in enumerate(stages):
+        path = saved(k) if saved else None
+        if path is not None and path.exists():
+            row = json.loads(path.read_text())
+        else:
+            row = analyse(case, early, **options)
+            if path is not None:
+                path.write_text(json.dumps(row) + "\n")
+        rows.append(row)
+        if not finished_misses_a_label(row):
+            break
+    final = dict(rows[-1])
+    final["two_step"] = [{"stage": k, **options, "disagreement": r["switch"][-1]["disagreement"],
+                          "faults_found": r["switch"][-1]["faults_found"],
+                          "practice_accuracy": r["switch"][-1]["practice_accuracy"],
+                          "committee_has_true_triple": r["committee_has_true_triple"], "seconds": r["seconds"]}
+                         for k, (options, r) in enumerate(zip(stages, rows))]
+    final["stages_run"] = len(rows)
+    final["seconds"] = round(sum(r["seconds"] for r in rows), 1)
+    return final
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--width", type=int, default=st.WIDTH)
@@ -80,6 +115,8 @@ def main():
     parser.add_argument("--widen-to", type=int, default=None,
                         help="rebuild the committee from this many pairs when none fits every practice label (#49)")
     parser.add_argument("--committee", type=int, default=None, help="triples kept in the committee (default 200; #52)")
+    parser.add_argument("--two-step", action="store_true",
+                        help="rerun with 1,000 triples, then 1,000 pairs, while the finished repair misses a label (#54)")
     parser.add_argument("--only", type=int, nargs="+", help="run only these seeds (#47)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
@@ -98,12 +135,15 @@ def main():
             case = rs.resize(base) if base is not None else None
             if case is None:
                 continue
-            rows.append(analyse(case, args.early, args.pairs, args.widen_to, args.committee))
+            if args.two_step:
+                rows.append(two_step(case, args.early, saved=lambda k, s=seed: args.output / f"case-{s}.stage{k}.json"))
+            else:
+                rows.append(analyse(case, args.early, args.pairs, args.widen_to, args.committee))
             saved.write_text(json.dumps(rows[-1]) + "\n")
             last = rows[-1]["switch"]
             print(seed, last[-1]["faults_found"], round(last[-1]["disagreement"], 6),
                   [h.get("value_queries") for h in last[:-1]], flush=True)
-    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to, "committee": args.committee or tc.COMMITTEE,
+    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to, "committee": args.committee or tc.COMMITTEE, "two_step": args.two_step,
               "value_share": VALUE_SHARE, "delta": vq.DELTA, "probe": bs.PROBE, "pool": aq.POOL,
               "summary": st.summarize(rows), "cases": rows}
     (args.output / "early-values.json").write_text(json.dumps(report, indent=1) + "\n")

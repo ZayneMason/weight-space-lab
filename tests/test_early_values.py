@@ -178,6 +178,34 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["all_100"]["under_0.1%"], sum(check[k]["both_in_turn"]["under_0.1%"]
                                                             for k in ("seeds_0_49", "seeds_50_99")))
 
+    def test_two_step_reruns_while_the_repair_misses_a_label(self):
+        import tempfile
+        from pathlib import Path
+        calls = []
+        accuracies = iter([0.9, 0.95, 1.0])
+        real = ev.analyse
+
+        def analyse(case, early, **options):
+            calls.append(options)
+            return {"switch": [{"practice_accuracy": next(accuracies), "disagreement": 0.0, "faults_found": 3}],
+                    "committee_has_true_triple": True, "seconds": 2.0}
+
+        ev.analyse = analyse
+        try:
+            with tempfile.TemporaryDirectory() as d:
+                saved = lambda k: Path(d) / f"stage{k}.json"
+                row = ev.two_step(self.case, saved=saved)
+                self.assertEqual(calls, [{}, {"committee_size": 1000}, {"pairs_kept": 1000}])
+                self.assertEqual((row["stages_run"], row["seconds"]), (3, 6.0))
+                calls.clear()
+                again = ev.two_step(self.case, saved=saved)
+                self.assertEqual(calls, [])
+                self.assertEqual(again["two_step"], row["two_step"])
+            accuracies = iter([1.0])
+            self.assertEqual(ev.two_step(self.case)["stages_run"], 1)
+        finally:
+            ev.analyse = real
+
     def test_widens_only_when_no_member_fits_every_practice_label(self):
         calls = []
         real = ev.tc.committee
