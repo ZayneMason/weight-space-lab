@@ -1,0 +1,132 @@
+{
+ "cases": [
+  {
+   "seed": 52,
+   "best_true_pair_rank": 47,
+   "triples": 13149,
+   "stage": "cut",
+   "true_triple_rank": 897,
+   "true_triple_practice_accuracy": 1.0,
+   "triples_tied_or_better": 3113,
+   "member_200_practice_accuracy": 1.0,
+   "disagreement_200": 0.000378,
+   "disagreement_1000": 0.000378
+  },
+  {
+   "seed": 55,
+   "best_true_pair_rank": 51,
+   "triples": 10924,
+   "stage": "cut",
+   "true_triple_rank": 204,
+   "true_triple_practice_accuracy": 1.0,
+   "triples_tied_or_better": 236,
+   "member_200_practice_accuracy": 1.0,
+   "disagreement_200": 0.000407,
+   "disagreement_1000": 0.000388
+  },
+  {
+   "seed": 62,
+   "best_true_pair_rank": 24,
+   "triples": 11374,
+   "stage": "cut",
+   "true_triple_rank": 413,
+   "true_triple_practice_accuracy": 1.0,
+   "triples_tied_or_better": 3287,
+   "member_200_practice_accuracy": 1.0,
+   "disagreement_200": 0.000678,
+   "disagreement_1000": 0.000839
+  },
+  {
+   "seed": 63,
+   "best_true_pair_rank": 13,
+   "triples": 10646,
+   "stage": "cut",
+   "true_triple_rank": 253,
+   "true_triple_practice_accuracy": 1.0,
+   "triples_tied_or_better": 708,
+   "member_200_practice_accuracy": 1.0,
+   "disagreement_200": 0.002308,
+   "disagreement_1000": 0.002308
+  },
+  {
+   "seed": 66,
+   "best_true_pair_rank": 10,
+   "triples": 13636,
+   "stage": "cut",
+   "true_triple_rank": 705,
+   "true_triple_practice_accuracy": 1.0,
+   "triples_tied_or_better": 925,
+   "member_200_practice_accuracy": 1.0,
+   "disagreement_200": 0.000895,
+   "disagreement_1000": 0.000632
+  },
+  {
+   "seed": 68,
+   "best_true_pair_rank": 70,
+   "triples": 12204,
+   "stage": "cut",
+   "true_triple_rank": 4839,
+   "true_triple_practice_accuracy": 1.0,
+   "triples_tied_or_better": 4491,
+   "member_200_practice_accuracy": 1.0,
+   "disagreement_200": 0.000213,
+   "disagreement_1000": 0.000226
+  },
+  {
+   "seed": 76,
+   "best_true_pair_rank": 49,
+   "triples": 12967,
+   "stage": "cut",
+   "true_triple_rank": 840,
+   "true_triple_practice_accuracy": 1.0,
+   "triples_tied_or_better": 166,
+   "member_200_practice_accuracy": 1.0,
+   "disagreement_200": 0.001578,
+   "disagreement_1000": 0.001011
+  },
+  {
+   "seed": 93,
+   "best_true_pair_rank": 13,
+   "triples": 11109,
+   "stage": "cut",
+   "true_triple_rank": 350,
+   "true_triple_practice_accuracy": 1.0,
+   "triples_tied_or_better": 401,
+   "member_200_practice_accuracy": 1.0,
+   "disagreement_200": 0.000255,
+   "disagreement_1000": 0.000255
+  },
+  {
+   "seed": 96,
+   "best_true_pair_rank": 5,
+   "triples": 12768,
+   "stage": "cut",
+   "true_triple_rank": 494,
+   "true_triple_practice_accuracy": 1.0,
+   "triples_tied_or_better": 304,
+   "member_200_practice_accuracy": 1.0,
+   "disagreement_200": 0.004447,
+   "disagreement_1000": 0.004447
+  }
+ ],
+ "stages": {
+  "never_extended": [],
+  "cut": [
+   52,
+   55,
+   62,
+   63,
+   66,
+   68,
+   76,
+   93,
+   96
+  ],
+  "kept": []
+ },
+ "best_true_pair_rank_max": 70,
+ "tied_or_better_range": [
+  166,
+  4491
+ ]
+}

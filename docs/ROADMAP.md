@@ -1066,6 +1066,24 @@ the cut to 200, as in 9 of #47's 12 cases.
 
 **Cost.** CPU, about an hour.
 
+**Status (November 19, done):** [RANK_MISSES.md](../experiments/locate-repair/RANK_MISSES.md).
+All nine are lost in the cut, none in the pair screen: a true pair ranks in the best 70 of 3,321, the true
+triple is extended at 200 pairs and fits every practice label, and it ranks 204th to 4,839th among at least
+200 other perfect fits. Extending more pairs cannot help these cases. A committee of 1,000 triples would hold
+the true triple in 8 of the 9, all three failures included.
+
+## 52. A larger committee instead of a wider screen
+
+*Added November 19 after #51.*
+
+Keep 200 pairs, but keep the best 1,000 extended triples in the committee instead of 200, on the 16 fresh
+end-flag cases (seeds 50 to 99). Record whether 63, 76 and 96 go under 0.1%, whether the true triple reaches
+the committee in the eight cases #51 predicts, what happens to the cases that were already fine, and the cost
+per case against #50's wider screen (about 2,800 seconds per case).
+
+**Cost.** CPU, unknown until one case is timed; the targeted rounds score every member, so up to about five
+times #45's per-case time.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

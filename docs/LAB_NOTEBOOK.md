@@ -8,6 +8,29 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-19 — Roadmap #51: where the three remaining failures lose the true triple
+
+Full write-up: [experiments/locate-repair/RANK_MISSES.md](../experiments/locate-repair/RANK_MISSES.md).
+Branch `claude/triple-rank-misses`, stacked on `claude/triple-end-flag`.
+
+### Setup
+
+- **Question.** Seeds 63, 76 and 96 stay above 0.1% at 1,000 pairs with no true triple in the committee. Is
+  the true triple lost in the pair screen or in the cut to 200?
+- **Design.** #47's `screen_ranks.py` on the nine fresh cases whose 1,000-pair committee lacks it (52, 55,
+  62, 63, 66, 68, 76, 93, 96).
+- **Code.** `rank_misses.py`; 1 new test.
+
+### Results (measured)
+
+1. All nine are lost in the cut: a true pair ranks in the best 70 of 3,321, the true triple is extended at
+   200 pairs and fits every practice label, and ranks 204th to 4,839th among at least 200 perfect fits.
+2. So more pairs cannot help them; a committee of 1,000 would hold the true triple in 8 of 9, including 63
+   (253), 76 (840) and 96 (494).
+3. With #47, 18 of 21 checked misses are lost in the cut and 3 never extended.
+
+---
+
 ## 2026-11-19 — Roadmap #50: widen when the finished repair still misses a label
 
 Full write-up: [experiments/locate-repair/END_FLAG.md](../experiments/locate-repair/END_FLAG.md).
