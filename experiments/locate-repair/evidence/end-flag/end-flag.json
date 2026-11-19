@@ -5,7 +5,7 @@
   1.0,
   2.2
  ],
- "early_rounds": 4,
+ "early_rounds": 2,
  "pairs_kept": 1000,
  "widen_to": null,
  "value_share": 0.5,
