@@ -242,6 +242,25 @@ class EarlyValuesTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             score({1: {"switch": [{"practice_accuracy": 0.9}]}}, {})
 
+    def test_tie_break_rank_orders_by_accuracy_then_key(self):
+        import numpy as np
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from tie_rank import rank
+        f = {"acc": np.array([1.0, 1.0, 0.9, 1.0]), "cost": np.array([3.0, 1.0, 0.0, 2.0]),
+             "margin_min": np.array([0.5, np.nan, 9.0, 0.1]), "is_true": np.array([False, False, False, True])}
+        self.assertEqual(rank(f, "cost", 1), 2)  # perfect fits by cost: 1.0, 2.0 (true), 3.0
+        self.assertEqual(rank(f, "margin_min", -1), 2)  # larger margin first, NaN last: 0.5, 0.1 (true), NaN
+        self.assertIsNone(rank({**f, "is_true": np.zeros(4, bool)}, "cost", 1))
+
+    def test_tie_breaks_evidence(self):
+        import json
+        evidence = ROOT / "experiments/locate-repair/evidence/tie-breaks"
+        out = json.loads((evidence / "summary.json").read_text())
+        self.assertEqual((out["lost_cases"], out["controls"], out["committee"]), (12, 8, 200))
+        self.assertEqual(len(out["cases"]), 20)  # the .npz feature files are git-ignored; summary.json is the record
+        current = out["by_tie_break"]["coarse_rank (current)"]
+        self.assertEqual((current["lost_kept"], current["controls_kept"]), (0, 8))
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

@@ -8,6 +8,29 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-19 — Roadmap #57: a better order among perfect practice fits
+
+Full write-up: [experiments/locate-repair/TIE_BREAKS.md](../experiments/locate-repair/TIE_BREAKS.md).
+Branch `claude/triple-tie-breaks`, stacked on `claude/triple-both-wide`.
+
+### Setup
+
+- **Question.** In the 12 cases where the rules lose the true triple among perfect practice fits, would a
+  different tie-break than the coarse-fit rank keep it inside the 200-triple committee?
+- **Design.** Rebuild the 12 committees at 1,000 pairs and 8 control committees at 200 pairs, record each fit's
+  features (`tie_breaks.py`), and rank the true triple under seven tie-breaks (`tie_rank.py`). 2 new tests.
+
+### Results (measured)
+
+1. Smallest largest single edit keeps 5 of 12 (current order: 0). Largest smallest margin keeps 3; the other
+   four keep 1 each.
+2. No single tie-break keeps all 12; the best per case would keep 8. Seeds 52, 62, 68 and 124 are lost under all
+   seven.
+3. Sharing the 200 places between orders keeps fewer (2 to 4).
+4. All 8 controls stay kept under every tie-break, so the controls cannot rank them.
+
+---
+
 ## 2026-11-19 — Roadmap #56: a third rerun with 1,000 pairs and 1,000 triples
 
 Full write-up: [experiments/locate-repair/BOTH_WIDE.md](../experiments/locate-repair/BOTH_WIDE.md).

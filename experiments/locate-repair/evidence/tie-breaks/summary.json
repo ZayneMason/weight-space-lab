@@ -1,0 +1,377 @@
+{
+ "committee": 200,
+ "lost_cases": 12,
+ "controls": 8,
+ "by_tie_break": {
+  "coarse_rank (current)": {
+   "lost_kept": 0,
+   "controls_kept": 8
+  },
+  "smallest_total_edit": {
+   "lost_kept": 1,
+   "controls_kept": 8
+  },
+  "largest_min_margin": {
+   "lost_kept": 3,
+   "controls_kept": 8
+  },
+  "largest_mean_margin": {
+   "lost_kept": 1,
+   "controls_kept": 8
+  },
+  "smallest_largest_edit": {
+   "lost_kept": 5,
+   "controls_kept": 8
+  },
+  "screen_order": {
+   "lost_kept": 1,
+   "controls_kept": 8
+  },
+  "fewest_biases": {
+   "lost_kept": 1,
+   "controls_kept": 8
+  }
+ },
+ "cases": [
+  {
+   "seed": 52,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 44082,
+   "perfect_fits": 7092,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 1011,
+    "smallest_total_edit": 5370,
+    "largest_min_margin": 6821,
+    "largest_mean_margin": 2383,
+    "smallest_largest_edit": 4066,
+    "screen_order": 1531,
+    "fewest_biases": 848
+   }
+  },
+  {
+   "seed": 55,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 40805,
+   "perfect_fits": 469,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 208,
+    "smallest_total_edit": 241,
+    "largest_min_margin": 93,
+    "largest_mean_margin": 271,
+    "smallest_largest_edit": 38,
+    "screen_order": 281,
+    "fewest_biases": 342
+   }
+  },
+  {
+   "seed": 62,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 45720,
+   "perfect_fits": 6495,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 430,
+    "smallest_total_edit": 3757,
+    "largest_min_margin": 669,
+    "largest_mean_margin": 5650,
+    "smallest_largest_edit": 2832,
+    "screen_order": 1490,
+    "fewest_biases": 4506
+   }
+  },
+  {
+   "seed": 63,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 46654,
+   "perfect_fits": 1218,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 253,
+    "smallest_total_edit": 708,
+    "largest_min_margin": 905,
+    "largest_mean_margin": 886,
+    "smallest_largest_edit": 20,
+    "screen_order": 514,
+    "fewest_biases": 835
+   }
+  },
+  {
+   "seed": 66,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 47834,
+   "perfect_fits": 1646,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 781,
+    "smallest_total_edit": 1042,
+    "largest_min_margin": 347,
+    "largest_mean_margin": 1252,
+    "smallest_largest_edit": 660,
+    "screen_order": 149,
+    "fewest_biases": 1194
+   }
+  },
+  {
+   "seed": 68,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 41982,
+   "perfect_fits": 10783,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 5298,
+    "smallest_total_edit": 7323,
+    "largest_min_margin": 6971,
+    "largest_mean_margin": 10542,
+    "smallest_largest_edit": 2031,
+    "screen_order": 3014,
+    "fewest_biases": 1329
+   }
+  },
+  {
+   "seed": 76,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 41382,
+   "perfect_fits": 1901,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 1009,
+    "smallest_total_edit": 188,
+    "largest_min_margin": 774,
+    "largest_mean_margin": 1851,
+    "smallest_largest_edit": 64,
+    "screen_order": 316,
+    "fewest_biases": 1058
+   }
+  },
+  {
+   "seed": 93,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 41635,
+   "perfect_fits": 1490,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 370,
+    "smallest_total_edit": 401,
+    "largest_min_margin": 125,
+    "largest_mean_margin": 1128,
+    "smallest_largest_edit": 86,
+    "screen_order": 340,
+    "fewest_biases": 164
+   }
+  },
+  {
+   "seed": 96,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 43038,
+   "perfect_fits": 3979,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 506,
+    "smallest_total_edit": 309,
+    "largest_min_margin": 554,
+    "largest_mean_margin": 1468,
+    "smallest_largest_edit": 194,
+    "screen_order": 349,
+    "fewest_biases": 266
+   }
+  },
+  {
+   "seed": 100,
+   "pairs": 200,
+   "lost": false,
+   "triples": 12946,
+   "perfect_fits": 2,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 1,
+    "smallest_total_edit": 2,
+    "largest_min_margin": 1,
+    "largest_mean_margin": 2,
+    "smallest_largest_edit": 1,
+    "screen_order": 2,
+    "fewest_biases": 2
+   }
+  },
+  {
+   "seed": 101,
+   "pairs": 200,
+   "lost": false,
+   "triples": 11230,
+   "perfect_fits": 12,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 3,
+    "smallest_total_edit": 8,
+    "largest_min_margin": 3,
+    "largest_mean_margin": 6,
+    "smallest_largest_edit": 8,
+    "screen_order": 8,
+    "fewest_biases": 7
+   }
+  },
+  {
+   "seed": 103,
+   "pairs": 200,
+   "lost": false,
+   "triples": 13860,
+   "perfect_fits": 5,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 4,
+    "smallest_total_edit": 4,
+    "largest_min_margin": 3,
+    "largest_mean_margin": 3,
+    "smallest_largest_edit": 4,
+    "screen_order": 3,
+    "fewest_biases": 5
+   }
+  },
+  {
+   "seed": 105,
+   "pairs": 200,
+   "lost": false,
+   "triples": 11006,
+   "perfect_fits": 143,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 19,
+    "smallest_total_edit": 50,
+    "largest_min_margin": 79,
+    "largest_mean_margin": 7,
+    "smallest_largest_edit": 46,
+    "screen_order": 36,
+    "fewest_biases": 5
+   }
+  },
+  {
+   "seed": 106,
+   "pairs": 200,
+   "lost": false,
+   "triples": 13626,
+   "perfect_fits": 15,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 2,
+    "smallest_total_edit": 8,
+    "largest_min_margin": 1,
+    "largest_mean_margin": 9,
+    "smallest_largest_edit": 3,
+    "screen_order": 1,
+    "fewest_biases": 5
+   }
+  },
+  {
+   "seed": 108,
+   "pairs": 200,
+   "lost": false,
+   "triples": 12556,
+   "perfect_fits": 12,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 3,
+    "smallest_total_edit": 5,
+    "largest_min_margin": 2,
+    "largest_mean_margin": 5,
+    "smallest_largest_edit": 4,
+    "screen_order": 6,
+    "fewest_biases": 6
+   }
+  },
+  {
+   "seed": 112,
+   "pairs": 200,
+   "lost": false,
+   "triples": 11520,
+   "perfect_fits": 12,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 7,
+    "smallest_total_edit": 1,
+    "largest_min_margin": 3,
+    "largest_mean_margin": 11,
+    "smallest_largest_edit": 2,
+    "screen_order": 3,
+    "fewest_biases": 3
+   }
+  },
+  {
+   "seed": 113,
+   "pairs": 200,
+   "lost": false,
+   "triples": 13826,
+   "perfect_fits": 83,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 6,
+    "smallest_total_edit": 36,
+    "largest_min_margin": 63,
+    "largest_mean_margin": 61,
+    "smallest_largest_edit": 22,
+    "screen_order": 22,
+    "fewest_biases": 15
+   }
+  },
+  {
+   "seed": 124,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 43698,
+   "perfect_fits": 3736,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 1441,
+    "smallest_total_edit": 1411,
+    "largest_min_margin": 3510,
+    "largest_mean_margin": 2294,
+    "smallest_largest_edit": 1242,
+    "screen_order": 716,
+    "fewest_biases": 548
+   }
+  },
+  {
+   "seed": 126,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 42903,
+   "perfect_fits": 9486,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 9277,
+    "smallest_total_edit": 7766,
+    "largest_min_margin": 114,
+    "largest_mean_margin": 8880,
+    "smallest_largest_edit": 6787,
+    "screen_order": 6429,
+    "fewest_biases": 7790
+   }
+  },
+  {
+   "seed": 149,
+   "pairs": 1000,
+   "lost": true,
+   "triples": 49145,
+   "perfect_fits": 336,
+   "true_fits_every_label": true,
+   "ranks": {
+    "coarse_rank (current)": 298,
+    "smallest_total_edit": 246,
+    "largest_min_margin": 287,
+    "largest_mean_margin": 80,
+    "smallest_largest_edit": 203,
+    "screen_order": 237,
+    "fewest_biases": 224
+   }
+  }
+ ]
+}

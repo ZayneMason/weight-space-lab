@@ -168,3 +168,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [UNSEEN_MISSES.md](UNSEEN_MISSES.md) (roadmap #55) finds where the two-step rule still loses the true triple on the three unseen cases it cannot fully repair: never in the pair screen once 1,000 pairs are extended, always in the cut among hundreds to thousands of perfect practice fits.
 
 [BOTH_WIDE.md](BOTH_WIDE.md) (roadmap #56) reruns the three still-flagged unseen cases with 1,000 pairs and 1,000 triples together: it fixes seed 149 on the exact weights, as #55 predicted, and not the other two, for 12% more CPU; available as `early_values.py --three-step`.
+
+[TIE_BREAKS.md](TIE_BREAKS.md) (roadmap #57) tries seven tie-breaks among perfect practice fits in the 12 cases where the true triple is lost: preferring the smallest largest single edit keeps 5 of them in the committee, the current order none, and no tie-break keeps all 12.
