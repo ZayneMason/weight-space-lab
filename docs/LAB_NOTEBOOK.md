@@ -8,6 +8,30 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-19 — Roadmap #53: the two-step rule on all 100 three-fault cases
+
+Full write-up: [experiments/locate-repair/TWO_STEP.md](../experiments/locate-repair/TWO_STEP.md).
+Branch `claude/triple-two-step`, stacked on `claude/triple-big-committee`.
+
+### Setup
+
+- **Question.** Does "200 triples; if the repair misses a label, 1,000 triples; if it still does, 1,000 pairs"
+  put all 100 three-fault cases under 0.1%?
+- **Design.** `--committee 1000` on the 11 end-flag cases of seeds 0 to 49; step 3 reuses #48's and #50's
+  1,000-pair runs.
+- **Code.** `two_step_check.py`; 1 new test.
+
+### Results (measured)
+
+1. All 100 under 0.1% (worst 0.088%), 75 under 0.01%, 69 exact, 79 every visible fault, 90 true triple in
+   the committee, 42.9 CPU hours (plain run: 93, 63, 55, 64, 73 in 26.2).
+2. On seeds 0 to 49 the larger committee alone fixes neither failure (14, 49: never extended) and breaks seed
+   17 (0.086% to 0.12%); the second flag fires on all three plus 32 and 47.
+3. The 1,000-pair screen runs on 10 of 100 cases.
+4. The worst case (seed 70, 0.088%) is never flagged; 16 of the 25 cases above 0.01% are never flagged.
+
+---
+
 ## 2026-11-19 — Roadmap #52: a larger committee instead of a wider screen
 
 Full write-up: [experiments/locate-repair/BIG_COMMITTEE.md](../experiments/locate-repair/BIG_COMMITTEE.md).

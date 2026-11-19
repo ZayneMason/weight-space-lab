@@ -160,3 +160,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [RANK_MISSES.md](RANK_MISSES.md) (roadmap #51) finds where the nine fresh 1,000-pair committees lose the true triple: all nine in the cut to 200 among hundreds of perfect practice fits, none in the pair screen, so a larger committee, not a wider screen, is the fix to try.
 
 [BIG_COMMITTEE.md](BIG_COMMITTEE.md) (roadmap #52) keeps 1,000 triples instead of 200 on the 16 fresh end-flag cases: it fixes 4 of the 5 fresh failures (3 on the exact weights) at 40% of the wider screen's cost per case, and trying it first, then the wider screen only where the end flag is still up, puts all 50 fresh cases under 0.1%.
+
+[TWO_STEP.md](TWO_STEP.md) (roadmap #53) scores the two-step rule (larger committee when the repair misses a label, then the wider screen if it still does) on all 100 three-fault cases: 100 of 100 under 0.1%, 75 under 0.01% and 69 exact at 1.6 times the cost of the plain run.

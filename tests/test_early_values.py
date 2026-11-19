@@ -167,6 +167,17 @@ class EarlyValuesTests(unittest.TestCase):
                                     {2: row(1.0, 0.0)})
         self.assertEqual((steps["flagged_again"], steps["failures_left"]), ([2], []))
 
+    def test_two_step_evidence(self):
+        import json
+        evidence = ROOT / "experiments/locate-repair/evidence"
+        old = json.loads((evidence / "two-step/old-big.json").read_text())
+        self.assertEqual((old["committee"], old["pairs_kept"], old["early_rounds"]), (1000, 200, 2))
+        check = json.loads((evidence / "two-step/check.json").read_text())
+        self.assertEqual(sorted(c["seed"] for c in old["cases"]), check["seeds_0_49"]["both_in_turn"]["flagged"])
+        self.assertEqual(check["all_100"]["under_0.1%"], 100 - len(check["all_100"]["failures_left"]))
+        self.assertEqual(check["all_100"]["under_0.1%"], sum(check[k]["both_in_turn"]["under_0.1%"]
+                                                            for k in ("seeds_0_49", "seeds_50_99")))
+
     def test_widens_only_when_no_member_fits_every_practice_label(self):
         calls = []
         real = ev.tc.committee
