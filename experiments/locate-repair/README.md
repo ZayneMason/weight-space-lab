@@ -172,3 +172,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [TIE_BREAKS.md](TIE_BREAKS.md) (roadmap #57) tries seven tie-breaks among perfect practice fits in the 12 cases where the true triple is lost: preferring the smallest largest single edit keeps 5 of them in the committee, the current order none, and no tie-break keeps all 12.
 
 [LARGEST_EDIT.md](LARGEST_EDIT.md) (roadmap #58) runs #57's best tie-break inside the whole two-step repair on seeds 100 to 149: it ends 49 of 50 under 0.1% against 50 for the coarse order, loses the true triple more often than it saves it and costs 23% more CPU, so the coarse order stays the default.
+
+[LATE_EDIT.md](LATE_EDIT.md) (roadmap #59) uses the largest-edit order only in the 1,000-pair rerun: #51's nine cases never reach that stage, and on the six unseen cases that do it ends four closer and two further with none crossing 0.1%, so the tie-break line is closed.

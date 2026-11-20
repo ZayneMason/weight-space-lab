@@ -81,17 +81,19 @@ def finished_misses_a_label(row):
     return row["switch"][-1]["practice_accuracy"] < 1
 
 
-def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse"):
+def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse", tie_break_from=0):
     """Roadmap #54: run the plain rule; while the finished repair misses a label, rerun with the next stage
     (1,000 triples, then 1,000 pairs). Each stage's row is saved to ``saved(k)`` if given, so an interrupted
-    case resumes. The returned row is the last stage's, with every stage's outcome and the total time."""
+    case resumes. The returned row is the last stage's, with every stage's outcome and the total time.
+    ``tie_break`` applies from stage ``tie_break_from`` on; earlier stages keep the coarse order (roadmap #59)."""
     rows = []
     for k, options in enumerate(stages):
         path = saved(k) if saved else None
         if path is not None and path.exists():
             row = json.loads(path.read_text())
         else:
-            row = analyse(case, early, **options, **({} if tie_break == "coarse" else {"tie_break": tie_break}))
+            order = tie_break if k >= tie_break_from else "coarse"
+            row = analyse(case, early, **options, **({} if order == "coarse" else {"tie_break": order}))
             if path is not None:
                 path.write_text(json.dumps(row) + "\n")
         rows.append(row)
@@ -104,6 +106,8 @@ def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse")
                           "committee_has_true_triple": r["committee_has_true_triple"], "seconds": r["seconds"]}
                          for k, (options, r) in enumerate(zip(stages, rows))]
     final["stages_run"] = len(rows)
+    if tie_break_from:
+        final["tie_break_from"] = tie_break_from
     final["seconds"] = round(sum(r["seconds"] for r in rows), 1)
     return final
 
@@ -124,6 +128,8 @@ def main():
                         help="--two-step, then rerun with 1,000 pairs and 1,000 triples if the repair still misses a label (#56)")
     parser.add_argument("--tie-break", choices=("coarse", "largest-edit"), default="coarse",
                         help="order among perfect practice fits: coarse-fit rank or smallest largest edit (#58)")
+    parser.add_argument("--tie-break-from", type=int, default=0,
+                        help="first two-step stage that uses --tie-break; earlier stages keep the coarse order")
     parser.add_argument("--only", type=int, nargs="+", help="run only these seeds (#47)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
@@ -144,14 +150,15 @@ def main():
                 continue
             if args.two_step or args.three_step:
                 rows.append(two_step(case, args.early, saved=lambda k, s=seed: args.output / f"case-{s}.stage{k}.json",
-                                     stages=THREE_STEP if args.three_step else TWO_STEP, tie_break=args.tie_break))
+                                     stages=THREE_STEP if args.three_step else TWO_STEP, tie_break=args.tie_break,
+                                     tie_break_from=args.tie_break_from))
             else:
                 rows.append(analyse(case, args.early, args.pairs, args.widen_to, args.committee, args.tie_break))
             saved.write_text(json.dumps(rows[-1]) + "\n")
             last = rows[-1]["switch"]
             print(seed, last[-1]["faults_found"], round(last[-1]["disagreement"], 6),
                   [h.get("value_queries") for h in last[:-1]], flush=True)
-    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to, "committee": args.committee or tc.COMMITTEE, "two_step": args.two_step or args.three_step, "three_step": args.three_step, "tie_break": args.tie_break,
+    report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to, "committee": args.committee or tc.COMMITTEE, "two_step": args.two_step or args.three_step, "three_step": args.three_step, "tie_break": args.tie_break, "tie_break_from": args.tie_break_from,
               "value_share": VALUE_SHARE, "delta": vq.DELTA, "probe": bs.PROBE, "pool": aq.POOL,
               "summary": st.summarize(rows), "cases": rows}
     (args.output / "early-values.json").write_text(json.dumps(report, indent=1) + "\n")
