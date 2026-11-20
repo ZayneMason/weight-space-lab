@@ -298,6 +298,35 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual((check["largest_edit"]["under_0.1%"], check["coarse"]["under_0.1%"]), (49, 50))
         self.assertEqual(check["line_0.001"]["lost"], [104])
 
+    def test_late_edit_check_compares_per_seed(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from late_edit_check import compare
+        row = lambda seed, d, found, k=3, sec=10.0: {"seed": seed, "stages_run": k, "seconds": sec,
+            "committee_has_true_triple": found == 3, "two_step": [{"seconds": sec}],
+            "switch": [{"disagreement": d, "faults_found": found}]}
+        coarse = {1: row(1, 2e-4, 3), 2: row(2, 1e-4, 1, sec=20.0), 3: row(3, 5e-5, 3, k=2)}
+        late = {1: row(1, 5e-5, 3), 2: row(2, 6e-4, 0, sec=30.0), 3: row(3, 5e-5, 3, k=2)}
+        out = compare(coarse, late)
+        self.assertEqual((out["reached_last_stage"], out["stopped_earlier"]), ([1, 2], [3]))
+        self.assertTrue(out["unchanged_before_last_stage"])
+        self.assertEqual(out["line_0.0001"], {"gained": [1], "lost": []})
+        self.assertEqual((out["closer"], out["further"], out["fewer_true_weights"]), ([1], [2], [2]))
+        self.assertAlmostEqual(out["last_stage_cpu_hours"]["late"], 40.0 / 3600)
+        with self.assertRaises(ValueError):
+            compare({}, late)
+
+    def test_late_edit_evidence(self):
+        import json
+        evidence = ROOT / "experiments/locate-repair/evidence/late-edit"
+        report = json.loads((evidence / "late-edit.json").read_text())
+        self.assertEqual((report["tie_break"], report["tie_break_from"]), ("largest-edit", 2))
+        self.assertEqual(len(report["cases"]), 15)
+        check = json.loads((evidence / "check.json").read_text())
+        self.assertEqual(check["reached_last_stage"], [102, 109, 124, 126, 129, 149])
+        self.assertTrue(check["unchanged_before_last_stage"])
+        self.assertEqual(check["line_0.001"], {"gained": [], "lost": []})
+        self.assertEqual(check["fewer_true_weights"], [124])
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
@@ -342,6 +371,26 @@ class EarlyValuesTests(unittest.TestCase):
                 self.assertEqual(again["two_step"], row["two_step"])
             accuracies = iter([1.0])
             self.assertEqual(ev.two_step(self.case)["stages_run"], 1)
+        finally:
+            ev.analyse = real
+
+    def test_tie_break_starts_at_the_given_stage(self):
+        calls = []
+        real = ev.analyse
+
+        def analyse(case, early, **options):
+            calls.append(options)
+            return {"switch": [{"practice_accuracy": 0.9, "disagreement": 0.0, "faults_found": 3}],
+                    "committee_has_true_triple": True, "seconds": 1.0}
+
+        ev.analyse = analyse
+        try:
+            row = ev.two_step(self.case, tie_break="largest-edit", tie_break_from=2)
+            self.assertEqual(calls, [{}, {"committee_size": 1000}, {"pairs_kept": 1000, "tie_break": "largest-edit"}])
+            self.assertEqual(row["tie_break_from"], 2)
+            calls.clear()
+            self.assertNotIn("tie_break_from", ev.two_step(self.case, tie_break="largest-edit"))
+            self.assertEqual(calls[0], {"tie_break": "largest-edit"})
         finally:
             ev.analyse = real
 

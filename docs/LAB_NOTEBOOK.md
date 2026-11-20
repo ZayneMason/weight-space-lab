@@ -8,6 +8,30 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-20 — Roadmap #59: the largest-edit tie-break only in the widest rerun
+
+Write-up: [LATE_EDIT.md](../experiments/locate-repair/LATE_EDIT.md). Evidence: `evidence/late-edit/`.
+
+**Measured.**
+- Ran the two-step rule with the coarse order for the first two stages and the largest-edit order only in the
+  1,000-pair rerun (`--tie-break largest-edit --tie-break-from 2`). It covered #51's nine lost cases and the six
+  unseen cases that reach the third stage, reusing their saved first two stages.
+- #51's nine cases all finish at the second stage (1,000 triples), so they are identical to the coarse order by
+  construction. #57's five (55, 63, 76, 93, 96) already end on the exact three weights there.
+- Of the six that reach the last stage, four end closer and two further. Seed 102 crosses under 0.01%. None
+  crosses 0.1%. Seed 124 loses its one true weight (0.012% to 0.068%).
+- Over all 15 cases: 15 under 0.1% in both arms, 8 under 0.01% against 7, 10 exact in both, the same 11 with
+  the true triple in the final committee. The last stage costs 4% more CPU. About 9 core-hours in all.
+
+**Interpretation.**
+- The coarse order stays the default and the tie-break line is closed. Early it hurts (#58); late it has
+  almost nothing to work on.
+- #57's wins came from a setting (1,000 pairs, 200 triples) the two-step rule does not use for those cases
+  (inferred from the stage each case stops at).
+- Every repair here is under 0.1%. The next question is whether the rule holds on a wider network (#60).
+
+---
+
 ## 2026-11-19 — Roadmap #58: the largest-edit tie-break in the full repair
 
 Full write-up: [experiments/locate-repair/LARGEST_EDIT.md](../experiments/locate-repair/LARGEST_EDIT.md).

@@ -1207,6 +1207,24 @@ construction.
 
 **Cost.** CPU, about 12 core-hours.
 
+**Status (November 20): done, see [LATE_EDIT.md](../experiments/locate-repair/LATE_EDIT.md).** #51's nine
+cases never reach the 1,000-pair stage under the two-step rule, and #57's five already end exact at the second
+stage. On the six that reach it, four end closer and two further, none crosses 0.1%, and seed 124 loses its one
+true weight. 8 of 15 under 0.01% against 7, for 4% more last-stage CPU. The coarse order stays the default. Cost
+was about 9 core-hours.
+
+## 60. The two-step rule on a network twice as wide
+
+*Added November 20 after #59.*
+
+Every three-fault result since #28 is at H = 16. Run the full two-step rule (`--early 2 --two-step`, coarse
+order) on fresh three-fault cases at H = 32 (`--width 32`), where there are about twice as many entries and four
+times as many pairs. Pilot one seed first to measure cost; run 12 seeds if a seed costs under about 2 CPU hours,
+6 otherwise. Record the share under 0.1% and 0.01%, the share exact, how many cases each stage flags, and the
+CPU per case against #54 (50 of 50 under 0.1%, 35 under 0.01%, 27 exact, 0.4 hours per case).
+
+**Cost.** CPU, 10 to 25 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
