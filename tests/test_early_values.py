@@ -327,6 +327,40 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["line_0.001"], {"gained": [], "lost": []})
         self.assertEqual(check["fewer_true_weights"], [124])
 
+    def test_width32_check_scores_shares(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from width32_check import compare
+        row = lambda seed, d, found, k=1, sec=3600.0, triples=100: {"seed": seed, "stages_run": k, "seconds": sec,
+            "triples": triples, "committee_has_true_triple": found == 3,
+            "switch": [{"disagreement": d, "faults_found": found, "found_visible": found == 3}]}
+        base = {1: row(1, 5e-5, 3, sec=1800.0), 2: row(2, 2e-4, 2, sec=1800.0)}
+        wide = {10: row(10, 5e-5, 3, triples=300), 11: row(11, 2e-4, 1, k=3, sec=10800.0, triples=200)}
+        stage = lambda d, sec: {"disagreement": d, "faults_found": 1, "practice_accuracy": 0.99,
+                                "committee_has_true_triple": False, "seconds": sec}
+        wide[11]["two_step"] = [stage(3e-4, 1800.0), stage(8e-5, 1800.0), stage(2e-4, 7200.0)]
+        out = compare(base, wide)
+        third = out["third_stage"]["width_32"]
+        self.assertEqual((third["reached"], third["worse"], third["better"]), ([11], [11], []))
+        self.assertAlmostEqual(third["cpu_hours"], 2.0)
+        self.assertEqual(third["without"], {"under_0.1%": 2, "under_0.01%": 2, "exact": 1})
+        self.assertEqual(out["width_32"]["share_under_0.01%"], 0.5)
+        self.assertEqual(out["width_32"]["stages_run"], {"1": 1, "2": 0, "3": 1})
+        self.assertAlmostEqual(out["cost_ratio_per_case"], 4.0)
+        self.assertAlmostEqual(out["triples_ratio"], 2.5)
+        self.assertEqual((out["width_32_not_under_0.01%"], out["width_32_not_exact"]), ([11], [11]))
+
+    def test_width32_evidence(self):
+        import json
+        evidence = ROOT / "experiments/locate-repair/evidence/width-32"
+        report = json.loads((evidence / "width-32.json").read_text())
+        self.assertEqual((report["width"], len(report["cases"])), (32, 12))
+        check = json.loads((evidence / "check.json").read_text())
+        self.assertEqual(check["width_32"]["under_0.1%"], 12)
+        self.assertEqual((check["width_32"]["under_0.01%"], check["width_32"]["exact"]), (8, 5))
+        self.assertEqual(check["width_32"]["stages_run"], {"1": 7, "2": 1, "3": 4})
+        self.assertEqual(check["third_stage"]["width_32"]["worse"], [202, 205, 210, 211])
+        self.assertEqual(check["third_stage"]["width_16"]["better"], [102, 109, 129])
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

@@ -1,0 +1,224 @@
+{
+ "width_16": {
+  "under_0.1%": 50,
+  "under_0.01%": 35,
+  "exact": 27,
+  "every_visible": 35,
+  "true_triple_in_committee": 40,
+  "median": 4.4999999999999996e-05,
+  "worst": 0.000691,
+  "cpu_hours": 19.813472222222224,
+  "seeds": 50,
+  "share_under_0.1%": 1.0,
+  "share_under_0.01%": 0.7,
+  "share_exact": 0.54,
+  "share_true_triple_in_committee": 0.8,
+  "cpu_hours_per_case": 0.39626944444444445,
+  "median_hours": 0.23384722222222223,
+  "max_hours": 1.3259444444444444,
+  "median_triples": 13001.0,
+  "stages_run": {
+   "1": 35,
+   "2": 9,
+   "3": 6
+  }
+ },
+ "width_32": {
+  "under_0.1%": 12,
+  "under_0.01%": 8,
+  "exact": 5,
+  "every_visible": 7,
+  "true_triple_in_committee": 6,
+  "median": 5.3e-05,
+  "worst": 0.000521,
+  "cpu_hours": 24.68577777777778,
+  "seeds": 12,
+  "share_under_0.1%": 1.0,
+  "share_under_0.01%": 0.6666666666666666,
+  "share_exact": 0.4166666666666667,
+  "share_true_triple_in_committee": 0.5,
+  "cpu_hours_per_case": 2.057148148148148,
+  "median_hours": 0.8683194444444444,
+  "max_hours": 5.252083333333333,
+  "median_triples": 29467.5,
+  "stages_run": {
+   "1": 7,
+   "2": 1,
+   "3": 4
+  }
+ },
+ "cost_ratio_per_case": 5.191286325475324,
+ "triples_ratio": 2.26655641873702,
+ "width_32_not_under_0.01%": [
+  202,
+  204,
+  205,
+  211
+ ],
+ "width_32_not_exact": [
+  201,
+  202,
+  205,
+  207,
+  209,
+  210,
+  211
+ ],
+ "third_stage": {
+  "width_16": {
+   "reached": [
+    102,
+    109,
+    124,
+    126,
+    129,
+    149
+   ],
+   "better": [
+    102,
+    109,
+    129
+   ],
+   "worse": [
+    124,
+    126,
+    149
+   ],
+   "ended_exact": [
+    102,
+    109,
+    129
+   ],
+   "perfect_practice": [
+    102,
+    109,
+    129
+   ],
+   "true_triple_in_committee": [
+    102,
+    109,
+    129
+   ],
+   "cpu_hours": 4.338277777777778,
+   "share_of_cpu": 0.21895595729617193,
+   "without": {
+    "under_0.1%": 49,
+    "under_0.01%": 33,
+    "exact": 24
+   }
+  },
+  "width_32": {
+   "reached": [
+    202,
+    205,
+    210,
+    211
+   ],
+   "better": [],
+   "worse": [
+    202,
+    205,
+    210,
+    211
+   ],
+   "ended_exact": [],
+   "perfect_practice": [
+    210
+   ],
+   "true_triple_in_committee": [],
+   "cpu_hours": 11.1435,
+   "share_of_cpu": 0.45141376951190965,
+   "without": {
+    "under_0.1%": 12,
+    "under_0.01%": 10,
+    "exact": 5
+   }
+  }
+ },
+ "per_seed": {
+  "200": {
+   "faults_found": 3,
+   "disagreement": 1.6e-05,
+   "hours": 1.8441666666666667,
+   "stages_run": 2,
+   "true_triple_in_committee": true
+  },
+  "201": {
+   "faults_found": 2,
+   "disagreement": 2.4e-05,
+   "hours": 0.62675,
+   "stages_run": 1,
+   "true_triple_in_committee": false
+  },
+  "202": {
+   "faults_found": 2,
+   "disagreement": 0.000137,
+   "hours": 2.432888888888889,
+   "stages_run": 3,
+   "true_triple_in_committee": false
+  },
+  "203": {
+   "faults_found": 3,
+   "disagreement": 5.7e-05,
+   "hours": 0.7635833333333334,
+   "stages_run": 1,
+   "true_triple_in_committee": true
+  },
+  "204": {
+   "faults_found": 3,
+   "disagreement": 0.000521,
+   "hours": 0.8279444444444444,
+   "stages_run": 1,
+   "true_triple_in_committee": true
+  },
+  "205": {
+   "faults_found": 1,
+   "disagreement": 0.000287,
+   "hours": 4.482583333333333,
+   "stages_run": 3,
+   "true_triple_in_committee": false
+  },
+  "206": {
+   "faults_found": 3,
+   "disagreement": 3.4e-05,
+   "hours": 0.7763055555555555,
+   "stages_run": 1,
+   "true_triple_in_committee": true
+  },
+  "207": {
+   "faults_found": 2,
+   "disagreement": 4.9e-05,
+   "hours": 0.9086944444444445,
+   "stages_run": 1,
+   "true_triple_in_committee": true
+  },
+  "208": {
+   "faults_found": 3,
+   "disagreement": 8e-06,
+   "hours": 0.7668055555555555,
+   "stages_run": 1,
+   "true_triple_in_committee": true
+  },
+  "209": {
+   "faults_found": 2,
+   "disagreement": 1.7e-05,
+   "hours": 0.7765555555555556,
+   "stages_run": 1,
+   "true_triple_in_committee": false
+  },
+  "210": {
+   "faults_found": 0,
+   "disagreement": 6.8e-05,
+   "hours": 5.252083333333333,
+   "stages_run": 3,
+   "true_triple_in_committee": false
+  },
+  "211": {
+   "faults_found": 1,
+   "disagreement": 0.000296,
+   "hours": 5.227416666666667,
+   "stages_run": 3,
+   "true_triple_in_committee": false
+  }
+ }
+}
