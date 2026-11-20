@@ -361,6 +361,32 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["third_stage"]["width_32"]["worse"], [202, 205, 210, 211])
         self.assertEqual(check["third_stage"]["width_16"]["better"], [102, 109, 129])
 
+    def test_final_stage_choice_rules(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from final_stage_choice import best_practice_earlier, compare, third_only_if_perfect
+        st = lambda d, acc, found=1, sec=3600.0: {"disagreement": d, "practice_accuracy": acc, "faults_found": found,
+                                                  "seconds": sec}
+        rows = {1: {"two_step": [st(5e-4, 0.98), st(8e-5, 0.999), st(3e-4, 0.995)]},
+                2: {"two_step": [st(5e-4, 0.98), st(4e-4, 0.99), st(2e-5, 1.0, found=3)]},
+                3: {"two_step": [st(3e-5, 1.0, found=3)]}}
+        self.assertEqual([third_only_if_perfect(rows[s]["two_step"]) for s in (1, 2, 3)], [1, 2, 0])
+        self.assertEqual(best_practice_earlier([st(1e-4, 1.0), st(2e-4, 1.0)]), 0)
+        out = compare({"arm": rows})["arm"]
+        self.assertEqual(out["reached_third_stage"], [1, 2])
+        rule = out["rules"]["third_only_if_perfect"]
+        self.assertEqual((rule["under_0.01%"], rule["exact"], rule["better"], rule["worse"]), (3, 2, [1], []))
+        skip = out["rules"]["no_third_stage"]
+        self.assertEqual((skip["worse"], skip["cpu_hours"]), ([2], 5.0))
+
+    def test_final_stage_choice_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/final-stage-choice/check.json").read_text())
+        w16, w32 = check["width_16"]["rules"], check["width_32"]["rules"]
+        self.assertEqual((w16["current"]["under_0.01%"], w32["current"]["under_0.01%"]), (35, 8))
+        self.assertEqual((w16["third_only_if_perfect"]["worse"], w32["third_only_if_perfect"]["worse"]), ([], []))
+        self.assertEqual(w32["third_only_if_perfect"]["under_0.01%"], 10)
+        self.assertEqual(check["width_16_largest_edit"]["rules"]["third_only_if_perfect"]["worse"], [126])
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

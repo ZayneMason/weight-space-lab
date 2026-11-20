@@ -8,6 +8,28 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-20 — Roadmap #61: which stage's repair to keep
+
+Write-up: [FINAL_STAGE.md](../experiments/locate-repair/FINAL_STAGE.md). Evidence: `evidence/final-stage-choice/`.
+
+**Measured.**
+- Rescored the saved per-stage results of three runs (#54 width 16, #60 width 32, #58 largest-edit width 16)
+  under six final-choice rules that use only practice accuracy, plus a probe-based oracle. No new runs.
+- Keeping the third stage only when it fits every practice label: width 16 stays 50 / 35 / 27 (under 0.1%, under
+  0.01%, exact) and its worst case drops from 0.069% to 0.047%. Width 32 goes from 8 to 10 under 0.01%, the same
+  lines as the oracle. On the largest-edit run, lines are unchanged; four cases end closer and one a hair further.
+- It misses seed 210 (width 32) and seed 104 (largest-edit run): perfect third-stage practice fits on none of the
+  true weights.
+- Skipping the third stage saves 45% of the CPU at width 32 at no loss, but at width 16 it loses the three exact
+  wins (102, 109, 129).
+
+**Interpretation.**
+- All six exact third-stage wins come with a perfect practice fit, so that is the signal to keep it. Two of eight
+  perfect fits are still lookalikes.
+- The rule was picked after seeing these runs, so this is in-sample. Fresh seeds come next (#62).
+
+---
+
 ## 2026-11-20 — Roadmap #60: the two-step repair on a network twice as wide
 
 Write-up: [WIDTH32.md](../experiments/locate-repair/WIDTH32.md). Evidence: `evidence/width-32/`.
