@@ -387,6 +387,28 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(w32["third_only_if_perfect"]["under_0.01%"], 10)
         self.assertEqual(check["width_16_largest_edit"]["rules"]["third_only_if_perfect"]["worse"], [126])
 
+    def test_third_rule_check_counts_moves_and_exact_misses(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from third_rule_check import misses, third_stage_moves
+        st = lambda d, acc, found=1: {"disagreement": d, "practice_accuracy": acc, "faults_found": found, "seconds": 1.0}
+        rows = {1: {"two_step": [st(5e-4, 0.98), st(4e-4, 0.99), st(3e-4, 0.995)]},
+                2: {"two_step": [st(5e-4, 0.98), st(2e-4, 0.99), st(6e-4, 0.995)]},
+                3: {"two_step": [st(5e-4, 0.98), st(4e-4, 0.99), st(2e-5, 1.0, found=3)]},
+                4: {"two_step": [st(2e-4, 1.0, found=3)]}}
+        self.assertEqual(third_stage_moves(rows), {"1": "closer", "2": "further"})
+        self.assertEqual(misses(rows), {"over_0.01%": 3, "exact_over_0.01%": [4]})
+
+    def test_third_rule_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/third-stage-rule/check.json").read_text())
+        self.assertTrue(check["kept_stage_matches_rescore"])
+        self.assertEqual(check["stages_run"], {"1": 36, "2": 7, "3": 7})
+        fresh = check["fresh"]["rules"]
+        self.assertEqual([fresh["current"][k] for k in ("under_0.1%", "under_0.01%", "exact")], [49, 32, 31])
+        self.assertEqual(fresh["third_only_if_perfect"]["worse"], [160, 170, 186, 197])
+        self.assertEqual(check["pooled"]["rules"]["third_only_if_perfect"]["under_0.1%"], 98)
+        self.assertEqual(len(check["pooled_misses"]["exact_over_0.01%"]), 17)
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

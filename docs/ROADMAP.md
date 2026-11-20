@@ -1263,6 +1263,25 @@ against #54.
 
 **Cost.** CPU, about 20 core-hours.
 
+**Status (November 20): done, see [THIRD_RULE.md](../experiments/locate-repair/THIRD_RULE.md).** The rule did not
+hold on seeds 150 to 199: it drops five imperfect third stages, one ends closer and four further, and seed 197
+crosses 0.1% (48 / 32 / 31 against `last`'s 49 / 32 / 31). The two perfect third-stage fits are exact and both
+rules keep them. Pooled over 100 cases, an imperfect third stage ends closer in 4 of 8. `last` stays the default.
+17 of the 33 pooled cases over 0.01% already edit exactly the three broken weights.
+
+## 63. Refine the values once the repair has the right weights
+
+*Added November 20 after #62.*
+
+17 of the 33 width-16 cases over 0.01% in seeds 100 to 199 edit exactly the three broken weights and fit every
+practice label, so their gap is in the values, not in the location. For each of the 58 exact cases, refit the
+three values on the same practice labels, starting from the repair's values, and keep the point that fits every
+label with the widest margin (the middle of the region that fits) instead of the first point the fit reaches.
+No new labels and no new search. Report how many exact cases cross under 0.01%, and check that none of the
+cases already under it moves over.
+
+**Cost.** CPU, minutes per case.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
