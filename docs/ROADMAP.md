@@ -1244,6 +1244,25 @@ when the second stage is already close.
 
 **Cost.** No new runs; minutes of CPU.
 
+**Status (November 20): done, see [FINAL_STAGE.md](../experiments/locate-repair/FINAL_STAGE.md).** Keeping the
+third stage only when it fits every practice label never loses a line in three runs: width 16 stays 50 / 35 / 27
+with a worst case of 0.047% (was 0.069%), and width 32 goes from 8 to 10 of 12 under 0.01%, matching the oracle.
+"Best practice" never ends further but gains less. Skipping the third stage saves 45% of the CPU at width 32 but
+loses three exact wins at width 16. The rule is in-sample, so it needs fresh seeds.
+
+## 62. The third-stage rule on fresh cases
+
+*Added November 20 after #61.*
+
+#61 picked "keep the third stage only when it fits every practice label" after seeing the runs it was scored on.
+Add it to `early_values.py` as `--final-choice third-if-perfect` (default `last`, which leaves every earlier run
+unchanged), keeping every stage's result in `two_step` as now. Run the two-step rule on 50 fresh width-16
+three-fault cases, seeds 150 to 199. Score both final choices from the same run. Record how many cases reach the
+third stage, whether the rule ever ends further than `last`, and the shares under 0.1% and 0.01% and exact
+against #54.
+
+**Cost.** CPU, about 20 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
