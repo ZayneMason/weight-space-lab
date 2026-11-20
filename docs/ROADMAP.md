@@ -1225,6 +1225,25 @@ CPU per case against #54 (50 of 50 under 0.1%, 35 under 0.01%, 27 exact, 0.4 hou
 
 **Cost.** CPU, 10 to 25 core-hours.
 
+**Status (November 20): done, see [WIDTH32.md](../experiments/locate-repair/WIDTH32.md).** The pilot seed cost
+1.8 CPU hours, so 12 seeds ran (200 to 211). All 12 end under 0.1% and 8 under 0.01%, about the same shares as
+width 16, but only 5 end exact. Stages flag 7 / 1 / 4 cases. 2.06 CPU hours per case, 5.2 times width 16. The
+third stage makes all four cases it reaches worse and is 45% of the CPU. Cost was about 25 core-hours.
+
+## 61. Keep the third stage only when it fits every practice label
+
+*Added November 20 after #60.*
+
+At width 16 the 1,000-pair third stage ends exact in the three cases where it reaches a perfect practice fit and
+is slightly worse in the other three. At width 32 it is worse in all four cases it reaches. Score a final-choice
+rule from the saved per-stage results (`two_step` in each case): keep the third stage's repair only when it fits
+every practice label, otherwise keep the second stage's. Also score "keep the stage with the best practice
+accuracy". Report the shares under 0.1% and 0.01% and exact at both widths, against the current rule, with seeds
+100 to 149 and 200 to 211. If a rule never loses, test whether it should also skip the third stage at width 32
+when the second stage is already close.
+
+**Cost.** No new runs; minutes of CPU.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

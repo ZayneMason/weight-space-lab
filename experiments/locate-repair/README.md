@@ -174,3 +174,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [LARGEST_EDIT.md](LARGEST_EDIT.md) (roadmap #58) runs #57's best tie-break inside the whole two-step repair on seeds 100 to 149: it ends 49 of 50 under 0.1% against 50 for the coarse order, loses the true triple more often than it saves it and costs 23% more CPU, so the coarse order stays the default.
 
 [LATE_EDIT.md](LATE_EDIT.md) (roadmap #59) uses the largest-edit order only in the 1,000-pair rerun: #51's nine cases never reach that stage, and on the six unseen cases that do it ends four closer and two further with none crossing 0.1%, so the tie-break line is closed.
+
+[WIDTH32.md](WIDTH32.md) (roadmap #60) runs the two-step repair unchanged at hidden width 32 on 12 fresh three-fault cases: all 12 end under 0.1% and 8 under 0.01%, about the same shares as width 16, but only 5 end exact, each case costs 5.2 times as much CPU, and the 1,000-pair third stage makes all four cases it reaches worse.

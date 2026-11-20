@@ -8,6 +8,31 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-20 — Roadmap #60: the two-step repair on a network twice as wide
+
+Write-up: [WIDTH32.md](../experiments/locate-repair/WIDTH32.md). Evidence: `evidence/width-32/`.
+
+**Measured.**
+- Ran the two-step rule unchanged (`--width 32 --early 2 --two-step`) on 12 fresh three-fault cases at hidden
+  width 32, seeds 200 to 211. The screen ranks a median 29,468 triples against 13,001 at width 16.
+- All 12 end under 0.1% disagreement and 8 under 0.01% (67%, against 70% at width 16). 5 end on the exact three
+  weights (42% against 54%), and the true triple is in the final committee in 6 (50% against 80%).
+- 7 cases end at the first stage, 1 at the second and 4 at the third. The third stage makes all four worse than
+  the second left them (seed 211: 0.0081% to 0.030%). At width 16 it ends three of its six exact.
+- 2.06 CPU hours per case, 5.2 times width 16. The third stage is 45% of the CPU. About 25 core-hours in all.
+- Stopping after the second stage at width 32 would give 12, 10 and 5 (under 0.1%, under 0.01%, exact) for about
+  1.1 hours per case. At width 16 it would give 49, 33 and 24.
+
+**Interpretation.**
+- The rule carries over to a wider network: repairs behave like the original about as often, but land on the
+  exact broken weights less often.
+- At width 32 the third stage's flag fires on cases that are already close, and the wider pair screen then finds
+  a better practice fit that behaves worse (inferred from four cases).
+- Next: keep the second stage's repair unless the third stage fits every practice label (#61), scored from the
+  saved per-stage results.
+
+---
+
 ## 2026-11-20 — Roadmap #59: the largest-edit tie-break only in the widest rerun
 
 Write-up: [LATE_EDIT.md](../experiments/locate-repair/LATE_EDIT.md). Evidence: `evidence/late-edit/`.
