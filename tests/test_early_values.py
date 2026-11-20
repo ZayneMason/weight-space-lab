@@ -387,6 +387,28 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(w32["third_only_if_perfect"]["under_0.01%"], 10)
         self.assertEqual(check["width_16_largest_edit"]["rules"]["third_only_if_perfect"]["worse"], [126])
 
+    def test_third_rule_check_counts_moves_and_exact_misses(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from third_rule_check import misses, third_stage_moves
+        st = lambda d, acc, found=1: {"disagreement": d, "practice_accuracy": acc, "faults_found": found, "seconds": 1.0}
+        rows = {1: {"two_step": [st(5e-4, 0.98), st(4e-4, 0.99), st(3e-4, 0.995)]},
+                2: {"two_step": [st(5e-4, 0.98), st(2e-4, 0.99), st(6e-4, 0.995)]},
+                3: {"two_step": [st(5e-4, 0.98), st(4e-4, 0.99), st(2e-5, 1.0, found=3)]},
+                4: {"two_step": [st(2e-4, 1.0, found=3)]}}
+        self.assertEqual(third_stage_moves(rows), {"1": "closer", "2": "further"})
+        self.assertEqual(misses(rows), {"over_0.01%": 3, "exact_over_0.01%": [4]})
+
+    def test_third_rule_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/third-stage-rule/check.json").read_text())
+        self.assertTrue(check["kept_stage_matches_rescore"])
+        self.assertEqual(check["stages_run"], {"1": 36, "2": 7, "3": 7})
+        fresh = check["fresh"]["rules"]
+        self.assertEqual([fresh["current"][k] for k in ("under_0.1%", "under_0.01%", "exact")], [49, 32, 31])
+        self.assertEqual(fresh["third_only_if_perfect"]["worse"], [160, 170, 186, 197])
+        self.assertEqual(check["pooled"]["rules"]["third_only_if_perfect"]["under_0.1%"], 98)
+        self.assertEqual(len(check["pooled_misses"]["exact_over_0.01%"]), 17)
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
@@ -431,6 +453,31 @@ class EarlyValuesTests(unittest.TestCase):
                 self.assertEqual(again["two_step"], row["two_step"])
             accuracies = iter([1.0])
             self.assertEqual(ev.two_step(self.case)["stages_run"], 1)
+        finally:
+            ev.analyse = real
+
+    def test_final_choice_keeps_the_last_stage_only_on_a_perfect_fit(self):
+        real = ev.analyse
+        plan = []
+
+        def analyse(case, early, **options):
+            acc, d = plan.pop(0)
+            return {"switch": [{"practice_accuracy": acc, "disagreement": d, "faults_found": 1}],
+                    "committee_has_true_triple": False, "seconds": 1.0}
+
+        ev.analyse = analyse
+        try:
+            plan[:] = [(0.9, 5e-4), (0.95, 8e-5), (0.97, 3e-4)]
+            row = ev.two_step(self.case, final_choice="last-if-perfect")
+            self.assertEqual((row["kept_stage"], row["switch"][-1]["disagreement"]), (1, 8e-5))
+            self.assertEqual((row["stages_run"], row["seconds"], len(row["two_step"])), (3, 3.0, 3))
+            plan[:] = [(0.9, 5e-4), (0.95, 8e-5), (1.0, 2e-5)]
+            self.assertEqual(ev.two_step(self.case, final_choice="last-if-perfect")["kept_stage"], 2)
+            plan[:] = [(0.9, 5e-4), (0.95, 8e-5), (0.97, 3e-4)]
+            plain = ev.two_step(self.case)
+            self.assertEqual(plain["switch"][-1]["disagreement"], 3e-4)
+            self.assertNotIn("kept_stage", plain)
+            self.assertEqual(ev.kept_stage([{"switch": [{"practice_accuracy": 0.9}]}], "last-if-perfect"), 0)
         finally:
             ev.analyse = real
 

@@ -8,6 +8,29 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-20 — Roadmap #62: the third-stage rule on fresh cases
+
+Write-up: [THIRD_RULE.md](../experiments/locate-repair/THIRD_RULE.md). Evidence: `evidence/third-stage-rule/`.
+
+**Measured.**
+- Added `--final-choice last-if-perfect` to `early_values.py` (default `last`) and ran the two-step repair on 50
+  fresh width-16 three-fault cases, seeds 150 to 199: 29.6 core-hours. 36 cases stop after one stage, 7 after
+  two, 7 reach the third.
+- Keeping the last stage: 49 / 32 / 31 (under 0.1%, under 0.01%, exact), worst 0.136%. The new rule: 48 / 32 / 31.
+  Of the five imperfect third stages it drops, one ends closer (157) and four further (160, 170, 186, 197); 197
+  goes from 0.039% to 0.102%.
+- The two perfect third-stage fits (159, 198) are exact and cross under 0.01%. All five exact third-stage wins in
+  seeds 100 to 199 have a perfect fit.
+- Pooled over seeds 100 to 199: last 99 / 67 / 58, the rule 98 / 67 / 58, the oracle 99 / 68 / 58.
+- 17 of the 33 pooled cases at or over 0.01% edit exactly the three broken weights.
+
+**Interpretation.**
+- #61's rule was fitted to three cases. An imperfect third stage ends closer in 4 of 8 cases overall, so dropping
+  it is no better than keeping it. `last` stays the default at width 16.
+- Half the remaining 0.01% misses already have the right weights, so the next lever is the values (#63).
+
+---
+
 ## 2026-11-20 — Roadmap #61: which stage's repair to keep
 
 Write-up: [FINAL_STAGE.md](../experiments/locate-repair/FINAL_STAGE.md). Evidence: `evidence/final-stage-choice/`.
