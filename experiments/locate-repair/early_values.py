@@ -81,11 +81,23 @@ def finished_misses_a_label(row):
     return row["switch"][-1]["practice_accuracy"] < 1
 
 
-def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse", tie_break_from=0):
+def kept_stage(rows, final_choice="last"):
+    """Which stage's repair to keep. ``last`` keeps the last stage run. ``last-if-perfect`` keeps the last stage
+    only when it fits every practice label, otherwise the stage before it (roadmap #61/#62)."""
+    if final_choice == "last" or len(rows) < 2 or not finished_misses_a_label(rows[-1]):
+        return len(rows) - 1
+    if final_choice == "last-if-perfect":
+        return len(rows) - 2
+    raise ValueError(f"unknown final choice {final_choice!r}")
+
+
+def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse", tie_break_from=0,
+             final_choice="last"):
     """Roadmap #54: run the plain rule; while the finished repair misses a label, rerun with the next stage
     (1,000 triples, then 1,000 pairs). Each stage's row is saved to ``saved(k)`` if given, so an interrupted
     case resumes. The returned row is the last stage's, with every stage's outcome and the total time.
-    ``tie_break`` applies from stage ``tie_break_from`` on; earlier stages keep the coarse order (roadmap #59)."""
+    ``tie_break`` applies from stage ``tie_break_from`` on; earlier stages keep the coarse order (roadmap #59).
+    ``final_choice`` picks which stage's repair is returned (see ``kept_stage``); every stage still runs."""
     rows = []
     for k, options in enumerate(stages):
         path = saved(k) if saved else None
@@ -99,7 +111,8 @@ def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse",
         rows.append(row)
         if not finished_misses_a_label(row):
             break
-    final = dict(rows[-1])
+    keep = kept_stage(rows, final_choice)
+    final = dict(rows[keep])
     final["two_step"] = [{"stage": k, **options, "disagreement": r["switch"][-1]["disagreement"],
                           "faults_found": r["switch"][-1]["faults_found"],
                           "practice_accuracy": r["switch"][-1]["practice_accuracy"],
@@ -108,6 +121,8 @@ def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse",
     final["stages_run"] = len(rows)
     if tie_break_from:
         final["tie_break_from"] = tie_break_from
+    if final_choice != "last":
+        final["final_choice"], final["kept_stage"] = final_choice, keep
     final["seconds"] = round(sum(r["seconds"] for r in rows), 1)
     return final
 
@@ -130,6 +145,8 @@ def main():
                         help="order among perfect practice fits: coarse-fit rank or smallest largest edit (#58)")
     parser.add_argument("--tie-break-from", type=int, default=0,
                         help="first two-step stage that uses --tie-break; earlier stages keep the coarse order")
+    parser.add_argument("--final-choice", choices=("last", "last-if-perfect"), default="last",
+                        help="keep the last stage, or keep it only when it fits every practice label (#62)")
     parser.add_argument("--only", type=int, nargs="+", help="run only these seeds (#47)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
@@ -151,7 +168,7 @@ def main():
             if args.two_step or args.three_step:
                 rows.append(two_step(case, args.early, saved=lambda k, s=seed: args.output / f"case-{s}.stage{k}.json",
                                      stages=THREE_STEP if args.three_step else TWO_STEP, tie_break=args.tie_break,
-                                     tie_break_from=args.tie_break_from))
+                                     tie_break_from=args.tie_break_from, final_choice=args.final_choice))
             else:
                 rows.append(analyse(case, args.early, args.pairs, args.widen_to, args.committee, args.tie_break))
             saved.write_text(json.dumps(rows[-1]) + "\n")
@@ -159,6 +176,7 @@ def main():
             print(seed, last[-1]["faults_found"], round(last[-1]["disagreement"], 6),
                   [h.get("value_queries") for h in last[:-1]], flush=True)
     report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to, "committee": args.committee or tc.COMMITTEE, "two_step": args.two_step or args.three_step, "three_step": args.three_step, "tie_break": args.tie_break, "tie_break_from": args.tie_break_from,
+              "final_choice": args.final_choice,
               "value_share": VALUE_SHARE, "delta": vq.DELTA, "probe": bs.PROBE, "pool": aq.POOL,
               "summary": st.summarize(rows), "cases": rows}
     (args.output / "early-values.json").write_text(json.dumps(report, indent=1) + "\n")

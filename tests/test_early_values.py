@@ -434,6 +434,31 @@ class EarlyValuesTests(unittest.TestCase):
         finally:
             ev.analyse = real
 
+    def test_final_choice_keeps_the_last_stage_only_on_a_perfect_fit(self):
+        real = ev.analyse
+        plan = []
+
+        def analyse(case, early, **options):
+            acc, d = plan.pop(0)
+            return {"switch": [{"practice_accuracy": acc, "disagreement": d, "faults_found": 1}],
+                    "committee_has_true_triple": False, "seconds": 1.0}
+
+        ev.analyse = analyse
+        try:
+            plan[:] = [(0.9, 5e-4), (0.95, 8e-5), (0.97, 3e-4)]
+            row = ev.two_step(self.case, final_choice="last-if-perfect")
+            self.assertEqual((row["kept_stage"], row["switch"][-1]["disagreement"]), (1, 8e-5))
+            self.assertEqual((row["stages_run"], row["seconds"], len(row["two_step"])), (3, 3.0, 3))
+            plan[:] = [(0.9, 5e-4), (0.95, 8e-5), (1.0, 2e-5)]
+            self.assertEqual(ev.two_step(self.case, final_choice="last-if-perfect")["kept_stage"], 2)
+            plan[:] = [(0.9, 5e-4), (0.95, 8e-5), (0.97, 3e-4)]
+            plain = ev.two_step(self.case)
+            self.assertEqual(plain["switch"][-1]["disagreement"], 3e-4)
+            self.assertNotIn("kept_stage", plain)
+            self.assertEqual(ev.kept_stage([{"switch": [{"practice_accuracy": 0.9}]}], "last-if-perfect"), 0)
+        finally:
+            ev.analyse = real
+
     def test_tie_break_starts_at_the_given_stage(self):
         calls = []
         real = ev.analyse
