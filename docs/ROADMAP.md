@@ -1316,7 +1316,7 @@ used but not written to disk.
 After the middle step, 11 of 50 fresh cases are still over 0.01%. Only 3 of them edit exactly the three broken
 weights, so most still have a wrong weight among the three. One more round of labels could help either way. The
 walk that finds the middle gives a few hundred value triples for the winner that all fit every label. Pick 8 new
-inputs from a uniform pool of 4,096 where those sampled networks split most evenly, label them, refit every
+inputs from the usual uniform pool of 5,000 where those sampled networks split most evenly, label them, refit every
 committee member on all 1,096 labels, pick the winner again and take its middle. Compare with 8 more labels chosen
 the usual way (one more round of committee splits) and with no extra labels, on 50 fresh width-16 cases, seeds 250
 to 299. Write the final labels to disk this time. Report the shares under 0.01%, exact repairs, and the cases that

@@ -471,6 +471,24 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(arms["always"]["crossed_over_0.01%"], [])
         self.assertEqual(check["rule_used"], [200, 209, 223, 224, 227, 230, 237, 238])
 
+    def test_extra_round_scores_both_arms_from_one_pool(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from switch_triples import told_start
+        case = ev.rs.resize(ev.t3.corrupt(16, 164))
+        px, py, _ = ev.lr.split(case["practice"])
+        true = tuple(tuple(f[:2]) for f in case["faults"])
+        other = (true[0], true[1], ("bias", 0))
+        fits = {t: told_start(case, px, py, t) for t in (true, other)}
+        keep = {"x": px, "y": py, "winner": true, "edits": fits[true][1], "members": [true, other], "fits": fits}
+        probe, samples = ev.bs.make_probe(case, 20_000), []
+        ev.middle_step(case, keep, probe, samples=samples)
+        self.assertEqual(len(samples), 1600)
+        out, added = ev.extra_round(case, keep, samples, probe)
+        self.assertEqual(set(out), {"splits", "region"})
+        self.assertEqual(added["region"].shape, (8, 2))
+        self.assertGreater(out["region"]["splitting"], 0)
+        self.assertEqual(out["region"]["faults_found"], 3)
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

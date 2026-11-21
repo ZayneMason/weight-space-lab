@@ -53,12 +53,12 @@ def replay(case, stage, early=2):
     return history[-1], keep
 
 
-def feasible_centre(case, x, y, triple, values, rng, steps=STEPS, burn=BURN, reach=REACH):
+def feasible_centre(case, x, y, triple, values, rng, steps=STEPS, burn=BURN, reach=REACH, samples=None):
     """Mean of a hit-and-run walk inside the region of value triples that miss no more labels than the repair's
     values do (for nearly every case, the region that fits every label), started at those values. Each step picks
     a random direction in units of each tensor's spread, finds how far the region reaches both ways along it by
     bisection (at most ``reach`` spreads), and moves to a uniform point on that chord. Returns (mean, mean chord
-    length in spreads)."""
+    length in spreads). A list passed as ``samples`` receives every kept point's values (roadmap #65)."""
     scale = np.array([case["scale"][n] for n, _ in triple])
     wrong = lambda z: int((wt.signed_margins(case, triple, z * scale, x, y) <= 0).sum())
     z = np.array(values) / scale
@@ -83,6 +83,8 @@ def feasible_centre(case, x, y, triple, values, rng, steps=STEPS, burn=BURN, rea
         if k >= burn:
             kept.append(z.copy())
             chords.append(b - a)
+    if samples is not None:
+        samples.extend(k * scale for k in kept)
     return np.mean(kept, axis=0) * scale, float(np.mean(chords))
 
 

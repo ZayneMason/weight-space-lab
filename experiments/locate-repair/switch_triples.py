@@ -47,7 +47,8 @@ def told_start(case, x, y, triple):
 
 def run(case, members, fits, silent, probe, chooser=None, keep=None):
     """``chooser(case, fits, edits, pool, rng)`` returns (picked, info); the default is #39's switch rule.
-    ``keep``, a dict, receives the final labelled inputs, their labels, the winner and its edits (roadmap #63)."""
+    ``keep``, a dict, receives the final labelled inputs, their labels, the winner and its edits (roadmap #63),
+    and the committee with its final fits (roadmap #65)."""
     width, faults = case["width"], case["faults"]
     told_triple = tuple(tuple(f[:2]) for f in faults)
     px, py, _ = lr.split(case["practice"])
@@ -73,7 +74,7 @@ def run(case, members, fits, silent, probe, chooser=None, keep=None):
                             chained_told_disagreement=aq.disagreement(case, chained[1], probe)))
         if round_ == aq.ROUNDS:
             if keep is not None:
-                keep.update(x=x, y=y, winner=winner, edits=edits)
+                keep.update(x=x, y=y, winner=winner, edits=edits, members=members, fits=fits)
             break
         pool = rng.uniform(-2, 2, size=(aq.POOL, 2))
         if chooser is None:
