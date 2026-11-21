@@ -1282,6 +1282,27 @@ cases already under it moves over.
 
 **Cost.** CPU, minutes per case.
 
+**Status (November 21): done, see [REFINE_VALUES.md](../experiments/locate-repair/REFINE_VALUES.md).** The final
+labels were not saved, so each exact case's kept stage was replayed (about 25 core-hours; all 58 match). The middle
+of the region that fits is a little closer on average (geometric mean 0.88 to 0.96 across three walks) but moves
+the 0.01% line by 0 to 2 of 58, and one or two cases under it move over. The gain is in the 14 cases whose region
+is widest (11 closer in every walk, mean change 0.73). Where the region is narrow the labels already pin the
+values.
+
+## 64. Take the middle only when the labels leave room, on fresh cases
+
+*Added November 21 after #63.*
+
+#63 found that taking the middle of the region that fits helps only where that region is wide, but chose the
+width bands after seeing the results. Fix the rule beforehand: after the repair's last round, run the 1,600-step
+walk on the winner's values, and keep the middle only when the mean chord is at least 0.005 spreads and the
+middle fits every label the repair fits. Save the final labels as part of every run (`keep`), so no replay is
+needed. Run it inside the two-step repair on 50 fresh width-16 three-fault cases, seeds 200 to 249, for every
+case, not only exact ones. Report the shares under 0.1% and 0.01% and exact with and without the step, and how
+many cases cross the 0.01% line each way.
+
+**Cost.** CPU, about 30 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

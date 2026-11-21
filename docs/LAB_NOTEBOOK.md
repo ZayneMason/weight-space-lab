@@ -8,6 +8,26 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-21 — Roadmap #63: refine the values once the repair has the right weights
+
+Write-up: [REFINE_VALUES.md](../experiments/locate-repair/REFINE_VALUES.md). Evidence: `evidence/refine-values/`.
+
+**Measured.**
+- Added a `keep` hook to `switch_triples.run` and replayed the kept stage of all 58 cases in seeds 100 to 199
+  whose repair edits exactly the three broken weights, to recover their 1,088 final labels. All 58 replays end at
+  the saved disagreement.
+- Compared the repair's values with the middle of the region of values that fit those labels (mean of a
+  hit-and-run walk, three walks per case). Under 0.01%: 41 for the repair, 41 to 43 for the middle. The middle is
+  closer in 30 to 37 cases and further in 20 to 26. One or two cases under the line move over it.
+- Split by how far the region reaches: in the 14 cases with the widest regions the middle is closer in every walk
+  in 11, with a geometric-mean change of 0.73; in the 29 narrowest it is 0.96.
+
+**Interpretation.**
+- The fit sits at an edge only where the labels leave room. There the middle helps; elsewhere the values are
+  already pinned and the rest of the gap needs other labels (inferred, thresholds picked after seeing the data).
+
+---
+
 ## 2026-11-20 — Roadmap #62: the third-stage rule on fresh cases
 
 Write-up: [THIRD_RULE.md](../experiments/locate-repair/THIRD_RULE.md). Evidence: `evidence/third-stage-rule/`.
