@@ -409,6 +409,30 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["pooled"]["rules"]["third_only_if_perfect"]["under_0.1%"], 98)
         self.assertEqual(len(check["pooled_misses"]["exact_over_0.01%"]), 17)
 
+    def test_refine_values_summaries(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from refine_values import by_chord, same_direction, summarize, WALKS
+        walk = lambda d, chord: {"disagreement": d, "accuracy": 1.0, "mean_chord": chord, "ratios": []}
+        row = lambda s, rep, d, chord: {"seed": s, "repair": rep, **{w: walk(d, chord) for w in WALKS}}
+        rows = [row(1, 2e-4, 5e-5, 0.01), row(2, 5e-5, 2e-4, 0.001), row(3, 3e-4, 2e-4, 0.003)]
+        out = summarize(rows, "long")
+        self.assertEqual((out["repair_under_0.01%"], out["centre_under_0.01%"]), (1, 1))
+        self.assertEqual((out["closer"], out["further"]), (2, 1))
+        self.assertEqual((out["crossed_under_0.01%"], out["crossed_over_0.01%"]), ([1], [2]))
+        self.assertEqual([b["cases"] for b in by_chord(rows)], [1, 1, 1])
+        self.assertEqual(by_chord(rows)[2]["closer_in_every_walk"], 1)
+        self.assertEqual(same_direction(rows), 3)
+
+    def test_refine_values_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/refine-values/check.json").read_text())
+        self.assertTrue(check["replays_match_saved"])
+        self.assertEqual(len(check["cases"]), 58)
+        self.assertEqual({w: v["centre_under_0.01%"] for w, v in check["summary"].items()},
+                         {"short": 42, "short_again": 41, "long": 43})
+        self.assertEqual(check["summary"]["long"]["repair_under_0.01%"], 41)
+        self.assertEqual([b["closer_in_every_walk"] for b in check["by_chord"]], [7, 6, 11])
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

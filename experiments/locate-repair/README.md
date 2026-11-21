@@ -180,3 +180,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [FINAL_STAGE.md](FINAL_STAGE.md) (roadmap #61) rescores the saved per-stage results: keeping the third stage only when it fits every practice label never loses a line in three runs, moves width 32 from 8 to 10 of 12 under 0.01% and cuts the width-16 worst case from 0.069% to 0.047%, at no extra cost; it was picked after seeing the data, so fresh seeds come next.
 
 [THIRD_RULE.md](THIRD_RULE.md) (roadmap #62) runs #61's rule on 50 fresh width-16 cases: it drops five imperfect third stages and four of them end further, one crossing 0.1%, so `last` stays the default; a perfect third-stage fit is still the sign of an exact repair, and 17 of the 33 cases over 0.01% across 100 cases already edit the right three weights.
+
+[REFINE_VALUES.md](REFINE_VALUES.md) (roadmap #63) replays the 58 cases whose repair edits exactly the right three weights and moves their values to the middle of the region that fits the same labels: it is a little closer on average but moves the 0.01% line by 0 to 2 cases, all the gain coming where the labels leave room (14 cases, 11 closer in every walk).
