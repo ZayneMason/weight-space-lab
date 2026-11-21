@@ -8,6 +8,27 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-21 — Roadmap #64: take the middle only when the labels leave room, on fresh cases
+
+Write-up: [MIDDLE_STEP.md](../experiments/locate-repair/MIDDLE_STEP.md). Evidence: `evidence/middle-step/`.
+
+**Measured.**
+- Added `--middle` to `early_values.py`: after each stage's last round it runs #63's 1,600-step walk on the
+  winner's values and records the middle in the row. Ran the two-step repair with it on 50 fresh width-16
+  three-fault cases, seeds 200 to 249: 32.4 core-hours.
+- The repair: 50 / 36 under 0.1% / 0.01%, 31 exact. The rule fixed beforehand (mean chord at least 0.005 spreads)
+  uses the middle in 8 cases, 6 closer and 2 further: 50 / 37, with 224 crossing under 0.01%.
+- The middle whenever it fits as many labels: closer in 32, further in 15, 50 / 39 (208, 224 and 235 cross under,
+  none over). Median 0.0053% to 0.0045%, worst 0.096% to 0.088%.
+- By mean chord, the geometric-mean change is 0.82, 0.99 and 0.81 from narrowest to widest (#63: 0.96, 0.92,
+  0.73).
+
+**Interpretation.**
+- The middle is a small gain almost everywhere, so the width threshold does not help. The unconditional middle,
+  #63's main arm, held on fresh cases.
+
+---
+
 ## 2026-11-21 — Roadmap #63: refine the values once the repair has the right weights
 
 Write-up: [REFINE_VALUES.md](../experiments/locate-repair/REFINE_VALUES.md). Evidence: `evidence/refine-values/`.

@@ -49,10 +49,30 @@ def best_practice_accuracy(members, fits):
     return max(fits[t][0][0] for t in members)
 
 
-def analyse(case, early=EARLY, pairs_kept=None, widen_to=None, committee_size=None, tie_break="coarse"):
+MIDDLE_CHORD = 0.005  # roadmap #64: take the middle only when the region reaches at least this far (in spreads)
+
+
+def middle_step(case, keep, probe, min_chord=MIDDLE_CHORD):
+    """Roadmap #64: after the last round, walk the region of the winner's values that miss no more of the final
+    labels than the repair does (#63's 1,600-step walk). Use its middle when the mean chord is at least
+    ``min_chord`` spreads and the middle fits every label the repair fits."""
+    from refine_values import feasible_centre  # refine_values imports this module
+    x, y, triple = keep["x"], keep["y"], keep["winner"]
+    values = [v for _, _, v in keep["edits"]]
+    (before, _), _ = st.wt.score(case, x, y, triple, values)
+    centre, chord = feasible_centre(case, x, y, triple, values, np.random.default_rng([case["width"], case["seed"], 64]),
+                                    steps=1600, burn=400)
+    (after, _), edits = st.wt.score(case, x, y, triple, centre)
+    used = chord >= min_chord and after >= before
+    return {"mean_chord": chord, "used": used, "min_chord": min_chord, "accuracy": after,
+            "disagreement": aq.disagreement(case, edits, probe)}
+
+
+def analyse(case, early=EARLY, pairs_kept=None, widen_to=None, committee_size=None, tie_break="coarse", middle=False):
     """Run one case. With ``widen_to``, rebuild the committee from that many pairs when no member of the
     first committee fits every practice label (roadmap #49). ``committee_size`` keeps that many triples
-    instead of 200 (roadmap #52). ``tie_break`` orders perfect practice fits (roadmap #58)."""
+    instead of 200 (roadmap #52). ``tie_break`` orders perfect practice fits (roadmap #58). With ``middle``,
+    also score #64's middle step on the finished repair (``middle`` in the row; ``switch`` is unchanged)."""
     size = {"size": committee_size} if committee_size else {}
     size["tie_break"] = tie_break
     px, py, _ = lr.split(case["practice"])
@@ -63,8 +83,10 @@ def analyse(case, early=EARLY, pairs_kept=None, widen_to=None, committee_size=No
     if widened:
         members, fits, count = tc.committee(case, px, py, pairs_kept=widen_to, **size)
     silent = cr.silent_faults(case)
-    history = st.run(case, members, fits, silent, bs.make_probe(case, bs.PROBE), chooser=make_chooser(early))
-    return {"width": case["width"], "seed": case["seed"], "faults": case["faults"], "sizes": case["sizes"],
+    probe, keep = bs.make_probe(case, bs.PROBE), {}
+    history = st.run(case, members, fits, silent, probe, chooser=make_chooser(early), keep=keep)
+    extra = {"middle": middle_step(case, keep, probe)} if middle else {}
+    return {**extra, "width": case["width"], "seed": case["seed"], "faults": case["faults"], "sizes": case["sizes"],
             "silent_faults": silent, "triples": count,
             "committee_has_true_triple": any(len(t3.hits(t, case["faults"], case["width"])) == 3 for t in members),
             "first_best_practice_accuracy": first_best, "widened": widened, "committee_size": len(members),
@@ -92,7 +114,7 @@ def kept_stage(rows, final_choice="last"):
 
 
 def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse", tie_break_from=0,
-             final_choice="last"):
+             final_choice="last", middle=False):
     """Roadmap #54: run the plain rule; while the finished repair misses a label, rerun with the next stage
     (1,000 triples, then 1,000 pairs). Each stage's row is saved to ``saved(k)`` if given, so an interrupted
     case resumes. The returned row is the last stage's, with every stage's outcome and the total time.
@@ -105,7 +127,8 @@ def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse",
             row = json.loads(path.read_text())
         else:
             order = tie_break if k >= tie_break_from else "coarse"
-            row = analyse(case, early, **options, **({} if order == "coarse" else {"tie_break": order}))
+            row = analyse(case, early, **options, **({} if order == "coarse" else {"tie_break": order}),
+                          **({"middle": True} if middle else {}))
             if path is not None:
                 path.write_text(json.dumps(row) + "\n")
         rows.append(row)
@@ -116,7 +139,8 @@ def two_step(case, early=EARLY, saved=None, stages=TWO_STEP, tie_break="coarse",
     final["two_step"] = [{"stage": k, **options, "disagreement": r["switch"][-1]["disagreement"],
                           "faults_found": r["switch"][-1]["faults_found"],
                           "practice_accuracy": r["switch"][-1]["practice_accuracy"],
-                          "committee_has_true_triple": r["committee_has_true_triple"], "seconds": r["seconds"]}
+                          "committee_has_true_triple": r["committee_has_true_triple"], "seconds": r["seconds"],
+                          **({"middle": r["middle"]} if "middle" in r else {})}
                          for k, (options, r) in enumerate(zip(stages, rows))]
     final["stages_run"] = len(rows)
     if tie_break_from:
@@ -147,6 +171,8 @@ def main():
                         help="first two-step stage that uses --tie-break; earlier stages keep the coarse order")
     parser.add_argument("--final-choice", choices=("last", "last-if-perfect"), default="last",
                         help="keep the last stage, or keep it only when it fits every practice label (#62)")
+    parser.add_argument("--middle", action="store_true",
+                        help="also score the middle of the region that fits the final labels when it is wide (#64)")
     parser.add_argument("--only", type=int, nargs="+", help="run only these seeds (#47)")
     parser.add_argument("--merge", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)
@@ -168,15 +194,17 @@ def main():
             if args.two_step or args.three_step:
                 rows.append(two_step(case, args.early, saved=lambda k, s=seed: args.output / f"case-{s}.stage{k}.json",
                                      stages=THREE_STEP if args.three_step else TWO_STEP, tie_break=args.tie_break,
-                                     tie_break_from=args.tie_break_from, final_choice=args.final_choice))
+                                     tie_break_from=args.tie_break_from, final_choice=args.final_choice,
+                                     middle=args.middle))
             else:
-                rows.append(analyse(case, args.early, args.pairs, args.widen_to, args.committee, args.tie_break))
+                rows.append(analyse(case, args.early, args.pairs, args.widen_to, args.committee, args.tie_break,
+                                    args.middle))
             saved.write_text(json.dumps(rows[-1]) + "\n")
             last = rows[-1]["switch"]
             print(seed, last[-1]["faults_found"], round(last[-1]["disagreement"], 6),
                   [h.get("value_queries") for h in last[:-1]], flush=True)
     report = {"schema": "weight-space-early-values-v1", "width": args.width, "sizes": [rs.LOW, rs.HIGH], "early_rounds": args.early, "pairs_kept": args.pairs or t3.PAIRS, "widen_to": args.widen_to, "committee": args.committee or tc.COMMITTEE, "two_step": args.two_step or args.three_step, "three_step": args.three_step, "tie_break": args.tie_break, "tie_break_from": args.tie_break_from,
-              "final_choice": args.final_choice,
+              "final_choice": args.final_choice, "middle": args.middle,
               "value_share": VALUE_SHARE, "delta": vq.DELTA, "probe": bs.PROBE, "pool": aq.POOL,
               "summary": st.summarize(rows), "cases": rows}
     (args.output / "early-values.json").write_text(json.dumps(report, indent=1) + "\n")
