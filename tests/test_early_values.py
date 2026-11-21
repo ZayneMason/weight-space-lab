@@ -433,6 +433,19 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["summary"]["long"]["repair_under_0.01%"], 41)
         self.assertEqual([b["closer_in_every_walk"] for b in check["by_chord"]], [7, 6, 11])
 
+    def test_middle_step_uses_the_middle_only_when_the_region_is_wide(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from switch_triples import told_start
+        case = ev.rs.resize(ev.t3.corrupt(16, 164))
+        px, py, _ = ev.lr.split(case["practice"])
+        triple = tuple(tuple(f[:2]) for f in case["faults"])
+        keep = {"x": px, "y": py, "winner": triple, "edits": told_start(case, px, py, triple)[1]}
+        probe = ev.bs.make_probe(case, 20_000)
+        wide = ev.middle_step(case, keep, probe, min_chord=0.0)
+        self.assertTrue(wide["used"])
+        self.assertEqual(wide["accuracy"], 1.0)
+        self.assertFalse(ev.middle_step(case, keep, probe, min_chord=10.0)["used"])
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
