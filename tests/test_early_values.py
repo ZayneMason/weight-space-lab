@@ -446,6 +446,31 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(wide["accuracy"], 1.0)
         self.assertFalse(ev.middle_step(case, keep, probe, min_chord=10.0)["used"])
 
+    def test_middle_check_arms(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from middle_check import check
+        row = lambda d, acc, mid, used, macc, chord: {
+            "switch": [{"disagreement": d, "practice_accuracy": acc, "faults_found": 3}], "stages_run": 1,
+            "seconds": 3600.0, "middle": {"disagreement": mid, "used": used, "accuracy": macc, "mean_chord": chord}}
+        rows = {1: row(2e-4, 1.0, 5e-5, True, 1.0, 0.01), 2: row(2e-4, 1.0, 9e-5, False, 1.0, 0.001),
+                3: row(5e-5, 1.0, 2e-4, False, 0.99, 0.003)}
+        out = check(rows)
+        self.assertEqual(out["arms"]["rule"]["crossed_under_0.01%"], [1])
+        self.assertEqual(out["arms"]["always"]["crossed_under_0.01%"], [1, 2])
+        self.assertEqual(out["arms"]["always"]["crossed_over_0.01%"], [])
+        self.assertEqual(out["middle_fits_fewer"], [3])
+        self.assertEqual([b["cases"] for b in out["by_chord"]], [1, 1, 1])
+
+    def test_middle_step_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/middle-step/check.json").read_text())
+        self.assertEqual((check["seeds"], check["exact"]), (50, 31))
+        arms = check["arms"]
+        self.assertEqual([arms[k]["under_0.01%"] for k in ("repair", "rule", "always")], [36, 37, 39])
+        self.assertEqual(arms["always"]["crossed_under_0.01%"], [208, 224, 235])
+        self.assertEqual(arms["always"]["crossed_over_0.01%"], [])
+        self.assertEqual(check["rule_used"], [200, 209, 223, 224, 227, 230, 237, 238])
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

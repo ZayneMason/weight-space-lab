@@ -1303,6 +1303,27 @@ many cases cross the 0.01% line each way.
 
 **Cost.** CPU, about 30 core-hours.
 
+**Status (November 21): done, see [MIDDLE_STEP.md](../experiments/locate-repair/MIDDLE_STEP.md).** On seeds 200
+to 249 the rule fixed beforehand uses the middle in 8 cases (6 closer, 2 further) and takes under 0.01% from 36 to
+37. The middle whenever it fits as many labels does better: closer in 32, further in 15, and 39 under 0.01% with
+none moving over. #63's width bands did not hold (0.82, 0.99, 0.81 from narrowest to widest). The final labels were
+used but not written to disk.
+
+## 65. Ask the next labels where the region of values is still unsure
+
+*Added November 21 after #64.*
+
+After the middle step, 11 of 50 fresh cases are still over 0.01%. Only 3 of them edit exactly the three broken
+weights, so most still have a wrong weight among the three. One more round of labels could help either way. The
+walk that finds the middle gives a few hundred value triples for the winner that all fit every label. Pick 8 new
+inputs from a uniform pool of 4,096 where those sampled networks split most evenly, label them, refit every
+committee member on all 1,096 labels, pick the winner again and take its middle. Compare with 8 more labels chosen
+the usual way (one more round of committee splits) and with no extra labels, on 50 fresh width-16 cases, seeds 250
+to 299. Write the final labels to disk this time. Report the shares under 0.01%, exact repairs, and the cases that
+cross each way.
+
+**Cost.** CPU, about 35 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
