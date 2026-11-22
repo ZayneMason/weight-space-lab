@@ -16,3 +16,4 @@ qwen-work/
 experiment/
 *-paired/
 continuation*.json
+!experiments/locate-repair/evidence/region-labels/labels/*.npz
