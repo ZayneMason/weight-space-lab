@@ -8,6 +8,29 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-22 — Roadmap #65: ask the next labels where the region of values is still unsure
+
+Write-up: [REGION_LABELS.md](../experiments/locate-repair/REGION_LABELS.md). Evidence: `evidence/region-labels/`.
+
+**Measured.**
+- Added `--extra` to `early_values.py`: after the middle step, one more round of 8 labels from a fresh pool of
+  5,000, picked where the committee splits most evenly or where 200 points of the middle step's walk split most
+  evenly. Each arm refits every member on 1,096 labels, picks the winner again and takes its middle. Ran it on 50
+  fresh width-16 three-fault cases, seeds 250 to 299: 33.3 core-hours. The final labels are on disk.
+- Under 0.01%: repair 36, middle alone 37, committee-split labels 37 (41 with the middle), region-split labels 41
+  (41 with the middle). Region-split labels then middle: closer than the repair in 42 of 50, none moved over
+  either line, geometric-mean change 0.56 (committee arm 0.65, middle alone 0.83). Head to head, the region arm is
+  closer in 32 cases and further in 9.
+- Exact repairs stay at 30 of 50 in every arm. In the median case only 1 pool input splits the committee; the
+  walk's networks split on 3.
+- 9 cases stay over 0.01% after the region arm. 2 are exact; none of the other 7 committees holds the true triple.
+
+**Interpretation.**
+- The last 8 labels are better spent where the fitting values disagree than where the committee does. What is left
+  is mostly a committee without the true triple, which labels on that committee cannot fix.
+
+---
+
 ## 2026-11-21 — Roadmap #64: take the middle only when the labels leave room, on fresh cases
 
 Write-up: [MIDDLE_STEP.md](../experiments/locate-repair/MIDDLE_STEP.md). Evidence: `evidence/middle-step/`.

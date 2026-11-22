@@ -1324,6 +1324,21 @@ cross each way.
 
 **Cost.** CPU, about 35 core-hours.
 
+**Status (November 22): done, see [REGION_LABELS.md](../experiments/locate-repair/REGION_LABELS.md).**
+
+## 66. Rebuild the committee from the final labels
+
+*Added November 22 after #65.*
+
+After #65's region-split labels, 9 of 50 cases are still over 0.01%. 7 of them edit at least one wrong weight, and
+none of those 7 committees contains the true triple, so more labels on the same committee cannot help. The
+committee was screened from the 1,088 practice and targeted labels the repair started with. #65 wrote every case's
+final 1,096 labels to disk. Rerun the pair screen and the triple committee on those labels for all 50 cases of
+seeds 250 to 299, refit, pick the winner and take its middle. Report how often the true triple enters a committee
+that lacked it, exact repairs, the shares under 0.01%, and any case that gets worse.
+
+**Cost.** CPU, about 10 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

@@ -489,6 +489,47 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertGreater(out["region"]["splitting"], 0)
         self.assertEqual(out["region"]["faults_found"], 3)
 
+    def test_region_check_arms(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from region_check import check
+        fit = lambda d, acc, mid, macc, w: {"disagreement": d, "practice_accuracy": acc, "faults_found": 3, "winner": w,
+                                            "middle": {"disagreement": mid, "accuracy": macc}}
+        w, v = [["bias", 0], ["bias", 1], ["bias", 2]], [["bias", 0], ["bias", 1], ["bias", 3]]
+
+        def row(repair, splits, region):
+            end = {k: repair[k] for k in ("disagreement", "practice_accuracy", "faults_found", "winner")}
+            return {"switch": [end], "middle": repair["middle"], "stages_run": 1, "seconds": 3600.0,
+                    "extra": {"splits": {**splits, "splitting": 1}, "region": {**region, "splitting": 3}}}
+        rows = {1: row(fit(2e-4, 1.0, 1.5e-4, 1.0, w), fit(2e-4, 1.0, 9e-5, 0.99, w), fit(8e-5, 1.0, 5e-5, 1.0, v)),
+                2: row(fit(5e-5, 1.0, 4e-5, 1.0, w),
+                       fit(2e-4, 1.0, 2e-4, 1.0, w),
+                       fit(3e-5, 1.0, 2e-5, 1.0, w))}
+        out = check(rows)
+        arms = out["arms"]
+        self.assertEqual(arms["splits+middle"]["crossed_under_0.01%"], [])  # its middle fits fewer labels
+        self.assertEqual(arms["splits+middle"]["crossed_over_0.01%"], [2])
+        self.assertEqual(arms["region+middle"]["crossed_under_0.01%"], [1])
+        self.assertEqual(arms["region+middle"]["under_0.01%"], 2)
+        self.assertEqual(out["winner_changed"], {"splits": [], "region": [1]})
+        self.assertEqual(out["region_vs_splits"], {"closer": [1, 2], "further": []})
+
+    def test_region_labels_evidence(self):
+        import json
+        import numpy as np
+        here = ROOT / "experiments/locate-repair/evidence/region-labels"
+        check = json.loads((here / "check.json").read_text())
+        arms = check["arms"]
+        self.assertEqual(check["seeds"], 50)
+        self.assertEqual([arms[k]["under_0.01%"] for k in ("repair", "middle", "splits+middle", "region",
+                                                            "region+middle")], [36, 37, 41, 41, 41])
+        self.assertEqual({arms[k]["exact"] for k in arms}, {30})
+        self.assertEqual(len(arms["region+middle"]["closer"]), 42)
+        self.assertEqual(arms["region+middle"]["crossed_over_0.01%"], [])
+        self.assertEqual(len(check["region_vs_splits"]["closer"]), 32)
+        labels = np.load(here / "labels/case-250.npz")
+        self.assertEqual(labels["x"].shape, (1088, 2))
+        self.assertEqual(labels["added_region"].shape, (8, 2))
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
