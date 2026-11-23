@@ -572,6 +572,47 @@ class EarlyValuesTests(unittest.TestCase):
                 and r["true_accuracy"] == r["practice_accuracy"]]
         self.assertEqual(len(tied), 12)
 
+    def test_tie_break_pick_and_check(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from tie_break_final import check, pick
+        fits = {"a": ((0.99, -1.0), None), "b": ((1.0, -3.0), None), "c": ((1.0, -2.0), None)}
+        self.assertEqual(pick(["a", "b", "c"], fits, "cost", None), "c")  # most labels first, then cheapest
+        self.assertEqual(pick(["a", "b", "c"], fits, "coarse", None), "b")  # committee order among the tied
+        with self.assertRaises(ValueError):
+            pick(["a"], fits, "nope", None)
+        fit = lambda d, faults, mid, macc=1.0: {"disagreement": d, "practice_accuracy": 1.0, "faults_found": faults,
+                                                "middle": {"disagreement": mid, "accuracy": macc}}
+        row = lambda cost, coarse, has, tied, tied_refit: {
+            "seconds": 1800.0, "committee_has_true_triple": has, "true_tied_top": tied, "true_tied_top_refit": tied_refit,
+            "tied_top": 2, "tied_top_refit": 3, "true_from_clean": 1.0, "rules": {"cost": cost, "coarse": coarse}}
+        rows = {1: row(fit(2e-4, 2, 1.5e-4), fit(5e-5, 3, 4e-5), True, True, True),
+                2: row(fit(3e-5, 3, 2e-5), fit(3e-4, 1, 2e-4, 0.99), True, False, True)}
+        out = check(rows)
+        self.assertEqual(out["cpu_hours"], 1.0)
+        self.assertEqual(out["rules"]["cost"]["exact"], 1)
+        self.assertEqual(out["rules"]["coarse"]["closer"], [1])
+        self.assertEqual(out["rules"]["coarse"]["crossed_under_0.01%"], [1])
+        self.assertEqual(out["rules"]["coarse"]["crossed_over_0.01%"], [2])  # the middle fits fewer labels
+        self.assertEqual((out["true_tied_top"], out["true_tied_top_refit"]), (1, 2))
+        self.assertEqual(out["true_short"], [2])
+        self.assertEqual(out["true_short_after_refit"], [])
+
+    def test_tie_break_final_evidence(self):
+        import json
+        here = ROOT / "experiments/locate-repair/evidence/tie-break-final"
+        check = json.loads((here / "check.json").read_text())
+        rows = json.loads((here / "tie-break-final.json").read_text())
+        self.assertEqual(check["seeds"], 50)
+        self.assertEqual({r["labels"] for r in rows}, {1096})
+        self.assertEqual((check["true_in_committee"], check["true_tied_top"], check["true_tied_top_refit"]),
+                         (46, 42, 44))
+        self.assertEqual(check["true_short_after_refit"], [259, 277])
+        exact = {k: v["exact"] for k, v in check["rules"].items()}
+        self.assertEqual(exact, {"cost": 30, "coarse": 34, "largest-edit": 34,
+                                 "refit-cost": 31, "refit-coarse": 35, "refit-largest-edit": 35})
+        self.assertEqual(check["rules"]["cost"]["under_0.01%"], 42)
+        self.assertEqual(len(check["true_fits_every_label_from_clean"]), 50)
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

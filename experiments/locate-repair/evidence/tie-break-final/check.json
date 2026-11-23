@@ -1,0 +1,1580 @@
+{
+ "seeds": 50,
+ "cpu_hours": 21.101916666666664,
+ "true_in_committee": 46,
+ "true_tied_top": 42,
+ "true_tied_top_refit": 44,
+ "tied_top_median": 4.0,
+ "tied_top_refit_median": 4.0,
+ "true_short": [
+  255,
+  259,
+  269,
+  277
+ ],
+ "true_short_after_refit": [
+  259,
+  277
+ ],
+ "true_fits_every_label_from_clean": [
+  250,
+  251,
+  252,
+  253,
+  254,
+  255,
+  256,
+  257,
+  258,
+  259,
+  260,
+  261,
+  262,
+  263,
+  264,
+  265,
+  266,
+  267,
+  268,
+  269,
+  270,
+  271,
+  272,
+  273,
+  274,
+  275,
+  276,
+  277,
+  278,
+  279,
+  280,
+  281,
+  282,
+  283,
+  284,
+  285,
+  286,
+  287,
+  288,
+  289,
+  290,
+  291,
+  292,
+  293,
+  294,
+  295,
+  296,
+  297,
+  298,
+  299
+ ],
+ "rules": {
+  "cost": {
+   "under_0.1%": 46,
+   "under_0.01%": 42,
+   "median": 2.85e-05,
+   "worst": 0.008091,
+   "exact": 30,
+   "closer": [],
+   "further": [],
+   "crossed_under_0.01%": [],
+   "crossed_over_0.01%": []
+  },
+  "coarse": {
+   "under_0.1%": 47,
+   "under_0.01%": 42,
+   "median": 2.85e-05,
+   "worst": 0.008091,
+   "exact": 34,
+   "closer": [
+    250,
+    254,
+    257,
+    259,
+    260,
+    262,
+    268,
+    270,
+    273,
+    276,
+    279,
+    285
+   ],
+   "further": [
+    261,
+    263,
+    265,
+    272,
+    275,
+    277,
+    278,
+    283,
+    287,
+    288,
+    289,
+    291
+   ],
+   "crossed_under_0.01%": [
+    260
+   ],
+   "crossed_over_0.01%": [
+    272
+   ]
+  },
+  "largest-edit": {
+   "under_0.1%": 47,
+   "under_0.01%": 43,
+   "median": 2.9e-05,
+   "worst": 0.008091,
+   "exact": 34,
+   "closer": [
+    254,
+    255,
+    259,
+    260,
+    262,
+    265,
+    268,
+    273,
+    276,
+    278,
+    279,
+    281,
+    287,
+    288
+   ],
+   "further": [
+    253,
+    264,
+    269,
+    270,
+    271,
+    280,
+    283,
+    285,
+    289,
+    291,
+    298
+   ],
+   "crossed_under_0.01%": [
+    260
+   ],
+   "crossed_over_0.01%": []
+  },
+  "refit-cost": {
+   "under_0.1%": 47,
+   "under_0.01%": 42,
+   "median": 2.8e-05,
+   "worst": 0.008087,
+   "exact": 31,
+   "closer": [
+    253,
+    255,
+    257,
+    259,
+    267,
+    269,
+    271,
+    276,
+    282,
+    287,
+    288,
+    296
+   ],
+   "further": [
+    263,
+    270,
+    272,
+    280,
+    283,
+    285,
+    286
+   ],
+   "crossed_under_0.01%": [],
+   "crossed_over_0.01%": []
+  },
+  "refit-coarse": {
+   "under_0.1%": 48,
+   "under_0.01%": 42,
+   "median": 2.85e-05,
+   "worst": 0.008087,
+   "exact": 35,
+   "closer": [
+    250,
+    254,
+    257,
+    259,
+    260,
+    262,
+    268,
+    269,
+    270,
+    272,
+    273,
+    276,
+    279,
+    285,
+    296
+   ],
+   "further": [
+    261,
+    263,
+    265,
+    275,
+    277,
+    278,
+    283,
+    287,
+    288,
+    289,
+    291
+   ],
+   "crossed_under_0.01%": [],
+   "crossed_over_0.01%": []
+  },
+  "refit-largest-edit": {
+   "under_0.1%": 48,
+   "under_0.01%": 42,
+   "median": 2.9e-05,
+   "worst": 0.008091,
+   "exact": 35,
+   "closer": [
+    257,
+    258,
+    259,
+    260,
+    262,
+    265,
+    267,
+    268,
+    269,
+    271,
+    272,
+    273,
+    275,
+    276,
+    279,
+    281,
+    287
+   ],
+   "further": [
+    253,
+    254,
+    263,
+    270,
+    278,
+    280,
+    283,
+    285,
+    288,
+    289,
+    291,
+    298
+   ],
+   "crossed_under_0.01%": [],
+   "crossed_over_0.01%": []
+  }
+ },
+ "per_case": {
+  "250": {
+   "cost": [
+    3.5e-05,
+    2
+   ],
+   "coarse": [
+    2.1e-05,
+    2
+   ],
+   "largest-edit": [
+    3.5e-05,
+    2
+   ],
+   "refit-cost": [
+    3.5e-05,
+    2
+   ],
+   "refit-coarse": [
+    2.1e-05,
+    2
+   ],
+   "refit-largest-edit": [
+    3.5e-05,
+    2
+   ]
+  },
+  "251": {
+   "cost": [
+    2.9e-05,
+    3
+   ],
+   "coarse": [
+    2.9e-05,
+    3
+   ],
+   "largest-edit": [
+    2.9e-05,
+    3
+   ],
+   "refit-cost": [
+    2.9e-05,
+    3
+   ],
+   "refit-coarse": [
+    2.9e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.9e-05,
+    3
+   ]
+  },
+  "252": {
+   "cost": [
+    2.2e-05,
+    3
+   ],
+   "coarse": [
+    2.2e-05,
+    3
+   ],
+   "largest-edit": [
+    2.2e-05,
+    3
+   ],
+   "refit-cost": [
+    2.2e-05,
+    3
+   ],
+   "refit-coarse": [
+    2.2e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.2e-05,
+    3
+   ]
+  },
+  "253": {
+   "cost": [
+    1.1e-05,
+    1
+   ],
+   "coarse": [
+    1.1e-05,
+    1
+   ],
+   "largest-edit": [
+    3.7e-05,
+    1
+   ],
+   "refit-cost": [
+    1e-05,
+    1
+   ],
+   "refit-coarse": [
+    1.1e-05,
+    1
+   ],
+   "refit-largest-edit": [
+    3.7e-05,
+    1
+   ]
+  },
+  "254": {
+   "cost": [
+    1.1e-05,
+    2
+   ],
+   "coarse": [
+    4e-06,
+    2
+   ],
+   "largest-edit": [
+    4e-06,
+    2
+   ],
+   "refit-cost": [
+    1.1e-05,
+    2
+   ],
+   "refit-coarse": [
+    4e-06,
+    2
+   ],
+   "refit-largest-edit": [
+    2e-05,
+    2
+   ]
+  },
+  "255": {
+   "cost": [
+    0.000625,
+    1
+   ],
+   "coarse": [
+    0.000625,
+    1
+   ],
+   "largest-edit": [
+    0.000623,
+    1
+   ],
+   "refit-cost": [
+    0.000623,
+    1
+   ],
+   "refit-coarse": [
+    0.000625,
+    1
+   ],
+   "refit-largest-edit": [
+    0.000625,
+    1
+   ]
+  },
+  "256": {
+   "cost": [
+    3.1e-05,
+    2
+   ],
+   "coarse": [
+    3.1e-05,
+    2
+   ],
+   "largest-edit": [
+    3.1e-05,
+    2
+   ],
+   "refit-cost": [
+    3.1e-05,
+    2
+   ],
+   "refit-coarse": [
+    3.1e-05,
+    2
+   ],
+   "refit-largest-edit": [
+    3.1e-05,
+    2
+   ]
+  },
+  "257": {
+   "cost": [
+    1e-05,
+    3
+   ],
+   "coarse": [
+    9e-06,
+    3
+   ],
+   "largest-edit": [
+    1e-05,
+    3
+   ],
+   "refit-cost": [
+    9e-06,
+    3
+   ],
+   "refit-coarse": [
+    9e-06,
+    3
+   ],
+   "refit-largest-edit": [
+    9e-06,
+    3
+   ]
+  },
+  "258": {
+   "cost": [
+    0.001964,
+    1
+   ],
+   "coarse": [
+    0.001964,
+    1
+   ],
+   "largest-edit": [
+    0.001964,
+    1
+   ],
+   "refit-cost": [
+    0.001964,
+    1
+   ],
+   "refit-coarse": [
+    0.001964,
+    1
+   ],
+   "refit-largest-edit": [
+    0.001555,
+    2
+   ]
+  },
+  "259": {
+   "cost": [
+    0.000985,
+    1
+   ],
+   "coarse": [
+    0.000984,
+    1
+   ],
+   "largest-edit": [
+    0.000984,
+    1
+   ],
+   "refit-cost": [
+    0.000236,
+    2
+   ],
+   "refit-coarse": [
+    0.000236,
+    2
+   ],
+   "refit-largest-edit": [
+    0.000236,
+    2
+   ]
+  },
+  "260": {
+   "cost": [
+    0.001193,
+    3
+   ],
+   "coarse": [
+    2.9e-05,
+    3
+   ],
+   "largest-edit": [
+    2.9e-05,
+    3
+   ],
+   "refit-cost": [
+    0.001193,
+    3
+   ],
+   "refit-coarse": [
+    0.000989,
+    3
+   ],
+   "refit-largest-edit": [
+    0.000989,
+    3
+   ]
+  },
+  "261": {
+   "cost": [
+    0.000313,
+    2
+   ],
+   "coarse": [
+    0.000548,
+    2
+   ],
+   "largest-edit": [
+    0.000313,
+    2
+   ],
+   "refit-cost": [
+    0.000313,
+    2
+   ],
+   "refit-coarse": [
+    0.000548,
+    2
+   ],
+   "refit-largest-edit": [
+    0.000313,
+    2
+   ]
+  },
+  "262": {
+   "cost": [
+    5e-05,
+    3
+   ],
+   "coarse": [
+    4.5e-05,
+    3
+   ],
+   "largest-edit": [
+    4.5e-05,
+    3
+   ],
+   "refit-cost": [
+    5e-05,
+    3
+   ],
+   "refit-coarse": [
+    4.5e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    4.5e-05,
+    3
+   ]
+  },
+  "263": {
+   "cost": [
+    2.3e-05,
+    3
+   ],
+   "coarse": [
+    2.5e-05,
+    3
+   ],
+   "largest-edit": [
+    2.3e-05,
+    3
+   ],
+   "refit-cost": [
+    2.5e-05,
+    3
+   ],
+   "refit-coarse": [
+    2.5e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.5e-05,
+    3
+   ]
+  },
+  "264": {
+   "cost": [
+    2.4e-05,
+    3
+   ],
+   "coarse": [
+    2.4e-05,
+    3
+   ],
+   "largest-edit": [
+    2.8e-05,
+    3
+   ],
+   "refit-cost": [
+    2.4e-05,
+    3
+   ],
+   "refit-coarse": [
+    2.4e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.4e-05,
+    3
+   ]
+  },
+  "265": {
+   "cost": [
+    6e-06,
+    3
+   ],
+   "coarse": [
+    1e-05,
+    2
+   ],
+   "largest-edit": [
+    5e-06,
+    3
+   ],
+   "refit-cost": [
+    6e-06,
+    3
+   ],
+   "refit-coarse": [
+    1e-05,
+    2
+   ],
+   "refit-largest-edit": [
+    5e-06,
+    3
+   ]
+  },
+  "266": {
+   "cost": [
+    2e-05,
+    3
+   ],
+   "coarse": [
+    2e-05,
+    3
+   ],
+   "largest-edit": [
+    2e-05,
+    3
+   ],
+   "refit-cost": [
+    2e-05,
+    3
+   ],
+   "refit-coarse": [
+    2e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2e-05,
+    3
+   ]
+  },
+  "267": {
+   "cost": [
+    1.1e-05,
+    2
+   ],
+   "coarse": [
+    1.1e-05,
+    3
+   ],
+   "largest-edit": [
+    1.1e-05,
+    3
+   ],
+   "refit-cost": [
+    1e-05,
+    2
+   ],
+   "refit-coarse": [
+    1.1e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    9e-06,
+    2
+   ]
+  },
+  "268": {
+   "cost": [
+    8e-06,
+    2
+   ],
+   "coarse": [
+    5e-06,
+    2
+   ],
+   "largest-edit": [
+    5e-06,
+    2
+   ],
+   "refit-cost": [
+    8e-06,
+    2
+   ],
+   "refit-coarse": [
+    5e-06,
+    2
+   ],
+   "refit-largest-edit": [
+    5e-06,
+    3
+   ]
+  },
+  "269": {
+   "cost": [
+    0.001236,
+    2
+   ],
+   "coarse": [
+    0.001236,
+    2
+   ],
+   "largest-edit": [
+    0.001246,
+    2
+   ],
+   "refit-cost": [
+    0.000138,
+    3
+   ],
+   "refit-coarse": [
+    0.000138,
+    3
+   ],
+   "refit-largest-edit": [
+    0.000138,
+    3
+   ]
+  },
+  "270": {
+   "cost": [
+    2.5e-05,
+    2
+   ],
+   "coarse": [
+    2.2e-05,
+    2
+   ],
+   "largest-edit": [
+    2.9e-05,
+    2
+   ],
+   "refit-cost": [
+    2.8e-05,
+    2
+   ],
+   "refit-coarse": [
+    2.2e-05,
+    2
+   ],
+   "refit-largest-edit": [
+    2.9e-05,
+    2
+   ]
+  },
+  "271": {
+   "cost": [
+    5.3e-05,
+    3
+   ],
+   "coarse": [
+    5.3e-05,
+    3
+   ],
+   "largest-edit": [
+    5.8e-05,
+    3
+   ],
+   "refit-cost": [
+    4.6e-05,
+    3
+   ],
+   "refit-coarse": [
+    5.3e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    4.6e-05,
+    3
+   ]
+  },
+  "272": {
+   "cost": [
+    5e-05,
+    3
+   ],
+   "coarse": [
+    0.000195,
+    3
+   ],
+   "largest-edit": [
+    5e-05,
+    3
+   ],
+   "refit-cost": [
+    6.9e-05,
+    3
+   ],
+   "refit-coarse": [
+    3.2e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    3.2e-05,
+    3
+   ]
+  },
+  "273": {
+   "cost": [
+    1.4e-05,
+    2
+   ],
+   "coarse": [
+    1.2e-05,
+    2
+   ],
+   "largest-edit": [
+    1.2e-05,
+    2
+   ],
+   "refit-cost": [
+    1.4e-05,
+    2
+   ],
+   "refit-coarse": [
+    1.2e-05,
+    2
+   ],
+   "refit-largest-edit": [
+    1.2e-05,
+    2
+   ]
+  },
+  "274": {
+   "cost": [
+    5.5e-05,
+    3
+   ],
+   "coarse": [
+    5.5e-05,
+    3
+   ],
+   "largest-edit": [
+    5.5e-05,
+    3
+   ],
+   "refit-cost": [
+    5.5e-05,
+    3
+   ],
+   "refit-coarse": [
+    5.5e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    5.5e-05,
+    3
+   ]
+  },
+  "275": {
+   "cost": [
+    3.1e-05,
+    3
+   ],
+   "coarse": [
+    4.4e-05,
+    3
+   ],
+   "largest-edit": [
+    3.1e-05,
+    3
+   ],
+   "refit-cost": [
+    3.1e-05,
+    3
+   ],
+   "refit-coarse": [
+    4.4e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    1.8e-05,
+    3
+   ]
+  },
+  "276": {
+   "cost": [
+    6.7e-05,
+    3
+   ],
+   "coarse": [
+    3.6e-05,
+    3
+   ],
+   "largest-edit": [
+    3.6e-05,
+    3
+   ],
+   "refit-cost": [
+    6.6e-05,
+    3
+   ],
+   "refit-coarse": [
+    5.7e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    5.7e-05,
+    3
+   ]
+  },
+  "277": {
+   "cost": [
+    8e-06,
+    2
+   ],
+   "coarse": [
+    1.2e-05,
+    2
+   ],
+   "largest-edit": [
+    8e-06,
+    2
+   ],
+   "refit-cost": [
+    8e-06,
+    2
+   ],
+   "refit-coarse": [
+    1.2e-05,
+    2
+   ],
+   "refit-largest-edit": [
+    8e-06,
+    2
+   ]
+  },
+  "278": {
+   "cost": [
+    2.7e-05,
+    3
+   ],
+   "coarse": [
+    2.8e-05,
+    3
+   ],
+   "largest-edit": [
+    2.3e-05,
+    3
+   ],
+   "refit-cost": [
+    2.7e-05,
+    3
+   ],
+   "refit-coarse": [
+    2.8e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.8e-05,
+    3
+   ]
+  },
+  "279": {
+   "cost": [
+    5.6e-05,
+    2
+   ],
+   "coarse": [
+    3.4e-05,
+    3
+   ],
+   "largest-edit": [
+    3.4e-05,
+    3
+   ],
+   "refit-cost": [
+    5.6e-05,
+    2
+   ],
+   "refit-coarse": [
+    3.4e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    3.4e-05,
+    3
+   ]
+  },
+  "280": {
+   "cost": [
+    3.2e-05,
+    3
+   ],
+   "coarse": [
+    3.2e-05,
+    3
+   ],
+   "largest-edit": [
+    7.3e-05,
+    3
+   ],
+   "refit-cost": [
+    7.3e-05,
+    3
+   ],
+   "refit-coarse": [
+    3.2e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    8e-05,
+    3
+   ]
+  },
+  "281": {
+   "cost": [
+    5.7e-05,
+    3
+   ],
+   "coarse": [
+    5.7e-05,
+    3
+   ],
+   "largest-edit": [
+    5.1e-05,
+    3
+   ],
+   "refit-cost": [
+    5.7e-05,
+    3
+   ],
+   "refit-coarse": [
+    5.7e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    5.1e-05,
+    3
+   ]
+  },
+  "282": {
+   "cost": [
+    2.9e-05,
+    2
+   ],
+   "coarse": [
+    2.9e-05,
+    3
+   ],
+   "largest-edit": [
+    2.9e-05,
+    3
+   ],
+   "refit-cost": [
+    2.5e-05,
+    2
+   ],
+   "refit-coarse": [
+    2.9e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.9e-05,
+    3
+   ]
+  },
+  "283": {
+   "cost": [
+    2.4e-05,
+    2
+   ],
+   "coarse": [
+    2.6e-05,
+    3
+   ],
+   "largest-edit": [
+    2.7e-05,
+    3
+   ],
+   "refit-cost": [
+    2.7e-05,
+    2
+   ],
+   "refit-coarse": [
+    2.6e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.7e-05,
+    3
+   ]
+  },
+  "284": {
+   "cost": [
+    2.3e-05,
+    3
+   ],
+   "coarse": [
+    2.3e-05,
+    3
+   ],
+   "largest-edit": [
+    2.3e-05,
+    3
+   ],
+   "refit-cost": [
+    2.3e-05,
+    3
+   ],
+   "refit-coarse": [
+    2.3e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.3e-05,
+    3
+   ]
+  },
+  "285": {
+   "cost": [
+    9e-06,
+    2
+   ],
+   "coarse": [
+    6e-06,
+    2
+   ],
+   "largest-edit": [
+    1.4e-05,
+    2
+   ],
+   "refit-cost": [
+    2.8e-05,
+    2
+   ],
+   "refit-coarse": [
+    5e-06,
+    2
+   ],
+   "refit-largest-edit": [
+    2.8e-05,
+    2
+   ]
+  },
+  "286": {
+   "cost": [
+    1.6e-05,
+    3
+   ],
+   "coarse": [
+    1.6e-05,
+    3
+   ],
+   "largest-edit": [
+    1.6e-05,
+    3
+   ],
+   "refit-cost": [
+    1.8e-05,
+    3
+   ],
+   "refit-coarse": [
+    1.6e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    1.6e-05,
+    3
+   ]
+  },
+  "287": {
+   "cost": [
+    0.000367,
+    1
+   ],
+   "coarse": [
+    0.000844,
+    3
+   ],
+   "largest-edit": [
+    0.00036,
+    1
+   ],
+   "refit-cost": [
+    0.000354,
+    1
+   ],
+   "refit-coarse": [
+    0.000677,
+    3
+   ],
+   "refit-largest-edit": [
+    0.000353,
+    1
+   ]
+  },
+  "288": {
+   "cost": [
+    2.8e-05,
+    3
+   ],
+   "coarse": [
+    3.4e-05,
+    3
+   ],
+   "largest-edit": [
+    2.6e-05,
+    3
+   ],
+   "refit-cost": [
+    2.6e-05,
+    3
+   ],
+   "refit-coarse": [
+    3.4e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    3.4e-05,
+    3
+   ]
+  },
+  "289": {
+   "cost": [
+    1.6e-05,
+    3
+   ],
+   "coarse": [
+    1.8e-05,
+    3
+   ],
+   "largest-edit": [
+    1.8e-05,
+    3
+   ],
+   "refit-cost": [
+    1.6e-05,
+    3
+   ],
+   "refit-coarse": [
+    1.8e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    1.8e-05,
+    3
+   ]
+  },
+  "290": {
+   "cost": [
+    2.4e-05,
+    3
+   ],
+   "coarse": [
+    2.4e-05,
+    3
+   ],
+   "largest-edit": [
+    2.4e-05,
+    3
+   ],
+   "refit-cost": [
+    2.4e-05,
+    3
+   ],
+   "refit-coarse": [
+    2.4e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.4e-05,
+    3
+   ]
+  },
+  "291": {
+   "cost": [
+    3.7e-05,
+    3
+   ],
+   "coarse": [
+    8.1e-05,
+    3
+   ],
+   "largest-edit": [
+    8.1e-05,
+    3
+   ],
+   "refit-cost": [
+    3.7e-05,
+    3
+   ],
+   "refit-coarse": [
+    8e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    8e-05,
+    3
+   ]
+  },
+  "292": {
+   "cost": [
+    2.6e-05,
+    3
+   ],
+   "coarse": [
+    2.6e-05,
+    3
+   ],
+   "largest-edit": [
+    2.6e-05,
+    3
+   ],
+   "refit-cost": [
+    2.6e-05,
+    3
+   ],
+   "refit-coarse": [
+    2.6e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.6e-05,
+    3
+   ]
+  },
+  "293": {
+   "cost": [
+    5.7e-05,
+    3
+   ],
+   "coarse": [
+    5.7e-05,
+    3
+   ],
+   "largest-edit": [
+    5.7e-05,
+    3
+   ],
+   "refit-cost": [
+    5.7e-05,
+    3
+   ],
+   "refit-coarse": [
+    5.7e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    5.7e-05,
+    3
+   ]
+  },
+  "294": {
+   "cost": [
+    8e-06,
+    3
+   ],
+   "coarse": [
+    8e-06,
+    3
+   ],
+   "largest-edit": [
+    8e-06,
+    3
+   ],
+   "refit-cost": [
+    8e-06,
+    3
+   ],
+   "refit-coarse": [
+    8e-06,
+    3
+   ],
+   "refit-largest-edit": [
+    8e-06,
+    3
+   ]
+  },
+  "295": {
+   "cost": [
+    2e-05,
+    3
+   ],
+   "coarse": [
+    2e-05,
+    3
+   ],
+   "largest-edit": [
+    2e-05,
+    3
+   ],
+   "refit-cost": [
+    2e-05,
+    3
+   ],
+   "refit-coarse": [
+    2e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2e-05,
+    3
+   ]
+  },
+  "296": {
+   "cost": [
+    0.008091,
+    2
+   ],
+   "coarse": [
+    0.008091,
+    2
+   ],
+   "largest-edit": [
+    0.008091,
+    2
+   ],
+   "refit-cost": [
+    0.008087,
+    2
+   ],
+   "refit-coarse": [
+    0.008087,
+    2
+   ],
+   "refit-largest-edit": [
+    0.008091,
+    2
+   ]
+  },
+  "297": {
+   "cost": [
+    3.1e-05,
+    3
+   ],
+   "coarse": [
+    3.1e-05,
+    3
+   ],
+   "largest-edit": [
+    3.1e-05,
+    3
+   ],
+   "refit-cost": [
+    3.1e-05,
+    3
+   ],
+   "refit-coarse": [
+    3.1e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    3.1e-05,
+    3
+   ]
+  },
+  "298": {
+   "cost": [
+    3.6e-05,
+    3
+   ],
+   "coarse": [
+    3.6e-05,
+    3
+   ],
+   "largest-edit": [
+    4.5e-05,
+    3
+   ],
+   "refit-cost": [
+    3.6e-05,
+    3
+   ],
+   "refit-coarse": [
+    3.6e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    4.5e-05,
+    3
+   ]
+  },
+  "299": {
+   "cost": [
+    2.5e-05,
+    3
+   ],
+   "coarse": [
+    2.5e-05,
+    3
+   ],
+   "largest-edit": [
+    2.5e-05,
+    3
+   ],
+   "refit-cost": [
+    2.5e-05,
+    3
+   ],
+   "refit-coarse": [
+    2.5e-05,
+    3
+   ],
+   "refit-largest-edit": [
+    2.5e-05,
+    3
+   ]
+  }
+ }
+}

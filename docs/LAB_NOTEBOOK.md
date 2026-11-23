@@ -8,6 +8,29 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-23 — Roadmap #67: choose among the members that fit every label
+
+**What ran.** `tie_break_final.py` rebuilt #66's committees on the 1,096 final labels (seeds 250 to 299), kept every
+member's fit, and picked the winner six ways: smallest total edit (the repair's rule), the committee's coarse order,
+the smallest largest single edit, and each of those after refitting the near-best members from 5 more starts.
+21.1 core-hours. Write-up: [TIE_BREAK_FINAL.md](../experiments/locate-repair/TIE_BREAK_FINAL.md).
+
+**Measured.**
+- Exact repairs: 30 by total edit, 34 by coarse order or largest edit, 35 after the refit with either; 37 are exact
+  under at least one rule.
+- Under 0.01%: 42 to 43 under every rule. Median 0.0028% to 0.0029%. Typical disagreement 3% to 8% lower than the
+  repair's rule.
+- The true triple at the original values fits all 1,096 labels in all 50 cases. Its own fit ties the top in 42 of
+  the 46 committees that hold it, 44 after the refit (255 and 269 fixed; 259 and 277 still short).
+- Median 4 members tied at the top; 2 cases have all 200 tied. Of the 9 cases where the true triple ties but
+  refit-coarse picks another member, 8 end under 0.01%; 255 ends at 0.062% with one right weight.
+
+**Interpretation.** The coarse order is the better tie-break for finding the exact weights, and the refit helps a
+little more, but behavior on the probe barely changes, because most tied members are near-identical networks
+(inferred from 50 cases). Next: #68 asks labels where the tied members disagree.
+
+---
+
 ## 2026-11-23 — Roadmap #66: rebuild the committee from the final labels
 
 **What ran.** `rebuild_committee.py` reran the pair screen and the triple committee on each case's 1,096 final
