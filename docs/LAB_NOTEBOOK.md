@@ -8,6 +8,31 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-23 — Roadmap #69: find out why the tied members agree
+
+**What ran.** `tied_agree.py` reran #68 on its 41 tied cases (reproducing #68's final pick in all 41), kept every
+member tied at the top, and compared each with the winner: mirror or not, which other entries it edits and by how
+much, the state of their hidden units, and its disagreement with the winner on the 1M-point probe. Scoring also put
+each fault back into the original network alone to find silent faults. 18.4 core-hours. Write-up:
+[TIED_AGREE.md](../experiments/locate-repair/TIED_AGREE.md).
+
+**Measured.**
+- 672 tied members; the largest disagreement with the winner on the probe is 0.009%, and 242 match it exactly.
+- The tied mirror count is exactly 2^k in all 41 cases; 28 cases tie only mirrors (98 members).
+- 4 cases have a silent fault (253, 254, 277, 285) and hold 456 of the 538 non-mirror members. In 254, 277 and 285,
+  279 of 283 edit both audible faults and spend the third slot elsewhere, 245 of them by under 0.1 of the scale.
+- The other 9 cases tie 82 non-mirror members (3 to 20 per case) that edit other weights by full steps; 12 edit all
+  three faults.
+- 655 of the 683 extra entries are on units active on part of the probe; 2 are on a never-active unit, 26 are output
+  biases.
+
+**Interpretation.** Every tie is harmless on the probe: any member the repair could pick is within 0.01% of the one
+it does. The big ties come from silent faults leaving a free slot (inferred from the overlap), the rest from the
+mirror symmetry and a few genuinely different three-weight repairs. Next: #70 works on the 6 cases still over 0.01%,
+none of which is a tie problem.
+
+---
+
 ## 2026-11-23 — Roadmap #68: ask labels where the tied members disagree
 
 **What ran.** `tied_labels.py` repeated #67's rebuilt committees and refit on seeds 250 to 299 (reproducing #67's

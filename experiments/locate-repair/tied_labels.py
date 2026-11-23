@@ -42,7 +42,8 @@ def tied_split(case, fits, tied, pool):
     return ev.aq.committee_split(votes)
 
 
-def run_case(case, x, y, options, probe, seed, rounds=ROUNDS):
+def run_case(case, x, y, options, probe, seed, rounds=ROUNDS, keep=None):
+    """#68's rounds for one case. ``keep``, if a dict, receives the committee, its final fits and labels (#69)."""
     size = {"size": options["committee_size"]} if "committee_size" in options else {}
     members, fits, count = ev.tc.committee(case, x, y, pairs_kept=options.get("pairs_kept"), **size)
     top = max(fits[t][0][0] for t in members)
@@ -72,6 +73,8 @@ def run_case(case, x, y, options, probe, seed, rounds=ROUNDS):
         steps.append({"round": k, "labels": len(y), "splitting": int((split > 0).sum()), "tied_before": len(tied),
                       "tied": len(after), "true_tied_top": any(is_true(t) for t in after),
                       **score_fit(case, x, y, w, table[w], probe)})
+    if keep is not None:
+        keep.update(members=members, table=table, start=start, refit=refit, x=x, y=y)
     true = [t for t in members if is_true(t)]
     return {"seed": seed, "triples": count, "committee_size": len(members), "committee_has_true_triple": bool(true),
             "true_tied_top_refit": bool(true) and refit[true[0]][0][0] == top_of(members, refit),

@@ -1386,6 +1386,23 @@ the 1M-point probe or never changes sign there, and how often the two networks d
 **Cost.** CPU, about 20 core-hours to rebuild the committees and fits, since #68 saved only each round's winner; the
 comparison itself is cheap.
 
+**Status (November 23): done, see [TIED_AGREE.md](../experiments/locate-repair/TIED_AGREE.md).**
+
+## 70. Fix the six cases still over 0.01%
+
+*Added November 23 after #69.*
+
+#69 showed that every member tied at the top is within 0.01% of the winner, so ties no longer cost anything. What
+keeps the repair off the 0.01% line is the 6 cases #68 left over it: in 258, 261 and 296 the committee lacks the
+true triple, in 259 the true triple fits fewer labels than the winner, and in 260 and 269 the repair is exact but its
+values are off. For the first three, rebuild the committee twice as large with twice as many pairs kept and check
+whether the true triple enters and wins. For 259, refit the true triple and the winner from 20 random starts each and
+see whether the fit, not the labels, is what loses it. For 260 and 269, keep the winning triple fixed, ask 64 labels
+in a band around the fitted network's decision boundary and refit only the values. Score each against #68's final
+pick on the 1M-point probe.
+
+**Cost.** CPU, about 5 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
