@@ -47,8 +47,11 @@ crosses over.
    260 (0.099% to 0.061%) and 261 (0.055% to 0.031%) improve but stay over 0.01%.
 3. **The moves the other way are small.** The 8 cases that end further all stay under 0.01% except 296, which is
    0.81% before and after. The largest relative move is 270, 0.0022% to 0.0040%.
-4. **The ties have a shape.** Of the 41 cases still tied at the end, 37 have an even number of tied members (most
-   often 2, 4, 8 or 16), and the true triple is among the tied members in 37.
+4. **Most remaining ties are the size the mirror symmetry predicts.** Only the difference between the two output
+   logits matters, so an output-layer edit can be swapped for its mirror into the other logit ([ACTIVE_QUERIES.md](ACTIVE_QUERIES.md),
+   #22), and a winner with k output-layer edits has 2^k mirror variants. Of the 41 cases still tied at the end, 28
+   tie exactly 2^k members. The other 13 tie more: 253 (175), 254 (200), 265, 267, 268, 270, 273, 277, 281, 282,
+   283, 285 (77) and 287. The true triple is among the tied members in 37 of the 41.
 5. **What stays over 0.01% is unchanged in kind.** The 6 cases over 0.01% after round 3 are 258, 259, 260, 261, 269
    and 296. 258, 261 and 296 have no true triple in the committee; 259's true triple fits fewer labels than the
    winner; 260 and 269 are exact and over the line on their values alone.
@@ -60,7 +63,8 @@ crosses over.
   totals (2 more cases under 0.01%, 2 more exact) because almost every tie is between
   members that compute the same function on random inputs (measured on the pool; that they are identical
   everywhere is inferred).
-- The even counts suggest the tied members differ only in weights that do not change the output, for example
-  weights into or out of a hidden unit that is never active, so 2, 4 or 8 choices give the same network (inferred;
-  not yet checked). If so, those ties do not need breaking, and "exact" undercounts how often the repair found the
-  right network. That is #69.
+- In 28 of the 41 remaining ties the count matches the winner's mirror variants, which no label can separate and
+  which "exact" already counts as found (inferred from the counts; the tied members themselves were not saved).
+  Those ties need no breaking. The 13 cases that tie more members than mirrors explain are the open question:
+  which other weights the extra members edit, and whether they are the same network everywhere or only on the
+  pool. That is #69.

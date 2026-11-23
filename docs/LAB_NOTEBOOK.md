@@ -22,12 +22,13 @@ again after each. 22.8 core-hours. Write-up: [TIED_LABELS.md](../experiments/loc
   Closer in 16, further in 8, geometric-mean change 0.76.
 - The 6 cases with 10 or more splitting inputs in round 1 all end closer; 255 goes from 0.062% with one right weight
   to the exact triple at 0.0022%.
-- 37 of the 41 cases still tied have an even number of tied members.
+- 28 of the 41 cases still tied tie exactly 2^k members, the winner's mirror variants for k output-layer edits;
+  13 tie more.
 
 **Interpretation.** Labels break the rare ties between different networks, but almost every tie is between members
 that compute the same function on random inputs, so the totals barely move (measured on the pool; identical
-everywhere is inferred). The even counts suggest the tied members differ only in weights that cannot change the
-output. Next: #69 checks why tied members agree.
+everywhere is inferred). Most remaining ties are the known mirror symmetry, which "exact" already counts. Next:
+#69 looks at the 13 cases that tie more members than mirrors explain.
 
 ---
 

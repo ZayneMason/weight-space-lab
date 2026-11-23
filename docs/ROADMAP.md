@@ -1377,14 +1377,14 @@ repairs, the 0.01% and 0.1% lines and the geometric-mean change with #67's refit
 *Added November 23 after #68.*
 
 In #68, 41 of 50 cases still have two or more committee members that fit every label after 24 more labels, and in 87
-of 127 rounds no input in a pool of 20,000 split them. 37 of those 41 ties have an even number of members. For each
-tied case, compare the tied members with the winner weight by weight: which weights differ, whether those weights
-sit on a hidden unit that is never active on the 1M-point probe or whose outgoing weights are zero, and how far apart
-the tied networks are on the probe itself. If most ties are between members that differ only in weights that cannot
-change the output, count a repair as right when it matches the original network's function rather than its exact
-weights, and recount #67's and #68's exact repairs that way.
+of 127 rounds no input in a pool of 20,000 split them. In 28 of the 41 the tie count is exactly 2^k for a winner
+with k output-layer edits, the mirror symmetry (#22). The other 13 tie more members than that, up to all 200. Rerun
+#68 on the 41 tied cases, keep every tied member, and compare each with the winner: whether it is one of the
+winner's mirrors, which other weights it edits, whether those weights sit on a hidden unit that is never active on
+the 1M-point probe or never changes sign there, and how often the two networks disagree on the probe itself.
 
-**Cost.** CPU, about 20 core-hours to rebuild #68's committees and fits, since #68 saved only each round's winner; the comparison itself is cheap.
+**Cost.** CPU, about 20 core-hours to rebuild the committees and fits, since #68 saved only each round's winner; the
+comparison itself is cheap.
 
 ## Posts the current results already support
 
