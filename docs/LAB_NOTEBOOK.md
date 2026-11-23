@@ -8,6 +8,29 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-23 — Roadmap #68: ask labels where the tied members disagree
+
+**What ran.** `tied_labels.py` repeated #67's rebuilt committees and refit on seeds 250 to 299 (reproducing #67's
+refit-coarse pick in all 50), then, while two or more members fit the most labels, ran up to 3 rounds of 8 labels
+placed where the tied members' networks split most evenly in a fresh pool of 20,000 inputs, refitting and picking
+again after each. 22.8 core-hours. Write-up: [TIED_LABELS.md](../experiments/locate-repair/TIED_LABELS.md).
+
+**Measured.**
+- 44 of 50 cases start tied; 41 are still tied after 3 rounds. 87 of 127 rounds found no pool input where the tied
+  members disagree, and in 19 cases no round did.
+- Under 0.01%: 42 to 44 (255 and 287 cross under, none over). Exact: 35 to 37 (250 and 255). Under 0.1%: 48 both.
+  Closer in 16, further in 8, geometric-mean change 0.76.
+- The 6 cases with 10 or more splitting inputs in round 1 all end closer; 255 goes from 0.062% with one right weight
+  to the exact triple at 0.0022%.
+- 37 of the 41 cases still tied have an even number of tied members.
+
+**Interpretation.** Labels break the rare ties between different networks, but almost every tie is between members
+that compute the same function on random inputs, so the totals barely move (measured on the pool; identical
+everywhere is inferred). The even counts suggest the tied members differ only in weights that cannot change the
+output. Next: #69 checks why tied members agree.
+
+---
+
 ## 2026-11-23 — Roadmap #67: choose among the members that fit every label
 
 **What ran.** `tie_break_final.py` rebuilt #66's committees on the 1,096 final labels (seeds 250 to 299), kept every

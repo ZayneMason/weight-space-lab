@@ -1,0 +1,806 @@
+{
+ "seeds": 50,
+ "cpu_hours": 22.80938888888889,
+ "reproduces_67": [
+  250,
+  251,
+  252,
+  253,
+  254,
+  255,
+  256,
+  257,
+  258,
+  259,
+  260,
+  261,
+  262,
+  263,
+  264,
+  265,
+  266,
+  267,
+  268,
+  269,
+  270,
+  271,
+  272,
+  273,
+  274,
+  275,
+  276,
+  277,
+  278,
+  279,
+  280,
+  281,
+  282,
+  283,
+  284,
+  285,
+  286,
+  287,
+  288,
+  289,
+  290,
+  291,
+  292,
+  293,
+  294,
+  295,
+  296,
+  297,
+  298,
+  299
+ ],
+ "asked": [
+  250,
+  252,
+  253,
+  254,
+  255,
+  256,
+  257,
+  258,
+  260,
+  261,
+  262,
+  263,
+  264,
+  265,
+  266,
+  267,
+  268,
+  270,
+  271,
+  272,
+  273,
+  274,
+  275,
+  276,
+  277,
+  278,
+  279,
+  280,
+  281,
+  282,
+  283,
+  285,
+  286,
+  287,
+  288,
+  289,
+  290,
+  291,
+  294,
+  295,
+  296,
+  297,
+  298,
+  299
+ ],
+ "rounds_run": {
+  "0": 6,
+  "1": 2,
+  "2": 1,
+  "3": 41
+ },
+ "by_round": {
+  "0": {
+   "under_0.1%": 48,
+   "under_0.01%": 42,
+   "median": 2.85e-05,
+   "exact": 35,
+   "still_tied": 44
+  },
+  "1": {
+   "under_0.1%": 48,
+   "under_0.01%": 44,
+   "median": 2.6e-05,
+   "exact": 36,
+   "still_tied": 42
+  },
+  "2": {
+   "under_0.1%": 48,
+   "under_0.01%": 44,
+   "median": 2.85e-05,
+   "exact": 37,
+   "still_tied": 41
+  },
+  "3": {
+   "under_0.1%": 48,
+   "under_0.01%": 44,
+   "median": 2.65e-05,
+   "exact": 37,
+   "still_tied": 41
+  }
+ },
+ "geometric_mean_change": 0.7586990499078893,
+ "became_exact": [
+  250,
+  255
+ ],
+ "stopped_exact": [],
+ "closer": [
+  250,
+  253,
+  255,
+  257,
+  258,
+  260,
+  261,
+  268,
+  271,
+  272,
+  274,
+  275,
+  281,
+  287,
+  295,
+  298
+ ],
+ "further": [
+  252,
+  254,
+  262,
+  263,
+  270,
+  279,
+  280,
+  296
+ ],
+ "crossed_under_0.01%": [
+  255,
+  287
+ ],
+ "crossed_over_0.01%": [],
+ "per_case": {
+  "250": {
+   "before": 2.1e-05,
+   "after": 8e-06,
+   "faults_before": 2,
+   "faults_after": 3,
+   "rounds": 2,
+   "tied": [
+    19,
+    3,
+    1
+   ]
+  },
+  "251": {
+   "before": 2.9e-05,
+   "after": 2.9e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 0,
+   "tied": [
+    1
+   ]
+  },
+  "252": {
+   "before": 2.2e-05,
+   "after": 2.7e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "253": {
+   "before": 1.1e-05,
+   "after": 7e-06,
+   "faults_before": 1,
+   "faults_after": 1,
+   "rounds": 3,
+   "tied": [
+    200,
+    199,
+    176,
+    175
+   ]
+  },
+  "254": {
+   "before": 4e-06,
+   "after": 7e-06,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    200,
+    197,
+    200,
+    200
+   ]
+  },
+  "255": {
+   "before": 0.000625,
+   "after": 2.2e-05,
+   "faults_before": 1,
+   "faults_after": 3,
+   "rounds": 1,
+   "tied": [
+    3,
+    1
+   ]
+  },
+  "256": {
+   "before": 3.1e-05,
+   "after": 3.1e-05,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "257": {
+   "before": 9e-06,
+   "after": 5e-06,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "258": {
+   "before": 0.001964,
+   "after": 0.00139,
+   "faults_before": 1,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    3,
+    2,
+    2,
+    2
+   ]
+  },
+  "259": {
+   "before": 0.000236,
+   "after": 0.000236,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 0,
+   "tied": [
+    1
+   ]
+  },
+  "260": {
+   "before": 0.000989,
+   "after": 0.000613,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "261": {
+   "before": 0.000548,
+   "after": 0.000314,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 1,
+   "tied": [
+    5,
+    1
+   ]
+  },
+  "262": {
+   "before": 4.5e-05,
+   "after": 5.1e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "263": {
+   "before": 2.5e-05,
+   "after": 3.8e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "264": {
+   "before": 2.4e-05,
+   "after": 2.4e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "265": {
+   "before": 1e-05,
+   "after": 1e-05,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    16,
+    16,
+    16,
+    16
+   ]
+  },
+  "266": {
+   "before": 2e-05,
+   "after": 2e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "267": {
+   "before": 1.1e-05,
+   "after": 1.1e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "268": {
+   "before": 5e-06,
+   "after": 3e-06,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    20,
+    20,
+    20,
+    20
+   ]
+  },
+  "269": {
+   "before": 0.000138,
+   "after": 0.000138,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 0,
+   "tied": [
+    1
+   ]
+  },
+  "270": {
+   "before": 2.2e-05,
+   "after": 4e-05,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    16,
+    16,
+    12,
+    12
+   ]
+  },
+  "271": {
+   "before": 5.3e-05,
+   "after": 4.3e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "272": {
+   "before": 3.2e-05,
+   "after": 7e-06,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "273": {
+   "before": 1.2e-05,
+   "after": 1.2e-05,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    10,
+    10,
+    10,
+    10
+   ]
+  },
+  "274": {
+   "before": 5.5e-05,
+   "after": 3.5e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "275": {
+   "before": 4.4e-05,
+   "after": 1.8e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "276": {
+   "before": 5.7e-05,
+   "after": 5.7e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "277": {
+   "before": 1.2e-05,
+   "after": 1.2e-05,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    14,
+    13,
+    13,
+    13
+   ]
+  },
+  "278": {
+   "before": 2.8e-05,
+   "after": 2.8e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "279": {
+   "before": 3.4e-05,
+   "after": 3.6e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    6,
+    2,
+    2,
+    2
+   ]
+  },
+  "280": {
+   "before": 3.2e-05,
+   "after": 3.7e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "281": {
+   "before": 5.7e-05,
+   "after": 3.5e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  "282": {
+   "before": 2.9e-05,
+   "after": 2.9e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    16,
+    16,
+    16,
+    16
+   ]
+  },
+  "283": {
+   "before": 2.6e-05,
+   "after": 2.6e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "284": {
+   "before": 2.3e-05,
+   "after": 2.3e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 0,
+   "tied": [
+    1
+   ]
+  },
+  "285": {
+   "before": 5e-06,
+   "after": 5e-06,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    75,
+    77,
+    77,
+    77
+   ]
+  },
+  "286": {
+   "before": 1.6e-05,
+   "after": 1.6e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "287": {
+   "before": 0.000677,
+   "after": 3e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    57,
+    16,
+    16,
+    16
+   ]
+  },
+  "288": {
+   "before": 3.4e-05,
+   "after": 3.4e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "289": {
+   "before": 1.8e-05,
+   "after": 1.8e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "290": {
+   "before": 2.4e-05,
+   "after": 2.4e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "291": {
+   "before": 8e-05,
+   "after": 8e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "292": {
+   "before": 2.6e-05,
+   "after": 2.6e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 0,
+   "tied": [
+    1
+   ]
+  },
+  "293": {
+   "before": 5.7e-05,
+   "after": 5.7e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 0,
+   "tied": [
+    1
+   ]
+  },
+  "294": {
+   "before": 8e-06,
+   "after": 8e-06,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "295": {
+   "before": 2e-05,
+   "after": 7e-06,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "296": {
+   "before": 0.008087,
+   "after": 0.008091,
+   "faults_before": 2,
+   "faults_after": 2,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "297": {
+   "before": 3.1e-05,
+   "after": 3.1e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "298": {
+   "before": 3.6e-05,
+   "after": 1.4e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "299": {
+   "before": 2.5e-05,
+   "after": 2.5e-05,
+   "faults_before": 3,
+   "faults_after": 3,
+   "rounds": 3,
+   "tied": [
+    4,
+    4,
+    4,
+    4
+   ]
+  }
+ }
+}
