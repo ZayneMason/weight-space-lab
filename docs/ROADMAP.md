@@ -1355,6 +1355,21 @@ how many members tie at the top.
 
 **Cost.** CPU, about 25 core-hours.
 
+**Status (November 23): done, see [TIE_BREAK_FINAL.md](../experiments/locate-repair/TIE_BREAK_FINAL.md).**
+
+## 68. Ask labels where the tied members disagree
+
+*Added November 23 after #67.*
+
+In #67 the true triple's values fit every final label in all 50 cases, and the median case has 4 committee members
+tied on every label. Most ties are between near-identical networks, but in seed 255 three members tie and the pick
+has one right weight (0.062%). Take each case with two or more members tied at the top after #67's refit, draw a
+fresh uniform pool of 5,000 inputs, and label the 8 where the tied members' networks (at their middles) split most
+evenly. Refit the tied members on all 1,104 labels, pick again by coarse order, take the middle, and compare exact
+repairs, the 0.01% and 0.1% lines and the geometric-mean change with #67's refit-coarse rule on the same seeds.
+
+**Cost.** CPU, about 10 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

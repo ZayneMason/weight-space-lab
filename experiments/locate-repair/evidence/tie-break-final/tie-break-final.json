@@ -1,0 +1,9186 @@
+[
+ {
+  "seed": 250,
+  "labels": 1096,
+  "triples": 11328,
+  "committee_size": 200,
+  "near": 200,
+  "tied_top": 19,
+  "tied_top_refit": 19,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 5,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.216675520417817,
+    "faults_found": 2,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0004913888126611709,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.5e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.297759037062405,
+    "faults_found": 2,
+    "disagreement": 1.8e-05,
+    "middle": {
+     "mean_chord": 0.0010447153262794018,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.1e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.216675520417817,
+    "faults_found": 2,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0004913888126611709,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.5e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.216675340730394,
+    "faults_found": 2,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0004913723282516003,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.5e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.297759037062405,
+    "faults_found": 2,
+    "disagreement": 1.8e-05,
+    "middle": {
+     "mean_chord": 0.0010447153262794018,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.1e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.2166756204461215,
+    "faults_found": 2,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.00046681994572281835,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.5e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1144.1
+ },
+ {
+  "seed": 251,
+  "labels": 1096,
+  "triples": 40643,
+  "committee_size": 200,
+  "near": 200,
+  "tied_top": 1,
+  "tied_top_refit": 1,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 0.9990875912408759,
+  "true_accuracy_refit": 0.9990875912408759,
+  "true_from_current": 0.9963503649635036,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      22
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.068775000790111,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.0005286272056400776,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 2.9e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      22
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.068775000790111,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.0005286272056400776,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 2.9e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      22
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.068775000790111,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.0005286272056400776,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 2.9e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      22
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.068775000790111,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.0005286272056400776,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 2.9e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      22
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.068775000790111,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.0005286272056400776,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 2.9e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      22
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.068775000790111,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.0005286272056400776,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 2.9e-05
+    }
+   }
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3858.0
+ },
+ {
+  "seed": 252,
+  "labels": 1096,
+  "triples": 13630,
+  "committee_size": 200,
+  "near": 4,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.313511830377081,
+    "faults_found": 3,
+    "disagreement": 2.6e-05,
+    "middle": {
+     "mean_chord": 0.001401453223079443,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.2e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.313511830377081,
+    "faults_found": 3,
+    "disagreement": 2.6e-05,
+    "middle": {
+     "mean_chord": 0.001401453223079443,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.2e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.313511830377081,
+    "faults_found": 3,
+    "disagreement": 2.6e-05,
+    "middle": {
+     "mean_chord": 0.001401453223079443,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.2e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.312763966927566,
+    "faults_found": 3,
+    "disagreement": 3.6e-05,
+    "middle": {
+     "mean_chord": 0.0014014561101794243,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.2e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.312763966927566,
+    "faults_found": 3,
+    "disagreement": 3.6e-05,
+    "middle": {
+     "mean_chord": 0.0014014561101794243,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.2e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.312763966927566,
+    "faults_found": 3,
+    "disagreement": 3.6e-05,
+    "middle": {
+     "mean_chord": 0.0014014561101794243,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.2e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1176.8
+ },
+ {
+  "seed": 253,
+  "labels": 1096,
+  "triples": 11450,
+  "committee_size": 200,
+  "near": 200,
+  "tied_top": 200,
+  "tied_top_refit": 200,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 175,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 1.689798785481822,
+    "faults_found": 1,
+    "disagreement": 1.5e-05,
+    "middle": {
+     "mean_chord": 0.0007859888300299644,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.1e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.486153836184744,
+    "faults_found": 1,
+    "disagreement": 1.5e-05,
+    "middle": {
+     "mean_chord": 0.002375278640538454,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.1e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      28
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.009530902284237,
+    "faults_found": 1,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.001108710654079914,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.7e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 1.5283043592078915,
+    "faults_found": 1,
+    "disagreement": 1.5e-05,
+    "middle": {
+     "mean_chord": 0.0007825640030205249,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7049928356628623,
+    "faults_found": 1,
+    "disagreement": 1.5e-05,
+    "middle": {
+     "mean_chord": 0.0023752433247864247,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.1e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      28
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.00923731455837,
+    "faults_found": 1,
+    "disagreement": 1.9e-05,
+    "middle": {
+     "mean_chord": 0.0010958020761609078,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.7e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 873.9
+ },
+ {
+  "seed": 254,
+  "labels": 1096,
+  "triples": 9277,
+  "committee_size": 200,
+  "near": 200,
+  "tied_top": 200,
+  "tied_top_refit": 200,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 186,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.5299565859847246,
+    "faults_found": 2,
+    "disagreement": 1.4e-05,
+    "middle": {
+     "mean_chord": 0.0002709764242172241,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.1e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.015532406338224,
+    "faults_found": 2,
+    "disagreement": 9e-06,
+    "middle": {
+     "mean_chord": 0.0007483064197003842,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4e-06
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.00597096663063,
+    "faults_found": 2,
+    "disagreement": 9e-06,
+    "middle": {
+     "mean_chord": 0.0007472996041178703,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4e-06
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.5299565859847246,
+    "faults_found": 2,
+    "disagreement": 1.4e-05,
+    "middle": {
+     "mean_chord": 0.0002709764242172241,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.1e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.437067216874139,
+    "faults_found": 2,
+    "disagreement": 9e-06,
+    "middle": {
+     "mean_chord": 0.0007482993043959141,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4e-06
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.585579681742128,
+    "faults_found": 2,
+    "disagreement": 1.7e-05,
+    "middle": {
+     "mean_chord": 0.000718828160315752,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 928.9
+ },
+ {
+  "seed": 255,
+  "labels": 1096,
+  "triples": 10544,
+  "committee_size": 200,
+  "near": 200,
+  "tied_top": 2,
+  "tied_top_refit": 3,
+  "true_tied_top": false,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 59,
+  "true_accuracy": 0.9917883211678832,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 0.9771897810218978,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      12
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.4009613131441405,
+    "faults_found": 1,
+    "disagreement": 0.000618,
+    "middle": {
+     "mean_chord": 0.0011455389857292176,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000625
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      12
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.4009613131441405,
+    "faults_found": 1,
+    "disagreement": 0.000618,
+    "middle": {
+     "mean_chord": 0.0011455389857292176,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000625
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      12
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.4009900604262056,
+    "faults_found": 1,
+    "disagreement": 0.000626,
+    "middle": {
+     "mean_chord": 0.0011343865655362606,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000623
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      12
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.400730326548645,
+    "faults_found": 1,
+    "disagreement": 0.00062,
+    "middle": {
+     "mean_chord": 0.0011343755200505256,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000623
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      12
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.4008994247797695,
+    "faults_found": 1,
+    "disagreement": 0.000622,
+    "middle": {
+     "mean_chord": 0.0011455364525318145,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000625
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      12
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.4008994247797695,
+    "faults_found": 1,
+    "disagreement": 0.000622,
+    "middle": {
+     "mean_chord": 0.0011455364525318145,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000625
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 917.1
+ },
+ {
+  "seed": 256,
+  "labels": 1096,
+  "triples": 13310,
+  "committee_size": 200,
+  "near": 6,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": false,
+  "true_tied_top_refit": false,
+  "committee_has_true_triple": false,
+  "true_rank": null,
+  "true_accuracy": null,
+  "true_accuracy_refit": null,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.415981531462728,
+    "faults_found": 2,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.0011306443065404893,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.415981531462728,
+    "faults_found": 2,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.0011306443065404893,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.415981531462728,
+    "faults_found": 2,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.0011306443065404893,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.415981531462728,
+    "faults_found": 2,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.0011306443065404893,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.415981531462728,
+    "faults_found": 2,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.0011306443065404893,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.415981531462728,
+    "faults_found": 2,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.0011306443065404893,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1065.9
+ },
+ {
+  "seed": 257,
+  "labels": 1096,
+  "triples": 9241,
+  "committee_size": 200,
+  "near": 121,
+  "tied_top": 8,
+  "tied_top_refit": 8,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      11
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.884595761039433,
+    "faults_found": 3,
+    "disagreement": 1e-05,
+    "middle": {
+     "mean_chord": 0.0020823752135038375,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      11
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.905173642464684,
+    "faults_found": 3,
+    "disagreement": 5e-06,
+    "middle": {
+     "mean_chord": 0.002217714786529541,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 9e-06
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      11
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.884595761039433,
+    "faults_found": 3,
+    "disagreement": 1e-05,
+    "middle": {
+     "mean_chord": 0.0020823752135038375,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.881482005812421,
+    "faults_found": 3,
+    "disagreement": 7e-06,
+    "middle": {
+     "mean_chord": 0.0024094094522297384,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 9e-06
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      11
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.904845120788843,
+    "faults_found": 3,
+    "disagreement": 4e-06,
+    "middle": {
+     "mean_chord": 0.00221768194809556,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 9e-06
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.881482005812421,
+    "faults_found": 3,
+    "disagreement": 7e-06,
+    "middle": {
+     "mean_chord": 0.0024094094522297384,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 9e-06
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 808.1
+ },
+ {
+  "seed": 258,
+  "labels": 1096,
+  "triples": 43974,
+  "committee_size": 200,
+  "near": 47,
+  "tied_top": 2,
+  "tied_top_refit": 3,
+  "true_tied_top": false,
+  "true_tied_top_refit": false,
+  "committee_has_true_triple": false,
+  "true_rank": null,
+  "true_accuracy": null,
+  "true_accuracy_refit": null,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9908759124087592,
+    "cost": 2.88353935080304,
+    "faults_found": 1,
+    "disagreement": 0.001879,
+    "middle": {
+     "mean_chord": 0.012044465225189925,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9917883211678832,
+     "disagreement": 0.001964
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9908759124087592,
+    "cost": 2.88353935080304,
+    "faults_found": 1,
+    "disagreement": 0.001879,
+    "middle": {
+     "mean_chord": 0.012044465225189925,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9917883211678832,
+     "disagreement": 0.001964
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9908759124087592,
+    "cost": 2.88353935080304,
+    "faults_found": 1,
+    "disagreement": 0.001879,
+    "middle": {
+     "mean_chord": 0.012044465225189925,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9917883211678832,
+     "disagreement": 0.001964
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9908759124087592,
+    "cost": 2.883502377716719,
+    "faults_found": 1,
+    "disagreement": 0.001879,
+    "middle": {
+     "mean_chord": 0.012044457886368036,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9917883211678832,
+     "disagreement": 0.001964
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9908759124087592,
+    "cost": 2.883502377716719,
+    "faults_found": 1,
+    "disagreement": 0.001879,
+    "middle": {
+     "mean_chord": 0.012044457886368036,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9917883211678832,
+     "disagreement": 0.001964
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 0.9908759124087592,
+    "cost": 4.725177373427671,
+    "faults_found": 2,
+    "disagreement": 0.001191,
+    "middle": {
+     "mean_chord": 0.057466511968523266,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9908759124087592,
+     "disagreement": 0.001555
+    }
+   }
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3909.0
+ },
+ {
+  "seed": 259,
+  "labels": 1096,
+  "triples": 12147,
+  "committee_size": 1000,
+  "near": 1000,
+  "tied_top": 4,
+  "tied_top_refit": 1,
+  "true_tied_top": false,
+  "true_tied_top_refit": false,
+  "committee_has_true_triple": true,
+  "true_rank": 540,
+  "true_accuracy": 0.9854014598540146,
+  "true_accuracy_refit": 0.9854014598540146,
+  "true_from_current": 0.9854014598540146,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      24
+     ]
+    ],
+    "practice_accuracy": 0.9927007299270073,
+    "cost": 4.271586821943104,
+    "faults_found": 1,
+    "disagreement": 0.000981,
+    "middle": {
+     "mean_chord": 0.004864912647753954,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9927007299270073,
+     "disagreement": 0.000985
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 0.9927007299270073,
+    "cost": 4.271622726783459,
+    "faults_found": 1,
+    "disagreement": 0.000981,
+    "middle": {
+     "mean_chord": 0.004929297585040331,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9927007299270073,
+     "disagreement": 0.000984
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 0.9927007299270073,
+    "cost": 4.271622726783459,
+    "faults_found": 1,
+    "disagreement": 0.000981,
+    "middle": {
+     "mean_chord": 0.004929297585040331,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9927007299270073,
+     "disagreement": 0.000984
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_weight",
+      2
+     ]
+    ],
+    "practice_accuracy": 0.9936131386861314,
+    "cost": 5.820142866617075,
+    "faults_found": 2,
+    "disagreement": 0.000176,
+    "middle": {
+     "mean_chord": 0.008616043403744698,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9936131386861314,
+     "disagreement": 0.000236
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_weight",
+      2
+     ]
+    ],
+    "practice_accuracy": 0.9936131386861314,
+    "cost": 5.820142866617075,
+    "faults_found": 2,
+    "disagreement": 0.000176,
+    "middle": {
+     "mean_chord": 0.008616043403744698,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9936131386861314,
+     "disagreement": 0.000236
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_weight",
+      2
+     ]
+    ],
+    "practice_accuracy": 0.9936131386861314,
+    "cost": 5.820142866617075,
+    "faults_found": 2,
+    "disagreement": 0.000176,
+    "middle": {
+     "mean_chord": 0.008616043403744698,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9936131386861314,
+     "disagreement": 0.000236
+    }
+   }
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1287.4
+ },
+ {
+  "seed": 260,
+  "labels": 1096,
+  "triples": 9286,
+  "committee_size": 200,
+  "near": 200,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.330219508593404,
+    "faults_found": 3,
+    "disagreement": 0.001201,
+    "middle": {
+     "mean_chord": 0.0007853839360177517,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.001193
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.0865639695027225,
+    "faults_found": 3,
+    "disagreement": 4.2e-05,
+    "middle": {
+     "mean_chord": 0.0007593802176415921,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.9e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.0865639695027225,
+    "faults_found": 3,
+    "disagreement": 4.2e-05,
+    "middle": {
+     "mean_chord": 0.0007593802176415921,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.9e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.330219508593404,
+    "faults_found": 3,
+    "disagreement": 0.001201,
+    "middle": {
+     "mean_chord": 0.0007853839360177517,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.001193
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.450930698684857,
+    "faults_found": 3,
+    "disagreement": 0.001007,
+    "middle": {
+     "mean_chord": 0.0007593802176415921,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000989
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.450930698684857,
+    "faults_found": 3,
+    "disagreement": 0.001007,
+    "middle": {
+     "mean_chord": 0.0007593802176415921,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000989
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 939.5
+ },
+ {
+  "seed": 261,
+  "labels": 1096,
+  "triples": 11392,
+  "committee_size": 200,
+  "near": 80,
+  "tied_top": 5,
+  "tied_top_refit": 5,
+  "true_tied_top": false,
+  "true_tied_top_refit": false,
+  "committee_has_true_triple": false,
+  "true_rank": null,
+  "true_accuracy": null,
+  "true_accuracy_refit": null,
+  "true_from_current": 0.9708029197080292,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.740793934931564,
+    "faults_found": 2,
+    "disagreement": 0.000315,
+    "middle": {
+     "mean_chord": 0.0012325278669595718,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 0.000313
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 6.411833119431021,
+    "faults_found": 2,
+    "disagreement": 0.000579,
+    "middle": {
+     "mean_chord": 0.003600091151893139,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 0.000548
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.740793934931564,
+    "faults_found": 2,
+    "disagreement": 0.000315,
+    "middle": {
+     "mean_chord": 0.0012325278669595718,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 0.000313
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.740793934931564,
+    "faults_found": 2,
+    "disagreement": 0.000315,
+    "middle": {
+     "mean_chord": 0.0012325278669595718,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 0.000313
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 6.411833119431021,
+    "faults_found": 2,
+    "disagreement": 0.000579,
+    "middle": {
+     "mean_chord": 0.003600091151893139,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 0.000548
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 4.740793934931564,
+    "faults_found": 2,
+    "disagreement": 0.000315,
+    "middle": {
+     "mean_chord": 0.0012325278669595718,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 0.000313
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 940.4
+ },
+ {
+  "seed": 262,
+  "labels": 1096,
+  "triples": 11749,
+  "committee_size": 200,
+  "near": 38,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      24
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.385841617662646,
+    "faults_found": 3,
+    "disagreement": 9.4e-05,
+    "middle": {
+     "mean_chord": 0.0020375713892281056,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.3926300699499485,
+    "faults_found": 3,
+    "disagreement": 5.7e-05,
+    "middle": {
+     "mean_chord": 0.0021706941165030003,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.5e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.3926300699499485,
+    "faults_found": 3,
+    "disagreement": 5.7e-05,
+    "middle": {
+     "mean_chord": 0.0021706941165030003,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.5e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      24
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.385841617662646,
+    "faults_found": 3,
+    "disagreement": 9.4e-05,
+    "middle": {
+     "mean_chord": 0.0020375713892281056,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.3910277676894305,
+    "faults_found": 3,
+    "disagreement": 8.2e-05,
+    "middle": {
+     "mean_chord": 0.002170637845993042,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.5e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.3910277676894305,
+    "faults_found": 3,
+    "disagreement": 8.2e-05,
+    "middle": {
+     "mean_chord": 0.002170637845993042,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.5e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1080.9
+ },
+ {
+  "seed": 263,
+  "labels": 1096,
+  "triples": 41288,
+  "committee_size": 200,
+  "near": 200,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 0.9917883211678832,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.124996468708427,
+    "faults_found": 3,
+    "disagreement": 2.9e-05,
+    "middle": {
+     "mean_chord": 0.0038640138693153856,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.3e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.125653439248499,
+    "faults_found": 3,
+    "disagreement": 4.1e-05,
+    "middle": {
+     "mean_chord": 0.003955018259584903,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.124996468708427,
+    "faults_found": 3,
+    "disagreement": 2.9e-05,
+    "middle": {
+     "mean_chord": 0.0038640138693153856,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.3e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.11117313514473,
+    "faults_found": 3,
+    "disagreement": 5.9e-05,
+    "middle": {
+     "mean_chord": 0.003955032471567393,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.11117313514473,
+    "faults_found": 3,
+    "disagreement": 5.9e-05,
+    "middle": {
+     "mean_chord": 0.003955032471567393,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.11117313514473,
+    "faults_found": 3,
+    "disagreement": 5.9e-05,
+    "middle": {
+     "mean_chord": 0.003955032471567393,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   }
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3806.4
+ },
+ {
+  "seed": 264,
+  "labels": 1096,
+  "triples": 8927,
+  "committee_size": 200,
+  "near": 4,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      11
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.393443958212761,
+    "faults_found": 3,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0018094845116138458,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.393444926611384,
+    "faults_found": 3,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0017713851109147072,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      25
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.393444928951751,
+    "faults_found": 3,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0016748425178229808,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.8e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.393443881673468,
+    "faults_found": 3,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0017713852040469645,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.393443881673468,
+    "faults_found": 3,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0017713852040469645,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.393444248253666,
+    "faults_found": 3,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.00176038708537817,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 738.7
+ },
+ {
+  "seed": 265,
+  "labels": 1096,
+  "triples": 47268,
+  "committee_size": 200,
+  "near": 200,
+  "tied_top": 16,
+  "tied_top_refit": 16,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 8,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.412552961179941,
+    "faults_found": 3,
+    "disagreement": 1e-06,
+    "middle": {
+     "mean_chord": 0.0010849540494382382,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 6e-06
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.5995631406074837,
+    "faults_found": 2,
+    "disagreement": 2e-06,
+    "middle": {
+     "mean_chord": 0.0008077518083155155,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.4206854458873712,
+    "faults_found": 3,
+    "disagreement": 1e-06,
+    "middle": {
+     "mean_chord": 0.0010987857729196548,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-06
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      17
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.395306485821065,
+    "faults_found": 3,
+    "disagreement": 1e-06,
+    "middle": {
+     "mean_chord": 0.0010941083915531635,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 6e-06
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.5995486711007203,
+    "faults_found": 2,
+    "disagreement": 2e-06,
+    "middle": {
+     "mean_chord": 0.0008077561110258103,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.4206854458873712,
+    "faults_found": 3,
+    "disagreement": 1e-06,
+    "middle": {
+     "mean_chord": 0.0010987857729196548,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-06
+    }
+   }
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3702.9
+ },
+ {
+  "seed": 266,
+  "labels": 1096,
+  "triples": 11799,
+  "committee_size": 200,
+  "near": 28,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      6
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.527240446227346,
+    "faults_found": 3,
+    "disagreement": 2.2e-05,
+    "middle": {
+     "mean_chord": 0.0027920280769467352,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      6
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.527240446227346,
+    "faults_found": 3,
+    "disagreement": 2.2e-05,
+    "middle": {
+     "mean_chord": 0.0027920280769467352,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      22
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.5392853577077554,
+    "faults_found": 3,
+    "disagreement": 2.2e-05,
+    "middle": {
+     "mean_chord": 0.00279229985550046,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      6
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.5254974320433083,
+    "faults_found": 3,
+    "disagreement": 2.7e-05,
+    "middle": {
+     "mean_chord": 0.0027920300886034965,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      6
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.5254974320433083,
+    "faults_found": 3,
+    "disagreement": 2.7e-05,
+    "middle": {
+     "mean_chord": 0.0027920300886034965,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      6
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.5254974320433083,
+    "faults_found": 3,
+    "disagreement": 2.7e-05,
+    "middle": {
+     "mean_chord": 0.0027920300886034965,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1033.3
+ },
+ {
+  "seed": 267,
+  "labels": 1096,
+  "triples": 11133,
+  "committee_size": 200,
+  "near": 42,
+  "tied_top": 8,
+  "tied_top_refit": 8,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "weight",
+      30
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.568627363790162,
+    "faults_found": 2,
+    "disagreement": 1.2e-05,
+    "middle": {
+     "mean_chord": 0.0008654100447893142,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.1e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "hidden_weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7647295160842864,
+    "faults_found": 3,
+    "disagreement": 2.1e-05,
+    "middle": {
+     "mean_chord": 0.0008440609462559224,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.1e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "hidden_weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7647295160842864,
+    "faults_found": 3,
+    "disagreement": 2.1e-05,
+    "middle": {
+     "mean_chord": 0.0008440609462559224,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.1e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "weight",
+      30
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.343319398754185,
+    "faults_found": 2,
+    "disagreement": 1.3e-05,
+    "middle": {
+     "mean_chord": 0.0008437136188149452,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "hidden_weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7647295160842864,
+    "faults_found": 3,
+    "disagreement": 2.1e-05,
+    "middle": {
+     "mean_chord": 0.0008440609462559224,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.1e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      12
+     ],
+     [
+      "hidden_weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.210452301129383,
+    "faults_found": 2,
+    "disagreement": 1.2e-05,
+    "middle": {
+     "mean_chord": 0.0007890043593943119,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 9e-06
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 976.3
+ },
+ {
+  "seed": 268,
+  "labels": 1096,
+  "triples": 9087,
+  "committee_size": 200,
+  "near": 20,
+  "tied_top": 20,
+  "tied_top_refit": 20,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 4,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.465011950943299,
+    "faults_found": 2,
+    "disagreement": 8e-06,
+    "middle": {
+     "mean_chord": 0.0004731110855937004,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.95972646532963,
+    "faults_found": 2,
+    "disagreement": 2e-06,
+    "middle": {
+     "mean_chord": 0.0007460345514118671,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-06
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.9761496283692415,
+    "faults_found": 2,
+    "disagreement": 2e-06,
+    "middle": {
+     "mean_chord": 0.0007390941865742206,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-06
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.465011950943299,
+    "faults_found": 2,
+    "disagreement": 8e-06,
+    "middle": {
+     "mean_chord": 0.0004731110855937004,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.944797105928352,
+    "faults_found": 2,
+    "disagreement": 2e-06,
+    "middle": {
+     "mean_chord": 0.0007490057870745659,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-06
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.331186035119664,
+    "faults_found": 3,
+    "disagreement": 2e-06,
+    "middle": {
+     "mean_chord": 0.0007460381090641021,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-06
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 773.5
+ },
+ {
+  "seed": 269,
+  "labels": 1096,
+  "triples": 11969,
+  "committee_size": 1000,
+  "near": 861,
+  "tied_top": 2,
+  "tied_top_refit": 1,
+  "true_tied_top": false,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 14,
+  "true_accuracy": 0.9890510948905109,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 0.9890510948905109,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "weight",
+      2
+     ]
+    ],
+    "practice_accuracy": 0.9927007299270073,
+    "cost": 6.259139503490456,
+    "faults_found": 2,
+    "disagreement": 0.001163,
+    "middle": {
+     "mean_chord": 0.01545723244547844,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9927007299270073,
+     "disagreement": 0.001236
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "weight",
+      2
+     ]
+    ],
+    "practice_accuracy": 0.9927007299270073,
+    "cost": 6.259139503490456,
+    "faults_found": 2,
+    "disagreement": 0.001163,
+    "middle": {
+     "mean_chord": 0.01545723244547844,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9927007299270073,
+     "disagreement": 0.001236
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "weight",
+      18
+     ]
+    ],
+    "practice_accuracy": 0.9927007299270073,
+    "cost": 6.2591578925997045,
+    "faults_found": 2,
+    "disagreement": 0.001163,
+    "middle": {
+     "mean_chord": 0.015617283526808023,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9927007299270073,
+     "disagreement": 0.001246
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.512329003196665,
+    "faults_found": 3,
+    "disagreement": 6.1e-05,
+    "middle": {
+     "mean_chord": 0.009467615969479084,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000138
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.512329003196665,
+    "faults_found": 3,
+    "disagreement": 6.1e-05,
+    "middle": {
+     "mean_chord": 0.009467615969479084,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000138
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.512329003196665,
+    "faults_found": 3,
+    "disagreement": 6.1e-05,
+    "middle": {
+     "mean_chord": 0.009467615969479084,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000138
+    }
+   }
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1095.2
+ },
+ {
+  "seed": 270,
+  "labels": 1096,
+  "triples": 41230,
+  "committee_size": 200,
+  "near": 50,
+  "tied_top": 16,
+  "tied_top_refit": 16,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 2,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.747816410472562,
+    "faults_found": 2,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.002070858292281628,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.416591152003577,
+    "faults_found": 2,
+    "disagreement": 1.4e-05,
+    "middle": {
+     "mean_chord": 0.004197875317186117,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.2e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.4135926624570656,
+    "faults_found": 2,
+    "disagreement": 2.8e-05,
+    "middle": {
+     "mean_chord": 0.003930777180939913,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.9e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.745963722077893,
+    "faults_found": 2,
+    "disagreement": 2.8e-05,
+    "middle": {
+     "mean_chord": 0.0020943471416831018,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.8e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.412629306887226,
+    "faults_found": 2,
+    "disagreement": 3.3e-05,
+    "middle": {
+     "mean_chord": 0.00419787086546421,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.2e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.4124490926199935,
+    "faults_found": 2,
+    "disagreement": 3.3e-05,
+    "middle": {
+     "mean_chord": 0.003930804468691349,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.9e-05
+    }
+   }
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3818.9
+ },
+ {
+  "seed": 271,
+  "labels": 1096,
+  "triples": 13112,
+  "committee_size": 200,
+  "near": 8,
+  "tied_top": 8,
+  "tied_top_refit": 8,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      13
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.797298153809674,
+    "faults_found": 3,
+    "disagreement": 3e-06,
+    "middle": {
+     "mean_chord": 0.0006051171571016311,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.3e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      13
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.797298153809674,
+    "faults_found": 3,
+    "disagreement": 3e-06,
+    "middle": {
+     "mean_chord": 0.0006051171571016311,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.3e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      13
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7976271542080022,
+    "faults_found": 3,
+    "disagreement": 4e-06,
+    "middle": {
+     "mean_chord": 0.0005941314250230789,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.8e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "weight",
+      13
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.797218672580211,
+    "faults_found": 3,
+    "disagreement": 1e-06,
+    "middle": {
+     "mean_chord": 0.0006116970255970955,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.6e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      13
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.797298153809674,
+    "faults_found": 3,
+    "disagreement": 3e-06,
+    "middle": {
+     "mean_chord": 0.0006051171571016311,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.3e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "weight",
+      13
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.797218672580211,
+    "faults_found": 3,
+    "disagreement": 1e-06,
+    "middle": {
+     "mean_chord": 0.0006116970255970955,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.6e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1286.4
+ },
+ {
+  "seed": 272,
+  "labels": 1096,
+  "triples": 9278,
+  "committee_size": 200,
+  "near": 51,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 0.9972627737226277,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.942888247007084,
+    "faults_found": 3,
+    "disagreement": 5.6e-05,
+    "middle": {
+     "mean_chord": 0.0021429040469229223,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.774280730448537,
+    "faults_found": 3,
+    "disagreement": 0.000185,
+    "middle": {
+     "mean_chord": 0.002286287825554609,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000195
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.942888247007084,
+    "faults_found": 3,
+    "disagreement": 5.6e-05,
+    "middle": {
+     "mean_chord": 0.0021429040469229223,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.894131738019532,
+    "faults_found": 3,
+    "disagreement": 7.1e-05,
+    "middle": {
+     "mean_chord": 0.0021802438236773014,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 6.9e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.962605566743141,
+    "faults_found": 3,
+    "disagreement": 5e-05,
+    "middle": {
+     "mean_chord": 0.0022862907126545906,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.2e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.962605566743141,
+    "faults_found": 3,
+    "disagreement": 5e-05,
+    "middle": {
+     "mean_chord": 0.0022862907126545906,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.2e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 948.7
+ },
+ {
+  "seed": 273,
+  "labels": 1096,
+  "triples": 12432,
+  "committee_size": 200,
+  "near": 24,
+  "tied_top": 10,
+  "tied_top_refit": 10,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 8,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.8180577415136687,
+    "faults_found": 2,
+    "disagreement": 1.6e-05,
+    "middle": {
+     "mean_chord": 0.0006406141258776188,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.4e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.128397925288819,
+    "faults_found": 2,
+    "disagreement": 1.6e-05,
+    "middle": {
+     "mean_chord": 0.0008110587671399116,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.2e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.920164272076486,
+    "faults_found": 2,
+    "disagreement": 1.5e-05,
+    "middle": {
+     "mean_chord": 0.0007399549521505832,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.2e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.8180577415136687,
+    "faults_found": 2,
+    "disagreement": 1.6e-05,
+    "middle": {
+     "mean_chord": 0.0006406141258776188,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.4e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.128397925288819,
+    "faults_found": 2,
+    "disagreement": 1.6e-05,
+    "middle": {
+     "mean_chord": 0.0008110587671399116,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.2e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.920164272076486,
+    "faults_found": 2,
+    "disagreement": 1.5e-05,
+    "middle": {
+     "mean_chord": 0.0007399549521505832,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.2e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1320.7
+ },
+ {
+  "seed": 274,
+  "labels": 1096,
+  "triples": 11459,
+  "committee_size": 200,
+  "near": 2,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.50287137562059,
+    "faults_found": 3,
+    "disagreement": 4.3e-05,
+    "middle": {
+     "mean_chord": 0.0015586147457361222,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.5e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.504506399506496,
+    "faults_found": 3,
+    "disagreement": 5.3e-05,
+    "middle": {
+     "mean_chord": 0.0016072126477956771,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.5e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.50287137562059,
+    "faults_found": 3,
+    "disagreement": 4.3e-05,
+    "middle": {
+     "mean_chord": 0.0015586147457361222,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.5e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.5000926768416,
+    "faults_found": 3,
+    "disagreement": 7.8e-05,
+    "middle": {
+     "mean_chord": 0.001607205420732498,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.5e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.5000926768416,
+    "faults_found": 3,
+    "disagreement": 7.8e-05,
+    "middle": {
+     "mean_chord": 0.001607205420732498,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.5e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.5000926768416,
+    "faults_found": 3,
+    "disagreement": 7.8e-05,
+    "middle": {
+     "mean_chord": 0.001607205420732498,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.5e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 986.9
+ },
+ {
+  "seed": 275,
+  "labels": 1096,
+  "triples": 9205,
+  "committee_size": 1000,
+  "near": 237,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      7
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.190674565577654,
+    "faults_found": 3,
+    "disagreement": 5.2e-05,
+    "middle": {
+     "mean_chord": 0.001578522827476263,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.19545114598666,
+    "faults_found": 3,
+    "disagreement": 2.7e-05,
+    "middle": {
+     "mean_chord": 0.0014571479521691799,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.4e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      7
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.190674565577654,
+    "faults_found": 3,
+    "disagreement": 5.2e-05,
+    "middle": {
+     "mean_chord": 0.001578522827476263,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      7
+     ],
+     [
+      "weight",
+      16
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.190674565577654,
+    "faults_found": 3,
+    "disagreement": 5.2e-05,
+    "middle": {
+     "mean_chord": 0.001578522827476263,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.19545114598666,
+    "faults_found": 3,
+    "disagreement": 2.7e-05,
+    "middle": {
+     "mean_chord": 0.0014571479521691799,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.4e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      30
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.192143602117756,
+    "faults_found": 3,
+    "disagreement": 4.5e-05,
+    "middle": {
+     "mean_chord": 0.0017528192512691022,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.8e-05
+    }
+   }
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 898.9
+ },
+ {
+  "seed": 276,
+  "labels": 1096,
+  "triples": 12946,
+  "committee_size": 200,
+  "near": 62,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.21512328091766,
+    "faults_found": 3,
+    "disagreement": 3.8e-05,
+    "middle": {
+     "mean_chord": 0.0008836708217859268,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 6.7e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.216079056325037,
+    "faults_found": 3,
+    "disagreement": 1.3e-05,
+    "middle": {
+     "mean_chord": 0.0009510381147265434,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.6e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.216079056325037,
+    "faults_found": 3,
+    "disagreement": 1.3e-05,
+    "middle": {
+     "mean_chord": 0.0009510381147265434,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.6e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.21417873708552,
+    "faults_found": 3,
+    "disagreement": 5.2e-05,
+    "middle": {
+     "mean_chord": 0.0008638355322182178,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 6.6e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.214806366458367,
+    "faults_found": 3,
+    "disagreement": 4.7e-05,
+    "middle": {
+     "mean_chord": 0.0009333298169076443,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.214806366458367,
+    "faults_found": 3,
+    "disagreement": 4.7e-05,
+    "middle": {
+     "mean_chord": 0.0009333298169076443,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1213.0
+ },
+ {
+  "seed": 277,
+  "labels": 1096,
+  "triples": 9793,
+  "committee_size": 200,
+  "near": 84,
+  "tied_top": 11,
+  "tied_top_refit": 14,
+  "true_tied_top": false,
+  "true_tied_top_refit": false,
+  "committee_has_true_triple": true,
+  "true_rank": 47,
+  "true_accuracy": 0.9990875912408759,
+  "true_accuracy_refit": 0.9990875912408759,
+  "true_from_current": 0.9835766423357665,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      6
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7101705336322777,
+    "faults_found": 2,
+    "disagreement": 4e-06,
+    "middle": {
+     "mean_chord": 0.00041350644081830976,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      6
+     ],
+     [
+      "hidden_weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7184329789122175,
+    "faults_found": 2,
+    "disagreement": 1e-05,
+    "middle": {
+     "mean_chord": 0.000860697366297245,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.2e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      6
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7101705336322777,
+    "faults_found": 2,
+    "disagreement": 4e-06,
+    "middle": {
+     "mean_chord": 0.00041350644081830976,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      6
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7101611735496833,
+    "faults_found": 2,
+    "disagreement": 3e-06,
+    "middle": {
+     "mean_chord": 0.00041387844830751417,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      6
+     ],
+     [
+      "hidden_weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7177971189963186,
+    "faults_found": 2,
+    "disagreement": 9e-06,
+    "middle": {
+     "mean_chord": 0.0008606935665011406,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.2e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      6
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7101611735496833,
+    "faults_found": 2,
+    "disagreement": 3e-06,
+    "middle": {
+     "mean_chord": 0.00041387844830751417,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 844.9
+ },
+ {
+  "seed": 278,
+  "labels": 1096,
+  "triples": 11836,
+  "committee_size": 1000,
+  "near": 28,
+  "tied_top": 8,
+  "tied_top_refit": 8,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      14
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.640651532034603,
+    "faults_found": 3,
+    "disagreement": 3.4e-05,
+    "middle": {
+     "mean_chord": 0.001619233191013336,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.7e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.641280799523296,
+    "faults_found": 3,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0015111974999308586,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.8e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      30
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.646968330954974,
+    "faults_found": 3,
+    "disagreement": 2.3e-05,
+    "middle": {
+     "mean_chord": 0.0015199147909879685,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.3e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      14
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.640651532034603,
+    "faults_found": 3,
+    "disagreement": 3.4e-05,
+    "middle": {
+     "mean_chord": 0.001619233191013336,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.7e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.641280799523296,
+    "faults_found": 3,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0015111974999308586,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.8e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.641280799523296,
+    "faults_found": 3,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0015111974999308586,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.8e-05
+    }
+   }
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1075.3
+ },
+ {
+  "seed": 279,
+  "labels": 1096,
+  "triples": 41101,
+  "committee_size": 200,
+  "near": 22,
+  "tied_top": 6,
+  "tied_top_refit": 6,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 0.9534671532846716,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      28
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      31
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.9953084102012566,
+    "faults_found": 2,
+    "disagreement": 9.4e-05,
+    "middle": {
+     "mean_chord": 0.0009634743444621563,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.6e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      28
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7967570323948117,
+    "faults_found": 3,
+    "disagreement": 5.4e-05,
+    "middle": {
+     "mean_chord": 0.0009064710885286332,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.4e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      28
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7967570323948117,
+    "faults_found": 3,
+    "disagreement": 5.4e-05,
+    "middle": {
+     "mean_chord": 0.0009064710885286332,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.4e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      28
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      31
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.9952568518093305,
+    "faults_found": 2,
+    "disagreement": 7.9e-05,
+    "middle": {
+     "mean_chord": 0.0009634670242667198,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.6e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      28
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7967570323948117,
+    "faults_found": 3,
+    "disagreement": 5.4e-05,
+    "middle": {
+     "mean_chord": 0.0009064710885286332,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.4e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "hidden_weight",
+      28
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7967570323948117,
+    "faults_found": 3,
+    "disagreement": 5.4e-05,
+    "middle": {
+     "mean_chord": 0.0009064710885286332,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.4e-05
+    }
+   }
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 4015.3
+ },
+ {
+  "seed": 280,
+  "labels": 1096,
+  "triples": 12427,
+  "committee_size": 200,
+  "near": 4,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.9162642437110105,
+    "faults_found": 3,
+    "disagreement": 9.2e-05,
+    "middle": {
+     "mean_chord": 0.0006978112645447254,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.2e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.9162642437110105,
+    "faults_found": 3,
+    "disagreement": 9.2e-05,
+    "middle": {
+     "mean_chord": 0.0006978112645447254,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.2e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      25
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.925703379607162,
+    "faults_found": 3,
+    "disagreement": 2.1e-05,
+    "middle": {
+     "mean_chord": 0.0007240814343094826,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 7.3e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      25
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.914692937016577,
+    "faults_found": 3,
+    "disagreement": 9.7e-05,
+    "middle": {
+     "mean_chord": 0.00072350287809968,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 7.3e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.9162642437110105,
+    "faults_found": 3,
+    "disagreement": 9.2e-05,
+    "middle": {
+     "mean_chord": 0.0006978112645447254,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.2e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.919178673447835,
+    "faults_found": 3,
+    "disagreement": 6.6e-05,
+    "middle": {
+     "mean_chord": 0.0006552626751363277,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1265.3
+ },
+ {
+  "seed": 281,
+  "labels": 1096,
+  "triples": 41902,
+  "committee_size": 200,
+  "near": 15,
+  "tied_top": 3,
+  "tied_top_refit": 3,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.814295545894324,
+    "faults_found": 3,
+    "disagreement": 0.000112,
+    "middle": {
+     "mean_chord": 0.011206179708242416,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.814295545894324,
+    "faults_found": 3,
+    "disagreement": 0.000112,
+    "middle": {
+     "mean_chord": 0.011206179708242416,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.883976115729079,
+    "faults_found": 3,
+    "disagreement": 6e-05,
+    "middle": {
+     "mean_chord": 0.01151590045541525,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.1e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.814295545894324,
+    "faults_found": 3,
+    "disagreement": 0.000112,
+    "middle": {
+     "mean_chord": 0.011206179708242416,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.814295545894324,
+    "faults_found": 3,
+    "disagreement": 0.000112,
+    "middle": {
+     "mean_chord": 0.011206179708242416,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.832350818199004,
+    "faults_found": 3,
+    "disagreement": 0.000102,
+    "middle": {
+     "mean_chord": 0.011515851207077503,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.1e-05
+    }
+   }
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 4099.2
+ },
+ {
+  "seed": 282,
+  "labels": 1096,
+  "triples": 12855,
+  "committee_size": 200,
+  "near": 36,
+  "tied_top": 16,
+  "tied_top_refit": 16,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.788302612479415,
+    "faults_found": 2,
+    "disagreement": 1.1e-05,
+    "middle": {
+     "mean_chord": 0.00031643588095903397,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.9e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.649405634389661,
+    "faults_found": 3,
+    "disagreement": 1.1e-05,
+    "middle": {
+     "mean_chord": 0.0009506318904459476,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.9e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.649405634389661,
+    "faults_found": 3,
+    "disagreement": 1.1e-05,
+    "middle": {
+     "mean_chord": 0.0009506318904459476,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.9e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      13
+     ],
+     [
+      "weight",
+      18
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.7882008582785773,
+    "faults_found": 2,
+    "disagreement": 1.1e-05,
+    "middle": {
+     "mean_chord": 0.00031120151281356813,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.649405634389661,
+    "faults_found": 3,
+    "disagreement": 1.1e-05,
+    "middle": {
+     "mean_chord": 0.0009506318904459476,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.9e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.649405634389661,
+    "faults_found": 3,
+    "disagreement": 1.1e-05,
+    "middle": {
+     "mean_chord": 0.0009506318904459476,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.9e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1175.8
+ },
+ {
+  "seed": 283,
+  "labels": 1096,
+  "triples": 9323,
+  "committee_size": 1000,
+  "near": 58,
+  "tied_top": 8,
+  "tied_top_refit": 8,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 0.968978102189781,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.3773223088366047,
+    "faults_found": 2,
+    "disagreement": 3.5e-05,
+    "middle": {
+     "mean_chord": 0.0008446172438561916,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.101962051707037,
+    "faults_found": 3,
+    "disagreement": 3.5e-05,
+    "middle": {
+     "mean_chord": 0.0012867549806833266,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.101986154497604,
+    "faults_found": 3,
+    "disagreement": 3.5e-05,
+    "middle": {
+     "mean_chord": 0.001255114432424307,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.7e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.377293711210251,
+    "faults_found": 2,
+    "disagreement": 3.5e-05,
+    "middle": {
+     "mean_chord": 0.0007461810111999512,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.7e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.101962051707037,
+    "faults_found": 3,
+    "disagreement": 3.5e-05,
+    "middle": {
+     "mean_chord": 0.0012867549806833266,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.101984539589998,
+    "faults_found": 3,
+    "disagreement": 3.5e-05,
+    "middle": {
+     "mean_chord": 0.0012551334872841836,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.7e-05
+    }
+   }
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 827.0
+ },
+ {
+  "seed": 284,
+  "labels": 1096,
+  "triples": 12029,
+  "committee_size": 200,
+  "near": 6,
+  "tied_top": 1,
+  "tied_top_refit": 1,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "hidden_weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 6.310556369553538,
+    "faults_found": 3,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.0004259023442864418,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.3e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "hidden_weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 6.310556369553538,
+    "faults_found": 3,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.0004259023442864418,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.3e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "hidden_weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 6.310556369553538,
+    "faults_found": 3,
+    "disagreement": 2.4e-05,
+    "middle": {
+     "mean_chord": 0.0004259023442864418,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.3e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "hidden_weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 6.309584839888801,
+    "faults_found": 3,
+    "disagreement": 2.2e-05,
+    "middle": {
+     "mean_chord": 0.0004220895282924175,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.3e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "hidden_weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 6.309584839888801,
+    "faults_found": 3,
+    "disagreement": 2.2e-05,
+    "middle": {
+     "mean_chord": 0.0004220895282924175,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.3e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      26
+     ],
+     [
+      "hidden_weight",
+      29
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 6.309584839888801,
+    "faults_found": 3,
+    "disagreement": 2.2e-05,
+    "middle": {
+     "mean_chord": 0.0004220895282924175,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.3e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1204.1
+ },
+ {
+  "seed": 285,
+  "labels": 1096,
+  "triples": 10404,
+  "committee_size": 200,
+  "near": 98,
+  "tied_top": 70,
+  "tied_top_refit": 75,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 55,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.839074303800204,
+    "faults_found": 2,
+    "disagreement": 1.2e-05,
+    "middle": {
+     "mean_chord": 0.0007403107546269894,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 9e-06
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.862302206971734,
+    "faults_found": 2,
+    "disagreement": 5e-06,
+    "middle": {
+     "mean_chord": 0.001615246720612049,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 6e-06
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.845325258120635,
+    "faults_found": 2,
+    "disagreement": 2e-05,
+    "middle": {
+     "mean_chord": 0.001380127128213644,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.4e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.7903309374921657,
+    "faults_found": 2,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0007245130836963654,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.8e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.8618258151204055,
+    "faults_found": 2,
+    "disagreement": 5e-06,
+    "middle": {
+     "mean_chord": 0.0015984193235635757,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5e-06
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.7903309374921657,
+    "faults_found": 2,
+    "disagreement": 3.2e-05,
+    "middle": {
+     "mean_chord": 0.0007245130836963654,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.8e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 907.1
+ },
+ {
+  "seed": 286,
+  "labels": 1096,
+  "triples": 13608,
+  "committee_size": 200,
+  "near": 16,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.351581935322933,
+    "faults_found": 3,
+    "disagreement": 2.3e-05,
+    "middle": {
+     "mean_chord": 0.0010615605115890502,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.6e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.351581935322933,
+    "faults_found": 3,
+    "disagreement": 2.3e-05,
+    "middle": {
+     "mean_chord": 0.0010615605115890502,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.6e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.351581935322933,
+    "faults_found": 3,
+    "disagreement": 2.3e-05,
+    "middle": {
+     "mean_chord": 0.0010615605115890502,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.6e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      16
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.3515050584565795,
+    "faults_found": 3,
+    "disagreement": 1.6e-05,
+    "middle": {
+     "mean_chord": 0.0010762956179678441,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.8e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.351581935322933,
+    "faults_found": 3,
+    "disagreement": 2.3e-05,
+    "middle": {
+     "mean_chord": 0.0010615605115890502,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.6e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.351581935322933,
+    "faults_found": 3,
+    "disagreement": 2.3e-05,
+    "middle": {
+     "mean_chord": 0.0010615605115890502,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.6e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1130.3
+ },
+ {
+  "seed": 287,
+  "labels": 1096,
+  "triples": 11892,
+  "committee_size": 200,
+  "near": 200,
+  "tied_top": 56,
+  "tied_top_refit": 57,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.076682282824567,
+    "faults_found": 1,
+    "disagreement": 0.000325,
+    "middle": {
+     "mean_chord": 0.00342476112768054,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000367
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.667093267785951,
+    "faults_found": 3,
+    "disagreement": 0.000844,
+    "middle": {
+     "mean_chord": 0.01736798670142889,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9981751824817519,
+     "disagreement": 0.000292
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.0780035628857845,
+    "faults_found": 1,
+    "disagreement": 0.000348,
+    "middle": {
+     "mean_chord": 0.0034149068780243395,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.00036
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      11
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.0764829463280683,
+    "faults_found": 1,
+    "disagreement": 0.000333,
+    "middle": {
+     "mean_chord": 0.003382715657353401,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000354
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.628111998445572,
+    "faults_found": 3,
+    "disagreement": 0.000677,
+    "middle": {
+     "mean_chord": 0.017367999497801066,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9981751824817519,
+     "disagreement": 0.000292
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      12
+     ],
+     [
+      "weight",
+      25
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 2.103371257382104,
+    "faults_found": 1,
+    "disagreement": 0.000319,
+    "middle": {
+     "mean_chord": 0.003957087807357311,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000353
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1204.2
+ },
+ {
+  "seed": 288,
+  "labels": 1096,
+  "triples": 12589,
+  "committee_size": 200,
+  "near": 4,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      18
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.81524128563391,
+    "faults_found": 3,
+    "disagreement": 3.4e-05,
+    "middle": {
+     "mean_chord": 0.0011350337415933609,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.8e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      5
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.815404131266979,
+    "faults_found": 3,
+    "disagreement": 3.3e-05,
+    "middle": {
+     "mean_chord": 0.0010323758982121944,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.4e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      18
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.815279883035696,
+    "faults_found": 3,
+    "disagreement": 3.3e-05,
+    "middle": {
+     "mean_chord": 0.0010634253546595574,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.8152339201736885,
+    "faults_found": 3,
+    "disagreement": 3.4e-05,
+    "middle": {
+     "mean_chord": 0.0011618483252823352,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      5
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.815365199757828,
+    "faults_found": 3,
+    "disagreement": 3.3e-05,
+    "middle": {
+     "mean_chord": 0.0010325634479522706,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.4e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      5
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.815365199757828,
+    "faults_found": 3,
+    "disagreement": 3.3e-05,
+    "middle": {
+     "mean_chord": 0.0010325634479522706,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.4e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1189.6
+ },
+ {
+  "seed": 289,
+  "labels": 1096,
+  "triples": 12245,
+  "committee_size": 200,
+  "near": 4,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.018169180552793,
+    "faults_found": 3,
+    "disagreement": 1.7e-05,
+    "middle": {
+     "mean_chord": 0.00079786766320467,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.6e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      19
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.01833009052007,
+    "faults_found": 3,
+    "disagreement": 1.5e-05,
+    "middle": {
+     "mean_chord": 0.0008216477558016778,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.8e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      19
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.01833009052007,
+    "faults_found": 3,
+    "disagreement": 1.5e-05,
+    "middle": {
+     "mean_chord": 0.0008216477558016778,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.8e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.018043242219245,
+    "faults_found": 3,
+    "disagreement": 1.8e-05,
+    "middle": {
+     "mean_chord": 0.0008520615659654141,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.6e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      19
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.018271715002438,
+    "faults_found": 3,
+    "disagreement": 1.6e-05,
+    "middle": {
+     "mean_chord": 0.0008216370642185211,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.8e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      19
+     ],
+     [
+      "weight",
+      26
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.018271715002438,
+    "faults_found": 3,
+    "disagreement": 1.6e-05,
+    "middle": {
+     "mean_chord": 0.0008216370642185211,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.8e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1250.4
+ },
+ {
+  "seed": 290,
+  "labels": 1096,
+  "triples": 13490,
+  "committee_size": 1000,
+  "near": 3,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.704409483349744,
+    "faults_found": 3,
+    "disagreement": 1e-05,
+    "middle": {
+     "mean_chord": 0.0034188554994761945,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.704409483349744,
+    "faults_found": 3,
+    "disagreement": 1e-05,
+    "middle": {
+     "mean_chord": 0.0034188554994761945,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.704409483349744,
+    "faults_found": 3,
+    "disagreement": 1e-05,
+    "middle": {
+     "mean_chord": 0.0034188554994761945,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.698362379829127,
+    "faults_found": 3,
+    "disagreement": 2.8e-05,
+    "middle": {
+     "mean_chord": 0.0034188455156981944,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.698362379829127,
+    "faults_found": 3,
+    "disagreement": 2.8e-05,
+    "middle": {
+     "mean_chord": 0.0034188455156981944,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.698362379829127,
+    "faults_found": 3,
+    "disagreement": 2.8e-05,
+    "middle": {
+     "mean_chord": 0.0034188455156981944,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.4e-05
+    }
+   }
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1172.1
+ },
+ {
+  "seed": 291,
+  "labels": 1096,
+  "triples": 9545,
+  "committee_size": 1000,
+  "near": 99,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.9284036953471793,
+    "faults_found": 3,
+    "disagreement": 7.7e-05,
+    "middle": {
+     "mean_chord": 0.002687544170767069,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.7e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.96401090193655,
+    "faults_found": 3,
+    "disagreement": 0.000102,
+    "middle": {
+     "mean_chord": 0.0027158741094172,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8.1e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.96401090193655,
+    "faults_found": 3,
+    "disagreement": 0.000102,
+    "middle": {
+     "mean_chord": 0.0027158741094172,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8.1e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.9284036953471793,
+    "faults_found": 3,
+    "disagreement": 7.7e-05,
+    "middle": {
+     "mean_chord": 0.002687544170767069,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.7e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.931017621540586,
+    "faults_found": 3,
+    "disagreement": 7.6e-05,
+    "middle": {
+     "mean_chord": 0.0027191748842597006,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 3.931017621540586,
+    "faults_found": 3,
+    "disagreement": 7.6e-05,
+    "middle": {
+     "mean_chord": 0.0027191748842597006,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-05
+    }
+   }
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 982.6
+ },
+ {
+  "seed": 292,
+  "labels": 1096,
+  "triples": 13430,
+  "committee_size": 1000,
+  "near": 56,
+  "tied_top": 1,
+  "tied_top_refit": 1,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 0.9790145985401459,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "hidden_weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.706994684302268,
+    "faults_found": 3,
+    "disagreement": 6.7e-05,
+    "middle": {
+     "mean_chord": 0.002728061135858297,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "hidden_weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.706994684302268,
+    "faults_found": 3,
+    "disagreement": 6.7e-05,
+    "middle": {
+     "mean_chord": 0.002728061135858297,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "hidden_weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.706994684302268,
+    "faults_found": 3,
+    "disagreement": 6.7e-05,
+    "middle": {
+     "mean_chord": 0.002728061135858297,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "hidden_weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.706994684302268,
+    "faults_found": 3,
+    "disagreement": 6.7e-05,
+    "middle": {
+     "mean_chord": 0.002728061135858297,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "hidden_weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.706994684302268,
+    "faults_found": 3,
+    "disagreement": 6.7e-05,
+    "middle": {
+     "mean_chord": 0.002728061135858297,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      14
+     ],
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "hidden_weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.706994684302268,
+    "faults_found": 3,
+    "disagreement": 6.7e-05,
+    "middle": {
+     "mean_chord": 0.002728061135858297,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.6e-05
+    }
+   }
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1492.0
+ },
+ {
+  "seed": 293,
+  "labels": 1096,
+  "triples": 11894,
+  "committee_size": 200,
+  "near": 56,
+  "tied_top": 1,
+  "tied_top_refit": 1,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      24
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.1510724929186,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.005744076762348413,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      24
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.1510724929186,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.005744076762348413,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      24
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.1510724929186,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.005744076762348413,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      24
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.1510724929186,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.005744076762348413,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      24
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.1510724929186,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.005744076762348413,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      24
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.1510724929186,
+    "faults_found": 3,
+    "disagreement": 4.6e-05,
+    "middle": {
+     "mean_chord": 0.005744076762348413,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 5.7e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1134.4
+ },
+ {
+  "seed": 294,
+  "labels": 1096,
+  "triples": 13750,
+  "committee_size": 200,
+  "near": 69,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.19711584750879,
+    "faults_found": 3,
+    "disagreement": 4e-06,
+    "middle": {
+     "mean_chord": 0.0005840426310896873,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.19711584750879,
+    "faults_found": 3,
+    "disagreement": 4e-06,
+    "middle": {
+     "mean_chord": 0.0005840426310896873,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.19711584750879,
+    "faults_found": 3,
+    "disagreement": 4e-06,
+    "middle": {
+     "mean_chord": 0.0005840426310896873,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.196305577416107,
+    "faults_found": 3,
+    "disagreement": 1.1e-05,
+    "middle": {
+     "mean_chord": 0.0005839770473539829,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.196305577416107,
+    "faults_found": 3,
+    "disagreement": 1.1e-05,
+    "middle": {
+     "mean_chord": 0.0005839770473539829,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.196305577416107,
+    "faults_found": 3,
+    "disagreement": 1.1e-05,
+    "middle": {
+     "mean_chord": 0.0005839770473539829,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 8e-06
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1387.1
+ },
+ {
+  "seed": 295,
+  "labels": 1096,
+  "triples": 9247,
+  "committee_size": 200,
+  "near": 6,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_bias",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.790162032805979,
+    "faults_found": 3,
+    "disagreement": 6e-06,
+    "middle": {
+     "mean_chord": 0.00267998993396759,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_bias",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.794041148315146,
+    "faults_found": 3,
+    "disagreement": 2.1e-05,
+    "middle": {
+     "mean_chord": 0.0026579429022967815,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_bias",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.790162032805979,
+    "faults_found": 3,
+    "disagreement": 6e-06,
+    "middle": {
+     "mean_chord": 0.00267998993396759,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_bias",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.78972116116741,
+    "faults_found": 3,
+    "disagreement": 1.7e-05,
+    "middle": {
+     "mean_chord": 0.002679999265819788,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_bias",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.794041148315146,
+    "faults_found": 3,
+    "disagreement": 2.1e-05,
+    "middle": {
+     "mean_chord": 0.0026579429022967815,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      13
+     ],
+     [
+      "hidden_bias",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.78972116116741,
+    "faults_found": 3,
+    "disagreement": 1.7e-05,
+    "middle": {
+     "mean_chord": 0.002679999265819788,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1035.9
+ },
+ {
+  "seed": 296,
+  "labels": 1096,
+  "triples": 47708,
+  "committee_size": 200,
+  "near": 2,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": false,
+  "true_tied_top_refit": false,
+  "committee_has_true_triple": false,
+  "true_rank": null,
+  "true_accuracy": null,
+  "true_accuracy_refit": null,
+  "true_from_current": 0.9552919708029197,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 0.9917883211678832,
+    "cost": 3.5714843073579043,
+    "faults_found": 2,
+    "disagreement": 0.008091,
+    "middle": {
+     "mean_chord": 0.0016765542328357696,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9908759124087592,
+     "disagreement": 0.008081
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9917883211678832,
+    "cost": 3.57148729534914,
+    "faults_found": 2,
+    "disagreement": 0.008091,
+    "middle": {
+     "mean_chord": 0.0017061129771173001,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9908759124087592,
+     "disagreement": 0.008074
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 0.9917883211678832,
+    "cost": 3.5714843073579043,
+    "faults_found": 2,
+    "disagreement": 0.008091,
+    "middle": {
+     "mean_chord": 0.0016765542328357696,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9908759124087592,
+     "disagreement": 0.008081
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9917883211678832,
+    "cost": 3.571472856892053,
+    "faults_found": 2,
+    "disagreement": 0.008087,
+    "middle": {
+     "mean_chord": 0.0017095394246280193,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9908759124087592,
+     "disagreement": 0.008077
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9917883211678832,
+    "cost": 3.571472856892053,
+    "faults_found": 2,
+    "disagreement": 0.008087,
+    "middle": {
+     "mean_chord": 0.0017095394246280193,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9908759124087592,
+     "disagreement": 0.008077
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 0.9917883211678832,
+    "cost": 3.571477996327216,
+    "faults_found": 2,
+    "disagreement": 0.008091,
+    "middle": {
+     "mean_chord": 0.0016775371134281159,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9908759124087592,
+     "disagreement": 0.008081
+    }
+   }
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3800.8
+ },
+ {
+  "seed": 297,
+  "labels": 1096,
+  "triples": 12926,
+  "committee_size": 1000,
+  "near": 59,
+  "tied_top": 2,
+  "tied_top_refit": 2,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 1.0,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.668240052356703,
+    "faults_found": 3,
+    "disagreement": 5e-05,
+    "middle": {
+     "mean_chord": 0.005056231655180455,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.668240052356703,
+    "faults_found": 3,
+    "disagreement": 5e-05,
+    "middle": {
+     "mean_chord": 0.005056231655180455,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.668240052356703,
+    "faults_found": 3,
+    "disagreement": 5e-05,
+    "middle": {
+     "mean_chord": 0.005056231655180455,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.668240052356703,
+    "faults_found": 3,
+    "disagreement": 5e-05,
+    "middle": {
+     "mean_chord": 0.005056231655180455,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.668240052356703,
+    "faults_found": 3,
+    "disagreement": 5e-05,
+    "middle": {
+     "mean_chord": 0.005056231655180455,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.668240052356703,
+    "faults_found": 3,
+    "disagreement": 5e-05,
+    "middle": {
+     "mean_chord": 0.005056231655180455,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.1e-05
+    }
+   }
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1200.2
+ },
+ {
+  "seed": 298,
+  "labels": 1096,
+  "triples": 9079,
+  "committee_size": 200,
+  "near": 55,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 0.989963503649635,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.538879595217184,
+    "faults_found": 3,
+    "disagreement": 3.4e-05,
+    "middle": {
+     "mean_chord": 0.003347323555499315,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.6e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.538879595217184,
+    "faults_found": 3,
+    "disagreement": 3.4e-05,
+    "middle": {
+     "mean_chord": 0.003347323555499315,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.6e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.541958141702055,
+    "faults_found": 3,
+    "disagreement": 2.7e-05,
+    "middle": {
+     "mean_chord": 0.0033085618168115618,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.5e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.538879595217184,
+    "faults_found": 3,
+    "disagreement": 3.4e-05,
+    "middle": {
+     "mean_chord": 0.003347323555499315,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.6e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.538879595217184,
+    "faults_found": 3,
+    "disagreement": 3.4e-05,
+    "middle": {
+     "mean_chord": 0.003347323555499315,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 3.6e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.541958141702055,
+    "faults_found": 3,
+    "disagreement": 2.7e-05,
+    "middle": {
+     "mean_chord": 0.0033085618168115618,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 4.5e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 973.4
+ },
+ {
+  "seed": 299,
+  "labels": 1096,
+  "triples": 11138,
+  "committee_size": 200,
+  "near": 12,
+  "tied_top": 4,
+  "tied_top_refit": 4,
+  "true_tied_top": true,
+  "true_tied_top_refit": true,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "true_accuracy_refit": 1.0,
+  "true_from_current": 0.9607664233576643,
+  "true_from_clean": 1.0,
+  "rules": {
+   "cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.005776629632626,
+    "faults_found": 3,
+    "disagreement": 5.2e-05,
+    "middle": {
+     "mean_chord": 0.004320759512484074,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.010625224159005,
+    "faults_found": 3,
+    "disagreement": 6.5e-05,
+    "middle": {
+     "mean_chord": 0.00432298107072711,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.005776629632626,
+    "faults_found": 3,
+    "disagreement": 5.2e-05,
+    "middle": {
+     "mean_chord": 0.004320759512484074,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "refit-cost": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.005776629632626,
+    "faults_found": 3,
+    "disagreement": 5.2e-05,
+    "middle": {
+     "mean_chord": 0.004320759512484074,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "refit-coarse": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.009142105985027,
+    "faults_found": 3,
+    "disagreement": 6e-05,
+    "middle": {
+     "mean_chord": 0.004322980251163244,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   },
+   "refit-largest-edit": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.005776629632626,
+    "faults_found": 3,
+    "disagreement": 5.2e-05,
+    "middle": {
+     "mean_chord": 0.004320759512484074,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.5e-05
+    }
+   }
+  },
+  "stage_options": {},
+  "seconds": 1070.1
+ }
+]
