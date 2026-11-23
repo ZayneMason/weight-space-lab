@@ -655,6 +655,46 @@ class EarlyValuesTests(unittest.TestCase):
         silent = [r["seed"] for r in rows if len(r["rounds"]) > 1 and all(v["splitting"] == 0 for v in r["rounds"][1:])]
         self.assertEqual(len(silent), 19)
 
+    def test_tied_agree_fold_and_check(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from tied_agree import check, fold, mirrors_expected
+        self.assertEqual(fold(("weight", 21), 16), fold(("weight", 5), 16))  # logit 1's weight folds onto logit 0's
+        self.assertEqual(fold(("bias", 1), 16), ("bias", 0))
+        self.assertEqual(fold(("hidden_weight", 21), 16), ("hidden_weight", 21))
+        self.assertEqual(mirrors_expected([["weight", 3], ["bias", 1], ["hidden_bias", 2]], 16), 4)
+        member = lambda mirror, d, extra=(): {"mirror": mirror, "vs_winner": d, "extra": list(extra)}
+        extra = {"layer": "hidden_bias", "state": "mixed", "size": 0.05}
+        rows = {1: {"seconds": 3600.0, "winner": [["weight", 3], ["hidden_bias", 0], ["hidden_bias", 1]],
+                    "rounds": [{"winner": [[1]]}], "members": [member(True, 0.0), member(True, 2e-5)]},
+                2: {"seconds": 3600.0, "winner": [["hidden_bias", 0], ["hidden_bias", 1], ["hidden_bias", 2]],
+                    "rounds": [{"winner": [[2]]}], "members": [member(True, 0.0), member(False, 0.0, [extra])]}}
+        before = {1: {"rounds": [{"winner": [[1]]}]}, 2: {"rounds": [{"winner": [[3]]}]}}
+        out = check(rows, before, {1: [0.1, 0.2, 0.3], 2: [0.1, 0.0, 0.3]})
+        self.assertEqual(out["cpu_hours"], 2.0)
+        self.assertEqual(out["matches_68"], 1)
+        self.assertEqual((out["tied_members"], out["mirror_members"], out["same_on_probe_members"]), (4, 3, 3))
+        self.assertEqual(out["all_mirrors"], [1])
+        self.assertEqual(out["all_same_on_probe"], [2])
+        self.assertEqual(out["more_than_mirrors"], [2])
+        self.assertEqual(out["with_silent_fault"], [2])
+        self.assertEqual(out["extra_entry_kinds"], {"hidden_bias:mixed": 1})
+        self.assertEqual(out["per_case"]["1"]["mirrors_expected"], 2)
+        self.assertIsNone(out["per_case"]["1"]["extra_size_median"])
+
+    def test_tied_agree_evidence(self):
+        import json
+        here = ROOT / "experiments/locate-repair/evidence/tied-agree"
+        check = json.loads((here / "check.json").read_text())
+        self.assertEqual(check["seeds"], 41)
+        self.assertEqual(check["matches_68"], 41)
+        self.assertEqual((check["tied_members"], check["mirror_members"], check["same_on_probe_members"]),
+                         (672, 134, 242))
+        self.assertEqual(len(check["all_mirrors"]), 28)
+        self.assertEqual(check["over_0.01%_from_winner"], [])
+        self.assertEqual(check["with_silent_fault"], [253, 254, 277, 285])
+        self.assertEqual(len(check["more_than_mirrors"]), 13)
+        self.assertTrue(all(v["mirrors"] == v["mirrors_expected"] for v in check["per_case"].values()))
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
