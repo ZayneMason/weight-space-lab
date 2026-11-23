@@ -1332,12 +1332,28 @@ cross each way.
 
 After #65's region-split labels, 9 of 50 cases are still over 0.01%. 7 of them edit at least one wrong weight, and
 none of those 7 committees contains the true triple, so more labels on the same committee cannot help. The
-committee was screened from the 1,088 practice and targeted labels the repair started with. #65 wrote every case's
-final 1,096 labels to disk. Rerun the pair screen and the triple committee on those labels for all 50 cases of
+committee was screened from the 1,024 practice labels alone. #65 wrote every case's final labels to disk: those
+1,024, the 64 asked during the repair, and the 8 region-split inputs, 1,096 in all. Rerun the pair screen and the triple committee on those labels for all 50 cases of
 seeds 250 to 299, refit, pick the winner and take its middle. Report how often the true triple enters a committee
 that lacked it, exact repairs, the shares under 0.01%, and any case that gets worse.
 
 **Cost.** CPU, about 10 core-hours.
+
+**Status (November 23): done, see [REBUILD_COMMITTEE.md](../experiments/locate-repair/REBUILD_COMMITTEE.md).**
+
+## 67. Choose among the members that fit every label
+
+*Added November 23 after #66.*
+
+Rebuilt on the 1,096 final labels, 46 of 50 committees hold the true triple, but the repair picks it in only 30.
+In 12 of the 16 misses the true triple fits every label as well as the winner and loses the tie-break by fit cost;
+in 4 its fit reaches fewer labels than the winner's. Rerun #66's rebuild on seeds 250 to 299, saving every
+member's fit. Score three tie-breaks on the same members: smallest fit cost (current), the coarse 7-value order
+(the committee's own first member), and the smallest largest single edit (#58). Also refit the members within 1%
+of the best accuracy from 5 more starts and pick again. Report exact repairs, the shares under 0.01% and 0.1%, and
+how many members tie at the top.
+
+**Cost.** CPU, about 25 core-hours.
 
 ## Posts the current results already support
 
