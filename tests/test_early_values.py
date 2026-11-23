@@ -530,6 +530,48 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(labels["x"].shape, (1088, 2))
         self.assertEqual(labels["added_region"].shape, (8, 2))
 
+    def test_rebuild_check_compares_with_the_region_arm(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from rebuild_committee import check, first
+        fit = lambda d, faults, mid, macc: {"disagreement": d, "practice_accuracy": 1.0, "faults_found": faults,
+                                            "middle": {"disagreement": mid, "accuracy": macc}}
+        before = {1: {"extra": {"region": fit(2e-4, 2, 1.5e-4, 1.0)}, "committee_has_true_triple": False},
+                  2: {"extra": {"region": fit(5e-5, 3, 4e-5, 1.0)}, "committee_has_true_triple": True}}
+        head = {"same_as_winner": False, **fit(3e-5, 3, 2e-5, 1.0)}
+        after = {1: {**fit(8e-5, 3, 6e-5, 0.99), "first_member": {"same_as_winner": True},
+                     "committee_has_true_triple": True, "true_rank": 0, "seconds": 1800.0},
+                 2: {**fit(3e-4, 1, 2e-4, 1.0), "first_member": head,
+                     "committee_has_true_triple": True, "true_rank": 4, "seconds": 1800.0}}
+        self.assertIs(first(after[1]), after[1])
+        self.assertIs(first(after[2]), head)
+        out = check(before, after)
+        self.assertEqual(out["cpu_hours"], 1.0)
+        self.assertEqual(out["true_entered"], [1])
+        self.assertEqual(out["became_exact"], [1])
+        self.assertEqual(out["stopped_exact"], [2])
+        self.assertEqual(out["crossed_under_0.01%"], [1])  # the middle fits fewer labels, so the fit counts
+        self.assertEqual(out["crossed_over_0.01%"], [2])
+        self.assertEqual(out["first_member"]["exact"], 2)
+        self.assertEqual(out["first_member"]["differs_from_winner"], [2])
+        self.assertEqual(out["first_member"]["closer_than_winner"], [2])
+        self.assertEqual(out["after"]["true_in_committee"], 2)
+
+    def test_rebuild_committee_evidence(self):
+        import json
+        here = ROOT / "experiments/locate-repair/evidence/rebuild-committee"
+        check = json.loads((here / "check.json").read_text())
+        rows = json.loads((here / "rebuild-committee.json").read_text())
+        self.assertEqual(check["seeds"], 50)
+        self.assertEqual({r["labels"] for r in rows}, {1096})
+        self.assertEqual((check["before"]["true_in_committee"], check["after"]["true_in_committee"]), (35, 46))
+        self.assertEqual((check["before"]["exact"], check["after"]["exact"], check["first_member"]["exact"]),
+                         (30, 30, 34))
+        self.assertEqual((check["before"]["under_0.01%"], check["after"]["under_0.01%"]), (41, 42))
+        self.assertEqual(check["true_left"], [258])
+        tied = [r["seed"] for r in rows if r["committee_has_true_triple"] and r["faults_found"] != 3
+                and r["true_accuracy"] == r["practice_accuracy"]]
+        self.assertEqual(len(tied), 12)
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

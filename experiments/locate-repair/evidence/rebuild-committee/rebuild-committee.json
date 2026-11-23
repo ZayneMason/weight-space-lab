@@ -1,0 +1,2704 @@
+[
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     3
+    ],
+    [
+     "hidden_weight",
+     5
+    ],
+    [
+     "hidden_weight",
+     11
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 2,
+   "disagreement": 1.8e-05,
+   "middle": {
+    "mean_chord": 0.0010447153262794018,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2.1e-05
+   }
+  },
+  "triples": 11328,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 5,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    3
+   ],
+   [
+    "hidden_weight",
+    5
+   ],
+   [
+    "weight",
+    1
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 3.2e-05,
+  "middle": {
+   "mean_chord": 0.0004913888126611709,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 3.5e-05
+  },
+  "seed": 250,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1097.5
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 40643,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 0.9990875912408759,
+  "winner": [
+   [
+    "weight",
+    1
+   ],
+   [
+    "weight",
+    22
+   ],
+   [
+    "weight",
+    26
+   ]
+  ],
+  "practice_accuracy": 0.9990875912408759,
+  "faults_found": 3,
+  "disagreement": 4.6e-05,
+  "middle": {
+   "mean_chord": 0.0005286272056400776,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 0.9990875912408759,
+   "disagreement": 2.9e-05
+  },
+  "seed": 251,
+  "labels": 1096,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3750.8
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 13630,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    2
+   ],
+   [
+    "weight",
+    5
+   ],
+   [
+    "weight",
+    8
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 2.6e-05,
+  "middle": {
+   "mean_chord": 0.001401453223079443,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.2e-05
+  },
+  "seed": 252,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1160.4
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     2
+    ],
+    [
+     "hidden_bias",
+     14
+    ],
+    [
+     "weight",
+     16
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 1,
+   "disagreement": 1.5e-05,
+   "middle": {
+    "mean_chord": 0.002375278640538454,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 1.1e-05
+   }
+  },
+  "triples": 11450,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 175,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    1
+   ],
+   [
+    "hidden_bias",
+    6
+   ],
+   [
+    "weight",
+    16
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 1,
+  "disagreement": 1.5e-05,
+  "middle": {
+   "mean_chord": 0.0007859888300299644,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 1.1e-05
+  },
+  "seed": 253,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 833.4
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "bias",
+     1
+    ],
+    [
+     "hidden_bias",
+     6
+    ],
+    [
+     "weight",
+     10
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 2,
+   "disagreement": 9e-06,
+   "middle": {
+    "mean_chord": 0.0007483064197003842,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 4e-06
+   }
+  },
+  "triples": 9277,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 186,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    0
+   ],
+   [
+    "hidden_weight",
+    8
+   ],
+   [
+    "weight",
+    10
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 1.4e-05,
+  "middle": {
+   "mean_chord": 0.0002709764242172241,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 1.1e-05
+  },
+  "seed": 254,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 808.4
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 10544,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 59,
+  "true_accuracy": 0.9917883211678832,
+  "winner": [
+   [
+    "hidden_bias",
+    12
+   ],
+   [
+    "hidden_weight",
+    12
+   ],
+   [
+    "weight",
+    10
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 1,
+  "disagreement": 0.000618,
+  "middle": {
+   "mean_chord": 0.0011455389857292176,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 0.000625
+  },
+  "seed": 255,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 865.2
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 13310,
+  "committee_size": 200,
+  "committee_has_true_triple": false,
+  "true_rank": null,
+  "true_accuracy": null,
+  "winner": [
+   [
+    "hidden_bias",
+    1
+   ],
+   [
+    "hidden_weight",
+    0
+   ],
+   [
+    "weight",
+    10
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 2.4e-05,
+  "middle": {
+   "mean_chord": 0.0011306443065404893,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 3.1e-05
+  },
+  "seed": 256,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1034.5
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "weight",
+     5
+    ],
+    [
+     "weight",
+     11
+    ],
+    [
+     "weight",
+     16
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 5e-06,
+   "middle": {
+    "mean_chord": 0.002217714786529541,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 9e-06
+   }
+  },
+  "triples": 9241,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "weight",
+    0
+   ],
+   [
+    "weight",
+    11
+   ],
+   [
+    "weight",
+    21
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 1e-05,
+  "middle": {
+   "mean_chord": 0.0020823752135038375,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 1e-05
+  },
+  "seed": 257,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 738.4
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 43974,
+  "committee_size": 200,
+  "committee_has_true_triple": false,
+  "true_rank": null,
+  "true_accuracy": null,
+  "winner": [
+   [
+    "hidden_weight",
+    13
+   ],
+   [
+    "hidden_weight",
+    16
+   ],
+   [
+    "weight",
+    9
+   ]
+  ],
+  "practice_accuracy": 0.9908759124087592,
+  "faults_found": 1,
+  "disagreement": 0.001879,
+  "middle": {
+   "mean_chord": 0.012044465225189925,
+   "used": true,
+   "min_chord": 0.005,
+   "accuracy": 0.9917883211678832,
+   "disagreement": 0.001964
+  },
+  "seed": 258,
+  "labels": 1096,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3977.2
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     2
+    ],
+    [
+     "weight",
+     2
+    ],
+    [
+     "weight",
+     8
+    ]
+   ],
+   "practice_accuracy": 0.9927007299270073,
+   "faults_found": 1,
+   "disagreement": 0.000981,
+   "middle": {
+    "mean_chord": 0.004929297585040331,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 0.9927007299270073,
+    "disagreement": 0.000984
+   }
+  },
+  "triples": 12147,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_rank": 540,
+  "true_accuracy": 0.9854014598540146,
+  "winner": [
+   [
+    "hidden_weight",
+    2
+   ],
+   [
+    "weight",
+    2
+   ],
+   [
+    "weight",
+    24
+   ]
+  ],
+  "practice_accuracy": 0.9927007299270073,
+  "faults_found": 1,
+  "disagreement": 0.000981,
+  "middle": {
+   "mean_chord": 0.004864912647753954,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 0.9927007299270073,
+   "disagreement": 0.000985
+  },
+  "seed": 259,
+  "labels": 1096,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1026.0
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     9
+    ],
+    [
+     "weight",
+     0
+    ],
+    [
+     "weight",
+     10
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 4.2e-05,
+   "middle": {
+    "mean_chord": 0.0007593802176415921,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2.9e-05
+   }
+  },
+  "triples": 9286,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    9
+   ],
+   [
+    "weight",
+    10
+   ],
+   [
+    "weight",
+    16
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 0.001201,
+  "middle": {
+   "mean_chord": 0.0007853839360177517,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 0.001193
+  },
+  "seed": 260,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 826.9
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     24
+    ],
+    [
+     "weight",
+     4
+    ],
+    [
+     "weight",
+     7
+    ]
+   ],
+   "practice_accuracy": 0.9990875912408759,
+   "faults_found": 2,
+   "disagreement": 0.000579,
+   "middle": {
+    "mean_chord": 0.003600091151893139,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 0.9990875912408759,
+    "disagreement": 0.000548
+   }
+  },
+  "triples": 11392,
+  "committee_size": 200,
+  "committee_has_true_triple": false,
+  "true_rank": null,
+  "true_accuracy": null,
+  "winner": [
+   [
+    "hidden_weight",
+    24
+   ],
+   [
+    "hidden_weight",
+    31
+   ],
+   [
+    "weight",
+    23
+   ]
+  ],
+  "practice_accuracy": 0.9990875912408759,
+  "faults_found": 2,
+  "disagreement": 0.000315,
+  "middle": {
+   "mean_chord": 0.0012325278669595718,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 0.9990875912408759,
+   "disagreement": 0.000313
+  },
+  "seed": 261,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 976.7
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     1
+    ],
+    [
+     "hidden_weight",
+     11
+    ],
+    [
+     "weight",
+     8
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 5.7e-05,
+   "middle": {
+    "mean_chord": 0.0021706941165030003,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 4.5e-05
+   }
+  },
+  "triples": 11749,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    1
+   ],
+   [
+    "hidden_weight",
+    11
+   ],
+   [
+    "weight",
+    24
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 9.4e-05,
+  "middle": {
+   "mean_chord": 0.0020375713892281056,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 5e-05
+  },
+  "seed": 262,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1115.7
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     15
+    ],
+    [
+     "hidden_weight",
+     22
+    ],
+    [
+     "weight",
+     9
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 4.1e-05,
+   "middle": {
+    "mean_chord": 0.003955018259584903,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2.5e-05
+   }
+  },
+  "triples": 41288,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    15
+   ],
+   [
+    "hidden_weight",
+    22
+   ],
+   [
+    "weight",
+    25
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 2.9e-05,
+  "middle": {
+   "mean_chord": 0.0038640138693153856,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.3e-05
+  },
+  "seed": 263,
+  "labels": 1096,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3866.9
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     14
+    ],
+    [
+     "weight",
+     9
+    ],
+    [
+     "weight",
+     27
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 3.2e-05,
+   "middle": {
+    "mean_chord": 0.0017713851109147072,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2.4e-05
+   }
+  },
+  "triples": 8927,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    14
+   ],
+   [
+    "weight",
+    11
+   ],
+   [
+    "weight",
+    25
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 3.2e-05,
+  "middle": {
+   "mean_chord": 0.0018094845116138458,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.4e-05
+  },
+  "seed": 264,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 861.2
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "weight",
+     1
+    ],
+    [
+     "weight",
+     10
+    ],
+    [
+     "weight",
+     12
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 2,
+   "disagreement": 2e-06,
+   "middle": {
+    "mean_chord": 0.0008077518083155155,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 1e-05
+   }
+  },
+  "triples": 47268,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 8,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    24
+   ],
+   [
+    "weight",
+    1
+   ],
+   [
+    "weight",
+    26
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 1e-06,
+  "middle": {
+   "mean_chord": 0.0010849540494382382,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 6e-06
+  },
+  "seed": 265,
+  "labels": 1096,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3643.8
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 11799,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    3
+   ],
+   [
+    "hidden_weight",
+    10
+   ],
+   [
+    "weight",
+    6
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 2.2e-05,
+  "middle": {
+   "mean_chord": 0.0027920280769467352,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2e-05
+  },
+  "seed": 266,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1118.8
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     7
+    ],
+    [
+     "hidden_weight",
+     4
+    ],
+    [
+     "hidden_weight",
+     29
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 2.1e-05,
+   "middle": {
+    "mean_chord": 0.0008440609462559224,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 1.1e-05
+   }
+  },
+  "triples": 11133,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    7
+   ],
+   [
+    "hidden_weight",
+    4
+   ],
+   [
+    "weight",
+    30
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 1.2e-05,
+  "middle": {
+   "mean_chord": 0.0008654100447893142,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 1.1e-05
+  },
+  "seed": 267,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 980.2
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "bias",
+     0
+    ],
+    [
+     "hidden_weight",
+     30
+    ],
+    [
+     "weight",
+     1
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 2,
+   "disagreement": 2e-06,
+   "middle": {
+    "mean_chord": 0.0007460345514118671,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 5e-06
+   }
+  },
+  "triples": 9087,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 4,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    0
+   ],
+   [
+    "weight",
+    1
+   ],
+   [
+    "weight",
+    15
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 8e-06,
+  "middle": {
+   "mean_chord": 0.0004731110855937004,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 8e-06
+  },
+  "seed": 268,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 764.0
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 11969,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_rank": 14,
+  "true_accuracy": 0.9890510948905109,
+  "winner": [
+   [
+    "hidden_weight",
+    1
+   ],
+   [
+    "hidden_weight",
+    20
+   ],
+   [
+    "weight",
+    2
+   ]
+  ],
+  "practice_accuracy": 0.9927007299270073,
+  "faults_found": 2,
+  "disagreement": 0.001163,
+  "middle": {
+   "mean_chord": 0.01545723244547844,
+   "used": true,
+   "min_chord": 0.005,
+   "accuracy": 0.9927007299270073,
+   "disagreement": 0.001236
+  },
+  "seed": 269,
+  "labels": 1096,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 956.4
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     7
+    ],
+    [
+     "hidden_bias",
+     8
+    ],
+    [
+     "weight",
+     11
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 2,
+   "disagreement": 1.4e-05,
+   "middle": {
+    "mean_chord": 0.004197875317186117,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2.2e-05
+   }
+  },
+  "triples": 41230,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 2,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    0
+   ],
+   [
+    "hidden_bias",
+    8
+   ],
+   [
+    "weight",
+    11
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 3.2e-05,
+  "middle": {
+   "mean_chord": 0.002070858292281628,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.5e-05
+  },
+  "seed": 270,
+  "labels": 1096,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3591.0
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 13112,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    0
+   ],
+   [
+    "weight",
+    3
+   ],
+   [
+    "weight",
+    13
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 3e-06,
+  "middle": {
+   "mean_chord": 0.0006051171571016311,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 5.3e-05
+  },
+  "seed": 271,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1168.6
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     19
+    ],
+    [
+     "weight",
+     0
+    ],
+    [
+     "weight",
+     12
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 0.000185,
+   "middle": {
+    "mean_chord": 0.002286287825554609,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 0.000195
+   }
+  },
+  "triples": 9278,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    19
+   ],
+   [
+    "weight",
+    12
+   ],
+   [
+    "weight",
+    16
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 5.6e-05,
+  "middle": {
+   "mean_chord": 0.0021429040469229223,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 5e-05
+  },
+  "seed": 272,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 821.9
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     7
+    ],
+    [
+     "hidden_weight",
+     20
+    ],
+    [
+     "weight",
+     28
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 2,
+   "disagreement": 1.6e-05,
+   "middle": {
+    "mean_chord": 0.0008110587671399116,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 1.2e-05
+   }
+  },
+  "triples": 12432,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 8,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    0
+   ],
+   [
+    "hidden_weight",
+    7
+   ],
+   [
+    "weight",
+    12
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 1.6e-05,
+  "middle": {
+   "mean_chord": 0.0006406141258776188,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 1.4e-05
+  },
+  "seed": 273,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1133.1
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     9
+    ],
+    [
+     "hidden_weight",
+     26
+    ],
+    [
+     "weight",
+     10
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 5.3e-05,
+   "middle": {
+    "mean_chord": 0.0016072126477956771,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 5.5e-05
+   }
+  },
+  "triples": 11459,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    9
+   ],
+   [
+    "hidden_weight",
+    26
+   ],
+   [
+    "weight",
+    26
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 4.3e-05,
+  "middle": {
+   "mean_chord": 0.0015586147457361222,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 5.5e-05
+  },
+  "seed": 274,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 900.4
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     30
+    ],
+    [
+     "weight",
+     0
+    ],
+    [
+     "weight",
+     7
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 2.7e-05,
+   "middle": {
+    "mean_chord": 0.0014571479521691799,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 4.4e-05
+   }
+  },
+  "triples": 9205,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    30
+   ],
+   [
+    "weight",
+    7
+   ],
+   [
+    "weight",
+    16
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 5.2e-05,
+  "middle": {
+   "mean_chord": 0.001578522827476263,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 3.1e-05
+  },
+  "seed": 275,
+  "labels": 1096,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 714.3
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     16
+    ],
+    [
+     "weight",
+     3
+    ],
+    [
+     "weight",
+     12
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 1.3e-05,
+   "middle": {
+    "mean_chord": 0.0009510381147265434,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 3.6e-05
+   }
+  },
+  "triples": 12946,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    16
+   ],
+   [
+    "weight",
+    3
+   ],
+   [
+    "weight",
+    28
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 3.8e-05,
+  "middle": {
+   "mean_chord": 0.0008836708217859268,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 6.7e-05
+  },
+  "seed": 276,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1083.0
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     1
+    ],
+    [
+     "hidden_weight",
+     6
+    ],
+    [
+     "hidden_weight",
+     9
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 2,
+   "disagreement": 1e-05,
+   "middle": {
+    "mean_chord": 0.000860697366297245,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 1.2e-05
+   }
+  },
+  "triples": 9793,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 47,
+  "true_accuracy": 0.9990875912408759,
+  "winner": [
+   [
+    "hidden_bias",
+    1
+   ],
+   [
+    "hidden_weight",
+    6
+   ],
+   [
+    "weight",
+    3
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 4e-06,
+  "middle": {
+   "mean_chord": 0.00041350644081830976,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 8e-06
+  },
+  "seed": 277,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 753.6
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "weight",
+     3
+    ],
+    [
+     "weight",
+     12
+    ],
+    [
+     "weight",
+     14
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 3.2e-05,
+   "middle": {
+    "mean_chord": 0.0015111974999308586,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2.8e-05
+   }
+  },
+  "triples": 11836,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "weight",
+    12
+   ],
+   [
+    "weight",
+    14
+   ],
+   [
+    "weight",
+    19
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 3.4e-05,
+  "middle": {
+   "mean_chord": 0.001619233191013336,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.7e-05
+  },
+  "seed": 278,
+  "labels": 1096,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 999.5
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     15
+    ],
+    [
+     "hidden_weight",
+     28
+    ],
+    [
+     "weight",
+     15
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 5.4e-05,
+   "middle": {
+    "mean_chord": 0.0009064710885286332,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 3.4e-05
+   }
+  },
+  "triples": 41101,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    28
+   ],
+   [
+    "weight",
+    4
+   ],
+   [
+    "weight",
+    31
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 9.4e-05,
+  "middle": {
+   "mean_chord": 0.0009634743444621563,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 5.6e-05
+  },
+  "seed": 279,
+  "labels": 1096,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3597.0
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 12427,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    31
+   ],
+   [
+    "weight",
+    9
+   ],
+   [
+    "weight",
+    12
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 9.2e-05,
+  "middle": {
+   "mean_chord": 0.0006978112645447254,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 3.2e-05
+  },
+  "seed": 280,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1111.7
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 41902,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    7
+   ],
+   [
+    "hidden_bias",
+    13
+   ],
+   [
+    "weight",
+    25
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 0.000112,
+  "middle": {
+   "mean_chord": 0.011206179708242416,
+   "used": true,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 5.7e-05
+  },
+  "seed": 281,
+  "labels": 1096,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3650.5
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     7
+    ],
+    [
+     "weight",
+     2
+    ],
+    [
+     "weight",
+     29
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 1.1e-05,
+   "middle": {
+    "mean_chord": 0.0009506318904459476,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2.9e-05
+   }
+  },
+  "triples": 12855,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    0
+   ],
+   [
+    "weight",
+    2
+   ],
+   [
+    "weight",
+    29
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 1.1e-05,
+  "middle": {
+   "mean_chord": 0.00031643588095903397,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.9e-05
+  },
+  "seed": 282,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1085.4
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     10
+    ],
+    [
+     "hidden_weight",
+     18
+    ],
+    [
+     "weight",
+     17
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 3.5e-05,
+   "middle": {
+    "mean_chord": 0.0012867549806833266,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2.6e-05
+   }
+  },
+  "triples": 9323,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    10
+   ],
+   [
+    "hidden_weight",
+    12
+   ],
+   [
+    "weight",
+    17
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 3.5e-05,
+  "middle": {
+   "mean_chord": 0.0008446172438561916,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.4e-05
+  },
+  "seed": 283,
+  "labels": 1096,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 703.8
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 12029,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    8
+   ],
+   [
+    "hidden_weight",
+    26
+   ],
+   [
+    "hidden_weight",
+    29
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 2.4e-05,
+  "middle": {
+   "mean_chord": 0.0004259023442864418,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.3e-05
+  },
+  "seed": 284,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1088.8
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     13
+    ],
+    [
+     "hidden_weight",
+     1
+    ],
+    [
+     "weight",
+     0
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 2,
+   "disagreement": 5e-06,
+   "middle": {
+    "mean_chord": 0.001615246720612049,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 6e-06
+   }
+  },
+  "triples": 10404,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 55,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    0
+   ],
+   [
+    "hidden_bias",
+    13
+   ],
+   [
+    "hidden_weight",
+    1
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 2,
+  "disagreement": 1.2e-05,
+  "middle": {
+   "mean_chord": 0.0007403107546269894,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 9e-06
+  },
+  "seed": 285,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 779.6
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 13608,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    6
+   ],
+   [
+    "weight",
+    0
+   ],
+   [
+    "weight",
+    21
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 2.3e-05,
+  "middle": {
+   "mean_chord": 0.0010615605115890502,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 1.6e-05
+  },
+  "seed": 286,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 959.4
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     8
+    ],
+    [
+     "hidden_weight",
+     18
+    ],
+    [
+     "weight",
+     11
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 0.000844,
+   "middle": {
+    "mean_chord": 0.01736798670142889,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 0.9981751824817519,
+    "disagreement": 0.000292
+   }
+  },
+  "triples": 11892,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    1
+   ],
+   [
+    "weight",
+    9
+   ],
+   [
+    "weight",
+    11
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 1,
+  "disagreement": 0.000325,
+  "middle": {
+   "mean_chord": 0.00342476112768054,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 0.000367
+  },
+  "seed": 287,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 993.6
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     12
+    ],
+    [
+     "weight",
+     2
+    ],
+    [
+     "weight",
+     5
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 3.3e-05,
+   "middle": {
+    "mean_chord": 0.0010323758982121944,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 3.4e-05
+   }
+  },
+  "triples": 12589,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    12
+   ],
+   [
+    "weight",
+    18
+   ],
+   [
+    "weight",
+    21
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 3.4e-05,
+  "middle": {
+   "mean_chord": 0.0011350337415933609,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.8e-05
+  },
+  "seed": 288,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 989.1
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     19
+    ],
+    [
+     "weight",
+     19
+    ],
+    [
+     "weight",
+     26
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 1.5e-05,
+   "middle": {
+    "mean_chord": 0.0008216477558016778,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 1.8e-05
+   }
+  },
+  "triples": 12245,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    19
+   ],
+   [
+    "weight",
+    10
+   ],
+   [
+    "weight",
+    19
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 1.7e-05,
+  "middle": {
+   "mean_chord": 0.00079786766320467,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 1.6e-05
+  },
+  "seed": 289,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1021.3
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 13490,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    7
+   ],
+   [
+    "hidden_bias",
+    9
+   ],
+   [
+    "weight",
+    11
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 1e-05,
+  "middle": {
+   "mean_chord": 0.0034188554994761945,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.4e-05
+  },
+  "seed": 290,
+  "labels": 1096,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 969.8
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     1
+    ],
+    [
+     "hidden_weight",
+     15
+    ],
+    [
+     "weight",
+     4
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 0.000102,
+   "middle": {
+    "mean_chord": 0.0027158741094172,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 8.1e-05
+   }
+  },
+  "triples": 9545,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    1
+   ],
+   [
+    "hidden_weight",
+    15
+   ],
+   [
+    "weight",
+    20
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 7.7e-05,
+  "middle": {
+   "mean_chord": 0.002687544170767069,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 3.7e-05
+  },
+  "seed": 291,
+  "labels": 1096,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 774.1
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 13430,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_weight",
+    14
+   ],
+   [
+    "hidden_weight",
+    17
+   ],
+   [
+    "hidden_weight",
+    25
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 6.7e-05,
+  "middle": {
+   "mean_chord": 0.002728061135858297,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.6e-05
+  },
+  "seed": 292,
+  "labels": 1096,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1102.2
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 11894,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    13
+   ],
+   [
+    "hidden_weight",
+    8
+   ],
+   [
+    "hidden_weight",
+    24
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 4.6e-05,
+  "middle": {
+   "mean_chord": 0.005744076762348413,
+   "used": true,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 5.7e-05
+  },
+  "seed": 293,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 856.1
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 13750,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    10
+   ],
+   [
+    "hidden_weight",
+    24
+   ],
+   [
+    "weight",
+    11
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 4e-06,
+  "middle": {
+   "mean_chord": 0.0005840426310896873,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 8e-06
+  },
+  "seed": 294,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 1089.8
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "bias",
+     0
+    ],
+    [
+     "hidden_bias",
+     13
+    ],
+    [
+     "hidden_bias",
+     14
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 2.1e-05,
+   "middle": {
+    "mean_chord": 0.0026579429022967815,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2e-05
+   }
+  },
+  "triples": 9247,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    1
+   ],
+   [
+    "hidden_bias",
+    13
+   ],
+   [
+    "hidden_bias",
+    14
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 6e-06,
+  "middle": {
+   "mean_chord": 0.00267998993396759,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2e-05
+  },
+  "seed": 295,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 761.0
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_weight",
+     3
+    ],
+    [
+     "hidden_weight",
+     21
+    ],
+    [
+     "weight",
+     9
+    ]
+   ],
+   "practice_accuracy": 0.9917883211678832,
+   "faults_found": 2,
+   "disagreement": 0.008091,
+   "middle": {
+    "mean_chord": 0.0017061129771173001,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 0.9908759124087592,
+    "disagreement": 0.008074
+   }
+  },
+  "triples": 47708,
+  "committee_size": 200,
+  "committee_has_true_triple": false,
+  "true_rank": null,
+  "true_accuracy": null,
+  "winner": [
+   [
+    "hidden_weight",
+    3
+   ],
+   [
+    "hidden_weight",
+    21
+   ],
+   [
+    "weight",
+    25
+   ]
+  ],
+  "practice_accuracy": 0.9917883211678832,
+  "faults_found": 2,
+  "disagreement": 0.008091,
+  "middle": {
+   "mean_chord": 0.0016765542328357696,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 0.9908759124087592,
+   "disagreement": 0.008081
+  },
+  "seed": 296,
+  "labels": 1096,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3285.0
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 12926,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    10
+   ],
+   [
+    "hidden_weight",
+    5
+   ],
+   [
+    "weight",
+    4
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 5e-05,
+  "middle": {
+   "mean_chord": 0.005056231655180455,
+   "used": true,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 3.1e-05
+  },
+  "seed": 297,
+  "labels": 1096,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 956.6
+ },
+ {
+  "first_member": {
+   "same_as_winner": true
+  },
+  "triples": 9079,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "bias",
+    0
+   ],
+   [
+    "hidden_weight",
+    11
+   ],
+   [
+    "weight",
+    9
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 3.4e-05,
+  "middle": {
+   "mean_chord": 0.003347323555499315,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 3.6e-05
+  },
+  "seed": 298,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 751.5
+ },
+ {
+  "first_member": {
+   "same_as_winner": false,
+   "winner": [
+    [
+     "hidden_bias",
+     10
+    ],
+    [
+     "weight",
+     4
+    ],
+    [
+     "weight",
+     9
+    ]
+   ],
+   "practice_accuracy": 1.0,
+   "faults_found": 3,
+   "disagreement": 6.5e-05,
+   "middle": {
+    "mean_chord": 0.00432298107072711,
+    "used": false,
+    "min_chord": 0.005,
+    "accuracy": 1.0,
+    "disagreement": 2.5e-05
+   }
+  },
+  "triples": 11138,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_rank": 0,
+  "true_accuracy": 1.0,
+  "winner": [
+   [
+    "hidden_bias",
+    10
+   ],
+   [
+    "weight",
+    4
+   ],
+   [
+    "weight",
+    25
+   ]
+  ],
+  "practice_accuracy": 1.0,
+  "faults_found": 3,
+  "disagreement": 5.2e-05,
+  "middle": {
+   "mean_chord": 0.004320759512484074,
+   "used": false,
+   "min_chord": 0.005,
+   "accuracy": 1.0,
+   "disagreement": 2.5e-05
+  },
+  "seed": 299,
+  "labels": 1096,
+  "stage_options": {},
+  "seconds": 870.9
+ }
+]

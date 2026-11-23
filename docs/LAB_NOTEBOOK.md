@@ -8,6 +8,30 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-23 — Roadmap #66: rebuild the committee from the final labels
+
+**What ran.** `rebuild_committee.py` reran the pair screen and the triple committee on each case's 1,096 final
+labels from #65 (seeds 250 to 299), picked the winner as the repair does, took its middle and scored it against
+#65's region arm on the same 1M-point probe. 19.2 core-hours. Write-up:
+[REBUILD_COMMITTEE.md](../experiments/locate-repair/REBUILD_COMMITTEE.md).
+
+**Measured.**
+- The true triple is in 46 of 50 rebuilt committees, against 35 before: it entered 12 and left 1 (258).
+- Exact repairs stay at 30: 251, 263, 265 and 292 become exact; 255, 258, 259 and 269 stop.
+- Of the 16 committees that hold the true triple without picking it, 12 have it tied with the winner on all
+  1,096 labels; in 4 its fit reaches fewer labels.
+- The committee's own first member (ties by the coarse fit) is exact in 34. Against the winner it is closer in
+  12 cases and further in 12.
+- Under 0.01%: 41 before, 42 after (263, 270, 279, 292 in; 255, 258, 259 out). Under 0.1%: 48 before, 46 after.
+  Median 0.0026% before, 0.0029% after.
+
+**Interpretation.** Screening on the final labels fixes most of the recall gap; what is left is the choice among
+members that fit every label, where the repair's tie-break by fit cost does worse than the committee's own order
+on exact repairs (inferred from 50 cases). Neither rule ends closer to the original on the probe. Next: #67
+compares tie-breaks on saved member fits and refits the near-best members from more starts.
+
+---
+
 ## 2026-11-22 — Roadmap #65: ask the next labels where the region of values is still unsure
 
 Write-up: [REGION_LABELS.md](../experiments/locate-repair/REGION_LABELS.md). Evidence: `evidence/region-labels/`.
