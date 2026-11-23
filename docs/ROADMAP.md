@@ -1370,6 +1370,22 @@ repairs, the 0.01% and 0.1% lines and the geometric-mean change with #67's refit
 
 **Cost.** CPU, about 10 core-hours.
 
+**Status (November 23): done, see [TIED_LABELS.md](../experiments/locate-repair/TIED_LABELS.md).**
+
+## 69. Find out why the tied members agree
+
+*Added November 23 after #68.*
+
+In #68, 41 of 50 cases still have two or more committee members that fit every label after 24 more labels, and in 87
+of 127 rounds no input in a pool of 20,000 split them. In 28 of the 41 the tie count is exactly 2^k for a winner
+with k output-layer edits, the mirror symmetry (#22). The other 13 tie more members than that, up to all 200. Rerun
+#68 on the 41 tied cases, keep every tied member, and compare each with the winner: whether it is one of the
+winner's mirrors, which other weights it edits, whether those weights sit on a hidden unit that is never active on
+the 1M-point probe or never changes sign there, and how often the two networks disagree on the probe itself.
+
+**Cost.** CPU, about 20 core-hours to rebuild the committees and fits, since #68 saved only each round's winner; the
+comparison itself is cheap.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

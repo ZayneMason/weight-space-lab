@@ -613,6 +613,48 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["rules"]["cost"]["under_0.01%"], 42)
         self.assertEqual(len(check["true_fits_every_label_from_clean"]), 50)
 
+    def test_tied_labels_top_and_check(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from tied_labels import check, tied_top
+        fits = {"a": ((0.99, -1.0), None), "b": ((1.0, -3.0), None), "c": ((1.0, -2.0), None)}
+        self.assertEqual(tied_top(["a", "b", "c"], fits), ["b", "c"])  # committee order kept
+        step = lambda k, d, faults, tied, mid=None: {"round": k, "disagreement": d, "practice_accuracy": 1.0,
+                                                     "faults_found": faults, "tied": tied, "winner": [[k]],
+                                                     "middle": {"disagreement": mid or d, "accuracy": 1.0}}
+        rows = {1: {"seconds": 1800.0, "rounds": [step(0, 6e-4, 1, 3), step(1, 2e-5, 3, 1)]},
+                2: {"seconds": 1800.0, "rounds": [step(0, 5e-5, 3, 1)]}}
+        before = {1: {"rules": {"refit-coarse": {"winner": [[0]], "disagreement": 6e-4, "practice_accuracy": 1.0,
+                                                 "faults_found": 1, "middle": {"disagreement": 6e-4, "accuracy": 1.0}}}},
+                  2: {"rules": {"refit-coarse": {"winner": [[9]], "disagreement": 5e-5, "practice_accuracy": 1.0,
+                                                 "faults_found": 3, "middle": {"disagreement": 5e-5, "accuracy": 1.0}}}}}
+        out = check(rows, before)
+        self.assertEqual(out["cpu_hours"], 1.0)
+        self.assertEqual(out["reproduces_67"], [1])
+        self.assertEqual(out["asked"], [1])
+        self.assertEqual(out["rounds_run"], {"0": 1, "1": 1, "2": 0, "3": 0})
+        self.assertEqual((out["by_round"]["0"]["exact"], out["by_round"]["1"]["exact"]), (1, 2))
+        self.assertEqual(out["by_round"]["3"]["still_tied"], 0)  # a case that stopped keeps its last round
+        self.assertEqual(out["became_exact"], [1])
+        self.assertEqual(out["crossed_under_0.01%"], [1])
+        self.assertAlmostEqual(out["geometric_mean_change"], (2e-5 / 6e-4) ** 0.5)
+
+    def test_tied_labels_evidence(self):
+        import json
+        here = ROOT / "experiments/locate-repair/evidence/tied-labels"
+        check = json.loads((here / "check.json").read_text())
+        rows = json.loads((here / "tied-labels.json").read_text())
+        self.assertEqual(check["seeds"], 50)
+        self.assertEqual(len(check["reproduces_67"]), 50)
+        self.assertEqual(len(check["asked"]), 44)
+        self.assertEqual(check["rounds_run"], {"0": 6, "1": 2, "2": 1, "3": 41})
+        lines = {k: (v["under_0.01%"], v["exact"], v["still_tied"]) for k, v in check["by_round"].items()}
+        self.assertEqual(lines, {"0": (42, 35, 44), "1": (44, 36, 42), "2": (44, 37, 41), "3": (44, 37, 41)})
+        self.assertEqual(check["became_exact"], [250, 255])
+        self.assertEqual(check["crossed_under_0.01%"], [255, 287])
+        self.assertEqual(check["crossed_over_0.01%"], [])
+        silent = [r["seed"] for r in rows if len(r["rounds"]) > 1 and all(v["splitting"] == 0 for v in r["rounds"][1:])]
+        self.assertEqual(len(silent), 19)
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
