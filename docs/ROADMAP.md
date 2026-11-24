@@ -1432,6 +1432,22 @@ are under 0.01% against #68 alone on the same cases.
 
 **Cost.** CPU, about 20 core-hours.
 
+**Status (November 24): done, see [FRESH_REPAIR.md](../experiments/locate-repair/FRESH_REPAIR.md).**
+
+## 73. Find where the repair's time goes, and cut it
+
+*Added November 24 after #72.*
+
+The whole repair now holds up on fresh cases (49 of 50 under 0.01%), but it costs about 0.75 core-hours a case, nearly
+twice the estimate, and nobody has measured which part costs what. Across the 100 cases of #71 and #72, 6 rescues
+came from three different fixes (boundary labels 4, restarts 1, bigger committee 1), so no fix can simply be dropped.
+Rerun the 100 cases with the time of each stage recorded (#65's stages, the rebuilt committee, #68's rounds, each fix
+and the chooser), then try a cheaper order: build the boundary candidate first, and build restarts and the bigger
+committee only where the chooser's split inputs show #68's pick and the boundary candidate disagreeing, or where the
+pick misses a label. Report core-hours a case and cases under 0.01%, against #72's pipeline on the same cases.
+
+**Cost.** CPU, about 60 core-hours for the timed rerun of 100 cases, less for the cheaper order.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

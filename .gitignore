@@ -17,3 +17,4 @@ experiment/
 *-paired/
 continuation*.json
 !experiments/locate-repair/evidence/region-labels/labels/*.npz
+!experiments/locate-repair/evidence/fresh-repair/labels/*.npz

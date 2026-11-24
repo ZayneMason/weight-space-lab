@@ -8,6 +8,30 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-24 — Roadmap #72: run the whole repair on 50 fresh cases
+
+**What ran.** 50 fresh width-16 three-fault cases (seeds 300 to 349). First `early_values.py --width 16 --early 2
+--two-step --middle --extra` (#65's repair), then `fresh_repair.py`, which runs #71 unchanged on #65's final labels:
+#68's pick, restarts, boundary labels, the bigger committee where #68's pick misses a label, and the disagree chooser.
+The chooser's pick was fixed in advance as the result. 37.6 core-hours recorded (19.1 and 18.4), against an estimate
+of about 20. Write-up: [FRESH_REPAIR.md](../experiments/locate-repair/FRESH_REPAIR.md).
+
+**Measured.**
+- Whole repair: 49 of 50 under 0.01%, 50 under 0.1%, 39 exact. #65 alone: 41, 50, 37. #68's pick: 46, 50, 39.
+- The chooser equals the probe's best choice on the line in every case; the one case over it, 331 (0.068%), is over
+  for every candidate.
+- Gained over #68: 308, 348, 349, all by boundary labels winning the vote outright. None lost; 341 moves from 0.0013%
+  to 0.0014%.
+- 244 labels asked in all, a median of 3; 10 cases have no input where the candidates differ.
+- The bigger committee ran on 5 cases and rescued none.
+
+**Interpretation.** #71's gate and chooser did not overfit: held out they reach 49 of 50 against 47 of 50 on the
+cases they were tuned on (the fresh set is a little easier, #68 alone 46 against 44). Which fix rescues a case varies
+between sets, so choosing from labels is the part that carries over. The repair now costs about 0.75 core-hours a
+case, mostly building candidates.
+
+---
+
 ## 2026-11-24 — Roadmap #71: choose among the fixes from labels alone
 
 **What ran.** `pick_fixes.py` reran #68 on all 50 of #67's width-16 three-fault cases (reproducing #68's pick in all
