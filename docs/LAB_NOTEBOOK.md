@@ -8,6 +8,29 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-24 — Roadmap #71: choose among the fixes from labels alone
+
+**What ran.** `pick_fixes.py` reran #68 on all 50 of #67's width-16 three-fault cases (reproducing #68's pick in all
+50), built restarts and boundary-label candidates everywhere and a bigger-committee candidate where #68's pick misses
+one of its own labels (5 cases), and chose among them with fresh labels: 64 uniform ones, or up to 32 where the
+candidates disagree. 20.2 core-hours. Write-up: [PICK_FIXES.md](../experiments/locate-repair/PICK_FIXES.md).
+
+**Measured.**
+- Disagree chooser: 47 of 50 under 0.01% (258, 259, 269 gained, none lost), 49 under 0.1%, 39 exact, the same as
+  choosing by the probe. It asks 341 labels in all, a median of 3 per case.
+- Uniform chooser: every candidate gets all 64 labels right in all 50 cases, so it never switches.
+- One case gets worse: 272, from 0.0007% to 0.0013%. Where the chooser and the probe differ (12 cases), every
+  candidate is under 0.01% and the gap is under 0.001%.
+- Boundary labels everywhere make 4 cases slightly worse (all still under 0.01%); restarts and the bigger committee
+  make none worse.
+- 260, 261 and 296 stay over the line, for #70's reasons.
+
+**Interpretation.** A few labels where the candidates disagree are enough to choose among the fixes, so #70's upper
+bound is reachable without the probe (on these 50). The gate and chooser were tuned on these cases; next, #72 runs
+the whole repair on 50 fresh ones.
+
+---
+
 ## 2026-11-24 — Roadmap #70: fix the six cases still over 0.01%
 
 **What ran.** `fix_six.py` reran #68 on the 6 cases it left over 0.01% (reproducing #68's pick in all 6) and tried
