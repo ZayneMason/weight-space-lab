@@ -730,6 +730,39 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(arms["boundary"]["closer"], [258, 259, 260, 261, 269, 296])
         self.assertEqual(check["true_fits_every_label"], [258, 259, 260, 269, 296])
 
+    def test_pick_fixes_choose_and_check(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from pick_fixes import check, choose
+        self.assertEqual(choose({"pick68": 3, "boundary": 3, "restarts": 1}), "pick68")
+        self.assertEqual(choose({"pick68": 1, "boundary": 3, "restarts": 3}), "boundary")
+        self.assertEqual(choose({"pick68": 0, "restarts": 2, "bigger": 2}), "restarts")
+        cand = lambda d, faults=3: {"disagreement": d, "faults_found": faults, "winner": [[1]]}
+        row = lambda cands, du, dd: {"seconds": 1800.0, "bigger_ran": "bigger" in cands, "candidates": cands,
+                                     "choosers": {"uniform": {"pick": du}, "disagree": {"pick": dd, "split_inputs": 1}}}
+        rows = {1: row({"pick68": cand(2e-4, 2), "restarts": cand(2e-4, 2), "boundary": cand(5e-5)}, "pick68", "boundary"),
+                2: row({"pick68": cand(5e-5), "restarts": cand(5e-5), "boundary": cand(8e-5)}, "pick68", "boundary")}
+        out = check(rows, {1: {"rounds": [{"winner": [[1]]}]}, 2: {"rounds": [{"winner": [[2]]}]}})
+        self.assertEqual(out["cpu_hours"], 1.0)
+        self.assertEqual(out["reproduces_68"], 1)
+        self.assertEqual(out["picks"]["disagree"]["gained"], [1])
+        self.assertEqual(out["picks"]["disagree"]["worse"], [2])
+        self.assertEqual(out["picks"]["disagree"]["under_0.01%"], 2)
+        self.assertEqual(out["picks"]["bigger"]["switched"], [])
+        self.assertEqual(out["picks"]["probe_best"]["worse"], [])
+
+    def test_pick_fixes_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/pick-fixes/check.json").read_text())
+        self.assertEqual((check["seeds"], check["reproduces_68"]), (50, 50))
+        self.assertEqual(check["bigger_ran"], [251, 258, 259, 261, 296])
+        picks = check["picks"]
+        self.assertEqual(picks["pick68"]["under_0.01%"], 44)
+        self.assertEqual(picks["uniform"]["switched"], [])
+        for name in ("disagree", "probe_best"):
+            self.assertEqual((picks[name]["under_0.01%"], picks[name]["exact"]), (47, 39))
+            self.assertEqual((picks[name]["gained"], picks[name]["lost"]), ([258, 259, 269], []))
+        self.assertEqual(picks["disagree"]["worse"], [272])
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score

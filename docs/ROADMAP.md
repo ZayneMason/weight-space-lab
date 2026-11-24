@@ -1418,6 +1418,20 @@ under 0.01%, and whether any of #68's 44 cases under the line crosses back over.
 
 **Cost.** CPU, about 20 core-hours.
 
+**Status (November 24): done, see [PICK_FIXES.md](../experiments/locate-repair/PICK_FIXES.md).**
+
+## 72. Run the whole repair on 50 fresh cases
+
+*Added November 24 after #71.*
+
+#71's gate for the bigger committee and its disagree chooser were designed after seeing #67's 50 cases, so its 47 of
+50 under 0.01% is not a held-out result. Build 50 fresh width-16 three-fault cases (seeds 300 to 349) and run the
+whole repair as it now stands: #68, restarts, boundary labels, the bigger committee where #68's pick misses a label,
+and the disagree chooser. Score on the 1M-point probe, change nothing after seeing the results, and report how many
+are under 0.01% against #68 alone on the same cases.
+
+**Cost.** CPU, about 20 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
