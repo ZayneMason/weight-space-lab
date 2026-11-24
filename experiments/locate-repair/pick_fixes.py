@@ -124,13 +124,13 @@ def choosers(case, networks, seed):
 
 
 def run_seed(args):
-    seed, out, stages = args
+    seed, out, stages, *rest = args  # an optional fourth item is the folder holding labels/case-SEED.npz (#72)
     path = Path(out) / f"case-{seed}.json"
     if path.exists():
         return seed
     start = time.time()
     case = ev.rs.resize(ev.t3.corrupt(16, seed))
-    x, y = labels(case, seed)
+    x, y = labels(case, seed, Path(rest[0])) if rest else labels(case, seed)
     probe = ev.bs.make_probe(case, ev.bs.PROBE)
     options = ev.TWO_STEP[stages - 1]
     keep = {}

@@ -1,0 +1,4701 @@
+[
+ {
+  "seed": 300,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      27
+     ],
+     [
+      "weight",
+      6
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.5e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      27
+     ],
+     [
+      "weight",
+      6
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.4e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      27
+     ],
+     [
+      "weight",
+      6
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.4e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 3,
+    "asked": 3,
+    "correct": {
+     "pick68": 2,
+     "restarts": 2,
+     "boundary": 1
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 836.9
+ },
+ {
+  "seed": 301,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.7e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.8e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.4e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 3,
+    "asked": 3,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 3
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1005.8
+ },
+ {
+  "seed": 302,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 4,
+    "asked": 4,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 4
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 910.9
+ },
+ {
+  "seed": 303,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 0,
+    "disagreement": 3.4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 0,
+    "disagreement": 3.9e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 0,
+    "disagreement": 1.6e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 10,
+    "asked": 10,
+    "correct": {
+     "pick68": 2,
+     "restarts": 0,
+     "boundary": 10
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": false,
+  "stage_options": {},
+  "seconds": 830.3
+ },
+ {
+  "seed": 304,
+  "labels": 1096,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "hidden_weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "hidden_weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "hidden_weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9991379310344828,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.3e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 3,
+    "asked": 3,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 2
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 963.0
+ },
+ {
+  "seed": 305,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.1e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.1e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "middle_used": false,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 1,
+    "asked": 1,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 1
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1137.2
+ },
+ {
+  "seed": 306,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 9e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 9e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 4e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 930.3
+ },
+ {
+  "seed": 307,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 2e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 2e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 4e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 1,
+    "asked": 1,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 974.6
+ },
+ {
+  "seed": 308,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.000212
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.000212
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 0.9983108108108109,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 7e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 34,
+    "asked": 32,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 32
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 928.4
+ },
+ {
+  "seed": 309,
+  "labels": 1120,
+  "bigger_ran": true,
+  "bigger": {
+   "has_true": true,
+   "true_pair_rank": 18
+  },
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4.3e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4.3e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3e-06
+   },
+   "bigger": {
+    "winner": [
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      12
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4.3e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64,
+     "bigger": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 7,
+    "asked": 7,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 7,
+     "bigger": 0
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 2262.4
+ },
+ {
+  "seed": 310,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      4
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      4
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      4
+     ],
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 5e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 1,
+    "asked": 1,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1085.5
+ },
+ {
+  "seed": 311,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "weight",
+      6
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "weight",
+      6
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.4e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "weight",
+      6
+     ],
+     [
+      "weight",
+      12
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 0.9983108108108109,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 8e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 6,
+    "asked": 6,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 5
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1142.8
+ },
+ {
+  "seed": 312,
+  "labels": 1120,
+  "bigger_ran": true,
+  "bigger": {
+   "has_true": true,
+   "true_pair_rank": 44
+  },
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      7
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3.4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      7
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3.4e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      7
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 0.9983108108108109,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.3e-05
+   },
+   "bigger": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      7
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3.4e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64,
+     "bigger": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 1,
+    "asked": 1,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 1,
+     "bigger": 0
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 2617.9
+ },
+ {
+  "seed": 313,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3.3e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3.3e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 6e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 8,
+    "asked": 8,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 8
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1135.8
+ },
+ {
+  "seed": 314,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "weight",
+      6
+     ],
+     [
+      "weight",
+      14
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 8e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "weight",
+      6
+     ],
+     [
+      "weight",
+      14
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 8e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "weight",
+      6
+     ],
+     [
+      "weight",
+      14
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.9e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 2,
+    "asked": 2,
+    "correct": {
+     "pick68": 2,
+     "restarts": 2,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1074.2
+ },
+ {
+  "seed": 315,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3.2e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3.2e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.7e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 10,
+    "asked": 10,
+    "correct": {
+     "pick68": 4,
+     "restarts": 4,
+     "boundary": 6
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 3661.7
+ },
+ {
+  "seed": 316,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 7.4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 7.4e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      2
+     ],
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "weight",
+      25
+     ]
+    ],
+    "practice_accuracy": 0.9983108108108109,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.4e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 6,
+    "asked": 6,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 6
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 920.7
+ },
+ {
+  "seed": 317,
+  "labels": 1120,
+  "bigger_ran": true,
+  "bigger": {
+   "has_true": true,
+   "true_pair_rank": 0
+  },
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.9e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.9e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 0.9983108108108109,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.5e-05
+   },
+   "bigger": {
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.9e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64,
+     "bigger": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0,
+     "bigger": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 2815.3
+ },
+ {
+  "seed": 318,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "hidden_weight",
+      25
+     ],
+     [
+      "weight",
+      13
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.2e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "hidden_weight",
+      25
+     ],
+     [
+      "weight",
+      13
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.2e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "hidden_weight",
+      25
+     ],
+     [
+      "weight",
+      13
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.1e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 5,
+    "asked": 5,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 4
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1125.3
+ },
+ {
+  "seed": 319,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3.5e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3.5e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.6e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 5,
+    "asked": 5,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 4
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 930.6
+ },
+ {
+  "seed": 320,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      18
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.7e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      18
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.7e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      18
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 6e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 3,
+    "asked": 3,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 2
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1038.1
+ },
+ {
+  "seed": 321,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 895.8
+ },
+ {
+  "seed": 322,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      6
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4.1e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      6
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4.1e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      6
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 7e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 4,
+    "asked": 4,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 4
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 991.0
+ },
+ {
+  "seed": 323,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      15
+     ],
+     [
+      "hidden_weight",
+      23
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.5e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      15
+     ],
+     [
+      "hidden_weight",
+      23
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.5e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      15
+     ],
+     [
+      "hidden_weight",
+      23
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.6e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 747.3
+ },
+ {
+  "seed": 324,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 1,
+    "disagreement": 8e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 1,
+    "disagreement": 8e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "hidden_weight",
+      20
+     ],
+     [
+      "weight",
+      14
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 1,
+    "disagreement": 3e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": false,
+  "stage_options": {},
+  "seconds": 822.1
+ },
+ {
+  "seed": 325,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 5.6e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 5.6e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "weight",
+      0
+     ]
+    ],
+    "practice_accuracy": 0.9966216216216216,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 5.5e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1063.7
+ },
+ {
+  "seed": 326,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4.4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4.4e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      8
+     ],
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "weight",
+      1
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 7e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 9,
+    "asked": 9,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 8
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1117.2
+ },
+ {
+  "seed": 327,
+  "labels": 1096,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.8e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.7e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 4,
+    "asked": 4,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 4
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 876.8
+ },
+ {
+  "seed": 328,
+  "labels": 1120,
+  "bigger_ran": true,
+  "bigger": {
+   "has_true": true,
+   "true_pair_rank": 0
+  },
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 0.9940878378378378,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1e-05
+   },
+   "bigger": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 0.9991071428571429,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64,
+     "bigger": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 6,
+    "asked": 6,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 5,
+     "bigger": 1
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 7865.2
+ },
+ {
+  "seed": 329,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      13
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 9e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      13
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 9e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      13
+     ],
+     [
+      "weight",
+      19
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 6e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 1,
+    "asked": 1,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1044.8
+ },
+ {
+  "seed": 330,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.2e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.2e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "weight",
+      3
+     ],
+     [
+      "weight",
+      5
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.2e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 1,
+    "asked": 1,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1178.2
+ },
+ {
+  "seed": 331,
+  "labels": 1096,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.000766
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.000767
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      7
+     ],
+     [
+      "hidden_weight",
+      3
+     ]
+    ],
+    "practice_accuracy": 0.9991379310344828,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.000678
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 19,
+    "asked": 19,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 18
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1021.6
+ },
+ {
+  "seed": 332,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.6e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.6e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "bias",
+      1
+     ],
+     [
+      "weight",
+      10
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9983108108108109,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 2,
+    "asked": 2,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 1
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1015.8
+ },
+ {
+  "seed": 333,
+  "labels": 1096,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      22
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.8e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      22
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.8e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      22
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 7e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1031.5
+ },
+ {
+  "seed": 334,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "hidden_weight",
+      22
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.1e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "hidden_weight",
+      22
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.1e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "hidden_weight",
+      12
+     ],
+     [
+      "hidden_weight",
+      22
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 2e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 870.1
+ },
+ {
+  "seed": 335,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      13
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 7e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      13
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 7e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      8
+     ],
+     [
+      "hidden_weight",
+      10
+     ],
+     [
+      "weight",
+      13
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 953.0
+ },
+ {
+  "seed": 336,
+  "labels": 1104,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      31
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      31
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.4e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      6
+     ],
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      31
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 2,
+    "asked": 2,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 2
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 881.6
+ },
+ {
+  "seed": 337,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.2e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.2e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "bias",
+      0
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.0
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 6,
+    "asked": 6,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 5
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 772.7
+ },
+ {
+  "seed": 338,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 5,
+    "asked": 5,
+    "correct": {
+     "pick68": 2,
+     "restarts": 2,
+     "boundary": 3
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 2975.4
+ },
+ {
+  "seed": 339,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.9e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      22
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 4,
+    "asked": 4,
+    "correct": {
+     "pick68": 2,
+     "restarts": 3,
+     "boundary": 1
+    },
+    "pick": "restarts"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1084.0
+ },
+ {
+  "seed": 340,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      5
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.2e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      5
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.2e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      5
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.4e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 3,
+    "asked": 3,
+    "correct": {
+     "pick68": 3,
+     "restarts": 3,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1041.6
+ },
+ {
+  "seed": 341,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.3e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.3e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "weight",
+      2
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9974662162162162,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.4e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 2,
+    "asked": 2,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 2
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 790.1
+ },
+ {
+  "seed": 342,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "hidden_weight",
+      25
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "hidden_weight",
+      25
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.4e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "hidden_weight",
+      25
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 0.9983108108108109,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 3e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 2,
+    "asked": 2,
+    "correct": {
+     "pick68": 1,
+     "restarts": 1,
+     "boundary": 1
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 895.6
+ },
+ {
+  "seed": 343,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.7e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.7e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      18
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 1,
+    "asked": 1,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 1
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 1114.6
+ },
+ {
+  "seed": 344,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_bias",
+      6
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 2e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_bias",
+      6
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 2e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_bias",
+      6
+     ]
+    ],
+    "practice_accuracy": 0.9983108108108109,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 6e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 2,
+    "asked": 2,
+    "correct": {
+     "pick68": 2,
+     "restarts": 2,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 852.8
+ },
+ {
+  "seed": 345,
+  "labels": 1096,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "hidden_weight",
+      31
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.1e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "hidden_weight",
+      31
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.1e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "hidden_weight",
+      31
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 4e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 4,
+    "asked": 4,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 4
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 961.9
+ },
+ {
+  "seed": 346,
+  "labels": 1096,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "hidden_weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "hidden_weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_weight",
+      4
+     ],
+     [
+      "hidden_weight",
+      27
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 0,
+    "asked": 0,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 0
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 830.0
+ },
+ {
+  "seed": 347,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.3e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.3e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      0
+     ],
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      15
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 2,
+    "disagreement": 1.5e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 6,
+    "asked": 6,
+    "correct": {
+     "pick68": 4,
+     "restarts": 4,
+     "boundary": 2
+    },
+    "pick": "pick68"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 782.4
+ },
+ {
+  "seed": 348,
+  "labels": 1120,
+  "bigger_ran": true,
+  "bigger": {
+   "has_true": true,
+   "true_pair_rank": 16
+  },
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 0.9982142857142857,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.000241
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 0.9982142857142857,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.000241
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 0.9974662162162162,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 2.3e-05
+   },
+   "bigger": {
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "weight",
+      1
+     ],
+     [
+      "weight",
+      11
+     ]
+    ],
+    "practice_accuracy": 0.9982142857142857,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.000241
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64,
+     "bigger": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 53,
+    "asked": 32,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 32,
+     "bigger": 0
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {},
+  "seconds": 2436.4
+ },
+ {
+  "seed": 349,
+  "labels": 1120,
+  "bigger_ran": false,
+  "bigger": {},
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "weight",
+      16
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.0001
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "weight",
+      16
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 0.0001
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      17
+     ],
+     [
+      "weight",
+      16
+     ],
+     [
+      "weight",
+      17
+     ]
+    ],
+    "practice_accuracy": 0.9974662162162162,
+    "middle_used": true,
+    "faults_found": 3,
+    "disagreement": 1.8e-05
+   }
+  },
+  "choosers": {
+   "uniform": {
+    "correct": {
+     "pick68": 64,
+     "restarts": 64,
+     "boundary": 64
+    },
+    "pick": "pick68"
+   },
+   "disagree": {
+    "split_inputs": 18,
+    "asked": 18,
+    "correct": {
+     "pick68": 0,
+     "restarts": 0,
+     "boundary": 18
+    },
+    "pick": "boundary"
+   }
+  },
+  "committee_has_true": true,
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1071.3
+ }
+]

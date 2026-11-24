@@ -763,6 +763,62 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual((picks[name]["gained"], picks[name]["lost"]), ([258, 259, 269], []))
         self.assertEqual(picks["disagree"]["worse"], [272])
 
+    def test_fresh_repair_collect_and_score(self):
+        import json
+        import tempfile
+        from pathlib import Path
+        import numpy as np
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from fresh_repair import collect, score
+        with tempfile.TemporaryDirectory() as tmp:
+            src = Path(tmp)
+            for folder, seed, stages in (("p0", 300, 1), ("p1", 301, 3)):
+                (src / folder).mkdir()
+                (src / folder / f"case-{seed}.json").write_text(json.dumps({"seed": seed, "stages_run": stages}))
+                (src / folder / f"case-{seed}.stage0.json").write_text("{}")
+                np.savez(src / folder / f"case-{seed}.stage{stages - 1}.npz", x=np.zeros((1, 2)) + seed)
+            rows = collect(src)
+            self.assertEqual(sorted(rows), [300, 301])
+            self.assertEqual(float(np.load(src / "labels" / "case-301.npz")["x"][0, 0]), 301.0)
+            self.assertEqual([c["seed"] for c in json.loads((src / "cases.json").read_text())["cases"]], [300, 301])
+        region = lambda d, faults: {"region": {"middle": None, "faults_found": faults, "final_d": d}}
+        before = {1: {"seconds": 3600.0, "stages_run": 1, "extra": region(2e-4, 2)},
+                  2: {"seconds": 3600.0, "stages_run": 3, "extra": region(5e-5, 3)}}
+        cand = lambda d, faults=3: {"disagreement": d, "faults_found": faults, "winner": [[1]]}
+        row = lambda cands, dd, asked: {"seconds": 1800.0, "bigger_ran": False, "candidates": cands,
+                                        "choosers": {"uniform": {"pick": "pick68"},
+                                                     "disagree": {"pick": dd, "split_inputs": asked, "asked": asked}}}
+        rows = {1: row({"pick68": cand(2e-4), "restarts": cand(2e-4), "boundary": cand(5e-5)}, "boundary", 4),
+                2: row({"pick68": cand(5e-5), "restarts": cand(5e-5), "boundary": cand(3e-4)}, "boundary", 2)}
+        import fresh_repair
+        real = fresh_repair.final
+        fresh_repair.final = lambda e, middle: e["final_d"]
+        try:
+            out = score(before, rows)
+        finally:
+            fresh_repair.final = real
+        self.assertEqual(out["repair_65"], {"under_0.01%": 1, "under_0.1%": 2, "exact": 1})
+        self.assertEqual(out["disagree_vs_65"], {"gained": [1], "lost": [2]})
+        self.assertEqual(out["over_line"], {"2": 3e-4})
+        self.assertEqual((out["labels_asked"], out["cpu_hours_65"]), (6, 2.0))
+        self.assertEqual(out["stages_run"], {"1": 1, "2": 0, "3": 1})
+
+    def test_fresh_repair_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/fresh-repair/check.json").read_text())
+        self.assertEqual(check["seeds"], 50)
+        self.assertEqual(check["stages_run"], {"1": 38, "2": 9, "3": 3})
+        self.assertEqual(check["repair_65"]["under_0.01%"], 41)
+        picks = check["picks"]
+        self.assertEqual(picks["pick68"]["under_0.01%"], 46)
+        for name in ("disagree", "probe_best"):
+            self.assertEqual((picks[name]["under_0.01%"], picks[name]["under_0.1%"], picks[name]["exact"]), (49, 50, 39))
+            self.assertEqual((picks[name]["gained"], picks[name]["lost"]), ([308, 348, 349], []))
+        self.assertEqual(check["disagree_vs_65"]["lost"], [])
+        self.assertEqual(list(check["over_line"]), ["331"])
+        self.assertEqual(picks["disagree"]["worse"], [341])
+        self.assertEqual(len(list((ROOT / "experiments/locate-repair/evidence/fresh-repair/labels").glob("*.npz"))), 50)
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
