@@ -1,0 +1,1345 @@
+[
+ {
+  "seed": 258,
+  "triples": 43974,
+  "committee_size": 200,
+  "committee_has_true_triple": false,
+  "true_tied_top_refit": false,
+  "rounds": [
+   {
+    "round": 0,
+    "labels": 1096,
+    "tied": 3,
+    "winner": [
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "hidden_weight",
+      16
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9908759124087592,
+    "cost": 2.883502377716719,
+    "faults_found": 1,
+    "disagreement": 0.001879,
+    "middle": {
+     "mean_chord": 0.012044457886368036,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9917883211678832,
+     "disagreement": 0.001964
+    }
+   },
+   {
+    "round": 1,
+    "labels": 1104,
+    "splitting": 27,
+    "tied_before": 3,
+    "tied": 2,
+    "true_tied_top": false,
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 0.990036231884058,
+    "cost": 4.709010463242098,
+    "faults_found": 2,
+    "disagreement": 0.001157,
+    "middle": {
+     "mean_chord": 0.04631290055811405,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.990036231884058,
+     "disagreement": 0.00139
+    }
+   },
+   {
+    "round": 2,
+    "labels": 1112,
+    "splitting": 0,
+    "tied_before": 2,
+    "tied": 2,
+    "true_tied_top": false,
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 0.9901079136690647,
+    "cost": 4.709010463242098,
+    "faults_found": 2,
+    "disagreement": 0.001157,
+    "middle": {
+     "mean_chord": 0.04631290055811405,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9901079136690647,
+     "disagreement": 0.00139
+    }
+   },
+   {
+    "round": 3,
+    "labels": 1120,
+    "splitting": 0,
+    "tied_before": 2,
+    "tied": 2,
+    "true_tied_top": false,
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 0.9901785714285715,
+    "cost": 4.709010463242098,
+    "faults_found": 2,
+    "disagreement": 0.001157,
+    "middle": {
+     "mean_chord": 0.04631290055811405,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9901785714285715,
+     "disagreement": 0.00139
+    }
+   }
+  ],
+  "final_labels": 1120,
+  "winner": [
+   [
+    "hidden_bias",
+    9
+   ],
+   [
+    "hidden_weight",
+    13
+   ],
+   [
+    "weight",
+    4
+   ]
+  ],
+  "arms": {
+   "restarts": {
+    "winner_accuracy_before": 0.9901785714285715,
+    "winner_accuracy": 0.9901785714285715,
+    "true_accuracy_before": null,
+    "true_accuracy": null,
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 0.9901785714285715,
+    "cost": 4.708775694849778,
+    "faults_found": 2,
+    "disagreement": 0.001158,
+    "middle": {
+     "mean_chord": 0.04692707065492868,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9901785714285715,
+     "disagreement": 0.00139
+    }
+   },
+   "boundary": {
+    "rounds": [
+     {
+      "round": 1,
+      "labels": 1136,
+      "wrong_before": 8,
+      "accuracy": 0.9876760563380281,
+      "disagreement": 0.001141
+     },
+     {
+      "round": 2,
+      "labels": 1152,
+      "wrong_before": 5,
+      "accuracy": 0.9852430555555556,
+      "disagreement": 0.001129
+     },
+     {
+      "round": 3,
+      "labels": 1168,
+      "wrong_before": 6,
+      "accuracy": 0.9837328767123288,
+      "disagreement": 0.001105
+     },
+     {
+      "round": 4,
+      "labels": 1184,
+      "wrong_before": 8,
+      "accuracy": 0.9780405405405406,
+      "disagreement": 0.001086
+     }
+    ],
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "practice_accuracy": 0.9780405405405406,
+    "cost": 4.665935785958595,
+    "faults_found": 2,
+    "disagreement": 0.001086,
+    "middle": {
+     "mean_chord": 0.020282313488423825,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9847972972972973,
+     "disagreement": 0.001023
+    }
+   },
+   "bigger": {
+    "committee_size": 400,
+    "pairs_kept": 2000,
+    "triples": 71803,
+    "pairs": 3321,
+    "true_pair_rank": 1117,
+    "has_true": true,
+    "true_rank": 0,
+    "true_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      9
+     ],
+     [
+      "hidden_weight",
+      13
+     ],
+     [
+      "weight",
+      8
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.707041558944349,
+    "faults_found": 3,
+    "disagreement": 4.9e-05,
+    "middle": {
+     "mean_chord": 0.0024631697498261928,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.9e-05
+    }
+   }
+  },
+  "true_check": {
+   "accuracy": 1.0,
+   "disagreement": 4.7e-05
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 7336.4
+ },
+ {
+  "seed": 259,
+  "triples": 12147,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_tied_top_refit": false,
+  "rounds": [
+   {
+    "round": 0,
+    "labels": 1096,
+    "tied": 1,
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_weight",
+      2
+     ]
+    ],
+    "practice_accuracy": 0.9936131386861314,
+    "cost": 5.820142866617075,
+    "faults_found": 2,
+    "disagreement": 0.000176,
+    "middle": {
+     "mean_chord": 0.008616043403744698,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9936131386861314,
+     "disagreement": 0.000236
+    }
+   }
+  ],
+  "final_labels": 1096,
+  "winner": [
+   [
+    "hidden_bias",
+    3
+   ],
+   [
+    "hidden_bias",
+    5
+   ],
+   [
+    "hidden_weight",
+    2
+   ]
+  ],
+  "arms": {
+   "restarts": {
+    "winner_accuracy_before": 0.9936131386861314,
+    "winner_accuracy": 0.9945255474452555,
+    "true_accuracy_before": 0.9854014598540146,
+    "true_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_weight",
+      2
+     ],
+     [
+      "hidden_weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.472369387461896,
+    "faults_found": 3,
+    "disagreement": 3e-05,
+    "middle": {
+     "mean_chord": 0.001042718756943941,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 2.7e-05
+    }
+   },
+   "boundary": {
+    "rounds": [
+     {
+      "round": 1,
+      "labels": 1112,
+      "wrong_before": 4,
+      "accuracy": 0.9901079136690647,
+      "disagreement": 0.000181
+     },
+     {
+      "round": 2,
+      "labels": 1128,
+      "wrong_before": 2,
+      "accuracy": 0.9884751773049646,
+      "disagreement": 0.000181
+     },
+     {
+      "round": 3,
+      "labels": 1144,
+      "wrong_before": 3,
+      "accuracy": 0.9868881118881119,
+      "disagreement": 0.000183
+     },
+     {
+      "round": 4,
+      "labels": 1160,
+      "wrong_before": 2,
+      "accuracy": 0.9862068965517241,
+      "disagreement": 0.000171
+     }
+    ],
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_bias",
+      5
+     ],
+     [
+      "hidden_weight",
+      2
+     ]
+    ],
+    "practice_accuracy": 0.9862068965517241,
+    "cost": 5.809027836300777,
+    "faults_found": 2,
+    "disagreement": 0.000171,
+    "middle": {
+     "mean_chord": 0.005307693853974342,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9887931034482759,
+     "disagreement": 0.000177
+    }
+   }
+  },
+  "true_check": {
+   "accuracy": 1.0,
+   "disagreement": 3.5e-05
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1238.6
+ },
+ {
+  "seed": 260,
+  "triples": 9286,
+  "committee_size": 200,
+  "committee_has_true_triple": true,
+  "true_tied_top_refit": true,
+  "rounds": [
+   {
+    "round": 0,
+    "labels": 1096,
+    "tied": 4,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.450930698684857,
+    "faults_found": 3,
+    "disagreement": 0.001007,
+    "middle": {
+     "mean_chord": 0.0007593802176415921,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000989
+    }
+   },
+   {
+    "round": 1,
+    "labels": 1104,
+    "splitting": 10,
+    "tied_before": 4,
+    "tied": 4,
+    "true_tied_top": true,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.68942167846244,
+    "faults_found": 3,
+    "disagreement": 0.000625,
+    "middle": {
+     "mean_chord": 0.0007593838311731816,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000613
+    }
+   },
+   {
+    "round": 2,
+    "labels": 1112,
+    "splitting": 4,
+    "tied_before": 4,
+    "tied": 4,
+    "true_tied_top": true,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.689119677130924,
+    "faults_found": 3,
+    "disagreement": 0.000625,
+    "middle": {
+     "mean_chord": 0.0007593802176415921,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000613
+    }
+   },
+   {
+    "round": 3,
+    "labels": 1120,
+    "splitting": 0,
+    "tied_before": 4,
+    "tied": 4,
+    "true_tied_top": true,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.689119677130924,
+    "faults_found": 3,
+    "disagreement": 0.000625,
+    "middle": {
+     "mean_chord": 0.0007593802176415921,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000613
+    }
+   }
+  ],
+  "final_labels": 1120,
+  "winner": [
+   [
+    "hidden_weight",
+    9
+   ],
+   [
+    "weight",
+    0
+   ],
+   [
+    "weight",
+    10
+   ]
+  ],
+  "arms": {
+   "restarts": {
+    "winner_accuracy_before": 1.0,
+    "winner_accuracy": 1.0,
+    "true_accuracy_before": 1.0,
+    "true_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 4.689119677130924,
+    "faults_found": 3,
+    "disagreement": 0.000625,
+    "middle": {
+     "mean_chord": 0.0007593802176415921,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000613
+    }
+   },
+   "boundary": {
+    "rounds": [
+     {
+      "round": 1,
+      "labels": 1136,
+      "wrong_before": 0,
+      "accuracy": 1.0,
+      "disagreement": 0.000625
+     },
+     {
+      "round": 2,
+      "labels": 1152,
+      "wrong_before": 2,
+      "accuracy": 0.9991319444444444,
+      "disagreement": 0.000585
+     },
+     {
+      "round": 3,
+      "labels": 1168,
+      "wrong_before": 1,
+      "accuracy": 0.9991438356164384,
+      "disagreement": 0.000466
+     },
+     {
+      "round": 4,
+      "labels": 1184,
+      "wrong_before": 1,
+      "accuracy": 0.9991554054054054,
+      "disagreement": 0.000454
+     }
+    ],
+    "winner": [
+     [
+      "hidden_weight",
+      9
+     ],
+     [
+      "weight",
+      0
+     ],
+     [
+      "weight",
+      10
+     ]
+    ],
+    "practice_accuracy": 0.9991554054054054,
+    "cost": 4.804906206143449,
+    "faults_found": 3,
+    "disagreement": 0.000454,
+    "middle": {
+     "mean_chord": 0.0007617765292525291,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000436
+    }
+   }
+  },
+  "true_check": {
+   "accuracy": 1.0,
+   "disagreement": 0.000653
+  },
+  "stage_options": {},
+  "seconds": 904.3
+ },
+ {
+  "seed": 261,
+  "triples": 11392,
+  "committee_size": 200,
+  "committee_has_true_triple": false,
+  "true_tied_top_refit": false,
+  "rounds": [
+   {
+    "round": 0,
+    "labels": 1096,
+    "tied": 5,
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 0.9990875912408759,
+    "cost": 6.411833119431021,
+    "faults_found": 2,
+    "disagreement": 0.000579,
+    "middle": {
+     "mean_chord": 0.003600091151893139,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9990875912408759,
+     "disagreement": 0.000548
+    }
+   },
+   {
+    "round": 1,
+    "labels": 1104,
+    "splitting": 14,
+    "tied_before": 5,
+    "tied": 1,
+    "true_tied_top": false,
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9981884057971014,
+    "cost": 4.754354509756038,
+    "faults_found": 2,
+    "disagreement": 0.000361,
+    "middle": {
+     "mean_chord": 0.0012241828627884389,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9981884057971014,
+     "disagreement": 0.000314
+    }
+   }
+  ],
+  "final_labels": 1104,
+  "winner": [
+   [
+    "hidden_weight",
+    24
+   ],
+   [
+    "hidden_weight",
+    31
+   ],
+   [
+    "weight",
+    23
+   ]
+  ],
+  "arms": {
+   "restarts": {
+    "winner_accuracy_before": 0.9981884057971014,
+    "winner_accuracy": 0.9981884057971014,
+    "true_accuracy_before": null,
+    "true_accuracy": null,
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9981884057971014,
+    "cost": 4.753091722580191,
+    "faults_found": 2,
+    "disagreement": 0.000361,
+    "middle": {
+     "mean_chord": 0.001223657988011837,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9981884057971014,
+     "disagreement": 0.000314
+    }
+   },
+   "boundary": {
+    "rounds": [
+     {
+      "round": 1,
+      "labels": 1120,
+      "wrong_before": 6,
+      "accuracy": 0.9964285714285714,
+      "disagreement": 0.0003
+     },
+     {
+      "round": 2,
+      "labels": 1136,
+      "wrong_before": 3,
+      "accuracy": 0.9973591549295775,
+      "disagreement": 0.00016
+     },
+     {
+      "round": 3,
+      "labels": 1152,
+      "wrong_before": 4,
+      "accuracy": 0.9947916666666666,
+      "disagreement": 0.000131
+     },
+     {
+      "round": 4,
+      "labels": 1168,
+      "wrong_before": 1,
+      "accuracy": 0.9922945205479452,
+      "disagreement": 0.000134
+     }
+    ],
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      23
+     ]
+    ],
+    "practice_accuracy": 0.9922945205479452,
+    "cost": 4.685343778024687,
+    "faults_found": 2,
+    "disagreement": 0.000134,
+    "middle": {
+     "mean_chord": 0.0021712660603225233,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9922945205479452,
+     "disagreement": 0.00021
+    }
+   },
+   "bigger": {
+    "committee_size": 400,
+    "pairs_kept": 400,
+    "triples": 18060,
+    "pairs": 3321,
+    "true_pair_rank": 24,
+    "has_true": false,
+    "true_rank": null,
+    "true_accuracy": null,
+    "winner": [
+     [
+      "hidden_weight",
+      24
+     ],
+     [
+      "hidden_weight",
+      31
+     ],
+     [
+      "weight",
+      7
+     ]
+    ],
+    "practice_accuracy": 0.9981884057971014,
+    "cost": 4.75435255761854,
+    "faults_found": 2,
+    "disagreement": 0.000361,
+    "middle": {
+     "mean_chord": 0.002152678146958351,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9981884057971014,
+     "disagreement": 0.000207
+    }
+   }
+  },
+  "true_check": {
+   "accuracy": 0.9710144927536232,
+   "disagreement": 0.003717
+  },
+  "stage_options": {},
+  "seconds": 2369.2
+ },
+ {
+  "seed": 269,
+  "triples": 11969,
+  "committee_size": 1000,
+  "committee_has_true_triple": true,
+  "true_tied_top_refit": true,
+  "rounds": [
+   {
+    "round": 0,
+    "labels": 1096,
+    "tied": 1,
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.512329003196665,
+    "faults_found": 3,
+    "disagreement": 6.1e-05,
+    "middle": {
+     "mean_chord": 0.009467615969479084,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000138
+    }
+   }
+  ],
+  "final_labels": 1096,
+  "winner": [
+   [
+    "hidden_weight",
+    1
+   ],
+   [
+    "hidden_weight",
+    3
+   ],
+   [
+    "hidden_weight",
+    20
+   ]
+  ],
+  "arms": {
+   "restarts": {
+    "winner_accuracy_before": 1.0,
+    "winner_accuracy": 1.0,
+    "true_accuracy_before": 1.0,
+    "true_accuracy": 1.0,
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.506304422028032,
+    "faults_found": 3,
+    "disagreement": 0.00015,
+    "middle": {
+     "mean_chord": 0.009467616882175208,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 0.000138
+    }
+   },
+   "boundary": {
+    "rounds": [
+     {
+      "round": 1,
+      "labels": 1112,
+      "wrong_before": 1,
+      "accuracy": 1.0,
+      "disagreement": 6.7e-05
+     },
+     {
+      "round": 2,
+      "labels": 1128,
+      "wrong_before": 3,
+      "accuracy": 1.0,
+      "disagreement": 1.7e-05
+     },
+     {
+      "round": 3,
+      "labels": 1144,
+      "wrong_before": 0,
+      "accuracy": 1.0,
+      "disagreement": 1.7e-05
+     },
+     {
+      "round": 4,
+      "labels": 1160,
+      "wrong_before": 0,
+      "accuracy": 1.0,
+      "disagreement": 1.7e-05
+     }
+    ],
+    "winner": [
+     [
+      "hidden_weight",
+      1
+     ],
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      20
+     ]
+    ],
+    "practice_accuracy": 1.0,
+    "cost": 5.514593481749631,
+    "faults_found": 3,
+    "disagreement": 1.7e-05,
+    "middle": {
+     "mean_chord": 0.0009677663072943688,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 1.0,
+     "disagreement": 1.7e-05
+    }
+   }
+  },
+  "true_check": {
+   "accuracy": 1.0,
+   "disagreement": 0.00023
+  },
+  "stage_options": {
+   "committee_size": 1000
+  },
+  "seconds": 1055.8
+ },
+ {
+  "seed": 296,
+  "triples": 47708,
+  "committee_size": 200,
+  "committee_has_true_triple": false,
+  "true_tied_top_refit": false,
+  "rounds": [
+   {
+    "round": 0,
+    "labels": 1096,
+    "tied": 2,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9917883211678832,
+    "cost": 3.571472856892053,
+    "faults_found": 2,
+    "disagreement": 0.008087,
+    "middle": {
+     "mean_chord": 0.0017095394246280193,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9908759124087592,
+     "disagreement": 0.008077
+    }
+   },
+   {
+    "round": 1,
+    "labels": 1104,
+    "splitting": 0,
+    "tied_before": 2,
+    "tied": 2,
+    "true_tied_top": false,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9918478260869565,
+    "cost": 3.5714869427010685,
+    "faults_found": 2,
+    "disagreement": 0.008091,
+    "middle": {
+     "mean_chord": 0.0017077846452593804,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.990036231884058,
+     "disagreement": 0.008075
+    }
+   },
+   {
+    "round": 2,
+    "labels": 1112,
+    "splitting": 0,
+    "tied_before": 2,
+    "tied": 2,
+    "true_tied_top": false,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9919064748201439,
+    "cost": 3.571486592543524,
+    "faults_found": 2,
+    "disagreement": 0.00809,
+    "middle": {
+     "mean_chord": 0.001729499977082014,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9910071942446043,
+     "disagreement": 0.008071
+    }
+   },
+   {
+    "round": 3,
+    "labels": 1120,
+    "splitting": 0,
+    "tied_before": 2,
+    "tied": 2,
+    "true_tied_top": false,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9919642857142857,
+    "cost": 3.5714865559089275,
+    "faults_found": 2,
+    "disagreement": 0.008091,
+    "middle": {
+     "mean_chord": 0.001700698882341385,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9910714285714286,
+     "disagreement": 0.008072
+    }
+   }
+  ],
+  "final_labels": 1120,
+  "winner": [
+   [
+    "hidden_weight",
+    3
+   ],
+   [
+    "hidden_weight",
+    21
+   ],
+   [
+    "weight",
+    9
+   ]
+  ],
+  "arms": {
+   "restarts": {
+    "winner_accuracy_before": 0.9919642857142857,
+    "winner_accuracy": 0.9919642857142857,
+    "true_accuracy_before": null,
+    "true_accuracy": null,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9919642857142857,
+    "cost": 3.5714850796969237,
+    "faults_found": 2,
+    "disagreement": 0.00809,
+    "middle": {
+     "mean_chord": 0.00170549551025033,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9910714285714286,
+     "disagreement": 0.008073
+    }
+   },
+   "boundary": {
+    "rounds": [
+     {
+      "round": 1,
+      "labels": 1136,
+      "wrong_before": 9,
+      "accuracy": 0.9841549295774648,
+      "disagreement": 0.008048
+     },
+     {
+      "round": 2,
+      "labels": 1152,
+      "wrong_before": 8,
+      "accuracy": 0.9791666666666666,
+      "disagreement": 0.007936
+     },
+     {
+      "round": 3,
+      "labels": 1168,
+      "wrong_before": 12,
+      "accuracy": 0.9726027397260274,
+      "disagreement": 0.007931
+     },
+     {
+      "round": 4,
+      "labels": 1184,
+      "wrong_before": 8,
+      "accuracy": 0.9721283783783784,
+      "disagreement": 0.007881
+     }
+    ],
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9721283783783784,
+    "cost": 3.572491201659898,
+    "faults_found": 2,
+    "disagreement": 0.007881,
+    "middle": {
+     "mean_chord": 0.008394053094089032,
+     "used": true,
+     "min_chord": 0.005,
+     "accuracy": 0.9763513513513513,
+     "disagreement": 0.007453
+    }
+   },
+   "bigger": {
+    "committee_size": 400,
+    "pairs_kept": 2000,
+    "triples": 72519,
+    "pairs": 3321,
+    "true_pair_rank": 168,
+    "has_true": false,
+    "true_rank": null,
+    "true_accuracy": null,
+    "winner": [
+     [
+      "hidden_weight",
+      3
+     ],
+     [
+      "hidden_weight",
+      21
+     ],
+     [
+      "weight",
+      9
+     ]
+    ],
+    "practice_accuracy": 0.9919642857142857,
+    "cost": 3.5714861347948212,
+    "faults_found": 2,
+    "disagreement": 0.00809,
+    "middle": {
+     "mean_chord": 0.001716852318495512,
+     "used": false,
+     "min_chord": 0.005,
+     "accuracy": 0.9919642857142857,
+     "disagreement": 0.008069
+    }
+   }
+  },
+  "true_check": {
+   "accuracy": 1.0,
+   "disagreement": 0.000371
+  },
+  "stage_options": {
+   "pairs_kept": 1000
+  },
+  "seconds": 8205.3
+ }
+]
