@@ -8,6 +8,29 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-24 — Roadmap #70: fix the six cases still over 0.01%
+
+**What ran.** `fix_six.py` reran #68 on the 6 cases it left over 0.01% (reproducing #68's pick in all 6) and tried
+three fixes on each: a committee twice as large with twice the pairs kept (on the 3 cases whose committee lacks the
+true triple), 20 random restarts for the winner and the true triple, and 4 rounds of 16 labels next to the fitted
+decision boundary. It also fitted the true triple to #68's labels as a yardstick. 5.9 core-hours. Write-up:
+[FIX_SIX.md](../experiments/locate-repair/FIX_SIX.md).
+
+**Measured.**
+- 258: the bigger committee brings the true triple in and it wins, 0.139% to 0.0019%.
+- 259: restarts let the true triple win, 0.024% to 0.0027%.
+- 269: boundary labels move the exact repair's values from 0.014% to 0.0017%.
+- 260: the true triple itself reaches only 0.065% on #68's labels; boundary labels take the repair to 0.044%.
+- 261: the true triple fits only 97.1% of #68's labels (0.37%); the best repair stays at 0.021%.
+- 296: the true triple would reach 0.037%, but its best pair ranks 168th and even a committee of 400 lacks it.
+- No arm made any case worse; boundary labels improved all 6.
+
+**Interpretation.** The six leftovers are four different problems (committee, fit, values, and a true triple that
+cannot fit the labels). Each fix rescues one case; taking the best per case would put 47 of 50 under 0.01%, but that
+choice uses the probe. Next: #71 picks among the fixes from labels alone.
+
+---
+
 ## 2026-11-23 — Roadmap #69: find out why the tied members agree
 
 **What ran.** `tied_agree.py` reran #68 on its 41 tied cases (reproducing #68's final pick in all 41), kept every

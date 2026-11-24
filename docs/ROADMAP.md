@@ -1403,6 +1403,21 @@ pick on the 1M-point probe.
 
 **Cost.** CPU, about 5 core-hours.
 
+**Status (November 24): done, see [FIX_SIX.md](../experiments/locate-repair/FIX_SIX.md).**
+
+## 71. Choose among the fixes from labels alone
+
+*Added November 24 after #70.*
+
+#70 found that each of its three fixes (a bigger committee, restarts, boundary labels) rescues a different one of the
+six leftover cases, and none makes any case worse on the probe, but choosing the best fix per case used the probe.
+Run restarts and boundary labels on all 50 of #67's cases (the bigger committee only where the committee lacks the
+true triple), hold out 64 fresh uniform labels per case that no fit sees, and pick among #68's repair and each fix's
+by held-out accuracy, then by fewest edits. Score the picked repair on the 1M-point probe: how many of the 50 are
+under 0.01%, and whether any of #68's 44 cases under the line crosses back over.
+
+**Cost.** CPU, about 20 core-hours.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

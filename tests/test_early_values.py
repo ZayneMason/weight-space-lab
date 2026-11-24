@@ -695,6 +695,41 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(len(check["more_than_mirrors"]), 13)
         self.assertTrue(all(v["mirrors"] == v["mirrors_expected"] for v in check["per_case"].values()))
 
+    def test_fix_six_margin_and_check(self):
+        import numpy as np
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from fix_six import check, margin
+        arrays = {"hidden_weight": np.array([[1.0, 0.0]]), "hidden_bias": np.array([0.0]),
+                  "weight": np.array([[0.0], [2.0]]), "bias": np.array([0.5, 0.0])}
+        x = np.array([[1.0, 0.0], [-1.0, 0.0]])
+        self.assertTrue(np.allclose(margin(arrays, x), [1.5, -0.5]))
+        fit = lambda d, faults=2: {"disagreement": d, "faults_found": faults, "practice_accuracy": 1.0,
+                                   "middle": {"accuracy": 0.5, "disagreement": 0.0}}
+        row = lambda arms, acc=1.0, w=1: {"seconds": 1800.0, "arms": arms, "rounds": [{"winner": [[w]]}],
+                                          "true_check": {"accuracy": acc, "disagreement": 1e-4}}
+        before = {1: {"rounds": [{"winner": [[1]], **fit(2e-4)}]}, 2: {"rounds": [{"winner": [[3]], **fit(5e-4, 3)}]}}
+        rows = {1: row({"restarts": fit(2e-5, 3), "boundary": fit(3e-4)}),
+                2: row({"restarts": fit(5e-4, 3), "boundary": fit(4e-4, 3)}, acc=0.9, w=2)}
+        out = check(rows, before)
+        self.assertEqual(out["cpu_hours"], 1.0)
+        self.assertEqual(out["reproduces_68"], [1])
+        self.assertEqual(out["arms"]["restarts"]["under_0.01%"], [1])
+        self.assertEqual(out["arms"]["restarts"]["closer"], [1])
+        self.assertEqual(out["arms"]["boundary"]["further"], [1])
+        self.assertEqual(out["arms"]["boundary"]["exact"], [2])
+        self.assertEqual(out["true_fits_every_label"], [1])
+
+    def test_fix_six_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/fix-six/check.json").read_text())
+        self.assertEqual(check["reproduces_68"], [258, 259, 260, 261, 269, 296])
+        arms = check["arms"]
+        self.assertEqual((arms["bigger"]["under_0.01%"], arms["restarts"]["under_0.01%"],
+                          arms["boundary"]["under_0.01%"]), ([258], [259], [269]))
+        self.assertTrue(all(a["further"] == [] for a in arms.values()))
+        self.assertEqual(arms["boundary"]["closer"], [258, 259, 260, 261, 269, 296])
+        self.assertEqual(check["true_fits_every_label"], [258, 259, 260, 269, 296])
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
