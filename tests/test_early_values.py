@@ -923,6 +923,21 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertGreater(v["speedup_stage"], 1.3)
         self.assertGreater(check["batched_share_of_refine_calls"], 0.9)
 
+    def test_fresh_cheap_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/fresh-cheap/check.json").read_text())
+        o, c = check["original"], check["cheap"]
+        self.assertEqual(o["seeds"], list(range(350, 362)))
+        self.assertEqual(c["seeds"], o["seeds"])
+        self.assertEqual((o["under_0.01%"], o["exact"], o["repair_65_under_0.01%"]), (12, 9, 9))
+        self.assertEqual((c["under_0.01%"], c["exact"], c["repair_65_under_0.01%"]), (12, 8, 9))
+        v = c["vs_original"]
+        self.assertEqual((v["seeds"], v["same_pick"], v["same_disagreement"]), (12, 11, 9))
+        self.assertEqual(v["crossed"], {"gained": [], "lost": []})
+        self.assertEqual(sorted(v["changed"]), ["355", "356", "360"])
+        self.assertGreater(v["speedup"], 2.1)
+        self.assertGreater(o["refine_share"], 0.8)
+
     def test_cut_refine_losses_match_the_original(self):
         import numpy as np
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))

@@ -8,6 +8,22 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-25 — Roadmap #77: run the whole cheaper repair on fresh seeds
+
+**Measured.** `fresh_cheap.py` runs the whole repair, #65's stage and then #71's, on 12 seeds nothing had been run on
+(350 to 361), once as #72 ran it and once with columns and the batched refine in both stages
+([FRESH_CHEAP.md](../experiments/locate-repair/FRESH_CHEAP.md)). The cheap repair takes 6.24 core-hours against 13.67
+(2.19x; median 2.27x per case), cutting #65's stage 1.97x and #71's 2.49x. All 12 chosen networks are under 0.01% in
+both runs; 9 are exact in the original and 8 in the cheap run. The pick is the same in 11 of 12. The one change is seed
+356, where the cheap run's coarse pick differed and fit the labels, so it skipped the bigger committee, asked one
+label and chose a fix that finds 2 of 3 faults (0.0006%, against 0.0005% with all 3). Two more chosen networks move because #65's labels changed (355 and
+360), both well under the line. Recorded cost 20.4 core-hours.
+
+**Interpretation.** On cases nothing was tuned on, the cheap repair does the original's job for under half the
+compute, so it can be the default. It makes a 50-seed held-out run affordable at about 26 core-hours; that is #78.
+
+---
+
 ## 2026-11-25 — Roadmap #76: check the cheaper refines end to end, and batch the refine
 
 **Measured.** `end_to_end.py` runs #71's stage with columns and loose on the labels #75 saved, and scores the whole

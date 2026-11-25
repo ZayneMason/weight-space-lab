@@ -1507,6 +1507,19 @@ cases are under 0.01% and exact.
 **Cost.** CPU, about 20 to 35 core-hours: #73's original repair averaged about 1.5 core-hours a case, and #76 suggests
 the cheaper one takes a little over half of that.
 
+**Status (November 25): done on 12 fresh cases, see [FRESH_CHEAP.md](../experiments/locate-repair/FRESH_CHEAP.md).** The cheap repair (columns plus batching in both stages) takes 6.24 core-hours against 13.67 (2.19x), keeps all 12 under 0.01% and makes the original's pick in 11 of 12; it loses one exact repair (seed 356, 2 of 3 faults at 0.0006%). A 50-seed held-out run with it moved to #78.
+
+## 78. Run the cheap repair on 50 more fresh seeds
+
+*Added November 25 after #77.*
+
+#72 ran the whole repair on 50 fresh seeds (300 to 349) and #77 showed the cheap repair does the same job on 12 more
+for under half the compute. Run the cheap repair on 50 seeds nothing has been run on (400 to 449) and report how
+many chosen networks are under 0.01% and 0.1% disagreement on a million probe inputs, how many are exact, and the
+cost per case, next to #72's held-out numbers.
+
+**Cost.** CPU, about 25 to 30 core-hours: the cheap repair averaged 0.52 core-hours a case in #77.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
