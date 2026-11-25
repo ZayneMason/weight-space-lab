@@ -8,6 +8,28 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-25 — Roadmap #73: find where the repair's time goes
+
+**What ran.** `time_repair.py` reran #71's stage from the saved labels with every part and step timed exclusively,
+probe scoring pulled out. A one-case pilot (seed 264) showed the three fixes cost under a second each, so the
+planned cheaper order could save almost nothing; the run was cut from 100 cases to a 35-case sample that leans
+slow (12 of the 15 slowest). 21.9 core-hours recorded, against an estimate of about 60. Write-up:
+[TIME_REPAIR.md](../experiments/locate-repair/TIME_REPAIR.md).
+
+**Measured.**
+- 35 cases: #65's stage 30.0 core-hours (recorded earlier), #71's stage 21.5.
+- Inside #71's stage the margin refine (Nelder-Mead on label margins after each fit and refit) takes 18.6 core-hours,
+  86.6%; its share is 81% to 89% in every case. Coarse grid fits 2.2, joint scores 0.41, everything else under 0.25.
+- Restarts, boundary labels and the chooser together: 0.01 core-hours. The bigger committee: 6.6 on 7 cases.
+- The rerun reproduces #71 and #72's disagree pick in 35 of 35: 34 under 0.01% (296 over), 28 exact.
+- The cheaper order saves 0.06 of 51.5 core-hours with the same 34 under 0.01%.
+
+**Interpretation.** The repair's cost is one optimiser's tight stopping rule, not the fixes or the choosing. #65's
+stage uses the same committee and refit functions, so the margin refine is probably most of its time too (inferred
+from the code, not timed). #74 cuts the margin refine and checks the picks hold.
+
+---
+
 ## 2026-11-24 — Roadmap #72: run the whole repair on 50 fresh cases
 
 **What ran.** 50 fresh width-16 three-fault cases (seeds 300 to 349). First `early_values.py --width 16 --early 2
