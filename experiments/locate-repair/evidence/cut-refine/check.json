@@ -1,0 +1,75 @@
+{
+ "columns": {
+  "seeds": 35,
+  "core_hours_stage": 15.314083333333333,
+  "core_hours_stage_73": 21.50102777777778,
+  "core_hours_refine": 11.672083333333333,
+  "core_hours_refine_73": 18.613666666666667,
+  "speedup_stage": 1.4040035769544013,
+  "refine_calls": 2293113,
+  "evaluations_per_call": 321.1916019838534,
+  "under_0.01%": 34,
+  "under_0.01%_73": 34,
+  "exact": 28,
+  "exact_73": 28,
+  "same_pick": 35,
+  "same_winner": 35,
+  "same_disagreement": 35,
+  "crossed": {
+   "gained": [],
+   "lost": []
+  },
+  "changed": {}
+ },
+ "loose": {
+  "seeds": 35,
+  "core_hours_stage": 11.99086111111111,
+  "core_hours_stage_73": 21.50102777777778,
+  "core_hours_refine": 8.3675,
+  "core_hours_refine_73": 18.613666666666667,
+  "speedup_stage": 1.7931179069244867,
+  "refine_calls": 2290552,
+  "evaluations_per_call": 232.70176533866072,
+  "under_0.01%": 34,
+  "under_0.01%_73": 34,
+  "exact": 28,
+  "exact_73": 28,
+  "same_pick": 32,
+  "same_winner": 33,
+  "same_disagreement": 28,
+  "crossed": {
+   "gained": [],
+   "lost": []
+  },
+  "changed": {
+   "251": [
+    2.8e-05,
+    2e-05
+   ],
+   "272": [
+    1.3e-05,
+    1.5e-05
+   ],
+   "296": [
+    0.007453,
+    0.007512
+   ],
+   "326": [
+    7e-06,
+    6e-06
+   ],
+   "328": [
+    1e-05,
+    1.4e-05
+   ],
+   "344": [
+    2e-06,
+    4e-06
+   ],
+   "348": [
+    2.3e-05,
+    1.9e-05
+   ]
+  }
+ }
+}

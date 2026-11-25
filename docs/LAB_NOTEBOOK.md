@@ -8,6 +8,23 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-25 — Roadmap #74: cut the margin refine's cost
+
+**Measured.** `cut_refine.py` swaps cheaper margin refines into #71's stage and reruns #73's 35 cases from the same
+labels ([CUT_REFINE.md](../experiments/locate-repair/CUT_REFINE.md)). A loss that skips the network copy is
+bit-identical but only about 15% faster per call, so it was not run on the cases. A loss that sums the untouched
+hidden units once (columns) cuts the stage from 21.5 to 15.3 core-hours (1.40x) and gives the same pick, chosen network
+and 246 labels in all 35 cases. Adding looser stopping (loose: `xatol` 1e-4, `fatol` 1e-7, 300 iterations) cuts it to
+12.0 (1.79x) and keeps 34 under 0.01% and 28 exact with nothing crossing the line, but changes the pick in 3 cases
+(264, 344, 348) and asks 218 labels. The refine is still 76% (columns) and 70% (loose) of the stage. Recorded cost
+28.2 core-hours.
+
+**Interpretation.** columns is a free 30% cut. loose reaches the same line here but is not the same repair, so it
+needs fresh cases before it replaces the original. #65's stage, the larger share, should gain the same way (inferred
+from the code); that and a batched refine are #75.
+
+---
+
 ## 2026-11-25 — Roadmap #73: find where the repair's time goes
 
 **What ran.** `time_repair.py` reran #71's stage from the saved labels with every part and step timed exclusively,
