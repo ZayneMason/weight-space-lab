@@ -1463,6 +1463,20 @@ already fits every label. For each, report core-hours, how often the disagree ch
 
 **Cost.** CPU, about 10 to 25 core-hours: each cheaper version should cost a fraction of #73's 21.5.
 
+**Status (November 25): done for #71's stage, see [CUT_REFINE.md](../experiments/locate-repair/CUT_REFINE.md).** A loss that recomputes only the touched hidden units cuts the stage from 21.5 to 15.3 core-hours with the same pick in 35 of 35; adding looser stopping cuts it to 12.0 and keeps 34 under 0.01% and 28 exact, with 3 picks changed. The refine is still 70% to 76% of the stage. Timing #65's stage moved to #75.
+
+## 75. Cut #65's stage the same way, and batch the refine
+
+*Added November 25 after #74.*
+
+#74 cut #71's stage 1.40x (columns, same answers) and 1.79x (loose, same line, 3 picks changed), but #65's stage is
+58% of the whole repair (30.0 of 51.5 core-hours on #73's cases) and was never timed by step. Rerun #65's stage on a
+handful of #73's cases with the original, columns and loose refines, timed by step, and check that its fixes and
+#71's picks on top hold. Then try one Nelder-Mead run over many triples at once in arrays, in place of a Python loop
+per triple, on #71's stage, and report the speedup and whether the picks match columns.
+
+**Cost.** CPU, about 15 to 30 core-hours: #65's stage costs about 0.86 core-hours a case at the original speed.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

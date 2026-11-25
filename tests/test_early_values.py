@@ -832,6 +832,46 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual((check["cheap_vs_full"]["gained"], check["cheap_vs_full"]["lost"]), ([], []))
         self.assertLess(check["core_hours_full"] - check["core_hours_cheap"], 0.1)
 
+    def test_cut_refine_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/cut-refine/check.json").read_text())
+        for kind in ("columns", "loose"):
+            c = check[kind]
+            self.assertEqual(c["seeds"], 35)
+            self.assertEqual((c["under_0.01%"], c["exact"]), (34, 28))
+            self.assertEqual((c["crossed"]["gained"], c["crossed"]["lost"]), ([], []))
+            self.assertLess(c["core_hours_stage"], c["core_hours_stage_73"])
+        self.assertEqual((check["columns"]["same_pick"], check["columns"]["changed"]), (35, {}))
+        self.assertGreater(check["columns"]["speedup_stage"], 1.3)
+        self.assertGreater(check["loose"]["speedup_stage"], 1.7)
+        self.assertEqual(check["loose"]["same_pick"], 32)
+        self.assertTrue(all(max(v) < 1e-4 for s, v in check["loose"]["changed"].items() if s != "296"))
+
+    def test_cut_refine_losses_match_the_original(self):
+        import numpy as np
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        import early_values as ev
+        import cut_refine as cr
+        case = ev.rs.resize(ev.t3.corrupt(16, 264))
+        px, py, _ = ev.tc.lr.split(case["practice"])
+        x, y = px[:200], py[:200]
+        entries = ev.tc.lr.entries(case["arrays"])
+        rng = np.random.default_rng(5)
+        names = set()
+        for _ in range(6):
+            t = tuple(tuple(entries[j]) for j in rng.choice(len(entries), 3, replace=False))
+            names |= {n for n, _ in t}
+            start = ev.tc.wt.score(case, x, y, t, ev.tc.ct.current_values(case, t))
+            scale = np.array([case["scale"][n] for n, _ in t])
+            s0 = np.array([v for _, _, v in start[1]])
+            exact, columns = cr.margin_loss(case, t, s0, scale, x, y), cr.column_loss(case, t, s0, scale, x, y)
+            for z in rng.normal(0, 0.05, (4, 3)):
+                want = float(np.maximum(ev.tc.wt.EPS - ev.tc.wt.signed_margins(case, t, s0 + z * scale, x, y), 0).mean())
+                self.assertEqual(exact(z), want)
+                self.assertAlmostEqual(columns(z), want, places=12)
+            self.assertEqual(cr.refine(case, x, y, t, start, "exact"), cr.ORIGINAL(case, x, y, t, start))
+        self.assertGreaterEqual(len(names), 3)
+
     def test_time_repair_clock_times_steps_exclusively(self):
         import time as _time
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
