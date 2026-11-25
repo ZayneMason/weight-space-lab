@@ -1,0 +1,39 @@
+{
+ "seeds": 8,
+ "core_hours_stage": 2.1333333333333333,
+ "core_hours_stage_73": 4.221611111111111,
+ "core_hours_refine": 1.4829722222222221,
+ "core_hours_refine_73": 3.6403055555555555,
+ "speedup_stage": 1.9788802083333332,
+ "refine_calls": 464713,
+ "evaluations_per_call": 314.30955449922857,
+ "under_0.01%": 8,
+ "under_0.01%_73": 8,
+ "exact": 7,
+ "exact_73": 7,
+ "same_pick": 8,
+ "same_winner": 8,
+ "same_disagreement": 8,
+ "crossed": {
+  "gained": [],
+  "lost": []
+ },
+ "changed": {},
+ "vs_columns": {
+  "core_hours_stage": 2.1333333333333333,
+  "core_hours_refine": 1.4829722222222221,
+  "speedup_stage": 1.3931901041666666,
+  "same_pick": 8,
+  "same_winner": 8,
+  "same_disagreement": 8,
+  "crossed": {
+   "gained": [],
+   "lost": []
+  },
+  "changed": {},
+  "core_hours_stage_columns": 2.9721388888888884,
+  "core_hours_refine_columns": 2.2543611111111113,
+  "speedup_refine": 1.52016408488958
+ },
+ "batched_share_of_refine_calls": 0.9314437082672531
+}

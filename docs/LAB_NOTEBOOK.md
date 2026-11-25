@@ -8,6 +8,25 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-25 — Roadmap #76: check the cheaper refines end to end, and batch the refine
+
+**Measured.** `end_to_end.py` runs #71's stage with columns and loose on the labels #75 saved, and scores the whole
+repair on #75's 8 cases against #73's run of the original
+([END_TO_END.md](../experiments/locate-repair/END_TO_END.md)). columns takes the whole repair from 9.20 to 5.98
+core-hours (1.54x) and makes #73's pick in 8 of 8, with 8 under 0.01% and 7 exact as before; only seed 250's chosen
+network moves (0.0006% to 0.0003%). loose takes it to 4.70 (1.96x) and keeps all 8 under 0.01%, but changes 3 picks
+and loses one exact repair (250 now finds 2 of 3 faults). `batched_refine.py` runs the committee's Nelder-Mead fits for
+many triples at once in arrays; it follows SciPy's steps exactly on 40 test problems, and on #71's stage of the same 8
+cases it makes #73's pick with the same disagreement in all 8 while cutting the stage from 2.97 core-hours (columns)
+to 2.13 (1.39x; 1.98x over the original). The refine is still 70% of the stage. Recorded cost 5.6 core-hours.
+
+**Interpretation.** columns is now checked on the whole repair and is the safe default; loose is cheaper but not the
+same repair. With the batched refine in #71's stage too, the whole repair on these cases would be about 5.1
+core-hours, 1.8x under the original (inferred: the batched refine has not run in #65's stage). #77 installs it there
+and runs the cheaper repair on fresh seeds.
+
+---
+
 ## 2026-11-25 — Roadmap #75: time #65's stage and cut it the same way
 
 **Measured.** `time_65.py` reruns #65's stage on 8 of #73's cases with the original, columns and loose refines, timed
