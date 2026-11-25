@@ -1,0 +1,221 @@
+{
+ "original": {
+  "seeds": [
+   250,
+   264,
+   291,
+   297,
+   307,
+   320,
+   328,
+   338
+  ],
+  "core_hours": 4.981833333333333,
+  "core_hours_recorded_65": 5.218333333333334,
+  "step_core_hours": {
+   "margin refine": 4.2668888888888885,
+   "coarse fits": 0.46355555555555555,
+   "joint scores": 0.11361111111111111,
+   "middle step": 0.09983333333333332,
+   "label rounds (own)": 0.016499999999999997,
+   "continuous fits": 0.006138888888888889,
+   "rank pairs": 0.004555555555555556,
+   "other": 0.004222222222222223,
+   "refits": 0.0037500000000000007,
+   "extra round": 0.0019444444444444446,
+   "committee (own)": 0.0008333333333333334
+  },
+  "refine_share": 0.856489690319271,
+  "evaluations_per_call": 0.0,
+  "same_labels": 8,
+  "same_repair": 8,
+  "under_0.01%": 7,
+  "under_0.01%_65": 7,
+  "changed": {},
+  "speedup_vs_original": 1.0
+ },
+ "columns": {
+  "seeds": [
+   250,
+   264,
+   291,
+   297,
+   307,
+   320,
+   328,
+   338
+  ],
+  "core_hours": 3.013333333333333,
+  "core_hours_recorded_65": 5.218333333333334,
+  "step_core_hours": {
+   "margin refine": 2.248972222222222,
+   "coarse fits": 0.4911944444444445,
+   "joint scores": 0.12433333333333332,
+   "middle step": 0.10666666666666667,
+   "label rounds (own)": 0.018333333333333333,
+   "continuous fits": 0.006694444444444445,
+   "rank pairs": 0.005111111111111111,
+   "other": 0.004722222222222222,
+   "refits": 0.00425,
+   "extra round": 0.0023333333333333335,
+   "committee (own)": 0.0007222222222222223
+  },
+  "refine_share": 0.7463403392330383,
+  "evaluations_per_call": 266.0907673653213,
+  "same_labels": 4,
+  "same_repair": 7,
+  "under_0.01%": 7,
+  "under_0.01%_65": 7,
+  "changed": {
+   "250": [
+    {
+     "disagreement": 2.1e-05,
+     "faults_found": 2,
+     "stages_run": 1,
+     "switch_disagreement": 4.7e-05
+    },
+    {
+     "disagreement": 2.1e-05,
+     "faults_found": 2,
+     "stages_run": 1,
+     "switch_disagreement": 2.9e-05
+    }
+   ]
+  },
+  "speedup_vs_original": 1.6532632743362832
+ },
+ "loose": {
+  "seeds": [
+   250,
+   264,
+   291,
+   297,
+   307,
+   320,
+   328,
+   338
+  ],
+  "core_hours": 2.4500555555555557,
+  "core_hours_recorded_65": 5.218333333333334,
+  "step_core_hours": {
+   "margin refine": 1.673138888888889,
+   "coarse fits": 0.5041666666666665,
+   "joint scores": 0.12072222222222222,
+   "middle step": 0.11044444444444443,
+   "label rounds (own)": 0.01825,
+   "continuous fits": 0.006666666666666667,
+   "other": 0.004805555555555556,
+   "rank pairs": 0.00475,
+   "refits": 0.004111111111111111,
+   "extra round": 0.00225,
+   "committee (own)": 0.0007500000000000001
+  },
+  "refine_share": 0.6828983469762591,
+  "evaluations_per_call": 190.64794263217286,
+  "same_labels": 0,
+  "same_repair": 1,
+  "under_0.01%": 7,
+  "under_0.01%_65": 7,
+  "changed": {
+   "250": [
+    {
+     "disagreement": 2.1e-05,
+     "faults_found": 2,
+     "stages_run": 1,
+     "switch_disagreement": 4.7e-05
+    },
+    {
+     "disagreement": 2.1e-05,
+     "faults_found": 2,
+     "stages_run": 1,
+     "switch_disagreement": 4.2e-05
+    }
+   ],
+   "264": [
+    {
+     "disagreement": 2.4e-05,
+     "faults_found": 3,
+     "stages_run": 1,
+     "switch_disagreement": 4.9e-05
+    },
+    {
+     "disagreement": 2.4e-05,
+     "faults_found": 3,
+     "stages_run": 1,
+     "switch_disagreement": 4.1e-05
+    }
+   ],
+   "291": [
+    {
+     "disagreement": 3.7e-05,
+     "faults_found": 3,
+     "stages_run": 2,
+     "switch_disagreement": 8.8e-05
+    },
+    {
+     "disagreement": 3.7e-05,
+     "faults_found": 3,
+     "stages_run": 2,
+     "switch_disagreement": 9.5e-05
+    }
+   ],
+   "297": [
+    {
+     "disagreement": 3.1e-05,
+     "faults_found": 3,
+     "stages_run": 2,
+     "switch_disagreement": 3.3e-05
+    },
+    {
+     "disagreement": 3.1e-05,
+     "faults_found": 3,
+     "stages_run": 2,
+     "switch_disagreement": 3.1e-05
+    }
+   ],
+   "307": [
+    {
+     "disagreement": 1.3e-05,
+     "faults_found": 2,
+     "stages_run": 2,
+     "switch_disagreement": 1.8e-05
+    },
+    {
+     "disagreement": 1.6e-05,
+     "faults_found": 2,
+     "stages_run": 2,
+     "switch_disagreement": 2.6e-05
+    }
+   ],
+   "320": [
+    {
+     "disagreement": 1.7e-05,
+     "faults_found": 3,
+     "stages_run": 1,
+     "switch_disagreement": 8e-05
+    },
+    {
+     "disagreement": 1.2e-05,
+     "faults_found": 3,
+     "stages_run": 1,
+     "switch_disagreement": 3.7e-05
+    }
+   ],
+   "328": [
+    {
+     "disagreement": 2.7e-05,
+     "faults_found": 3,
+     "stages_run": 3,
+     "switch_disagreement": 6.8e-05
+    },
+    {
+     "disagreement": 6.1e-05,
+     "faults_found": 3,
+     "stages_run": 3,
+     "switch_disagreement": 7.3e-05
+    }
+   ]
+  },
+  "speedup_vs_original": 2.0333552527153578
+ }
+}

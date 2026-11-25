@@ -847,6 +847,24 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["loose"]["same_pick"], 32)
         self.assertTrue(all(max(v) < 1e-4 for s, v in check["loose"]["changed"].items() if s != "296"))
 
+    def test_time_65_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/time-65/check.json").read_text())
+        o, c, l = check["original"], check["columns"], check["loose"]
+        self.assertEqual(o["seeds"], [250, 264, 291, 297, 307, 320, 328, 338])
+        self.assertEqual((o["same_labels"], o["same_repair"], o["changed"]), (8, 8, {}))
+        self.assertGreater(o["refine_share"], 0.8)
+        self.assertEqual((c["same_labels"], c["same_repair"]), (4, 7))
+        self.assertEqual(list(c["changed"]), ["250"])
+        self.assertEqual(c["changed"]["250"][0]["disagreement"], c["changed"]["250"][1]["disagreement"])
+        self.assertGreater(c["speedup_vs_original"], 1.6)
+        self.assertGreater(l["speedup_vs_original"], 2.0)
+        for k in (o, c, l):
+            self.assertEqual((k["under_0.01%"], k["under_0.01%_65"]), (7, 7))
+        for before, after in l["changed"].values():
+            self.assertEqual((before["faults_found"], before["stages_run"]), (after["faults_found"], after["stages_run"]))
+            self.assertLess(after["disagreement"], 1e-4)
+
     def test_cut_refine_losses_match_the_original(self):
         import numpy as np
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))

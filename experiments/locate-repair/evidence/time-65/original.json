@@ -1,0 +1,290 @@
+[
+ {
+  "seed": 250,
+  "kind": "original",
+  "seconds": 959.2,
+  "probe_seconds": 21.2,
+  "seconds_recorded_by_row": 980.4,
+  "seconds_65": 1282.3,
+  "steps": {
+   "rank pairs": 1.0,
+   "joint scores": 27.1,
+   "coarse fits": 86.5,
+   "margin refine": 816.4,
+   "continuous fits": 1.1,
+   "committee (own)": 0.2,
+   "refits": 0.4,
+   "label rounds (own)": 2.0,
+   "middle step": 23.1,
+   "extra round": 0.5
+  },
+  "other": 0.9,
+  "refine_calls": 0,
+  "refine_evaluations": 0,
+  "outcome": {
+   "disagreement": 2.1e-05,
+   "faults_found": 2,
+   "stages_run": 1,
+   "switch_disagreement": 4.7e-05
+  },
+  "outcome_65": {
+   "disagreement": 2.1e-05,
+   "faults_found": 2,
+   "stages_run": 1,
+   "switch_disagreement": 4.7e-05
+  },
+  "same_labels": true
+ },
+ {
+  "seed": 264,
+  "kind": "original",
+  "seconds": 752.1,
+  "probe_seconds": 22.5,
+  "seconds_recorded_by_row": 774.6,
+  "seconds_65": 931.4,
+  "steps": {
+   "rank pairs": 1.1,
+   "joint scores": 26.4,
+   "coarse fits": 62.5,
+   "margin refine": 633.9,
+   "continuous fits": 0.9,
+   "committee (own)": 0.1,
+   "refits": 0.4,
+   "label rounds (own)": 1.3,
+   "middle step": 23.8,
+   "extra round": 0.6
+  },
+  "other": 1.1,
+  "refine_calls": 0,
+  "refine_evaluations": 0,
+  "outcome": {
+   "disagreement": 2.4e-05,
+   "faults_found": 3,
+   "stages_run": 1,
+   "switch_disagreement": 4.9e-05
+  },
+  "outcome_65": {
+   "disagreement": 2.4e-05,
+   "faults_found": 3,
+   "stages_run": 1,
+   "switch_disagreement": 4.9e-05
+  },
+  "same_labels": true
+ },
+ {
+  "seed": 291,
+  "kind": "original",
+  "seconds": 1733.5,
+  "probe_seconds": 40.6,
+  "seconds_recorded_by_row": 1774.1,
+  "seconds_65": 2276.5,
+  "steps": {
+   "rank pairs": 2.4,
+   "joint scores": 53.7,
+   "coarse fits": 141.0,
+   "margin refine": 1468.5,
+   "continuous fits": 1.7,
+   "committee (own)": 0.2,
+   "refits": 2.3,
+   "label rounds (own)": 12.1,
+   "middle step": 48.6,
+   "extra round": 0.9
+  },
+  "other": 2.1,
+  "refine_calls": 0,
+  "refine_evaluations": 0,
+  "outcome": {
+   "disagreement": 3.7e-05,
+   "faults_found": 3,
+   "stages_run": 2,
+   "switch_disagreement": 8.8e-05
+  },
+  "outcome_65": {
+   "disagreement": 3.7e-05,
+   "faults_found": 3,
+   "stages_run": 2,
+   "switch_disagreement": 8.8e-05
+  },
+  "same_labels": true
+ },
+ {
+  "seed": 297,
+  "kind": "original",
+  "seconds": 2327.0,
+  "probe_seconds": 42.8,
+  "seconds_recorded_by_row": 2369.8,
+  "seconds_65": 2779.7,
+  "steps": {
+   "rank pairs": 2.4,
+   "joint scores": 52.1,
+   "coarse fits": 175.7,
+   "margin refine": 2024.4,
+   "continuous fits": 2.5,
+   "committee (own)": 0.3,
+   "refits": 2.3,
+   "label rounds (own)": 14.2,
+   "middle step": 50.3,
+   "extra round": 1.0
+  },
+  "other": 1.8,
+  "refine_calls": 0,
+  "refine_evaluations": 0,
+  "outcome": {
+   "disagreement": 3.1e-05,
+   "faults_found": 3,
+   "stages_run": 2,
+   "switch_disagreement": 3.3e-05
+  },
+  "outcome_65": {
+   "disagreement": 3.1e-05,
+   "faults_found": 3,
+   "stages_run": 2,
+   "switch_disagreement": 3.3e-05
+  },
+  "same_labels": true
+ },
+ {
+  "seed": 307,
+  "kind": "original",
+  "seconds": 1367.3,
+  "probe_seconds": 43.9,
+  "seconds_recorded_by_row": 1411.1,
+  "seconds_65": 1291.4,
+  "steps": {
+   "rank pairs": 1.9,
+   "joint scores": 56.1,
+   "coarse fits": 194.0,
+   "margin refine": 1047.6,
+   "continuous fits": 2.2,
+   "committee (own)": 0.3,
+   "refits": 2.3,
+   "label rounds (own)": 12.2,
+   "middle step": 47.3,
+   "extra round": 1.1
+  },
+  "other": 2.3,
+  "refine_calls": 0,
+  "refine_evaluations": 0,
+  "outcome": {
+   "disagreement": 1.3e-05,
+   "faults_found": 2,
+   "stages_run": 2,
+   "switch_disagreement": 1.8e-05
+  },
+  "outcome_65": {
+   "disagreement": 1.3e-05,
+   "faults_found": 2,
+   "stages_run": 2,
+   "switch_disagreement": 1.8e-05
+  },
+  "same_labels": true
+ },
+ {
+  "seed": 320,
+  "kind": "original",
+  "seconds": 1126.5,
+  "probe_seconds": 19.8,
+  "seconds_recorded_by_row": 1146.3,
+  "seconds_65": 1054.8,
+  "steps": {
+   "rank pairs": 0.9,
+   "joint scores": 28.8,
+   "coarse fits": 104.3,
+   "margin refine": 963.7,
+   "continuous fits": 1.4,
+   "committee (own)": 0.2,
+   "refits": 0.4,
+   "label rounds (own)": 1.0,
+   "middle step": 24.5,
+   "extra round": 0.3
+  },
+  "other": 1.0,
+  "refine_calls": 0,
+  "refine_evaluations": 0,
+  "outcome": {
+   "disagreement": 1.7e-05,
+   "faults_found": 3,
+   "stages_run": 1,
+   "switch_disagreement": 8e-05
+  },
+  "outcome_65": {
+   "disagreement": 1.7e-05,
+   "faults_found": 3,
+   "stages_run": 1,
+   "switch_disagreement": 8e-05
+  },
+  "same_labels": true
+ },
+ {
+  "seed": 328,
+  "kind": "original",
+  "seconds": 4784.5,
+  "probe_seconds": 55.7,
+  "seconds_recorded_by_row": 4840.3,
+  "seconds_65": 4483.2,
+  "steps": {
+   "rank pairs": 3.4,
+   "joint scores": 83.1,
+   "coarse fits": 421.9,
+   "margin refine": 4190.1,
+   "continuous fits": 5.8,
+   "committee (own)": 0.8,
+   "refits": 2.7,
+   "label rounds (own)": 2.3,
+   "middle step": 70.2,
+   "extra round": 1.2
+  },
+  "other": 3.0,
+  "refine_calls": 0,
+  "refine_evaluations": 0,
+  "outcome": {
+   "disagreement": 2.7e-05,
+   "faults_found": 3,
+   "stages_run": 3,
+   "switch_disagreement": 6.8e-05
+  },
+  "outcome_65": {
+   "disagreement": 2.7e-05,
+   "faults_found": 3,
+   "stages_run": 3,
+   "switch_disagreement": 6.8e-05
+  },
+  "same_labels": true
+ },
+ {
+  "seed": 338,
+  "kind": "original",
+  "seconds": 4884.5,
+  "probe_seconds": 54.1,
+  "seconds_recorded_by_row": 4938.6,
+  "seconds_65": 4686.7,
+  "steps": {
+   "rank pairs": 3.3,
+   "joint scores": 81.7,
+   "coarse fits": 482.9,
+   "margin refine": 4216.2,
+   "continuous fits": 6.5,
+   "committee (own)": 0.9,
+   "refits": 2.7,
+   "label rounds (own)": 14.3,
+   "middle step": 71.6,
+   "extra round": 1.4
+  },
+  "other": 3.0,
+  "refine_calls": 0,
+  "refine_evaluations": 0,
+  "outcome": {
+   "disagreement": 0.000138,
+   "faults_found": 1,
+   "stages_run": 3,
+   "switch_disagreement": 0.000161
+  },
+  "outcome_65": {
+   "disagreement": 0.000138,
+   "faults_found": 1,
+   "stages_run": 3,
+   "switch_disagreement": 0.000161
+  },
+  "same_labels": true
+ }
+]
