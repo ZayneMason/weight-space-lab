@@ -1,0 +1,931 @@
+[
+ {
+  "seed": 250,
+  "gate": false,
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      21
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.3,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      21
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.6,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      3
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "hidden_weight",
+      21
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 9.6,
+    "faults_found": 3,
+    "disagreement": 6e-06
+   }
+  },
+  "full": {
+   "split_inputs": 1,
+   "asked": 1,
+   "correct": {
+    "pick68": 0,
+    "restarts": 0,
+    "boundary": 1
+   },
+   "pick": "boundary"
+  },
+  "cheap": {
+   "built": [
+    "pick68",
+    "boundary"
+   ],
+   "split_inputs": 2,
+   "asked": 2,
+   "correct": {
+    "pick68": 1,
+    "boundary": 1
+   },
+   "pick": "pick68"
+  },
+  "seconds": {
+   "committee": 429.0,
+   "restarts": 0.5,
+   "boundary": 0.1,
+   "bigger": 0.0,
+   "finals": 26.5,
+   "choose": 0.3
+  },
+  "probe_seconds": 33.9,
+  "steps": {
+   "rank pairs": 1.3,
+   "joint scores": 31.6,
+   "coarse fits": 92.1,
+   "margin refine": 303.2,
+   "tied split": 0.2,
+   "refits": 0.1,
+   "middle walk": 26.5
+  },
+  "seconds_65": 1282.3,
+  "kind": "batched",
+  "refine_calls": 24484,
+  "refine_evaluations": 8195264,
+  "batched_calls": 22656,
+  "batched_evaluations": 7681265
+ },
+ {
+  "seed": 264,
+  "gate": false,
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.4,
+    "faults_found": 3,
+    "disagreement": 2.4e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 7.8,
+    "faults_found": 3,
+    "disagreement": 2.4e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      14
+     ],
+     [
+      "weight",
+      9
+     ],
+     [
+      "weight",
+      27
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.2,
+    "faults_found": 3,
+    "disagreement": 2.4e-05
+   }
+  },
+  "full": {
+   "split_inputs": 0,
+   "asked": 0,
+   "correct": {
+    "pick68": 0,
+    "restarts": 0,
+    "boundary": 0
+   },
+   "pick": "pick68"
+  },
+  "cheap": {
+   "built": [
+    "pick68",
+    "boundary"
+   ],
+   "split_inputs": 2,
+   "asked": 2,
+   "correct": {
+    "pick68": 1,
+    "boundary": 1
+   },
+   "pick": "pick68"
+  },
+  "seconds": {
+   "committee": 300.6,
+   "restarts": 0.3,
+   "boundary": 0.1,
+   "bigger": 0.0,
+   "finals": 24.4,
+   "choose": 0.1
+  },
+  "probe_seconds": 43.0,
+  "steps": {
+   "rank pairs": 1.3,
+   "joint scores": 30.7,
+   "coarse fits": 75.7,
+   "margin refine": 192.2,
+   "tied split": 0.0,
+   "refits": 0.1,
+   "middle walk": 24.4
+  },
+  "seconds_65": 931.4,
+  "kind": "batched",
+  "refine_calls": 19102,
+  "refine_evaluations": 5553229,
+  "batched_calls": 17854,
+  "batched_evaluations": 5269166
+ },
+ {
+  "seed": 291,
+  "gate": false,
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.3,
+    "faults_found": 3,
+    "disagreement": 8e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.5,
+    "faults_found": 3,
+    "disagreement": 8e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      1
+     ],
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.2,
+    "faults_found": 3,
+    "disagreement": 2.7e-05
+   }
+  },
+  "full": {
+   "split_inputs": 11,
+   "asked": 11,
+   "correct": {
+    "pick68": 0,
+    "restarts": 0,
+    "boundary": 11
+   },
+   "pick": "boundary"
+  },
+  "cheap": {
+   "built": [
+    "pick68",
+    "boundary"
+   ],
+   "split_inputs": 8,
+   "asked": 8,
+   "correct": {
+    "pick68": 0,
+    "boundary": 8
+   },
+   "pick": "boundary"
+  },
+  "seconds": {
+   "committee": 446.2,
+   "restarts": 0.3,
+   "boundary": 0.1,
+   "bigger": 0.0,
+   "finals": 25.0,
+   "choose": 0.2
+  },
+  "probe_seconds": 43.8,
+  "steps": {
+   "rank pairs": 2.1,
+   "joint scores": 34.2,
+   "coarse fits": 88.4,
+   "margin refine": 320.2,
+   "tied split": 0.0,
+   "refits": 0.6,
+   "middle walk": 25.0
+  },
+  "seconds_65": 2276.5,
+  "kind": "batched",
+  "refine_calls": 25613,
+  "refine_evaluations": 7635319,
+  "batched_calls": 19090,
+  "batched_evaluations": 5997208
+ },
+ {
+  "seed": 297,
+  "gate": false,
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 7.5,
+    "faults_found": 3,
+    "disagreement": 3.1e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.5,
+    "faults_found": 3,
+    "disagreement": 3.1e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_bias",
+      10
+     ],
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.3,
+    "faults_found": 3,
+    "disagreement": 1.1e-05
+   }
+  },
+  "full": {
+   "split_inputs": 4,
+   "asked": 4,
+   "correct": {
+    "pick68": 0,
+    "restarts": 0,
+    "boundary": 4
+   },
+   "pick": "boundary"
+  },
+  "cheap": {
+   "built": [
+    "pick68",
+    "boundary"
+   ],
+   "split_inputs": 5,
+   "asked": 5,
+   "correct": {
+    "pick68": 0,
+    "boundary": 5
+   },
+   "pick": "boundary"
+  },
+  "seconds": {
+   "committee": 489.2,
+   "restarts": 0.3,
+   "boundary": 0.1,
+   "bigger": 0.0,
+   "finals": 24.3,
+   "choose": 0.2
+  },
+  "probe_seconds": 47.2,
+  "steps": {
+   "rank pairs": 1.8,
+   "joint scores": 36.0,
+   "coarse fits": 105.2,
+   "margin refine": 344.5,
+   "tied split": 0.1,
+   "refits": 0.7,
+   "middle walk": 24.3
+  },
+  "seconds_65": 2779.7,
+  "kind": "batched",
+  "refine_calls": 32175,
+  "refine_evaluations": 9184882,
+  "batched_calls": 25852,
+  "batched_evaluations": 7672783
+ },
+ {
+  "seed": 307,
+  "gate": false,
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.3,
+    "faults_found": 2,
+    "disagreement": 2e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.7,
+    "faults_found": 2,
+    "disagreement": 2e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      5
+     ],
+     [
+      "weight",
+      4
+     ],
+     [
+      "weight",
+      20
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 9.5,
+    "faults_found": 2,
+    "disagreement": 4e-06
+   }
+  },
+  "full": {
+   "split_inputs": 1,
+   "asked": 1,
+   "correct": {
+    "pick68": 1,
+    "restarts": 1,
+    "boundary": 0
+   },
+   "pick": "pick68"
+  },
+  "cheap": {
+   "built": [
+    "pick68",
+    "boundary"
+   ],
+   "split_inputs": 2,
+   "asked": 2,
+   "correct": {
+    "pick68": 2,
+    "boundary": 0
+   },
+   "pick": "pick68"
+  },
+  "seconds": {
+   "committee": 472.6,
+   "restarts": 0.4,
+   "boundary": 0.1,
+   "bigger": 0.0,
+   "finals": 26.6,
+   "choose": 0.3
+  },
+  "probe_seconds": 42.9,
+  "steps": {
+   "rank pairs": 1.3,
+   "joint scores": 31.0,
+   "coarse fits": 99.5,
+   "margin refine": 337.3,
+   "tied split": 1.7,
+   "refits": 0.6,
+   "middle walk": 26.6
+  },
+  "seconds_65": 1291.4,
+  "kind": "batched",
+  "refine_calls": 34438,
+  "refine_evaluations": 7879641,
+  "batched_calls": 23390,
+  "batched_evaluations": 5365369
+ },
+ {
+  "seed": 320,
+  "gate": false,
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      18
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 7.8,
+    "faults_found": 3,
+    "disagreement": 1.7e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      18
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 7.7,
+    "faults_found": 3,
+    "disagreement": 1.7e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      11
+     ],
+     [
+      "hidden_weight",
+      19
+     ],
+     [
+      "weight",
+      18
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 7.7,
+    "faults_found": 3,
+    "disagreement": 6e-06
+   }
+  },
+  "full": {
+   "split_inputs": 3,
+   "asked": 3,
+   "correct": {
+    "pick68": 1,
+    "restarts": 1,
+    "boundary": 2
+   },
+   "pick": "boundary"
+  },
+  "cheap": {
+   "built": [
+    "pick68",
+    "boundary"
+   ],
+   "split_inputs": 3,
+   "asked": 3,
+   "correct": {
+    "pick68": 0,
+    "boundary": 3
+   },
+   "pick": "boundary"
+  },
+  "seconds": {
+   "committee": 464.8,
+   "restarts": 0.4,
+   "boundary": 0.1,
+   "bigger": 0.0,
+   "finals": 23.1,
+   "choose": 0.1
+  },
+  "probe_seconds": 41.7,
+  "steps": {
+   "rank pairs": 1.5,
+   "joint scores": 31.1,
+   "coarse fits": 112.2,
+   "margin refine": 319.1,
+   "tied split": 0.0,
+   "refits": 0.1,
+   "middle walk": 23.1
+  },
+  "seconds_65": 1054.8,
+  "kind": "batched",
+  "refine_calls": 28503,
+  "refine_evaluations": 8703764,
+  "batched_calls": 27180,
+  "batched_evaluations": 8353088
+ },
+ {
+  "seed": 328,
+  "gate": true,
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.2,
+    "faults_found": 3,
+    "disagreement": 3e-05
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.4,
+    "faults_found": 3,
+    "disagreement": 3e-05
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 9.3,
+    "faults_found": 3,
+    "disagreement": 1e-05
+   },
+   "bigger": {
+    "winner": [
+     [
+      "hidden_weight",
+      15
+     ],
+     [
+      "weight",
+      15
+     ],
+     [
+      "weight",
+      21
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.6,
+    "faults_found": 3,
+    "disagreement": 3e-05
+   }
+  },
+  "full": {
+   "split_inputs": 6,
+   "asked": 6,
+   "correct": {
+    "pick68": 1,
+    "restarts": 1,
+    "boundary": 5,
+    "bigger": 1
+   },
+   "pick": "boundary"
+  },
+  "cheap": {
+   "built": [
+    "pick68",
+    "boundary",
+    "restarts",
+    "bigger"
+   ],
+   "split_inputs": 7,
+   "asked": 7,
+   "correct": {
+    "pick68": 2,
+    "boundary": 5,
+    "restarts": 2,
+    "bigger": 2
+   },
+   "pick": "boundary"
+  },
+  "seconds": {
+   "committee": 1291.9,
+   "restarts": 0.4,
+   "boundary": 0.1,
+   "bigger": 2233.7,
+   "finals": 34.6,
+   "choose": 0.1
+  },
+  "probe_seconds": 47.3,
+  "steps": {
+   "rank pairs": 4.4,
+   "joint scores": 101.2,
+   "coarse fits": 870.8,
+   "margin refine": 2537.9,
+   "tied split": 0.2,
+   "refits": 0.1,
+   "middle walk": 34.6
+  },
+  "seconds_65": 4483.2,
+  "kind": "batched",
+  "refine_calls": 216992,
+  "refine_evaluations": 71946865,
+  "batched_calls": 215654,
+  "batched_evaluations": 71641251
+ },
+ {
+  "seed": 338,
+  "gate": false,
+  "candidates": {
+   "pick68": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.1,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   },
+   "restarts": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.0,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   },
+   "boundary": {
+    "winner": [
+     [
+      "hidden_weight",
+      7
+     ],
+     [
+      "weight",
+      8
+     ],
+     [
+      "weight",
+      28
+     ]
+    ],
+    "middle_used": true,
+    "final_seconds": 8.0,
+    "faults_found": 3,
+    "disagreement": 8e-06
+   }
+  },
+  "full": {
+   "split_inputs": 5,
+   "asked": 5,
+   "correct": {
+    "pick68": 2,
+    "restarts": 2,
+    "boundary": 3
+   },
+   "pick": "boundary"
+  },
+  "cheap": {
+   "built": [
+    "pick68",
+    "boundary"
+   ],
+   "split_inputs": 1,
+   "asked": 1,
+   "correct": {
+    "pick68": 0,
+    "boundary": 1
+   },
+   "pick": "boundary"
+  },
+  "seconds": {
+   "committee": 1338.0,
+   "restarts": 0.3,
+   "boundary": 0.2,
+   "bigger": 0.0,
+   "finals": 24.0,
+   "choose": 0.4
+  },
+  "probe_seconds": 47.2,
+  "steps": {
+   "rank pairs": 2.2,
+   "joint scores": 33.7,
+   "coarse fits": 313.4,
+   "margin refine": 984.3,
+   "tied split": 0.3,
+   "refits": 0.1,
+   "middle walk": 24.0
+  },
+  "seconds_65": 4686.7,
+  "kind": "batched",
+  "refine_calls": 83406,
+  "refine_evaluations": 26964772,
+  "batched_calls": 81178,
+  "batched_evaluations": 26280509
+ }
+]

@@ -847,6 +847,40 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["loose"]["same_pick"], 32)
         self.assertTrue(all(max(v) < 1e-4 for s, v in check["loose"]["changed"].items() if s != "296"))
 
+    def test_batched_nelder_mead_is_scipys(self):
+        import numpy as np
+        from scipy.optimize import minimize
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        import batched_refine as br
+        rng = np.random.default_rng(3)
+        A, c = rng.normal(size=(12, 3, 3)), rng.normal(size=(12, 3))
+        g = lambda k, z: float(np.abs(A[k] @ (z - c[k])).sum() + 0.1 * max(z[0], 0))
+        best, calls = br.nelder_mead(lambda rows, z: np.array([g(k, v) for k, v in zip(rows, z)]), 12, **br.OPTIONS)
+        for k in range(12):
+            r = minimize(lambda z: g(k, z), np.zeros(3), method="Nelder-Mead",
+                         options={"initial_simplex": np.vstack([np.zeros(3), 0.02 * np.eye(3)]), **br.OPTIONS})
+            self.assertTrue(np.array_equal(r.x, best[k]))
+            self.assertEqual(r.nfev, calls[k])
+
+    def test_batched_losses_match_the_columns_loss(self):
+        import numpy as np
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        import early_values as ev
+        import cut_refine as cr
+        import batched_refine as br
+        case = ev.rs.resize(ev.t3.corrupt(16, 264))
+        px, py, _ = ev.tc.lr.split(case["practice"])
+        x, y = px[:300], py[:300]
+        entries = ev.tc.lr.entries(case["arrays"])
+        rng = np.random.default_rng(7)
+        triples = [tuple(tuple(entries[j]) for j in rng.choice(len(entries), 3, replace=False)) for _ in range(20)]
+        jobs = [(t, ev.tc.wt.score(case, x, y, t, ev.tc.ct.current_values(case, t))) for t in triples]
+        problem = br.setup(case, x, y, jobs)
+        z = rng.normal(0, 0.05, (len(jobs), 3))
+        got = br.losses(problem, np.arange(len(jobs)), z, x, (2 * y - 1).astype(np.float64))
+        for k, (t, _) in enumerate(jobs):
+            self.assertAlmostEqual(got[k], cr.column_loss(case, t, problem[3][k], problem[4][k], x, y)(z[k]), places=12)
+
     def test_time_65_evidence(self):
         import json
         check = json.loads((ROOT / "experiments/locate-repair/evidence/time-65/check.json").read_text())
@@ -864,6 +898,30 @@ class EarlyValuesTests(unittest.TestCase):
         for before, after in l["changed"].values():
             self.assertEqual((before["faults_found"], before["stages_run"]), (after["faults_found"], after["stages_run"]))
             self.assertLess(after["disagreement"], 1e-4)
+
+    def test_end_to_end_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/end-to-end/check.json").read_text())
+        o, c, l = check["original"], check["columns"], check["loose"]
+        self.assertEqual((o["under_0.01%"], o["exact"]), (8, 7))
+        self.assertEqual(sorted(c["rerun"] + c["from_74"]), [250, 264, 291, 297, 307, 320, 328, 338])
+        self.assertEqual((c["same_pick_as_73"], c["same_disagreement_as_73"], c["under_0.01%"], c["exact"]), (8, 7, 8, 7))
+        self.assertEqual((l["same_pick_as_73"], l["under_0.01%"], l["exact"]), (5, 8, 6))
+        for k in (c, l):
+            self.assertEqual(k["crossed"], {"gained": [], "lost": []})
+        self.assertGreater(c["speedup_vs_original"], 1.5)
+        self.assertGreater(l["speedup_vs_original"], 1.9)
+
+    def test_batched_refine_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/batched-refine/check.json").read_text())
+        self.assertEqual(check["seeds"], 8)
+        self.assertEqual((check["same_pick"], check["same_disagreement"], check["changed"]), (8, 8, {}))
+        self.assertEqual((check["under_0.01%"], check["exact"]), (8, 7))
+        v = check["vs_columns"]
+        self.assertEqual((v["same_pick"], v["same_disagreement"], v["changed"]), (8, 8, {}))
+        self.assertGreater(v["speedup_stage"], 1.3)
+        self.assertGreater(check["batched_share_of_refine_calls"], 0.9)
 
     def test_cut_refine_losses_match_the_original(self):
         import numpy as np

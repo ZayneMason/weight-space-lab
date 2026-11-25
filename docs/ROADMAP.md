@@ -1492,6 +1492,21 @@ match columns.
 
 **Cost.** CPU, about 6 to 12 core-hours: #71's stage on these 8 cases took 3.0 (columns) and 2.4 (loose) in #74.
 
+**Status (November 25): done on 8 cases, see [END_TO_END.md](../experiments/locate-repair/END_TO_END.md).** On the new labels columns cuts the whole repair 1.54x with #73's pick in 8 of 8; loose cuts it 1.96x and keeps all 8 under 0.01% but changes 3 picks. A batched Nelder-Mead that follows SciPy's steps exactly cuts #71's stage a further 1.39x over columns with the same picks in 8 of 8. Running it in #65's stage and on fresh seeds moved to #77.
+
+## 77. Run the whole cheaper repair on fresh seeds
+
+*Added November 25 after #76.*
+
+#76 checked columns end to end and the batched refine in #71's stage, but only on 8 cases these refines were already
+tried on. Install the batched refine in #65's stage too (its committee calls are the same), then run the whole repair
+twice on 12 fresh seeds (350 to 361): once with the original refine and once with columns plus batching. Compare
+core-hours, the disagree chooser's pick, the chosen network's disagreement on a million probe inputs, and how many
+cases are under 0.01% and exact.
+
+**Cost.** CPU, about 20 to 35 core-hours: #73's original repair averaged about 1.5 core-hours a case, and #76 suggests
+the cheaper one takes a little over half of that.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
