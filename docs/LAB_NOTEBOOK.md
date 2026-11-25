@@ -8,6 +8,22 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-25 — Roadmap #75: time #65's stage and cut it the same way
+
+**Measured.** `time_65.py` reruns #65's stage on 8 of #73's cases with the original, columns and loose refines, timed
+by step ([TIME_65.md](../experiments/locate-repair/TIME_65.md)). With the original refine all 8 end with #65's labels
+bit for bit and the same repair, and the margin refine is 86% of the stage. columns cuts the stage from 4.98 to 3.01
+core-hours (1.65x) and loose to 2.45 (2.03x), more than on #71's stage. But columns ends with different labels in 4
+of 8 cases (all in the last 60 label rows, the ones the stage chooses as it goes), though the repair's disagreement
+is the same in all 8. loose changes every case's labels and moves 3 repairs' disagreement, all staying under 0.01%;
+7 of 8 are under the line in every run, as in #65. Recorded cost 10.7 core-hours.
+
+**Interpretation.** The whole repair on these cases would drop from 9.2 to 6.0 core-hours with columns and 4.9 with
+loose (inferred by combining with #74's runs). That is not yet checked end to end, because #71's stage now starts from
+different labels; that check and a batched refine are #76.
+
+---
+
 ## 2026-11-25 — Roadmap #74: cut the margin refine's cost
 
 **Measured.** `cut_refine.py` swaps cheaper margin refines into #71's stage and reruns #73's 35 cases from the same
