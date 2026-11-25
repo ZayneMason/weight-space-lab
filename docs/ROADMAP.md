@@ -1448,6 +1448,21 @@ pick misses a label. Report core-hours a case and cases under 0.01%, against #72
 
 **Cost.** CPU, about 60 core-hours for the timed rerun of 100 cases, less for the cheaper order.
 
+**Status (November 25): done on a 35-case sample, see [TIME_REPAIR.md](../experiments/locate-repair/TIME_REPAIR.md).** A pilot showed the fixes cost under a second each, so the cheaper order was scored only as a side note (it saves 0.06 of 51.5 core-hours). The margin refine takes 87% of #71's stage.
+
+## 74. Cut the margin refine's cost and check the picks hold
+
+*Added November 25 after #73.*
+
+#73 found that one step, the margin refine (Nelder-Mead on the label margins, `xatol` 1e-6, `fatol` 1e-9, up to 800
+iterations, after every fit and twice in every refit), takes 87% of #71's stage on every case, and #65's stage uses
+the same functions. Try cheaper versions on #73's 35 cases, from the same labels: looser tolerances and fewer
+iterations; refining only committee members within reach of the top score; and skipping the refine when the grid fit
+already fits every label. For each, report core-hours, how often the disagree chooser's pick changes, and cases under
+0.01% against #73's 34 of 35. Then time #65's stage by step on a few cases to confirm the refine dominates it too.
+
+**Cost.** CPU, about 10 to 25 core-hours: each cheaper version should cost a fraction of #73's 21.5.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

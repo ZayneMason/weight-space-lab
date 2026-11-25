@@ -1,0 +1,70 @@
+{
+ "seeds": 35,
+ "core_hours": {
+  "committee": 14.651111111111112,
+  "restarts": 0.006277777777777778,
+  "boundary": 0.0022222222222222222,
+  "bigger": 6.607666666666666,
+  "finals": 0.23141666666666666,
+  "choose": 0.0023333333333333335,
+  "repair_65": 29.996388888888887,
+  "probe_not_counted": 0.3761111111111111
+ },
+ "step_core_hours": {
+  "margin refine": 18.613666666666667,
+  "coarse fits": 2.19175,
+  "joint scores": 0.40877777777777774,
+  "middle walk": 0.23138888888888892,
+  "continuous fits": 0.02861111111111111,
+  "rank pairs": 0.015388888888888886,
+  "refits": 0.0017500000000000007,
+  "tied split": 0.0016666666666666668
+ },
+ "gate": [
+  251,
+  258,
+  259,
+  296,
+  309,
+  328,
+  348
+ ],
+ "core_hours_full": 51.497416666666666,
+ "core_hours_cheap": 51.43391666666667,
+ "full": {
+  "under_0.01%": 34,
+  "under_0.1%": 34,
+  "exact": 28,
+  "labels_asked": 246,
+  "over_line": [
+   296
+  ]
+ },
+ "cheap": {
+  "under_0.01%": 34,
+  "under_0.1%": 34,
+  "exact": 28,
+  "labels_asked": 267,
+  "over_line": [
+   296
+  ]
+ },
+ "cheap_vs_full": {
+  "gained": [],
+  "lost": [],
+  "different_pick": [
+   250,
+   251,
+   263,
+   265,
+   272,
+   275,
+   280,
+   295,
+   333,
+   340,
+   346
+  ]
+ },
+ "reproduces_disagree_pick": 35
+}

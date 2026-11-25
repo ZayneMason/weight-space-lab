@@ -819,6 +819,61 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(picks["disagree"]["worse"], [341])
         self.assertEqual(len(list((ROOT / "experiments/locate-repair/evidence/fresh-repair/labels").glob("*.npz"))), 50)
 
+    def test_time_repair_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/time-repair/check.json").read_text())
+        self.assertEqual(check["seeds"], 35)
+        self.assertEqual(check["reproduces_disagree_pick"], 35)
+        self.assertEqual(next(iter(check["step_core_hours"])), "margin refine")
+        stage = sum(check["core_hours"][k] for k in ("committee", "restarts", "boundary", "bigger", "finals", "choose"))
+        self.assertGreater(check["step_core_hours"]["margin refine"] / stage, 0.85)
+        for name in ("full", "cheap"):
+            self.assertEqual((check[name]["under_0.01%"], check[name]["exact"], check[name]["over_line"]), (34, 28, [296]))
+        self.assertEqual((check["cheap_vs_full"]["gained"], check["cheap_vs_full"]["lost"]), ([], []))
+        self.assertLess(check["core_hours_full"] - check["core_hours_cheap"], 0.1)
+
+    def test_time_repair_clock_times_steps_exclusively(self):
+        import time as _time
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from time_repair import Clock
+        clock = Clock()
+        inner = clock.tap(lambda: _time.sleep(0.05), "inner")
+        probe = clock.tap(lambda: _time.sleep(0.05), "probe")
+        outer = clock.tap(lambda: (_time.sleep(0.05), inner(), probe()), "outer")
+        with clock.part("committee"):
+            outer()
+        self.assertAlmostEqual(clock.steps["outer"], 0.05, delta=0.03)
+        self.assertAlmostEqual(clock.steps["inner"], 0.05, delta=0.03)
+        self.assertAlmostEqual(clock.probe, 0.05, delta=0.03)
+        self.assertAlmostEqual(clock.seconds["committee"], 0.10, delta=0.04)  # probe time left out of the part
+        clock.reset()
+        self.assertEqual((dict(clock.seconds), dict(clock.steps)), ({}, {}))
+
+    def test_time_repair_score_counts_parts_and_cheap_order(self):
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        from time_repair import PARTS, score
+        cand = lambda d, fs=0.0, faults=3: {"disagreement": d, "final_seconds": fs, "faults_found": faults}
+        secs = lambda **kw: {k: kw.get(k, 0.0) for k in PARTS}
+        rows = {1: {"gate": False, "seconds_65": 3600.0, "probe_seconds": 36.0, "steps": {"margin refine": 1800.0},
+                    "seconds": secs(committee=3600.0, restarts=360.0, finals=720.0),
+                    "candidates": {"pick68": cand(5e-5), "restarts": cand(2e-4, 360.0), "boundary": cand(5e-5)},
+                    "full": {"pick": "restarts", "asked": 4}, "cheap": {"pick": "pick68", "asked": 2}},
+                2: {"gate": True, "seconds_65": 0.0, "probe_seconds": 0.0, "steps": {"margin refine": 1800.0},
+                    "seconds": secs(committee=3600.0, bigger=3600.0),
+                    "candidates": {"pick68": cand(2e-4), "restarts": cand(2e-4), "boundary": cand(2e-4, faults=2),
+                                   "bigger": cand(5e-5)},
+                    "full": {"pick": "bigger", "asked": 3}, "cheap": {"pick": "bigger", "asked": 3}}}
+        out = score(rows, {1: {"choosers": {"disagree": {"pick": "restarts"}}},
+                           2: {"choosers": {"disagree": {"pick": "pick68"}}}})
+        self.assertEqual(out["core_hours"]["committee"], 2.0)
+        self.assertEqual(out["step_core_hours"], {"margin refine": 1.0})
+        self.assertAlmostEqual(out["core_hours_full"], 1 + 2 + 0.1 + 0.2 + 1)
+        self.assertAlmostEqual(out["core_hours_cheap"], out["core_hours_full"] - 0.2)  # case 1's restarts and its final
+        self.assertEqual(out["gate"], [2])
+        self.assertEqual((out["full"]["under_0.01%"], out["cheap"]["under_0.01%"]), (1, 2))
+        self.assertEqual(out["cheap_vs_full"], {"gained": [1], "lost": [], "different_pick": [1]})
+        self.assertEqual(out["reproduces_disagree_pick"], 1)
+
     def test_unseen_score_counts_stages_and_lines(self):
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
         from unseen_check import score
