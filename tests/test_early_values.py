@@ -938,6 +938,30 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertGreater(v["speedup"], 2.1)
         self.assertGreater(o["refine_share"], 0.8)
 
+    def test_fresh_50_evidence(self):
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/fresh-50/check.json").read_text())
+        c, h = check["cheap"], check["held_out_72"]
+        self.assertEqual(check["seeds"], list(range(400, 450)))
+        self.assertEqual((c["under_0.01%"], c["under_0.1%"], c["exact"]), (48, 50, 39))
+        self.assertEqual((c["repair_65_under_0.01%"], c["repair_65_exact"]), (41, 28))
+        self.assertEqual(sorted(c["over_line"]), ["400", "414"])
+        self.assertEqual(c["lost_from_65"], [414])
+        self.assertEqual(len(c["gained_over_65"]), 8)
+        self.assertEqual(sum(c["picks"].values()), 50)
+        self.assertEqual((h["under_0.01%"], h["exact"]), (49, 39))
+        self.assertAlmostEqual(c["core_hours"], 20.88, places=2)
+        self.assertGreater(check["cost_ratio"], 1.75)
+
+    def test_fresh_50_original_rerun(self):
+        """The original repair, rerun on the two cases over the line, lands in the same place as the cheap run."""
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/fresh-50/vs-original.json").read_text())
+        self.assertEqual(check["seeds"], [400, 414])
+        for key in ("same_stage_65_outcome", "same_candidates", "same_pick", "same_chosen"):
+            self.assertEqual(check[key], [400, 414], key)
+        self.assertGreater(check["speedup"], 2.0)
+
     def test_cut_refine_losses_match_the_original(self):
         import numpy as np
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))

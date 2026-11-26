@@ -210,3 +210,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [END_TO_END.md](END_TO_END.md) (roadmap #76) runs #71's stage on the labels #75's cheaper refines saved and scores the whole repair on 8 cases: columns cuts it 1.54x with the original's pick in 8 of 8, loose 1.96x with all 8 under 0.01% but 3 picks changed; a batched Nelder-Mead that follows SciPy's steps exactly cuts #71's stage a further 1.39x over columns with the same picks.
 
 [FRESH_CHEAP.md](FRESH_CHEAP.md) (roadmap #77) runs the whole repair on 12 fresh seeds as #72 ran it and with columns plus the batched refine in both stages: the cheap repair takes 6.24 core-hours against 13.67 (2.19x), keeps all 12 under 0.01% and makes the original's pick in 11 of 12, losing one exact repair.
+
+[FRESH_50.md](FRESH_50.md) (roadmap #78) runs the cheap repair on 50 more fresh seeds: 20.88 core-hours against #72's 37.56 (1.80x), 48 of 50 under 0.01% (49 in #72) and 39 exact in both; the original repair, rerun on the two cases over the line, returns the same networks.
