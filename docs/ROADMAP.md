@@ -1535,6 +1535,23 @@ are under 0.01% and exact, and whether any case gets worse.
 **Cost.** CPU, about 20 core-hours: #71's stage took 10.1 core-hours on #78's 50 cases with the cheap repair, and
 #72's seeds need it rerun cheap as well (candidate networks are not saved, only their winners).
 
+**Status (November 26): done on 100 fresh cases, see [KEEP_65.md](../experiments/locate-repair/KEEP_65.md).** With #65's repair as a fifth candidate and ties going to #71's candidates, 98 of 100 chosen networks are under 0.01% (97 without) and 79 exact (78); the chooser takes it in 5 cases, fixes seed 414 (0.069% to 0.0035%, exact) and takes none over the line. One case gets slightly worse (319, still exact at 0.0035%). Ties going to #65's repair is worse. The added candidate is a rebuild of #65's values, within 0.001% of the recorded disagreement in 83 of 100; saving #65's own edits moved to #80.
+
+## 80. Save #65's own repair and choose among the saved networks
+
+*Added November 26 after #79.*
+
+#79's added candidate refits #65's triple on #65's labels because #65's stage saves only its winner and labels, not
+its network edits. The refit lands within 0.001% of #65's recorded disagreement in 83 of 100 cases, and in 415 and 418
+it is far worse (1.07% and 0.85% against 0.0014% and 0.025%). Make #65's stage save the edits it ends with (region
+arm, with the middle when it is used), rerun #65's stage cheap on a fresh set of 50 seeds, then #71's stage with the
+saved repair as the fifth candidate, ties last. Report the same counts as #79 and whether the saved repair is ever
+chosen where the rebuild was not. In the same run, try asking labels only where #71's candidates disagree before
+adding #65's repair, to see whether that keeps 319-style picks.
+
+**Cost.** CPU, about 20 core-hours: #78's cheap run took 20.9 core-hours for both stages on 50 cases, and #79's
+chooser adds little.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

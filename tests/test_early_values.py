@@ -962,6 +962,22 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(check[key], [400, 414], key)
         self.assertGreater(check["speedup"], 2.0)
 
+    def test_keep_65_evidence(self):
+        """#79: keeping #65's repair in #71's chooser, ties last, fixes 414 and takes no case over the line."""
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/keep-65/check.json").read_text())
+        self.assertEqual(check["seeds"], list(range(300, 350)) + list(range(400, 450)))
+        w, last, first = check["without"], check["with_last"], check["with_first"]
+        self.assertEqual((w["under_0.01%"], w["exact"]), (97, 78))
+        self.assertEqual((last["under_0.01%"], last["under_0.1%"], last["exact"]), (98, 100, 79))
+        self.assertEqual(last["took_65"], [330, 400, 414, 426, 430])
+        self.assertEqual((last["gained"], last["lost"], last["worse"]), ([414], [], [319]))
+        self.assertEqual((first["exact"], len(first["took_65"]), len(first["worse"])), (78, 24, 8))
+        self.assertEqual((check["repair65"]["under_0.01%"], check["probe_best"]["under_0.01%"]), (80, 98))
+        self.assertEqual((check["rebuilt_65"]["same_faults_found"], check["rebuilt_65"]["within_0.001%"]), (100, 83))
+        self.assertEqual(check["labels_asked"], {"without": 579, "with": 1155})
+        self.assertAlmostEqual(check["core_hours"], 20.26, places=2)
+
     def test_cut_refine_losses_match_the_original(self):
         import numpy as np
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
