@@ -1002,6 +1002,23 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(rescore["with_last"]["worse"], [319])
         self.assertEqual(rescore["labels_asked"], {"without": 579, "with_last": 1155, "two_round": 1601})
 
+    def test_gated_duel_evidence(self):
+        """#81: a duel gated on 32 split inputs makes no case worse on 150 cases and keeps 400 and 414."""
+        import json
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        import gated_duel as gd
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/gated-duel/check.json").read_text())
+        self.assertEqual(check["rule"], {"min_split_inputs": 32, "min_margin": 1})
+        tune, fresh = check["tune_79"]["gated"], check["check_80"]["gated"]
+        self.assertEqual((tune["under_0.01%"], tune["exact"], tune["better"], tune["worse"]), (98, 79, [400, 402, 414], []))
+        self.assertEqual((fresh["under_0.01%"], fresh["exact"], fresh["took_65"], fresh["worse"]), (50, 39, [], []))
+        self.assertEqual((tune["labels_asked"], fresh["labels_asked"]), (1123, 392))
+        for k in (8, 16, 32):
+            self.assertEqual(check["grid_79"][f"k={k},m=1"][:2], [3, 0])
+        tune_rows, check_rows = gd.load()
+        self.assertEqual(gd.score(tune_rows, 32, 1), tune)
+        self.assertEqual(gd.score(check_rows, 1, 1)["worse"], [503, 513, 536])
+
     def test_cut_refine_losses_match_the_original(self):
         import numpy as np
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
