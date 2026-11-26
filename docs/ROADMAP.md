@@ -1552,6 +1552,22 @@ adding #65's repair, to see whether that keeps 319-style picks.
 **Cost.** CPU, about 20 core-hours: #78's cheap run took 20.9 core-hours for both stages on 50 cases, and #79's
 chooser adds little.
 
+**Status (November 26): done on 50 fresh cases and #79's 100, see [SAVED_65.md](../experiments/locate-repair/SAVED_65.md).** #65's stage now saves its network edits; the saved repair matches #65's recorded disagreement in all 50 fresh cases, against 44 within 0.001% for the rebuild, and the rebuild makes one case worse (508, 0.0015% to 0.008%) where the saved repair does not. #71's chooser alone already puts all 50 fresh cases under 0.01% (39 exact), so the saved repair changes no outcome there. The two-round chooser keeps 319's pick on #79's cases but trades it for 6 small losses (9 across both sets, all from duels with 1 to 7 split inputs); a minimum for the duel moved to #81. 22.3 core-hours.
+
+## 81. Duel only when the labels can tell the two apart
+
+*Added November 26 after #80.*
+
+#80's two-round chooser duels #71's pick against #65's repair and takes #65's repair when it answers more of up to 32
+labels right. It kept 319's pick and made 6 cases closer on #79's cases, but made 9 further across #79's and #80's
+150 cases, all from duels with 1 to 7 split inputs that #65's repair won by 1 to 4 labels; the gains that mattered
+(400, 402, 414) had 37 to 133. Score, from the networks #79 and #80 saved, a second round that is skipped when the duel
+has fewer than k split inputs or #65's repair wins by fewer than m labels, for a few values of k and m, against #79's
+one-round chooser. Pick the rule on #79's 100 cases and check it on #80's 50, and report under the line, exact,
+closer and further as #79 and #80 do.
+
+**Cost.** CPU, under one core-hour: every network is saved, so it needs only the duels' pools and the probe.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
