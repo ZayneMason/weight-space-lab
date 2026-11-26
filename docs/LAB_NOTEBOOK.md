@@ -8,6 +8,28 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-26 — Roadmap #79: keep #65's own repair in the running
+
+Reran #71's stage with the cheap repair on #72's and #78's 100 fresh seeds, with #65's own repair added as a fifth
+candidate in the disagree chooser, and scored it against the chooser without it on the same pool. Details in
+[KEEP_65.md](../experiments/locate-repair/KEEP_65.md).
+
+**Measured.** Without #65's repair the chooser reproduces #78's picks in all 50 of its cases: 97 of 100 under 0.01%,
+78 exact. With it, ties going to #71's candidates, 98 are under 0.01% and 79 exact; it takes #65's repair in 5 cases,
+brings seed 414 from 0.069% to an exact 0.0035%, moves 400 from 0.041% to 0.013%, and takes no case over the line.
+The one case that gets worse is 319 (0.0016% to 0.0035%, both exact), where all 32 labels went to ruling out #65's
+two-fault repair. Ties going to #65's repair is worse (8 cases further from the original, 78 exact). #65's repair
+alone is under the line in 80 cases. The rebuilt repair matches #65's recorded fault count in all 100 cases but its
+disagreement within 0.001% in only 83. Labels asked double, 579 to 1,155. A first version lost exactly the cases
+where #65's repair won, because a StopIteration in the chooser ended the worker pool's job list silently.
+20.3 core-hours.
+
+**Interpretation.** Keeping #65's repair, with ties going last, is a free gain on these cases and should be the
+default. The rebuild of #65's values is the weak point (415 and 418 rebuild far worse than recorded), so saving
+#65's own network edits is #80.
+
+---
+
 ## 2026-11-26 — Roadmap #78: run the cheap repair on 50 more fresh seeds
 
 Ran the cheap repair (columns plus the batched committee fits, in both stages) on 50 seeds nothing had been run on

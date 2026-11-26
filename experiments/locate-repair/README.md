@@ -212,3 +212,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [FRESH_CHEAP.md](FRESH_CHEAP.md) (roadmap #77) runs the whole repair on 12 fresh seeds as #72 ran it and with columns plus the batched refine in both stages: the cheap repair takes 6.24 core-hours against 13.67 (2.19x), keeps all 12 under 0.01% and makes the original's pick in 11 of 12, losing one exact repair.
 
 [FRESH_50.md](FRESH_50.md) (roadmap #78) runs the cheap repair on 50 more fresh seeds: 20.88 core-hours against #72's 37.56 (1.80x), 48 of 50 under 0.01% (49 in #72) and 39 exact in both; the original repair, rerun on the two cases over the line, returns the same networks.
+
+[KEEP_65.md](KEEP_65.md) (roadmap #79) adds #65's own repair as a fifth candidate in #71's chooser, on 100 fresh cases: with ties going to #71's candidates, 98 under 0.01% (97 without) and 79 exact (78), seed 414 fixed (0.069% to 0.0035%) and none taken over the line; ties going to #65's repair is worse.
