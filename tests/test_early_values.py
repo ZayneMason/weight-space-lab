@@ -1019,6 +1019,40 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(gd.score(tune_rows, 32, 1), tune)
         self.assertEqual(gd.score(check_rows, 1, 1)["worse"], [503, 513, 536])
 
+    def test_value_labels_evidence(self):
+        """#82: the flat-line step puts all 150 cases under 0.01%; region labels leave 331 and 400 over it."""
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/value-labels/check.json").read_text())
+        self.assertEqual(len(check["seeds"]), 150)
+        self.assertEqual(sorted(check["chosen"]["over_line"]), ["331", "400"])
+        self.assertEqual(len(check["flat"]), 27)
+        middle, last = check["line_middle"], check["line_after_32"]
+        self.assertEqual((middle["under_0.01%"], middle["gained"], middle["lost"]), (150, [331, 400], []))
+        self.assertEqual((last["under_0.01%"], last["worse"]), (150, [349, 418, 428]))
+        self.assertEqual(last["better"], [331, 400, 402, 443, 526, 542, 547])
+        self.assertLess(check["per_case_flat"]["331"][1], 1e-4)
+        region = check["region_after_32"]
+        self.assertEqual((region["under_0.01%"], sorted(region["over_line"])), (58, ["331", "400"]))
+        self.assertEqual(len(check["control"]["worse"]), 45)
+
+    def test_flat_line_segment_on_seed_331(self):
+        """#82: the least-constrained direction at 331's pick is flat and its segment's middle fits every label."""
+        import numpy as np
+        sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
+        import value_labels as vl
+        from rebuild_committee import labels
+        chosen = vl.cases()[331]
+        case = vl.ev.rs.resize(vl.ev.t3.corrupt(16, 331))
+        x, y = labels(case, 331, vl.SOURCES[300])
+        triple = tuple(tuple(e) for e in chosen["winner"])
+        scale = np.array([case["scale"][n] for n, _ in triple])
+        z = np.array([v for _, _, v in chosen["edits"]]) / scale
+        d, a, b, sv = vl.segment(case, x, y, triple, z, scale)
+        self.assertLessEqual(sv[-1], vl.FLAT * sv[0])
+        self.assertGreater(b - a, 1.0)
+        mid = (z + (a + b) / 2 * d) * scale
+        self.assertEqual(int((vl.wt.signed_margins(case, triple, mid, x, y) <= 0).sum()), 0)
+
     def test_cut_refine_losses_match_the_original(self):
         import numpy as np
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))

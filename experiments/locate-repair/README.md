@@ -218,3 +218,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [SAVED_65.md](SAVED_65.md) (roadmap #80) saves #65's own network edits and reruns the cheap repair on 50 fresh seeds: the saved repair matches #65's record in all 50 (the rebuild in 44, and the rebuild makes 508 worse), #71's chooser alone already has all 50 under 0.01%, and a two-round chooser keeps #79's 319 pick but loses small amounts in 9 of 150 cases.
 
 [GATED_DUEL.md](GATED_DUEL.md) (roadmap #81) runs the second-round duel only when it has at least 32 split inputs: on #79's 100 cases 3 closer and none further (#79's one round: 4 and 1), 98 under 0.01% and 79 exact, fewer labels than #79; on #80's 50 no pick changes.
+
+[VALUE_LABELS.md](VALUE_LABELS.md) (roadmap #82) finds why 331 and 400 stayed over the line: their fitting region is a flat line the hit-and-run walk cannot travel. Taking the middle of the segment along the flat direction found from the labels' margin gradients puts all 150 of #79's and #80's cases under 0.01%; #65-style region labels do not.

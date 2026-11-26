@@ -8,6 +8,28 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-26 — Roadmap #82: ask more value labels where the values are not settled
+
+Kept #81's pick's weights on #79's and #80's 150 cases and tried two ways to move its values: #65-style region labels
+(where every candidate edits the same weights, 60 cases) and a new step that looks for a flat direction in the
+labels' margin gradients and takes the middle of the segment of perfect fits along it, then asks 32 labels along it.
+Details in [VALUE_LABELS.md](../experiments/locate-repair/VALUE_LABELS.md).
+
+**Measured.** On 331 the true values and every point on the straight line from the pick to them fit all 1,096
+labels, while the networks along it range from 0.062% to 0% wrong; the hit-and-run walk's mean chord is 0.0003
+spreads, so it never travels the line. The least-constrained direction has singular value 0 and points at the truth.
+Flat directions occur in 27 of 150 picks. The segment's middle takes 331 from 0.062% to 0.0071% and 400 from 0.013%
+to 0.0016%, putting all 150 cases under 0.01% for the first time; after 32 labels along the segment 7 cases are closer
+and 3 slightly further (all under the line). The networks along the line differ only where exactly one of two moved
+hidden units is active (331, 400, 547). Region labels leave 331 and 400 where they were, and refitting on #65's labels
+alone makes 45 of 60 picks worse. 1.5 core-hours, 0.09 of them for the line step.
+
+**Interpretation.** The walk behind #63 to #65 cannot find a fitting region that is a long thin line, which is why
+those steps never moved 331 or 400; the gradients find it in seconds. The step should follow #81's chooser. It was
+shaped after looking at 331 and 400, so running the whole repair with it on fresh seeds is #83.
+
+---
+
 ## 2026-11-26 — Roadmap #81: duel only when the labels can tell the two apart
 
 Scored, from the duels #80 saved, a second round that runs only when #71's pick and #65's repair disagree on at least
