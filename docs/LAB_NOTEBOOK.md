@@ -8,6 +8,25 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-26 — Roadmap #81: duel only when the labels can tell the two apart
+
+Scored, from the duels #80 saved, a second round that runs only when #71's pick and #65's repair disagree on at least
+k unlabeled inputs and takes #65's repair only when it wins by at least m labels. Picked the rule on #79's 100 cases
+and checked it on #80's 50. Details in [GATED_DUEL.md](../experiments/locate-repair/GATED_DUEL.md).
+
+**Measured.** Any k from 8 to 32 (m from 1 to 4) makes 3 of #79's cases closer to the original (400, 402, 414) and
+none further, against 4 closer and 1 further (319) for #79's one-round chooser and 6 and 6 for #80's ungated two
+rounds. Under 0.01% and exact stay at 98 and 79. The cheapest, k = 32 and m = 1, asks 1,123 labels against #79's
+1,155. On #80's 50 it takes #65's repair nowhere and makes none worse. It drops 430's gain (0.0051% to 0.0014%), whose
+duel had 4 split inputs.
+
+**Interpretation.** The gated two-round chooser is the first in this line with no case made worse across 150 cases
+while keeping 414 and 400, and should be the default. It was tuned on #79's cases, and #80's give it nothing to gain,
+so the fresh check shows only that it does no harm. The two cases still over the line (331, 400) have the right
+weights with the wrong values; asking more value labels where every candidate edits the same weights is #82.
+
+---
+
 ## 2026-11-26 — Roadmap #80: save #65's own repair and choose among the saved networks
 
 Made #65's stage save the network edits it ends with, ran the whole cheap repair on 50 fresh seeds (500 to 549) with

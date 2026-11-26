@@ -1568,6 +1568,24 @@ closer and further as #79 and #80 do.
 
 **Cost.** CPU, under one core-hour: every network is saved, so it needs only the duels' pools and the probe.
 
+**Status (November 26): done on #79's 100 cases and #80's 50, see [GATED_DUEL.md](../experiments/locate-repair/GATED_DUEL.md).** Requiring at least 8 split inputs (any k from 8 to 32, m from 1 to 4) makes 3 of #79's cases closer (400, 402, 414) and none further; #79's one-round chooser made 4 closer and 1 further, #80's ungated duel 6 and 6. Under 0.01% and exact stay at 98 and 79, with k = 32 asking 1,123 labels against 1,155. On #80's 50 it changes no pick. It drops 430's gain (4 split inputs). Scored from saved duels in seconds. The cases still over the line moved to #82.
+
+## 82. Ask more value labels where every candidate edits the same weights
+
+*Added November 26 after #81.*
+
+The two cases left over the line after #81 are 331 (every candidate edits exactly the three broken weights, at 0.062%
+to 0.077%) and 400 (0.013%, also exact). Both have the right weights and the wrong values. Where every candidate
+#71's stage builds edits the same weights, the weights are settled and only the values are not, so labels are better
+spent the way #65's stage spends them on values (region labels around the current fit) than on telling candidates
+apart. Add a step after the gated chooser that, only when every candidate's edited weights are the same, asks up to
+32 more value labels and refits the values on the chosen weights. Run it on #72's, #78's and #80's 150 cases from the
+saved labels and networks, and report how many cases it triggers on, whether 331 and 400 cross the line, and whether
+any case gets worse.
+
+**Cost.** CPU, a few core-hours: the step runs only where all candidates agree on weights, and each run is one round
+of region labels and one value refit.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
