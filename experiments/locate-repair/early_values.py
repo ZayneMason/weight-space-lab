@@ -51,6 +51,11 @@ def best_practice_accuracy(members, fits):
 
 
 MIDDLE_CHORD = 0.005  # roadmap #64: take the middle only when the region reaches at least this far (in spreads)
+SAVE_EDITS = False  # roadmap #80: also keep the network edits of the middle step and of each extra-round arm
+
+
+def edit_list(edits):
+    return [[n, int(i), float(v)] for n, i, v in edits]
 
 
 def middle_step(case, keep, probe, min_chord=MIDDLE_CHORD, samples=None):
@@ -66,7 +71,7 @@ def middle_step(case, keep, probe, min_chord=MIDDLE_CHORD, samples=None):
     (after, _), edits = st.wt.score(case, x, y, triple, centre)
     used = chord >= min_chord and after >= before
     return {"mean_chord": chord, "used": used, "min_chord": min_chord, "accuracy": after,
-            "disagreement": aq.disagreement(case, edits, probe)}
+            "disagreement": aq.disagreement(case, edits, probe), **({"edits": edit_list(edits)} if SAVE_EDITS else {})}
 
 
 REGION_SAMPLES = 200  # walk points whose networks vote on where the region is unsure (roadmap #65)
@@ -101,7 +106,8 @@ def extra_round(case, keep, samples, probe, per_round=None):
         mid = middle_step(case, {"x": nx, "y": ny, "winner": winner, "edits": edits}, probe)
         out[arm] = {"splitting": int((split > 0).sum()), "disagreement": aq.disagreement(case, edits, probe),
                     "faults_found": len(t3.hits(winner, case["faults"], case["width"])), "practice_accuracy": accuracy,
-                    "winner": [list(e) for e in winner], "middle": mid}
+                    "winner": [list(e) for e in winner], "middle": mid,
+                    **({"edits": edit_list(edits)} if SAVE_EDITS else {})}
         added[arm] = pool[picked]
     return out, added
 

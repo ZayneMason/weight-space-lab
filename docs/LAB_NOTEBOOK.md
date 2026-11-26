@@ -8,6 +8,26 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-26 — Roadmap #80: save #65's own repair and choose among the saved networks
+
+Made #65's stage save the network edits it ends with, ran the whole cheap repair on 50 fresh seeds (500 to 549) with
+#65's saved repair and #79's rebuild of it both scored as candidates, and rescored #79's 100 cases with a two-round
+chooser. Details in [SAVED_65.md](../experiments/locate-repair/SAVED_65.md).
+
+**Measured.** The saved repair matches #65's recorded disagreement in all 50 fresh cases; the rebuild is within
+0.001% in 44 and on the same side of the line in 49 (508: 0.008% saved, 0.27% rebuilt). On these seeds #71's chooser
+alone already puts all 50 under 0.01% and 39 exact, and adding the saved repair, ties last, changes no outcome. Adding
+the rebuild instead makes 508 worse (0.0015% to 0.008%), because all 32 labels go to ruling it out, as in 319.
+#65's repair alone is under the line in 42. The two-round chooser (a duel between #71's pick and #65's repair) keeps
+319's pick on #79's cases but moves 6 cases closer and 6 further there, and 3 further on the fresh ones; every loss
+is under 0.006% and came from a duel with 1 to 7 split inputs. 22.3 core-hours.
+
+**Interpretation.** Saving #65's network should replace the rebuild. #79's one-round chooser with the saved repair,
+ties last, stays the default. A second round only helps if it ignores duels with too few split inputs; scoring that
+from the saved networks is #81.
+
+---
+
 ## 2026-11-26 — Roadmap #79: keep #65's own repair in the running
 
 Reran #71's stage with the cheap repair on #72's and #78's 100 fresh seeds, with #65's own repair added as a fifth

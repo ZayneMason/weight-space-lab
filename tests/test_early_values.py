@@ -978,6 +978,30 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual(check["labels_asked"], {"without": 579, "with": 1155})
         self.assertAlmostEqual(check["core_hours"], 20.26, places=2)
 
+    def test_saved_65_evidence(self):
+        """#80: the saved #65 repair matches its record; the rebuild costs 508 its pick; two rounds trades small losses."""
+        import json
+        folder = ROOT / "experiments/locate-repair/evidence/saved-65"
+        check = json.loads((folder / "check.json").read_text())
+        self.assertEqual(check["seeds"], list(range(500, 550)))
+        self.assertEqual(check["saved_65"], {"matches_recorded": 50, "under_0.01%": 42, "exact": 36})
+        self.assertEqual((check["rebuilt_65"]["within_0.001%"], check["rebuilt_65"]["same_side_of_line"]), (44, 49))
+        for name in ("without", "with_saved", "with_rebuilt", "two_round", "probe_best"):
+            self.assertEqual((check[name]["under_0.01%"], check[name]["exact"]), (50, 39), name)
+        self.assertEqual((check["with_saved"]["took_65"], check["with_saved"]["worse"]), ([531, 543], []))
+        self.assertEqual(check["with_rebuilt"]["worse"], [508])
+        self.assertEqual(check["two_round"]["worse"], [503, 513, 536])
+        self.assertEqual(check["labels_asked"], {"without": 296, "with_saved": 449, "two_round": 704})
+        self.assertAlmostEqual(check["core_hours"], 22.28, places=2)
+        rescore = json.loads((folder / "rescore-79-check.json").read_text())
+        self.assertEqual((rescore["without"]["under_0.01%"], rescore["without"]["exact"]), (97, 78))
+        two = rescore["two_round"]
+        self.assertEqual((two["under_0.01%"], two["exact"], two["lost"]), (98, 79, []))
+        self.assertEqual(two["better"], [311, 400, 402, 414, 430, 449])
+        self.assertEqual(two["worse"], [304, 321, 325, 339, 341, 437])
+        self.assertEqual(rescore["with_last"]["worse"], [319])
+        self.assertEqual(rescore["labels_asked"], {"without": 579, "with_last": 1155, "two_round": 1601})
+
     def test_cut_refine_losses_match_the_original(self):
         import numpy as np
         sys.path.insert(0, str(ROOT / "experiments/locate-repair"))
