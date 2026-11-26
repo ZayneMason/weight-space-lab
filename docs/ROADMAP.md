@@ -1586,6 +1586,20 @@ any case gets worse.
 **Cost.** CPU, a few core-hours: the step runs only where all candidates agree on weights, and each run is one round
 of region labels and one value refit.
 
+**Status (November 26): done on 150 cases, see [VALUE_LABELS.md](../experiments/locate-repair/VALUE_LABELS.md).** Region labels as proposed leave 331 and 400 over the line, and refitting on #65's labels alone makes 45 of 60 picks worse. The cause is the walk: on 331 every point on the straight line from the pick to the true values fits every label, but the hit-and-run walk's chords are 0.0003 spreads long. A new step finds that flat direction from the labels' margin gradients (27 of 150 picks have one) and takes the middle of the segment along it: 331 goes to 0.0071% and 400 to 0.0016%, and all 150 cases are under 0.01%. With 32 labels along the segment, 7 cases are closer and 3 slightly further. 1.5 core-hours. The fresh-seed run moved to #83.
+
+## 83. Run the whole repair with the gated duel and the flat-line step on fresh seeds
+
+*Added November 26 after #82.*
+
+#81's gated duel and #82's flat-line step were both chosen on #79's and #80's cases, the line step after looking at
+331 and 400. Run the whole cheap repair (#78) on 50 fresh seeds (600 to 649) with #65's saved repair (#80), #81's
+chooser and #82's line step (segment middle, then 32 labels along it where the direction is flat), and report, as
+#72 and #78 did, under 0.01%, under 0.1%, exact, and the median disagreement, with each step's contribution: how many
+cases each moves under or over the line and how many it makes closer or further.
+
+**Cost.** CPU, about 22 core-hours, as #80: the new steps add seconds per case.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
