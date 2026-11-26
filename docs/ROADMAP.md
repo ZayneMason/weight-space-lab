@@ -1520,6 +1520,21 @@ cost per case, next to #72's held-out numbers.
 
 **Cost.** CPU, about 25 to 30 core-hours: the cheap repair averaged 0.52 core-hours a case in #77.
 
+**Status (November 26): done on 50 fresh cases, see [FRESH_50.md](../experiments/locate-repair/FRESH_50.md).** The cheap repair takes 20.88 core-hours against #72's 37.56 (1.80x), puts 48 of 50 chosen networks under 0.01% (49 in #72) and all 50 under 0.1%, and is exact in 39 (39 in #72). The original repair, rerun on the two cases over the line (400 and 414), returns the same networks. On 414 #71's stage threw away #65's exact repair at 0.0035%; keeping it in the running moved to #79.
+
+## 79. Keep #65's own repair in the running
+
+*Added November 26 after #78.*
+
+On seed 414 #65's stage ended with an exact repair at 0.0035%, but #71's disagree chooser only picks among its own
+candidates (pick68, restarts, boundary and, when the gate opens, the bigger committee), so it returned a one-fault fit
+at 0.069%. Add #65's repair as a further candidate in the chooser, scored on the same asked labels, and rerun #71's
+stage (cheap) on #72's and #78's 100 seeds. Report how often the chooser takes #65's repair, how many chosen networks
+are under 0.01% and exact, and whether any case gets worse.
+
+**Cost.** CPU, about 20 core-hours: #71's stage took 10.1 core-hours on #78's 50 cases with the cheap repair, and
+#72's seeds need it rerun cheap as well (candidate networks are not saved, only their winners).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

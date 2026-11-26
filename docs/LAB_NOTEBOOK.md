@@ -8,6 +8,26 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-26 — Roadmap #78: run the cheap repair on 50 more fresh seeds
+
+Ran the cheap repair (columns plus the batched committee fits, in both stages) on 50 seeds nothing had been run on
+(400 to 449) and compared it with #72's held-out run of the original on seeds 300 to 349. Then reran the original
+repair on the two cases left over the 0.01% line. Details in
+[FRESH_50.md](../experiments/locate-repair/FRESH_50.md).
+
+**Measured.** 20.88 core-hours for 50 cases against #72's 37.56 (1.80x). 48 of 50 chosen networks are under 0.01%
+and all 50 under 0.1% (49 and 50 in #72); 39 are exact in both. On seeds 400 and 414 the original repair gives the
+same #65 outcome, the same candidates, the same pick and the same network as the cheap one, at 2.17x the cost. Seed
+400's candidates all edit the three broken weights but sit at 0.041% to 0.059%. Seed 414 ended #65's stage with an
+exact repair at 0.0035%, and #71's stage replaced it with a one-fault fit at 0.069%, because #65's repair is not one
+of #71's candidates.
+
+**Interpretation.** The cheap repair matches #72's rates and misses exactly where the original misses, so it can be
+the default. The 1.80x is across different seeds, against #77's 2.19x on shared ones (inferred: these seeds were
+cheaper per case). Seed 414 suggests keeping #65's own repair in #71's chooser, which is #79.
+
+---
+
 ## 2026-11-25 — Roadmap #77: run the whole cheaper repair on fresh seeds
 
 **Measured.** `fresh_cheap.py` runs the whole repair, #65's stage and then #71's, on 12 seeds nothing had been run on
