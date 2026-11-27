@@ -8,6 +8,25 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-27 — Roadmap #83: run the whole repair with the gated duel and the flat-line step on fresh seeds
+
+Ran the whole cheap repair on 50 seeds nothing had been run on (600 to 649), as #80 ran it, then #81's gated duel and
+#82's flat-line step, and refitted the true broken weights in the two cases left over the line. Details in
+[FRESH_LINE.md](../experiments/locate-repair/FRESH_LINE.md).
+
+**Measured.** 48 of 50 under 0.01%, 50 under 0.1%, 38 exact, the same with and without the two new steps (#72, #78
+and #80 got 49, 48 and 50 under the line, 39 exact each). The duel ran on 9 cases and #65's repair lost all 9; 5 picks
+have a flat direction, 4 unchanged and 644 from 0.0010% to 0.0012%. Over the line: 611 (0.0118%) and 641 (0.0366%),
+neither flat. On #65's final labels 611's true broken weights fit every label and land at 0.0118% too; 641's fit every
+label and land at 0.0039%, while every #71 candidate edits one wrong triple that misses 8 labels. 24.2 core-hours.
+
+**Interpretation.** Both steps are safe and cheap but fix nothing held out; #82's 150 of 150 was on its own tuning
+set. The two failures differ: 611 needs labels that pin the values, 641 needs a search that tries the triple the
+labels already prefer. Searching triples that keep the pick's best-supported weight when no candidate fits every
+label is #84.
+
+---
+
 ## 2026-11-26 — Roadmap #82: ask more value labels where the values are not settled
 
 Kept #81's pick's weights on #79's and #80's 150 cases and tried two ways to move its values: #65-style region labels

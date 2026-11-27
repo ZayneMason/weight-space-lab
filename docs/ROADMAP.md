@@ -1600,6 +1600,22 @@ cases each moves under or over the line and how many it makes closer or further.
 
 **Cost.** CPU, about 22 core-hours, as #80: the new steps add seconds per case.
 
+**Status (November 27): done on 50 fresh cases, see [FRESH_LINE.md](../experiments/locate-repair/FRESH_LINE.md).** 48 of 50 under 0.01%, 50 under 0.1%, 38 exact, median 0.0011%, the same as #71's chooser alone: the gated duel took #65's repair in none of its 9 duels, and the line step changed 1 of 5 flat cases (644, 0.0010% to 0.0012%). 611 (0.0118%) and 641 (0.0366%) stay over the line. 611's true broken weights, refitted on the same labels, land at 0.0118% too; 641's fit every label and land at 0.0039%, while every candidate edits a wrong triple that misses 8. 24.2 core-hours. The search 641 needs moved to #84.
+
+## 84. When no candidate fits every label, search the triples that keep the pick's best weight
+
+*Added November 27 after #83.*
+
+In 641 (#83) the true broken weights fit all 1,096 of #65's final labels and land at 0.0039%, but all of #71's
+candidates edit one wrong triple that gets 8 labels wrong, and the bigger committee finds the same triple. When the
+chosen fit misses a label, fit every triple that keeps one of the pick's weights (about 3,240 fits per kept weight,
+over all 82 parameters), keep those that fit every label, and choose among them with #71's disagree chooser. Run it
+on every case where #71's pick misses a label: #83's 641 and the gated cases of #72, #78, #80 and #83. Report how
+often the true triple is among the perfect fits, where it ranks, how many perfect fits there are, the outcomes against
+#71's pick, and the cost.
+
+**Cost.** CPU, a few core-hours if a fit takes about a second; measure one case first.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

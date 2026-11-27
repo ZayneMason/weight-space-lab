@@ -1035,6 +1035,29 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertEqual((region["under_0.01%"], sorted(region["over_line"])), (58, ["331", "400"]))
         self.assertEqual(len(check["control"]["worse"]), 45)
 
+    def test_fresh_line_evidence(self):
+        """#83: on fresh seeds the gated duel and the line step change no outcome; 641 has a perfect fit no candidate tries."""
+        import json
+        folder = ROOT / "experiments/locate-repair/evidence/fresh-line"
+        check = json.loads((folder / "check.json").read_text())
+        self.assertEqual(check["seeds"], list(range(600, 650)))
+        for name in ("without", "gated", "line_after_32"):
+            r = check[name]
+            self.assertEqual((r["under_0.01%"], r["under_0.1%"], r["exact"]), (48, 50, 38))
+            self.assertEqual(sorted(r["over_line"]), ["611", "641"])
+        self.assertEqual(check["repair65"]["under_0.01%"], 37)
+        self.assertEqual(check["gated_took_65"], [])
+        self.assertEqual(check["flat"], [604, 610, 622, 633, 644])
+        self.assertEqual(check["steps"]["line_32_over_gated"], {"better": [], "worse": [644], "gained": [], "lost": []})
+        self.assertEqual(check["steps"]["stage_71_over_65"]["worse"], [616, 618, 623, 626, 639])
+        self.assertEqual(check["labels_asked"], {"without": 286, "gated_and_line": 734})
+        truth = json.loads((folder / "truth.json").read_text())
+        self.assertEqual(sorted(truth), ["611", "641"])
+        self.assertEqual(truth["641"]["true"]["labels_right"], 1.0)
+        self.assertLess(truth["641"]["true"]["disagreement"], 1e-4)
+        self.assertLess(truth["641"]["pick"]["labels_right"], 1.0)
+        self.assertGreaterEqual(truth["611"]["true"]["disagreement"], 1e-4)
+
     def test_flat_line_segment_on_seed_331(self):
         """#82: the least-constrained direction at 331's pick is flat and its segment's middle fits every label."""
         import numpy as np
