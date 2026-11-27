@@ -8,6 +8,25 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-27 — Roadmap #84: when the chosen fit misses a label, search the triples that keep one of its weights
+
+In the 27 of 200 cases whose chosen network gets one of #65's final labels wrong, fitted every triple that keeps one
+of the pick's weights (about 9,500 a case) on those labels, kept the perfect fits, and ran #71's disagree chooser on
+the pick and them. Details in [KEEP_ONE.md](../experiments/locate-repair/KEEP_ONE.md).
+
+**Measured.** 641 has one perfect fit, the true broken weights; the chooser's 32 labels go 32 to 0 its way and it
+lands at 0.0027% (from 0.0366%), exact. The chooser takes a perfect fit in 5 cases (315, 444, 641, 642, 648), all
+closer, none worse; 444 becomes exact too. Over all 200 cases: 197 under 0.01% (from 196) and 158 exact (from 156);
+331, 400 and 611 stay over. Every pick keeps a broken weight, and the true triple is a perfect fit in 17 of 27. In
+the other 10 the broken weights' original values get every label right, but the fitter's best values for them miss 1
+or 2. 21.1 core-hours, 289 labels.
+
+**Interpretation.** The search is safe and fixes the case it was built for, at high cost. A missed label is often the
+fitter falling short rather than the wrong triple (inferred from the 10 cases); a fitter that reaches a perfect fit
+when one exists is #85.
+
+---
+
 ## 2026-11-27 — Roadmap #83: run the whole repair with the gated duel and the flat-line step on fresh seeds
 
 Ran the whole cheap repair on 50 seeds nothing had been run on (600 to 649), as #80 ran it, then #81's gated duel and

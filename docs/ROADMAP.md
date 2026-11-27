@@ -1616,6 +1616,22 @@ often the true triple is among the perfect fits, where it ranks, how many perfec
 
 **Cost.** CPU, a few core-hours if a fit takes about a second; measure one case first.
 
+**Status (November 27): done on the 27 of 200 cases whose chosen network misses a label, see [KEEP_ONE.md](../experiments/locate-repair/KEEP_ONE.md).** 641 has one perfect fit, the true broken weights, and the chooser takes it: 0.0366% to 0.0027%, exact. The chooser takes a perfect fit in 5 cases, all closer and none worse; over all 200 cases 197 are under the line (from 196) and 158 exact (from 156). The true triple is a perfect fit in 17 of 27; in the other 10 its original values fit every label but the fitter misses 1 or 2. 21.1 core-hours for 255,987 fits (about 9,500 triples a case, not 3,240). The fitter's shortfall moved to #85.
+
+## 85. Make the fitter reach a perfect fit when one exists
+
+*Added November 27 after #84.*
+
+In 10 of #84's 27 cases (312, 317, 328, 348, 419, 443, 448, 609, 630, 647) the broken weights' original values get all
+1,096 of #65's final labels right, but `fit` (a 21-point grid, two local grids and a polish) leaves 1 or 2 wrong, and
+8 of those picks already edit the three broken weights. Add a last step that starts from the best fit and pushes
+the missed labels across while keeping the rest right (a hinge loss on the labels nearest the boundary, or a small
+linear program on the margins of the three values), and check on those 10 cases how often the true triple then fits
+every label, whether the pick's own triple does, and how its disagreement moves. If it helps, rerun #84's gate with the
+new fitter on all 200 cases and report how many cases still miss a label and the outcomes.
+
+**Cost.** CPU, under an hour for the 10 cases; the rerun on 200 cases depends on how many still miss a label.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

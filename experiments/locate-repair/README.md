@@ -222,3 +222,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [VALUE_LABELS.md](VALUE_LABELS.md) (roadmap #82) finds why 331 and 400 stayed over the line: their fitting region is a flat line the hit-and-run walk cannot travel. Taking the middle of the segment along the flat direction found from the labels' margin gradients puts all 150 of #79's and #80's cases under 0.01%; #65-style region labels do not.
 
 [FRESH_LINE.md](FRESH_LINE.md) (roadmap #83) runs the whole repair with #81's gated duel and #82's flat-line step on 50 fresh seeds: 48 of 50 under 0.01% and 38 exact, the same as without them. Of the two cases over the line, 641 has a triple that fits every label and no candidate tries it.
+
+[KEEP_ONE.md](KEEP_ONE.md) (roadmap #84) searches every triple that keeps one of the pick's weights in the 27 of 200 cases whose pick misses a label: 641 gets its true broken weights and goes under the line, 5 cases get closer and none worse. In 10 cases the fitter misses a perfect fit that exists.
