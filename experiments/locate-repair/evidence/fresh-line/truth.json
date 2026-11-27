@@ -1,0 +1,80 @@
+{
+ "611": {
+  "faults": [
+   [
+    "hidden_weight",
+    10
+   ],
+   [
+    "hidden_weight",
+    20
+   ],
+   [
+    "hidden_weight",
+    28
+   ]
+  ],
+  "pick_weights": [
+   [
+    "hidden_weight",
+    2
+   ],
+   [
+    "hidden_weight",
+    10
+   ],
+   [
+    "hidden_weight",
+    20
+   ]
+  ],
+  "labels": 1096,
+  "true": {
+   "labels_right": 1.0,
+   "disagreement": 0.000118
+  },
+  "pick": {
+   "labels_right": 1.0,
+   "disagreement": 0.000216
+  }
+ },
+ "641": {
+  "faults": [
+   [
+    "hidden_weight",
+    8
+   ],
+   [
+    "hidden_weight",
+    20
+   ],
+   [
+    "hidden_bias",
+    9
+   ]
+  ],
+  "pick_weights": [
+   [
+    "hidden_weight",
+    8
+   ],
+   [
+    "hidden_weight",
+    18
+   ],
+   [
+    "hidden_weight",
+    21
+   ]
+  ],
+  "labels": 1096,
+  "true": {
+   "labels_right": 1.0,
+   "disagreement": 3.9e-05
+  },
+  "pick": {
+   "labels_right": 0.9927007299270073,
+   "disagreement": 0.000339
+  }
+ }
+}
