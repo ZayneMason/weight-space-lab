@@ -1,0 +1,1588 @@
+{
+ "seeds": [
+  700,
+  701,
+  702,
+  703,
+  704,
+  705,
+  706,
+  707,
+  708,
+  709,
+  710,
+  711,
+  712,
+  713,
+  714,
+  715,
+  716,
+  717,
+  718,
+  719,
+  720,
+  721,
+  722,
+  723,
+  724,
+  725,
+  726,
+  727,
+  728,
+  729,
+  730,
+  731,
+  732,
+  733,
+  734,
+  735,
+  736,
+  737,
+  738,
+  739,
+  740,
+  741,
+  742,
+  743,
+  744,
+  745,
+  746,
+  747,
+  748,
+  749
+ ],
+ "repair65": {
+  "under_0.01%": 42,
+  "under_0.1%": 46,
+  "exact": 25,
+  "median": 2.3e-05,
+  "over_line": {
+   "701": 0.001712,
+   "704": 0.000133,
+   "716": 0.000364,
+   "720": 0.001424,
+   "731": 0.000252,
+   "742": 0.000125,
+   "744": 0.001852,
+   "748": 0.00277
+  }
+ },
+ "pick": {
+  "under_0.01%": 49,
+  "under_0.1%": 50,
+  "exact": 34,
+  "median": 1.1e-05,
+  "over_line": {
+   "744": 0.000125
+  }
+ },
+ "duel": {
+  "under_0.01%": 50,
+  "under_0.1%": 50,
+  "exact": 36,
+  "median": 8e-06,
+  "over_line": {}
+ },
+ "every_winner": {
+  "under_0.01%": 50,
+  "under_0.1%": 50,
+  "exact": 36,
+  "median": 8e-06,
+  "over_line": {}
+ },
+ "result": {
+  "under_0.01%": 50,
+  "under_0.1%": 50,
+  "exact": 36,
+  "median": 8e-06,
+  "over_line": {}
+ },
+ "result_vs_pick": {
+  "closer": [
+   700,
+   703,
+   704,
+   706,
+   708,
+   712,
+   714,
+   716,
+   717,
+   718,
+   720,
+   722,
+   723,
+   726,
+   727,
+   728,
+   730,
+   731,
+   732,
+   734,
+   735,
+   737,
+   741,
+   744,
+   746,
+   748
+  ],
+  "further": [
+   701,
+   702,
+   713,
+   719,
+   724,
+   733,
+   736,
+   739,
+   740
+  ],
+  "gained": [
+   744
+  ],
+  "lost": [],
+  "gained_exact": [
+   706,
+   723,
+   744
+  ],
+  "lost_exact": [
+   736
+  ]
+ },
+ "result_vs_every_winner": {
+  "closer": [],
+  "further": [
+   719
+  ],
+  "gained": [],
+  "lost": [],
+  "gained_exact": [],
+  "lost_exact": []
+ },
+ "keep_one": [
+  709,
+  724,
+  744
+ ],
+ "with_candidates": [
+  700,
+  701,
+  702,
+  703,
+  704,
+  705,
+  706,
+  707,
+  708,
+  709,
+  710,
+  711,
+  712,
+  713,
+  714,
+  715,
+  716,
+  717,
+  718,
+  719,
+  720,
+  721,
+  722,
+  723,
+  724,
+  726,
+  727,
+  728,
+  730,
+  731,
+  732,
+  733,
+  734,
+  735,
+  736,
+  737,
+  738,
+  739,
+  740,
+  741,
+  742,
+  743,
+  744,
+  745,
+  746,
+  747,
+  748,
+  749
+ ],
+ "true_perfect": [
+  700,
+  701,
+  702,
+  703,
+  704,
+  705,
+  706,
+  707,
+  708,
+  709,
+  710,
+  711,
+  712,
+  713,
+  714,
+  715,
+  716,
+  717,
+  718,
+  719,
+  720,
+  721,
+  722,
+  723,
+  724,
+  726,
+  727,
+  728,
+  730,
+  731,
+  732,
+  733,
+  734,
+  735,
+  736,
+  737,
+  738,
+  739,
+  740,
+  741,
+  742,
+  743,
+  744,
+  745,
+  746,
+  747,
+  748,
+  749
+ ],
+ "took_other": [
+  700,
+  701,
+  702,
+  703,
+  704,
+  706,
+  707,
+  708,
+  712,
+  713,
+  714,
+  716,
+  718,
+  719,
+  720,
+  723,
+  724,
+  726,
+  727,
+  728,
+  730,
+  731,
+  732,
+  733,
+  734,
+  735,
+  736,
+  737,
+  739,
+  740,
+  741,
+  744,
+  745,
+  746,
+  748
+ ],
+ "flat": [
+  705,
+  707,
+  717,
+  719,
+  722,
+  723,
+  734,
+  737,
+  738,
+  742
+ ],
+ "line_applied": [
+  705,
+  717,
+  722,
+  738,
+  742
+ ],
+ "labels_asked": {
+  "first_part": 413,
+  "duel": 2602,
+  "line": 160
+ },
+ "triples_fitted": 39629,
+ "core_hours": {
+  "first_part": 25.952583333333333,
+  "keep_one_search": 2.955361111111111,
+  "keep_two_search": 1.082361111111111,
+  "duel_and_line": 0.8860833333333334
+ },
+ "per_case": {
+  "700": {
+   "repair65": [
+    4e-05,
+    2
+   ],
+   "pick": [
+    2.6e-05,
+    2
+   ],
+   "duel": [
+    8e-06,
+    2
+   ],
+   "every_winner": [
+    8e-06,
+    2
+   ],
+   "result": [
+    8e-06,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 67,
+   "winner": "t0"
+  },
+  "701": {
+   "repair65": [
+    0.001712,
+    0
+   ],
+   "pick": [
+    1.1e-05,
+    3
+   ],
+   "duel": [
+    1.6e-05,
+    3
+   ],
+   "every_winner": [
+    1.6e-05,
+    3
+   ],
+   "result": [
+    1.6e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 3,
+   "winner": "t0"
+  },
+  "702": {
+   "repair65": [
+    1.5e-05,
+    3
+   ],
+   "pick": [
+    9e-06,
+    3
+   ],
+   "duel": [
+    1e-05,
+    3
+   ],
+   "every_winner": [
+    1e-05,
+    3
+   ],
+   "result": [
+    1e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 3,
+   "winner": "t0"
+  },
+  "703": {
+   "repair65": [
+    1.6e-05,
+    3
+   ],
+   "pick": [
+    1.5e-05,
+    3
+   ],
+   "duel": [
+    1e-05,
+    3
+   ],
+   "every_winner": [
+    1e-05,
+    3
+   ],
+   "result": [
+    1e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 3,
+   "winner": "t0"
+  },
+  "704": {
+   "repair65": [
+    0.000133,
+    3
+   ],
+   "pick": [
+    4.9e-05,
+    3
+   ],
+   "duel": [
+    2.8e-05,
+    3
+   ],
+   "every_winner": [
+    2.8e-05,
+    3
+   ],
+   "result": [
+    2.8e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 1,
+   "winner": "t0"
+  },
+  "705": {
+   "repair65": [
+    1.1e-05,
+    3
+   ],
+   "pick": [
+    8e-06,
+    3
+   ],
+   "duel": [
+    8e-06,
+    3
+   ],
+   "every_winner": [
+    8e-06,
+    3
+   ],
+   "result": [
+    8e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 7,
+   "winner": "pick"
+  },
+  "706": {
+   "repair65": [
+    1.3e-05,
+    2
+   ],
+   "pick": [
+    1.1e-05,
+    2
+   ],
+   "duel": [
+    7e-06,
+    3
+   ],
+   "every_winner": [
+    7e-06,
+    3
+   ],
+   "result": [
+    7e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 4,
+   "winner": "t0"
+  },
+  "707": {
+   "repair65": [
+    1.5e-05,
+    2
+   ],
+   "pick": [
+    4e-06,
+    2
+   ],
+   "duel": [
+    4e-06,
+    2
+   ],
+   "every_winner": [
+    4e-06,
+    2
+   ],
+   "result": [
+    4e-06,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 19,
+   "winner": "t0"
+  },
+  "708": {
+   "repair65": [
+    1.3e-05,
+    3
+   ],
+   "pick": [
+    1.1e-05,
+    3
+   ],
+   "duel": [
+    1e-05,
+    3
+   ],
+   "every_winner": [
+    1e-05,
+    3
+   ],
+   "result": [
+    1e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 4,
+   "winner": "t0"
+  },
+  "709": {
+   "repair65": [
+    3.9e-05,
+    3
+   ],
+   "pick": [
+    8e-06,
+    3
+   ],
+   "duel": [
+    8e-06,
+    3
+   ],
+   "every_winner": [
+    8e-06,
+    3
+   ],
+   "result": [
+    8e-06,
+    3
+   ],
+   "search": "keep-one",
+   "candidates": 2,
+   "winner": "pick"
+  },
+  "710": {
+   "repair65": [
+    2.3e-05,
+    2
+   ],
+   "pick": [
+    1.1e-05,
+    2
+   ],
+   "duel": [
+    1.1e-05,
+    2
+   ],
+   "every_winner": [
+    1.1e-05,
+    2
+   ],
+   "result": [
+    1.1e-05,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 4,
+   "winner": "pick"
+  },
+  "711": {
+   "repair65": [
+    4.8e-05,
+    3
+   ],
+   "pick": [
+    5e-06,
+    3
+   ],
+   "duel": [
+    5e-06,
+    3
+   ],
+   "every_winner": [
+    5e-06,
+    3
+   ],
+   "result": [
+    5e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 3,
+   "winner": "pick"
+  },
+  "712": {
+   "repair65": [
+    2.3e-05,
+    3
+   ],
+   "pick": [
+    1e-05,
+    3
+   ],
+   "duel": [
+    2e-06,
+    3
+   ],
+   "every_winner": [
+    2e-06,
+    3
+   ],
+   "result": [
+    2e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 2,
+   "winner": "t0"
+  },
+  "713": {
+   "repair65": [
+    5.1e-05,
+    2
+   ],
+   "pick": [
+    9e-06,
+    2
+   ],
+   "duel": [
+    1.2e-05,
+    2
+   ],
+   "every_winner": [
+    1.2e-05,
+    2
+   ],
+   "result": [
+    1.2e-05,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 81,
+   "winner": "t0"
+  },
+  "714": {
+   "repair65": [
+    1e-05,
+    2
+   ],
+   "pick": [
+    1.5e-05,
+    2
+   ],
+   "duel": [
+    4e-06,
+    2
+   ],
+   "every_winner": [
+    4e-06,
+    2
+   ],
+   "result": [
+    4e-06,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 78,
+   "winner": "t0"
+  },
+  "715": {
+   "repair65": [
+    5.1e-05,
+    3
+   ],
+   "pick": [
+    1.2e-05,
+    3
+   ],
+   "duel": [
+    1.2e-05,
+    3
+   ],
+   "every_winner": [
+    1.2e-05,
+    3
+   ],
+   "result": [
+    1.2e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 2,
+   "winner": "pick"
+  },
+  "716": {
+   "repair65": [
+    0.000364,
+    2
+   ],
+   "pick": [
+    3.1e-05,
+    3
+   ],
+   "duel": [
+    6e-06,
+    3
+   ],
+   "every_winner": [
+    6e-06,
+    3
+   ],
+   "result": [
+    6e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 6,
+   "winner": "t0"
+  },
+  "717": {
+   "repair65": [
+    8e-06,
+    3
+   ],
+   "pick": [
+    8e-06,
+    3
+   ],
+   "duel": [
+    8e-06,
+    3
+   ],
+   "every_winner": [
+    6e-06,
+    3
+   ],
+   "result": [
+    6e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 2,
+   "winner": "pick"
+  },
+  "718": {
+   "repair65": [
+    1.3e-05,
+    3
+   ],
+   "pick": [
+    1.3e-05,
+    3
+   ],
+   "duel": [
+    3e-06,
+    3
+   ],
+   "every_winner": [
+    3e-06,
+    3
+   ],
+   "result": [
+    3e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 2,
+   "winner": "t0"
+  },
+  "719": {
+   "repair65": [
+    1.9e-05,
+    2
+   ],
+   "pick": [
+    0.0,
+    2
+   ],
+   "duel": [
+    4e-06,
+    2
+   ],
+   "every_winner": [
+    1e-06,
+    2
+   ],
+   "result": [
+    4e-06,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 78,
+   "winner": "t11"
+  },
+  "720": {
+   "repair65": [
+    0.001424,
+    1
+   ],
+   "pick": [
+    2.4e-05,
+    3
+   ],
+   "duel": [
+    1.4e-05,
+    3
+   ],
+   "every_winner": [
+    1.4e-05,
+    3
+   ],
+   "result": [
+    1.4e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 2,
+   "winner": "t0"
+  },
+  "721": {
+   "repair65": [
+    3e-05,
+    3
+   ],
+   "pick": [
+    6e-06,
+    3
+   ],
+   "duel": [
+    6e-06,
+    3
+   ],
+   "every_winner": [
+    6e-06,
+    3
+   ],
+   "result": [
+    6e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 2,
+   "winner": "pick"
+  },
+  "722": {
+   "repair65": [
+    5e-06,
+    3
+   ],
+   "pick": [
+    3e-06,
+    3
+   ],
+   "duel": [
+    3e-06,
+    3
+   ],
+   "every_winner": [
+    2e-06,
+    3
+   ],
+   "result": [
+    2e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 1,
+   "winner": "pick"
+  },
+  "723": {
+   "repair65": [
+    1.9e-05,
+    1
+   ],
+   "pick": [
+    7e-06,
+    2
+   ],
+   "duel": [
+    1e-06,
+    3
+   ],
+   "every_winner": [
+    1e-06,
+    3
+   ],
+   "result": [
+    1e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 3,
+   "winner": "t0"
+  },
+  "724": {
+   "repair65": [
+    1.3e-05,
+    3
+   ],
+   "pick": [
+    5e-06,
+    3
+   ],
+   "duel": [
+    1e-05,
+    3
+   ],
+   "every_winner": [
+    1e-05,
+    3
+   ],
+   "result": [
+    1e-05,
+    3
+   ],
+   "search": "keep-one",
+   "candidates": 2,
+   "winner": "t0"
+  },
+  "725": {
+   "repair65": [
+    7.4e-05,
+    3
+   ],
+   "pick": [
+    1e-06,
+    3
+   ],
+   "duel": [
+    1e-06,
+    3
+   ],
+   "every_winner": [
+    1e-06,
+    3
+   ],
+   "result": [
+    1e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 0,
+   "winner": null
+  },
+  "726": {
+   "repair65": [
+    3.5e-05,
+    3
+   ],
+   "pick": [
+    5e-06,
+    3
+   ],
+   "duel": [
+    4e-06,
+    3
+   ],
+   "every_winner": [
+    4e-06,
+    3
+   ],
+   "result": [
+    4e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 1,
+   "winner": "t0"
+  },
+  "727": {
+   "repair65": [
+    2.2e-05,
+    2
+   ],
+   "pick": [
+    2.2e-05,
+    2
+   ],
+   "duel": [
+    8e-06,
+    1
+   ],
+   "every_winner": [
+    8e-06,
+    1
+   ],
+   "result": [
+    8e-06,
+    1
+   ],
+   "search": "keep-two",
+   "candidates": 10,
+   "winner": "t0"
+  },
+  "728": {
+   "repair65": [
+    3.1e-05,
+    3
+   ],
+   "pick": [
+    3.3e-05,
+    3
+   ],
+   "duel": [
+    5e-06,
+    3
+   ],
+   "every_winner": [
+    5e-06,
+    3
+   ],
+   "result": [
+    5e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 3,
+   "winner": "t0"
+  },
+  "729": {
+   "repair65": [
+    1.4e-05,
+    3
+   ],
+   "pick": [
+    1.4e-05,
+    3
+   ],
+   "duel": [
+    1.4e-05,
+    3
+   ],
+   "every_winner": [
+    1.4e-05,
+    3
+   ],
+   "result": [
+    1.4e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 0,
+   "winner": null
+  },
+  "730": {
+   "repair65": [
+    8.8e-05,
+    2
+   ],
+   "pick": [
+    8e-06,
+    3
+   ],
+   "duel": [
+    6e-06,
+    3
+   ],
+   "every_winner": [
+    6e-06,
+    3
+   ],
+   "result": [
+    6e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 3,
+   "winner": "t1"
+  },
+  "731": {
+   "repair65": [
+    0.000252,
+    0
+   ],
+   "pick": [
+    1.6e-05,
+    3
+   ],
+   "duel": [
+    1.5e-05,
+    3
+   ],
+   "every_winner": [
+    1.5e-05,
+    3
+   ],
+   "result": [
+    1.5e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 3,
+   "winner": "t0"
+  },
+  "732": {
+   "repair65": [
+    3.8e-05,
+    3
+   ],
+   "pick": [
+    2.6e-05,
+    3
+   ],
+   "duel": [
+    1.7e-05,
+    3
+   ],
+   "every_winner": [
+    1.7e-05,
+    3
+   ],
+   "result": [
+    1.7e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 2,
+   "winner": "t0"
+  },
+  "733": {
+   "repair65": [
+    1.5e-05,
+    3
+   ],
+   "pick": [
+    3e-06,
+    3
+   ],
+   "duel": [
+    4e-06,
+    3
+   ],
+   "every_winner": [
+    4e-06,
+    3
+   ],
+   "result": [
+    4e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 3,
+   "winner": "t0"
+  },
+  "734": {
+   "repair65": [
+    6e-06,
+    2
+   ],
+   "pick": [
+    1e-06,
+    2
+   ],
+   "duel": [
+    0.0,
+    2
+   ],
+   "every_winner": [
+    0.0,
+    2
+   ],
+   "result": [
+    0.0,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 80,
+   "winner": "t0"
+  },
+  "735": {
+   "repair65": [
+    5.8e-05,
+    2
+   ],
+   "pick": [
+    3.8e-05,
+    2
+   ],
+   "duel": [
+    3.4e-05,
+    2
+   ],
+   "every_winner": [
+    3.4e-05,
+    2
+   ],
+   "result": [
+    3.4e-05,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 80,
+   "winner": "t0"
+  },
+  "736": {
+   "repair65": [
+    1.3e-05,
+    2
+   ],
+   "pick": [
+    1.7e-05,
+    3
+   ],
+   "duel": [
+    2.5e-05,
+    2
+   ],
+   "every_winner": [
+    2.5e-05,
+    2
+   ],
+   "result": [
+    2.5e-05,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 5,
+   "winner": "t0"
+  },
+  "737": {
+   "repair65": [
+    4e-05,
+    1
+   ],
+   "pick": [
+    2.1e-05,
+    3
+   ],
+   "duel": [
+    9e-06,
+    3
+   ],
+   "every_winner": [
+    9e-06,
+    3
+   ],
+   "result": [
+    9e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 4,
+   "winner": "t0"
+  },
+  "738": {
+   "repair65": [
+    2.7e-05,
+    2
+   ],
+   "pick": [
+    2.6e-05,
+    2
+   ],
+   "duel": [
+    2.6e-05,
+    2
+   ],
+   "every_winner": [
+    2.6e-05,
+    2
+   ],
+   "result": [
+    2.6e-05,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 5,
+   "winner": "pick"
+  },
+  "739": {
+   "repair65": [
+    6.7e-05,
+    2
+   ],
+   "pick": [
+    8e-06,
+    2
+   ],
+   "duel": [
+    1.6e-05,
+    2
+   ],
+   "every_winner": [
+    1.6e-05,
+    2
+   ],
+   "result": [
+    1.6e-05,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 4,
+   "winner": "t0"
+  },
+  "740": {
+   "repair65": [
+    2.9e-05,
+    2
+   ],
+   "pick": [
+    4e-06,
+    2
+   ],
+   "duel": [
+    6e-06,
+    2
+   ],
+   "every_winner": [
+    6e-06,
+    2
+   ],
+   "result": [
+    6e-06,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 72,
+   "winner": "t0"
+  },
+  "741": {
+   "repair65": [
+    1.6e-05,
+    3
+   ],
+   "pick": [
+    1.4e-05,
+    3
+   ],
+   "duel": [
+    4e-06,
+    3
+   ],
+   "every_winner": [
+    4e-06,
+    3
+   ],
+   "result": [
+    4e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 4,
+   "winner": "t0"
+  },
+  "742": {
+   "repair65": [
+    0.000125,
+    2
+   ],
+   "pick": [
+    9e-06,
+    3
+   ],
+   "duel": [
+    9e-06,
+    3
+   ],
+   "every_winner": [
+    9e-06,
+    3
+   ],
+   "result": [
+    9e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 6,
+   "winner": "pick"
+  },
+  "743": {
+   "repair65": [
+    1.8e-05,
+    2
+   ],
+   "pick": [
+    9e-06,
+    2
+   ],
+   "duel": [
+    9e-06,
+    2
+   ],
+   "every_winner": [
+    9e-06,
+    2
+   ],
+   "result": [
+    9e-06,
+    2
+   ],
+   "search": "keep-two",
+   "candidates": 80,
+   "winner": "pick"
+  },
+  "744": {
+   "repair65": [
+    0.001852,
+    0
+   ],
+   "pick": [
+    0.000125,
+    1
+   ],
+   "duel": [
+    1e-06,
+    3
+   ],
+   "every_winner": [
+    1e-06,
+    3
+   ],
+   "result": [
+    1e-06,
+    3
+   ],
+   "search": "keep-one",
+   "candidates": 3,
+   "winner": "t0"
+  },
+  "745": {
+   "repair65": [
+    2.3e-05,
+    3
+   ],
+   "pick": [
+    4e-06,
+    3
+   ],
+   "duel": [
+    4e-06,
+    3
+   ],
+   "every_winner": [
+    4e-06,
+    3
+   ],
+   "result": [
+    4e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 4,
+   "winner": "t0"
+  },
+  "746": {
+   "repair65": [
+    2e-05,
+    3
+   ],
+   "pick": [
+    7e-06,
+    3
+   ],
+   "duel": [
+    6e-06,
+    3
+   ],
+   "every_winner": [
+    6e-06,
+    3
+   ],
+   "result": [
+    6e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 4,
+   "winner": "t0"
+  },
+  "747": {
+   "repair65": [
+    1.2e-05,
+    3
+   ],
+   "pick": [
+    1.3e-05,
+    3
+   ],
+   "duel": [
+    1.3e-05,
+    3
+   ],
+   "every_winner": [
+    1.3e-05,
+    3
+   ],
+   "result": [
+    1.3e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 2,
+   "winner": "pick"
+  },
+  "748": {
+   "repair65": [
+    0.00277,
+    1
+   ],
+   "pick": [
+    3.4e-05,
+    3
+   ],
+   "duel": [
+    8e-06,
+    3
+   ],
+   "every_winner": [
+    8e-06,
+    3
+   ],
+   "result": [
+    8e-06,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 4,
+   "winner": "t1"
+  },
+  "749": {
+   "repair65": [
+    9e-06,
+    3
+   ],
+   "pick": [
+    1.1e-05,
+    3
+   ],
+   "duel": [
+    1.1e-05,
+    3
+   ],
+   "every_winner": [
+    1.1e-05,
+    3
+   ],
+   "result": [
+    1.1e-05,
+    3
+   ],
+   "search": "keep-two",
+   "candidates": 2,
+   "winner": "pick"
+  }
+ }
+}

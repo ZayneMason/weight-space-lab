@@ -234,3 +234,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [REFIT_DUEL.md](REFIT_DUEL.md) (roadmap #88) asks the inputs where the candidates split and refits them before comparing: 611 is fixed exactly, and over 611 and #84's 27 cases 28 are under 0.01% and 24 exact (from 27 and 22).
 
 [KEEP_TWO.md](KEEP_TWO.md) (roadmap #89) runs a cheap search that keeps two of the pick's weights on every case, then the refit duel and the line step: all 200 cases are under 0.01% and 159 exact with no case searched by hand.
+
+[FRESH_END.md](FRESH_END.md) (roadmap #90) runs the whole repair, fixed in advance, on 50 fresh seeds: all 50 are under 0.01% and 36 exact, and every case short of exact is a tie at the top of the duel that the true triple loses on order.
