@@ -224,3 +224,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [FRESH_LINE.md](FRESH_LINE.md) (roadmap #83) runs the whole repair with #81's gated duel and #82's flat-line step on 50 fresh seeds: 48 of 50 under 0.01% and 38 exact, the same as without them. Of the two cases over the line, 641 has a triple that fits every label and no candidate tries it.
 
 [KEEP_ONE.md](KEEP_ONE.md) (roadmap #84) searches every triple that keeps one of the pick's weights in the 27 of 200 cases whose pick misses a label: 641 gets its true broken weights and goes under the line, 5 cases get closer and none worse. In 10 cases the fitter misses a perfect fit that exists.
+
+[PERFECT_FIT.md](PERFECT_FIT.md) (roadmap #85) adds a linear-program step after the fitter: the true broken weights become a perfect fit in all 27 of #84's searched cases (from 17), 3 more cases get closer and none worse, and no outcome changes.

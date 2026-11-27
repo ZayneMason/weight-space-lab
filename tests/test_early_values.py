@@ -1080,6 +1080,28 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(v["original_values_wrong"], 0)
             self.assertIn(v["fitted_wrong"], (1, 2))
 
+    def test_perfect_fit_evidence(self):
+        """#85: the margin step makes the true triple a perfect fit in all 27 searched cases and changes no outcome."""
+        import json
+        folder = ROOT / "experiments/locate-repair/evidence/perfect-fit"
+        check = json.loads((folder / "check.json").read_text())
+        self.assertEqual(len(check["seeds"]), 27)
+        self.assertEqual((check["true_searched"], check["true_perfect"]), (27, 27))
+        self.assertEqual(check["vs_84"]["true_perfect_84"], 17)
+        self.assertEqual(check["vs_84"]["fewer_perfect"], [])
+        self.assertEqual(check["vs_84"]["further"], [])
+        self.assertEqual(check["vs_84"]["closer"], [348, 630, 647])
+        self.assertEqual(check["better"], [315, 348, 444, 630, 641, 642, 647, 648])
+        self.assertEqual(check["worse"], [])
+        self.assertEqual((check["search"]["under_0.01%"], check["search"]["exact"]), (27, 22))
+        true = json.loads((folder / "true.json").read_text())
+        self.assertEqual(len(true["true"]), 10)
+        for v in true["true"].values():
+            self.assertIn(v["before"]["wrong"], (1, 2))
+            self.assertEqual(v["after"]["wrong"], 0)
+        moved = true["pick_moved"]
+        self.assertEqual(sum(v["after"] > v["before"] for v in moved.values()), 21)
+
     def test_flat_line_segment_on_seed_331(self):
         """#82: the least-constrained direction at 331's pick is flat and its segment's middle fits every label."""
         import numpy as np

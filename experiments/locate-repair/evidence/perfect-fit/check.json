@@ -1,0 +1,515 @@
+{
+ "seeds": [
+  308,
+  312,
+  315,
+  317,
+  318,
+  328,
+  341,
+  348,
+  419,
+  427,
+  443,
+  444,
+  448,
+  513,
+  522,
+  524,
+  528,
+  530,
+  547,
+  609,
+  630,
+  641,
+  642,
+  645,
+  647,
+  648,
+  649
+ ],
+ "pick": {
+  "under_0.01%": 26,
+  "exact": 20,
+  "over_line": {
+   "641": 0.000366
+  }
+ },
+ "search": {
+  "under_0.01%": 27,
+  "exact": 22,
+  "over_line": {}
+ },
+ "probe_best": {
+  "under_0.01%": 27,
+  "exact": 22,
+  "over_line": {}
+ },
+ "better": [
+  315,
+  348,
+  444,
+  630,
+  641,
+  642,
+  647,
+  648
+ ],
+ "worse": [],
+ "took_other": [
+  315,
+  348,
+  444,
+  630,
+  641,
+  642,
+  647,
+  648
+ ],
+ "per_case": {
+  "308": {
+   "pick_wrong": 1,
+   "perfect": 2,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    7e-06,
+    3
+   ],
+   "search": [
+    7e-06,
+    3
+   ],
+   "split_inputs": 36
+  },
+  "312": {
+   "pick_wrong": 1,
+   "perfect": 4,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1.3e-05,
+    3
+   ],
+   "search": [
+    1.3e-05,
+    3
+   ],
+   "split_inputs": 15
+  },
+  "315": {
+   "pick_wrong": 1,
+   "perfect": 2,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1.7e-05,
+    3
+   ],
+   "search": [
+    1.4e-05,
+    3
+   ],
+   "split_inputs": 12
+  },
+  "317": {
+   "pick_wrong": 1,
+   "perfect": 6,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1.9e-05,
+    2
+   ],
+   "search": [
+    1.9e-05,
+    2
+   ],
+   "split_inputs": 0
+  },
+  "318": {
+   "pick_wrong": 1,
+   "perfect": 2,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1.1e-05,
+    3
+   ],
+   "search": [
+    1.1e-05,
+    3
+   ],
+   "split_inputs": 6
+  },
+  "328": {
+   "pick_wrong": 2,
+   "perfect": 4,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1e-05,
+    3
+   ],
+   "search": [
+    1e-05,
+    3
+   ],
+   "split_inputs": 7
+  },
+  "341": {
+   "pick_wrong": 1,
+   "perfect": 7,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1.4e-05,
+    3
+   ],
+   "search": [
+    1.4e-05,
+    3
+   ],
+   "split_inputs": 6
+  },
+  "348": {
+   "pick_wrong": 2,
+   "perfect": 4,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    2.3e-05,
+    3
+   ],
+   "search": [
+    1.7e-05,
+    3
+   ],
+   "split_inputs": 1
+  },
+  "419": {
+   "pick_wrong": 2,
+   "perfect": 7,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    3.2e-05,
+    1
+   ],
+   "search": [
+    3.2e-05,
+    1
+   ],
+   "split_inputs": 12
+  },
+  "427": {
+   "pick_wrong": 1,
+   "perfect": 2,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1.2e-05,
+    3
+   ],
+   "search": [
+    1.2e-05,
+    3
+   ],
+   "split_inputs": 7
+  },
+  "443": {
+   "pick_wrong": 1,
+   "perfect": 1,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    3.3e-05,
+    3
+   ],
+   "search": [
+    3.3e-05,
+    3
+   ],
+   "split_inputs": 23
+  },
+  "444": {
+   "pick_wrong": 1,
+   "perfect": 8,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    5.6e-05,
+    2
+   ],
+   "search": [
+    1e-05,
+    3
+   ],
+   "split_inputs": 20
+  },
+  "448": {
+   "pick_wrong": 1,
+   "perfect": 2,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1e-05,
+    3
+   ],
+   "search": [
+    1e-05,
+    3
+   ],
+   "split_inputs": 1
+  },
+  "513": {
+   "pick_wrong": 1,
+   "perfect": 4,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1.8e-05,
+    3
+   ],
+   "search": [
+    1.8e-05,
+    3
+   ],
+   "split_inputs": 7
+  },
+  "522": {
+   "pick_wrong": 1,
+   "perfect": 10,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1e-05,
+    3
+   ],
+   "search": [
+    1e-05,
+    3
+   ],
+   "split_inputs": 34
+  },
+  "524": {
+   "pick_wrong": 1,
+   "perfect": 4,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1e-05,
+    2
+   ],
+   "search": [
+    1e-05,
+    2
+   ],
+   "split_inputs": 3
+  },
+  "528": {
+   "pick_wrong": 1,
+   "perfect": 8,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    5.7e-05,
+    2
+   ],
+   "search": [
+    5.7e-05,
+    2
+   ],
+   "split_inputs": 73
+  },
+  "530": {
+   "pick_wrong": 1,
+   "perfect": 4,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    2.6e-05,
+    3
+   ],
+   "search": [
+    2.6e-05,
+    3
+   ],
+   "split_inputs": 9
+  },
+  "547": {
+   "pick_wrong": 1,
+   "perfect": 2,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    5.8e-05,
+    3
+   ],
+   "search": [
+    5.8e-05,
+    3
+   ],
+   "split_inputs": 24
+  },
+  "609": {
+   "pick_wrong": 1,
+   "perfect": 4,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    9e-06,
+    3
+   ],
+   "search": [
+    9e-06,
+    3
+   ],
+   "split_inputs": 4
+  },
+  "630": {
+   "pick_wrong": 1,
+   "perfect": 7,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1.9e-05,
+    3
+   ],
+   "search": [
+    1.1e-05,
+    3
+   ],
+   "split_inputs": 3
+  },
+  "641": {
+   "pick_wrong": 7,
+   "perfect": 1,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    0.000366,
+    1
+   ],
+   "search": [
+    2.7e-05,
+    3
+   ],
+   "split_inputs": 62
+  },
+  "642": {
+   "pick_wrong": 1,
+   "perfect": 1,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    2.8e-05,
+    3
+   ],
+   "search": [
+    1.1e-05,
+    3
+   ],
+   "split_inputs": 2
+  },
+  "645": {
+   "pick_wrong": 1,
+   "perfect": 412,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1e-06,
+    1
+   ],
+   "search": [
+    1e-06,
+    1
+   ],
+   "split_inputs": 167
+  },
+  "647": {
+   "pick_wrong": 1,
+   "perfect": 7,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    1.5e-05,
+    3
+   ],
+   "search": [
+    5e-06,
+    3
+   ],
+   "split_inputs": 1
+  },
+  "648": {
+   "pick_wrong": 1,
+   "perfect": 4,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    7.7e-05,
+    3
+   ],
+   "search": [
+    3.7e-05,
+    3
+   ],
+   "split_inputs": 27
+  },
+  "649": {
+   "pick_wrong": 1,
+   "perfect": 7,
+   "true_searched": true,
+   "true_perfect": true,
+   "pick": [
+    3e-06,
+    3
+   ],
+   "search": [
+    3e-06,
+    3
+   ],
+   "split_inputs": 6
+  }
+ },
+ "true_searched": 27,
+ "true_perfect": 27,
+ "perfect_counts": {
+  "median": 4.0,
+  "max": 412
+ },
+ "labels_asked": 356,
+ "triples_fitted": 255987,
+ "core_hours": 22.600916666666667,
+ "vs_84": {
+  "more_perfect": [
+   312,
+   317,
+   328,
+   348,
+   419,
+   443,
+   448,
+   524,
+   609,
+   630,
+   645,
+   647
+  ],
+  "fewer_perfect": [],
+  "closer": [
+   348,
+   630,
+   647
+  ],
+  "further": [],
+  "true_perfect_84": 17,
+  "core_hours_84": 21.13277777777778
+ },
+ "nudges": {
+  "fits": 255987,
+  "nudged": 146,
+  "fixed": 79
+ }
+}

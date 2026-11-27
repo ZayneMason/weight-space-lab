@@ -8,6 +8,27 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-27 — Roadmap #85: make the fitter reach a perfect fit when one exists
+
+Added a step after the fitter, run when a fit misses 1 to 3 labels: a small linear program on the linearised margins
+of the three values finds the smallest change that puts every label right, inside a trust region. Checked it on #84's
+10 gap cases, then reran #84's search on its 27 cases with it in every fit. Details in
+[PERFECT_FIT.md](../experiments/locate-repair/PERFECT_FIT.md).
+
+**Measured.** The true triple fits every label after the step in 10 of 10, and is a perfect fit in the rerun in 27 of
+27 (from 17). The chooser takes a perfect fit in 8 cases (from 5); the 3 new ones (348, 630, 647) were already exact
+and get closer. No case gets worse, and no outcome changes: 27 of 27 under 0.01% and 22 exact, 197 and 158 of all 200.
+In 317 the pick and every perfect fit agree on all 20,000 pool inputs; in 419 the pick wins the duel 8 to 7; in 443
+the only perfect fit, the true triple, is at 0.0143% and the duel keeps the pick. Moving the picks themselves onto
+#65's labels (control) makes 21 of 27 further and 3 over the line. 146 of 255,987 fits needed the step. 22.6
+core-hours.
+
+**Interpretation.** The gap was the fitter's and is closed, so a missed label now points at a wrong triple. It does
+not change the repair's outcome on these cases; keep it in the search, not on the picks. The cases over the line
+(331, 400, 611) were never searched; #86 puts #82's flat-line step on top of this result for all 200.
+
+---
+
 ## 2026-11-27 — Roadmap #84: when the chosen fit misses a label, search the triples that keep one of its weights
 
 In the 27 of 200 cases whose chosen network gets one of #65's final labels wrong, fitted every triple that keeps one
