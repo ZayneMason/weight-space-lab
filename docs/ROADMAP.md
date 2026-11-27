@@ -1679,6 +1679,22 @@ searched plus 611, and report where each lands, how many labels it asks, and whe
 
 **Cost.** CPU, a few core-minutes (two to a few hundred refits a case).
 
+**Status (November 27): done on 611 and #84's 27 searched cases, see [REFIT_DUEL.md](../experiments/locate-repair/REFIT_DUEL.md).** 611 is fixed exactly: after 116 asked labels the true triple's refit is at 0.0008% and wins 116 to 84 over the pick. Over the 28 cases 28 are under 0.01% (from 27) and 24 exact (from 22); 13 closer and 6 further, all under the line; the duel takes the true broken weights in 18. With #86 elsewhere, 200 of 200 cases are under the line and 160 exact, with 611's search run by hand. 966 labels, 0.52 core-hours. A search cheap enough to run on every case moved to #89.
+
+## 89. Search the triples that keep two of the pick's weights on every case
+
+*Added November 27 after #88.*
+
+#88 fixed 611, but only because #87 ran #84's search there by hand: 611's pick fits every label, so the gate (a
+missed label) never fires. #84's search costs about 0.8 core-hours a case. The triples that keep two of the pick's
+three weights and change any third parameter are about 240 a case, under 3% of that, and include the true broken
+weights whenever the pick has two of them, as 611's does. Run that search with #85's fitter on all 200 cases, then
+#88's refit duel on the pick and every triple that fits all of #65's final labels, keeping #84's search and the duel
+where the pick misses a label. Report the count under the line and exact, which cases move, the labels asked and the
+cost.
+
+**Cost.** CPU, about 4 core-hours for the search on 200 cases (240 fits of about 0.3 seconds each), plus the duels.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

@@ -8,6 +8,24 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-27 — Roadmap #88: refit the candidates on the labels where they split
+
+Replaced #71's scoring of fixed networks with a duel that asks up to 64 pool inputs where the candidates split, adds
+them to the labels and refits every searched triple, up to 4 rounds. Ran it on 611 and #84's 27 searched cases.
+Details in [REFIT_DUEL.md](../experiments/locate-repair/REFIT_DUEL.md).
+
+**Measured.** 611 is fixed exactly: after 116 labels the true triple's fit goes from 0.0160% to 0.0008% and wins
+116 to 84 over the pick (0.0118%). Over the 28 cases: 28 under 0.01% (from 27) and 24 exact (from 22); the duel takes
+a searched triple in 20 and the true broken weights in 18; 13 closer, 6 further, all under the line; 522 loses a broken
+weight. 966 labels, 0.52 core-hours. With #86 elsewhere, all 200 cases are under 0.01% and 160 exact, though 611's
+search was run by hand.
+
+**Interpretation.** Letting the asked labels move the candidates is what separates a true triple from a wrong one
+that fits the same labels. It was shaped on 611. #89 makes the search cheap enough to run on every case, so 611 would
+be searched without a hand.
+
+---
+
 ## 2026-11-27 — Roadmap #87: search 611 even though its pick fits every label
 
 Ran #84's search with #85's fitter on 611, the last case over the 0.01% line, though its pick fits every label, then

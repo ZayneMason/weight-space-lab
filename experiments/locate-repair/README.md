@@ -230,3 +230,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [FLAT_STACK.md](FLAT_STACK.md) (roadmap #86) runs #82's flat-line step on every case after #85: 199 of 200 under 0.01% and 158 exact. 611, the last over the line, has a wrong third weight; its true weights sit on a flat line of perfect fits.
 
 [UNGATED_SEARCH.md](UNGATED_SEARCH.md) (roadmap #87) searches 611 anyway: the true broken weights fit every label but their fitted values land at 0.0160%, worse than the pick's 0.0118%, and the chooser cannot tell them apart.
+
+[REFIT_DUEL.md](REFIT_DUEL.md) (roadmap #88) asks the inputs where the candidates split and refits them before comparing: 611 is fixed exactly, and over 611 and #84's 27 cases 28 are under 0.01% and 24 exact (from 27 and 22).
