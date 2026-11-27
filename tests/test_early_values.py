@@ -1080,6 +1080,33 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(v["original_values_wrong"], 0)
             self.assertIn(v["fitted_wrong"], (1, 2))
 
+    def test_fresh_end_evidence(self):
+        """#90: the whole repair, fixed in advance, puts all 50 fresh cases under the line, 36 exact."""
+        import json
+        folder = ROOT / "experiments/locate-repair/evidence/fresh-end"
+        check = json.loads((folder / "check.json").read_text())
+        self.assertEqual(check["seeds"], list(range(700, 750)))
+        self.assertEqual((check["pick"]["under_0.01%"], check["pick"]["exact"]), (49, 34))
+        self.assertEqual(sorted(check["pick"]["over_line"]), ["744"])
+        self.assertEqual((check["result"]["under_0.01%"], check["result"]["exact"]), (50, 36))
+        self.assertEqual(check["result"]["over_line"], {})
+        self.assertEqual(check["keep_one"], [709, 724, 744])
+        self.assertEqual(check["result_vs_pick"]["gained_exact"], [706, 723, 744])
+        self.assertEqual(check["result_vs_pick"]["lost_exact"], [736])
+        self.assertEqual(check["result_vs_every_winner"]["further"], [719])
+        self.assertEqual(check["line_applied"], [705, 717, 722, 738, 742])
+        self.assertEqual(check["labels_asked"], {"first_part": 413, "duel": 2602, "line": 160})
+        rows = {r["seed"]: r for r in json.loads((folder / "fresh-end.json").read_text())}
+        self.assertEqual(len(rows), 50)
+        self.assertEqual(sum(bool(r["perfect"]) for r in rows.values()), 48)
+        self.assertTrue(all(r["true_perfect"] for r in rows.values() if r["perfect"]))
+        self.assertEqual((rows[744]["result"][1], rows[744]["searched"]), (3, 9481))
+        for r in rows.values():  # every result short of exact is a tie at the top of the duel
+            if r["result"][1] != 3:
+                correct = r["duel"]["correct"]
+                self.assertGreater(sum(v == max(correct.values()) for v in correct.values()), 1)
+        self.assertEqual(len(list((folder / "labels").glob("case-*.npz"))), 50)
+
     def test_keep_two_evidence(self):
         """#89: the keep-two search with the refit duel puts all 200 under the line without a hand, and reproduces #88."""
         import json

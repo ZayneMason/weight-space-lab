@@ -8,6 +8,25 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-27 — Roadmap #90: run the whole repair, fixed in advance, on fresh seeds
+
+Ran the whole repair on 50 seeds nothing had been run on (700 to 749), with every step fixed before the run: #83's
+first part, the keep-one search where the pick misses a label and the keep-two search elsewhere, #88's refit duel, and
+the line step only where the duel keeps the pick. Details in [FRESH_END.md](../experiments/locate-repair/FRESH_END.md).
+
+**Measured.** 50 of 50 under 0.01% (the pick 49) and 36 exact (the pick 34), median 0.0008%, worst 735 at 0.0034%.
+The one pick over the line, 744, is gated into the keep-one search and fixed exactly. Against the pick 26 closer and 9
+further, all under the line; 3 gain the third broken weight, 1 loses one. The true triple fits every label in all 48
+cases with any candidate, and in every one of the 14 results short of exact it ties at the top of the duel and loses
+on order. The line step moves 2 of 5; on every winner it would differ only on 719. 30.9 core-hours, 26.0 of them the
+first part.
+
+**Interpretation.** The headline holds on fresh cases. Exact is lower than on the 200 (72% against 80%), as is the
+pick's (68% against 78%). What stops exact now is the duel's tie rule, not the search, so #91 asks labels where the
+tied refits split.
+
+---
+
 ## 2026-11-27 — Roadmap #89: search the triples that keep two of the pick's weights on every case
 
 Ran a cheap search on every case not already searched (the 238 triples that keep two of the pick's three weights, with

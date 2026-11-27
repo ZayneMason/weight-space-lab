@@ -1710,6 +1710,22 @@ line and exact, the arm with the line step on every winner beside it, and the co
 
 **Cost.** CPU; most of it #65's label stage, as in #72's run on fresh seeds.
 
+**Status (November 27): done on seeds 700 to 749, see [FRESH_END.md](../experiments/locate-repair/FRESH_END.md).** All 50 are under 0.01% and 36 exact (the pick 49 and 34), median 0.0008%, worst 0.0034%; the one pick over the line (744) is gated into the keep-one search and fixed exactly. Against the pick 26 closer and 9 further, none over the line. The true triple fits every label wherever the search finds anything, and in all 14 results short of exact it ties at the top of the duel and loses on order. The line step on every winner would differ on one case. 30.9 core-hours, 26.0 of them the first part. Breaking the duel's ties moved to #91.
+
+## 91. Ask labels where the duel's tied refits split
+
+*Added November 27 after #90.*
+
+On #90's 50 fresh cases, 43 duels end with more than one candidate getting the most asked labels right, and the true
+triple's refit is always among them; the winner is then the pick if tied, otherwise the first candidate in the
+search's order. All 14 results short of exact are such ties. The tied refits agree on the rest of #71's pool, so more
+rounds on it cannot split them. When the duel ends tied, draw a fresh pool of inputs, ask up to 64 where the tied
+networks split, refit the tied triples on all labels, and repeat until one wins outright or 4 rounds pass; keep the
+current rule as the last tie-break. Fix this in advance and run it on #90's 50 cases, then on #89's 200, reporting
+exact and under the line against the current duel and the labels it adds.
+
+**Cost.** CPU; the refits are #88's on the tied candidates only, a few core-hours with the largest ties (about 80).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
