@@ -1080,6 +1080,23 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(v["original_values_wrong"], 0)
             self.assertIn(v["fitted_wrong"], (1, 2))
 
+    def test_flat_stack_evidence(self):
+        """#86: the flat-line step on top of the search puts 199 of 200 under the line and reproduces #82 and #83."""
+        import json
+        folder = ROOT / "experiments/locate-repair/evidence/flat-stack"
+        check = json.loads((folder / "check.json").read_text())
+        self.assertEqual(len(check["seeds"]), 200)
+        self.assertEqual(sorted(check["before"]["over_line"]), ["331", "400", "611"])
+        self.assertEqual((check["after"]["under_0.01%"], check["after"]["exact"]), (199, 158))
+        self.assertEqual(sorted(check["after"]["over_line"]), ["611"])
+        self.assertEqual((check["gained"], check["lost"]), ([331, 400], []))
+        self.assertEqual(len(check["flat"]), 33)
+        self.assertEqual(check["earlier_check"]["same_network"], check["earlier_check"]["agree"])
+        truth = json.loads((folder / "truth.json").read_text())["611"]
+        self.assertEqual(truth["original_wrong"], 0)
+        self.assertLessEqual(truth["singular_values"][-1], 1e-6 * truth["singular_values"][0])
+        self.assertTrue(all(v < 1e-4 for v in truth["disagreement"].values()))
+
     def test_perfect_fit_evidence(self):
         """#85: the margin step makes the true triple a perfect fit in all 27 searched cases and changes no outcome."""
         import json

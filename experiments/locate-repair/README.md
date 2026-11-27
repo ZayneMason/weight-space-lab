@@ -226,3 +226,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [KEEP_ONE.md](KEEP_ONE.md) (roadmap #84) searches every triple that keeps one of the pick's weights in the 27 of 200 cases whose pick misses a label: 641 gets its true broken weights and goes under the line, 5 cases get closer and none worse. In 10 cases the fitter misses a perfect fit that exists.
 
 [PERFECT_FIT.md](PERFECT_FIT.md) (roadmap #85) adds a linear-program step after the fitter: the true broken weights become a perfect fit in all 27 of #84's searched cases (from 17), 3 more cases get closer and none worse, and no outcome changes.
+
+[FLAT_STACK.md](FLAT_STACK.md) (roadmap #86) runs #82's flat-line step on every case after #85: 199 of 200 under 0.01% and 158 exact. 611, the last over the line, has a wrong third weight; its true weights sit on a flat line of perfect fits.

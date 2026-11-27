@@ -1,0 +1,47 @@
+{
+ "611": {
+  "faults": [
+   [
+    "hidden_weight",
+    10
+   ],
+   [
+    "hidden_weight",
+    20
+   ],
+   [
+    "hidden_weight",
+    28
+   ]
+  ],
+  "chosen_weights": [
+   [
+    "hidden_weight",
+    2
+   ],
+   [
+    "hidden_weight",
+    10
+   ],
+   [
+    "hidden_weight",
+    20
+   ]
+  ],
+  "original_wrong": 0,
+  "singular_values": [
+   4.242640687084795,
+   2.449489742768873,
+   1.0029615987711155e-12
+  ],
+  "segment": [
+   -0.05622349679470062,
+   0.16800357028841972
+  ],
+  "disagreement": {
+   "start": 9e-06,
+   "middle": 6e-06,
+   "end": 3.1e-05
+  }
+ }
+}

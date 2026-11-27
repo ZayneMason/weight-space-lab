@@ -1647,6 +1647,23 @@ line, say which of its labels' directions is least constrained and how far the t
 
 **Cost.** CPU, under an hour (the line step took 0.09 core-hours on 150 cases).
 
+**Status (November 27): done on all 200 cases, see [FLAT_STACK.md](../experiments/locate-repair/FLAT_STACK.md).** 199 of 200 under 0.01% and 158 exact: 331 (0.0621% to 0.0067%) and 400 (0.0132% to 0.0012%) go under, none go over; 7 of the 33 flat cases get closer and 4 further, all under the line. 611 stays at 0.0118%: its network edits a wrong third weight and has no flat direction (smallest singular value 0.24 of the largest), while its true broken weights sit on a flat segment of perfect fits whose networks are all under the line. 0.13 core-hours. Reaching 611's true triple moved to #87.
+
+## 87. Search 611 even though its pick fits every label
+
+*Added November 27 after #86.*
+
+611 is the last of the 200 cases over the 0.01% line. Its pick edits hidden weights 10 and 20, two of the three broken
+weights, and a wrong third (hidden weight 2), and fits all 1,096 of #65's final labels, so #84's search, gated on a
+missed label, never runs there. The true triple (hidden weights 10, 20 and 28) fits every label and sits on a flat
+segment whose networks are all under the line. Run #84's search with #85's fitter on 611 regardless of the gate, then
+#71's chooser and #82's flat-line step on the chosen network, and report where it lands. If that takes 611 under the
+line, look for a gate the repair could use that fires on 611 and on few other cases (for example, how many perfect
+fits the pick's own triple has against its neighbours', or whether the pick's weights all sit in one layer), and count
+how often it fires on the 200.
+
+**Cost.** CPU, about one core-hour for 611; a gate check on 200 cases depends on the gate.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
