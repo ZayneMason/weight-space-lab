@@ -1,0 +1,148 @@
+{
+ "seed": 611,
+ "faults": [
+  [
+   "hidden_weight",
+   10
+  ],
+  [
+   "hidden_weight",
+   20
+  ],
+  [
+   "hidden_weight",
+   28
+  ]
+ ],
+ "pick": {
+  "winner": [
+   [
+    "hidden_weight",
+    2
+   ],
+   [
+    "hidden_weight",
+    10
+   ],
+   [
+    "hidden_weight",
+    20
+   ]
+  ],
+  "disagreement": 0.000118,
+  "faults_found": 2
+ },
+ "pick_wrong": 0,
+ "labels": 1096,
+ "searched": 9481,
+ "total": 9481,
+ "perfect_count": 2,
+ "true_perfect": true,
+ "chooser": {
+  "split_inputs": 67,
+  "asked": 32,
+  "correct": {
+   "pick": 20,
+   "t0": 5,
+   "t1": 20
+  },
+  "pick": "pick"
+ },
+ "chosen": {
+  "name": "pick",
+  "triple": [
+   [
+    "hidden_weight",
+    2
+   ],
+   [
+    "hidden_weight",
+    10
+   ],
+   [
+    "hidden_weight",
+    20
+   ]
+  ],
+  "disagreement": 0.000118,
+  "faults_found": 2
+ },
+ "line": {
+  "flat": false,
+  "singular_values": [
+   3.741657386712758,
+   3.0265284418826597,
+   0.9165836515318948
+  ],
+  "segment": [
+   -0.02941019833087921,
+   0.00017048045992851257
+  ],
+  "after": 0.000118
+ },
+ "result": {
+  "disagreement": 0.000118,
+  "faults_found": 2,
+  "under_line": false
+ },
+ "perfect": [
+  {
+   "triple": [
+    [
+     "hidden_weight",
+     2
+    ],
+    [
+     "hidden_weight",
+     10
+    ],
+    [
+     "hidden_weight",
+     20
+    ]
+   ],
+   "faults_found": 2,
+   "disagreement": 0.000282,
+   "spreads_from_original": [
+    2.7833,
+    0.2187,
+    -0.5143
+   ],
+   "flat": false,
+   "after_line": null,
+   "middle": null
+  },
+  {
+   "triple": [
+    [
+     "hidden_weight",
+     10
+    ],
+    [
+     "hidden_weight",
+     20
+    ],
+    [
+     "hidden_weight",
+     28
+    ]
+   ],
+   "faults_found": 3,
+   "disagreement": 0.00016,
+   "spreads_from_original": [
+    0.0584,
+    -0.1319,
+    -0.0007
+   ],
+   "flat": true,
+   "after_line": 0.000161,
+   "middle": 0.000144
+  }
+ ],
+ "nudge_calls": {
+  "fits": 9481,
+  "nudged": 2,
+  "fixed": 0
+ },
+ "core_hours": 1.0075555555555555
+}

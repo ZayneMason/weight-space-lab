@@ -1664,6 +1664,21 @@ how often it fires on the 200.
 
 **Cost.** CPU, about one core-hour for 611; a gate check on 200 cases depends on the gate.
 
+**Status (November 27): done on 611, see [UNGATED_SEARCH.md](../experiments/locate-repair/UNGATED_SEARCH.md).** The search finds 2 perfect fits in 9,481 triples, the pick's own and the true broken weights, but the true triple's fitted values land at 0.0160%, worse than the pick's 0.0118%. The chooser's 32 labels tie them at 20 each, so the pick stays, and the line step leaves the true triple's fit at 0.0161%. With no gain on 611 there is no gate to look for. 1.0 core-hours. Asking where the candidates split and refitting moved to #88.
+
+## 88. Refit the candidates on the labels where they split
+
+*Added November 27 after #87.*
+
+On 611 the pick and the true triple's fit both fit all 1,096 of #65's final labels and disagree on 67 of the chooser's
+20,000 pool inputs; on 32 of those they tie at 20 each, and neither is under the 0.01% line (0.0118% and 0.0160%).
+#71's chooser only scores the networks it is given. Instead, ask every split input (up to 64), add them to the labels,
+refit each candidate triple on the larger set with #85's fitter, and repeat while they still split, up to 4 rounds;
+then keep the candidate with the most labels right, the pick on a tie. Run it on 611 first, then on the 27 cases #84
+searched plus 611, and report where each lands, how many labels it asks, and whether any case gets worse.
+
+**Cost.** CPU, a few core-minutes (two to a few hundred refits a case).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
