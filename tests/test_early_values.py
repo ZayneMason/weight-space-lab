@@ -1058,6 +1058,28 @@ class EarlyValuesTests(unittest.TestCase):
         self.assertLess(truth["641"]["pick"]["labels_right"], 1.0)
         self.assertGreaterEqual(truth["611"]["true"]["disagreement"], 1e-4)
 
+    def test_keep_one_evidence(self):
+        """#84: searching triples that keep one of the pick's weights fixes 641 exactly and makes no case worse."""
+        import json
+        folder = ROOT / "experiments/locate-repair/evidence/keep-one"
+        check = json.loads((folder / "check.json").read_text())
+        self.assertEqual(len(check["seeds"]), 27)
+        self.assertEqual((check["pick"]["under_0.01%"], check["pick"]["exact"]), (26, 20))
+        self.assertEqual(sorted(check["pick"]["over_line"]), ["641"])
+        self.assertEqual((check["search"]["under_0.01%"], check["search"]["exact"]), (27, 22))
+        self.assertEqual(check["search"]["over_line"], {})
+        self.assertEqual(check["better"], [315, 444, 641, 642, 648])
+        self.assertEqual(check["worse"], [])
+        self.assertEqual((check["true_searched"], check["true_perfect"]), (27, 17))
+        c641 = check["per_case"]["641"]
+        self.assertEqual((c641["perfect"], c641["search"][1]), (1, 3))
+        self.assertLess(c641["search"][0], 1e-4)
+        gap = json.loads((folder / "gap.json").read_text())
+        self.assertEqual(len(gap), 10)
+        for v in gap.values():
+            self.assertEqual(v["original_values_wrong"], 0)
+            self.assertIn(v["fitted_wrong"], (1, 2))
+
     def test_flat_line_segment_on_seed_331(self):
         """#82: the least-constrained direction at 331's pick is flat and its segment's middle fits every label."""
         import numpy as np

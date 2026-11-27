@@ -1,0 +1,72 @@
+{
+ "312": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 1,
+  "pick_wrong": 1,
+  "pick_faults_found": 3
+ },
+ "317": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 1,
+  "pick_wrong": 1,
+  "pick_faults_found": 2
+ },
+ "328": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 2,
+  "pick_wrong": 2,
+  "pick_faults_found": 3
+ },
+ "348": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 2,
+  "pick_wrong": 2,
+  "pick_faults_found": 3
+ },
+ "419": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 1,
+  "pick_wrong": 2,
+  "pick_faults_found": 1
+ },
+ "443": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 1,
+  "pick_wrong": 1,
+  "pick_faults_found": 3
+ },
+ "448": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 1,
+  "pick_wrong": 1,
+  "pick_faults_found": 3
+ },
+ "609": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 1,
+  "pick_wrong": 1,
+  "pick_faults_found": 3
+ },
+ "630": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 1,
+  "pick_wrong": 1,
+  "pick_faults_found": 3
+ },
+ "647": {
+  "labels": 1096,
+  "original_values_wrong": 0,
+  "fitted_wrong": 1,
+  "pick_wrong": 1,
+  "pick_faults_found": 3
+ }
+}
