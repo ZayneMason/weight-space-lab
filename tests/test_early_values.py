@@ -1080,6 +1080,19 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(v["original_values_wrong"], 0)
             self.assertIn(v["fitted_wrong"], (1, 2))
 
+    def test_refit_duel_evidence(self):
+        """#88: refitting the candidates on the labels where they split fixes 611 exactly and loses no case."""
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/refit-duel/check.json").read_text())
+        self.assertEqual(len(check["seeds"]), 28)
+        self.assertEqual((check["before"]["under_0.01%"], check["before"]["exact"]), (27, 22))
+        self.assertEqual((check["after"]["under_0.01%"], check["after"]["exact"]), (28, 24))
+        self.assertEqual((check["gained"], check["lost"]), ([611], []))
+        c611 = check["per_case"]["611"]
+        self.assertEqual(c611["after"][1], 3)
+        self.assertLess(c611["after"][0], 1e-5)
+        self.assertEqual(check["labels_asked"], 966)
+
     def test_ungated_search_evidence(self):
         """#87: searching 611 finds the true triple as a perfect fit, but its fit is over the line and the pick stays."""
         import json

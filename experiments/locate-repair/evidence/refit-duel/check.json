@@ -1,0 +1,509 @@
+{
+ "seeds": [
+  308,
+  312,
+  315,
+  317,
+  318,
+  328,
+  341,
+  348,
+  419,
+  427,
+  443,
+  444,
+  448,
+  513,
+  522,
+  524,
+  528,
+  530,
+  547,
+  609,
+  611,
+  630,
+  641,
+  642,
+  645,
+  647,
+  648,
+  649
+ ],
+ "before": {
+  "under_0.01%": 27,
+  "exact": 22,
+  "over_line": {
+   "611": 0.000118
+  }
+ },
+ "after": {
+  "under_0.01%": 28,
+  "exact": 24,
+  "over_line": {}
+ },
+ "closer": [
+  443,
+  444,
+  513,
+  524,
+  528,
+  530,
+  547,
+  609,
+  611,
+  630,
+  641,
+  642,
+  648
+ ],
+ "further": [
+  315,
+  318,
+  419,
+  522,
+  647,
+  649
+ ],
+ "gained": [
+  611
+ ],
+ "lost": [],
+ "took_other": [
+  315,
+  318,
+  348,
+  419,
+  443,
+  444,
+  513,
+  522,
+  524,
+  528,
+  530,
+  547,
+  609,
+  611,
+  630,
+  641,
+  642,
+  647,
+  648,
+  649
+ ],
+ "took_true": [
+  315,
+  318,
+  348,
+  443,
+  444,
+  513,
+  524,
+  528,
+  530,
+  547,
+  609,
+  611,
+  630,
+  641,
+  642,
+  647,
+  648,
+  649
+ ],
+ "per_case": {
+  "308": {
+   "before": [
+    7e-06,
+    3
+   ],
+   "after": [
+    7e-06,
+    3
+   ],
+   "winner": "pick",
+   "asked": 36,
+   "rounds": 1,
+   "candidates": 3
+  },
+  "312": {
+   "before": [
+    1.3e-05,
+    3
+   ],
+   "after": [
+    1.3e-05,
+    3
+   ],
+   "winner": "pick",
+   "asked": 15,
+   "rounds": 1,
+   "candidates": 5
+  },
+  "315": {
+   "before": [
+    1.4e-05,
+    3
+   ],
+   "after": [
+    2.4e-05,
+    3
+   ],
+   "winner": "t0",
+   "asked": 12,
+   "rounds": 1,
+   "candidates": 3
+  },
+  "317": {
+   "before": [
+    1.9e-05,
+    2
+   ],
+   "after": [
+    1.9e-05,
+    2
+   ],
+   "winner": "pick",
+   "asked": 0,
+   "rounds": 0,
+   "candidates": 7
+  },
+  "318": {
+   "before": [
+    1.1e-05,
+    3
+   ],
+   "after": [
+    1.3e-05,
+    3
+   ],
+   "winner": "t0",
+   "asked": 11,
+   "rounds": 3,
+   "candidates": 3
+  },
+  "328": {
+   "before": [
+    1e-05,
+    3
+   ],
+   "after": [
+    1e-05,
+    3
+   ],
+   "winner": "pick",
+   "asked": 26,
+   "rounds": 3,
+   "candidates": 5
+  },
+  "341": {
+   "before": [
+    1.4e-05,
+    3
+   ],
+   "after": [
+    1.4e-05,
+    3
+   ],
+   "winner": "pick",
+   "asked": 6,
+   "rounds": 1,
+   "candidates": 8
+  },
+  "348": {
+   "before": [
+    1.7e-05,
+    3
+   ],
+   "after": [
+    1.7e-05,
+    3
+   ],
+   "winner": "t0",
+   "asked": 1,
+   "rounds": 1,
+   "candidates": 5
+  },
+  "419": {
+   "before": [
+    3.2e-05,
+    1
+   ],
+   "after": [
+    3.9e-05,
+    2
+   ],
+   "winner": "t0",
+   "asked": 27,
+   "rounds": 3,
+   "candidates": 8
+  },
+  "427": {
+   "before": [
+    1.2e-05,
+    3
+   ],
+   "after": [
+    1.2e-05,
+    3
+   ],
+   "winner": "pick",
+   "asked": 8,
+   "rounds": 2,
+   "candidates": 3
+  },
+  "443": {
+   "before": [
+    3.3e-05,
+    3
+   ],
+   "after": [
+    5e-06,
+    3
+   ],
+   "winner": "t0",
+   "asked": 52,
+   "rounds": 2,
+   "candidates": 2
+  },
+  "444": {
+   "before": [
+    1e-05,
+    3
+   ],
+   "after": [
+    9e-06,
+    3
+   ],
+   "winner": "t2",
+   "asked": 22,
+   "rounds": 2,
+   "candidates": 9
+  },
+  "448": {
+   "before": [
+    1e-05,
+    3
+   ],
+   "after": [
+    1e-05,
+    3
+   ],
+   "winner": "pick",
+   "asked": 1,
+   "rounds": 1,
+   "candidates": 3
+  },
+  "513": {
+   "before": [
+    1.8e-05,
+    3
+   ],
+   "after": [
+    1e-05,
+    3
+   ],
+   "winner": "t0",
+   "asked": 18,
+   "rounds": 4,
+   "candidates": 5
+  },
+  "522": {
+   "before": [
+    1e-05,
+    3
+   ],
+   "after": [
+    2.5e-05,
+    2
+   ],
+   "winner": "t0",
+   "asked": 34,
+   "rounds": 1,
+   "candidates": 11
+  },
+  "524": {
+   "before": [
+    1e-05,
+    2
+   ],
+   "after": [
+    5e-06,
+    3
+   ],
+   "winner": "t0",
+   "asked": 3,
+   "rounds": 1,
+   "candidates": 5
+  },
+  "528": {
+   "before": [
+    5.7e-05,
+    2
+   ],
+   "after": [
+    1.9e-05,
+    3
+   ],
+   "winner": "t2",
+   "asked": 140,
+   "rounds": 3,
+   "candidates": 9
+  },
+  "530": {
+   "before": [
+    2.6e-05,
+    3
+   ],
+   "after": [
+    2e-06,
+    3
+   ],
+   "winner": "t0",
+   "asked": 9,
+   "rounds": 1,
+   "candidates": 5
+  },
+  "547": {
+   "before": [
+    5.8e-05,
+    3
+   ],
+   "after": [
+    1.6e-05,
+    3
+   ],
+   "winner": "t0",
+   "asked": 37,
+   "rounds": 4,
+   "candidates": 3
+  },
+  "609": {
+   "before": [
+    9e-06,
+    3
+   ],
+   "after": [
+    6e-06,
+    3
+   ],
+   "winner": "t0",
+   "asked": 7,
+   "rounds": 3,
+   "candidates": 5
+  },
+  "611": {
+   "before": [
+    0.000118,
+    2
+   ],
+   "after": [
+    8e-06,
+    3
+   ],
+   "winner": "t1",
+   "asked": 116,
+   "rounds": 2,
+   "candidates": 3
+  },
+  "630": {
+   "before": [
+    1.1e-05,
+    3
+   ],
+   "after": [
+    3e-06,
+    3
+   ],
+   "winner": "t0",
+   "asked": 6,
+   "rounds": 2,
+   "candidates": 8
+  },
+  "641": {
+   "before": [
+    2.7e-05,
+    3
+   ],
+   "after": [
+    2.5e-05,
+    3
+   ],
+   "winner": "t0",
+   "asked": 67,
+   "rounds": 2,
+   "candidates": 2
+  },
+  "642": {
+   "before": [
+    1.1e-05,
+    3
+   ],
+   "after": [
+    5e-06,
+    3
+   ],
+   "winner": "t0",
+   "asked": 10,
+   "rounds": 2,
+   "candidates": 2
+  },
+  "645": {
+   "before": [
+    1e-06,
+    1
+   ],
+   "after": [
+    1e-06,
+    1
+   ],
+   "winner": "pick",
+   "asked": 256,
+   "rounds": 4,
+   "candidates": 413
+  },
+  "647": {
+   "before": [
+    5e-06,
+    3
+   ],
+   "after": [
+    7e-06,
+    3
+   ],
+   "winner": "t0",
+   "asked": 3,
+   "rounds": 2,
+   "candidates": 8
+  },
+  "648": {
+   "before": [
+    3.7e-05,
+    3
+   ],
+   "after": [
+    0.0,
+    3
+   ],
+   "winner": "t0",
+   "asked": 36,
+   "rounds": 2,
+   "candidates": 5
+  },
+  "649": {
+   "before": [
+    3e-06,
+    3
+   ],
+   "after": [
+    1e-05,
+    3
+   ],
+   "winner": "t0",
+   "asked": 7,
+   "rounds": 2,
+   "candidates": 8
+  }
+ },
+ "labels_asked": 966,
+ "core_hours": 0.5220555555555555
+}
