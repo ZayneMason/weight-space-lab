@@ -1632,6 +1632,21 @@ new fitter on all 200 cases and report how many cases still miss a label and the
 
 **Cost.** CPU, under an hour for the 10 cases; the rerun on 200 cases depends on how many still miss a label.
 
+**Status (November 27): done on #84's 27 cases, see [PERFECT_FIT.md](../experiments/locate-repair/PERFECT_FIT.md).** A linear-program step on the margins makes the true triple fit every label in 10 of 10, and in the rerun of #84's search the true triple is a perfect fit in 27 of 27 (from 17). The chooser takes a perfect fit in 8 cases (from 5): 348, 630 and 647 get closer, all already exact, none get worse. No outcome changes: 197 of 200 under 0.01% and 158 exact, as after #84. The step on the picks themselves makes 21 of 27 worse, so it stays in the search only. The rerun's gate is unchanged, since the picks' networks are; rerunning the whole repair with the step was not done. 22.6 core-hours. The cases over the line moved to #86.
+
+## 86. Put the flat-line step on top of the search, on all 200 cases
+
+*Added November 27 after #85.*
+
+After #85 the three cases over the 0.01% line across #79's, #80's and #83's 200 cases are 331, 400 and 611, and none
+of them was in #84's search, because their picks fit every label. #82's flat-line step put 331 and 400 under the line
+on #81's picks, and #83 ran it on its own 50. Run the step on each of the 200 cases' result after #85 (the chooser's
+network where the search ran, the pick elsewhere), from #65's final labels, and report the whole pipeline's count
+under the line and exact, which cases each step moves, and whether 611 has a flat direction. If 611 stays over the
+line, say which of its labels' directions is least constrained and how far the true values lie along it.
+
+**Cost.** CPU, under an hour (the line step took 0.09 core-hours on 150 cases).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
