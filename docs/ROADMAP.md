@@ -1695,6 +1695,21 @@ cost.
 
 **Cost.** CPU, about 4 core-hours for the search on 200 cases (240 fits of about 0.3 seconds each), plus the duels.
 
+**Status (November 27): done on all 200 cases, see [KEEP_TWO.md](../experiments/locate-repair/KEEP_TWO.md).** All 200 are under 0.01% (from #86's 199) and 159 exact (from 158), with no case searched by hand: 611's 238 keep-two triples hold the same 2 perfect fits as #87's search, and the duel takes the true triple. The 28 gated cases reproduce #88. Against #86, 103 closer and 31 further, none over the line; 10 gain the third broken weight and 9 lose one. The line step moves 15 of 38 flat networks, 10 of them further, 8 of those refitted winners. 8.0 core-hours, 4.6 of them the search. The same repair on fresh seeds moved to #90.
+
+## 90. Run the whole repair, fixed in advance, on fresh seeds
+
+*Added November 27 after #89.*
+
+Every step since #84 (the keep-one search, #85's fitter, the flat-line step, #88's refit duel, #89's keep-two search)
+was built after looking at the same 200 cases, so its 200 of 200 under the 0.01% line is a fit to those cases, not a
+rate. Run the whole repair on 50 fresh seeds (700 to 749) with every step and threshold fixed before the run: #65's
+labels, #71's chooser, the keep-one search where the pick misses a label and the keep-two search elsewhere, the refit
+duel, then the line step only where the duel keeps the pick (#89's after-the-fact reading). Report the count under the
+line and exact, the arm with the line step on every winner beside it, and the cost of each stage.
+
+**Cost.** CPU; most of it #65's label stage, as in #72's run on fresh seeds.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**

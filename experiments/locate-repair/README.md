@@ -232,3 +232,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [UNGATED_SEARCH.md](UNGATED_SEARCH.md) (roadmap #87) searches 611 anyway: the true broken weights fit every label but their fitted values land at 0.0160%, worse than the pick's 0.0118%, and the chooser cannot tell them apart.
 
 [REFIT_DUEL.md](REFIT_DUEL.md) (roadmap #88) asks the inputs where the candidates split and refits them before comparing: 611 is fixed exactly, and over 611 and #84's 27 cases 28 are under 0.01% and 24 exact (from 27 and 22).
+
+[KEEP_TWO.md](KEEP_TWO.md) (roadmap #89) runs a cheap search that keeps two of the pick's weights on every case, then the refit duel and the line step: all 200 cases are under 0.01% and 159 exact with no case searched by hand.

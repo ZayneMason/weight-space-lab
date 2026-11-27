@@ -8,6 +8,24 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-27 — Roadmap #89: search the triples that keep two of the pick's weights on every case
+
+Ran a cheap search on every case not already searched (the 238 triples that keep two of the pick's three weights, with
+#85's fitter), then #88's refit duel on the pick and every perfect fit, then #82's flat-line step on the winner, on all
+200 cases. Details in [KEEP_TWO.md](../experiments/locate-repair/KEEP_TWO.md).
+
+**Measured.** 200 of 200 under 0.01% (from #86's 199), 159 exact (from 158), median 0.0007% (from 0.00115%), and the
+worst case is 331 at 0.0067%. 611 is found and fixed without a hand: its 238 triples hold the same 2 perfect fits as
+#87's 9,481, and the duel takes the true triple. The 28 gated cases reproduce #88. Against #86, 103 closer and 31
+further, none over the line; 10 gain the third broken weight and 9 lose one. The line step moves 15 of its 38 flat
+networks, 5 closer and 10 further, 8 of those 10 refitted winners. 8,918 labels, 8.0 core-hours (4.6 the search).
+
+**Interpretation.** The hand is gone from #88's 200 of 200. The line step helps picks and hurts refits; running it
+only where the duel keeps the pick would leave 200 under the line with 8 closer and 2 further (inferred, after the
+fact). Everything since #84 was shaped on these 200, so #90 runs the repair, fixed in advance, on fresh seeds.
+
+---
+
 ## 2026-11-27 — Roadmap #88: refit the candidates on the labels where they split
 
 Replaced #71's scoring of fixed networks with a duel that asks up to 64 pool inputs where the candidates split, adds

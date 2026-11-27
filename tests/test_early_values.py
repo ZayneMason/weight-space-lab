@@ -1080,6 +1080,30 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(v["original_values_wrong"], 0)
             self.assertIn(v["fitted_wrong"], (1, 2))
 
+    def test_keep_two_evidence(self):
+        """#89: the keep-two search with the refit duel puts all 200 under the line without a hand, and reproduces #88."""
+        import json
+        folder = ROOT / "experiments/locate-repair/evidence/keep-two"
+        check = json.loads((folder / "check.json").read_text())
+        self.assertEqual(len(check["seeds"]), 200)
+        self.assertEqual(check["keep_two_cases"], 173)
+        self.assertEqual((check["result"]["under_0.01%"], check["result"]["exact"]), (200, 159))
+        self.assertEqual(check["result"]["over_line"], {})
+        self.assertEqual(sorted(check["after_86"]["over_line"]), ["611"])
+        self.assertEqual((check["vs_86"]["gained"], check["vs_86"]["lost"]), ([611], []))
+        self.assertEqual((len(check["vs_86"]["gained_exact"]), len(check["vs_86"]["lost_exact"])), (10, 9))
+        self.assertEqual(len(check["flat"]), 38)
+        self.assertEqual(check["labels_asked"], {"duel": 7702, "line": 1216})
+        rows = {r["seed"]: r for r in json.loads((folder / "keep-two.json").read_text())}
+        self.assertEqual(rows[611]["search"], "keep-two")
+        self.assertEqual(rows[611]["searched"], 238)
+        self.assertEqual(len(rows[611]["perfect"]), 2)
+        self.assertEqual(rows[611]["result"][1], 3)
+        duel = {r["seed"]: r for r in json.loads(
+            (ROOT / "experiments/locate-repair/evidence/refit-duel/refit-duel.json").read_text())}
+        for s, r in duel.items():
+            self.assertEqual((rows[s]["duel"]["winner"], rows[s]["chosen"]["disagreement"]), (r["winner"], r["result"][0]))
+
     def test_refit_duel_evidence(self):
         """#88: refitting the candidates on the labels where they split fixes 611 exactly and loses no case."""
         import json
