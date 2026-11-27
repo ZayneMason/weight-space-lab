@@ -8,6 +8,22 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-27 — Roadmap #86: put the flat-line step on top of the search, on all 200 cases
+
+Ran #82's flat-line step (the segment's middle where the margins have a flat direction, then 32 labels along it) on
+every one of the 200 cases' networks after #85. Details in [FLAT_STACK.md](../experiments/locate-repair/FLAT_STACK.md).
+
+**Measured.** 199 of 200 under 0.01% (from 197), 200 under 0.1%, 158 exact: 331 (0.0621% to 0.0067%) and 400
+(0.0132% to 0.0012%) go under, none go over. 33 networks have a flat direction; 7 get closer and 4 further, all under
+the line. The step's result matches #82's and #83's on all 194 cases with the same weights. 611 stays at 0.0118%: its
+network edits a wrong third weight and is not flat, while the true broken weights at their original values sit on a
+flat segment whose networks are all under the line (0.0006% to 0.0031%). 0.13 core-hours.
+
+**Interpretation.** The full pipeline gets 199 of 200. The last case needs the search to try the right triple even
+though the pick fits every label; that is #87.
+
+---
+
 ## 2026-11-27 — Roadmap #85: make the fitter reach a perfect fit when one exists
 
 Added a step after the fitter, run when a fit misses 1 to 3 labels: a small linear program on the linearised margins
