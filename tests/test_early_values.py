@@ -1080,6 +1080,20 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(v["original_values_wrong"], 0)
             self.assertIn(v["fitted_wrong"], (1, 2))
 
+    def test_ungated_search_evidence(self):
+        """#87: searching 611 finds the true triple as a perfect fit, but its fit is over the line and the pick stays."""
+        import json
+        row = json.loads((ROOT / "experiments/locate-repair/evidence/ungated-search/case-611.json").read_text())
+        self.assertEqual(row["pick_wrong"], 0)
+        self.assertEqual((row["searched"], row["total"]), (9481, 9481))
+        self.assertEqual(row["perfect_count"], 2)
+        self.assertTrue(row["true_perfect"])
+        true = [p for p in row["perfect"] if p["faults_found"] == 3]
+        self.assertEqual(len(true), 1)
+        self.assertGreater(true[0]["disagreement"], 1e-4)
+        self.assertEqual(row["chooser"]["pick"], "pick")
+        self.assertFalse(row["result"]["under_line"])
+
     def test_flat_stack_evidence(self):
         """#86: the flat-line step on top of the search puts 199 of 200 under the line and reproduces #82 and #83."""
         import json

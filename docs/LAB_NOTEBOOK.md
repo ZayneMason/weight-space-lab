@@ -8,6 +8,21 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-27 — Roadmap #87: search 611 even though its pick fits every label
+
+Ran #84's search with #85's fitter on 611, the last case over the 0.01% line, though its pick fits every label, then
+the chooser and the flat-line step. Details in [UNGATED_SEARCH.md](../experiments/locate-repair/UNGATED_SEARCH.md).
+
+**Measured.** 2 of 9,481 triples fit every label: the pick's own (refitted, 0.0282%) and the true broken weights,
+whose fitted values land at 0.0160%, worse than the pick's 0.0118%. On the chooser's 32 labels the pick and the true
+triple's fit tie at 20, so the pick stays; the line step on the true triple's fit leaves it at 0.0161%. The pick
+moves a weight that is not broken by 2.78 spreads and still fits every label. 1.0 core-hours.
+
+**Interpretation.** Not a search problem after all: the labels do not pin the true triple's values. #88 asks the 67
+inputs where the candidates split and refits both triples before comparing.
+
+---
+
 ## 2026-11-27 — Roadmap #86: put the flat-line step on top of the search, on all 200 cases
 
 Ran #82's flat-line step (the segment's middle where the margins have a flat direction, then 32 labels along it) on
