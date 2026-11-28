@@ -1080,6 +1080,25 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(v["original_values_wrong"], 0)
             self.assertIn(v["fitted_wrong"], (1, 2))
 
+    def test_tie_break_evidence(self):
+        """#91: breaking the duel's ties on a fresh pool reproduces the duels but does not raise exact."""
+        import json
+        check = json.loads((ROOT / "experiments/locate-repair/evidence/tie-break/check.json").read_text())
+        fresh, shaped = check["fresh"], check["shaped"]
+        self.assertEqual((len(fresh["seeds"]), len(shaped["seeds"])), (50, 200))
+        self.assertEqual((len(fresh["duel_reproduced"]), len(shaped["duel_reproduced"])), (48, 197))
+        self.assertEqual((fresh["before"]["exact"], fresh["after"]["exact"]), (36, 35))
+        self.assertEqual(fresh["after"]["under_0.01%"], 50)
+        self.assertEqual((shaped["before"]["under_0.01%"], shaped["after"]["under_0.01%"]), (200, 199))
+        self.assertEqual(sorted(shaped["after"]["over_line"]), ["331"])
+        self.assertEqual((shaped["before"]["exact"], shaped["after"]["exact"]), (159, 159))
+        self.assertEqual(shaped["moves"]["gained_exact"], [317, 325, 535])
+        self.assertEqual(shaped["moves"]["lost_exact"], [311, 335, 444])
+        self.assertEqual((len(fresh["tied"]), len(shaped["tied"])), (43, 170))
+        self.assertEqual((fresh["labels_asked"], shaped["labels_asked"]), (127, 449))
+        rows = json.loads((ROOT / "experiments/locate-repair/evidence/tie-break/fresh.json").read_text())
+        self.assertEqual(sum(1 for r in rows if r["tie_break"] and not r["tie_break"]["rounds"]), 20)
+
     def test_fresh_end_evidence(self):
         """#90: the whole repair, fixed in advance, puts all 50 fresh cases under the line, 36 exact."""
         import json

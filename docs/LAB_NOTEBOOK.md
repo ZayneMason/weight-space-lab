@@ -8,6 +8,24 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-28 — Roadmap #91: ask labels where the duel's tied refits split
+
+Reran #88's duel exactly and, where it ended tied, asked up to 64 labels a round where the tied networks split on a
+fresh pool of 200,000 inputs, scoring each network before refitting it, until one was left. Ran it on #90's 50 fresh
+cases and #89's 200. Details in [TIE_BREAK.md](../experiments/locate-repair/TIE_BREAK.md).
+
+**Measured.** The duels reproduce on all 245. Fresh: 50 under 0.01% and 35 exact (from 36), median 0.00065%. Shaped:
+199 under (331 rises to 0.0620%) and 159 exact, 3 gained and 3 lost. Most ties never split: 20 of 43 fresh and 77 of
+170 shaped have no input among 200,000 where the tied networks disagree, and the median tie asks 1 label. Where they
+split, the true triple's refit is knocked out in 8 of 23 fresh cases. 331 crosses because the tie-break takes a refit
+that differs from the pick on 7 of a million inputs, and the line step runs only on kept picks. 2.8 core-hours.
+
+**Interpretation.** The ties are the same function almost everywhere, so labels cannot say which is exact; the repair
+reaches the original's behaviour without needing the broken weights. Not adopted. The fixed repair's next test is
+width 32, #92.
+
+---
+
 ## 2026-11-27 — Roadmap #90: run the whole repair, fixed in advance, on fresh seeds
 
 Ran the whole repair on 50 seeds nothing had been run on (700 to 749), with every step fixed before the run: #83's

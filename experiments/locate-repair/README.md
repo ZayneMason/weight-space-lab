@@ -236,3 +236,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [KEEP_TWO.md](KEEP_TWO.md) (roadmap #89) runs a cheap search that keeps two of the pick's weights on every case, then the refit duel and the line step: all 200 cases are under 0.01% and 159 exact with no case searched by hand.
 
 [FRESH_END.md](FRESH_END.md) (roadmap #90) runs the whole repair, fixed in advance, on 50 fresh seeds: all 50 are under 0.01% and 36 exact, and every case short of exact is a tie at the top of the duel that the true triple loses on order.
+
+[TIE_BREAK.md](TIE_BREAK.md) (roadmap #91) asks labels where the duel's tied refits split, on a fresh pool: most ties never split, exact does not rise (35 of 50 fresh, 159 of 200), and the tie-break is not adopted.
