@@ -1080,6 +1080,34 @@ class EarlyValuesTests(unittest.TestCase):
             self.assertEqual(v["original_values_wrong"], 0)
             self.assertIn(v["fitted_wrong"], (1, 2))
 
+    def test_width_32_repair_evidence(self):
+        """#92: #90's fixed repair at width 32 puts all 12 of #60's seeds under the line, 9 exact."""
+        import json
+        folder = ROOT / "experiments/locate-repair/evidence/width-32-repair"
+        check = json.loads((folder / "check.json").read_text())
+        self.assertEqual((check["width"], check["seeds"]), (32, list(range(200, 212))))
+        self.assertEqual((check["repair65"]["under_0.01%"], check["repair65"]["exact"]), (9, 5))
+        self.assertEqual(sorted(check["repair65"]["over_line"]), ["202", "204", "205"])
+        self.assertEqual((check["pick"]["under_0.01%"], check["pick"]["exact"]), (12, 8))
+        self.assertEqual((check["result"]["under_0.01%"], check["result"]["exact"]), (12, 9))
+        self.assertEqual(check["result"]["over_line"], {})
+        self.assertEqual(check["result_vs_pick"]["gained_exact"], [202])
+        self.assertEqual(check["result_vs_pick"]["lost_exact"], [])
+        self.assertEqual(check["result_vs_pick"]["further"], [204])
+        self.assertEqual((check["keep_one"], check["flat"]), ([], []))
+        self.assertEqual(check["triples_fitted"], {"keep-one": 0, "keep-two": 5736})
+        self.assertEqual(check["labels_asked"], {"duel": 466, "line": 0})
+        rows = {r["seed"]: r for r in json.loads((folder / "width-32-repair.json").read_text())}
+        self.assertEqual(len(rows), 12)
+        self.assertTrue(all(r["searched"] == 478 for r in rows.values()))
+        short = sorted(s for s, r in rows.items() if r["every_winner"][1] < 3)
+        self.assertEqual(short, [201, 209, 210])
+        self.assertEqual([rows[s]["every_winner"][1] for s in short], [2, 2, 1])
+        self.assertEqual(rows[210]["pick"]["faults_found"], 1)
+        self.assertFalse(rows[210]["true_perfect"])
+        self.assertTrue(rows[201]["true_perfect"] and rows[209]["true_perfect"])
+        self.assertTrue(all(r["every_winner"][0] < 1e-4 for r in rows.values()))
+
     def test_tie_break_evidence(self):
         """#91: breaking the duel's ties on a fresh pool reproduces the duels but does not raise exact."""
         import json

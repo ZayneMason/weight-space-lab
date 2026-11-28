@@ -1742,6 +1742,20 @@ seed first and stop at 6 seeds if one costs over about 4 core-hours. Report unde
 **Cost.** CPU, about 25 to 50 core-hours; the keep-two search grows with the number of parameters (about 3 times more
 triples at H = 32).
 
+**Status (November 28): done on seeds 200 to 211, see [WIDTH_32_REPAIR.md](../experiments/locate-repair/WIDTH_32_REPAIR.md).** All 12 are under 0.01% and 9 exact (the pick 12 and 8; #60 8 and 5), median 0.00095%, worst 0.0024%. Two of the three short of exact are duel ties lost on order; 210's pick has one broken weight but fits every label, so the keep-two search cannot reach the true triple. No case is gated or flat, so #91's change to the line step does not show. The keep-two search fits 478 triples (2 times H = 16, not 3). 15.8 core-hours, 14.6 of them the first part, 2.1 times #90's cost a case. More seeds at width 32 moved to #93.
+
+## 93. Run the fixed repair on 38 more fresh seeds at width 32
+
+*Added November 28 after #92.*
+
+#92's 12 of 12 under the line and 9 exact at H = 32 are on #60's seeds, and 12 cases give a loose rate (a 95% interval
+on 9 of 12 runs from about 47% to 91%). Run `width_32.py`, unchanged, on 38 fresh seeds nothing has been run on
+(212 to 249), so that with #92 there are 50 as in #90. Report under the line and exact on the 38 and on all 50
+against #90, how many results short of exact are duel ties and how many are picks with one broken weight that the
+keep-two search cannot repair, and the cost of each stage.
+
+**Cost.** CPU, about 50 core-hours (1.3 a case in #92), almost all of it #65's and #71's label stages.
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
