@@ -1726,6 +1726,22 @@ exact and under the line against the current duel and the labels it adds.
 
 **Cost.** CPU; the refits are #88's on the tied candidates only, a few core-hours with the largest ties (about 80).
 
+**Status (November 28): done on #90's 50 and #89's 200, not adopted, see [TIE_BREAK.md](../experiments/locate-repair/TIE_BREAK.md).** The duels reproduce on all 245. Fresh: 50 under 0.01% and 35 exact (from 36). Shaped: 199 under and 159 exact (3 gained, 3 lost); 331 crosses to 0.0620% because the tie-break takes a refit nearly identical to the pick, and the line step runs only on kept picks. 20 of 43 fresh ties and 77 of 170 shaped have no split on 200,000 fresh inputs, and where they split the true triple's refit is knocked out in 8 of 23 fresh cases: the tied refits are the same function almost everywhere. 2.8 core-hours. The fixed repair at width 32 moved to #92.
+
+## 92. Run the fixed repair at width 32
+
+*Added November 28 after #91.*
+
+Every result since #61 is at H = 16; #60 ran an older repair at H = 32 (12 of 12 under 0.1%, 8 under 0.01%, 5 exact,
+5.2 times the cost a case). Thread the width through #90's stages (#65's and #71's label stages, #81's gated duel, the
+keep-one and keep-two searches, #88's duel and the line step) and run #90's order, fixed in advance, on #60's 12 seeds
+(200 to 211) at H = 32, with one change taken from #91: run the line step on any flat winner, as #89 did. Pilot one
+seed first and stop at 6 seeds if one costs over about 4 core-hours. Report under the line and exact against #60 and
+#90, and the cost of each stage.
+
+**Cost.** CPU, about 25 to 50 core-hours; the keep-two search grows with the number of parameters (about 3 times more
+triples at H = 32).
+
 ## Posts the current results already support
 
 1. **"815 weights that beat PPO 20×: reproducing a hand-written Breakout network."**
