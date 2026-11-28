@@ -1,0 +1,1 @@
+{"seed": 200, "candidates": 2, "rounds": [], "asked": 0, "correct": {"pick": 0, "t0": 0}, "winner": "pick", "result": [8e-06, 3], "before": [8e-06, 3], "true_index": "t0", "edits": [["hidden_bias", 7, 0.02987583354115486], ["hidden_weight", 26, 2.037975311279297], ["hidden_weight", 35, 0.619857907295227]], "seconds": 1.9}

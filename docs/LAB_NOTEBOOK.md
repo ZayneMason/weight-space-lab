@@ -8,6 +8,24 @@ The [roadmap](ROADMAP.md) turns the open questions into ranked experiments.
 
 ---
 
+## 2026-11-28 — Roadmap #92: run the fixed repair at width 32
+
+Ran #90's order, fixed in advance, on #60's 12 seeds (200 to 211) at H = 32, with the line step on any flat winner
+as #91 suggested. Every stage runs unchanged on cases built at H = 32. Details in
+[WIDTH_32_REPAIR.md](../experiments/locate-repair/WIDTH_32_REPAIR.md).
+
+**Measured.** 12 of 12 under 0.01% and 9 exact, median 0.00095%, worst 206 at 0.0024%; #60's older repair on the
+same seeds had 8 under and 5 exact. The pick is already 12 under and 8 exact; the duel gains 202 and moves 5 cases
+closer. Of the 3 short of exact, 201 and 209 are ties lost on order (148 and 157 tied at the top), and 210's pick has
+one broken weight yet fits every label, so only the keep-two search runs and cannot reach the true triple. No pick is
+gated and no winner is flat. Each keep-two search fits 478 triples (238 at H = 16). 15.8 core-hours, 14.6 of them the
+first part: 2.1 times #90's cost a case, less than #60's.
+
+**Interpretation.** The fixed repair carries to width 32 without retuning, at about #90's exact rate (75% against
+72%), but 12 seeds give a loose rate. #93 runs 38 more fresh seeds at H = 32.
+
+---
+
 ## 2026-11-28 — Roadmap #91: ask labels where the duel's tied refits split
 
 Reran #88's duel exactly and, where it ended tied, asked up to 64 labels a round where the tied networks split on a

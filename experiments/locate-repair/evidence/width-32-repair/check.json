@@ -1,0 +1,447 @@
+{
+ "seeds": [
+  200,
+  201,
+  202,
+  203,
+  204,
+  205,
+  206,
+  207,
+  208,
+  209,
+  210,
+  211
+ ],
+ "width": 32,
+ "repair65": {
+  "under_0.01%": 9,
+  "under_0.1%": 12,
+  "exact": 5,
+  "median": 2.85e-05,
+  "over_line": {
+   "202": 0.00014,
+   "204": 0.00023,
+   "205": 0.000277
+  }
+ },
+ "pick": {
+  "under_0.01%": 12,
+  "under_0.1%": 12,
+  "exact": 8,
+  "median": 1.45e-05,
+  "over_line": {}
+ },
+ "duel": {
+  "under_0.01%": 12,
+  "under_0.1%": 12,
+  "exact": 9,
+  "median": 9.5e-06,
+  "over_line": {}
+ },
+ "gated_line": {
+  "under_0.01%": 12,
+  "under_0.1%": 12,
+  "exact": 9,
+  "median": 9.5e-06,
+  "over_line": {}
+ },
+ "result": {
+  "under_0.01%": 12,
+  "under_0.1%": 12,
+  "exact": 9,
+  "median": 9.5e-06,
+  "over_line": {}
+ },
+ "result_vs_pick": {
+  "closer": [
+   206,
+   207,
+   208,
+   209,
+   210
+  ],
+  "further": [
+   204
+  ],
+  "gained": [],
+  "lost": [],
+  "gained_exact": [
+   202
+  ],
+  "lost_exact": []
+ },
+ "result_vs_gated_line": {
+  "closer": [],
+  "further": [],
+  "gained": [],
+  "lost": [],
+  "gained_exact": [],
+  "lost_exact": []
+ },
+ "keep_one": [],
+ "with_candidates": [
+  200,
+  201,
+  202,
+  203,
+  204,
+  205,
+  206,
+  207,
+  208,
+  209,
+  210,
+  211
+ ],
+ "true_perfect": [
+  200,
+  201,
+  202,
+  203,
+  204,
+  205,
+  206,
+  207,
+  208,
+  209
+ ],
+ "took_other": [
+  202,
+  204,
+  206,
+  207,
+  208,
+  209,
+  210
+ ],
+ "flat": [],
+ "triples_fitted": {
+  "keep-one": 0,
+  "keep-two": 5736
+ },
+ "labels_asked": {
+  "duel": 466,
+  "line": 0
+ },
+ "core_hours": {
+  "first_part": 14.623777777777777,
+  "keep_one_search": 0.0,
+  "keep_two_search": 0.6845,
+  "duel_and_line": 0.5394444444444444
+ },
+ "per_case": {
+  "200": {
+   "repair65": [
+    7e-06,
+    3
+   ],
+   "pick": [
+    8e-06,
+    3
+   ],
+   "duel": [
+    8e-06,
+    3
+   ],
+   "gated_line": [
+    8e-06,
+    3
+   ],
+   "result": [
+    8e-06,
+    3
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 1,
+   "winner": "pick"
+  },
+  "201": {
+   "repair65": [
+    1.6e-05,
+    2
+   ],
+   "pick": [
+    3e-06,
+    2
+   ],
+   "duel": [
+    3e-06,
+    2
+   ],
+   "gated_line": [
+    3e-06,
+    2
+   ],
+   "result": [
+    3e-06,
+    2
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 158,
+   "winner": "pick"
+  },
+  "202": {
+   "repair65": [
+    0.00014,
+    2
+   ],
+   "pick": [
+    1.1e-05,
+    2
+   ],
+   "duel": [
+    1.1e-05,
+    3
+   ],
+   "gated_line": [
+    1.1e-05,
+    3
+   ],
+   "result": [
+    1.1e-05,
+    3
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 8,
+   "winner": "t0"
+  },
+  "203": {
+   "repair65": [
+    1.9e-05,
+    3
+   ],
+   "pick": [
+    1.9e-05,
+    3
+   ],
+   "duel": [
+    1.9e-05,
+    3
+   ],
+   "gated_line": [
+    1.9e-05,
+    3
+   ],
+   "result": [
+    1.9e-05,
+    3
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 1,
+   "winner": "pick"
+  },
+  "204": {
+   "repair65": [
+    0.00023,
+    3
+   ],
+   "pick": [
+    1e-05,
+    3
+   ],
+   "duel": [
+    1.1e-05,
+    3
+   ],
+   "gated_line": [
+    1.1e-05,
+    3
+   ],
+   "result": [
+    1.1e-05,
+    3
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 2,
+   "winner": "t0"
+  },
+  "205": {
+   "repair65": [
+    0.000277,
+    1
+   ],
+   "pick": [
+    1e-06,
+    3
+   ],
+   "duel": [
+    1e-06,
+    3
+   ],
+   "gated_line": [
+    1e-06,
+    3
+   ],
+   "result": [
+    1e-06,
+    3
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 4,
+   "winner": "pick"
+  },
+  "206": {
+   "repair65": [
+    4.9e-05,
+    3
+   ],
+   "pick": [
+    3.5e-05,
+    3
+   ],
+   "duel": [
+    2.4e-05,
+    3
+   ],
+   "gated_line": [
+    2.4e-05,
+    3
+   ],
+   "result": [
+    2.4e-05,
+    3
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 2,
+   "winner": "t0"
+  },
+  "207": {
+   "repair65": [
+    2.1e-05,
+    2
+   ],
+   "pick": [
+    3.1e-05,
+    3
+   ],
+   "duel": [
+    1.4e-05,
+    3
+   ],
+   "gated_line": [
+    1.4e-05,
+    3
+   ],
+   "result": [
+    1.4e-05,
+    3
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 3,
+   "winner": "t0"
+  },
+  "208": {
+   "repair65": [
+    1.9e-05,
+    3
+   ],
+   "pick": [
+    1.8e-05,
+    3
+   ],
+   "duel": [
+    6e-06,
+    3
+   ],
+   "gated_line": [
+    6e-06,
+    3
+   ],
+   "result": [
+    6e-06,
+    3
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 2,
+   "winner": "t0"
+  },
+  "209": {
+   "repair65": [
+    1.1e-05,
+    2
+   ],
+   "pick": [
+    2.3e-05,
+    2
+   ],
+   "duel": [
+    5e-06,
+    2
+   ],
+   "gated_line": [
+    5e-06,
+    2
+   ],
+   "result": [
+    5e-06,
+    2
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 157,
+   "winner": "t0"
+  },
+  "210": {
+   "repair65": [
+    3.8e-05,
+    0
+   ],
+   "pick": [
+    1.8e-05,
+    1
+   ],
+   "duel": [
+    1.3e-05,
+    1
+   ],
+   "gated_line": [
+    1.3e-05,
+    1
+   ],
+   "result": [
+    1.3e-05,
+    1
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 18,
+   "winner": "t0"
+  },
+  "211": {
+   "repair65": [
+    3.6e-05,
+    2
+   ],
+   "pick": [
+    0.0,
+    3
+   ],
+   "duel": [
+    0.0,
+    3
+   ],
+   "gated_line": [
+    0.0,
+    3
+   ],
+   "result": [
+    0.0,
+    3
+   ],
+   "search": "keep-two",
+   "searched": 478,
+   "candidates": 22,
+   "winner": "pick"
+  }
+ }
+}

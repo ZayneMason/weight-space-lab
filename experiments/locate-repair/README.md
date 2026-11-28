@@ -238,3 +238,5 @@ is undone but nothing is gained (22 and 16, #37's cases exactly), because the ca
 [FRESH_END.md](FRESH_END.md) (roadmap #90) runs the whole repair, fixed in advance, on 50 fresh seeds: all 50 are under 0.01% and 36 exact, and every case short of exact is a tie at the top of the duel that the true triple loses on order.
 
 [TIE_BREAK.md](TIE_BREAK.md) (roadmap #91) asks labels where the duel's tied refits split, on a fresh pool: most ties never split, exact does not rise (35 of 50 fresh, 159 of 200), and the tie-break is not adopted.
+
+[WIDTH_32_REPAIR.md](WIDTH_32_REPAIR.md) (roadmap #92) runs #90's fixed repair on #60's 12 seeds at width 32: all 12 end under 0.01% and 9 exact, against #60's 8 and 5, at 2.1 times #90's cost a case; the misses are two duel ties and one pick with a single broken weight that the keep-two search cannot reach.
